@@ -17,59 +17,57 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAutonomousExadataInfrastructure = new Oci.Database.AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure", new()
     ///     {
-    ///         var testAutonomousExadataInfrastructure = new Oci.Database.AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure", new Oci.Database.AutonomousExadataInfrastructureArgs
+    ///         AvailabilityDomain = @var.Autonomous_exadata_infrastructure_availability_domain,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Shape = @var.Autonomous_exadata_infrastructure_shape,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             AvailabilityDomain = @var.Autonomous_exadata_infrastructure_availability_domain,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Shape = @var.Autonomous_exadata_infrastructure_shape,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Autonomous_exadata_infrastructure_display_name,
+    ///         Domain = @var.Autonomous_exadata_infrastructure_domain,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LicenseModel = @var.Autonomous_exadata_infrastructure_license_model,
+    ///         MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs
+    ///         {
+    ///             Preference = @var.Autonomous_exadata_infrastructure_maintenance_window_details_preference,
+    ///             CustomActionTimeoutInMins = @var.Autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
+    ///             DaysOfWeeks = new[]
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Autonomous_exadata_infrastructure_display_name,
-    ///             Domain = @var.Autonomous_exadata_infrastructure_domain,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             LicenseModel = @var.Autonomous_exadata_infrastructure_license_model,
-    ///             MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs
-    ///             {
-    ///                 Preference = @var.Autonomous_exadata_infrastructure_maintenance_window_details_preference,
-    ///                 CustomActionTimeoutInMins = @var.Autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
-    ///                 DaysOfWeeks = 
+    ///                 new Oci.Database.Inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs
     ///                 {
-    ///                     new Oci.Database.Inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs
-    ///                     {
-    ///                         Name = @var.Autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
-    ///                     },
+    ///                     Name = @var.Autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
     ///                 },
-    ///                 HoursOfDays = @var.Autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
-    ///                 IsCustomActionTimeoutEnabled = @var.Autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
-    ///                 LeadTimeInWeeks = @var.Autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
-    ///                 Months = 
-    ///                 {
-    ///                     new Oci.Database.Inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs
-    ///                     {
-    ///                         Name = @var.Autonomous_exadata_infrastructure_maintenance_window_details_months_name,
-    ///                     },
-    ///                 },
-    ///                 PatchingMode = @var.Autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
-    ///                 WeeksOfMonths = @var.Autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
     ///             },
-    ///             NsgIds = @var.Autonomous_exadata_infrastructure_nsg_ids,
-    ///         });
-    ///     }
+    ///             HoursOfDays = @var.Autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
+    ///             IsCustomActionTimeoutEnabled = @var.Autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
+    ///             LeadTimeInWeeks = @var.Autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
+    ///             Months = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs
+    ///                 {
+    ///                     Name = @var.Autonomous_exadata_infrastructure_maintenance_window_details_months_name,
+    ///                 },
+    ///             },
+    ///             PatchingMode = @var.Autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
+    ///             WeeksOfMonths = @var.Autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
+    ///         },
+    ///         NsgIds = @var.Autonomous_exadata_infrastructure_nsg_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -81,7 +79,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure")]
-    public partial class AutonomousExadataInfrastructure : Pulumi.CustomResource
+    public partial class AutonomousExadataInfrastructure : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain where the Autonomous Exadata Infrastructure is located.
@@ -251,7 +249,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousExadataInfrastructureArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousExadataInfrastructureArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain where the Autonomous Exadata Infrastructure is located.
@@ -344,9 +342,10 @@ namespace Pulumi.Oci.Database
         public AutonomousExadataInfrastructureArgs()
         {
         }
+        public static new AutonomousExadataInfrastructureArgs Empty => new AutonomousExadataInfrastructureArgs();
     }
 
-    public sealed class AutonomousExadataInfrastructureState : Pulumi.ResourceArgs
+    public sealed class AutonomousExadataInfrastructureState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain where the Autonomous Exadata Infrastructure is located.
@@ -499,5 +498,6 @@ namespace Pulumi.Oci.Database
         public AutonomousExadataInfrastructureState()
         {
         }
+        public static new AutonomousExadataInfrastructureState Empty => new AutonomousExadataInfrastructureState();
     }
 }

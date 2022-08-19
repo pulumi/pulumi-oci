@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VnMonitoring.Inputs
 {
 
-    public sealed class PathAnalyzerTestSourceEndpointArgs : Pulumi.ResourceArgs
+    public sealed class PathAnalyzerTestSourceEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.VnMonitoring.Inputs
         public PathAnalyzerTestSourceEndpointArgs()
         {
         }
+        public static new PathAnalyzerTestSourceEndpointArgs Empty => new PathAnalyzerTestSourceEndpointArgs();
     }
 }

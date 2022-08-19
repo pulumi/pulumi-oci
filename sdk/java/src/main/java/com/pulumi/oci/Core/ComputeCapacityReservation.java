@@ -28,6 +28,50 @@ import javax.annotation.Nullable;
  * For more information, see [Reserved Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.ComputeCapacityReservation;
+ * import com.pulumi.oci.Core.ComputeCapacityReservationArgs;
+ * import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigArgs;
+ * import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testComputeCapacityReservation = new ComputeCapacityReservation(&#34;testComputeCapacityReservation&#34;, ComputeCapacityReservationArgs.builder()        
+ *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
+ *             .compartmentId(var_.compartment_id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.compute_capacity_reservation_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .instanceReservationConfigs(ComputeCapacityReservationInstanceReservationConfigArgs.builder()
+ *                 .instanceShape(var_.compute_capacity_reservation_instance_reservation_configs_instance_shape())
+ *                 .reservedCount(var_.compute_capacity_reservation_instance_reservation_configs_reserved_count())
+ *                 .faultDomain(var_.compute_capacity_reservation_instance_reservation_configs_fault_domain())
+ *                 .instanceShapeConfig(ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs.builder()
+ *                     .memoryInGbs(var_.compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs())
+ *                     .ocpus(var_.compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus())
+ *                     .build())
+ *                 .build())
+ *             .isDefaultReservation(var_.compute_capacity_reservation_is_default_reservation())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

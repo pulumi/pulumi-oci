@@ -21,6 +21,39 @@ import javax.annotation.Nullable;
  * Create and activate external metastore configuration.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.BigDataService.BdsInstanceMetastoreConfig;
+ * import com.pulumi.oci.BigDataService.BdsInstanceMetastoreConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBdsInstanceMetastoreConfig = new BdsInstanceMetastoreConfig(&#34;testBdsInstanceMetastoreConfig&#34;, BdsInstanceMetastoreConfigArgs.builder()        
+ *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
+ *             .bdsApiKeyPassphrase(var_.bds_instance_metastore_config_bds_api_key_passphrase())
+ *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+ *             .clusterAdminPassword(var_.bds_instance_metastore_config_cluster_admin_password())
+ *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+ *             .displayName(var_.bds_instance_metastore_config_display_name())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

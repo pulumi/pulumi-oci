@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class UsageItemTagArgs : Pulumi.ResourceArgs
+    public sealed class UsageItemTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The tag key.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public UsageItemTagArgs()
         {
         }
+        public static new UsageItemTagArgs Empty => new UsageItemTagArgs();
     }
 }

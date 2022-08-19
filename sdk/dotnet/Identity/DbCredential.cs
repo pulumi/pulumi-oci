@@ -17,22 +17,20 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDbCredential = new Oci.Identity.DbCredential("testDbCredential", new()
     ///     {
-    ///         var testDbCredential = new Oci.Identity.DbCredential("testDbCredential", new Oci.Identity.DbCredentialArgs
-    ///         {
-    ///             Description = @var.Db_credential_description,
-    ///             Password = @var.Db_credential_password,
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         Description = @var.Db_credential_description,
+    ///         Password = @var.Db_credential_password,
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.Identity
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Identity/dbCredential:DbCredential")]
-    public partial class DbCredential : Pulumi.CustomResource
+    public partial class DbCredential : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The description you assign to the DB credentials during creation.
@@ -128,7 +126,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class DbCredentialArgs : Pulumi.ResourceArgs
+    public sealed class DbCredentialArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The description you assign to the DB credentials during creation.
@@ -151,9 +149,10 @@ namespace Pulumi.Oci.Identity
         public DbCredentialArgs()
         {
         }
+        public static new DbCredentialArgs Empty => new DbCredentialArgs();
     }
 
-    public sealed class DbCredentialState : Pulumi.ResourceArgs
+    public sealed class DbCredentialState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The description you assign to the DB credentials during creation.
@@ -200,5 +199,6 @@ namespace Pulumi.Oci.Identity
         public DbCredentialState()
         {
         }
+        public static new DbCredentialState Empty => new DbCredentialState();
     }
 }

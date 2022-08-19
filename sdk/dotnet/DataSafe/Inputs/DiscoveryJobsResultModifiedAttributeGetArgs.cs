@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class DiscoveryJobsResultModifiedAttributeGetArgs : Pulumi.ResourceArgs
+    public sealed class DiscoveryJobsResultModifiedAttributeGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("appDefinedChildColumnKeys")]
         private InputList<string>? _appDefinedChildColumnKeys;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public DiscoveryJobsResultModifiedAttributeGetArgs()
         {
         }
+        public static new DiscoveryJobsResultModifiedAttributeGetArgs Empty => new DiscoveryJobsResultModifiedAttributeGetArgs();
     }
 }

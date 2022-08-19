@@ -22,29 +22,27 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlertPolicies = Oci.DataSafe.GetAlertPolicies.Invoke(new()
         ///     {
-        ///         var testAlertPolicies = Output.Create(Oci.DataSafe.GetAlertPolicies.InvokeAsync(new Oci.DataSafe.GetAlertPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Alert_policy_access_level,
-        ///             AlertPolicyId = oci_data_safe_alert_policy.Test_alert_policy.Id,
-        ///             CompartmentIdInSubtree = @var.Alert_policy_compartment_id_in_subtree,
-        ///             DisplayName = @var.Alert_policy_display_name,
-        ///             IsUserDefined = @var.Alert_policy_is_user_defined,
-        ///             State = @var.Alert_policy_state,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Alert_policy_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Alert_policy_time_created_less_than,
-        ///             Type = @var.Alert_policy_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Alert_policy_access_level,
+        ///         AlertPolicyId = oci_data_safe_alert_policy.Test_alert_policy.Id,
+        ///         CompartmentIdInSubtree = @var.Alert_policy_compartment_id_in_subtree,
+        ///         DisplayName = @var.Alert_policy_display_name,
+        ///         IsUserDefined = @var.Alert_policy_is_user_defined,
+        ///         State = @var.Alert_policy_state,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Alert_policy_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Alert_policy_time_created_less_than,
+        ///         Type = @var.Alert_policy_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,29 +61,27 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlertPolicies = Oci.DataSafe.GetAlertPolicies.Invoke(new()
         ///     {
-        ///         var testAlertPolicies = Output.Create(Oci.DataSafe.GetAlertPolicies.InvokeAsync(new Oci.DataSafe.GetAlertPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Alert_policy_access_level,
-        ///             AlertPolicyId = oci_data_safe_alert_policy.Test_alert_policy.Id,
-        ///             CompartmentIdInSubtree = @var.Alert_policy_compartment_id_in_subtree,
-        ///             DisplayName = @var.Alert_policy_display_name,
-        ///             IsUserDefined = @var.Alert_policy_is_user_defined,
-        ///             State = @var.Alert_policy_state,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Alert_policy_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Alert_policy_time_created_less_than,
-        ///             Type = @var.Alert_policy_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Alert_policy_access_level,
+        ///         AlertPolicyId = oci_data_safe_alert_policy.Test_alert_policy.Id,
+        ///         CompartmentIdInSubtree = @var.Alert_policy_compartment_id_in_subtree,
+        ///         DisplayName = @var.Alert_policy_display_name,
+        ///         IsUserDefined = @var.Alert_policy_is_user_defined,
+        ///         State = @var.Alert_policy_state,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Alert_policy_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Alert_policy_time_created_less_than,
+        ///         Type = @var.Alert_policy_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAlertPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetAlertPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -168,9 +164,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAlertPoliciesArgs()
         {
         }
+        public static new GetAlertPoliciesArgs Empty => new GetAlertPoliciesArgs();
     }
 
-    public sealed class GetAlertPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAlertPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -243,6 +240,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAlertPoliciesInvokeArgs()
         {
         }
+        public static new GetAlertPoliciesInvokeArgs Empty => new GetAlertPoliciesInvokeArgs();
     }
 
 

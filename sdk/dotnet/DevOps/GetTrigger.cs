@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTrigger = Oci.DevOps.GetTrigger.Invoke(new()
         ///     {
-        ///         var testTrigger = Output.Create(Oci.DevOps.GetTrigger.InvokeAsync(new Oci.DevOps.GetTriggerArgs
-        ///         {
-        ///             TriggerId = oci_devops_trigger.Test_trigger.Id,
-        ///         }));
-        ///     }
+        ///         TriggerId = oci_devops_trigger.Test_trigger.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTrigger = Oci.DevOps.GetTrigger.Invoke(new()
         ///     {
-        ///         var testTrigger = Output.Create(Oci.DevOps.GetTrigger.InvokeAsync(new Oci.DevOps.GetTriggerArgs
-        ///         {
-        ///             TriggerId = oci_devops_trigger.Test_trigger.Id,
-        ///         }));
-        ///     }
+        ///         TriggerId = oci_devops_trigger.Test_trigger.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetTriggerArgs : Pulumi.InvokeArgs
+    public sealed class GetTriggerArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique trigger identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DevOps
         public GetTriggerArgs()
         {
         }
+        public static new GetTriggerArgs Empty => new GetTriggerArgs();
     }
 
-    public sealed class GetTriggerInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTriggerInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique trigger identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DevOps
         public GetTriggerInvokeArgs()
         {
         }
+        public static new GetTriggerInvokeArgs Empty => new GetTriggerInvokeArgs();
     }
 
 

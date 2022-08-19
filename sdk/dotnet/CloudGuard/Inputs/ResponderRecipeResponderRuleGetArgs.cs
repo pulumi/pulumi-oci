@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class ResponderRecipeResponderRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class ResponderRecipeResponderRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -99,5 +99,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public ResponderRecipeResponderRuleGetArgs()
         {
         }
+        public static new ResponderRecipeResponderRuleGetArgs Empty => new ResponderRecipeResponderRuleGetArgs();
     }
 }

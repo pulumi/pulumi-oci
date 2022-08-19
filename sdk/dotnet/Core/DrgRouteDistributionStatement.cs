@@ -17,28 +17,26 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDrgRouteDistributionStatement = new Oci.Core.DrgRouteDistributionStatement("testDrgRouteDistributionStatement", new()
     ///     {
-    ///         var testDrgRouteDistributionStatement = new Oci.Core.DrgRouteDistributionStatement("testDrgRouteDistributionStatement", new Oci.Core.DrgRouteDistributionStatementArgs
+    ///         DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+    ///         Action = @var.Drg_route_distribution_statement_statements_action,
+    ///         MatchCriteria = new Oci.Core.Inputs.DrgRouteDistributionStatementMatchCriteriaArgs
     ///         {
-    ///             DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
-    ///             Action = @var.Drg_route_distribution_statement_statements_action,
-    ///             MatchCriteria = new Oci.Core.Inputs.DrgRouteDistributionStatementMatchCriteriaArgs
-    ///             {
-    ///                 MatchType = @var.Drg_route_distribution_statement_statements_match_criteria_match_type,
-    ///                 AttachmentType = @var.Drg_route_distribution_statement_statements_match_criteria_attachment_type,
-    ///                 DrgAttachmentId = oci_core_drg_attachment.Test_drg_attachment.Id,
-    ///             },
-    ///             Priority = @var.Drg_route_distribution_statement_statements_priority,
-    ///         });
-    ///     }
+    ///             MatchType = @var.Drg_route_distribution_statement_statements_match_criteria_match_type,
+    ///             AttachmentType = @var.Drg_route_distribution_statement_statements_match_criteria_attachment_type,
+    ///             DrgAttachmentId = oci_core_drg_attachment.Test_drg_attachment.Id,
+    ///         },
+    ///         Priority = @var.Drg_route_distribution_statement_statements_priority,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -50,7 +48,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement")]
-    public partial class DrgRouteDistributionStatement : Pulumi.CustomResource
+    public partial class DrgRouteDistributionStatement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Accept: import/export the route "as is"
@@ -120,7 +118,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DrgRouteDistributionStatementArgs : Pulumi.ResourceArgs
+    public sealed class DrgRouteDistributionStatementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Accept: import/export the route "as is"
@@ -149,9 +147,10 @@ namespace Pulumi.Oci.Core
         public DrgRouteDistributionStatementArgs()
         {
         }
+        public static new DrgRouteDistributionStatementArgs Empty => new DrgRouteDistributionStatementArgs();
     }
 
-    public sealed class DrgRouteDistributionStatementState : Pulumi.ResourceArgs
+    public sealed class DrgRouteDistributionStatementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Accept: import/export the route "as is"
@@ -180,5 +179,6 @@ namespace Pulumi.Oci.Core
         public DrgRouteDistributionStatementState()
         {
         }
+        public static new DrgRouteDistributionStatementState Empty => new DrgRouteDistributionStatementState();
     }
 }

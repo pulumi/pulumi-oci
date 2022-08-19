@@ -31,22 +31,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUserGroupMemberships = Oci.Identity.GetUserGroupMemberships.Invoke(new()
         ///     {
-        ///         var testUserGroupMemberships = Output.Create(Oci.Identity.GetUserGroupMemberships.InvokeAsync(new Oci.Identity.GetUserGroupMembershipsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             GroupId = oci_identity_group.Test_group.Id,
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         GroupId = oci_identity_group.Test_group.Id,
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -74,22 +72,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUserGroupMemberships = Oci.Identity.GetUserGroupMemberships.Invoke(new()
         ///     {
-        ///         var testUserGroupMemberships = Output.Create(Oci.Identity.GetUserGroupMemberships.InvokeAsync(new Oci.Identity.GetUserGroupMembershipsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             GroupId = oci_identity_group.Test_group.Id,
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         GroupId = oci_identity_group.Test_group.Id,
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -99,7 +95,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetUserGroupMembershipsArgs : Pulumi.InvokeArgs
+    public sealed class GetUserGroupMembershipsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -130,9 +126,10 @@ namespace Pulumi.Oci.Identity
         public GetUserGroupMembershipsArgs()
         {
         }
+        public static new GetUserGroupMembershipsArgs Empty => new GetUserGroupMembershipsArgs();
     }
 
-    public sealed class GetUserGroupMembershipsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUserGroupMembershipsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.Identity
         public GetUserGroupMembershipsInvokeArgs()
         {
         }
+        public static new GetUserGroupMembershipsInvokeArgs Empty => new GetUserGroupMembershipsInvokeArgs();
     }
 
 

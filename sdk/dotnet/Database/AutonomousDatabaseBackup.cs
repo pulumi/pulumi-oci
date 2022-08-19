@@ -17,21 +17,19 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAutonomousDatabaseBackup = new Oci.Database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup", new()
     ///     {
-    ///         var testAutonomousDatabaseBackup = new Oci.Database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup", new Oci.Database.AutonomousDatabaseBackupArgs
-    ///         {
-    ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-    ///             DisplayName = @var.Autonomous_database_backup_display_name,
-    ///         });
-    ///     }
+    ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+    ///         DisplayName = @var.Autonomous_database_backup_display_name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup")]
-    public partial class AutonomousDatabaseBackup : Pulumi.CustomResource
+    public partial class AutonomousDatabaseBackup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
@@ -185,7 +183,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousDatabaseBackupArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseBackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
@@ -202,9 +200,10 @@ namespace Pulumi.Oci.Database
         public AutonomousDatabaseBackupArgs()
         {
         }
+        public static new AutonomousDatabaseBackupArgs Empty => new AutonomousDatabaseBackupArgs();
     }
 
-    public sealed class AutonomousDatabaseBackupState : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseBackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
@@ -305,5 +304,6 @@ namespace Pulumi.Oci.Database
         public AutonomousDatabaseBackupState()
         {
         }
+        public static new AutonomousDatabaseBackupState Empty => new AutonomousDatabaseBackupState();
     }
 }

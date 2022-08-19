@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Monitoring.Inputs
 {
 
-    public sealed class AlarmSuppressionGetArgs : Pulumi.ResourceArgs
+    public sealed class AlarmSuppressionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Monitoring.Inputs
         public AlarmSuppressionGetArgs()
         {
         }
+        public static new AlarmSuppressionGetArgs Empty => new AlarmSuppressionGetArgs();
     }
 }

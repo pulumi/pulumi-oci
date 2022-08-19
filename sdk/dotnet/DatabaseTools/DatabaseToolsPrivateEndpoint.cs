@@ -17,34 +17,32 @@ namespace Pulumi.Oci.DatabaseTools
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDatabaseToolsPrivateEndpoint = new Oci.DatabaseTools.DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", new()
     ///     {
-    ///         var testDatabaseToolsPrivateEndpoint = new Oci.DatabaseTools.DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", new Oci.DatabaseTools.DatabaseToolsPrivateEndpointArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Database_tools_private_endpoint_display_name,
+    ///         EndpointServiceId = oci_core_service.Test_service.Id,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Database_tools_private_endpoint_display_name,
-    ///             EndpointServiceId = oci_core_service.Test_service.Id,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Database_tools_private_endpoint_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             NsgIds = @var.Database_tools_private_endpoint_nsg_ids,
-    ///             PrivateEndpointIp = @var.Database_tools_private_endpoint_private_endpoint_ip,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Database_tools_private_endpoint_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         NsgIds = @var.Database_tools_private_endpoint_nsg_ids,
+    ///         PrivateEndpointIp = @var.Database_tools_private_endpoint_private_endpoint_ip,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.DatabaseTools
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint")]
-    public partial class DatabaseToolsPrivateEndpoint : Pulumi.CustomResource
+    public partial class DatabaseToolsPrivateEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of additional FQDNs that can be also be used for the private endpoint.
@@ -216,7 +214,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
     }
 
-    public sealed class DatabaseToolsPrivateEndpointArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsPrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
@@ -293,9 +291,10 @@ namespace Pulumi.Oci.DatabaseTools
         public DatabaseToolsPrivateEndpointArgs()
         {
         }
+        public static new DatabaseToolsPrivateEndpointArgs Empty => new DatabaseToolsPrivateEndpointArgs();
     }
 
-    public sealed class DatabaseToolsPrivateEndpointState : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsPrivateEndpointState : global::Pulumi.ResourceArgs
     {
         [Input("additionalFqdns")]
         private InputList<string>? _additionalFqdns;
@@ -450,5 +449,6 @@ namespace Pulumi.Oci.DatabaseTools
         public DatabaseToolsPrivateEndpointState()
         {
         }
+        public static new DatabaseToolsPrivateEndpointState Empty => new DatabaseToolsPrivateEndpointState();
     }
 }

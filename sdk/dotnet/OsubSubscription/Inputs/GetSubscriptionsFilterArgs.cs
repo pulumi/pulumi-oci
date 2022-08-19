@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsubSubscription.Inputs
 {
 
-    public sealed class GetSubscriptionsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSubscriptionsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Product name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OsubSubscription.Inputs
         public GetSubscriptionsFilterInputArgs()
         {
         }
+        public static new GetSubscriptionsFilterInputArgs Empty => new GetSubscriptionsFilterInputArgs();
     }
 }

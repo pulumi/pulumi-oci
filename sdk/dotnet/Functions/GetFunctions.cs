@@ -21,23 +21,21 @@ namespace Pulumi.Oci.Functions
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFunctions = Oci.Functions.GetFunctions.Invoke(new()
         ///     {
-        ///         var testFunctions = Output.Create(Oci.Functions.GetFunctions.InvokeAsync(new Oci.Functions.GetFunctionsArgs
-        ///         {
-        ///             ApplicationId = oci_functions_application.Test_application.Id,
-        ///             DisplayName = @var.Function_display_name,
-        ///             Id = @var.Function_id,
-        ///             State = @var.Function_state,
-        ///         }));
-        ///     }
+        ///         ApplicationId = oci_functions_application.Test_application.Id,
+        ///         DisplayName = @var.Function_display_name,
+        ///         Id = @var.Function_id,
+        ///         State = @var.Function_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.Functions
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFunctions = Oci.Functions.GetFunctions.Invoke(new()
         ///     {
-        ///         var testFunctions = Output.Create(Oci.Functions.GetFunctions.InvokeAsync(new Oci.Functions.GetFunctionsArgs
-        ///         {
-        ///             ApplicationId = oci_functions_application.Test_application.Id,
-        ///             DisplayName = @var.Function_display_name,
-        ///             Id = @var.Function_id,
-        ///             State = @var.Function_state,
-        ///         }));
-        ///     }
+        ///         ApplicationId = oci_functions_application.Test_application.Id,
+        ///         DisplayName = @var.Function_display_name,
+        ///         Id = @var.Function_id,
+        ///         State = @var.Function_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Functions
     }
 
 
-    public sealed class GetFunctionsArgs : Pulumi.InvokeArgs
+    public sealed class GetFunctionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Functions
         public GetFunctionsArgs()
         {
         }
+        public static new GetFunctionsArgs Empty => new GetFunctionsArgs();
     }
 
-    public sealed class GetFunctionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFunctionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.Functions
         public GetFunctionsInvokeArgs()
         {
         }
+        public static new GetFunctionsInvokeArgs Empty => new GetFunctionsInvokeArgs();
     }
 
 

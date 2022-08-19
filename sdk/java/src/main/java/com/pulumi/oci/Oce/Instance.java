@@ -22,6 +22,48 @@ import javax.annotation.Nullable;
  * Creates a new OceInstance.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Oce.Instance;
+ * import com.pulumi.oci.Oce.InstanceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOceInstance = new Instance(&#34;testOceInstance&#34;, InstanceArgs.builder()        
+ *             .adminEmail(var_.oce_instance_admin_email())
+ *             .compartmentId(var_.compartment_id())
+ *             .idcsAccessToken(var_.oce_instance_idcs_access_token())
+ *             .objectStorageNamespace(var_.oce_instance_object_storage_namespace())
+ *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+ *             .tenancyName(oci_identity_tenancy.test_tenancy().name())
+ *             .addOnFeatures(var_.oce_instance_add_on_features())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.oce_instance_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .instanceAccessType(var_.oce_instance_instance_access_type())
+ *             .instanceLicenseType(var_.oce_instance_instance_license_type())
+ *             .instanceUsageType(var_.oce_instance_instance_usage_type())
+ *             .upgradeSchedule(var_.oce_instance_upgrade_schedule())
+ *             .wafPrimaryDomain(var_.oce_instance_waf_primary_domain())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -22,22 +22,20 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSoftwareSources = Oci.OsManagement.GetSoftwareSources.Invoke(new()
         ///     {
-        ///         var testSoftwareSources = Output.Create(Oci.OsManagement.GetSoftwareSources.InvokeAsync(new Oci.OsManagement.GetSoftwareSourcesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Software_source_display_name,
-        ///             State = @var.Software_source_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Software_source_display_name,
+        ///         State = @var.Software_source_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSoftwareSources = Oci.OsManagement.GetSoftwareSources.Invoke(new()
         ///     {
-        ///         var testSoftwareSources = Output.Create(Oci.OsManagement.GetSoftwareSources.InvokeAsync(new Oci.OsManagement.GetSoftwareSourcesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Software_source_display_name,
-        ///             State = @var.Software_source_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Software_source_display_name,
+        ///         State = @var.Software_source_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetSoftwareSourcesArgs : Pulumi.InvokeArgs
+    public sealed class GetSoftwareSourcesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.OsManagement
         public GetSoftwareSourcesArgs()
         {
         }
+        public static new GetSoftwareSourcesArgs Empty => new GetSoftwareSourcesArgs();
     }
 
-    public sealed class GetSoftwareSourcesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSoftwareSourcesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.OsManagement
         public GetSoftwareSourcesInvokeArgs()
         {
         }
+        public static new GetSoftwareSourcesInvokeArgs Empty => new GetSoftwareSourcesInvokeArgs();
     }
 
 

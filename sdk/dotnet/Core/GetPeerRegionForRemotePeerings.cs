@@ -23,17 +23,15 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testPeerRegionForRemotePeerings = Output.Create(Oci.Core.GetPeerRegionForRemotePeerings.InvokeAsync());
-        ///     }
+        ///     var testPeerRegionForRemotePeerings = Oci.Core.GetPeerRegionForRemotePeerings.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,17 +51,15 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testPeerRegionForRemotePeerings = Output.Create(Oci.Core.GetPeerRegionForRemotePeerings.InvokeAsync());
-        ///     }
+        ///     var testPeerRegionForRemotePeerings = Oci.Core.GetPeerRegionForRemotePeerings.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -73,7 +69,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetPeerRegionForRemotePeeringsArgs : Pulumi.InvokeArgs
+    public sealed class GetPeerRegionForRemotePeeringsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetPeerRegionForRemotePeeringsFilterArgs>? _filters;
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetPeerRegionForRemotePeeringsArgs()
         {
         }
+        public static new GetPeerRegionForRemotePeeringsArgs Empty => new GetPeerRegionForRemotePeeringsArgs();
     }
 
-    public sealed class GetPeerRegionForRemotePeeringsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPeerRegionForRemotePeeringsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetPeerRegionForRemotePeeringsFilterInputArgs>? _filters;
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Core
         public GetPeerRegionForRemotePeeringsInvokeArgs()
         {
         }
+        public static new GetPeerRegionForRemotePeeringsInvokeArgs Empty => new GetPeerRegionForRemotePeeringsInvokeArgs();
     }
 
 

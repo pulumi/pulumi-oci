@@ -22,22 +22,20 @@ namespace Pulumi.Oci.DataIntegration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWorkspaces = Oci.DataIntegration.GetWorkspaces.Invoke(new()
         ///     {
-        ///         var testWorkspaces = Output.Create(Oci.DataIntegration.GetWorkspaces.InvokeAsync(new Oci.DataIntegration.GetWorkspacesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Workspace_name,
-        ///             State = @var.Workspace_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Workspace_name,
+        ///         State = @var.Workspace_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.DataIntegration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWorkspaces = Oci.DataIntegration.GetWorkspaces.Invoke(new()
         ///     {
-        ///         var testWorkspaces = Output.Create(Oci.DataIntegration.GetWorkspaces.InvokeAsync(new Oci.DataIntegration.GetWorkspacesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Workspace_name,
-        ///             State = @var.Workspace_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Workspace_name,
+        ///         State = @var.Workspace_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DataIntegration
     }
 
 
-    public sealed class GetWorkspacesArgs : Pulumi.InvokeArgs
+    public sealed class GetWorkspacesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the resources you want to list.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.DataIntegration
         public GetWorkspacesArgs()
         {
         }
+        public static new GetWorkspacesArgs Empty => new GetWorkspacesArgs();
     }
 
-    public sealed class GetWorkspacesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetWorkspacesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the resources you want to list.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.DataIntegration
         public GetWorkspacesInvokeArgs()
         {
         }
+        public static new GetWorkspacesInvokeArgs Empty => new GetWorkspacesInvokeArgs();
     }
 
 

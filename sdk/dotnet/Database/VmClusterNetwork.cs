@@ -18,62 +18,60 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVmClusterNetwork = new Oci.Database.VmClusterNetwork("testVmClusterNetwork", new()
     ///     {
-    ///         var testVmClusterNetwork = new Oci.Database.VmClusterNetwork("testVmClusterNetwork", new Oci.Database.VmClusterNetworkArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Vm_cluster_network_display_name,
+    ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+    ///         Scans = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Vm_cluster_network_display_name,
-    ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-    ///             Scans = 
+    ///             new Oci.Database.Inputs.VmClusterNetworkScanArgs
     ///             {
-    ///                 new Oci.Database.Inputs.VmClusterNetworkScanArgs
-    ///                 {
-    ///                     Hostname = @var.Vm_cluster_network_scans_hostname,
-    ///                     Ips = @var.Vm_cluster_network_scans_ips,
-    ///                     Port = @var.Vm_cluster_network_scans_port,
-    ///                     ScanListenerPortTcp = @var.Vm_cluster_network_scans_scan_listener_port_tcp,
-    ///                     ScanListenerPortTcpSsl = @var.Vm_cluster_network_scans_scan_listener_port_tcp_ssl,
-    ///                 },
+    ///                 Hostname = @var.Vm_cluster_network_scans_hostname,
+    ///                 Ips = @var.Vm_cluster_network_scans_ips,
+    ///                 Port = @var.Vm_cluster_network_scans_port,
+    ///                 ScanListenerPortTcp = @var.Vm_cluster_network_scans_scan_listener_port_tcp,
+    ///                 ScanListenerPortTcpSsl = @var.Vm_cluster_network_scans_scan_listener_port_tcp_ssl,
     ///             },
-    ///             VmNetworks = 
+    ///         },
+    ///         VmNetworks = new[]
+    ///         {
+    ///             new Oci.Database.Inputs.VmClusterNetworkVmNetworkArgs
     ///             {
-    ///                 new Oci.Database.Inputs.VmClusterNetworkVmNetworkArgs
+    ///                 DomainName = @var.Vm_cluster_network_vm_networks_domain_name,
+    ///                 Gateway = @var.Vm_cluster_network_vm_networks_gateway,
+    ///                 Netmask = @var.Vm_cluster_network_vm_networks_netmask,
+    ///                 NetworkType = @var.Vm_cluster_network_vm_networks_network_type,
+    ///                 Nodes = new[]
     ///                 {
-    ///                     DomainName = @var.Vm_cluster_network_vm_networks_domain_name,
-    ///                     Gateway = @var.Vm_cluster_network_vm_networks_gateway,
-    ///                     Netmask = @var.Vm_cluster_network_vm_networks_netmask,
-    ///                     NetworkType = @var.Vm_cluster_network_vm_networks_network_type,
-    ///                     Nodes = 
+    ///                     new Oci.Database.Inputs.VmClusterNetworkVmNetworkNodeArgs
     ///                     {
-    ///                         new Oci.Database.Inputs.VmClusterNetworkVmNetworkNodeArgs
-    ///                         {
-    ///                             Hostname = @var.Vm_cluster_network_vm_networks_nodes_hostname,
-    ///                             Ip = @var.Vm_cluster_network_vm_networks_nodes_ip,
-    ///                             Vip = @var.Vm_cluster_network_vm_networks_nodes_vip,
-    ///                             VipHostname = @var.Vm_cluster_network_vm_networks_nodes_vip_hostname,
-    ///                         },
+    ///                         Hostname = @var.Vm_cluster_network_vm_networks_nodes_hostname,
+    ///                         Ip = @var.Vm_cluster_network_vm_networks_nodes_ip,
+    ///                         Vip = @var.Vm_cluster_network_vm_networks_nodes_vip,
+    ///                         VipHostname = @var.Vm_cluster_network_vm_networks_nodes_vip_hostname,
     ///                     },
-    ///                     VlanId = @var.Vm_cluster_network_vm_networks_vlan_id,
     ///                 },
+    ///                 VlanId = @var.Vm_cluster_network_vm_networks_vlan_id,
     ///             },
-    ///             DefinedTags = @var.Vm_cluster_network_defined_tags,
-    ///             Dns = @var.Vm_cluster_network_dns,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Ntps = @var.Vm_cluster_network_ntp,
-    ///             ValidateVmClusterNetwork = @var.Vm_cluster_network_validate_vm_cluster_network,
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = @var.Vm_cluster_network_defined_tags,
+    ///         Dns = @var.Vm_cluster_network_dns,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Ntps = @var.Vm_cluster_network_ntp,
+    ///         ValidateVmClusterNetwork = @var.Vm_cluster_network_validate_vm_cluster_network,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -85,7 +83,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/vmClusterNetwork:VmClusterNetwork")]
-    public partial class VmClusterNetwork : Pulumi.CustomResource
+    public partial class VmClusterNetwork : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -212,7 +210,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class VmClusterNetworkArgs : Pulumi.ResourceArgs
+    public sealed class VmClusterNetworkArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -310,9 +308,10 @@ namespace Pulumi.Oci.Database
         public VmClusterNetworkArgs()
         {
         }
+        public static new VmClusterNetworkArgs Empty => new VmClusterNetworkArgs();
     }
 
-    public sealed class VmClusterNetworkState : Pulumi.ResourceArgs
+    public sealed class VmClusterNetworkState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -434,5 +433,6 @@ namespace Pulumi.Oci.Database
         public VmClusterNetworkState()
         {
         }
+        public static new VmClusterNetworkState Empty => new VmClusterNetworkState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DefaultRouteTableRouteRuleArgs : Pulumi.ResourceArgs
+    public sealed class DefaultRouteTableRouteRuleArgs : global::Pulumi.ResourceArgs
     {
         [Input("cidrBlock")]
         public Input<string>? CidrBlock { get; set; }
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DefaultRouteTableRouteRuleArgs()
         {
         }
+        public static new DefaultRouteTableRouteRuleArgs Empty => new DefaultRouteTableRouteRuleArgs();
     }
 }

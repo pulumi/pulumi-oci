@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditArchiveRetrieval = Oci.DataSafe.GetAuditArchiveRetrieval.Invoke(new()
         ///     {
-        ///         var testAuditArchiveRetrieval = Output.Create(Oci.DataSafe.GetAuditArchiveRetrieval.InvokeAsync(new Oci.DataSafe.GetAuditArchiveRetrievalArgs
-        ///         {
-        ///             AuditArchiveRetrievalId = oci_data_safe_audit_archive_retrieval.Test_audit_archive_retrieval.Id,
-        ///         }));
-        ///     }
+        ///         AuditArchiveRetrievalId = oci_data_safe_audit_archive_retrieval.Test_audit_archive_retrieval.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditArchiveRetrieval = Oci.DataSafe.GetAuditArchiveRetrieval.Invoke(new()
         ///     {
-        ///         var testAuditArchiveRetrieval = Output.Create(Oci.DataSafe.GetAuditArchiveRetrieval.InvokeAsync(new Oci.DataSafe.GetAuditArchiveRetrievalArgs
-        ///         {
-        ///             AuditArchiveRetrievalId = oci_data_safe_audit_archive_retrieval.Test_audit_archive_retrieval.Id,
-        ///         }));
-        ///     }
+        ///         AuditArchiveRetrievalId = oci_data_safe_audit_archive_retrieval.Test_audit_archive_retrieval.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditArchiveRetrievalArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditArchiveRetrievalArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of the archive retrieval.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditArchiveRetrievalArgs()
         {
         }
+        public static new GetAuditArchiveRetrievalArgs Empty => new GetAuditArchiveRetrievalArgs();
     }
 
-    public sealed class GetAuditArchiveRetrievalInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditArchiveRetrievalInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of the archive retrieval.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditArchiveRetrievalInvokeArgs()
         {
         }
+        public static new GetAuditArchiveRetrievalInvokeArgs Empty => new GetAuditArchiveRetrievalInvokeArgs();
     }
 
 

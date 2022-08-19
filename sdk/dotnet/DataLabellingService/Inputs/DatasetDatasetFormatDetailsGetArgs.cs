@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataLabellingService.Inputs
 {
 
-    public sealed class DatasetDatasetFormatDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class DatasetDatasetFormatDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// It defines the format type of text files.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
         public DatasetDatasetFormatDetailsGetArgs()
         {
         }
+        public static new DatasetDatasetFormatDetailsGetArgs Empty => new DatasetDatasetFormatDetailsGetArgs();
     }
 }

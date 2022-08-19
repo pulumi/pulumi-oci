@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigCustomProtectionRuleExclusionGetArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigCustomProtectionRuleExclusionGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("exclusions")]
         private InputList<string>? _exclusions;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigCustomProtectionRuleExclusionGetArgs()
         {
         }
+        public static new PolicyWafConfigCustomProtectionRuleExclusionGetArgs Empty => new PolicyWafConfigCustomProtectionRuleExclusionGetArgs();
     }
 }

@@ -30,6 +30,87 @@ import javax.annotation.Nullable;
  * Create a new node pool.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ContainerEngine.NodePool;
+ * import com.pulumi.oci.ContainerEngine.NodePoolArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolInitialNodeLabelArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeEvictionNodePoolSettingsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeShapeConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeSourceDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNodePool = new NodePool(&#34;testNodePool&#34;, NodePoolArgs.builder()        
+ *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+ *             .compartmentId(var_.compartment_id())
+ *             .nodeShape(var_.node_pool_node_shape())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .initialNodeLabels(NodePoolInitialNodeLabelArgs.builder()
+ *                 .key(var_.node_pool_initial_node_labels_key())
+ *                 .value(var_.node_pool_initial_node_labels_value())
+ *                 .build())
+ *             .kubernetesVersion(var_.node_pool_kubernetes_version())
+ *             .nodeConfigDetails(NodePoolNodeConfigDetailsArgs.builder()
+ *                 .placementConfigs(NodePoolNodeConfigDetailsPlacementConfigArgs.builder()
+ *                     .availabilityDomain(var_.node_pool_node_config_details_placement_configs_availability_domain())
+ *                     .subnetId(oci_core_subnet.test_subnet().id())
+ *                     .capacityReservationId(oci_containerengine_capacity_reservation.test_capacity_reservation().id())
+ *                     .faultDomains(var_.node_pool_node_config_details_placement_configs_fault_domains())
+ *                     .build())
+ *                 .size(var_.node_pool_node_config_details_size())
+ *                 .isPvEncryptionInTransitEnabled(var_.node_pool_node_config_details_is_pv_encryption_in_transit_enabled())
+ *                 .kmsKeyId(oci_kms_key.test_key().id())
+ *                 .nodePoolPodNetworkOptionDetails(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs.builder()
+ *                     .cniType(var_.node_pool_node_config_details_node_pool_pod_network_option_details_cni_type())
+ *                     .maxPodsPerNode(var_.node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node())
+ *                     .podNsgIds(var_.node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids())
+ *                     .podSubnetIds(var_.node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids())
+ *                     .build())
+ *                 .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                 .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                 .nsgIds(var_.node_pool_node_config_details_nsg_ids())
+ *                 .build())
+ *             .nodeEvictionNodePoolSettings(NodePoolNodeEvictionNodePoolSettingsArgs.builder()
+ *                 .evictionGraceDuration(var_.node_pool_node_eviction_node_pool_settings_eviction_grace_duration())
+ *                 .isForceDeleteAfterGraceDuration(var_.node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration())
+ *                 .build())
+ *             .nodeImageName(oci_core_image.test_image().name())
+ *             .nodeMetadata(var_.node_pool_node_metadata())
+ *             .nodeShapeConfig(NodePoolNodeShapeConfigArgs.builder()
+ *                 .memoryInGbs(var_.node_pool_node_shape_config_memory_in_gbs())
+ *                 .ocpus(var_.node_pool_node_shape_config_ocpus())
+ *                 .build())
+ *             .nodeSourceDetails(NodePoolNodeSourceDetailsArgs.builder()
+ *                 .imageId(oci_core_image.test_image().id())
+ *                 .sourceType(var_.node_pool_node_source_details_source_type())
+ *                 .bootVolumeSizeInGbs(var_.node_pool_node_source_details_boot_volume_size_in_gbs())
+ *                 .build())
+ *             .quantityPerSubnet(var_.node_pool_quantity_per_subnet())
+ *             .sshPublicKey(var_.node_pool_ssh_public_key())
+ *             .subnetIds(var_.node_pool_subnet_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

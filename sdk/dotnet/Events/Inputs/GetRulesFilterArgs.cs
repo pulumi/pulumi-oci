@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Events.Inputs
 {
 
-    public sealed class GetRulesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetRulesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Events.Inputs
         public GetRulesFilterInputArgs()
         {
         }
+        public static new GetRulesFilterInputArgs Empty => new GetRulesFilterInputArgs();
     }
 }

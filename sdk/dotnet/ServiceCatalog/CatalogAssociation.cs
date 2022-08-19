@@ -17,22 +17,20 @@ namespace Pulumi.Oci.ServiceCatalog
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testServiceCatalogAssociation = new Oci.ServiceCatalog.CatalogAssociation("testServiceCatalogAssociation", new()
     ///     {
-    ///         var testServiceCatalogAssociation = new Oci.ServiceCatalog.CatalogAssociation("testServiceCatalogAssociation", new Oci.ServiceCatalog.CatalogAssociationArgs
-    ///         {
-    ///             EntityId = oci_service_catalog_entity.Test_entity.Id,
-    ///             ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
-    ///             EntityType = @var.Service_catalog_association_entity_type,
-    ///         });
-    ///     }
+    ///         EntityId = oci_service_catalog_entity.Test_entity.Id,
+    ///         ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
+    ///         EntityType = @var.Service_catalog_association_entity_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.ServiceCatalog
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceCatalog/catalogAssociation:CatalogAssociation")]
-    public partial class CatalogAssociation : Pulumi.CustomResource
+    public partial class CatalogAssociation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Identifier of the entity being associated with service catalog.
@@ -114,7 +112,7 @@ namespace Pulumi.Oci.ServiceCatalog
         }
     }
 
-    public sealed class CatalogAssociationArgs : Pulumi.ResourceArgs
+    public sealed class CatalogAssociationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Identifier of the entity being associated with service catalog.
@@ -137,9 +135,10 @@ namespace Pulumi.Oci.ServiceCatalog
         public CatalogAssociationArgs()
         {
         }
+        public static new CatalogAssociationArgs Empty => new CatalogAssociationArgs();
     }
 
-    public sealed class CatalogAssociationState : Pulumi.ResourceArgs
+    public sealed class CatalogAssociationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Identifier of the entity being associated with service catalog.
@@ -168,5 +167,6 @@ namespace Pulumi.Oci.ServiceCatalog
         public CatalogAssociationState()
         {
         }
+        public static new CatalogAssociationState Empty => new CatalogAssociationState();
     }
 }

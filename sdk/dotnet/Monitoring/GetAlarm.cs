@@ -27,20 +27,18 @@ namespace Pulumi.Oci.Monitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlarm = Oci.Monitoring.GetAlarm.Invoke(new()
         ///     {
-        ///         var testAlarm = Output.Create(Oci.Monitoring.GetAlarm.InvokeAsync(new Oci.Monitoring.GetAlarmArgs
-        ///         {
-        ///             AlarmId = oci_monitoring_alarm.Test_alarm.Id,
-        ///         }));
-        ///     }
+        ///         AlarmId = oci_monitoring_alarm.Test_alarm.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,20 +62,18 @@ namespace Pulumi.Oci.Monitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlarm = Oci.Monitoring.GetAlarm.Invoke(new()
         ///     {
-        ///         var testAlarm = Output.Create(Oci.Monitoring.GetAlarm.InvokeAsync(new Oci.Monitoring.GetAlarmArgs
-        ///         {
-        ///             AlarmId = oci_monitoring_alarm.Test_alarm.Id,
-        ///         }));
-        ///     }
+        ///         AlarmId = oci_monitoring_alarm.Test_alarm.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Monitoring
     }
 
 
-    public sealed class GetAlarmArgs : Pulumi.InvokeArgs
+    public sealed class GetAlarmArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Monitoring
         public GetAlarmArgs()
         {
         }
+        public static new GetAlarmArgs Empty => new GetAlarmArgs();
     }
 
-    public sealed class GetAlarmInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAlarmInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
@@ -111,6 +108,7 @@ namespace Pulumi.Oci.Monitoring
         public GetAlarmInvokeArgs()
         {
         }
+        public static new GetAlarmInvokeArgs Empty => new GetAlarmInvokeArgs();
     }
 
 

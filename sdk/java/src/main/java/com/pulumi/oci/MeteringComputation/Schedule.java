@@ -23,6 +23,66 @@ import javax.annotation.Nullable;
  * Returns the created schedule.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.MeteringComputation.Schedule;
+ * import com.pulumi.oci.MeteringComputation.ScheduleArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesDateRangeArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.ScheduleResultLocationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSchedule = new Schedule(&#34;testSchedule&#34;, ScheduleArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .queryProperties(ScheduleQueryPropertiesArgs.builder()
+ *                 .dateRange(ScheduleQueryPropertiesDateRangeArgs.builder()
+ *                     .dateRangeType(var_.schedule_query_properties_date_range_date_range_type())
+ *                     .dynamicDateRangeType(var_.schedule_query_properties_date_range_dynamic_date_range_type())
+ *                     .timeUsageEnded(var_.schedule_query_properties_date_range_time_usage_ended())
+ *                     .timeUsageStarted(var_.schedule_query_properties_date_range_time_usage_started())
+ *                     .build())
+ *                 .granularity(var_.schedule_query_properties_granularity())
+ *                 .compartmentDepth(var_.schedule_query_properties_compartment_depth())
+ *                 .filter(var_.schedule_query_properties_filter())
+ *                 .groupBies(var_.schedule_query_properties_group_by())
+ *                 .groupByTags(ScheduleQueryPropertiesGroupByTagArgs.builder()
+ *                     .key(var_.schedule_query_properties_group_by_tag_key())
+ *                     .namespace(var_.schedule_query_properties_group_by_tag_namespace())
+ *                     .value(var_.schedule_query_properties_group_by_tag_value())
+ *                     .build())
+ *                 .isAggregateByTime(var_.schedule_query_properties_is_aggregate_by_time())
+ *                 .queryType(var_.schedule_query_properties_query_type())
+ *                 .build())
+ *             .resultLocation(ScheduleResultLocationArgs.builder()
+ *                 .bucket(var_.schedule_result_location_bucket())
+ *                 .locationType(var_.schedule_result_location_location_type())
+ *                 .namespace(var_.schedule_result_location_namespace())
+ *                 .region(var_.schedule_result_location_region())
+ *                 .build())
+ *             .scheduleRecurrences(var_.schedule_schedule_recurrences())
+ *             .timeScheduled(var_.schedule_time_scheduled())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class VirtualServiceDefaultRoutingPolicyGetArgs : Pulumi.ResourceArgs
+    public sealed class VirtualServiceDefaultRoutingPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Type of the virtual service routing policy.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public VirtualServiceDefaultRoutingPolicyGetArgs()
         {
         }
+        public static new VirtualServiceDefaultRoutingPolicyGetArgs Empty => new VirtualServiceDefaultRoutingPolicyGetArgs();
     }
 }

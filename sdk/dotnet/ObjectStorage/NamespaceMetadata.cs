@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage
 {
     [OciResourceType("oci:ObjectStorage/namespaceMetadata:NamespaceMetadata")]
-    public partial class NamespaceMetadata : Pulumi.CustomResource
+    public partial class NamespaceMetadata : global::Pulumi.CustomResource
     {
         [Output("defaultS3compartmentId")]
         public Output<string> DefaultS3compartmentId { get; private set; } = null!;
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.ObjectStorage
         }
     }
 
-    public sealed class NamespaceMetadataArgs : Pulumi.ResourceArgs
+    public sealed class NamespaceMetadataArgs : global::Pulumi.ResourceArgs
     {
         [Input("defaultS3compartmentId")]
         public Input<string>? DefaultS3compartmentId { get; set; }
@@ -79,9 +79,10 @@ namespace Pulumi.Oci.ObjectStorage
         public NamespaceMetadataArgs()
         {
         }
+        public static new NamespaceMetadataArgs Empty => new NamespaceMetadataArgs();
     }
 
-    public sealed class NamespaceMetadataState : Pulumi.ResourceArgs
+    public sealed class NamespaceMetadataState : global::Pulumi.ResourceArgs
     {
         [Input("defaultS3compartmentId")]
         public Input<string>? DefaultS3compartmentId { get; set; }
@@ -95,5 +96,6 @@ namespace Pulumi.Oci.ObjectStorage
         public NamespaceMetadataState()
         {
         }
+        public static new NamespaceMetadataState Empty => new NamespaceMetadataState();
     }
 }

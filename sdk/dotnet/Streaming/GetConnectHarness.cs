@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnectHarness = Oci.Streaming.GetConnectHarness.Invoke(new()
         ///     {
-        ///         var testConnectHarness = Output.Create(Oci.Streaming.GetConnectHarness.InvokeAsync(new Oci.Streaming.GetConnectHarnessArgs
-        ///         {
-        ///             ConnectHarnessId = oci_streaming_connect_harnes.Test_connect_harnes.Id,
-        ///         }));
-        ///     }
+        ///         ConnectHarnessId = oci_streaming_connect_harnes.Test_connect_harnes.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnectHarness = Oci.Streaming.GetConnectHarness.Invoke(new()
         ///     {
-        ///         var testConnectHarness = Output.Create(Oci.Streaming.GetConnectHarness.InvokeAsync(new Oci.Streaming.GetConnectHarnessArgs
-        ///         {
-        ///             ConnectHarnessId = oci_streaming_connect_harnes.Test_connect_harnes.Id,
-        ///         }));
-        ///     }
+        ///         ConnectHarnessId = oci_streaming_connect_harnes.Test_connect_harnes.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Streaming
     }
 
 
-    public sealed class GetConnectHarnessArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectHarnessArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the connect harness.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Streaming
         public GetConnectHarnessArgs()
         {
         }
+        public static new GetConnectHarnessArgs Empty => new GetConnectHarnessArgs();
     }
 
-    public sealed class GetConnectHarnessInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectHarnessInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the connect harness.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Streaming
         public GetConnectHarnessInvokeArgs()
         {
         }
+        public static new GetConnectHarnessInvokeArgs Empty => new GetConnectHarnessInvokeArgs();
     }
 
 

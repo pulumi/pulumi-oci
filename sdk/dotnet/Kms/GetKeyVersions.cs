@@ -28,21 +28,19 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKeyVersions = Oci.Kms.GetKeyVersions.Invoke(new()
         ///     {
-        ///         var testKeyVersions = Output.Create(Oci.Kms.GetKeyVersions.InvokeAsync(new Oci.Kms.GetKeyVersionsArgs
-        ///         {
-        ///             KeyId = oci_kms_key.Test_key.Id,
-        ///             ManagementEndpoint = @var.Key_version_management_endpoint,
-        ///         }));
-        ///     }
+        ///         KeyId = oci_kms_key.Test_key.Id,
+        ///         ManagementEndpoint = @var.Key_version_management_endpoint,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -67,21 +65,19 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKeyVersions = Oci.Kms.GetKeyVersions.Invoke(new()
         ///     {
-        ///         var testKeyVersions = Output.Create(Oci.Kms.GetKeyVersions.InvokeAsync(new Oci.Kms.GetKeyVersionsArgs
-        ///         {
-        ///             KeyId = oci_kms_key.Test_key.Id,
-        ///             ManagementEndpoint = @var.Key_version_management_endpoint,
-        ///         }));
-        ///     }
+        ///         KeyId = oci_kms_key.Test_key.Id,
+        ///         ManagementEndpoint = @var.Key_version_management_endpoint,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.Kms
     }
 
 
-    public sealed class GetKeyVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetKeyVersionsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetKeyVersionsFilterArgs>? _filters;
@@ -116,9 +112,10 @@ namespace Pulumi.Oci.Kms
         public GetKeyVersionsArgs()
         {
         }
+        public static new GetKeyVersionsArgs Empty => new GetKeyVersionsArgs();
     }
 
-    public sealed class GetKeyVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKeyVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetKeyVersionsFilterInputArgs>? _filters;
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Kms
         public GetKeyVersionsInvokeArgs()
         {
         }
+        public static new GetKeyVersionsInvokeArgs Empty => new GetKeyVersionsInvokeArgs();
     }
 
 

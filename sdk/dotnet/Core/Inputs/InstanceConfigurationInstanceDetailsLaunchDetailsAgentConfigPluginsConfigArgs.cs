@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether the plugin should be enabled or disabled. Accepted values are `ENABLED` and `DISABLED`
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs();
     }
 }

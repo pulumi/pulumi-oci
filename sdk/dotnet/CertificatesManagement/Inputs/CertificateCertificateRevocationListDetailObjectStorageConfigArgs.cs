@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateCertificateRevocationListDetailObjectStorageConfigArgs : Pulumi.ResourceArgs
+    public sealed class CertificateCertificateRevocationListDetailObjectStorageConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket where the CRL is stored.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateCertificateRevocationListDetailObjectStorageConfigArgs()
         {
         }
+        public static new CertificateCertificateRevocationListDetailObjectStorageConfigArgs Empty => new CertificateCertificateRevocationListDetailObjectStorageConfigArgs();
     }
 }

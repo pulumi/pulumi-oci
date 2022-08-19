@@ -41,6 +41,38 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewalls in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_firewall_display_name())
+     *             .id(var_.web_app_firewall_id())
+     *             .states(var_.web_app_firewall_state())
+     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFirewallsResult> getFirewalls(GetFirewallsArgs args) {
@@ -52,6 +84,38 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewalls in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_firewall_display_name())
+     *             .id(var_.web_app_firewall_id())
+     *             .states(var_.web_app_firewall_state())
+     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFirewallsResult> getFirewallsPlain(GetFirewallsPlainArgs args) {
@@ -63,6 +127,38 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewalls in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_firewall_display_name())
+     *             .id(var_.web_app_firewall_id())
+     *             .states(var_.web_app_firewall_state())
+     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFirewallsResult> getFirewalls(GetFirewallsArgs args, InvokeOptions options) {
@@ -74,6 +170,38 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewalls in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_firewall_display_name())
+     *             .id(var_.web_app_firewall_id())
+     *             .states(var_.web_app_firewall_state())
+     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFirewallsResult> getFirewallsPlain(GetFirewallsPlainArgs args, InvokeOptions options) {
@@ -85,6 +213,34 @@ public final class WafFunctions {
      * Gets a NetworkAddressList by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
+     *             .networkAddressListId(oci_waf_network_address_list.test_network_address_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkAddressListResult> getNetworkAddressList(GetNetworkAddressListArgs args) {
@@ -96,6 +252,34 @@ public final class WafFunctions {
      * Gets a NetworkAddressList by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
+     *             .networkAddressListId(oci_waf_network_address_list.test_network_address_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkAddressListResult> getNetworkAddressListPlain(GetNetworkAddressListPlainArgs args) {
@@ -107,6 +291,34 @@ public final class WafFunctions {
      * Gets a NetworkAddressList by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
+     *             .networkAddressListId(oci_waf_network_address_list.test_network_address_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkAddressListResult> getNetworkAddressList(GetNetworkAddressListArgs args, InvokeOptions options) {
@@ -118,6 +330,34 @@ public final class WafFunctions {
      * Gets a NetworkAddressList by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
+     *             .networkAddressListId(oci_waf_network_address_list.test_network_address_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkAddressListResult> getNetworkAddressListPlain(GetNetworkAddressListPlainArgs args, InvokeOptions options) {
@@ -129,6 +369,37 @@ public final class WafFunctions {
      * Gets a list of all NetworkAddressLists in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_address_list_display_name())
+     *             .id(var_.network_address_list_id())
+     *             .states(var_.network_address_list_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkAddressListsResult> getNetworkAddressLists(GetNetworkAddressListsArgs args) {
@@ -140,6 +411,37 @@ public final class WafFunctions {
      * Gets a list of all NetworkAddressLists in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_address_list_display_name())
+     *             .id(var_.network_address_list_id())
+     *             .states(var_.network_address_list_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkAddressListsResult> getNetworkAddressListsPlain(GetNetworkAddressListsPlainArgs args) {
@@ -151,6 +453,37 @@ public final class WafFunctions {
      * Gets a list of all NetworkAddressLists in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_address_list_display_name())
+     *             .id(var_.network_address_list_id())
+     *             .states(var_.network_address_list_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkAddressListsResult> getNetworkAddressLists(GetNetworkAddressListsArgs args, InvokeOptions options) {
@@ -162,6 +495,37 @@ public final class WafFunctions {
      * Gets a list of all NetworkAddressLists in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetNetworkAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_address_list_display_name())
+     *             .id(var_.network_address_list_id())
+     *             .states(var_.network_address_list_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkAddressListsResult> getNetworkAddressListsPlain(GetNetworkAddressListsPlainArgs args, InvokeOptions options) {
@@ -173,6 +537,39 @@ public final class WafFunctions {
      * Lists of protection capabilities filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.protection_capability_display_name())
+     *             .groupTags(var_.protection_capability_group_tag())
+     *             .isLatestVersions(var_.protection_capability_is_latest_version())
+     *             .key(var_.protection_capability_key())
+     *             .type(var_.protection_capability_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtectionCapabilitiesResult> getProtectionCapabilities(GetProtectionCapabilitiesArgs args) {
@@ -184,6 +581,39 @@ public final class WafFunctions {
      * Lists of protection capabilities filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.protection_capability_display_name())
+     *             .groupTags(var_.protection_capability_group_tag())
+     *             .isLatestVersions(var_.protection_capability_is_latest_version())
+     *             .key(var_.protection_capability_key())
+     *             .type(var_.protection_capability_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtectionCapabilitiesResult> getProtectionCapabilitiesPlain(GetProtectionCapabilitiesPlainArgs args) {
@@ -195,6 +625,39 @@ public final class WafFunctions {
      * Lists of protection capabilities filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.protection_capability_display_name())
+     *             .groupTags(var_.protection_capability_group_tag())
+     *             .isLatestVersions(var_.protection_capability_is_latest_version())
+     *             .key(var_.protection_capability_key())
+     *             .type(var_.protection_capability_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtectionCapabilitiesResult> getProtectionCapabilities(GetProtectionCapabilitiesArgs args, InvokeOptions options) {
@@ -206,6 +669,39 @@ public final class WafFunctions {
      * Lists of protection capabilities filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.protection_capability_display_name())
+     *             .groupTags(var_.protection_capability_group_tag())
+     *             .isLatestVersions(var_.protection_capability_is_latest_version())
+     *             .key(var_.protection_capability_key())
+     *             .type(var_.protection_capability_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtectionCapabilitiesResult> getProtectionCapabilitiesPlain(GetProtectionCapabilitiesPlainArgs args, InvokeOptions options) {
@@ -217,6 +713,36 @@ public final class WafFunctions {
      * Lists of available group tags filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.protection_capability_group_tag_name())
+     *             .type(var_.protection_capability_group_tag_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs args) {
@@ -228,6 +754,36 @@ public final class WafFunctions {
      * Lists of available group tags filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.protection_capability_group_tag_name())
+     *             .type(var_.protection_capability_group_tag_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTagsPlain(GetProtectionCapabilityGroupTagsPlainArgs args) {
@@ -239,6 +795,36 @@ public final class WafFunctions {
      * Lists of available group tags filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.protection_capability_group_tag_name())
+     *             .type(var_.protection_capability_group_tag_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs args, InvokeOptions options) {
@@ -250,6 +836,36 @@ public final class WafFunctions {
      * Lists of available group tags filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetProtectionCapabilityGroupTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.protection_capability_group_tag_name())
+     *             .type(var_.protection_capability_group_tag_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtectionCapabilityGroupTagsResult> getProtectionCapabilityGroupTagsPlain(GetProtectionCapabilityGroupTagsPlainArgs args, InvokeOptions options) {
@@ -261,6 +877,34 @@ public final class WafFunctions {
      * Gets a WebAppFirewall by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
+     *             .webAppFirewallId(oci_waf_web_app_firewall.test_web_app_firewall().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWebAppFirewallResult> getWebAppFirewall(GetWebAppFirewallArgs args) {
@@ -272,6 +916,34 @@ public final class WafFunctions {
      * Gets a WebAppFirewall by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
+     *             .webAppFirewallId(oci_waf_web_app_firewall.test_web_app_firewall().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWebAppFirewallResult> getWebAppFirewallPlain(GetWebAppFirewallPlainArgs args) {
@@ -283,6 +955,34 @@ public final class WafFunctions {
      * Gets a WebAppFirewall by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
+     *             .webAppFirewallId(oci_waf_web_app_firewall.test_web_app_firewall().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWebAppFirewallResult> getWebAppFirewall(GetWebAppFirewallArgs args, InvokeOptions options) {
@@ -294,6 +994,34 @@ public final class WafFunctions {
      * Gets a WebAppFirewall by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
+     *             .webAppFirewallId(oci_waf_web_app_firewall.test_web_app_firewall().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWebAppFirewallResult> getWebAppFirewallPlain(GetWebAppFirewallPlainArgs args, InvokeOptions options) {
@@ -305,6 +1033,37 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewallPolicies in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_firewall_policy_display_name())
+     *             .id(var_.web_app_firewall_policy_id())
+     *             .states(var_.web_app_firewall_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWebAppFirewallPoliciesResult> getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs args) {
@@ -316,6 +1075,37 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewallPolicies in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_firewall_policy_display_name())
+     *             .id(var_.web_app_firewall_policy_id())
+     *             .states(var_.web_app_firewall_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWebAppFirewallPoliciesResult> getWebAppFirewallPoliciesPlain(GetWebAppFirewallPoliciesPlainArgs args) {
@@ -327,6 +1117,37 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewallPolicies in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_firewall_policy_display_name())
+     *             .id(var_.web_app_firewall_policy_id())
+     *             .states(var_.web_app_firewall_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWebAppFirewallPoliciesResult> getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs args, InvokeOptions options) {
@@ -338,6 +1159,37 @@ public final class WafFunctions {
      * Gets a list of all WebAppFirewallPolicies in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_firewall_policy_display_name())
+     *             .id(var_.web_app_firewall_policy_id())
+     *             .states(var_.web_app_firewall_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWebAppFirewallPoliciesResult> getWebAppFirewallPoliciesPlain(GetWebAppFirewallPoliciesPlainArgs args, InvokeOptions options) {
@@ -349,6 +1201,34 @@ public final class WafFunctions {
      * Gets a WebAppFirewallPolicy with the given OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
+     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs args) {
@@ -360,6 +1240,34 @@ public final class WafFunctions {
      * Gets a WebAppFirewallPolicy with the given OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
+     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicyPlain(GetWebAppFirewallPolicyPlainArgs args) {
@@ -371,6 +1279,34 @@ public final class WafFunctions {
      * Gets a WebAppFirewallPolicy with the given OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
+     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs args, InvokeOptions options) {
@@ -382,6 +1318,34 @@ public final class WafFunctions {
      * Gets a WebAppFirewallPolicy with the given OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waf.WafFunctions;
+     * import com.pulumi.oci.Waf.inputs.GetWebAppFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
+     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWebAppFirewallPolicyResult> getWebAppFirewallPolicyPlain(GetWebAppFirewallPolicyPlainArgs args, InvokeOptions options) {

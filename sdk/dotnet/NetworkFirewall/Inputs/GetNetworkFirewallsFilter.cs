@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class GetNetworkFirewallsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkFirewallsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public GetNetworkFirewallsFilterArgs()
         {
         }
+        public static new GetNetworkFirewallsFilterArgs Empty => new GetNetworkFirewallsFilterArgs();
     }
 }

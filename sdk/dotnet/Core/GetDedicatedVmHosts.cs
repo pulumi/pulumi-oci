@@ -25,26 +25,24 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDedicatedVmHosts = Oci.Core.GetDedicatedVmHosts.Invoke(new()
         ///     {
-        ///         var testDedicatedVmHosts = Output.Create(Oci.Core.GetDedicatedVmHosts.InvokeAsync(new Oci.Core.GetDedicatedVmHostsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
-        ///             DisplayName = @var.Dedicated_vm_host_display_name,
-        ///             InstanceShapeName = @var.Dedicated_vm_host_instance_shape_name,
-        ///             RemainingMemoryInGbsGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
-        ///             RemainingOcpusGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
-        ///             State = @var.Dedicated_vm_host_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
+        ///         DisplayName = @var.Dedicated_vm_host_display_name,
+        ///         InstanceShapeName = @var.Dedicated_vm_host_instance_shape_name,
+        ///         RemainingMemoryInGbsGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
+        ///         RemainingOcpusGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
+        ///         State = @var.Dedicated_vm_host_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,26 +64,24 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDedicatedVmHosts = Oci.Core.GetDedicatedVmHosts.Invoke(new()
         ///     {
-        ///         var testDedicatedVmHosts = Output.Create(Oci.Core.GetDedicatedVmHosts.InvokeAsync(new Oci.Core.GetDedicatedVmHostsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
-        ///             DisplayName = @var.Dedicated_vm_host_display_name,
-        ///             InstanceShapeName = @var.Dedicated_vm_host_instance_shape_name,
-        ///             RemainingMemoryInGbsGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
-        ///             RemainingOcpusGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
-        ///             State = @var.Dedicated_vm_host_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
+        ///         DisplayName = @var.Dedicated_vm_host_display_name,
+        ///         InstanceShapeName = @var.Dedicated_vm_host_instance_shape_name,
+        ///         RemainingMemoryInGbsGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
+        ///         RemainingOcpusGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
+        ///         State = @var.Dedicated_vm_host_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDedicatedVmHostsArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVmHostsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -150,9 +146,10 @@ namespace Pulumi.Oci.Core
         public GetDedicatedVmHostsArgs()
         {
         }
+        public static new GetDedicatedVmHostsArgs Empty => new GetDedicatedVmHostsArgs();
     }
 
-    public sealed class GetDedicatedVmHostsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVmHostsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -207,6 +204,7 @@ namespace Pulumi.Oci.Core
         public GetDedicatedVmHostsInvokeArgs()
         {
         }
+        public static new GetDedicatedVmHostsInvokeArgs Empty => new GetDedicatedVmHostsInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceMaintenanceReboot = Oci.Core.GetInstanceMaintenanceReboot.Invoke(new()
         ///     {
-        ///         var testInstanceMaintenanceReboot = Output.Create(Oci.Core.GetInstanceMaintenanceReboot.InvokeAsync(new Oci.Core.GetInstanceMaintenanceRebootArgs
-        ///         {
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///         }));
-        ///     }
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceMaintenanceReboot = Oci.Core.GetInstanceMaintenanceReboot.Invoke(new()
         ///     {
-        ///         var testInstanceMaintenanceReboot = Output.Create(Oci.Core.GetInstanceMaintenanceReboot.InvokeAsync(new Oci.Core.GetInstanceMaintenanceRebootArgs
-        ///         {
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///         }));
-        ///     }
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstanceMaintenanceRebootArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceMaintenanceRebootArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetInstanceMaintenanceRebootArgs()
         {
         }
+        public static new GetInstanceMaintenanceRebootArgs Empty => new GetInstanceMaintenanceRebootArgs();
     }
 
-    public sealed class GetInstanceMaintenanceRebootInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceMaintenanceRebootInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetInstanceMaintenanceRebootInvokeArgs()
         {
         }
+        public static new GetInstanceMaintenanceRebootInvokeArgs Empty => new GetInstanceMaintenanceRebootInvokeArgs();
     }
 
 

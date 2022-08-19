@@ -27,6 +27,50 @@ import javax.annotation.Nullable;
  * Starts a build pipeline run for a predefined build pipeline.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.BuildRun;
+ * import com.pulumi.oci.DevOps.BuildRunArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildRunBuildRunArgumentsArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildRunCommitInfoArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBuildRun = new BuildRun(&#34;testBuildRun&#34;, BuildRunArgs.builder()        
+ *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+ *             .buildRunArguments(BuildRunBuildRunArgumentsArgs.builder()
+ *                 .items(BuildRunBuildRunArgumentsItemArgs.builder()
+ *                     .name(var_.build_run_build_run_arguments_items_name())
+ *                     .value(var_.build_run_build_run_arguments_items_value())
+ *                     .build())
+ *                 .build())
+ *             .commitInfo(BuildRunCommitInfoArgs.builder()
+ *                 .commitHash(var_.build_run_commit_info_commit_hash())
+ *                 .repositoryBranch(var_.build_run_commit_info_repository_branch())
+ *                 .repositoryUrl(var_.build_run_commit_info_repository_url())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.build_run_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

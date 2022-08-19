@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployStage = Oci.DevOps.GetDeployStage.Invoke(new()
         ///     {
-        ///         var testDeployStage = Output.Create(Oci.DevOps.GetDeployStage.InvokeAsync(new Oci.DevOps.GetDeployStageArgs
-        ///         {
-        ///             DeployStageId = oci_devops_deploy_stage.Test_deploy_stage.Id,
-        ///         }));
-        ///     }
+        ///         DeployStageId = oci_devops_deploy_stage.Test_deploy_stage.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployStage = Oci.DevOps.GetDeployStage.Invoke(new()
         ///     {
-        ///         var testDeployStage = Output.Create(Oci.DevOps.GetDeployStage.InvokeAsync(new Oci.DevOps.GetDeployStageArgs
-        ///         {
-        ///             DeployStageId = oci_devops_deploy_stage.Test_deploy_stage.Id,
-        ///         }));
-        ///     }
+        ///         DeployStageId = oci_devops_deploy_stage.Test_deploy_stage.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetDeployStageArgs : Pulumi.InvokeArgs
+    public sealed class GetDeployStageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique stage identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DevOps
         public GetDeployStageArgs()
         {
         }
+        public static new GetDeployStageArgs Empty => new GetDeployStageArgs();
     }
 
-    public sealed class GetDeployStageInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeployStageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique stage identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DevOps
         public GetDeployStageInvokeArgs()
         {
         }
+        public static new GetDeployStageInvokeArgs Empty => new GetDeployStageInvokeArgs();
     }
 
 

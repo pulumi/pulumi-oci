@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsGetArgs()
         {
         }
+        public static new NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsGetArgs Empty => new NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsGetArgs();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkLoadBalancerHealth = Oci.NetworkLoadBalancer.GetNetworkLoadBalancerHealth.Invoke(new()
         ///     {
-        ///         var testNetworkLoadBalancerHealth = Output.Create(Oci.NetworkLoadBalancer.GetNetworkLoadBalancerHealth.InvokeAsync(new Oci.NetworkLoadBalancer.GetNetworkLoadBalancerHealthArgs
-        ///         {
-        ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkLoadBalancerHealth = Oci.NetworkLoadBalancer.GetNetworkLoadBalancerHealth.Invoke(new()
         ///     {
-        ///         var testNetworkLoadBalancerHealth = Output.Create(Oci.NetworkLoadBalancer.GetNetworkLoadBalancerHealth.InvokeAsync(new Oci.NetworkLoadBalancer.GetNetworkLoadBalancerHealthArgs
-        ///         {
-        ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     }
 
 
-    public sealed class GetNetworkLoadBalancerHealthArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkLoadBalancerHealthArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetNetworkLoadBalancerHealthArgs()
         {
         }
+        public static new GetNetworkLoadBalancerHealthArgs Empty => new GetNetworkLoadBalancerHealthArgs();
     }
 
-    public sealed class GetNetworkLoadBalancerHealthInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkLoadBalancerHealthInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetNetworkLoadBalancerHealthInvokeArgs()
         {
         }
+        public static new GetNetworkLoadBalancerHealthInvokeArgs Empty => new GetNetworkLoadBalancerHealthInvokeArgs();
     }
 
 

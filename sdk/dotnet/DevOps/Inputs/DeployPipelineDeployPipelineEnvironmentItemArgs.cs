@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployPipelineDeployPipelineEnvironmentItemArgs : Pulumi.ResourceArgs
+    public sealed class DeployPipelineDeployPipelineEnvironmentItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of an Environment
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployPipelineDeployPipelineEnvironmentItemArgs()
         {
         }
+        public static new DeployPipelineDeployPipelineEnvironmentItemArgs Empty => new DeployPipelineDeployPipelineEnvironmentItemArgs();
     }
 }

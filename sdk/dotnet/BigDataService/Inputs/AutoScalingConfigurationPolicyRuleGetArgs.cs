@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public AutoScalingConfigurationPolicyRuleGetArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyRuleGetArgs Empty => new AutoScalingConfigurationPolicyRuleGetArgs();
     }
 }

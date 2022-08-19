@@ -22,27 +22,25 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVtaps = Oci.Core.GetVtaps.Invoke(new()
         ///     {
-        ///         var testVtaps = Output.Create(Oci.Core.GetVtaps.InvokeAsync(new Oci.Core.GetVtapsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Vtap_display_name,
-        ///             IsVtapEnabled = @var.Vtap_is_vtap_enabled,
-        ///             Source = @var.Vtap_source,
-        ///             State = @var.Vtap_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TargetIp = @var.Vtap_target_ip,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Vtap_display_name,
+        ///         IsVtapEnabled = @var.Vtap_is_vtap_enabled,
+        ///         Source = @var.Vtap_source,
+        ///         State = @var.Vtap_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TargetIp = @var.Vtap_target_ip,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,27 +59,25 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVtaps = Oci.Core.GetVtaps.Invoke(new()
         ///     {
-        ///         var testVtaps = Output.Create(Oci.Core.GetVtaps.InvokeAsync(new Oci.Core.GetVtapsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Vtap_display_name,
-        ///             IsVtapEnabled = @var.Vtap_is_vtap_enabled,
-        ///             Source = @var.Vtap_source,
-        ///             State = @var.Vtap_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TargetIp = @var.Vtap_target_ip,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Vtap_display_name,
+        ///         IsVtapEnabled = @var.Vtap_is_vtap_enabled,
+        ///         Source = @var.Vtap_source,
+        ///         State = @var.Vtap_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TargetIp = @var.Vtap_target_ip,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVtapsArgs : Pulumi.InvokeArgs
+    public sealed class GetVtapsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -154,9 +150,10 @@ namespace Pulumi.Oci.Core
         public GetVtapsArgs()
         {
         }
+        public static new GetVtapsArgs Empty => new GetVtapsArgs();
     }
 
-    public sealed class GetVtapsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVtapsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -219,6 +216,7 @@ namespace Pulumi.Oci.Core
         public GetVtapsInvokeArgs()
         {
         }
+        public static new GetVtapsInvokeArgs Empty => new GetVtapsInvokeArgs();
     }
 
 

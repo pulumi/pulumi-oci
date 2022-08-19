@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms.Inputs
 {
 
-    public sealed class VaultRestoreFromFileArgs : Pulumi.ResourceArgs
+    public sealed class VaultRestoreFromFileArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// content length of vault's backup binary file
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Kms.Inputs
         public VaultRestoreFromFileArgs()
         {
         }
+        public static new VaultRestoreFromFileArgs Empty => new VaultRestoreFromFileArgs();
     }
 }

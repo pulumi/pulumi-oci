@@ -27,37 +27,35 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDrgAttachment = new Oci.Core.DrgAttachment("testDrgAttachment", new()
     ///     {
-    ///         var testDrgAttachment = new Oci.Core.DrgAttachment("testDrgAttachment", new Oci.Core.DrgAttachmentArgs
+    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             DrgId = oci_core_drg.Test_drg.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Drg_attachment_display_name,
-    ///             DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             NetworkDetails = new Oci.Core.Inputs.DrgAttachmentNetworkDetailsArgs
-    ///             {
-    ///                 Id = oci_core_vcn.Test_vcn.Id,
-    ///                 Type = @var.Drg_attachment_network_details_type,
-    ///                 RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///                 VcnRouteType = @var.Drg_attachment_network_details_vcn_route_type,
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Drg_attachment_display_name,
+    ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         NetworkDetails = new Oci.Core.Inputs.DrgAttachmentNetworkDetailsArgs
+    ///         {
+    ///             Id = oci_core_vcn.Test_vcn.Id,
+    ///             Type = @var.Drg_attachment_network_details_type,
+    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///             VcnRouteType = @var.Drg_attachment_network_details_vcn_route_type,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -69,7 +67,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgAttachment:DrgAttachment")]
-    public partial class DrgAttachment : Pulumi.CustomResource
+    public partial class DrgAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
@@ -200,7 +198,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DrgAttachmentArgs : Pulumi.ResourceArgs
+    public sealed class DrgAttachmentArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -278,9 +276,10 @@ namespace Pulumi.Oci.Core
         public DrgAttachmentArgs()
         {
         }
+        public static new DrgAttachmentArgs Empty => new DrgAttachmentArgs();
     }
 
-    public sealed class DrgAttachmentState : Pulumi.ResourceArgs
+    public sealed class DrgAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
@@ -382,5 +381,6 @@ namespace Pulumi.Oci.Core
         public DrgAttachmentState()
         {
         }
+        public static new DrgAttachmentState Empty => new DrgAttachmentState();
     }
 }

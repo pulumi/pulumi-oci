@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStream = Oci.Streaming.GetStream.Invoke(new()
         ///     {
-        ///         var testStream = Output.Create(Oci.Streaming.GetStream.InvokeAsync(new Oci.Streaming.GetStreamArgs
-        ///         {
-        ///             StreamId = oci_streaming_stream.Test_stream.Id,
-        ///         }));
-        ///     }
+        ///         StreamId = oci_streaming_stream.Test_stream.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStream = Oci.Streaming.GetStream.Invoke(new()
         ///     {
-        ///         var testStream = Output.Create(Oci.Streaming.GetStream.InvokeAsync(new Oci.Streaming.GetStreamArgs
-        ///         {
-        ///             StreamId = oci_streaming_stream.Test_stream.Id,
-        ///         }));
-        ///     }
+        ///         StreamId = oci_streaming_stream.Test_stream.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Streaming
     }
 
 
-    public sealed class GetStreamArgs : Pulumi.InvokeArgs
+    public sealed class GetStreamArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the stream.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Streaming
         public GetStreamArgs()
         {
         }
+        public static new GetStreamArgs Empty => new GetStreamArgs();
     }
 
-    public sealed class GetStreamInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetStreamInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the stream.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Streaming
         public GetStreamInvokeArgs()
         {
         }
+        public static new GetStreamInvokeArgs Empty => new GetStreamInvokeArgs();
     }
 
 

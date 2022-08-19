@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJavaReleases = Oci.Jms.GetJavaReleases.Invoke(new()
         ///     {
-        ///         var testJavaReleases = Output.Create(Oci.Jms.GetJavaReleases.InvokeAsync(new Oci.Jms.GetJavaReleasesArgs
-        ///         {
-        ///             FamilyVersion = @var.Java_release_family_version,
-        ///             JreSecurityStatus = @var.Java_release_jre_security_status,
-        ///             LicenseType = @var.Java_release_license_type,
-        ///             ReleaseType = @var.Java_release_release_type,
-        ///             ReleaseVersion = @var.Java_release_release_version,
-        ///         }));
-        ///     }
+        ///         FamilyVersion = @var.Java_release_family_version,
+        ///         JreSecurityStatus = @var.Java_release_jre_security_status,
+        ///         LicenseType = @var.Java_release_license_type,
+        ///         ReleaseType = @var.Java_release_release_type,
+        ///         ReleaseVersion = @var.Java_release_release_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJavaReleases = Oci.Jms.GetJavaReleases.Invoke(new()
         ///     {
-        ///         var testJavaReleases = Output.Create(Oci.Jms.GetJavaReleases.InvokeAsync(new Oci.Jms.GetJavaReleasesArgs
-        ///         {
-        ///             FamilyVersion = @var.Java_release_family_version,
-        ///             JreSecurityStatus = @var.Java_release_jre_security_status,
-        ///             LicenseType = @var.Java_release_license_type,
-        ///             ReleaseType = @var.Java_release_release_type,
-        ///             ReleaseVersion = @var.Java_release_release_version,
-        ///         }));
-        ///     }
+        ///         FamilyVersion = @var.Java_release_family_version,
+        ///         JreSecurityStatus = @var.Java_release_jre_security_status,
+        ///         LicenseType = @var.Java_release_license_type,
+        ///         ReleaseType = @var.Java_release_release_type,
+        ///         ReleaseVersion = @var.Java_release_release_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetJavaReleasesArgs : Pulumi.InvokeArgs
+    public sealed class GetJavaReleasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The version identifier for the Java family.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Jms
         public GetJavaReleasesArgs()
         {
         }
+        public static new GetJavaReleasesArgs Empty => new GetJavaReleasesArgs();
     }
 
-    public sealed class GetJavaReleasesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJavaReleasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The version identifier for the Java family.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Jms
         public GetJavaReleasesInvokeArgs()
         {
         }
+        public static new GetJavaReleasesInvokeArgs Empty => new GetJavaReleasesInvokeArgs();
     }
 
 

@@ -18,22 +18,20 @@ namespace Pulumi.Oci.Mysql
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAnalyticsCluster = new Oci.Mysql.AnalyticsCluster("testAnalyticsCluster", new()
     ///     {
-    ///         var testAnalyticsCluster = new Oci.Mysql.AnalyticsCluster("testAnalyticsCluster", new Oci.Mysql.AnalyticsClusterArgs
-    ///         {
-    ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///             ClusterSize = @var.Analytics_cluster_cluster_size,
-    ///             ShapeName = oci_mysql_shape.Test_shape.Name,
-    ///         });
-    ///     }
+    ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+    ///         ClusterSize = @var.Analytics_cluster_cluster_size,
+    ///         ShapeName = oci_mysql_shape.Test_shape.Name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.Mysql
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/analyticsCluster:AnalyticsCluster")]
-    public partial class AnalyticsCluster : Pulumi.CustomResource
+    public partial class AnalyticsCluster : global::Pulumi.CustomResource
     {
         /// <summary>
         /// An Analytics Cluster Node is a compute host that is part of an Analytics Cluster.
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.Mysql
         }
     }
 
-    public sealed class AnalyticsClusterArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A change to the number of nodes in the Analytics Cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the Analytics Cluster is re-provisioned.
@@ -168,9 +166,10 @@ namespace Pulumi.Oci.Mysql
         public AnalyticsClusterArgs()
         {
         }
+        public static new AnalyticsClusterArgs Empty => new AnalyticsClusterArgs();
     }
 
-    public sealed class AnalyticsClusterState : Pulumi.ResourceArgs
+    public sealed class AnalyticsClusterState : global::Pulumi.ResourceArgs
     {
         [Input("clusterNodes")]
         private InputList<Inputs.AnalyticsClusterClusterNodeGetArgs>? _clusterNodes;
@@ -229,5 +228,6 @@ namespace Pulumi.Oci.Mysql
         public AnalyticsClusterState()
         {
         }
+        public static new AnalyticsClusterState Empty => new AnalyticsClusterState();
     }
 }

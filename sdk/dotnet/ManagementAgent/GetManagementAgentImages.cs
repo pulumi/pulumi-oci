@@ -22,23 +22,21 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentImages = Oci.ManagementAgent.GetManagementAgentImages.Invoke(new()
         ///     {
-        ///         var testManagementAgentImages = Output.Create(Oci.ManagementAgent.GetManagementAgentImages.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentImagesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             InstallType = @var.Management_agent_image_install_type,
-        ///             Name = @var.Management_agent_image_name,
-        ///             State = @var.Management_agent_image_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         InstallType = @var.Management_agent_image_install_type,
+        ///         Name = @var.Management_agent_image_name,
+        ///         State = @var.Management_agent_image_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentImages = Oci.ManagementAgent.GetManagementAgentImages.Invoke(new()
         ///     {
-        ///         var testManagementAgentImages = Output.Create(Oci.ManagementAgent.GetManagementAgentImages.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentImagesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             InstallType = @var.Management_agent_image_install_type,
-        ///             Name = @var.Management_agent_image_name,
-        ///             State = @var.Management_agent_image_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         InstallType = @var.Management_agent_image_install_type,
+        ///         Name = @var.Management_agent_image_name,
+        ///         State = @var.Management_agent_image_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentImagesArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentImagesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentImagesArgs()
         {
         }
+        public static new GetManagementAgentImagesArgs Empty => new GetManagementAgentImagesArgs();
     }
 
-    public sealed class GetManagementAgentImagesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentImagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentImagesInvokeArgs()
         {
         }
+        public static new GetManagementAgentImagesInvokeArgs Empty => new GetManagementAgentImagesInvokeArgs();
     }
 
 

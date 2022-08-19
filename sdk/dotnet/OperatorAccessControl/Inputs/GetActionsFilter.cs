@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OperatorAccessControl.Inputs
 {
 
-    public sealed class GetActionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetActionsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OperatorAccessControl.Inputs
         public GetActionsFilterArgs()
         {
         }
+        public static new GetActionsFilterArgs Empty => new GetActionsFilterArgs();
     }
 }

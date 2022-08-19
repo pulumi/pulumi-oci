@@ -17,27 +17,25 @@ namespace Pulumi.Oci.Blockchain
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPeer = new Oci.Blockchain.Peer("testPeer", new()
     ///     {
-    ///         var testPeer = new Oci.Blockchain.Peer("testPeer", new Oci.Blockchain.PeerArgs
+    ///         Ad = @var.Peer_ad,
+    ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+    ///         OcpuAllocationParam = new Oci.Blockchain.Inputs.PeerOcpuAllocationParamArgs
     ///         {
-    ///             Ad = @var.Peer_ad,
-    ///             BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-    ///             OcpuAllocationParam = new Oci.Blockchain.Inputs.PeerOcpuAllocationParamArgs
-    ///             {
-    ///                 OcpuAllocationNumber = @var.Peer_ocpu_allocation_param_ocpu_allocation_number,
-    ///             },
-    ///             Role = @var.Peer_role,
-    ///             Alias = @var.Peer_alias,
-    ///         });
-    ///     }
+    ///             OcpuAllocationNumber = @var.Peer_ocpu_allocation_param_ocpu_allocation_number,
+    ///         },
+    ///         Role = @var.Peer_role,
+    ///         Alias = @var.Peer_alias,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.Blockchain
     /// ```
     /// </summary>
     [OciResourceType("oci:Blockchain/peer:Peer")]
-    public partial class Peer : Pulumi.CustomResource
+    public partial class Peer : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Availability Domain to place new peer
@@ -143,7 +141,7 @@ namespace Pulumi.Oci.Blockchain
         }
     }
 
-    public sealed class PeerArgs : Pulumi.ResourceArgs
+    public sealed class PeerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Availability Domain to place new peer
@@ -178,9 +176,10 @@ namespace Pulumi.Oci.Blockchain
         public PeerArgs()
         {
         }
+        public static new PeerArgs Empty => new PeerArgs();
     }
 
-    public sealed class PeerState : Pulumi.ResourceArgs
+    public sealed class PeerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Availability Domain to place new peer
@@ -233,5 +232,6 @@ namespace Pulumi.Oci.Blockchain
         public PeerState()
         {
         }
+        public static new PeerState Empty => new PeerState();
     }
 }

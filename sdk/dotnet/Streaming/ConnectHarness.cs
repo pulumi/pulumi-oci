@@ -19,25 +19,23 @@ namespace Pulumi.Oci.Streaming
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testConnectHarness = new Oci.Streaming.ConnectHarness("testConnectHarness", new()
     ///     {
-    ///         var testConnectHarness = new Oci.Streaming.ConnectHarness("testConnectHarness", new Oci.Streaming.ConnectHarnessArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = @var.Connect_harness_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = @var.Connect_harness_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.Streaming
     /// ```
     /// </summary>
     [OciResourceType("oci:Streaming/connectHarness:ConnectHarness")]
-    public partial class ConnectHarness : Pulumi.CustomResource
+    public partial class ConnectHarness : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the connect harness.
@@ -137,7 +135,7 @@ namespace Pulumi.Oci.Streaming
         }
     }
 
-    public sealed class ConnectHarnessArgs : Pulumi.ResourceArgs
+    public sealed class ConnectHarnessArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the connect harness.
@@ -178,9 +176,10 @@ namespace Pulumi.Oci.Streaming
         public ConnectHarnessArgs()
         {
         }
+        public static new ConnectHarnessArgs Empty => new ConnectHarnessArgs();
     }
 
-    public sealed class ConnectHarnessState : Pulumi.ResourceArgs
+    public sealed class ConnectHarnessState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the connect harness.
@@ -239,5 +238,6 @@ namespace Pulumi.Oci.Streaming
         public ConnectHarnessState()
         {
         }
+        public static new ConnectHarnessState Empty => new ConnectHarnessState();
     }
 }

@@ -21,22 +21,20 @@ namespace Pulumi.Oci.OspGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscription = Oci.OspGateway.GetSubscription.Invoke(new()
         ///     {
-        ///         var testSubscription = Output.Create(Oci.OspGateway.GetSubscription.InvokeAsync(new Oci.OspGateway.GetSubscriptionArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             OspHomeRegion = @var.Subscription_osp_home_region,
-        ///             SubscriptionId = oci_osp_gateway_subscription.Test_subscription.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         OspHomeRegion = @var.Subscription_osp_home_region,
+        ///         SubscriptionId = oci_osp_gateway_subscription.Test_subscription.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.OspGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscription = Oci.OspGateway.GetSubscription.Invoke(new()
         ///     {
-        ///         var testSubscription = Output.Create(Oci.OspGateway.GetSubscription.InvokeAsync(new Oci.OspGateway.GetSubscriptionArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             OspHomeRegion = @var.Subscription_osp_home_region,
-        ///             SubscriptionId = oci_osp_gateway_subscription.Test_subscription.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         OspHomeRegion = @var.Subscription_osp_home_region,
+        ///         SubscriptionId = oci_osp_gateway_subscription.Test_subscription.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.OspGateway
     }
 
 
-    public sealed class GetSubscriptionArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.OspGateway
         public GetSubscriptionArgs()
         {
         }
+        public static new GetSubscriptionArgs Empty => new GetSubscriptionArgs();
     }
 
-    public sealed class GetSubscriptionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.OspGateway
         public GetSubscriptionInvokeArgs()
         {
         }
+        public static new GetSubscriptionInvokeArgs Empty => new GetSubscriptionInvokeArgs();
     }
 
 

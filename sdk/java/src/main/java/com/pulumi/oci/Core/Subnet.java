@@ -53,6 +53,48 @@ import javax.annotation.Nullable;
  * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Subnet;
+ * import com.pulumi.oci.Core.SubnetArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSubnet = new Subnet(&#34;testSubnet&#34;, SubnetArgs.builder()        
+ *             .cidrBlock(var_.subnet_cidr_block())
+ *             .compartmentId(var_.compartment_id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .availabilityDomain(var_.subnet_availability_domain())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .dhcpOptionsId(oci_core_dhcp_options.test_dhcp_options().id())
+ *             .displayName(var_.subnet_display_name())
+ *             .dnsLabel(var_.subnet_dns_label())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .ipv6cidrBlock(var_.subnet_ipv6cidr_block())
+ *             .ipv6cidrBlocks(var_.subnet_ipv6cidr_blocks())
+ *             .prohibitInternetIngress(var_.subnet_prohibit_internet_ingress())
+ *             .prohibitPublicIpOnVnic(var_.subnet_prohibit_public_ip_on_vnic())
+ *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .securityListIds(var_.subnet_security_list_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

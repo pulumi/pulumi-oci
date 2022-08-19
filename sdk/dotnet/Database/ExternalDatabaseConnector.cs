@@ -17,44 +17,42 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExternalDatabaseConnector = new Oci.Database.ExternalDatabaseConnector("testExternalDatabaseConnector", new()
     ///     {
-    ///         var testExternalDatabaseConnector = new Oci.Database.ExternalDatabaseConnector("testExternalDatabaseConnector", new Oci.Database.ExternalDatabaseConnectorArgs
+    ///         ConnectionCredentials = new Oci.Database.Inputs.ExternalDatabaseConnectorConnectionCredentialsArgs
     ///         {
-    ///             ConnectionCredentials = new Oci.Database.Inputs.ExternalDatabaseConnectorConnectionCredentialsArgs
-    ///             {
-    ///                 CredentialName = @var.External_database_connector_connection_credentials_credential_name,
-    ///                 CredentialType = @var.External_database_connector_connection_credentials_credential_type,
-    ///                 Password = @var.External_database_connector_connection_credentials_password,
-    ///                 Role = @var.External_database_connector_connection_credentials_role,
-    ///                 SslSecretId = oci_vault_secret.Test_secret.Id,
-    ///                 Username = @var.External_database_connector_connection_credentials_username,
-    ///             },
-    ///             ConnectionString = new Oci.Database.Inputs.ExternalDatabaseConnectorConnectionStringArgs
-    ///             {
-    ///                 Hostname = @var.External_database_connector_connection_string_hostname,
-    ///                 Port = @var.External_database_connector_connection_string_port,
-    ///                 Protocol = @var.External_database_connector_connection_string_protocol,
-    ///                 Service = @var.External_database_connector_connection_string_service,
-    ///             },
-    ///             ConnectorAgentId = oci_database_connector_agent.Test_connector_agent.Id,
-    ///             DisplayName = @var.External_database_connector_display_name,
-    ///             ExternalDatabaseId = oci_database_database.Test_database.Id,
-    ///             ConnectorType = @var.External_database_connector_connector_type,
-    ///             DefinedTags = @var.External_database_connector_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             CredentialName = @var.External_database_connector_connection_credentials_credential_name,
+    ///             CredentialType = @var.External_database_connector_connection_credentials_credential_type,
+    ///             Password = @var.External_database_connector_connection_credentials_password,
+    ///             Role = @var.External_database_connector_connection_credentials_role,
+    ///             SslSecretId = oci_vault_secret.Test_secret.Id,
+    ///             Username = @var.External_database_connector_connection_credentials_username,
+    ///         },
+    ///         ConnectionString = new Oci.Database.Inputs.ExternalDatabaseConnectorConnectionStringArgs
+    ///         {
+    ///             Hostname = @var.External_database_connector_connection_string_hostname,
+    ///             Port = @var.External_database_connector_connection_string_port,
+    ///             Protocol = @var.External_database_connector_connection_string_protocol,
+    ///             Service = @var.External_database_connector_connection_string_service,
+    ///         },
+    ///         ConnectorAgentId = oci_database_connector_agent.Test_connector_agent.Id,
+    ///         DisplayName = @var.External_database_connector_display_name,
+    ///         ExternalDatabaseId = oci_database_database.Test_database.Id,
+    ///         ConnectorType = @var.External_database_connector_connector_type,
+    ///         DefinedTags = @var.External_database_connector_defined_tags,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -66,7 +64,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector")]
-    public partial class ExternalDatabaseConnector : Pulumi.CustomResource
+    public partial class ExternalDatabaseConnector : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -196,7 +194,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExternalDatabaseConnectorArgs : Pulumi.ResourceArgs
+    public sealed class ExternalDatabaseConnectorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
@@ -261,9 +259,10 @@ namespace Pulumi.Oci.Database
         public ExternalDatabaseConnectorArgs()
         {
         }
+        public static new ExternalDatabaseConnectorArgs Empty => new ExternalDatabaseConnectorArgs();
     }
 
-    public sealed class ExternalDatabaseConnectorState : Pulumi.ResourceArgs
+    public sealed class ExternalDatabaseConnectorState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -364,5 +363,6 @@ namespace Pulumi.Oci.Database
         public ExternalDatabaseConnectorState()
         {
         }
+        public static new ExternalDatabaseConnectorState Empty => new ExternalDatabaseConnectorState();
     }
 }

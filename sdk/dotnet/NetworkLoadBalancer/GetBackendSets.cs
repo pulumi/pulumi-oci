@@ -21,20 +21,18 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackendSets = Oci.NetworkLoadBalancer.GetBackendSets.Invoke(new()
         ///     {
-        ///         var testBackendSets = Output.Create(Oci.NetworkLoadBalancer.GetBackendSets.InvokeAsync(new Oci.NetworkLoadBalancer.GetBackendSetsArgs
-        ///         {
-        ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackendSets = Oci.NetworkLoadBalancer.GetBackendSets.Invoke(new()
         ///     {
-        ///         var testBackendSets = Output.Create(Oci.NetworkLoadBalancer.GetBackendSets.InvokeAsync(new Oci.NetworkLoadBalancer.GetBackendSetsArgs
-        ///         {
-        ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     }
 
 
-    public sealed class GetBackendSetsArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetBackendSetsFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetBackendSetsArgs()
         {
         }
+        public static new GetBackendSetsArgs Empty => new GetBackendSetsArgs();
     }
 
-    public sealed class GetBackendSetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetBackendSetsFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetBackendSetsInvokeArgs()
         {
         }
+        public static new GetBackendSetsInvokeArgs Empty => new GetBackendSetsInvokeArgs();
     }
 
 

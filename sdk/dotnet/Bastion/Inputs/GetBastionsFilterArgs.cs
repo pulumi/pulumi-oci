@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Bastion.Inputs
 {
 
-    public sealed class GetBastionsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetBastionsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Bastion.Inputs
         public GetBastionsFilterInputArgs()
         {
         }
+        public static new GetBastionsFilterInputArgs Empty => new GetBastionsFilterInputArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
@@ -41,5 +41,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs()
         {
         }
+        public static new DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs Empty => new DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs();
     }
 }

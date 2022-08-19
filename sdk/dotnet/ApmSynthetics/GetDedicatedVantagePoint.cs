@@ -21,21 +21,19 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDedicatedVantagePoint = Oci.ApmSynthetics.GetDedicatedVantagePoint.Invoke(new()
         ///     {
-        ///         var testDedicatedVantagePoint = Output.Create(Oci.ApmSynthetics.GetDedicatedVantagePoint.InvokeAsync(new Oci.ApmSynthetics.GetDedicatedVantagePointArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             DedicatedVantagePointId = oci_apm_synthetics_dedicated_vantage_point.Test_dedicated_vantage_point.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         DedicatedVantagePointId = oci_apm_synthetics_dedicated_vantage_point.Test_dedicated_vantage_point.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDedicatedVantagePoint = Oci.ApmSynthetics.GetDedicatedVantagePoint.Invoke(new()
         ///     {
-        ///         var testDedicatedVantagePoint = Output.Create(Oci.ApmSynthetics.GetDedicatedVantagePoint.InvokeAsync(new Oci.ApmSynthetics.GetDedicatedVantagePointArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             DedicatedVantagePointId = oci_apm_synthetics_dedicated_vantage_point.Test_dedicated_vantage_point.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         DedicatedVantagePointId = oci_apm_synthetics_dedicated_vantage_point.Test_dedicated_vantage_point.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.ApmSynthetics
     }
 
 
-    public sealed class GetDedicatedVantagePointArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVantagePointArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetDedicatedVantagePointArgs()
         {
         }
+        public static new GetDedicatedVantagePointArgs Empty => new GetDedicatedVantagePointArgs();
     }
 
-    public sealed class GetDedicatedVantagePointInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVantagePointInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetDedicatedVantagePointInvokeArgs()
         {
         }
+        public static new GetDedicatedVantagePointInvokeArgs Empty => new GetDedicatedVantagePointInvokeArgs();
     }
 
 

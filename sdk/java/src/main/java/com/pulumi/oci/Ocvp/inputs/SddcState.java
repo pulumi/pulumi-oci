@@ -113,14 +113,14 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
      */
     @Import(name="esxiHostsCount")
     private @Nullable Output<Integer> esxiHostsCount;
 
     /**
-     * @return The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+     * @return The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
      */
     public Optional<Output<Integer>> esxiHostsCount() {
@@ -365,6 +365,21 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> isShieldedInstanceEnabled() {
         return Optional.ofNullable(this.isShieldedInstanceEnabled);
+    }
+
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     * 
+     */
+    @Import(name="isSingleHostSddc")
+    private @Nullable Output<Boolean> isSingleHostSddc;
+
+    /**
+     * @return Indicates whether this SDDC is designated for only single ESXi host.
+     * 
+     */
+    public Optional<Output<Boolean>> isSingleHostSddc() {
+        return Optional.ofNullable(this.isSingleHostSddc);
     }
 
     /**
@@ -843,6 +858,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         this.isHcxEnterpriseEnabled = $.isHcxEnterpriseEnabled;
         this.isHcxPendingDowngrade = $.isHcxPendingDowngrade;
         this.isShieldedInstanceEnabled = $.isShieldedInstanceEnabled;
+        this.isSingleHostSddc = $.isSingleHostSddc;
         this.nsxEdgeUplink1vlanId = $.nsxEdgeUplink1vlanId;
         this.nsxEdgeUplink2vlanId = $.nsxEdgeUplink2vlanId;
         this.nsxEdgeUplinkIpId = $.nsxEdgeUplinkIpId;
@@ -1020,7 +1036,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esxiHostsCount The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+         * @param esxiHostsCount The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
          * 
          * @return builder
          * 
@@ -1031,7 +1047,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param esxiHostsCount The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+         * @param esxiHostsCount The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
          * 
          * @return builder
          * 
@@ -1384,6 +1400,27 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
             return isShieldedInstanceEnabled(Output.of(isShieldedInstanceEnabled));
+        }
+
+        /**
+         * @param isSingleHostSddc Indicates whether this SDDC is designated for only single ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSingleHostSddc(@Nullable Output<Boolean> isSingleHostSddc) {
+            $.isSingleHostSddc = isSingleHostSddc;
+            return this;
+        }
+
+        /**
+         * @param isSingleHostSddc Indicates whether this SDDC is designated for only single ESXi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSingleHostSddc(Boolean isSingleHostSddc) {
+            return isSingleHostSddc(Output.of(isSingleHostSddc));
         }
 
         /**

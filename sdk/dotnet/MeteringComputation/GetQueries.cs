@@ -22,20 +22,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQueries = Oci.MeteringComputation.GetQueries.Invoke(new()
         ///     {
-        ///         var testQueries = Output.Create(Oci.MeteringComputation.GetQueries.InvokeAsync(new Oci.MeteringComputation.GetQueriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQueries = Oci.MeteringComputation.GetQueries.Invoke(new()
         ///     {
-        ///         var testQueries = Output.Create(Oci.MeteringComputation.GetQueries.InvokeAsync(new Oci.MeteringComputation.GetQueriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.MeteringComputation
     }
 
 
-    public sealed class GetQueriesArgs : Pulumi.InvokeArgs
+    public sealed class GetQueriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment ID in which to list resources.
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.MeteringComputation
         public GetQueriesArgs()
         {
         }
+        public static new GetQueriesArgs Empty => new GetQueriesArgs();
     }
 
-    public sealed class GetQueriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetQueriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment ID in which to list resources.
@@ -125,6 +122,7 @@ namespace Pulumi.Oci.MeteringComputation
         public GetQueriesInvokeArgs()
         {
         }
+        public static new GetQueriesInvokeArgs Empty => new GetQueriesInvokeArgs();
     }
 
 

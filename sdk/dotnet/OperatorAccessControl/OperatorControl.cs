@@ -23,7 +23,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     /// ```
     /// </summary>
     [OciResourceType("oci:OperatorAccessControl/operatorControl:OperatorControl")]
-    public partial class OperatorControl : Pulumi.CustomResource
+    public partial class OperatorControl : global::Pulumi.CustomResource
     {
         /// <summary>
         /// List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         }
     }
 
-    public sealed class OperatorControlArgs : Pulumi.ResourceArgs
+    public sealed class OperatorControlArgs : global::Pulumi.ResourceArgs
     {
         [Input("approverGroupsLists", required: true)]
         private InputList<string>? _approverGroupsLists;
@@ -290,9 +290,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public OperatorControlArgs()
         {
         }
+        public static new OperatorControlArgs Empty => new OperatorControlArgs();
     }
 
-    public sealed class OperatorControlState : Pulumi.ResourceArgs
+    public sealed class OperatorControlState : global::Pulumi.ResourceArgs
     {
         [Input("approvalRequiredOpActionLists")]
         private InputList<string>? _approvalRequiredOpActionLists;
@@ -447,5 +448,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         public OperatorControlState()
         {
         }
+        public static new OperatorControlState Empty => new OperatorControlState();
     }
 }

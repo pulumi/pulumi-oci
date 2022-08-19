@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataFlow.inputs.InvokeRunApplicationLogConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunDriverShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunExecutorShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunParameterArgs;
@@ -36,6 +37,21 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> applicationId() {
         return Optional.ofNullable(this.applicationId);
+    }
+
+    /**
+     * Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    @Import(name="applicationLogConfig")
+    private @Nullable Output<InvokeRunApplicationLogConfigArgs> applicationLogConfig;
+
+    /**
+     * @return Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    public Optional<Output<InvokeRunApplicationLogConfigArgs>> applicationLogConfig() {
+        return Optional.ofNullable(this.applicationLogConfig);
     }
 
     /**
@@ -334,6 +350,7 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
 
     private InvokeRunArgs(InvokeRunArgs $) {
         this.applicationId = $.applicationId;
+        this.applicationLogConfig = $.applicationLogConfig;
         this.archiveUri = $.archiveUri;
         this.arguments = $.arguments;
         this.asynchronous = $.asynchronous;
@@ -393,6 +410,27 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder applicationId(String applicationId) {
             return applicationId(Output.of(applicationId));
+        }
+
+        /**
+         * @param applicationLogConfig Logging details of Application logs for Data Flow Run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationLogConfig(@Nullable Output<InvokeRunApplicationLogConfigArgs> applicationLogConfig) {
+            $.applicationLogConfig = applicationLogConfig;
+            return this;
+        }
+
+        /**
+         * @param applicationLogConfig Logging details of Application logs for Data Flow Run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationLogConfig(InvokeRunApplicationLogConfigArgs applicationLogConfig) {
+            return applicationLogConfig(Output.of(applicationLogConfig));
         }
 
         /**

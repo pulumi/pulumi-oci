@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class GetNotebookSessionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetNotebookSessionsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public GetNotebookSessionsFilterArgs()
         {
         }
+        public static new GetNotebookSessionsFilterArgs Empty => new GetNotebookSessionsFilterArgs();
     }
 }

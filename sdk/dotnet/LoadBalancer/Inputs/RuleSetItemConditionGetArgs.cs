@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class RuleSetItemConditionGetArgs : Pulumi.ResourceArgs
+    public sealed class RuleSetItemConditionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
@@ -40,5 +40,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public RuleSetItemConditionGetArgs()
         {
         }
+        public static new RuleSetItemConditionGetArgs Empty => new RuleSetItemConditionGetArgs();
     }
 }

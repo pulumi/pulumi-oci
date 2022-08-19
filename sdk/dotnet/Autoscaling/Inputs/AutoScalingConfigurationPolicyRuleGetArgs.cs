@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The action to take when autoscaling is triggered.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public AutoScalingConfigurationPolicyRuleGetArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyRuleGetArgs Empty => new AutoScalingConfigurationPolicyRuleGetArgs();
     }
 }

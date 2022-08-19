@@ -25,43 +25,41 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVtap = new Oci.Core.Vtap("testVtap", new()
     ///     {
-    ///         var testVtap = new Oci.Core.Vtap("testVtap", new Oci.Core.VtapArgs
+    ///         CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         SourceId = oci_core_source.Test_source.Id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             SourceId = oci_core_source.Test_source.Id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Vtap_display_name,
-    ///             EncapsulationProtocol = @var.Vtap_encapsulation_protocol,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsVtapEnabled = @var.Vtap_is_vtap_enabled,
-    ///             MaxPacketSize = @var.Vtap_max_packet_size,
-    ///             SourcePrivateEndpointIp = @var.Vtap_source_private_endpoint_ip,
-    ///             SourcePrivateEndpointSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             SourceType = @var.Vtap_source_type,
-    ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///             TargetIp = @var.Vtap_target_ip,
-    ///             TargetType = @var.Vtap_target_type,
-    ///             TrafficMode = @var.Vtap_traffic_mode,
-    ///             VxlanNetworkIdentifier = @var.Vtap_vxlan_network_identifier,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Vtap_display_name,
+    ///         EncapsulationProtocol = @var.Vtap_encapsulation_protocol,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsVtapEnabled = @var.Vtap_is_vtap_enabled,
+    ///         MaxPacketSize = @var.Vtap_max_packet_size,
+    ///         SourcePrivateEndpointIp = @var.Vtap_source_private_endpoint_ip,
+    ///         SourcePrivateEndpointSubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         SourceType = @var.Vtap_source_type,
+    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         TargetIp = @var.Vtap_target_ip,
+    ///         TargetType = @var.Vtap_target_type,
+    ///         TrafficMode = @var.Vtap_traffic_mode,
+    ///         VxlanNetworkIdentifier = @var.Vtap_vxlan_network_identifier,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -73,7 +71,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/vtap:Vtap")]
-    public partial class Vtap : Pulumi.CustomResource
+    public partial class Vtap : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
@@ -245,7 +243,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VtapArgs : Pulumi.ResourceArgs
+    public sealed class VtapArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
@@ -370,9 +368,10 @@ namespace Pulumi.Oci.Core
         public VtapArgs()
         {
         }
+        public static new VtapArgs Empty => new VtapArgs();
     }
 
-    public sealed class VtapState : Pulumi.ResourceArgs
+    public sealed class VtapState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
@@ -515,5 +514,6 @@ namespace Pulumi.Oci.Core
         public VtapState()
         {
         }
+        public static new VtapState Empty => new VtapState();
     }
 }

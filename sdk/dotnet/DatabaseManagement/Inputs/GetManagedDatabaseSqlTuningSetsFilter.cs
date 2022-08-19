@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class GetManagedDatabaseSqlTuningSetsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningSetsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the SQL tuning set.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public GetManagedDatabaseSqlTuningSetsFilterArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningSetsFilterArgs Empty => new GetManagedDatabaseSqlTuningSetsFilterArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsBlockVolumeArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsBlockVolumeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsBlockVolumeArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsBlockVolumeArgs Empty => new InstanceConfigurationInstanceDetailsBlockVolumeArgs();
     }
 }

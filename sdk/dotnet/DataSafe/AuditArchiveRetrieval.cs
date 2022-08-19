@@ -19,33 +19,31 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAuditArchiveRetrieval = new Oci.DataSafe.AuditArchiveRetrieval("testAuditArchiveRetrieval", new()
     ///     {
-    ///         var testAuditArchiveRetrieval = new Oci.DataSafe.AuditArchiveRetrieval("testAuditArchiveRetrieval", new Oci.DataSafe.AuditArchiveRetrievalArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EndDate = @var.Audit_archive_retrieval_end_date,
+    ///         StartDate = @var.Audit_archive_retrieval_start_date,
+    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             EndDate = @var.Audit_archive_retrieval_end_date,
-    ///             StartDate = @var.Audit_archive_retrieval_start_date,
-    ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Audit_archive_retrieval_description,
-    ///             DisplayName = @var.Audit_archive_retrieval_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Audit_archive_retrieval_description,
+    ///         DisplayName = @var.Audit_archive_retrieval_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval")]
-    public partial class AuditArchiveRetrieval : Pulumi.CustomResource
+    public partial class AuditArchiveRetrieval : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Total count of audit events to be retrieved from the archive for the specified date range.
@@ -199,7 +197,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class AuditArchiveRetrievalArgs : Pulumi.ResourceArgs
+    public sealed class AuditArchiveRetrievalArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the archival retrieval.
@@ -264,9 +262,10 @@ namespace Pulumi.Oci.DataSafe
         public AuditArchiveRetrievalArgs()
         {
         }
+        public static new AuditArchiveRetrievalArgs Empty => new AuditArchiveRetrievalArgs();
     }
 
-    public sealed class AuditArchiveRetrievalState : Pulumi.ResourceArgs
+    public sealed class AuditArchiveRetrievalState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Total count of audit events to be retrieved from the archive for the specified date range.
@@ -385,5 +384,6 @@ namespace Pulumi.Oci.DataSafe
         public AuditArchiveRetrievalState()
         {
         }
+        public static new AuditArchiveRetrievalState Empty => new AuditArchiveRetrievalState();
     }
 }

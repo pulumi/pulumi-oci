@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/autonomousDatabase:AutonomousDatabase")]
-    public partial class AutonomousDatabase : Pulumi.CustomResource
+    public partial class AutonomousDatabase : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The current amount of storage in use for user and system data, in terabytes (TB).
@@ -680,7 +680,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
@@ -1068,9 +1068,10 @@ namespace Pulumi.Oci.Database
         public AutonomousDatabaseArgs()
         {
         }
+        public static new AutonomousDatabaseArgs Empty => new AutonomousDatabaseArgs();
     }
 
-    public sealed class AutonomousDatabaseState : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The current amount of storage in use for user and system data, in terabytes (TB).
@@ -1800,5 +1801,6 @@ namespace Pulumi.Oci.Database
         public AutonomousDatabaseState()
         {
         }
+        public static new AutonomousDatabaseState Empty => new AutonomousDatabaseState();
     }
 }

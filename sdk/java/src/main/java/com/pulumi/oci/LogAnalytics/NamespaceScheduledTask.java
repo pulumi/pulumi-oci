@@ -24,6 +24,61 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.NamespaceScheduledTask;
+ * import com.pulumi.oci.LogAnalytics.NamespaceScheduledTaskArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskActionArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.NamespaceScheduledTaskSchedulesArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNamespaceScheduledTask = new NamespaceScheduledTask(&#34;testNamespaceScheduledTask&#34;, NamespaceScheduledTaskArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .kind(var_.namespace_scheduled_task_kind())
+ *             .namespace(var_.namespace_scheduled_task_namespace())
+ *             .action(NamespaceScheduledTaskActionArgs.builder()
+ *                 .type(var_.namespace_scheduled_task_action_type())
+ *                 .compartmentIdInSubtree(var_.namespace_scheduled_task_action_compartment_id_in_subtree())
+ *                 .dataType(var_.namespace_scheduled_task_action_data_type())
+ *                 .purgeCompartmentId(oci_identity_compartment.test_compartment().id())
+ *                 .purgeDuration(var_.namespace_scheduled_task_action_purge_duration())
+ *                 .queryString(var_.namespace_scheduled_task_action_query_string())
+ *                 .savedSearchId(oci_log_analytics_saved_search.test_saved_search().id())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.namespace_scheduled_task_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .savedSearchId(oci_log_analytics_saved_search.test_saved_search().id())
+ *             .schedules(NamespaceScheduledTaskSchedulesArgs.builder()
+ *                 .type(var_.namespace_scheduled_task_schedules_type())
+ *                 .expression(var_.namespace_scheduled_task_schedules_expression())
+ *                 .misfirePolicy(var_.namespace_scheduled_task_schedules_misfire_policy())
+ *                 .recurringInterval(var_.namespace_scheduled_task_schedules_recurring_interval())
+ *                 .repeatCount(var_.namespace_scheduled_task_schedules_repeat_count())
+ *                 .timeZone(var_.namespace_scheduled_task_schedules_time_zone())
+ *                 .build())
+ *             .taskType(var_.namespace_scheduled_task_task_type())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * NamespaceScheduledTasks can be imported using the `id`, e.g.

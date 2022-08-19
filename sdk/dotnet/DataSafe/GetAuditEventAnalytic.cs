@@ -27,28 +27,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditEventAnalytic = Oci.DataSafe.GetAuditEventAnalytic.Invoke(new()
         ///     {
-        ///         var testAuditEventAnalytic = Output.Create(Oci.DataSafe.GetAuditEventAnalytic.InvokeAsync(new Oci.DataSafe.GetAuditEventAnalyticArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_event_analytic_access_level,
-        ///             CompartmentIdInSubtree = @var.Audit_event_analytic_compartment_id_in_subtree,
-        ///             GroupBies = @var.Audit_event_analytic_group_by,
-        ///             QueryTimeZone = @var.Audit_event_analytic_query_time_zone,
-        ///             ScimQuery = @var.Audit_event_analytic_scim_query,
-        ///             SummaryFields = @var.Audit_event_analytic_summary_field,
-        ///             TimeEnded = @var.Audit_event_analytic_time_ended,
-        ///             TimeStarted = @var.Audit_event_analytic_time_started,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_event_analytic_access_level,
+        ///         CompartmentIdInSubtree = @var.Audit_event_analytic_compartment_id_in_subtree,
+        ///         GroupBies = @var.Audit_event_analytic_group_by,
+        ///         QueryTimeZone = @var.Audit_event_analytic_query_time_zone,
+        ///         ScimQuery = @var.Audit_event_analytic_scim_query,
+        ///         SummaryFields = @var.Audit_event_analytic_summary_field,
+        ///         TimeEnded = @var.Audit_event_analytic_time_ended,
+        ///         TimeStarted = @var.Audit_event_analytic_time_started,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -72,28 +70,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditEventAnalytic = Oci.DataSafe.GetAuditEventAnalytic.Invoke(new()
         ///     {
-        ///         var testAuditEventAnalytic = Output.Create(Oci.DataSafe.GetAuditEventAnalytic.InvokeAsync(new Oci.DataSafe.GetAuditEventAnalyticArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_event_analytic_access_level,
-        ///             CompartmentIdInSubtree = @var.Audit_event_analytic_compartment_id_in_subtree,
-        ///             GroupBies = @var.Audit_event_analytic_group_by,
-        ///             QueryTimeZone = @var.Audit_event_analytic_query_time_zone,
-        ///             ScimQuery = @var.Audit_event_analytic_scim_query,
-        ///             SummaryFields = @var.Audit_event_analytic_summary_field,
-        ///             TimeEnded = @var.Audit_event_analytic_time_ended,
-        ///             TimeStarted = @var.Audit_event_analytic_time_started,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_event_analytic_access_level,
+        ///         CompartmentIdInSubtree = @var.Audit_event_analytic_compartment_id_in_subtree,
+        ///         GroupBies = @var.Audit_event_analytic_group_by,
+        ///         QueryTimeZone = @var.Audit_event_analytic_query_time_zone,
+        ///         ScimQuery = @var.Audit_event_analytic_scim_query,
+        ///         SummaryFields = @var.Audit_event_analytic_summary_field,
+        ///         TimeEnded = @var.Audit_event_analytic_time_ended,
+        ///         TimeStarted = @var.Audit_event_analytic_time_started,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -103,7 +99,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditEventAnalyticArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditEventAnalyticArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -174,9 +170,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditEventAnalyticArgs()
         {
         }
+        public static new GetAuditEventAnalyticArgs Empty => new GetAuditEventAnalyticArgs();
     }
 
-    public sealed class GetAuditEventAnalyticInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditEventAnalyticInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -247,6 +244,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditEventAnalyticInvokeArgs()
         {
         }
+        public static new GetAuditEventAnalyticInvokeArgs Empty => new GetAuditEventAnalyticInvokeArgs();
     }
 
 

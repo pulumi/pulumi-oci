@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalogPrivateEndpoint = Oci.DataCatalog.GetCatalogPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testCatalogPrivateEndpoint = Output.Create(Oci.DataCatalog.GetCatalogPrivateEndpoint.InvokeAsync(new Oci.DataCatalog.GetCatalogPrivateEndpointArgs
-        ///         {
-        ///             CatalogPrivateEndpointId = oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         CatalogPrivateEndpointId = oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalogPrivateEndpoint = Oci.DataCatalog.GetCatalogPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testCatalogPrivateEndpoint = Output.Create(Oci.DataCatalog.GetCatalogPrivateEndpoint.InvokeAsync(new Oci.DataCatalog.GetCatalogPrivateEndpointArgs
-        ///         {
-        ///             CatalogPrivateEndpointId = oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         CatalogPrivateEndpointId = oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetCatalogPrivateEndpointArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogPrivateEndpointArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique private reverse connection identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogPrivateEndpointArgs()
         {
         }
+        public static new GetCatalogPrivateEndpointArgs Empty => new GetCatalogPrivateEndpointArgs();
     }
 
-    public sealed class GetCatalogPrivateEndpointInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogPrivateEndpointInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique private reverse connection identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogPrivateEndpointInvokeArgs()
         {
         }
+        public static new GetCatalogPrivateEndpointInvokeArgs Empty => new GetCatalogPrivateEndpointInvokeArgs();
     }
 
 

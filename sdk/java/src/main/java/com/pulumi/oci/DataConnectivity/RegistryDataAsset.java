@@ -27,6 +27,230 @@ import javax.annotation.Nullable;
  * Creates a data asset with default connection.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataConnectivity.RegistryDataAsset;
+ * import com.pulumi.oci.DataConnectivity.RegistryDataAssetArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetDefaultConnectionArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetDefaultConnectionMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetDefaultConnectionMetadataAggregatorArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetDefaultConnectionPrimarySchemaArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetDefaultConnectionRegistryMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetMetadataAggregatorArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetNativeTypeSystemArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetNativeTypeSystemParentRefArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryDataAssetRegistryMetadataArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRegistryDataAsset = new RegistryDataAsset(&#34;testRegistryDataAsset&#34;, RegistryDataAssetArgs.builder()        
+ *             .identifier(var_.registry_data_asset_identifier())
+ *             .properties(var_.registry_data_asset_properties())
+ *             .registryId(oci_data_connectivity_registry.test_registry().id())
+ *             .type(var_.registry_data_asset_type())
+ *             .assetProperties(var_.registry_data_asset_asset_properties())
+ *             .defaultConnection(RegistryDataAssetDefaultConnectionArgs.builder()
+ *                 .identifier(var_.registry_data_asset_default_connection_identifier())
+ *                 .key(var_.registry_data_asset_default_connection_key())
+ *                 .name(var_.registry_data_asset_default_connection_name())
+ *                 .connectionProperties(RegistryDataAssetDefaultConnectionConnectionPropertyArgs.builder()
+ *                     .name(var_.registry_data_asset_default_connection_connection_properties_name())
+ *                     .value(var_.registry_data_asset_default_connection_connection_properties_value())
+ *                     .build())
+ *                 .description(var_.registry_data_asset_default_connection_description())
+ *                 .isDefault(var_.registry_data_asset_default_connection_is_default())
+ *                 .metadata(RegistryDataAssetDefaultConnectionMetadataArgs.builder()
+ *                     .aggregator(RegistryDataAssetDefaultConnectionMetadataAggregatorArgs.builder()
+ *                         .description(var_.registry_data_asset_default_connection_metadata_aggregator_description())
+ *                         .identifier(var_.registry_data_asset_default_connection_metadata_aggregator_identifier())
+ *                         .key(var_.registry_data_asset_default_connection_metadata_aggregator_key())
+ *                         .name(var_.registry_data_asset_default_connection_metadata_aggregator_name())
+ *                         .type(var_.registry_data_asset_default_connection_metadata_aggregator_type())
+ *                         .build())
+ *                     .aggregatorKey(var_.registry_data_asset_default_connection_metadata_aggregator_key())
+ *                     .createdBy(var_.registry_data_asset_default_connection_metadata_created_by())
+ *                     .createdByName(var_.registry_data_asset_default_connection_metadata_created_by_name())
+ *                     .identifierPath(var_.registry_data_asset_default_connection_metadata_identifier_path())
+ *                     .infoFields(var_.registry_data_asset_default_connection_metadata_info_fields())
+ *                     .isFavorite(var_.registry_data_asset_default_connection_metadata_is_favorite())
+ *                     .labels(var_.registry_data_asset_default_connection_metadata_labels())
+ *                     .registryVersion(var_.registry_data_asset_default_connection_metadata_registry_version())
+ *                     .timeCreated(var_.registry_data_asset_default_connection_metadata_time_created())
+ *                     .timeUpdated(var_.registry_data_asset_default_connection_metadata_time_updated())
+ *                     .updatedBy(var_.registry_data_asset_default_connection_metadata_updated_by())
+ *                     .updatedByName(var_.registry_data_asset_default_connection_metadata_updated_by_name())
+ *                     .build())
+ *                 .modelType(var_.registry_data_asset_default_connection_model_type())
+ *                 .modelVersion(var_.registry_data_asset_default_connection_model_version())
+ *                 .objectStatus(var_.registry_data_asset_default_connection_object_status())
+ *                 .objectVersion(var_.registry_data_asset_default_connection_object_version())
+ *                 .primarySchema(RegistryDataAssetDefaultConnectionPrimarySchemaArgs.builder()
+ *                     .identifier(var_.registry_data_asset_default_connection_primary_schema_identifier())
+ *                     .key(var_.registry_data_asset_default_connection_primary_schema_key())
+ *                     .modelType(var_.registry_data_asset_default_connection_primary_schema_model_type())
+ *                     .name(var_.registry_data_asset_default_connection_primary_schema_name())
+ *                     .defaultConnection(var_.registry_data_asset_default_connection_primary_schema_default_connection())
+ *                     .description(var_.registry_data_asset_default_connection_primary_schema_description())
+ *                     .externalKey(var_.registry_data_asset_default_connection_primary_schema_external_key())
+ *                     .isHasContainers(var_.registry_data_asset_default_connection_primary_schema_is_has_containers())
+ *                     .metadata(RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs.builder()
+ *                         .aggregator(RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs.builder()
+ *                             .description(var_.registry_data_asset_default_connection_primary_schema_metadata_aggregator_description())
+ *                             .identifier(var_.registry_data_asset_default_connection_primary_schema_metadata_aggregator_identifier())
+ *                             .key(var_.registry_data_asset_default_connection_primary_schema_metadata_aggregator_key())
+ *                             .name(var_.registry_data_asset_default_connection_primary_schema_metadata_aggregator_name())
+ *                             .type(var_.registry_data_asset_default_connection_primary_schema_metadata_aggregator_type())
+ *                             .build())
+ *                         .aggregatorKey(var_.registry_data_asset_default_connection_primary_schema_metadata_aggregator_key())
+ *                         .createdBy(var_.registry_data_asset_default_connection_primary_schema_metadata_created_by())
+ *                         .createdByName(var_.registry_data_asset_default_connection_primary_schema_metadata_created_by_name())
+ *                         .identifierPath(var_.registry_data_asset_default_connection_primary_schema_metadata_identifier_path())
+ *                         .infoFields(var_.registry_data_asset_default_connection_primary_schema_metadata_info_fields())
+ *                         .isFavorite(var_.registry_data_asset_default_connection_primary_schema_metadata_is_favorite())
+ *                         .labels(var_.registry_data_asset_default_connection_primary_schema_metadata_labels())
+ *                         .registryVersion(var_.registry_data_asset_default_connection_primary_schema_metadata_registry_version())
+ *                         .timeCreated(var_.registry_data_asset_default_connection_primary_schema_metadata_time_created())
+ *                         .timeUpdated(var_.registry_data_asset_default_connection_primary_schema_metadata_time_updated())
+ *                         .updatedBy(var_.registry_data_asset_default_connection_primary_schema_metadata_updated_by())
+ *                         .updatedByName(var_.registry_data_asset_default_connection_primary_schema_metadata_updated_by_name())
+ *                         .build())
+ *                     .modelVersion(var_.registry_data_asset_default_connection_primary_schema_model_version())
+ *                     .objectStatus(var_.registry_data_asset_default_connection_primary_schema_object_status())
+ *                     .objectVersion(var_.registry_data_asset_default_connection_primary_schema_object_version())
+ *                     .parentRef(RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs.builder()
+ *                         .parent(var_.registry_data_asset_default_connection_primary_schema_parent_ref_parent())
+ *                         .build())
+ *                     .resourceName(var_.registry_data_asset_default_connection_primary_schema_resource_name())
+ *                     .build())
+ *                 .properties(var_.registry_data_asset_default_connection_properties())
+ *                 .registryMetadata(RegistryDataAssetDefaultConnectionRegistryMetadataArgs.builder()
+ *                     .aggregatorKey(var_.registry_data_asset_default_connection_registry_metadata_aggregator_key())
+ *                     .createdByUserId(oci_identity_user.test_user().id())
+ *                     .createdByUserName(oci_identity_user.test_user().name())
+ *                     .isFavorite(var_.registry_data_asset_default_connection_registry_metadata_is_favorite())
+ *                     .key(var_.registry_data_asset_default_connection_registry_metadata_key())
+ *                     .labels(var_.registry_data_asset_default_connection_registry_metadata_labels())
+ *                     .registryVersion(var_.registry_data_asset_default_connection_registry_metadata_registry_version())
+ *                     .timeCreated(var_.registry_data_asset_default_connection_registry_metadata_time_created())
+ *                     .timeUpdated(var_.registry_data_asset_default_connection_registry_metadata_time_updated())
+ *                     .updatedByUserId(oci_identity_user.test_user().id())
+ *                     .updatedByUserName(oci_identity_user.test_user().name())
+ *                     .build())
+ *                 .type(var_.registry_data_asset_default_connection_type())
+ *                 .build())
+ *             .description(var_.registry_data_asset_description())
+ *             .endPoints(var_.registry_data_asset_end_points())
+ *             .externalKey(var_.registry_data_asset_external_key())
+ *             .key(var_.registry_data_asset_key())
+ *             .metadata(RegistryDataAssetMetadataArgs.builder()
+ *                 .aggregator(RegistryDataAssetMetadataAggregatorArgs.builder()
+ *                     .description(var_.registry_data_asset_metadata_aggregator_description())
+ *                     .identifier(var_.registry_data_asset_metadata_aggregator_identifier())
+ *                     .key(var_.registry_data_asset_metadata_aggregator_key())
+ *                     .name(var_.registry_data_asset_metadata_aggregator_name())
+ *                     .type(var_.registry_data_asset_metadata_aggregator_type())
+ *                     .build())
+ *                 .aggregatorKey(var_.registry_data_asset_metadata_aggregator_key())
+ *                 .createdBy(var_.registry_data_asset_metadata_created_by())
+ *                 .createdByName(var_.registry_data_asset_metadata_created_by_name())
+ *                 .identifierPath(var_.registry_data_asset_metadata_identifier_path())
+ *                 .infoFields(var_.registry_data_asset_metadata_info_fields())
+ *                 .isFavorite(var_.registry_data_asset_metadata_is_favorite())
+ *                 .labels(var_.registry_data_asset_metadata_labels())
+ *                 .registryVersion(var_.registry_data_asset_metadata_registry_version())
+ *                 .timeCreated(var_.registry_data_asset_metadata_time_created())
+ *                 .timeUpdated(var_.registry_data_asset_metadata_time_updated())
+ *                 .updatedBy(var_.registry_data_asset_metadata_updated_by())
+ *                 .updatedByName(var_.registry_data_asset_metadata_updated_by_name())
+ *                 .build())
+ *             .modelType(var_.registry_data_asset_model_type())
+ *             .modelVersion(var_.registry_data_asset_model_version())
+ *             .nativeTypeSystem(RegistryDataAssetNativeTypeSystemArgs.builder()
+ *                 .description(var_.registry_data_asset_native_type_system_description())
+ *                 .identifier(var_.registry_data_asset_native_type_system_identifier())
+ *                 .key(var_.registry_data_asset_native_type_system_key())
+ *                 .modelType(var_.registry_data_asset_native_type_system_model_type())
+ *                 .modelVersion(var_.registry_data_asset_native_type_system_model_version())
+ *                 .name(var_.registry_data_asset_native_type_system_name())
+ *                 .objectStatus(var_.registry_data_asset_native_type_system_object_status())
+ *                 .objectVersion(var_.registry_data_asset_native_type_system_object_version())
+ *                 .parentRef(RegistryDataAssetNativeTypeSystemParentRefArgs.builder()
+ *                     .parent(var_.registry_data_asset_native_type_system_parent_ref_parent())
+ *                     .build())
+ *                 .typeMappingFrom(var_.registry_data_asset_native_type_system_type_mapping_from())
+ *                 .typeMappingTo(var_.registry_data_asset_native_type_system_type_mapping_to())
+ *                 .types(RegistryDataAssetNativeTypeSystemTypeArgs.builder()
+ *                     .modelType(var_.registry_data_asset_native_type_system_types_model_type())
+ *                     .configDefinition(RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs.builder()
+ *                         .configParameterDefinitions(Map.ofEntries(
+ *                             Map.entry(&#34;classFieldName&#34;, var_.registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_class_field_name()),
+ *                             Map.entry(&#34;defaultValue&#34;, var_.registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_default_value()),
+ *                             Map.entry(&#34;description&#34;, var_.registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_description()),
+ *                             Map.entry(&#34;isClassFieldValue&#34;, var_.registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_is_class_field_value()),
+ *                             Map.entry(&#34;isStatic&#34;, var_.registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_is_static()),
+ *                             Map.entry(&#34;parameterName&#34;, var_.registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_parameter_name()),
+ *                             Map.entry(&#34;parameterType&#34;, var_.registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_parameter_type())
+ *                         ))
+ *                         .isContained(var_.registry_data_asset_native_type_system_types_config_definition_is_contained())
+ *                         .key(var_.registry_data_asset_native_type_system_types_config_definition_key())
+ *                         .modelType(var_.registry_data_asset_native_type_system_types_config_definition_model_type())
+ *                         .modelVersion(var_.registry_data_asset_native_type_system_types_config_definition_model_version())
+ *                         .name(var_.registry_data_asset_native_type_system_types_config_definition_name())
+ *                         .objectStatus(var_.registry_data_asset_native_type_system_types_config_definition_object_status())
+ *                         .parentRef(RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs.builder()
+ *                             .parent(var_.registry_data_asset_native_type_system_types_config_definition_parent_ref_parent())
+ *                             .build())
+ *                         .build())
+ *                     .description(var_.registry_data_asset_native_type_system_types_description())
+ *                     .dtType(var_.registry_data_asset_native_type_system_types_dt_type())
+ *                     .key(var_.registry_data_asset_native_type_system_types_key())
+ *                     .modelVersion(var_.registry_data_asset_native_type_system_types_model_version())
+ *                     .name(var_.registry_data_asset_native_type_system_types_name())
+ *                     .objectStatus(var_.registry_data_asset_native_type_system_types_object_status())
+ *                     .parentRef(RegistryDataAssetNativeTypeSystemTypeParentRefArgs.builder()
+ *                         .parent(var_.registry_data_asset_native_type_system_types_parent_ref_parent())
+ *                         .build())
+ *                     .typeSystemName(var_.registry_data_asset_native_type_system_types_type_system_name())
+ *                     .build())
+ *                 .build())
+ *             .objectStatus(var_.registry_data_asset_object_status())
+ *             .objectVersion(var_.registry_data_asset_object_version())
+ *             .registryMetadata(RegistryDataAssetRegistryMetadataArgs.builder()
+ *                 .aggregatorKey(var_.registry_data_asset_registry_metadata_aggregator_key())
+ *                 .createdByUserId(oci_identity_user.test_user().id())
+ *                 .createdByUserName(oci_identity_user.test_user().name())
+ *                 .isFavorite(var_.registry_data_asset_registry_metadata_is_favorite())
+ *                 .key(var_.registry_data_asset_registry_metadata_key())
+ *                 .labels(var_.registry_data_asset_registry_metadata_labels())
+ *                 .registryVersion(var_.registry_data_asset_registry_metadata_registry_version())
+ *                 .timeCreated(var_.registry_data_asset_registry_metadata_time_created())
+ *                 .timeUpdated(var_.registry_data_asset_registry_metadata_time_updated())
+ *                 .updatedByUserId(oci_identity_user.test_user().id())
+ *                 .updatedByUserName(oci_identity_user.test_user().name())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyExecutionScheduleGetArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyExecutionScheduleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A cron expression that represents the time at which to execute the autoscaling policy.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public AutoScalingConfigurationPolicyExecutionScheduleGetArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyExecutionScheduleGetArgs Empty => new AutoScalingConfigurationPolicyExecutionScheduleGetArgs();
     }
 }

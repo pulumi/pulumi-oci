@@ -22,23 +22,21 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscribedServices = Oci.OneSubsription.GetSubscribedServices.Invoke(new()
         ///     {
-        ///         var testSubscribedServices = Output.Create(Oci.OneSubsription.GetSubscribedServices.InvokeAsync(new Oci.OneSubsription.GetSubscribedServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///             OrderLineId = oci_onesubscription_order_line.Test_order_line.Id,
-        ///             Status = @var.Subscribed_service_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
+        ///         OrderLineId = oci_onesubscription_order_line.Test_order_line.Id,
+        ///         Status = @var.Subscribed_service_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscribedServices = Oci.OneSubsription.GetSubscribedServices.Invoke(new()
         ///     {
-        ///         var testSubscribedServices = Output.Create(Oci.OneSubsription.GetSubscribedServices.InvokeAsync(new Oci.OneSubsription.GetSubscribedServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///             OrderLineId = oci_onesubscription_order_line.Test_order_line.Id,
-        ///             Status = @var.Subscribed_service_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
+        ///         OrderLineId = oci_onesubscription_order_line.Test_order_line.Id,
+        ///         Status = @var.Subscribed_service_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.OneSubsription
     }
 
 
-    public sealed class GetSubscribedServicesArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscribedServicesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.OneSubsription
         public GetSubscribedServicesArgs()
         {
         }
+        public static new GetSubscribedServicesArgs Empty => new GetSubscribedServicesArgs();
     }
 
-    public sealed class GetSubscribedServicesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscribedServicesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.OneSubsription
         public GetSubscribedServicesInvokeArgs()
         {
         }
+        public static new GetSubscribedServicesInvokeArgs Empty => new GetSubscribedServicesInvokeArgs();
     }
 
 

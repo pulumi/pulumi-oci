@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class PathRouteSetPathRoutePathMatchTypeGetArgs : Pulumi.ResourceArgs
+    public sealed class PathRouteSetPathRoutePathMatchTypeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object's `path` string against the incoming URI.
@@ -25,5 +25,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public PathRouteSetPathRoutePathMatchTypeGetArgs()
         {
         }
+        public static new PathRouteSetPathRoutePathMatchTypeGetArgs Empty => new PathRouteSetPathRoutePathMatchTypeGetArgs();
     }
 }

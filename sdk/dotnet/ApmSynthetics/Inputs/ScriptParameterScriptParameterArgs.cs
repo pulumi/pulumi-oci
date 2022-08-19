@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ScriptParameterScriptParameterArgs : Pulumi.ResourceArgs
+    public sealed class ScriptParameterScriptParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ScriptParameterScriptParameterArgs()
         {
         }
+        public static new ScriptParameterScriptParameterArgs Empty => new ScriptParameterScriptParameterArgs();
     }
 }

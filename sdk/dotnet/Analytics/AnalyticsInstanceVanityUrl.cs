@@ -18,26 +18,24 @@ namespace Pulumi.Oci.Analytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAnalyticsInstanceVanityUrl = new Oci.Analytics.AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl", new()
     ///     {
-    ///         var testAnalyticsInstanceVanityUrl = new Oci.Analytics.AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl", new Oci.Analytics.AnalyticsInstanceVanityUrlArgs
-    ///         {
-    ///             AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
-    ///             CaCertificate = @var.Analytics_instance_vanity_url_ca_certificate,
-    ///             Hosts = @var.Analytics_instance_vanity_url_hosts,
-    ///             PrivateKey = @var.Analytics_instance_vanity_url_private_key,
-    ///             PublicCertificate = @var.Analytics_instance_vanity_url_public_certificate,
-    ///             Description = @var.Analytics_instance_vanity_url_description,
-    ///             Passphrase = @var.Analytics_instance_vanity_url_passphrase,
-    ///         });
-    ///     }
+    ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
+    ///         CaCertificate = @var.Analytics_instance_vanity_url_ca_certificate,
+    ///         Hosts = @var.Analytics_instance_vanity_url_hosts,
+    ///         PrivateKey = @var.Analytics_instance_vanity_url_private_key,
+    ///         PublicCertificate = @var.Analytics_instance_vanity_url_public_certificate,
+    ///         Description = @var.Analytics_instance_vanity_url_description,
+    ///         Passphrase = @var.Analytics_instance_vanity_url_passphrase,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.Analytics
     /// ```
     /// </summary>
     [OciResourceType("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl")]
-    public partial class AnalyticsInstanceVanityUrl : Pulumi.CustomResource
+    public partial class AnalyticsInstanceVanityUrl : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the AnalyticsInstance.
@@ -137,7 +135,7 @@ namespace Pulumi.Oci.Analytics
         }
     }
 
-    public sealed class AnalyticsInstanceVanityUrlArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstanceVanityUrlArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the AnalyticsInstance.
@@ -190,9 +188,10 @@ namespace Pulumi.Oci.Analytics
         public AnalyticsInstanceVanityUrlArgs()
         {
         }
+        public static new AnalyticsInstanceVanityUrlArgs Empty => new AnalyticsInstanceVanityUrlArgs();
     }
 
-    public sealed class AnalyticsInstanceVanityUrlState : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstanceVanityUrlState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the AnalyticsInstance.
@@ -245,5 +244,6 @@ namespace Pulumi.Oci.Analytics
         public AnalyticsInstanceVanityUrlState()
         {
         }
+        public static new AnalyticsInstanceVanityUrlState Empty => new AnalyticsInstanceVanityUrlState();
     }
 }

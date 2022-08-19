@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTagDefault = Oci.Identity.GetTagDefault.Invoke(new()
         ///     {
-        ///         var testTagDefault = Output.Create(Oci.Identity.GetTagDefault.InvokeAsync(new Oci.Identity.GetTagDefaultArgs
-        ///         {
-        ///             TagDefaultId = oci_identity_tag_default.Test_tag_default.Id,
-        ///         }));
-        ///     }
+        ///         TagDefaultId = oci_identity_tag_default.Test_tag_default.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTagDefault = Oci.Identity.GetTagDefault.Invoke(new()
         ///     {
-        ///         var testTagDefault = Output.Create(Oci.Identity.GetTagDefault.InvokeAsync(new Oci.Identity.GetTagDefaultArgs
-        ///         {
-        ///             TagDefaultId = oci_identity_tag_default.Test_tag_default.Id,
-        ///         }));
-        ///     }
+        ///         TagDefaultId = oci_identity_tag_default.Test_tag_default.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetTagDefaultArgs : Pulumi.InvokeArgs
+    public sealed class GetTagDefaultArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the tag default.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Identity
         public GetTagDefaultArgs()
         {
         }
+        public static new GetTagDefaultArgs Empty => new GetTagDefaultArgs();
     }
 
-    public sealed class GetTagDefaultInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTagDefaultInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the tag default.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Identity
         public GetTagDefaultInvokeArgs()
         {
         }
+        public static new GetTagDefaultInvokeArgs Empty => new GetTagDefaultInvokeArgs();
     }
 
 

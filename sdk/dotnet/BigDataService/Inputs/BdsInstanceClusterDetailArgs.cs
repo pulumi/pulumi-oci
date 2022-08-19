@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class BdsInstanceClusterDetailArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceClusterDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The URL of Ambari
@@ -105,5 +105,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public BdsInstanceClusterDetailArgs()
         {
         }
+        public static new BdsInstanceClusterDetailArgs Empty => new BdsInstanceClusterDetailArgs();
     }
 }

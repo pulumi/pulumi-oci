@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRecommendation = Oci.Optimizer.GetRecommendation.Invoke(new()
         ///     {
-        ///         var testRecommendation = Output.Create(Oci.Optimizer.GetRecommendation.InvokeAsync(new Oci.Optimizer.GetRecommendationArgs
-        ///         {
-        ///             RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///         }));
-        ///     }
+        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRecommendation = Oci.Optimizer.GetRecommendation.Invoke(new()
         ///     {
-        ///         var testRecommendation = Output.Create(Oci.Optimizer.GetRecommendation.InvokeAsync(new Oci.Optimizer.GetRecommendationArgs
-        ///         {
-        ///             RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///         }));
-        ///     }
+        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetRecommendationArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the recommendation.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Optimizer
         public GetRecommendationArgs()
         {
         }
+        public static new GetRecommendationArgs Empty => new GetRecommendationArgs();
     }
 
-    public sealed class GetRecommendationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the recommendation.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Optimizer
         public GetRecommendationInvokeArgs()
         {
         }
+        public static new GetRecommendationInvokeArgs Empty => new GetRecommendationInvokeArgs();
     }
 
 

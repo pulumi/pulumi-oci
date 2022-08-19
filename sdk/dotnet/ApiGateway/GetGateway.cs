@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGateway = Oci.ApiGateway.GetGateway.Invoke(new()
         ///     {
-        ///         var testGateway = Output.Create(Oci.ApiGateway.GetGateway.InvokeAsync(new Oci.ApiGateway.GetGatewayArgs
-        ///         {
-        ///             GatewayId = oci_apigateway_gateway.Test_gateway.Id,
-        ///         }));
-        ///     }
+        ///         GatewayId = oci_apigateway_gateway.Test_gateway.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGateway = Oci.ApiGateway.GetGateway.Invoke(new()
         ///     {
-        ///         var testGateway = Output.Create(Oci.ApiGateway.GetGateway.InvokeAsync(new Oci.ApiGateway.GetGatewayArgs
-        ///         {
-        ///             GatewayId = oci_apigateway_gateway.Test_gateway.Id,
-        ///         }));
-        ///     }
+        ///         GatewayId = oci_apigateway_gateway.Test_gateway.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ApiGateway
     }
 
 
-    public sealed class GetGatewayArgs : Pulumi.InvokeArgs
+    public sealed class GetGatewayArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the gateway.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ApiGateway
         public GetGatewayArgs()
         {
         }
+        public static new GetGatewayArgs Empty => new GetGatewayArgs();
     }
 
-    public sealed class GetGatewayInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGatewayInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the gateway.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ApiGateway
         public GetGatewayInvokeArgs()
         {
         }
+        public static new GetGatewayInvokeArgs Empty => new GetGatewayInvokeArgs();
     }
 
 

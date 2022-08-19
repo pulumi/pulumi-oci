@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryFolder = Oci.DataConnectivity.GetRegistryFolder.Invoke(new()
         ///     {
-        ///         var testRegistryFolder = Output.Create(Oci.DataConnectivity.GetRegistryFolder.InvokeAsync(new Oci.DataConnectivity.GetRegistryFolderArgs
-        ///         {
-        ///             FolderKey = @var.Registry_folder_folder_key,
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///         }));
-        ///     }
+        ///         FolderKey = @var.Registry_folder_folder_key,
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryFolder = Oci.DataConnectivity.GetRegistryFolder.Invoke(new()
         ///     {
-        ///         var testRegistryFolder = Output.Create(Oci.DataConnectivity.GetRegistryFolder.InvokeAsync(new Oci.DataConnectivity.GetRegistryFolderArgs
-        ///         {
-        ///             FolderKey = @var.Registry_folder_folder_key,
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///         }));
-        ///     }
+        ///         FolderKey = @var.Registry_folder_folder_key,
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistryFolderArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryFolderArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The folder ID.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryFolderArgs()
         {
         }
+        public static new GetRegistryFolderArgs Empty => new GetRegistryFolderArgs();
     }
 
-    public sealed class GetRegistryFolderInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryFolderInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The folder ID.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryFolderInvokeArgs()
         {
         }
+        public static new GetRegistryFolderInvokeArgs Empty => new GetRegistryFolderInvokeArgs();
     }
 
 

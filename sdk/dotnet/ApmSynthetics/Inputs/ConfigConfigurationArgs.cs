@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class ConfigConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Type of configuration.
@@ -129,5 +129,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigConfigurationArgs()
         {
         }
+        public static new ConfigConfigurationArgs Empty => new ConfigConfigurationArgs();
     }
 }

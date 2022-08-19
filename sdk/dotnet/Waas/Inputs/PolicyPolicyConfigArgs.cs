@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyPolicyConfigArgs : Pulumi.ResourceArgs
+    public sealed class PolicyPolicyConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
@@ -116,5 +116,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyPolicyConfigArgs()
         {
         }
+        public static new PolicyPolicyConfigArgs Empty => new PolicyPolicyConfigArgs();
     }
 }

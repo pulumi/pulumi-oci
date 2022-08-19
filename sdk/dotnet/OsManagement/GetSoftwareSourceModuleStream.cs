@@ -22,22 +22,20 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSoftwareSourceModuleStream = Oci.OsManagement.GetSoftwareSourceModuleStream.Invoke(new()
         ///     {
-        ///         var testSoftwareSourceModuleStream = Output.Create(Oci.OsManagement.GetSoftwareSourceModuleStream.InvokeAsync(new Oci.OsManagement.GetSoftwareSourceModuleStreamArgs
-        ///         {
-        ///             ModuleName = @var.Software_source_module_stream_module_name,
-        ///             SoftwareSourceId = @var.Software_source.Id,
-        ///             StreamName = @var.Software_source_module_stream_name,
-        ///         }));
-        ///     }
+        ///         ModuleName = @var.Software_source_module_stream_module_name,
+        ///         SoftwareSourceId = @var.Software_source.Id,
+        ///         StreamName = @var.Software_source_module_stream_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSoftwareSourceModuleStream = Oci.OsManagement.GetSoftwareSourceModuleStream.Invoke(new()
         ///     {
-        ///         var testSoftwareSourceModuleStream = Output.Create(Oci.OsManagement.GetSoftwareSourceModuleStream.InvokeAsync(new Oci.OsManagement.GetSoftwareSourceModuleStreamArgs
-        ///         {
-        ///             ModuleName = @var.Software_source_module_stream_module_name,
-        ///             SoftwareSourceId = @var.Software_source.Id,
-        ///             StreamName = @var.Software_source_module_stream_name,
-        ///         }));
-        ///     }
+        ///         ModuleName = @var.Software_source_module_stream_module_name,
+        ///         SoftwareSourceId = @var.Software_source.Id,
+        ///         StreamName = @var.Software_source_module_stream_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetSoftwareSourceModuleStreamArgs : Pulumi.InvokeArgs
+    public sealed class GetSoftwareSourceModuleStreamArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the module
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.OsManagement
         public GetSoftwareSourceModuleStreamArgs()
         {
         }
+        public static new GetSoftwareSourceModuleStreamArgs Empty => new GetSoftwareSourceModuleStreamArgs();
     }
 
-    public sealed class GetSoftwareSourceModuleStreamInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSoftwareSourceModuleStreamInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the module
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.OsManagement
         public GetSoftwareSourceModuleStreamInvokeArgs()
         {
         }
+        public static new GetSoftwareSourceModuleStreamInvokeArgs Empty => new GetSoftwareSourceModuleStreamInvokeArgs();
     }
 
 

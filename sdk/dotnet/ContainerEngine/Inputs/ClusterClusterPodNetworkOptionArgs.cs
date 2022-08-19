@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterClusterPodNetworkOptionArgs : Pulumi.ResourceArgs
+    public sealed class ClusterClusterPodNetworkOptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The CNI used by the node pools of this cluster
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterClusterPodNetworkOptionArgs()
         {
         }
+        public static new ClusterClusterPodNetworkOptionArgs Empty => new ClusterClusterPodNetworkOptionArgs();
     }
 }

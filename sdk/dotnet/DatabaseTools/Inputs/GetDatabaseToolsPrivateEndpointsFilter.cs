@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools.Inputs
 {
 
-    public sealed class GetDatabaseToolsPrivateEndpointsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsPrivateEndpointsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         public GetDatabaseToolsPrivateEndpointsFilterArgs()
         {
         }
+        public static new GetDatabaseToolsPrivateEndpointsFilterArgs Empty => new GetDatabaseToolsPrivateEndpointsFilterArgs();
     }
 }

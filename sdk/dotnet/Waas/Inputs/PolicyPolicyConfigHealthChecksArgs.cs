@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyPolicyConfigHealthChecksArgs : Pulumi.ResourceArgs
+    public sealed class PolicyPolicyConfigHealthChecksArgs : global::Pulumi.ResourceArgs
     {
         [Input("expectedResponseCodeGroups")]
         private InputList<string>? _expectedResponseCodeGroups;
@@ -100,5 +100,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyPolicyConfigHealthChecksArgs()
         {
         }
+        public static new PolicyPolicyConfigHealthChecksArgs Empty => new PolicyPolicyConfigHealthChecksArgs();
     }
 }

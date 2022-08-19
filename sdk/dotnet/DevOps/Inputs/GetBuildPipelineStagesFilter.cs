@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class GetBuildPipelineStagesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildPipelineStagesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public GetBuildPipelineStagesFilterArgs()
         {
         }
+        public static new GetBuildPipelineStagesFilterArgs Empty => new GetBuildPipelineStagesFilterArgs();
     }
 }

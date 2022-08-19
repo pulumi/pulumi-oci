@@ -23,20 +23,18 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQueryQuickPicks = Oci.ApmTraces.GetQueryQuickPicks.Invoke(new()
         ///     {
-        ///         var testQueryQuickPicks = Output.Create(Oci.ApmTraces.GetQueryQuickPicks.InvokeAsync(new Oci.ApmTraces.GetQueryQuickPicksArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQueryQuickPicks = Oci.ApmTraces.GetQueryQuickPicks.Invoke(new()
         ///     {
-        ///         var testQueryQuickPicks = Output.Create(Oci.ApmTraces.GetQueryQuickPicks.InvokeAsync(new Oci.ApmTraces.GetQueryQuickPicksArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ApmTraces
     }
 
 
-    public sealed class GetQueryQuickPicksArgs : Pulumi.InvokeArgs
+    public sealed class GetQueryQuickPicksArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.ApmTraces
         public GetQueryQuickPicksArgs()
         {
         }
+        public static new GetQueryQuickPicksArgs Empty => new GetQueryQuickPicksArgs();
     }
 
-    public sealed class GetQueryQuickPicksInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetQueryQuickPicksInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.ApmTraces
         public GetQueryQuickPicksInvokeArgs()
         {
         }
+        public static new GetQueryQuickPicksInvokeArgs Empty => new GetQueryQuickPicksInvokeArgs();
     }
 
 

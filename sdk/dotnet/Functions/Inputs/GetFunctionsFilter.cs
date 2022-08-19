@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions.Inputs
 {
 
-    public sealed class GetFunctionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetFunctionsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Functions.Inputs
         public GetFunctionsFilterArgs()
         {
         }
+        public static new GetFunctionsFilterArgs Empty => new GetFunctionsFilterArgs();
     }
 }

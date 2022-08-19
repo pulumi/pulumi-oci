@@ -79,6 +79,7 @@ import * as utilities from "../utilities";
  *         enableFormattedMessaging: _var.service_connector_target_enable_formatted_messaging,
  *         functionId: oci_functions_function.test_function.id,
  *         logGroupId: oci_logging_log_group.test_log_group.id,
+ *         logSourceIdentifier: _var.service_connector_target_log_source_identifier,
  *         metric: _var.service_connector_target_metric,
  *         metricNamespace: _var.service_connector_target_metric_namespace,
  *         namespace: _var.service_connector_target_namespace,

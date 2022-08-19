@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsWarehouses = Oci.Opsi.GetOperationsInsightsWarehouses.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsWarehouses = Output.Create(Oci.Opsi.GetOperationsInsightsWarehouses.InvokeAsync(new Oci.Opsi.GetOperationsInsightsWarehousesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Operations_insights_warehouse_display_name,
-        ///             Id = @var.Operations_insights_warehouse_id,
-        ///             States = @var.Operations_insights_warehouse_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Operations_insights_warehouse_display_name,
+        ///         Id = @var.Operations_insights_warehouse_id,
+        ///         States = @var.Operations_insights_warehouse_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsWarehouses = Oci.Opsi.GetOperationsInsightsWarehouses.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsWarehouses = Output.Create(Oci.Opsi.GetOperationsInsightsWarehouses.InvokeAsync(new Oci.Opsi.GetOperationsInsightsWarehousesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Operations_insights_warehouse_display_name,
-        ///             Id = @var.Operations_insights_warehouse_id,
-        ///             States = @var.Operations_insights_warehouse_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Operations_insights_warehouse_display_name,
+        ///         Id = @var.Operations_insights_warehouse_id,
+        ///         States = @var.Operations_insights_warehouse_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetOperationsInsightsWarehousesArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsWarehousesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsWarehousesArgs()
         {
         }
+        public static new GetOperationsInsightsWarehousesArgs Empty => new GetOperationsInsightsWarehousesArgs();
     }
 
-    public sealed class GetOperationsInsightsWarehousesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsWarehousesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsWarehousesInvokeArgs()
         {
         }
+        public static new GetOperationsInsightsWarehousesInvokeArgs Empty => new GetOperationsInsightsWarehousesInvokeArgs();
     }
 
 

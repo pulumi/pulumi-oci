@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubnets = Oci.Core.GetSubnets.Invoke(new()
         ///     {
-        ///         var testSubnets = Output.Create(Oci.Core.GetSubnets.InvokeAsync(new Oci.Core.GetSubnetsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Subnet_display_name,
-        ///             State = @var.Subnet_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Subnet_display_name,
+        ///         State = @var.Subnet_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubnets = Oci.Core.GetSubnets.Invoke(new()
         ///     {
-        ///         var testSubnets = Output.Create(Oci.Core.GetSubnets.InvokeAsync(new Oci.Core.GetSubnetsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Subnet_display_name,
-        ///             State = @var.Subnet_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Subnet_display_name,
+        ///         State = @var.Subnet_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetSubnetsArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Core
         public GetSubnetsArgs()
         {
         }
+        public static new GetSubnetsArgs Empty => new GetSubnetsArgs();
     }
 
-    public sealed class GetSubnetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.Core
         public GetSubnetsInvokeArgs()
         {
         }
+        public static new GetSubnetsInvokeArgs Empty => new GetSubnetsInvokeArgs();
     }
 
 

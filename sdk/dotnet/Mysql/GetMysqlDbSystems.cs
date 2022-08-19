@@ -23,27 +23,25 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlDbSystems = Oci.Mysql.GetMysqlDbSystems.Invoke(new()
         ///     {
-        ///         var testMysqlDbSystems = Output.Create(Oci.Mysql.GetMysqlDbSystems.InvokeAsync(new Oci.Mysql.GetMysqlDbSystemsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ConfigurationId = @var.Mysql_configuration_id,
-        ///             DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///             DisplayName = @var.Mysql_db_system_display_name,
-        ///             IsAnalyticsClusterAttached = @var.Mysql_db_system_is_analytics_cluster_attached,
-        ///             IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
-        ///             IsUpToDate = @var.Mysql_db_system_is_up_to_date,
-        ///             State = @var.Mysql_db_system_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+        ///         DisplayName = @var.Mysql_db_system_display_name,
+        ///         IsAnalyticsClusterAttached = @var.Mysql_db_system_is_analytics_cluster_attached,
+        ///         IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
+        ///         IsUpToDate = @var.Mysql_db_system_is_up_to_date,
+        ///         State = @var.Mysql_db_system_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,27 +61,25 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlDbSystems = Oci.Mysql.GetMysqlDbSystems.Invoke(new()
         ///     {
-        ///         var testMysqlDbSystems = Output.Create(Oci.Mysql.GetMysqlDbSystems.InvokeAsync(new Oci.Mysql.GetMysqlDbSystemsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ConfigurationId = @var.Mysql_configuration_id,
-        ///             DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///             DisplayName = @var.Mysql_db_system_display_name,
-        ///             IsAnalyticsClusterAttached = @var.Mysql_db_system_is_analytics_cluster_attached,
-        ///             IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
-        ///             IsUpToDate = @var.Mysql_db_system_is_up_to_date,
-        ///             State = @var.Mysql_db_system_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+        ///         DisplayName = @var.Mysql_db_system_display_name,
+        ///         IsAnalyticsClusterAttached = @var.Mysql_db_system_is_analytics_cluster_attached,
+        ///         IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
+        ///         IsUpToDate = @var.Mysql_db_system_is_up_to_date,
+        ///         State = @var.Mysql_db_system_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetMysqlDbSystemsArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlDbSystemsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -154,9 +150,10 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlDbSystemsArgs()
         {
         }
+        public static new GetMysqlDbSystemsArgs Empty => new GetMysqlDbSystemsArgs();
     }
 
-    public sealed class GetMysqlDbSystemsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlDbSystemsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -217,6 +214,7 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlDbSystemsInvokeArgs()
         {
         }
+        public static new GetMysqlDbSystemsInvokeArgs Empty => new GetMysqlDbSystemsInvokeArgs();
     }
 
 

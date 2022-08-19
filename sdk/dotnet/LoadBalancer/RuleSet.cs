@@ -18,54 +18,52 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRuleSet = new Oci.LoadBalancer.RuleSet("testRuleSet", new()
     ///     {
-    ///         var testRuleSet = new Oci.LoadBalancer.RuleSet("testRuleSet", new Oci.LoadBalancer.RuleSetArgs
+    ///         Items = new[]
     ///         {
-    ///             Items = 
+    ///             new Oci.LoadBalancer.Inputs.RuleSetItemArgs
     ///             {
-    ///                 new Oci.LoadBalancer.Inputs.RuleSetItemArgs
+    ///                 Action = @var.Rule_set_items_action,
+    ///                 AllowedMethods = @var.Rule_set_items_allowed_methods,
+    ///                 AreInvalidCharactersAllowed = @var.Rule_set_items_are_invalid_characters_allowed,
+    ///                 Conditions = new[]
     ///                 {
-    ///                     Action = @var.Rule_set_items_action,
-    ///                     AllowedMethods = @var.Rule_set_items_allowed_methods,
-    ///                     AreInvalidCharactersAllowed = @var.Rule_set_items_are_invalid_characters_allowed,
-    ///                     Conditions = 
+    ///                     new Oci.LoadBalancer.Inputs.RuleSetItemConditionArgs
     ///                     {
-    ///                         new Oci.LoadBalancer.Inputs.RuleSetItemConditionArgs
-    ///                         {
-    ///                             AttributeName = @var.Rule_set_items_conditions_attribute_name,
-    ///                             AttributeValue = @var.Rule_set_items_conditions_attribute_value,
-    ///                             Operator = @var.Rule_set_items_conditions_operator,
-    ///                         },
+    ///                         AttributeName = @var.Rule_set_items_conditions_attribute_name,
+    ///                         AttributeValue = @var.Rule_set_items_conditions_attribute_value,
+    ///                         Operator = @var.Rule_set_items_conditions_operator,
     ///                     },
-    ///                     Description = @var.Rule_set_items_description,
-    ///                     Header = @var.Rule_set_items_header,
-    ///                     HttpLargeHeaderSizeInKb = @var.Rule_set_items_http_large_header_size_in_kb,
-    ///                     Prefix = @var.Rule_set_items_prefix,
-    ///                     RedirectUri = new Oci.LoadBalancer.Inputs.RuleSetItemRedirectUriArgs
-    ///                     {
-    ///                         Host = @var.Rule_set_items_redirect_uri_host,
-    ///                         Path = @var.Rule_set_items_redirect_uri_path,
-    ///                         Port = @var.Rule_set_items_redirect_uri_port,
-    ///                         Protocol = @var.Rule_set_items_redirect_uri_protocol,
-    ///                         Query = @var.Rule_set_items_redirect_uri_query,
-    ///                     },
-    ///                     ResponseCode = @var.Rule_set_items_response_code,
-    ///                     StatusCode = @var.Rule_set_items_status_code,
-    ///                     Suffix = @var.Rule_set_items_suffix,
-    ///                     Value = @var.Rule_set_items_value,
     ///                 },
+    ///                 Description = @var.Rule_set_items_description,
+    ///                 Header = @var.Rule_set_items_header,
+    ///                 HttpLargeHeaderSizeInKb = @var.Rule_set_items_http_large_header_size_in_kb,
+    ///                 Prefix = @var.Rule_set_items_prefix,
+    ///                 RedirectUri = new Oci.LoadBalancer.Inputs.RuleSetItemRedirectUriArgs
+    ///                 {
+    ///                     Host = @var.Rule_set_items_redirect_uri_host,
+    ///                     Path = @var.Rule_set_items_redirect_uri_path,
+    ///                     Port = @var.Rule_set_items_redirect_uri_port,
+    ///                     Protocol = @var.Rule_set_items_redirect_uri_protocol,
+    ///                     Query = @var.Rule_set_items_redirect_uri_query,
+    ///                 },
+    ///                 ResponseCode = @var.Rule_set_items_response_code,
+    ///                 StatusCode = @var.Rule_set_items_status_code,
+    ///                 Suffix = @var.Rule_set_items_suffix,
+    ///                 Value = @var.Rule_set_items_value,
     ///             },
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -77,7 +75,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/ruleSet:RuleSet")]
-    public partial class RuleSet : Pulumi.CustomResource
+    public partial class RuleSet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
@@ -144,7 +142,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class RuleSetArgs : Pulumi.ResourceArgs
+    public sealed class RuleSetArgs : global::Pulumi.ResourceArgs
     {
         [Input("items", required: true)]
         private InputList<Inputs.RuleSetItemArgs>? _items;
@@ -173,9 +171,10 @@ namespace Pulumi.Oci.LoadBalancer
         public RuleSetArgs()
         {
         }
+        public static new RuleSetArgs Empty => new RuleSetArgs();
     }
 
-    public sealed class RuleSetState : Pulumi.ResourceArgs
+    public sealed class RuleSetState : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.RuleSetItemGetArgs>? _items;
@@ -207,5 +206,6 @@ namespace Pulumi.Oci.LoadBalancer
         public RuleSetState()
         {
         }
+        public static new RuleSetState Empty => new RuleSetState();
     }
 }

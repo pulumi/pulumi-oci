@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs : Pulumi.ResourceArgs
+    public sealed class DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs : global::Pulumi.ResourceArgs
     {
         [Input("code")]
         public Input<int>? Code { get; set; }
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs()
         {
         }
+        public static new DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs Empty => new DefaultSecurityListEgressSecurityRuleIcmpOptionsArgs();
     }
 }

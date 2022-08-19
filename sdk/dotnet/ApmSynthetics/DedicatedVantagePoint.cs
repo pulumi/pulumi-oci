@@ -17,38 +17,36 @@ namespace Pulumi.Oci.ApmSynthetics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDedicatedVantagePoint = new Oci.ApmSynthetics.DedicatedVantagePoint("testDedicatedVantagePoint", new()
     ///     {
-    ///         var testDedicatedVantagePoint = new Oci.ApmSynthetics.DedicatedVantagePoint("testDedicatedVantagePoint", new Oci.ApmSynthetics.DedicatedVantagePointArgs
+    ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+    ///         DisplayName = @var.Dedicated_vantage_point_display_name,
+    ///         DvpStackDetails = new Oci.ApmSynthetics.Inputs.DedicatedVantagePointDvpStackDetailsArgs
     ///         {
-    ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-    ///             DisplayName = @var.Dedicated_vantage_point_display_name,
-    ///             DvpStackDetails = new Oci.ApmSynthetics.Inputs.DedicatedVantagePointDvpStackDetailsArgs
-    ///             {
-    ///                 DvpStackId = oci_resourcemanager_stack.Test_stack.Id,
-    ///                 DvpStackType = @var.Dedicated_vantage_point_dvp_stack_details_dvp_stack_type,
-    ///                 DvpStreamId = oci_streaming_stream.Test_stream.Id,
-    ///                 DvpVersion = @var.Dedicated_vantage_point_dvp_stack_details_dvp_version,
-    ///             },
-    ///             Region = @var.Dedicated_vantage_point_region,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Status = @var.Dedicated_vantage_point_status,
-    ///         });
-    ///     }
+    ///             DvpStackId = oci_resourcemanager_stack.Test_stack.Id,
+    ///             DvpStackType = @var.Dedicated_vantage_point_dvp_stack_details_dvp_stack_type,
+    ///             DvpStreamId = oci_streaming_stream.Test_stream.Id,
+    ///             DvpVersion = @var.Dedicated_vantage_point_dvp_stack_details_dvp_version,
+    ///         },
+    ///         Region = @var.Dedicated_vantage_point_region,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Status = @var.Dedicated_vantage_point_status,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.ApmSynthetics
     /// ```
     /// </summary>
     [OciResourceType("oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint")]
-    public partial class DedicatedVantagePoint : Pulumi.CustomResource
+    public partial class DedicatedVantagePoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for.
@@ -172,7 +170,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
     }
 
-    public sealed class DedicatedVantagePointArgs : Pulumi.ResourceArgs
+    public sealed class DedicatedVantagePointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for.
@@ -231,9 +229,10 @@ namespace Pulumi.Oci.ApmSynthetics
         public DedicatedVantagePointArgs()
         {
         }
+        public static new DedicatedVantagePointArgs Empty => new DedicatedVantagePointArgs();
     }
 
-    public sealed class DedicatedVantagePointState : Pulumi.ResourceArgs
+    public sealed class DedicatedVantagePointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for.
@@ -322,5 +321,6 @@ namespace Pulumi.Oci.ApmSynthetics
         public DedicatedVantagePointState()
         {
         }
+        public static new DedicatedVantagePointState Empty => new DedicatedVantagePointState();
     }
 }

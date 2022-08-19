@@ -17,68 +17,66 @@ namespace Pulumi.Oci.ApmConfig
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testConfig = new Oci.ApmConfig.Config("testConfig", new()
     ///     {
-    ///         var testConfig = new Oci.ApmConfig.Config("testConfig", new Oci.ApmConfig.ConfigArgs
+    ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+    ///         ConfigType = @var.Config_config_type,
+    ///         DisplayName = @var.Config_display_name,
+    ///         DefinedTags = 
     ///         {
-    ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-    ///             ConfigType = @var.Config_config_type,
-    ///             DisplayName = @var.Config_display_name,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Config_description,
+    ///         Dimensions = new[]
+    ///         {
+    ///             new Oci.ApmConfig.Inputs.ConfigDimensionArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
+    ///                 Name = @var.Config_dimensions_name,
+    ///                 ValueSource = @var.Config_dimensions_value_source,
     ///             },
-    ///             Description = @var.Config_description,
-    ///             Dimensions = 
+    ///         },
+    ///         FilterId = oci_apm_config_filter.Test_filter.Id,
+    ///         FilterText = @var.Config_filter_text,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Group = @var.Config_group,
+    ///         Metrics = new[]
+    ///         {
+    ///             new Oci.ApmConfig.Inputs.ConfigMetricArgs
     ///             {
-    ///                 new Oci.ApmConfig.Inputs.ConfigDimensionArgs
-    ///                 {
-    ///                     Name = @var.Config_dimensions_name,
-    ///                     ValueSource = @var.Config_dimensions_value_source,
-    ///                 },
+    ///                 Description = @var.Config_metrics_description,
+    ///                 Name = @var.Config_metrics_name,
+    ///                 Unit = @var.Config_metrics_unit,
+    ///                 ValueSource = @var.Config_metrics_value_source,
     ///             },
-    ///             FilterId = oci_apm_config_filter.Test_filter.Id,
-    ///             FilterText = @var.Config_filter_text,
-    ///             FreeformTags = 
+    ///         },
+    ///         Namespace = @var.Config_namespace,
+    ///         OpcDryRun = @var.Config_opc_dry_run,
+    ///         Options = @var.Config_options,
+    ///         Rules = new[]
+    ///         {
+    ///             new Oci.ApmConfig.Inputs.ConfigRuleArgs
     ///             {
-    ///                 { "bar-key", "value" },
+    ///                 DisplayName = @var.Config_rules_display_name,
+    ///                 FilterText = @var.Config_rules_filter_text,
+    ///                 IsApplyToErrorSpans = @var.Config_rules_is_apply_to_error_spans,
+    ///                 IsEnabled = @var.Config_rules_is_enabled,
+    ///                 Priority = @var.Config_rules_priority,
+    ///                 SatisfiedResponseTime = @var.Config_rules_satisfied_response_time,
+    ///                 ToleratingResponseTime = @var.Config_rules_tolerating_response_time,
     ///             },
-    ///             Group = @var.Config_group,
-    ///             Metrics = 
-    ///             {
-    ///                 new Oci.ApmConfig.Inputs.ConfigMetricArgs
-    ///                 {
-    ///                     Description = @var.Config_metrics_description,
-    ///                     Name = @var.Config_metrics_name,
-    ///                     Unit = @var.Config_metrics_unit,
-    ///                     ValueSource = @var.Config_metrics_value_source,
-    ///                 },
-    ///             },
-    ///             Namespace = @var.Config_namespace,
-    ///             OpcDryRun = @var.Config_opc_dry_run,
-    ///             Options = @var.Config_options,
-    ///             Rules = 
-    ///             {
-    ///                 new Oci.ApmConfig.Inputs.ConfigRuleArgs
-    ///                 {
-    ///                     DisplayName = @var.Config_rules_display_name,
-    ///                     FilterText = @var.Config_rules_filter_text,
-    ///                     IsApplyToErrorSpans = @var.Config_rules_is_apply_to_error_spans,
-    ///                     IsEnabled = @var.Config_rules_is_enabled,
-    ///                     Priority = @var.Config_rules_priority,
-    ///                     SatisfiedResponseTime = @var.Config_rules_satisfied_response_time,
-    ///                     ToleratingResponseTime = @var.Config_rules_tolerating_response_time,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -90,7 +88,7 @@ namespace Pulumi.Oci.ApmConfig
     /// ```
     /// </summary>
     [OciResourceType("oci:ApmConfig/config:Config")]
-    public partial class Config : Pulumi.CustomResource
+    public partial class Config : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The APM Domain ID the request is intended for.
@@ -238,7 +236,7 @@ namespace Pulumi.Oci.ApmConfig
         }
     }
 
-    public sealed class ConfigArgs : Pulumi.ResourceArgs
+    public sealed class ConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The APM Domain ID the request is intended for.
@@ -363,9 +361,10 @@ namespace Pulumi.Oci.ApmConfig
         public ConfigArgs()
         {
         }
+        public static new ConfigArgs Empty => new ConfigArgs();
     }
 
-    public sealed class ConfigState : Pulumi.ResourceArgs
+    public sealed class ConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The APM Domain ID the request is intended for.
@@ -502,5 +501,6 @@ namespace Pulumi.Oci.ApmConfig
         public ConfigState()
         {
         }
+        public static new ConfigState Empty => new ConfigState();
     }
 }

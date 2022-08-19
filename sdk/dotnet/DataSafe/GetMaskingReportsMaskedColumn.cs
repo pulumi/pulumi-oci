@@ -22,26 +22,24 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingReportsMaskedColumn = Oci.DataSafe.GetMaskingReportsMaskedColumn.Invoke(new()
         ///     {
-        ///         var testMaskingReportsMaskedColumn = Output.Create(Oci.DataSafe.GetMaskingReportsMaskedColumn.InvokeAsync(new Oci.DataSafe.GetMaskingReportsMaskedColumnArgs
-        ///         {
-        ///             MaskingReportId = oci_data_safe_masking_report.Test_masking_report.Id,
-        ///             ColumnNames = @var.Masking_reports_masked_column_column_name,
-        ///             MaskingColumnGroups = @var.Masking_reports_masked_column_masking_column_group,
-        ///             Objects = @var.Masking_reports_masked_column_object,
-        ///             ObjectTypes = @var.Masking_reports_masked_column_object_type,
-        ///             SchemaNames = @var.Masking_reports_masked_column_schema_name,
-        ///             SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         }));
-        ///     }
+        ///         MaskingReportId = oci_data_safe_masking_report.Test_masking_report.Id,
+        ///         ColumnNames = @var.Masking_reports_masked_column_column_name,
+        ///         MaskingColumnGroups = @var.Masking_reports_masked_column_masking_column_group,
+        ///         Objects = @var.Masking_reports_masked_column_object,
+        ///         ObjectTypes = @var.Masking_reports_masked_column_object_type,
+        ///         SchemaNames = @var.Masking_reports_masked_column_schema_name,
+        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,26 +58,24 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingReportsMaskedColumn = Oci.DataSafe.GetMaskingReportsMaskedColumn.Invoke(new()
         ///     {
-        ///         var testMaskingReportsMaskedColumn = Output.Create(Oci.DataSafe.GetMaskingReportsMaskedColumn.InvokeAsync(new Oci.DataSafe.GetMaskingReportsMaskedColumnArgs
-        ///         {
-        ///             MaskingReportId = oci_data_safe_masking_report.Test_masking_report.Id,
-        ///             ColumnNames = @var.Masking_reports_masked_column_column_name,
-        ///             MaskingColumnGroups = @var.Masking_reports_masked_column_masking_column_group,
-        ///             Objects = @var.Masking_reports_masked_column_object,
-        ///             ObjectTypes = @var.Masking_reports_masked_column_object_type,
-        ///             SchemaNames = @var.Masking_reports_masked_column_schema_name,
-        ///             SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         }));
-        ///     }
+        ///         MaskingReportId = oci_data_safe_masking_report.Test_masking_report.Id,
+        ///         ColumnNames = @var.Masking_reports_masked_column_column_name,
+        ///         MaskingColumnGroups = @var.Masking_reports_masked_column_masking_column_group,
+        ///         Objects = @var.Masking_reports_masked_column_object,
+        ///         ObjectTypes = @var.Masking_reports_masked_column_object_type,
+        ///         SchemaNames = @var.Masking_reports_masked_column_schema_name,
+        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetMaskingReportsMaskedColumnArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingReportsMaskedColumnArgs : global::Pulumi.InvokeArgs
     {
         [Input("columnNames")]
         private List<string>? _columnNames;
@@ -166,9 +162,10 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingReportsMaskedColumnArgs()
         {
         }
+        public static new GetMaskingReportsMaskedColumnArgs Empty => new GetMaskingReportsMaskedColumnArgs();
     }
 
-    public sealed class GetMaskingReportsMaskedColumnInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingReportsMaskedColumnInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("columnNames")]
         private InputList<string>? _columnNames;
@@ -245,6 +242,7 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingReportsMaskedColumnInvokeArgs()
         {
         }
+        public static new GetMaskingReportsMaskedColumnInvokeArgs Empty => new GetMaskingReportsMaskedColumnInvokeArgs();
     }
 
 

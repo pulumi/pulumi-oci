@@ -22,21 +22,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsCategory = Oci.LogAnalytics.GetLogAnalyticsCategory.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsCategory = Output.Create(Oci.LogAnalytics.GetLogAnalyticsCategory.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsCategoryArgs
-        ///         {
-        ///             Name = @var.Log_analytics_category_name,
-        ///             Namespace = @var.Log_analytics_category_namespace,
-        ///         }));
-        ///     }
+        ///         Name = @var.Log_analytics_category_name,
+        ///         Namespace = @var.Log_analytics_category_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsCategory = Oci.LogAnalytics.GetLogAnalyticsCategory.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsCategory = Output.Create(Oci.LogAnalytics.GetLogAnalyticsCategory.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsCategoryArgs
-        ///         {
-        ///             Name = @var.Log_analytics_category_name,
-        ///             Namespace = @var.Log_analytics_category_namespace,
-        ///         }));
-        ///     }
+        ///         Name = @var.Log_analytics_category_name,
+        ///         Namespace = @var.Log_analytics_category_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsCategoryArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsCategoryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The category name.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsCategoryArgs()
         {
         }
+        public static new GetLogAnalyticsCategoryArgs Empty => new GetLogAnalyticsCategoryArgs();
     }
 
-    public sealed class GetLogAnalyticsCategoryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsCategoryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The category name.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsCategoryInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsCategoryInvokeArgs Empty => new GetLogAnalyticsCategoryInvokeArgs();
     }
 
 

@@ -24,21 +24,19 @@ namespace Pulumi.Oci.Ons
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptions = Oci.Ons.GetSubscriptions.Invoke(new()
         ///     {
-        ///         var testSubscriptions = Output.Create(Oci.Ons.GetSubscriptions.InvokeAsync(new Oci.Ons.GetSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,21 +57,19 @@ namespace Pulumi.Oci.Ons
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptions = Oci.Ons.GetSubscriptions.Invoke(new()
         ///     {
-        ///         var testSubscriptions = Output.Create(Oci.Ons.GetSubscriptions.InvokeAsync(new Oci.Ons.GetSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Ons
     }
 
 
-    public sealed class GetSubscriptionsArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -108,9 +104,10 @@ namespace Pulumi.Oci.Ons
         public GetSubscriptionsArgs()
         {
         }
+        public static new GetSubscriptionsArgs Empty => new GetSubscriptionsArgs();
     }
 
-    public sealed class GetSubscriptionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -135,6 +132,7 @@ namespace Pulumi.Oci.Ons
         public GetSubscriptionsInvokeArgs()
         {
         }
+        public static new GetSubscriptionsInvokeArgs Empty => new GetSubscriptionsInvokeArgs();
     }
 
 

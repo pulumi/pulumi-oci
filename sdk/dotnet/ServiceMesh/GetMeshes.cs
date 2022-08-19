@@ -22,23 +22,21 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMeshes = Oci.ServiceMesh.GetMeshes.Invoke(new()
         ///     {
-        ///         var testMeshes = Output.Create(Oci.ServiceMesh.GetMeshes.InvokeAsync(new Oci.ServiceMesh.GetMeshesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Mesh_display_name,
-        ///             Id = @var.Mesh_id,
-        ///             State = @var.Mesh_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Mesh_display_name,
+        ///         Id = @var.Mesh_id,
+        ///         State = @var.Mesh_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMeshes = Oci.ServiceMesh.GetMeshes.Invoke(new()
         ///     {
-        ///         var testMeshes = Output.Create(Oci.ServiceMesh.GetMeshes.InvokeAsync(new Oci.ServiceMesh.GetMeshesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Mesh_display_name,
-        ///             Id = @var.Mesh_id,
-        ///             State = @var.Mesh_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Mesh_display_name,
+        ///         Id = @var.Mesh_id,
+        ///         State = @var.Mesh_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetMeshesArgs : Pulumi.InvokeArgs
+    public sealed class GetMeshesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetMeshesArgs()
         {
         }
+        public static new GetMeshesArgs Empty => new GetMeshesArgs();
     }
 
-    public sealed class GetMeshesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMeshesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetMeshesInvokeArgs()
         {
         }
+        public static new GetMeshesInvokeArgs Empty => new GetMeshesInvokeArgs();
     }
 
 

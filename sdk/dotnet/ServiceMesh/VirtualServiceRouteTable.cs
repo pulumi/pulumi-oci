@@ -17,50 +17,48 @@ namespace Pulumi.Oci.ServiceMesh
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVirtualServiceRouteTable = new Oci.ServiceMesh.VirtualServiceRouteTable("testVirtualServiceRouteTable", new()
     ///     {
-    ///         var testVirtualServiceRouteTable = new Oci.ServiceMesh.VirtualServiceRouteTable("testVirtualServiceRouteTable", new Oci.ServiceMesh.VirtualServiceRouteTableArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         RouteRules = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             RouteRules = 
+    ///             new Oci.ServiceMesh.Inputs.VirtualServiceRouteTableRouteRuleArgs
     ///             {
-    ///                 new Oci.ServiceMesh.Inputs.VirtualServiceRouteTableRouteRuleArgs
+    ///                 Destinations = new[]
     ///                 {
-    ///                     Destinations = 
+    ///                     new Oci.ServiceMesh.Inputs.VirtualServiceRouteTableRouteRuleDestinationArgs
     ///                     {
-    ///                         new Oci.ServiceMesh.Inputs.VirtualServiceRouteTableRouteRuleDestinationArgs
-    ///                         {
-    ///                             VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
-    ///                             Weight = @var.Virtual_service_route_table_route_rules_destinations_weight,
-    ///                             Port = @var.Virtual_service_route_table_route_rules_destinations_port,
-    ///                         },
+    ///                         VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
+    ///                         Weight = @var.Virtual_service_route_table_route_rules_destinations_weight,
+    ///                         Port = @var.Virtual_service_route_table_route_rules_destinations_port,
     ///                     },
-    ///                     Type = @var.Virtual_service_route_table_route_rules_type,
-    ///                     IsGrpc = @var.Virtual_service_route_table_route_rules_is_grpc,
-    ///                     Path = @var.Virtual_service_route_table_route_rules_path,
-    ///                     PathType = @var.Virtual_service_route_table_route_rules_path_type,
     ///                 },
+    ///                 Type = @var.Virtual_service_route_table_route_rules_type,
+    ///                 IsGrpc = @var.Virtual_service_route_table_route_rules_is_grpc,
+    ///                 Path = @var.Virtual_service_route_table_route_rules_path,
+    ///                 PathType = @var.Virtual_service_route_table_route_rules_path_type,
     ///             },
-    ///             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Virtual_service_route_table_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Priority = @var.Virtual_service_route_table_priority,
-    ///         });
-    ///     }
+    ///         },
+    ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Virtual_service_route_table_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Priority = @var.Virtual_service_route_table_priority,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -72,7 +70,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/virtualServiceRouteTable:VirtualServiceRouteTable")]
-    public partial class VirtualServiceRouteTable : Pulumi.CustomResource
+    public partial class VirtualServiceRouteTable : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -196,7 +194,7 @@ namespace Pulumi.Oci.ServiceMesh
         }
     }
 
-    public sealed class VirtualServiceRouteTableArgs : Pulumi.ResourceArgs
+    public sealed class VirtualServiceRouteTableArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -267,9 +265,10 @@ namespace Pulumi.Oci.ServiceMesh
         public VirtualServiceRouteTableArgs()
         {
         }
+        public static new VirtualServiceRouteTableArgs Empty => new VirtualServiceRouteTableArgs();
     }
 
-    public sealed class VirtualServiceRouteTableState : Pulumi.ResourceArgs
+    public sealed class VirtualServiceRouteTableState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -376,5 +375,6 @@ namespace Pulumi.Oci.ServiceMesh
         public VirtualServiceRouteTableState()
         {
         }
+        public static new VirtualServiceRouteTableState Empty => new VirtualServiceRouteTableState();
     }
 }

@@ -44,6 +44,34 @@ public final class MeteringComputationFunctions {
      * Returns the configurations list for the UI drop-down list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
@@ -55,6 +83,34 @@ public final class MeteringComputationFunctions {
      * Returns the configurations list for the UI drop-down list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args) {
@@ -66,6 +122,34 @@ public final class MeteringComputationFunctions {
      * Returns the configurations list for the UI drop-down list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
@@ -77,6 +161,34 @@ public final class MeteringComputationFunctions {
      * Returns the configurations list for the UI drop-down list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args, InvokeOptions options) {
@@ -88,6 +200,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
+     *             .customTableId(oci_metering_computation_custom_table.test_custom_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomTableResult> getCustomTable(GetCustomTableArgs args) {
@@ -99,6 +239,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
+     *             .customTableId(oci_metering_computation_custom_table.test_custom_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomTableResult> getCustomTablePlain(GetCustomTablePlainArgs args) {
@@ -110,6 +278,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
+     *             .customTableId(oci_metering_computation_custom_table.test_custom_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomTableResult> getCustomTable(GetCustomTableArgs args, InvokeOptions options) {
@@ -121,6 +317,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
+     *             .customTableId(oci_metering_computation_custom_table.test_custom_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomTableResult> getCustomTablePlain(GetCustomTablePlainArgs args, InvokeOptions options) {
@@ -132,6 +356,35 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .savedReportId(oci_metering_computation_saved_report.test_saved_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomTablesResult> getCustomTables(GetCustomTablesArgs args) {
@@ -143,6 +396,35 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .savedReportId(oci_metering_computation_saved_report.test_saved_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomTablesResult> getCustomTablesPlain(GetCustomTablesPlainArgs args) {
@@ -154,6 +436,35 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .savedReportId(oci_metering_computation_saved_report.test_saved_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomTablesResult> getCustomTables(GetCustomTablesArgs args, InvokeOptions options) {
@@ -165,6 +476,35 @@ public final class MeteringComputationFunctions {
      * Returns the saved custom table list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .savedReportId(oci_metering_computation_saved_report.test_saved_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomTablesResult> getCustomTablesPlain(GetCustomTablesPlainArgs args, InvokeOptions options) {
@@ -176,6 +516,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved query list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueries = MeteringComputationFunctions.getQueries(GetQueriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQueriesResult> getQueries(GetQueriesArgs args) {
@@ -187,6 +555,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved query list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueries = MeteringComputationFunctions.getQueries(GetQueriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQueriesResult> getQueriesPlain(GetQueriesPlainArgs args) {
@@ -198,6 +594,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved query list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueries = MeteringComputationFunctions.getQueries(GetQueriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQueriesResult> getQueries(GetQueriesArgs args, InvokeOptions options) {
@@ -209,6 +633,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved query list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueries = MeteringComputationFunctions.getQueries(GetQueriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQueriesResult> getQueriesPlain(GetQueriesPlainArgs args, InvokeOptions options) {
@@ -220,6 +672,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved query.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
+     *             .queryId(oci_metering_computation_query.test_query().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQueryResult> getQuery(GetQueryArgs args) {
@@ -231,6 +711,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved query.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
+     *             .queryId(oci_metering_computation_query.test_query().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQueryResult> getQueryPlain(GetQueryPlainArgs args) {
@@ -242,6 +750,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved query.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
+     *             .queryId(oci_metering_computation_query.test_query().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQueryResult> getQuery(GetQueryArgs args, InvokeOptions options) {
@@ -253,6 +789,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved query.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
+     *             .queryId(oci_metering_computation_query.test_query().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQueryResult> getQueryPlain(GetQueryPlainArgs args, InvokeOptions options) {
@@ -264,6 +828,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(oci_metering_computation_schedule.test_schedule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args) {
@@ -275,6 +867,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(oci_metering_computation_schedule.test_schedule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScheduleResult> getSchedulePlain(GetSchedulePlainArgs args) {
@@ -286,6 +906,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(oci_metering_computation_schedule.test_schedule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScheduleResult> getSchedule(GetScheduleArgs args, InvokeOptions options) {
@@ -297,6 +945,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
+     *             .scheduleId(oci_metering_computation_schedule.test_schedule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScheduleResult> getSchedulePlain(GetSchedulePlainArgs args, InvokeOptions options) {
@@ -308,6 +984,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
+     *             .scheduledRunId(oci_metering_computation_scheduled_run.test_scheduled_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScheduledRunResult> getScheduledRun(GetScheduledRunArgs args) {
@@ -319,6 +1023,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
+     *             .scheduledRunId(oci_metering_computation_scheduled_run.test_scheduled_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScheduledRunResult> getScheduledRunPlain(GetScheduledRunPlainArgs args) {
@@ -330,6 +1062,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
+     *             .scheduledRunId(oci_metering_computation_scheduled_run.test_scheduled_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScheduledRunResult> getScheduledRun(GetScheduledRunArgs args, InvokeOptions options) {
@@ -341,6 +1101,34 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
+     *             .scheduledRunId(oci_metering_computation_scheduled_run.test_scheduled_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScheduledRunResult> getScheduledRunPlain(GetScheduledRunPlainArgs args, InvokeOptions options) {
@@ -352,6 +1140,34 @@ public final class MeteringComputationFunctions {
      * Returns schedule history list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
+     *             .scheduleId(oci_metering_computation_schedule.test_schedule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScheduledRunsResult> getScheduledRuns(GetScheduledRunsArgs args) {
@@ -363,6 +1179,34 @@ public final class MeteringComputationFunctions {
      * Returns schedule history list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
+     *             .scheduleId(oci_metering_computation_schedule.test_schedule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScheduledRunsResult> getScheduledRunsPlain(GetScheduledRunsPlainArgs args) {
@@ -374,6 +1218,34 @@ public final class MeteringComputationFunctions {
      * Returns schedule history list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
+     *             .scheduleId(oci_metering_computation_schedule.test_schedule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScheduledRunsResult> getScheduledRuns(GetScheduledRunsArgs args, InvokeOptions options) {
@@ -385,6 +1257,34 @@ public final class MeteringComputationFunctions {
      * Returns schedule history list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
+     *             .scheduleId(oci_metering_computation_schedule.test_schedule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScheduledRunsResult> getScheduledRunsPlain(GetScheduledRunsPlainArgs args, InvokeOptions options) {
@@ -396,6 +1296,35 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = MeteringComputationFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.schedule_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args) {
@@ -407,6 +1336,35 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = MeteringComputationFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.schedule_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args) {
@@ -418,6 +1376,35 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = MeteringComputationFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.schedule_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSchedulesResult> getSchedules(GetSchedulesArgs args, InvokeOptions options) {
@@ -429,6 +1416,35 @@ public final class MeteringComputationFunctions {
      * Returns the saved schedule list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSchedules = MeteringComputationFunctions.getSchedules(GetSchedulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.schedule_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args, InvokeOptions options) {

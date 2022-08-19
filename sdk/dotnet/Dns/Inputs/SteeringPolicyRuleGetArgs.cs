@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class SteeringPolicyRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class SteeringPolicyRuleGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("cases")]
         private InputList<Inputs.SteeringPolicyRuleCaseGetArgs>? _cases;
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public SteeringPolicyRuleGetArgs()
         {
         }
+        public static new SteeringPolicyRuleGetArgs Empty => new SteeringPolicyRuleGetArgs();
     }
 }

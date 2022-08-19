@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Monitored Resource Name
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailGetArgs()
         {
         }
+        public static new MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailGetArgs Empty => new MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailGetArgs();
     }
 }

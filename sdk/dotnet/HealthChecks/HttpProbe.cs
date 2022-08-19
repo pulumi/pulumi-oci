@@ -20,28 +20,26 @@ namespace Pulumi.Oci.HealthChecks
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testHttpProbe = new Oci.HealthChecks.HttpProbe("testHttpProbe", new()
     ///     {
-    ///         var testHttpProbe = new Oci.HealthChecks.HttpProbe("testHttpProbe", new Oci.HealthChecks.HttpProbeArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Protocol = @var.Http_probe_protocol,
-    ///             Targets = @var.Http_probe_targets,
-    ///             Headers = @var.Http_probe_headers,
-    ///             Method = @var.Http_probe_method,
-    ///             Path = @var.Http_probe_path,
-    ///             Port = @var.Http_probe_port,
-    ///             TimeoutInSeconds = @var.Http_probe_timeout_in_seconds,
-    ///             VantagePointNames = @var.Http_probe_vantage_point_names,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Protocol = @var.Http_probe_protocol,
+    ///         Targets = @var.Http_probe_targets,
+    ///         Headers = @var.Http_probe_headers,
+    ///         Method = @var.Http_probe_method,
+    ///         Path = @var.Http_probe_path,
+    ///         Port = @var.Http_probe_port,
+    ///         TimeoutInSeconds = @var.Http_probe_timeout_in_seconds,
+    ///         VantagePointNames = @var.Http_probe_vantage_point_names,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.HealthChecks
     /// ```
     /// </summary>
     [OciResourceType("oci:HealthChecks/httpProbe:HttpProbe")]
-    public partial class HttpProbe : Pulumi.CustomResource
+    public partial class HttpProbe : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -171,7 +169,7 @@ namespace Pulumi.Oci.HealthChecks
         }
     }
 
-    public sealed class HttpProbeArgs : Pulumi.ResourceArgs
+    public sealed class HttpProbeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -248,9 +246,10 @@ namespace Pulumi.Oci.HealthChecks
         public HttpProbeArgs()
         {
         }
+        public static new HttpProbeArgs Empty => new HttpProbeArgs();
     }
 
-    public sealed class HttpProbeState : Pulumi.ResourceArgs
+    public sealed class HttpProbeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -345,5 +344,6 @@ namespace Pulumi.Oci.HealthChecks
         public HttpProbeState()
         {
         }
+        public static new HttpProbeState Empty => new HttpProbeState();
     }
 }

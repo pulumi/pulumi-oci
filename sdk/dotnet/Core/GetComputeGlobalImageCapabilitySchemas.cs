@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeGlobalImageCapabilitySchemas = Oci.Core.GetComputeGlobalImageCapabilitySchemas.Invoke(new()
         ///     {
-        ///         var testComputeGlobalImageCapabilitySchemas = Output.Create(Oci.Core.GetComputeGlobalImageCapabilitySchemas.InvokeAsync(new Oci.Core.GetComputeGlobalImageCapabilitySchemasArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Compute_global_image_capability_schema_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Compute_global_image_capability_schema_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeGlobalImageCapabilitySchemas = Oci.Core.GetComputeGlobalImageCapabilitySchemas.Invoke(new()
         ///     {
-        ///         var testComputeGlobalImageCapabilitySchemas = Output.Create(Oci.Core.GetComputeGlobalImageCapabilitySchemas.InvokeAsync(new Oci.Core.GetComputeGlobalImageCapabilitySchemasArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Compute_global_image_capability_schema_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Compute_global_image_capability_schema_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetComputeGlobalImageCapabilitySchemasArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeGlobalImageCapabilitySchemasArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given compartment OCID exactly.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Core
         public GetComputeGlobalImageCapabilitySchemasArgs()
         {
         }
+        public static new GetComputeGlobalImageCapabilitySchemasArgs Empty => new GetComputeGlobalImageCapabilitySchemasArgs();
     }
 
-    public sealed class GetComputeGlobalImageCapabilitySchemasInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeGlobalImageCapabilitySchemasInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given compartment OCID exactly.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.Core
         public GetComputeGlobalImageCapabilitySchemasInvokeArgs()
         {
         }
+        public static new GetComputeGlobalImageCapabilitySchemasInvokeArgs Empty => new GetComputeGlobalImageCapabilitySchemasInvokeArgs();
     }
 
 

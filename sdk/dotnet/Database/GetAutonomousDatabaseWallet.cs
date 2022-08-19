@@ -17,23 +17,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseWallet = Oci.Database.GetAutonomousDatabaseWallet.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseWallet = Output.Create(Oci.Database.GetAutonomousDatabaseWallet.InvokeAsync(new Oci.Database.GetAutonomousDatabaseWalletArgs
-        ///         {
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///             Password = @var.Autonomous_database_wallet_password,
-        ///             Base64EncodeContent = false,
-        ///             GenerateType = @var.Autonomous_database_wallet_generate_type,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///         Password = @var.Autonomous_database_wallet_password,
+        ///         Base64EncodeContent = false,
+        ///         GenerateType = @var.Autonomous_database_wallet_generate_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -47,23 +45,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseWallet = Oci.Database.GetAutonomousDatabaseWallet.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseWallet = Output.Create(Oci.Database.GetAutonomousDatabaseWallet.InvokeAsync(new Oci.Database.GetAutonomousDatabaseWalletArgs
-        ///         {
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///             Password = @var.Autonomous_database_wallet_password,
-        ///             Base64EncodeContent = false,
-        ///             GenerateType = @var.Autonomous_database_wallet_generate_type,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///         Password = @var.Autonomous_database_wallet_password,
+        ///         Base64EncodeContent = false,
+        ///         GenerateType = @var.Autonomous_database_wallet_generate_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -73,7 +69,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousDatabaseWalletArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabaseWalletArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,9 +95,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabaseWalletArgs()
         {
         }
+        public static new GetAutonomousDatabaseWalletArgs Empty => new GetAutonomousDatabaseWalletArgs();
     }
 
-    public sealed class GetAutonomousDatabaseWalletInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabaseWalletInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabaseWalletInvokeArgs()
         {
         }
+        public static new GetAutonomousDatabaseWalletInvokeArgs Empty => new GetAutonomousDatabaseWalletInvokeArgs();
     }
 
 

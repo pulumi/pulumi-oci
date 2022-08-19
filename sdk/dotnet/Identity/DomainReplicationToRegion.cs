@@ -29,21 +29,19 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDomainReplicationToRegion = new Oci.Identity.DomainReplicationToRegion("testDomainReplicationToRegion", new()
     ///     {
-    ///         var testDomainReplicationToRegion = new Oci.Identity.DomainReplicationToRegion("testDomainReplicationToRegion", new Oci.Identity.DomainReplicationToRegionArgs
-    ///         {
-    ///             DomainId = oci_identity_domain.Test_domain.Id,
-    ///             ReplicaRegion = @var.Domain_replication_to_region_replica_region,
-    ///         });
-    ///     }
+    ///         DomainId = oci_identity_domain.Test_domain.Id,
+    ///         ReplicaRegion = @var.Domain_replication_to_region_replica_region,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.Identity
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Identity/domainReplicationToRegion:DomainReplicationToRegion")]
-    public partial class DomainReplicationToRegion : Pulumi.CustomResource
+    public partial class DomainReplicationToRegion : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the domain
@@ -109,7 +107,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class DomainReplicationToRegionArgs : Pulumi.ResourceArgs
+    public sealed class DomainReplicationToRegionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the domain
@@ -126,9 +124,10 @@ namespace Pulumi.Oci.Identity
         public DomainReplicationToRegionArgs()
         {
         }
+        public static new DomainReplicationToRegionArgs Empty => new DomainReplicationToRegionArgs();
     }
 
-    public sealed class DomainReplicationToRegionState : Pulumi.ResourceArgs
+    public sealed class DomainReplicationToRegionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the domain
@@ -145,5 +144,6 @@ namespace Pulumi.Oci.Identity
         public DomainReplicationToRegionState()
         {
         }
+        public static new DomainReplicationToRegionState Empty => new DomainReplicationToRegionState();
     }
 }

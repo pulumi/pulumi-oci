@@ -22,55 +22,54 @@ namespace Pulumi.Oci.Ocvp
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSddc = new Oci.Ocvp.Sddc("testSddc", new()
     ///     {
-    ///         var testSddc = new Oci.Ocvp.Sddc("testSddc", new Oci.Ocvp.SddcArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ComputeAvailabilityDomain = @var.Sddc_compute_availability_domain,
+    ///         EsxiHostsCount = @var.Sddc_esxi_hosts_count,
+    ///         NsxEdgeUplink1vlanId = oci_core_vlan.Test_nsx_edge_uplink1vlan.Id,
+    ///         NsxEdgeUplink2vlanId = oci_core_vlan.Test_nsx_edge_uplink2vlan.Id,
+    ///         NsxEdgeVtepVlanId = oci_core_vlan.Test_nsx_edge_vtep_vlan.Id,
+    ///         NsxVtepVlanId = oci_core_vlan.Test_nsx_vtep_vlan.Id,
+    ///         ProvisioningSubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         SshAuthorizedKeys = @var.Sddc_ssh_authorized_keys,
+    ///         VmotionVlanId = oci_core_vlan.Test_vmotion_vlan.Id,
+    ///         VmwareSoftwareVersion = @var.Sddc_vmware_software_version,
+    ///         VsanVlanId = oci_core_vlan.Test_vsan_vlan.Id,
+    ///         VsphereVlanId = oci_core_vlan.Test_vsphere_vlan.Id,
+    ///         CapacityReservationId = oci_ocvp_capacity_reservation.Test_capacity_reservation.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ComputeAvailabilityDomain = @var.Sddc_compute_availability_domain,
-    ///             EsxiHostsCount = @var.Sddc_esxi_hosts_count,
-    ///             NsxEdgeUplink1vlanId = oci_core_vlan.Test_nsx_edge_uplink1vlan.Id,
-    ///             NsxEdgeUplink2vlanId = oci_core_vlan.Test_nsx_edge_uplink2vlan.Id,
-    ///             NsxEdgeVtepVlanId = oci_core_vlan.Test_nsx_edge_vtep_vlan.Id,
-    ///             NsxVtepVlanId = oci_core_vlan.Test_nsx_vtep_vlan.Id,
-    ///             ProvisioningSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             SshAuthorizedKeys = @var.Sddc_ssh_authorized_keys,
-    ///             VmotionVlanId = oci_core_vlan.Test_vmotion_vlan.Id,
-    ///             VmwareSoftwareVersion = @var.Sddc_vmware_software_version,
-    ///             VsanVlanId = oci_core_vlan.Test_vsan_vlan.Id,
-    ///             VsphereVlanId = oci_core_vlan.Test_vsphere_vlan.Id,
-    ///             CapacityReservationId = oci_ocvp_capacity_reservation.Test_capacity_reservation.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Sddc_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             HcxAction = @var.Hcx_action,
-    ///             HcxVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             InitialHostOcpuCount = @var.Sddc_initial_host_ocpu_count,
-    ///             InitialHostShapeName = oci_core_shape.Test_shape.Name,
-    ///             InitialSku = @var.Sddc_initial_sku,
-    ///             InstanceDisplayNamePrefix = @var.Sddc_instance_display_name_prefix,
-    ///             IsHcxEnabled = @var.Sddc_is_hcx_enabled,
-    ///             IsShieldedInstanceEnabled = @var.Sddc_is_shielded_instance_enabled,
-    ///             ProvisioningVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             RefreshHcxLicenseStatus = true,
-    ///             ReplicationVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             ReservingHcxOnPremiseLicenseKeys = @var.Reserving_hcx_on_premise_license_keys,
-    ///             WorkloadNetworkCidr = @var.Sddc_workload_network_cidr,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Sddc_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         HcxAction = @var.Hcx_action,
+    ///         HcxVlanId = oci_core_vlan.Test_vlan.Id,
+    ///         InitialHostOcpuCount = @var.Sddc_initial_host_ocpu_count,
+    ///         InitialHostShapeName = oci_core_shape.Test_shape.Name,
+    ///         InitialSku = @var.Sddc_initial_sku,
+    ///         InstanceDisplayNamePrefix = @var.Sddc_instance_display_name_prefix,
+    ///         IsHcxEnabled = @var.Sddc_is_hcx_enabled,
+    ///         IsShieldedInstanceEnabled = @var.Sddc_is_shielded_instance_enabled,
+    ///         IsSingleHostSddc = @var.Sddc_is_single_host_sddc,
+    ///         ProvisioningVlanId = oci_core_vlan.Test_vlan.Id,
+    ///         RefreshHcxLicenseStatus = true,
+    ///         ReplicationVlanId = oci_core_vlan.Test_vlan.Id,
+    ///         ReservingHcxOnPremiseLicenseKeys = @var.Reserving_hcx_on_premise_license_keys,
+    ///         WorkloadNetworkCidr = @var.Sddc_workload_network_cidr,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -82,7 +81,7 @@ namespace Pulumi.Oci.Ocvp
     /// ```
     /// </summary>
     [OciResourceType("oci:Ocvp/sddc:Sddc")]
-    public partial class Sddc : Pulumi.CustomResource
+    public partial class Sddc : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
@@ -121,7 +120,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+        /// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
         /// </summary>
         [Output("esxiHostsCount")]
         public Output<int> EsxiHostsCount { get; private set; } = null!;
@@ -221,6 +220,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("isShieldedInstanceEnabled")]
         public Output<bool> IsShieldedInstanceEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether this SDDC is designated for only single ESXi host.
+        /// </summary>
+        [Output("isSingleHostSddc")]
+        public Output<bool> IsSingleHostSddc { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
@@ -446,7 +451,7 @@ namespace Pulumi.Oci.Ocvp
         }
     }
 
-    public sealed class SddcArgs : Pulumi.ResourceArgs
+    public sealed class SddcArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -485,7 +490,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+        /// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
         /// </summary>
         [Input("esxiHostsCount", required: true)]
         public Input<int> EsxiHostsCount { get; set; } = null!;
@@ -549,6 +554,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("isShieldedInstanceEnabled")]
         public Input<bool>? IsShieldedInstanceEnabled { get; set; }
+
+        /// <summary>
+        /// Indicates whether this SDDC is designated for only single ESXi host.
+        /// </summary>
+        [Input("isSingleHostSddc")]
+        public Input<bool>? IsSingleHostSddc { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
@@ -649,9 +660,10 @@ namespace Pulumi.Oci.Ocvp
         public SddcArgs()
         {
         }
+        public static new SddcArgs Empty => new SddcArgs();
     }
 
-    public sealed class SddcState : Pulumi.ResourceArgs
+    public sealed class SddcState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
@@ -696,7 +708,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+        /// The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
         /// </summary>
         [Input("esxiHostsCount")]
         public Input<int>? EsxiHostsCount { get; set; }
@@ -808,6 +820,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("isShieldedInstanceEnabled")]
         public Input<bool>? IsShieldedInstanceEnabled { get; set; }
+
+        /// <summary>
+        /// Indicates whether this SDDC is designated for only single ESXi host.
+        /// </summary>
+        [Input("isSingleHostSddc")]
+        public Input<bool>? IsSingleHostSddc { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
@@ -998,5 +1016,6 @@ namespace Pulumi.Oci.Ocvp
         public SddcState()
         {
         }
+        public static new SddcState Empty => new SddcState();
     }
 }

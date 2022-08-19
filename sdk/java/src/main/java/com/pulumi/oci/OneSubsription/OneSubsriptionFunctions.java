@@ -93,6 +93,36 @@ public final class OneSubsriptionFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBillingSchedulesResult> getBillingSchedules(GetBillingSchedulesArgs args) {
@@ -105,6 +135,36 @@ public final class OneSubsriptionFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBillingSchedulesResult> getBillingSchedulesPlain(GetBillingSchedulesPlainArgs args) {
@@ -117,6 +177,36 @@ public final class OneSubsriptionFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBillingSchedulesResult> getBillingSchedules(GetBillingSchedulesArgs args, InvokeOptions options) {
@@ -129,6 +219,36 @@ public final class OneSubsriptionFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetBillingSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBillingSchedulesResult> getBillingSchedulesPlain(GetBillingSchedulesPlainArgs args, InvokeOptions options) {
@@ -140,6 +260,34 @@ public final class OneSubsriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
+     *             .commitmentId(oci_onesubscription_commitment.test_commitment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCommitmentResult> getCommitment(GetCommitmentArgs args) {
@@ -151,6 +299,34 @@ public final class OneSubsriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
+     *             .commitmentId(oci_onesubscription_commitment.test_commitment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCommitmentResult> getCommitmentPlain(GetCommitmentPlainArgs args) {
@@ -162,6 +338,34 @@ public final class OneSubsriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
+     *             .commitmentId(oci_onesubscription_commitment.test_commitment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCommitmentResult> getCommitment(GetCommitmentArgs args, InvokeOptions options) {
@@ -173,6 +377,34 @@ public final class OneSubsriptionFunctions {
      * This API returns the commitment details corresponding to the id provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
+     *             .commitmentId(oci_onesubscription_commitment.test_commitment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCommitmentResult> getCommitmentPlain(GetCommitmentPlainArgs args, InvokeOptions options) {
@@ -184,6 +416,35 @@ public final class OneSubsriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args) {
@@ -195,6 +456,35 @@ public final class OneSubsriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCommitmentsResult> getCommitmentsPlain(GetCommitmentsPlainArgs args) {
@@ -206,6 +496,35 @@ public final class OneSubsriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCommitmentsResult> getCommitments(GetCommitmentsArgs args, InvokeOptions options) {
@@ -217,6 +536,35 @@ public final class OneSubsriptionFunctions {
      * This list API returns all commitments for a particular Subscribed Service
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCommitmentsResult> getCommitmentsPlain(GetCommitmentsPlainArgs args, InvokeOptions options) {
@@ -228,6 +576,36 @@ public final class OneSubsriptionFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computedUsageId(oci_onesubscription_computed_usage.test_computed_usage().id())
+     *             .fields(var_.computed_usage_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args) {
@@ -239,6 +617,36 @@ public final class OneSubsriptionFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computedUsageId(oci_onesubscription_computed_usage.test_computed_usage().id())
+     *             .fields(var_.computed_usage_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args) {
@@ -250,6 +658,36 @@ public final class OneSubsriptionFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computedUsageId(oci_onesubscription_computed_usage.test_computed_usage().id())
+     *             .fields(var_.computed_usage_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args, InvokeOptions options) {
@@ -261,6 +699,36 @@ public final class OneSubsriptionFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computedUsageId(oci_onesubscription_computed_usage.test_computed_usage().id())
+     *             .fields(var_.computed_usage_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args, InvokeOptions options) {
@@ -308,6 +776,36 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .invoiceLineId(oci_onesubscription_invoice_line.test_invoice_line().id())
+     *             .fields(var_.invoice_line_computed_usage_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs args) {
@@ -319,6 +817,36 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .invoiceLineId(oci_onesubscription_invoice_line.test_invoice_line().id())
+     *             .fields(var_.invoice_line_computed_usage_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsagesPlain(GetInvoiceLineComputedUsagesPlainArgs args) {
@@ -330,6 +858,36 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .invoiceLineId(oci_onesubscription_invoice_line.test_invoice_line().id())
+     *             .fields(var_.invoice_line_computed_usage_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs args, InvokeOptions options) {
@@ -341,6 +899,36 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoiceLineComputedUsagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .invoiceLineId(oci_onesubscription_invoice_line.test_invoice_line().id())
+     *             .fields(var_.invoice_line_computed_usage_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoiceLineComputedUsagesResult> getInvoiceLineComputedUsagesPlain(GetInvoiceLineComputedUsagesPlainArgs args, InvokeOptions options) {
@@ -352,6 +940,38 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoices for given filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .arCustomerTransactionId(oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .fields(var_.invoice_fields())
+     *             .timeFrom(var_.invoice_time_from())
+     *             .timeTo(var_.invoice_time_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args) {
@@ -363,6 +983,38 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoices for given filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .arCustomerTransactionId(oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .fields(var_.invoice_fields())
+     *             .timeFrom(var_.invoice_time_from())
+     *             .timeTo(var_.invoice_time_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args) {
@@ -374,6 +1026,38 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoices for given filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .arCustomerTransactionId(oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .fields(var_.invoice_fields())
+     *             .timeFrom(var_.invoice_time_from())
+     *             .timeTo(var_.invoice_time_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args, InvokeOptions options) {
@@ -385,6 +1069,38 @@ public final class OneSubsriptionFunctions {
      * This is a collection API which returns a list of Invoices for given filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .arCustomerTransactionId(oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .fields(var_.invoice_fields())
+     *             .timeFrom(var_.invoice_time_from())
+     *             .timeTo(var_.invoice_time_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args, InvokeOptions options) {
@@ -396,6 +1112,34 @@ public final class OneSubsriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args) {
@@ -407,6 +1151,34 @@ public final class OneSubsriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOrganizationSubscriptionsResult> getOrganizationSubscriptionsPlain(GetOrganizationSubscriptionsPlainArgs args) {
@@ -418,6 +1190,34 @@ public final class OneSubsriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOrganizationSubscriptionsResult> getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs args, InvokeOptions options) {
@@ -429,6 +1229,34 @@ public final class OneSubsriptionFunctions {
      * API that returns data for the list of subscription ids returned from Organizations API
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetOrganizationSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOrganizationSubscriptionsResult> getOrganizationSubscriptionsPlain(GetOrganizationSubscriptionsPlainArgs args, InvokeOptions options) {
@@ -441,6 +1269,38 @@ public final class OneSubsriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .partNumber(var_.ratecard_part_number())
+     *             .timeFrom(var_.ratecard_time_from())
+     *             .timeTo(var_.ratecard_time_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRatecardsResult> getRatecards(GetRatecardsArgs args) {
@@ -453,6 +1313,38 @@ public final class OneSubsriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .partNumber(var_.ratecard_part_number())
+     *             .timeFrom(var_.ratecard_time_from())
+     *             .timeTo(var_.ratecard_time_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRatecardsResult> getRatecardsPlain(GetRatecardsPlainArgs args) {
@@ -465,6 +1357,38 @@ public final class OneSubsriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .partNumber(var_.ratecard_part_number())
+     *             .timeFrom(var_.ratecard_time_from())
+     *             .timeTo(var_.ratecard_time_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRatecardsResult> getRatecards(GetRatecardsArgs args, InvokeOptions options) {
@@ -477,6 +1401,38 @@ public final class OneSubsriptionFunctions {
      * for a particular date range
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetRatecardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .partNumber(var_.ratecard_part_number())
+     *             .timeFrom(var_.ratecard_time_from())
+     *             .timeTo(var_.ratecard_time_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRatecardsResult> getRatecardsPlain(GetRatecardsPlainArgs args, InvokeOptions options) {
@@ -488,6 +1444,35 @@ public final class OneSubsriptionFunctions {
      * This API returns the subscribed service details corresponding to the id provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .fields(var_.subscribed_service_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscribedServiceResult> getSubscribedService(GetSubscribedServiceArgs args) {
@@ -499,6 +1484,35 @@ public final class OneSubsriptionFunctions {
      * This API returns the subscribed service details corresponding to the id provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .fields(var_.subscribed_service_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscribedServiceResult> getSubscribedServicePlain(GetSubscribedServicePlainArgs args) {
@@ -510,6 +1524,35 @@ public final class OneSubsriptionFunctions {
      * This API returns the subscribed service details corresponding to the id provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .fields(var_.subscribed_service_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscribedServiceResult> getSubscribedService(GetSubscribedServiceArgs args, InvokeOptions options) {
@@ -521,6 +1564,35 @@ public final class OneSubsriptionFunctions {
      * This API returns the subscribed service details corresponding to the id provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
+     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .fields(var_.subscribed_service_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscribedServiceResult> getSubscribedServicePlain(GetSubscribedServicePlainArgs args, InvokeOptions options) {
@@ -532,6 +1604,37 @@ public final class OneSubsriptionFunctions {
      * This list API returns all subscribed services for given Subscription ID
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .orderLineId(oci_onesubscription_order_line.test_order_line().id())
+     *             .status(var_.subscribed_service_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscribedServicesResult> getSubscribedServices(GetSubscribedServicesArgs args) {
@@ -543,6 +1646,37 @@ public final class OneSubsriptionFunctions {
      * This list API returns all subscribed services for given Subscription ID
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .orderLineId(oci_onesubscription_order_line.test_order_line().id())
+     *             .status(var_.subscribed_service_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscribedServicesResult> getSubscribedServicesPlain(GetSubscribedServicesPlainArgs args) {
@@ -554,6 +1688,37 @@ public final class OneSubsriptionFunctions {
      * This list API returns all subscribed services for given Subscription ID
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .orderLineId(oci_onesubscription_order_line.test_order_line().id())
+     *             .status(var_.subscribed_service_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscribedServicesResult> getSubscribedServices(GetSubscribedServicesArgs args, InvokeOptions options) {
@@ -565,6 +1730,37 @@ public final class OneSubsriptionFunctions {
      * This list API returns all subscribed services for given Subscription ID
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscribedServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .orderLineId(oci_onesubscription_order_line.test_order_line().id())
+     *             .status(var_.subscribed_service_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscribedServicesResult> getSubscribedServicesPlain(GetSubscribedServicesPlainArgs args, InvokeOptions options) {
@@ -579,6 +1775,38 @@ public final class OneSubsriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .buyerEmail(var_.subscription_buyer_email())
+     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
+     *             .planNumber(var_.subscription_plan_number())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args) {
@@ -593,6 +1821,38 @@ public final class OneSubsriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .buyerEmail(var_.subscription_buyer_email())
+     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
+     *             .planNumber(var_.subscription_plan_number())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args) {
@@ -607,6 +1867,38 @@ public final class OneSubsriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .buyerEmail(var_.subscription_buyer_email())
+     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
+     *             .planNumber(var_.subscription_plan_number())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
@@ -621,6 +1913,38 @@ public final class OneSubsriptionFunctions {
      * a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OneSubsription.OneSubsriptionFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .buyerEmail(var_.subscription_buyer_email())
+     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
+     *             .planNumber(var_.subscription_plan_number())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args, InvokeOptions options) {

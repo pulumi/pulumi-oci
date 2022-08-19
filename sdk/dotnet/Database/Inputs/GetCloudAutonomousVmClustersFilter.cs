@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetCloudAutonomousVmClustersFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudAutonomousVmClustersFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetCloudAutonomousVmClustersFilterArgs()
         {
         }
+        public static new GetCloudAutonomousVmClustersFilterArgs Empty => new GetCloudAutonomousVmClustersFilterArgs();
     }
 }

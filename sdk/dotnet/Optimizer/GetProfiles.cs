@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProfiles = Oci.Optimizer.GetProfiles.Invoke(new()
         ///     {
-        ///         var testProfiles = Output.Create(Oci.Optimizer.GetProfiles.InvokeAsync(new Oci.Optimizer.GetProfilesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Profile_name,
-        ///             State = @var.Profile_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Profile_name,
+        ///         State = @var.Profile_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProfiles = Oci.Optimizer.GetProfiles.Invoke(new()
         ///     {
-        ///         var testProfiles = Output.Create(Oci.Optimizer.GetProfiles.InvokeAsync(new Oci.Optimizer.GetProfilesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Profile_name,
-        ///             State = @var.Profile_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Profile_name,
+        ///         State = @var.Profile_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetProfilesArgs : Pulumi.InvokeArgs
+    public sealed class GetProfilesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Optimizer
         public GetProfilesArgs()
         {
         }
+        public static new GetProfilesArgs Empty => new GetProfilesArgs();
     }
 
-    public sealed class GetProfilesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProfilesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Optimizer
         public GetProfilesInvokeArgs()
         {
         }
+        public static new GetProfilesInvokeArgs Empty => new GetProfilesInvokeArgs();
     }
 
 

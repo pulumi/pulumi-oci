@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAccessPolicy = Oci.ServiceMesh.GetAccessPolicy.Invoke(new()
         ///     {
-        ///         var testAccessPolicy = Output.Create(Oci.ServiceMesh.GetAccessPolicy.InvokeAsync(new Oci.ServiceMesh.GetAccessPolicyArgs
-        ///         {
-        ///             AccessPolicyId = oci_service_mesh_access_policy.Test_access_policy.Id,
-        ///         }));
-        ///     }
+        ///         AccessPolicyId = oci_service_mesh_access_policy.Test_access_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAccessPolicy = Oci.ServiceMesh.GetAccessPolicy.Invoke(new()
         ///     {
-        ///         var testAccessPolicy = Output.Create(Oci.ServiceMesh.GetAccessPolicy.InvokeAsync(new Oci.ServiceMesh.GetAccessPolicyArgs
-        ///         {
-        ///             AccessPolicyId = oci_service_mesh_access_policy.Test_access_policy.Id,
-        ///         }));
-        ///     }
+        ///         AccessPolicyId = oci_service_mesh_access_policy.Test_access_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetAccessPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique AccessPolicy identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetAccessPolicyArgs()
         {
         }
+        public static new GetAccessPolicyArgs Empty => new GetAccessPolicyArgs();
     }
 
-    public sealed class GetAccessPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique AccessPolicy identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetAccessPolicyInvokeArgs()
         {
         }
+        public static new GetAccessPolicyInvokeArgs Empty => new GetAccessPolicyInvokeArgs();
     }
 
 

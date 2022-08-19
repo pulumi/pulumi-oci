@@ -19,6 +19,38 @@ import javax.annotation.Nullable;
  * Create an API key on behalf of the specified user.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.BigDataService.BdsInstanceApiKey;
+ * import com.pulumi.oci.BigDataService.BdsInstanceApiKeyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBdsInstanceApiKey = new BdsInstanceApiKey(&#34;testBdsInstanceApiKey&#34;, BdsInstanceApiKeyArgs.builder()        
+ *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+ *             .keyAlias(var_.bds_instance_api_key_key_alias())
+ *             .passphrase(var_.bds_instance_api_key_passphrase())
+ *             .userId(oci_identity_user.test_user().id())
+ *             .defaultRegion(var_.bds_instance_api_key_default_region())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class ReportDefinitionColumnFilterArgs : Pulumi.ResourceArgs
+    public sealed class ReportDefinitionColumnFilterArgs : global::Pulumi.ResourceArgs
     {
         [Input("expressions", required: true)]
         private InputList<string>? _expressions;
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public ReportDefinitionColumnFilterArgs()
         {
         }
+        public static new ReportDefinitionColumnFilterArgs Empty => new ReportDefinitionColumnFilterArgs();
     }
 }

@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFleetBlocklists = Oci.Jms.GetFleetBlocklists.Invoke(new()
         ///     {
-        ///         var testFleetBlocklists = Output.Create(Oci.Jms.GetFleetBlocklists.InvokeAsync(new Oci.Jms.GetFleetBlocklistsArgs
-        ///         {
-        ///             FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///             Operation = @var.Fleet_blocklist_operation,
-        ///         }));
-        ///     }
+        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
+        ///         Operation = @var.Fleet_blocklist_operation,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFleetBlocklists = Oci.Jms.GetFleetBlocklists.Invoke(new()
         ///     {
-        ///         var testFleetBlocklists = Output.Create(Oci.Jms.GetFleetBlocklists.InvokeAsync(new Oci.Jms.GetFleetBlocklistsArgs
-        ///         {
-        ///             FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///             Operation = @var.Fleet_blocklist_operation,
-        ///         }));
-        ///     }
+        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
+        ///         Operation = @var.Fleet_blocklist_operation,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetFleetBlocklistsArgs : Pulumi.InvokeArgs
+    public sealed class GetFleetBlocklistsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetFleetBlocklistsFilterArgs>? _filters;
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Jms
         public GetFleetBlocklistsArgs()
         {
         }
+        public static new GetFleetBlocklistsArgs Empty => new GetFleetBlocklistsArgs();
     }
 
-    public sealed class GetFleetBlocklistsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFleetBlocklistsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetFleetBlocklistsFilterInputArgs>? _filters;
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Jms
         public GetFleetBlocklistsInvokeArgs()
         {
         }
+        public static new GetFleetBlocklistsInvokeArgs Empty => new GetFleetBlocklistsInvokeArgs();
     }
 
 

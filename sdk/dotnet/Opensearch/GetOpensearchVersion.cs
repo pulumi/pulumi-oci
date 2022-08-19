@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Opensearch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOpensearchVersion = Oci.Opensearch.GetOpensearchVersion.Invoke(new()
         ///     {
-        ///         var testOpensearchVersion = Output.Create(Oci.Opensearch.GetOpensearchVersion.InvokeAsync(new Oci.Opensearch.GetOpensearchVersionArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Opensearch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOpensearchVersion = Oci.Opensearch.GetOpensearchVersion.Invoke(new()
         ///     {
-        ///         var testOpensearchVersion = Output.Create(Oci.Opensearch.GetOpensearchVersion.InvokeAsync(new Oci.Opensearch.GetOpensearchVersionArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Opensearch
     }
 
 
-    public sealed class GetOpensearchVersionArgs : Pulumi.InvokeArgs
+    public sealed class GetOpensearchVersionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Opensearch
         public GetOpensearchVersionArgs()
         {
         }
+        public static new GetOpensearchVersionArgs Empty => new GetOpensearchVersionArgs();
     }
 
-    public sealed class GetOpensearchVersionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOpensearchVersionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Opensearch
         public GetOpensearchVersionInvokeArgs()
         {
         }
+        public static new GetOpensearchVersionInvokeArgs Empty => new GetOpensearchVersionInvokeArgs();
     }
 
 

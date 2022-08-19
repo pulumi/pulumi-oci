@@ -28,23 +28,21 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPingProbeResults = Oci.HealthChecks.GetPingProbeResults.Invoke(new()
         ///     {
-        ///         var testPingProbeResults = Output.Create(Oci.HealthChecks.GetPingProbeResults.InvokeAsync(new Oci.HealthChecks.GetPingProbeResultsArgs
-        ///         {
-        ///             ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
-        ///             StartTimeGreaterThanOrEqualTo = @var.Ping_probe_result_start_time_greater_than_or_equal_to,
-        ///             StartTimeLessThanOrEqualTo = @var.Ping_probe_result_start_time_less_than_or_equal_to,
-        ///             Target = @var.Ping_probe_result_target,
-        ///         }));
-        ///     }
+        ///         ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
+        ///         StartTimeGreaterThanOrEqualTo = @var.Ping_probe_result_start_time_greater_than_or_equal_to,
+        ///         StartTimeLessThanOrEqualTo = @var.Ping_probe_result_start_time_less_than_or_equal_to,
+        ///         Target = @var.Ping_probe_result_target,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -69,23 +67,21 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPingProbeResults = Oci.HealthChecks.GetPingProbeResults.Invoke(new()
         ///     {
-        ///         var testPingProbeResults = Output.Create(Oci.HealthChecks.GetPingProbeResults.InvokeAsync(new Oci.HealthChecks.GetPingProbeResultsArgs
-        ///         {
-        ///             ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
-        ///             StartTimeGreaterThanOrEqualTo = @var.Ping_probe_result_start_time_greater_than_or_equal_to,
-        ///             StartTimeLessThanOrEqualTo = @var.Ping_probe_result_start_time_less_than_or_equal_to,
-        ///             Target = @var.Ping_probe_result_target,
-        ///         }));
-        ///     }
+        ///         ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
+        ///         StartTimeGreaterThanOrEqualTo = @var.Ping_probe_result_start_time_greater_than_or_equal_to,
+        ///         StartTimeLessThanOrEqualTo = @var.Ping_probe_result_start_time_less_than_or_equal_to,
+        ///         Target = @var.Ping_probe_result_target,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.HealthChecks
     }
 
 
-    public sealed class GetPingProbeResultsArgs : Pulumi.InvokeArgs
+    public sealed class GetPingProbeResultsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetPingProbeResultsFilterArgs>? _filters;
@@ -132,9 +128,10 @@ namespace Pulumi.Oci.HealthChecks
         public GetPingProbeResultsArgs()
         {
         }
+        public static new GetPingProbeResultsArgs Empty => new GetPingProbeResultsArgs();
     }
 
-    public sealed class GetPingProbeResultsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPingProbeResultsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetPingProbeResultsFilterInputArgs>? _filters;
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.HealthChecks
         public GetPingProbeResultsInvokeArgs()
         {
         }
+        public static new GetPingProbeResultsInvokeArgs Empty => new GetPingProbeResultsInvokeArgs();
     }
 
 

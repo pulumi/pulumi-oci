@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class LoadBalancerShapeDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class LoadBalancerShapeDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public LoadBalancerShapeDetailsGetArgs()
         {
         }
+        public static new LoadBalancerShapeDetailsGetArgs Empty => new LoadBalancerShapeDetailsGetArgs();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Blockchain
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBlockchainPlatformPatches = Oci.Blockchain.GetBlockchainPlatformPatches.Invoke(new()
         ///     {
-        ///         var testBlockchainPlatformPatches = Output.Create(Oci.Blockchain.GetBlockchainPlatformPatches.InvokeAsync(new Oci.Blockchain.GetBlockchainPlatformPatchesArgs
-        ///         {
-        ///             BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-        ///         }));
-        ///     }
+        ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Blockchain
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBlockchainPlatformPatches = Oci.Blockchain.GetBlockchainPlatformPatches.Invoke(new()
         ///     {
-        ///         var testBlockchainPlatformPatches = Output.Create(Oci.Blockchain.GetBlockchainPlatformPatches.InvokeAsync(new Oci.Blockchain.GetBlockchainPlatformPatchesArgs
-        ///         {
-        ///             BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-        ///         }));
-        ///     }
+        ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Blockchain
     }
 
 
-    public sealed class GetBlockchainPlatformPatchesArgs : Pulumi.InvokeArgs
+    public sealed class GetBlockchainPlatformPatchesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique service identifier.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Blockchain
         public GetBlockchainPlatformPatchesArgs()
         {
         }
+        public static new GetBlockchainPlatformPatchesArgs Empty => new GetBlockchainPlatformPatchesArgs();
     }
 
-    public sealed class GetBlockchainPlatformPatchesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBlockchainPlatformPatchesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique service identifier.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Blockchain
         public GetBlockchainPlatformPatchesInvokeArgs()
         {
         }
+        public static new GetBlockchainPlatformPatchesInvokeArgs Empty => new GetBlockchainPlatformPatchesInvokeArgs();
     }
 
 

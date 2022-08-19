@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oda.Inputs
 {
 
-    public sealed class OdaInstanceRestrictedOperationArgs : Pulumi.ResourceArgs
+    public sealed class OdaInstanceRestrictedOperationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the restricted operation.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Oda.Inputs
         public OdaInstanceRestrictedOperationArgs()
         {
         }
+        public static new OdaInstanceRestrictedOperationArgs Empty => new OdaInstanceRestrictedOperationArgs();
     }
 }

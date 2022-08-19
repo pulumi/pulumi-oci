@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ManagementAgent.Inputs
 {
 
-    public sealed class GetManagementAgentAvailableHistoriesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentAvailableHistoriesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         public GetManagementAgentAvailableHistoriesFilterArgs()
         {
         }
+        public static new GetManagementAgentAvailableHistoriesFilterArgs Empty => new GetManagementAgentAvailableHistoriesFilterArgs();
     }
 }

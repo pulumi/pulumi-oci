@@ -28,6 +28,10 @@ import * as utilities from "../utilities";
  *         blockStorageSizeInGbs: _var.job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
  *         jobInfrastructureType: _var.job_job_infrastructure_configuration_details_job_infrastructure_type,
  *         shapeName: oci_core_shape.test_shape.name,
+ *         jobShapeConfigDetails: {
+ *             memoryInGbs: _var.job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+ *             ocpus: _var.job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+ *         },
  *         subnetId: oci_core_subnet.test_subnet.id,
  *     },
  *     projectId: oci_datascience_project.test_project.id,

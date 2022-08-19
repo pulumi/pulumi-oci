@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Core
     /// Add/Remove the specified shape from the compatible shapes list for the image.
     /// </summary>
     [OciResourceType("oci:Core/shapeManagement:ShapeManagement")]
-    public partial class ShapeManagement : Pulumi.CustomResource
+    public partial class ShapeManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment containing the image.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class ShapeManagementArgs : Pulumi.ResourceArgs
+    public sealed class ShapeManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the image.
@@ -102,9 +102,10 @@ namespace Pulumi.Oci.Core
         public ShapeManagementArgs()
         {
         }
+        public static new ShapeManagementArgs Empty => new ShapeManagementArgs();
     }
 
-    public sealed class ShapeManagementState : Pulumi.ResourceArgs
+    public sealed class ShapeManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the image.
@@ -127,5 +128,6 @@ namespace Pulumi.Oci.Core
         public ShapeManagementState()
         {
         }
+        public static new ShapeManagementState Empty => new ShapeManagementState();
     }
 }

@@ -11,19 +11,6 @@ import * as utilities from "../utilities";
  * For more information about the Database Management Service, see
  * [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testExternalContainerDatabaseManagement = new oci.database.ExternalContainerDatabaseManagement("testExternalContainerDatabaseManagement", {
- *     externalContainerDatabaseId: oci_database_external_container_database.test_external_container_database.id,
- *     externalDatabaseConnectorId: oci_database_external_database_connector.test_external_database_connector.id,
- *     licenseMode: _var.external_non_container_database_management_license_model,
- * });
- * ```
- *
  * ## Import
  *
  * Import is not supported for this resource.

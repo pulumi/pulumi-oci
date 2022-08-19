@@ -28,6 +28,54 @@ import javax.annotation.Nullable;
  * Creates a job run.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.JobRun;
+ * import com.pulumi.oci.DataScience.JobRunArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testJobRun = new JobRun(&#34;testJobRun&#34;, JobRunArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .jobId(oci_datascience_job.test_job().id())
+ *             .projectId(oci_datascience_project.test_project().id())
+ *             .asynchronous(var_.asynchronous())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.job_run_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .jobConfigurationOverrideDetails(JobRunJobConfigurationOverrideDetailsArgs.builder()
+ *                 .jobType(var_.job_run_job_configuration_override_details_job_type())
+ *                 .commandLineArguments(var_.job_run_job_configuration_override_details_command_line_arguments())
+ *                 .environmentVariables(var_.job_run_job_configuration_override_details_environment_variables())
+ *                 .maximumRuntimeInMinutes(var_.job_run_job_configuration_override_details_maximum_runtime_in_minutes())
+ *                 .build())
+ *             .jobLogConfigurationOverrideDetails(JobRunJobLogConfigurationOverrideDetailsArgs.builder()
+ *                 .enableAutoLogCreation(var_.job_run_job_log_configuration_override_details_enable_auto_log_creation())
+ *                 .enableLogging(var_.job_run_job_log_configuration_override_details_enable_logging())
+ *                 .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                 .logId(oci_logging_log.test_log().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

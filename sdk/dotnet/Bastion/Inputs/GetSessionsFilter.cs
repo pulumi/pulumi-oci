@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Bastion.Inputs
 {
 
-    public sealed class GetSessionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSessionsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Bastion.Inputs
         public GetSessionsFilterArgs()
         {
         }
+        public static new GetSessionsFilterArgs Empty => new GetSessionsFilterArgs();
     }
 }

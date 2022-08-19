@@ -155,6 +155,21 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * 
+     */
+    @Import(name="logSourceIdentifier")
+    private @Nullable Output<String> logSourceIdentifier;
+
+    /**
+     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * 
+     */
+    public Optional<Output<String>> logSourceIdentifier() {
+        return Optional.ofNullable(this.logSourceIdentifier);
+    }
+
+    /**
      * (Updatable) The name of the metric.  Example: `CpuUtilization`
      * 
      */
@@ -256,6 +271,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         this.functionId = $.functionId;
         this.kind = $.kind;
         this.logGroupId = $.logGroupId;
+        this.logSourceIdentifier = $.logSourceIdentifier;
         this.metric = $.metric;
         this.metricNamespace = $.metricNamespace;
         this.namespace = $.namespace;
@@ -479,6 +495,27 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder logGroupId(String logGroupId) {
             return logGroupId(Output.of(logGroupId));
+        }
+
+        /**
+         * @param logSourceIdentifier (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logSourceIdentifier(@Nullable Output<String> logSourceIdentifier) {
+            $.logSourceIdentifier = logSourceIdentifier;
+            return this;
+        }
+
+        /**
+         * @param logSourceIdentifier (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logSourceIdentifier(String logSourceIdentifier) {
+            return logSourceIdentifier(Output.of(logSourceIdentifier));
         }
 
         /**

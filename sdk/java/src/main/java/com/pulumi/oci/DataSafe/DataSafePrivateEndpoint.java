@@ -22,6 +22,42 @@ import javax.annotation.Nullable;
  * Creates a new Data Safe private endpoint.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.DataSafePrivateEndpoint;
+ * import com.pulumi.oci.DataSafe.DataSafePrivateEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDataSafePrivateEndpoint = new DataSafePrivateEndpoint(&#34;testDataSafePrivateEndpoint&#34;, DataSafePrivateEndpointArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.data_safe_private_endpoint_display_name())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.data_safe_private_endpoint_description())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .nsgIds(var_.data_safe_private_endpoint_nsg_ids())
+ *             .privateEndpointIp(var_.data_safe_private_endpoint_private_endpoint_ip())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

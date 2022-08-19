@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsPrivateEndpoint = Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsPrivateEndpoint = Output.Create(Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoint.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsPrivateEndpointArgs
-        ///         {
-        ///             DatabaseToolsPrivateEndpointId = oci_database_tools_database_tools_private_endpoint.Test_database_tools_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseToolsPrivateEndpointId = oci_database_tools_database_tools_private_endpoint.Test_database_tools_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsPrivateEndpoint = Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsPrivateEndpoint = Output.Create(Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoint.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsPrivateEndpointArgs
-        ///         {
-        ///             DatabaseToolsPrivateEndpointId = oci_database_tools_database_tools_private_endpoint.Test_database_tools_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseToolsPrivateEndpointId = oci_database_tools_database_tools_private_endpoint.Test_database_tools_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DatabaseTools
     }
 
 
-    public sealed class GetDatabaseToolsPrivateEndpointArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsPrivateEndpointArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsPrivateEndpointArgs()
         {
         }
+        public static new GetDatabaseToolsPrivateEndpointArgs Empty => new GetDatabaseToolsPrivateEndpointArgs();
     }
 
-    public sealed class GetDatabaseToolsPrivateEndpointInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsPrivateEndpointInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsPrivateEndpointInvokeArgs()
         {
         }
+        public static new GetDatabaseToolsPrivateEndpointInvokeArgs Empty => new GetDatabaseToolsPrivateEndpointInvokeArgs();
     }
 
 

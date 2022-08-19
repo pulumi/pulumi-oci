@@ -23,6 +23,51 @@ import javax.annotation.Nullable;
  * Creates a new rule.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Events.Rule;
+ * import com.pulumi.oci.Events.RuleArgs;
+ * import com.pulumi.oci.Events.inputs.RuleActionsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRule = new Rule(&#34;testRule&#34;, RuleArgs.builder()        
+ *             .actions(RuleActionsArgs.builder()
+ *                 .actions(RuleActionsActionArgs.builder()
+ *                     .actionType(var_.rule_actions_actions_action_type())
+ *                     .isEnabled(var_.rule_actions_actions_is_enabled())
+ *                     .description(var_.rule_actions_actions_description())
+ *                     .functionId(oci_functions_function.test_function().id())
+ *                     .streamId(oci_streaming_stream.test_stream().id())
+ *                     .topicId(oci_ons_notification_topic.test_topic().id())
+ *                     .build())
+ *                 .build())
+ *             .compartmentId(var_.compartment_id())
+ *             .condition(var_.rule_condition())
+ *             .displayName(var_.rule_display_name())
+ *             .isEnabled(var_.rule_is_enabled())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.rule_description())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModelDeployment = Oci.DataScience.GetModelDeployment.Invoke(new()
         ///     {
-        ///         var testModelDeployment = Output.Create(Oci.DataScience.GetModelDeployment.InvokeAsync(new Oci.DataScience.GetModelDeploymentArgs
-        ///         {
-        ///             ModelDeploymentId = oci_datascience_model_deployment.Test_model_deployment.Id,
-        ///         }));
-        ///     }
+        ///         ModelDeploymentId = oci_datascience_model_deployment.Test_model_deployment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModelDeployment = Oci.DataScience.GetModelDeployment.Invoke(new()
         ///     {
-        ///         var testModelDeployment = Output.Create(Oci.DataScience.GetModelDeployment.InvokeAsync(new Oci.DataScience.GetModelDeploymentArgs
-        ///         {
-        ///             ModelDeploymentId = oci_datascience_model_deployment.Test_model_deployment.Id,
-        ///         }));
-        ///     }
+        ///         ModelDeploymentId = oci_datascience_model_deployment.Test_model_deployment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetModelDeploymentArgs : Pulumi.InvokeArgs
+    public sealed class GetModelDeploymentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataScience
         public GetModelDeploymentArgs()
         {
         }
+        public static new GetModelDeploymentArgs Empty => new GetModelDeploymentArgs();
     }
 
-    public sealed class GetModelDeploymentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetModelDeploymentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataScience
         public GetModelDeploymentInvokeArgs()
         {
         }
+        public static new GetModelDeploymentInvokeArgs Empty => new GetModelDeploymentInvokeArgs();
     }
 
 

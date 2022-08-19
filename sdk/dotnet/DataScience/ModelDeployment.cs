@@ -17,67 +17,65 @@ namespace Pulumi.Oci.DataScience
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testModelDeployment = new Oci.DataScience.ModelDeployment("testModelDeployment", new()
     ///     {
-    ///         var testModelDeployment = new Oci.DataScience.ModelDeployment("testModelDeployment", new Oci.DataScience.ModelDeploymentArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ModelDeploymentConfigurationDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ModelDeploymentConfigurationDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsArgs
+    ///             DeploymentType = @var.Model_deployment_model_deployment_configuration_details_deployment_type,
+    ///             ModelConfigurationDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs
     ///             {
-    ///                 DeploymentType = @var.Model_deployment_model_deployment_configuration_details_deployment_type,
-    ///                 ModelConfigurationDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs
+    ///                 InstanceConfiguration = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs
     ///                 {
-    ///                     InstanceConfiguration = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs
+    ///                     InstanceShapeName = oci_core_shape.Test_shape.Name,
+    ///                     ModelDeploymentInstanceShapeConfigDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs
     ///                     {
-    ///                         InstanceShapeName = oci_core_shape.Test_shape.Name,
-    ///                         ModelDeploymentInstanceShapeConfigDetails = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs
-    ///                         {
-    ///                             MemoryInGbs = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs,
-    ///                             Ocpus = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus,
-    ///                         },
-    ///                     },
-    ///                     ModelId = oci_datascience_model.Test_model.Id,
-    ///                     BandwidthMbps = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps,
-    ///                     ScalingPolicy = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs
-    ///                     {
-    ///                         InstanceCount = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count,
-    ///                         PolicyType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type,
+    ///                         MemoryInGbs = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs,
+    ///                         Ocpus = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus,
     ///                     },
     ///                 },
-    ///             },
-    ///             ProjectId = oci_datascience_project.Test_project.Id,
-    ///             CategoryLogDetails = new Oci.DataScience.Inputs.ModelDeploymentCategoryLogDetailsArgs
-    ///             {
-    ///                 Access = new Oci.DataScience.Inputs.ModelDeploymentCategoryLogDetailsAccessArgs
+    ///                 ModelId = oci_datascience_model.Test_model.Id,
+    ///                 BandwidthMbps = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps,
+    ///                 ScalingPolicy = new Oci.DataScience.Inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs
     ///                 {
-    ///                     LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///                     LogId = oci_logging_log.Test_log.Id,
-    ///                 },
-    ///                 Predict = new Oci.DataScience.Inputs.ModelDeploymentCategoryLogDetailsPredictArgs
-    ///                 {
-    ///                     LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///                     LogId = oci_logging_log.Test_log.Id,
+    ///                     InstanceCount = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count,
+    ///                     PolicyType = @var.Model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type,
     ///                 },
     ///             },
-    ///             DefinedTags = 
+    ///         },
+    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         CategoryLogDetails = new Oci.DataScience.Inputs.ModelDeploymentCategoryLogDetailsArgs
+    ///         {
+    ///             Access = new Oci.DataScience.Inputs.ModelDeploymentCategoryLogDetailsAccessArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///                 LogId = oci_logging_log.Test_log.Id,
     ///             },
-    ///             Description = @var.Model_deployment_description,
-    ///             DisplayName = @var.Model_deployment_display_name,
-    ///             FreeformTags = 
+    ///             Predict = new Oci.DataScience.Inputs.ModelDeploymentCategoryLogDetailsPredictArgs
     ///             {
-    ///                 { "Department", "Finance" },
+    ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///                 LogId = oci_logging_log.Test_log.Id,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Model_deployment_description,
+    ///         DisplayName = @var.Model_deployment_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -89,7 +87,7 @@ namespace Pulumi.Oci.DataScience
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/modelDeployment:ModelDeployment")]
-    public partial class ModelDeployment : Pulumi.CustomResource
+    public partial class ModelDeployment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The log details for each category.
@@ -213,7 +211,7 @@ namespace Pulumi.Oci.DataScience
         }
     }
 
-    public sealed class ModelDeploymentArgs : Pulumi.ResourceArgs
+    public sealed class ModelDeploymentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The log details for each category.
@@ -278,9 +276,10 @@ namespace Pulumi.Oci.DataScience
         public ModelDeploymentArgs()
         {
         }
+        public static new ModelDeploymentArgs Empty => new ModelDeploymentArgs();
     }
 
-    public sealed class ModelDeploymentState : Pulumi.ResourceArgs
+    public sealed class ModelDeploymentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The log details for each category.
@@ -375,5 +374,6 @@ namespace Pulumi.Oci.DataScience
         public ModelDeploymentState()
         {
         }
+        public static new ModelDeploymentState Empty => new ModelDeploymentState();
     }
 }

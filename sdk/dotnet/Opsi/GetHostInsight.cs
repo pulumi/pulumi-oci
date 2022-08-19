@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHostInsight = Oci.Opsi.GetHostInsight.Invoke(new()
         ///     {
-        ///         var testHostInsight = Output.Create(Oci.Opsi.GetHostInsight.InvokeAsync(new Oci.Opsi.GetHostInsightArgs
-        ///         {
-        ///             HostInsightId = oci_opsi_host_insight.Test_host_insight.Id,
-        ///         }));
-        ///     }
+        ///         HostInsightId = oci_opsi_host_insight.Test_host_insight.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHostInsight = Oci.Opsi.GetHostInsight.Invoke(new()
         ///     {
-        ///         var testHostInsight = Output.Create(Oci.Opsi.GetHostInsight.InvokeAsync(new Oci.Opsi.GetHostInsightArgs
-        ///         {
-        ///             HostInsightId = oci_opsi_host_insight.Test_host_insight.Id,
-        ///         }));
-        ///     }
+        ///         HostInsightId = oci_opsi_host_insight.Test_host_insight.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetHostInsightArgs : Pulumi.InvokeArgs
+    public sealed class GetHostInsightArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique host insight identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Opsi
         public GetHostInsightArgs()
         {
         }
+        public static new GetHostInsightArgs Empty => new GetHostInsightArgs();
     }
 
-    public sealed class GetHostInsightInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHostInsightInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique host insight identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Opsi
         public GetHostInsightInvokeArgs()
         {
         }
+        public static new GetHostInsightInvokeArgs Empty => new GetHostInsightInvokeArgs();
     }
 
 

@@ -27,6 +27,38 @@ import javax.annotation.Nullable;
  * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.VmClusterRemoveVirtualMachine;
+ * import com.pulumi.oci.Database.VmClusterRemoveVirtualMachineArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterRemoveVirtualMachineDbServerArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVmClusterRemoveVirtualMachine = new VmClusterRemoveVirtualMachine(&#34;testVmClusterRemoveVirtualMachine&#34;, VmClusterRemoveVirtualMachineArgs.builder()        
+ *             .dbServers(VmClusterRemoveVirtualMachineDbServerArgs.builder()
+ *                 .dbServerId(oci_database_db_server.test_db_server().id())
+ *                 .build())
+ *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

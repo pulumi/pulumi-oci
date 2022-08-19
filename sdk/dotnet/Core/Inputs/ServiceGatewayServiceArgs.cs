@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class ServiceGatewayServiceArgs : Pulumi.ResourceArgs
+    public sealed class ServiceGatewayServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/).
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public ServiceGatewayServiceArgs()
         {
         }
+        public static new ServiceGatewayServiceArgs Empty => new ServiceGatewayServiceArgs();
     }
 }

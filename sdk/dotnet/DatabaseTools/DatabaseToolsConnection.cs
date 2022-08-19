@@ -17,61 +17,59 @@ namespace Pulumi.Oci.DatabaseTools
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDatabaseToolsConnection = new Oci.DatabaseTools.DatabaseToolsConnection("testDatabaseToolsConnection", new()
     ///     {
-    ///         var testDatabaseToolsConnection = new Oci.DatabaseTools.DatabaseToolsConnection("testDatabaseToolsConnection", new Oci.DatabaseTools.DatabaseToolsConnectionArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Database_tools_connection_display_name,
+    ///         Type = @var.Database_tools_connection_type,
+    ///         AdvancedProperties = @var.Database_tools_connection_advanced_properties,
+    ///         ConnectionString = @var.Database_tools_connection_connection_string,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Database_tools_connection_display_name,
-    ///             Type = @var.Database_tools_connection_type,
-    ///             AdvancedProperties = @var.Database_tools_connection_advanced_properties,
-    ///             ConnectionString = @var.Database_tools_connection_connection_string,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         KeyStores = new[]
+    ///         {
+    ///             new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             KeyStores = 
-    ///             {
-    ///                 new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreArgs
+    ///                 KeyStoreContent = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs
     ///                 {
-    ///                     KeyStoreContent = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs
-    ///                     {
-    ///                         ValueType = @var.Database_tools_connection_key_stores_key_store_content_value_type,
-    ///                         SecretId = oci_vault_secret.Test_secret.Id,
-    ///                     },
-    ///                     KeyStorePassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs
-    ///                     {
-    ///                         ValueType = @var.Database_tools_connection_key_stores_key_store_password_value_type,
-    ///                         SecretId = oci_vault_secret.Test_secret.Id,
-    ///                     },
-    ///                     KeyStoreType = @var.Database_tools_connection_key_stores_key_store_type,
+    ///                     ValueType = @var.Database_tools_connection_key_stores_key_store_content_value_type,
+    ///                     SecretId = oci_vault_secret.Test_secret.Id,
     ///                 },
+    ///                 KeyStorePassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs
+    ///                 {
+    ///                     ValueType = @var.Database_tools_connection_key_stores_key_store_password_value_type,
+    ///                     SecretId = oci_vault_secret.Test_secret.Id,
+    ///                 },
+    ///                 KeyStoreType = @var.Database_tools_connection_key_stores_key_store_type,
     ///             },
-    ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///             RelatedResource = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionRelatedResourceArgs
-    ///             {
-    ///                 EntityType = @var.Database_tools_connection_related_resource_entity_type,
-    ///                 Identifier = @var.Database_tools_connection_related_resource_identifier,
-    ///             },
-    ///             UserName = oci_identity_user.Test_user.Name,
-    ///             UserPassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionUserPasswordArgs
-    ///             {
-    ///                 SecretId = oci_vault_secret.Test_secret.Id,
-    ///                 ValueType = @var.Database_tools_connection_user_password_value_type,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///         RelatedResource = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionRelatedResourceArgs
+    ///         {
+    ///             EntityType = @var.Database_tools_connection_related_resource_entity_type,
+    ///             Identifier = @var.Database_tools_connection_related_resource_identifier,
+    ///         },
+    ///         UserName = oci_identity_user.Test_user.Name,
+    ///         UserPassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionUserPasswordArgs
+    ///         {
+    ///             SecretId = oci_vault_secret.Test_secret.Id,
+    ///             ValueType = @var.Database_tools_connection_user_password_value_type,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -83,7 +81,7 @@ namespace Pulumi.Oci.DatabaseTools
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection")]
-    public partial class DatabaseToolsConnection : Pulumi.CustomResource
+    public partial class DatabaseToolsConnection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
@@ -231,7 +229,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
     }
 
-    public sealed class DatabaseToolsConnectionArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsConnectionArgs : global::Pulumi.ResourceArgs
     {
         [Input("advancedProperties")]
         private InputMap<object>? _advancedProperties;
@@ -332,9 +330,10 @@ namespace Pulumi.Oci.DatabaseTools
         public DatabaseToolsConnectionArgs()
         {
         }
+        public static new DatabaseToolsConnectionArgs Empty => new DatabaseToolsConnectionArgs();
     }
 
-    public sealed class DatabaseToolsConnectionState : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsConnectionState : global::Pulumi.ResourceArgs
     {
         [Input("advancedProperties")]
         private InputMap<object>? _advancedProperties;
@@ -471,5 +470,6 @@ namespace Pulumi.Oci.DatabaseTools
         public DatabaseToolsConnectionState()
         {
         }
+        public static new DatabaseToolsConnectionState Empty => new DatabaseToolsConnectionState();
     }
 }

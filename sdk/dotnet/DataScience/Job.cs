@@ -17,52 +17,55 @@ namespace Pulumi.Oci.DataScience
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testJob = new Oci.DataScience.Job("testJob", new()
     ///     {
-    ///         var testJob = new Oci.DataScience.Job("testJob", new Oci.DataScience.JobArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         JobConfigurationDetails = new Oci.DataScience.Inputs.JobJobConfigurationDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             JobConfigurationDetails = new Oci.DataScience.Inputs.JobJobConfigurationDetailsArgs
+    ///             JobType = @var.Job_job_configuration_details_job_type,
+    ///             CommandLineArguments = @var.Job_job_configuration_details_command_line_arguments,
+    ///             EnvironmentVariables = @var.Job_job_configuration_details_environment_variables,
+    ///             MaximumRuntimeInMinutes = @var.Job_job_configuration_details_maximum_runtime_in_minutes,
+    ///         },
+    ///         JobInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsArgs
+    ///         {
+    ///             BlockStorageSizeInGbs = @var.Job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+    ///             JobInfrastructureType = @var.Job_job_infrastructure_configuration_details_job_infrastructure_type,
+    ///             ShapeName = oci_core_shape.Test_shape.Name,
+    ///             JobShapeConfigDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
     ///             {
-    ///                 JobType = @var.Job_job_configuration_details_job_type,
-    ///                 CommandLineArguments = @var.Job_job_configuration_details_command_line_arguments,
-    ///                 EnvironmentVariables = @var.Job_job_configuration_details_environment_variables,
-    ///                 MaximumRuntimeInMinutes = @var.Job_job_configuration_details_maximum_runtime_in_minutes,
+    ///                 MemoryInGbs = @var.Job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+    ///                 Ocpus = @var.Job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
     ///             },
-    ///             JobInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsArgs
-    ///             {
-    ///                 BlockStorageSizeInGbs = @var.Job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
-    ///                 JobInfrastructureType = @var.Job_job_infrastructure_configuration_details_job_infrastructure_type,
-    ///                 ShapeName = oci_core_shape.Test_shape.Name,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             },
-    ///             ProjectId = oci_datascience_project.Test_project.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Job_description,
-    ///             DisplayName = @var.Job_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             JobLogConfigurationDetails = new Oci.DataScience.Inputs.JobJobLogConfigurationDetailsArgs
-    ///             {
-    ///                 EnableAutoLogCreation = @var.Job_job_log_configuration_details_enable_auto_log_creation,
-    ///                 EnableLogging = @var.Job_job_log_configuration_details_enable_logging,
-    ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///                 LogId = oci_logging_log.Test_log.Id,
-    ///             },
-    ///         });
-    ///     }
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         },
+    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Job_description,
+    ///         DisplayName = @var.Job_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         JobLogConfigurationDetails = new Oci.DataScience.Inputs.JobJobLogConfigurationDetailsArgs
+    ///         {
+    ///             EnableAutoLogCreation = @var.Job_job_log_configuration_details_enable_auto_log_creation,
+    ///             EnableLogging = @var.Job_job_log_configuration_details_enable_logging,
+    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///             LogId = oci_logging_log.Test_log.Id,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -74,7 +77,7 @@ namespace Pulumi.Oci.DataScience
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/job:Job")]
-    public partial class Job : Pulumi.CustomResource
+    public partial class Job : global::Pulumi.CustomResource
     {
         /// <summary>
         /// This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
@@ -231,7 +234,7 @@ namespace Pulumi.Oci.DataScience
         }
     }
 
-    public sealed class JobArgs : Pulumi.ResourceArgs
+    public sealed class JobArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
@@ -326,9 +329,10 @@ namespace Pulumi.Oci.DataScience
         public JobArgs()
         {
         }
+        public static new JobArgs Empty => new JobArgs();
     }
 
-    public sealed class JobState : Pulumi.ResourceArgs
+    public sealed class JobState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
@@ -456,5 +460,6 @@ namespace Pulumi.Oci.DataScience
         public JobState()
         {
         }
+        public static new JobState Empty => new JobState();
     }
 }

@@ -23,6 +23,36 @@ import javax.annotation.Nullable;
  * List resources which are members of the given monitored resource
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourcesListMember;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourcesListMemberArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMonitoredResourcesListMember = new MonitoredResourcesListMember(&#34;testMonitoredResourcesListMember&#34;, MonitoredResourcesListMemberArgs.builder()        
+ *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+ *             .destinationResourceId(oci_stack_monitoring_destination_resource.test_destination_resource().id())
+ *             .limitLevel(var_.monitored_resources_list_member_limit_level())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

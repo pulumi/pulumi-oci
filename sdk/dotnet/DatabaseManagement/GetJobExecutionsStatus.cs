@@ -21,26 +21,24 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobExecutionsStatus = Oci.DatabaseManagement.GetJobExecutionsStatus.Invoke(new()
         ///     {
-        ///         var testJobExecutionsStatus = Output.Create(Oci.DatabaseManagement.GetJobExecutionsStatus.InvokeAsync(new Oci.DatabaseManagement.GetJobExecutionsStatusArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             EndTime = @var.Job_executions_status_end_time,
-        ///             StartTime = @var.Job_executions_status_start_time,
-        ///             Id = @var.Job_executions_status_id,
-        ///             ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             Name = @var.Job_executions_status_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         EndTime = @var.Job_executions_status_end_time,
+        ///         StartTime = @var.Job_executions_status_start_time,
+        ///         Id = @var.Job_executions_status_id,
+        ///         ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         Name = @var.Job_executions_status_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,26 +56,24 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobExecutionsStatus = Oci.DatabaseManagement.GetJobExecutionsStatus.Invoke(new()
         ///     {
-        ///         var testJobExecutionsStatus = Output.Create(Oci.DatabaseManagement.GetJobExecutionsStatus.InvokeAsync(new Oci.DatabaseManagement.GetJobExecutionsStatusArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             EndTime = @var.Job_executions_status_end_time,
-        ///             StartTime = @var.Job_executions_status_start_time,
-        ///             Id = @var.Job_executions_status_id,
-        ///             ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             Name = @var.Job_executions_status_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         EndTime = @var.Job_executions_status_end_time,
+        ///         StartTime = @var.Job_executions_status_start_time,
+        ///         Id = @var.Job_executions_status_id,
+        ///         ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         Name = @var.Job_executions_status_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetJobExecutionsStatusArgs : Pulumi.InvokeArgs
+    public sealed class GetJobExecutionsStatusArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetJobExecutionsStatusArgs()
         {
         }
+        public static new GetJobExecutionsStatusArgs Empty => new GetJobExecutionsStatusArgs();
     }
 
-    public sealed class GetJobExecutionsStatusInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJobExecutionsStatusInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -183,6 +180,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetJobExecutionsStatusInvokeArgs()
         {
         }
+        public static new GetJobExecutionsStatusInvokeArgs Empty => new GetJobExecutionsStatusInvokeArgs();
     }
 
 

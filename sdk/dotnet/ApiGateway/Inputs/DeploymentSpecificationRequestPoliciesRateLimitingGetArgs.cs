@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRequestPoliciesRateLimitingGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRequestPoliciesRateLimitingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The maximum number of requests per second to allow.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRequestPoliciesRateLimitingGetArgs()
         {
         }
+        public static new DeploymentSpecificationRequestPoliciesRateLimitingGetArgs Empty => new DeploymentSpecificationRequestPoliciesRateLimitingGetArgs();
     }
 }

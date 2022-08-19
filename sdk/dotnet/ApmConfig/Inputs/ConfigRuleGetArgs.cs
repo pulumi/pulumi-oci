@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmConfig.Inputs
 {
 
-    public sealed class ConfigRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class ConfigRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name by which a configuration entity is displayed to the end user.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.ApmConfig.Inputs
         public ConfigRuleGetArgs()
         {
         }
+        public static new ConfigRuleGetArgs Empty => new ConfigRuleGetArgs();
     }
 }

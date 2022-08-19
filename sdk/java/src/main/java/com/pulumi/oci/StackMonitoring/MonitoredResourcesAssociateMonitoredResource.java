@@ -22,6 +22,37 @@ import javax.annotation.Nullable;
  * Create an association between two monitored resources.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourcesAssociateMonitoredResource;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMonitoredResourcesAssociateMonitoredResource = new MonitoredResourcesAssociateMonitoredResource(&#34;testMonitoredResourcesAssociateMonitoredResource&#34;, MonitoredResourcesAssociateMonitoredResourceArgs.builder()        
+ *             .associationType(var_.monitored_resources_associate_monitored_resource_association_type())
+ *             .compartmentId(var_.compartment_id())
+ *             .destinationResourceId(oci_stack_monitoring_destination_resource.test_destination_resource().id())
+ *             .sourceResourceId(oci_stack_monitoring_source_resource.test_source_resource().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

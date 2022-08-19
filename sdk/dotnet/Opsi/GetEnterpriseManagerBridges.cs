@@ -23,24 +23,22 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnterpriseManagerBridges = Oci.Opsi.GetEnterpriseManagerBridges.Invoke(new()
         ///     {
-        ///         var testEnterpriseManagerBridges = Output.Create(Oci.Opsi.GetEnterpriseManagerBridges.InvokeAsync(new Oci.Opsi.GetEnterpriseManagerBridgesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Enterprise_manager_bridge_compartment_id_in_subtree,
-        ///             DisplayName = @var.Enterprise_manager_bridge_display_name,
-        ///             Id = @var.Enterprise_manager_bridge_id,
-        ///             States = @var.Enterprise_manager_bridge_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Enterprise_manager_bridge_compartment_id_in_subtree,
+        ///         DisplayName = @var.Enterprise_manager_bridge_display_name,
+        ///         Id = @var.Enterprise_manager_bridge_id,
+        ///         States = @var.Enterprise_manager_bridge_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,24 +58,22 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnterpriseManagerBridges = Oci.Opsi.GetEnterpriseManagerBridges.Invoke(new()
         ///     {
-        ///         var testEnterpriseManagerBridges = Output.Create(Oci.Opsi.GetEnterpriseManagerBridges.InvokeAsync(new Oci.Opsi.GetEnterpriseManagerBridgesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Enterprise_manager_bridge_compartment_id_in_subtree,
-        ///             DisplayName = @var.Enterprise_manager_bridge_display_name,
-        ///             Id = @var.Enterprise_manager_bridge_id,
-        ///             States = @var.Enterprise_manager_bridge_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Enterprise_manager_bridge_compartment_id_in_subtree,
+        ///         DisplayName = @var.Enterprise_manager_bridge_display_name,
+        ///         Id = @var.Enterprise_manager_bridge_id,
+        ///         States = @var.Enterprise_manager_bridge_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetEnterpriseManagerBridgesArgs : Pulumi.InvokeArgs
+    public sealed class GetEnterpriseManagerBridgesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.Opsi
         public GetEnterpriseManagerBridgesArgs()
         {
         }
+        public static new GetEnterpriseManagerBridgesArgs Empty => new GetEnterpriseManagerBridgesArgs();
     }
 
-    public sealed class GetEnterpriseManagerBridgesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEnterpriseManagerBridgesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.Opsi
         public GetEnterpriseManagerBridgesInvokeArgs()
         {
         }
+        public static new GetEnterpriseManagerBridgesInvokeArgs Empty => new GetEnterpriseManagerBridgesInvokeArgs();
     }
 
 

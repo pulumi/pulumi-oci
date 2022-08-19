@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Optimizer
     /// ```
     /// </summary>
     [OciResourceType("oci:Optimizer/resourceAction:ResourceAction")]
-    public partial class ResourceAction : Pulumi.CustomResource
+    public partial class ResourceAction : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Details about the recommended action.
@@ -182,7 +182,7 @@ namespace Pulumi.Oci.Optimizer
         }
     }
 
-    public sealed class ResourceActionArgs : Pulumi.ResourceArgs
+    public sealed class ResourceActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique OCID associated with the resource action.
@@ -205,9 +205,10 @@ namespace Pulumi.Oci.Optimizer
         public ResourceActionArgs()
         {
         }
+        public static new ResourceActionArgs Empty => new ResourceActionArgs();
     }
 
-    public sealed class ResourceActionState : Pulumi.ResourceArgs
+    public sealed class ResourceActionState : global::Pulumi.ResourceArgs
     {
         [Input("actions")]
         private InputList<Inputs.ResourceActionActionGetArgs>? _actions;
@@ -338,5 +339,6 @@ namespace Pulumi.Oci.Optimizer
         public ResourceActionState()
         {
         }
+        public static new ResourceActionState Empty => new ResourceActionState();
     }
 }

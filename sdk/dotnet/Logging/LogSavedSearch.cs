@@ -17,30 +17,28 @@ namespace Pulumi.Oci.Logging
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogSavedSearch = new Oci.Logging.LogSavedSearch("testLogSavedSearch", new()
     ///     {
-    ///         var testLogSavedSearch = new Oci.Logging.LogSavedSearch("testLogSavedSearch", new Oci.Logging.LogSavedSearchArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Query = @var.Log_saved_search_query,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Query = @var.Log_saved_search_query,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Log_saved_search_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Log_saved_search_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Logging
     /// ```
     /// </summary>
     [OciResourceType("oci:Logging/logSavedSearch:LogSavedSearch")]
-    public partial class LogSavedSearch : Pulumi.CustomResource
+    public partial class LogSavedSearch : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -152,7 +150,7 @@ namespace Pulumi.Oci.Logging
         }
     }
 
-    public sealed class LogSavedSearchArgs : Pulumi.ResourceArgs
+    public sealed class LogSavedSearchArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -205,9 +203,10 @@ namespace Pulumi.Oci.Logging
         public LogSavedSearchArgs()
         {
         }
+        public static new LogSavedSearchArgs Empty => new LogSavedSearchArgs();
     }
 
-    public sealed class LogSavedSearchState : Pulumi.ResourceArgs
+    public sealed class LogSavedSearchState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -278,5 +277,6 @@ namespace Pulumi.Oci.Logging
         public LogSavedSearchState()
         {
         }
+        public static new LogSavedSearchState Empty => new LogSavedSearchState();
     }
 }

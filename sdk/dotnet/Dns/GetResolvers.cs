@@ -27,24 +27,22 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResolvers = Oci.Dns.GetResolvers.Invoke(new()
         ///     {
-        ///         var testResolvers = Output.Create(Oci.Dns.GetResolvers.InvokeAsync(new Oci.Dns.GetResolversArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Scope = "PRIVATE",
-        ///             DisplayName = @var.Resolver_display_name,
-        ///             Id = @var.Resolver_id,
-        ///             State = @var.Resolver_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Scope = "PRIVATE",
+        ///         DisplayName = @var.Resolver_display_name,
+        ///         Id = @var.Resolver_id,
+        ///         State = @var.Resolver_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -68,24 +66,22 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResolvers = Oci.Dns.GetResolvers.Invoke(new()
         ///     {
-        ///         var testResolvers = Output.Create(Oci.Dns.GetResolvers.InvokeAsync(new Oci.Dns.GetResolversArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Scope = "PRIVATE",
-        ///             DisplayName = @var.Resolver_display_name,
-        ///             Id = @var.Resolver_id,
-        ///             State = @var.Resolver_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Scope = "PRIVATE",
+        ///         DisplayName = @var.Resolver_display_name,
+        ///         Id = @var.Resolver_id,
+        ///         State = @var.Resolver_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetResolversArgs : Pulumi.InvokeArgs
+    public sealed class GetResolversArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -138,9 +134,10 @@ namespace Pulumi.Oci.Dns
         public GetResolversArgs()
         {
         }
+        public static new GetResolversArgs Empty => new GetResolversArgs();
     }
 
-    public sealed class GetResolversInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetResolversInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -183,6 +180,7 @@ namespace Pulumi.Oci.Dns
         public GetResolversInvokeArgs()
         {
         }
+        public static new GetResolversInvokeArgs Empty => new GetResolversInvokeArgs();
     }
 
 

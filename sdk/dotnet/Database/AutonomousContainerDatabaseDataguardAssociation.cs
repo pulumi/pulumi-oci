@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation")]
-    public partial class AutonomousContainerDatabaseDataguardAssociation : Pulumi.CustomResource
+    public partial class AutonomousContainerDatabaseDataguardAssociation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousContainerDatabaseDataguardAssociationArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabaseDataguardAssociationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -194,9 +194,10 @@ namespace Pulumi.Oci.Database
         public AutonomousContainerDatabaseDataguardAssociationArgs()
         {
         }
+        public static new AutonomousContainerDatabaseDataguardAssociationArgs Empty => new AutonomousContainerDatabaseDataguardAssociationArgs();
     }
 
-    public sealed class AutonomousContainerDatabaseDataguardAssociationState : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabaseDataguardAssociationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
@@ -303,5 +304,6 @@ namespace Pulumi.Oci.Database
         public AutonomousContainerDatabaseDataguardAssociationState()
         {
         }
+        public static new AutonomousContainerDatabaseDataguardAssociationState Empty => new AutonomousContainerDatabaseDataguardAssociationState();
     }
 }

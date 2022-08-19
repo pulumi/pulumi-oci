@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetSubnetsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSubnetsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetSubnetsFilterInputArgs()
         {
         }
+        public static new GetSubnetsFilterInputArgs Empty => new GetSubnetsFilterInputArgs();
     }
 }

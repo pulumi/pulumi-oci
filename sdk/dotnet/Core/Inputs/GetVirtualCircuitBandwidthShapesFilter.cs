@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetVirtualCircuitBandwidthShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitBandwidthShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bandwidth shape.  Example: `10 Gbps`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetVirtualCircuitBandwidthShapesFilterArgs()
         {
         }
+        public static new GetVirtualCircuitBandwidthShapesFilterArgs Empty => new GetVirtualCircuitBandwidthShapesFilterArgs();
     }
 }

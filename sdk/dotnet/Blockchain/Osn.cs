@@ -17,25 +17,23 @@ namespace Pulumi.Oci.Blockchain
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOsn = new Oci.Blockchain.Osn("testOsn", new()
     ///     {
-    ///         var testOsn = new Oci.Blockchain.Osn("testOsn", new Oci.Blockchain.OsnArgs
+    ///         Ad = @var.Osn_ad,
+    ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+    ///         OcpuAllocationParam = new Oci.Blockchain.Inputs.OsnOcpuAllocationParamArgs
     ///         {
-    ///             Ad = @var.Osn_ad,
-    ///             BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-    ///             OcpuAllocationParam = new Oci.Blockchain.Inputs.OsnOcpuAllocationParamArgs
-    ///             {
-    ///                 OcpuAllocationNumber = @var.Osn_ocpu_allocation_param_ocpu_allocation_number,
-    ///             },
-    ///         });
-    ///     }
+    ///             OcpuAllocationNumber = @var.Osn_ocpu_allocation_param_ocpu_allocation_number,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Oci.Blockchain
     /// ```
     /// </summary>
     [OciResourceType("oci:Blockchain/osn:Osn")]
-    public partial class Osn : Pulumi.CustomResource
+    public partial class Osn : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Availability Domain to place new OSN
@@ -123,7 +121,7 @@ namespace Pulumi.Oci.Blockchain
         }
     }
 
-    public sealed class OsnArgs : Pulumi.ResourceArgs
+    public sealed class OsnArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Availability Domain to place new OSN
@@ -146,9 +144,10 @@ namespace Pulumi.Oci.Blockchain
         public OsnArgs()
         {
         }
+        public static new OsnArgs Empty => new OsnArgs();
     }
 
-    public sealed class OsnState : Pulumi.ResourceArgs
+    public sealed class OsnState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Availability Domain to place new OSN
@@ -183,5 +182,6 @@ namespace Pulumi.Oci.Blockchain
         public OsnState()
         {
         }
+        public static new OsnState Empty => new OsnState();
     }
 }

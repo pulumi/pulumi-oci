@@ -29,6 +29,34 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnnotationFormatResult> getAnnotationFormat(GetAnnotationFormatArgs args) {
@@ -40,6 +68,34 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnnotationFormatResult> getAnnotationFormatPlain(GetAnnotationFormatPlainArgs args) {
@@ -51,6 +107,34 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnnotationFormatResult> getAnnotationFormat(GetAnnotationFormatArgs args, InvokeOptions options) {
@@ -62,6 +146,34 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnnotationFormatResult> getAnnotationFormatPlain(GetAnnotationFormatPlainArgs args, InvokeOptions options) {
@@ -73,6 +185,34 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnnotationFormatsResult> getAnnotationFormats(GetAnnotationFormatsArgs args) {
@@ -84,6 +224,34 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnnotationFormatsResult> getAnnotationFormatsPlain(GetAnnotationFormatsPlainArgs args) {
@@ -95,6 +263,34 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnnotationFormatsResult> getAnnotationFormats(GetAnnotationFormatsArgs args, InvokeOptions options) {
@@ -106,6 +302,34 @@ public final class DataLabellingServiceFunctions {
      * These are a static list in a given region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnnotationFormatsResult> getAnnotationFormatsPlain(GetAnnotationFormatsPlainArgs args, InvokeOptions options) {
@@ -117,6 +341,34 @@ public final class DataLabellingServiceFunctions {
      * Gets a Dataset by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
+     *             .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatasetResult> getDataset(GetDatasetArgs args) {
@@ -128,6 +380,34 @@ public final class DataLabellingServiceFunctions {
      * Gets a Dataset by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
+     *             .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatasetResult> getDatasetPlain(GetDatasetPlainArgs args) {
@@ -139,6 +419,34 @@ public final class DataLabellingServiceFunctions {
      * Gets a Dataset by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
+     *             .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatasetResult> getDataset(GetDatasetArgs args, InvokeOptions options) {
@@ -150,6 +458,34 @@ public final class DataLabellingServiceFunctions {
      * Gets a Dataset by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
+     *             .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatasetResult> getDatasetPlain(GetDatasetPlainArgs args, InvokeOptions options) {
@@ -161,6 +497,38 @@ public final class DataLabellingServiceFunctions {
      * Returns a list of Datasets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .annotationFormat(var_.dataset_annotation_format())
+     *             .displayName(var_.dataset_display_name())
+     *             .id(var_.dataset_id())
+     *             .state(var_.dataset_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatasetsResult> getDatasets(GetDatasetsArgs args) {
@@ -172,6 +540,38 @@ public final class DataLabellingServiceFunctions {
      * Returns a list of Datasets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .annotationFormat(var_.dataset_annotation_format())
+     *             .displayName(var_.dataset_display_name())
+     *             .id(var_.dataset_id())
+     *             .state(var_.dataset_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatasetsResult> getDatasetsPlain(GetDatasetsPlainArgs args) {
@@ -183,6 +583,38 @@ public final class DataLabellingServiceFunctions {
      * Returns a list of Datasets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .annotationFormat(var_.dataset_annotation_format())
+     *             .displayName(var_.dataset_display_name())
+     *             .id(var_.dataset_id())
+     *             .state(var_.dataset_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatasetsResult> getDatasets(GetDatasetsArgs args, InvokeOptions options) {
@@ -194,6 +626,38 @@ public final class DataLabellingServiceFunctions {
      * Returns a list of Datasets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
+     * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .annotationFormat(var_.dataset_annotation_format())
+     *             .displayName(var_.dataset_display_name())
+     *             .id(var_.dataset_id())
+     *             .state(var_.dataset_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatasetsResult> getDatasetsPlain(GetDatasetsPlainArgs args, InvokeOptions options) {

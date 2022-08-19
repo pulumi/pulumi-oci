@@ -22,20 +22,18 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstancePatches = Oci.BigDataService.GetBdsInstancePatches.Invoke(new()
         ///     {
-        ///         var testBdsInstancePatches = Output.Create(Oci.BigDataService.GetBdsInstancePatches.InvokeAsync(new Oci.BigDataService.GetBdsInstancePatchesArgs
-        ///         {
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         }));
-        ///     }
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstancePatches = Oci.BigDataService.GetBdsInstancePatches.Invoke(new()
         ///     {
-        ///         var testBdsInstancePatches = Output.Create(Oci.BigDataService.GetBdsInstancePatches.InvokeAsync(new Oci.BigDataService.GetBdsInstancePatchesArgs
-        ///         {
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         }));
-        ///     }
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.BigDataService
     }
 
 
-    public sealed class GetBdsInstancePatchesArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstancePatchesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstancePatchesArgs()
         {
         }
+        public static new GetBdsInstancePatchesArgs Empty => new GetBdsInstancePatchesArgs();
     }
 
-    public sealed class GetBdsInstancePatchesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstancePatchesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstancePatchesInvokeArgs()
         {
         }
+        public static new GetBdsInstancePatchesInvokeArgs Empty => new GetBdsInstancePatchesInvokeArgs();
     }
 
 

@@ -25,6 +25,71 @@ import javax.annotation.Nullable;
  * Creates a new IngressGateway.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ServiceMesh.IngressGateway;
+ * import com.pulumi.oci.ServiceMesh.IngressGatewayArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayHostArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayAccessLoggingArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayMtlsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIngressGateway = new IngressGateway(&#34;testIngressGateway&#34;, IngressGatewayArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .hosts(IngressGatewayHostArgs.builder()
+ *                 .listeners(IngressGatewayHostListenerArgs.builder()
+ *                     .port(var_.ingress_gateway_hosts_listeners_port())
+ *                     .protocol(var_.ingress_gateway_hosts_listeners_protocol())
+ *                     .tls(IngressGatewayHostListenerTlsArgs.builder()
+ *                         .mode(var_.ingress_gateway_hosts_listeners_tls_mode())
+ *                         .clientValidation(IngressGatewayHostListenerTlsClientValidationArgs.builder()
+ *                             .subjectAlternateNames(var_.ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names())
+ *                             .trustedCaBundle(IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs.builder()
+ *                                 .type(var_.ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type())
+ *                                 .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+ *                                 .secretName(oci_vault_secret.test_secret().name())
+ *                                 .build())
+ *                             .build())
+ *                         .serverCertificate(IngressGatewayHostListenerTlsServerCertificateArgs.builder()
+ *                             .type(var_.ingress_gateway_hosts_listeners_tls_server_certificate_type())
+ *                             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+ *                             .secretName(oci_vault_secret.test_secret().name())
+ *                             .build())
+ *                         .build())
+ *                     .build())
+ *                 .name(var_.ingress_gateway_hosts_name())
+ *                 .hostnames(var_.ingress_gateway_hosts_hostnames())
+ *                 .build())
+ *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+ *             .accessLogging(IngressGatewayAccessLoggingArgs.builder()
+ *                 .isEnabled(var_.ingress_gateway_access_logging_is_enabled())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.ingress_gateway_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .mtls(IngressGatewayMtlsArgs.builder()
+ *                 .maximumValidity(var_.ingress_gateway_mtls_maximum_validity())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

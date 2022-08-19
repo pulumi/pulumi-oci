@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyRequestRateLimitingGetArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyRequestRateLimitingGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("rules")]
         private InputList<Inputs.AppFirewallPolicyRequestRateLimitingRuleGetArgs>? _rules;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyRequestRateLimitingGetArgs()
         {
         }
+        public static new AppFirewallPolicyRequestRateLimitingGetArgs Empty => new AppFirewallPolicyRequestRateLimitingGetArgs();
     }
 }

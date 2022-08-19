@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class ImageAgentFeatureArgs : Pulumi.ResourceArgs
+    public sealed class ImageAgentFeatureArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// This attribute is not used.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public ImageAgentFeatureArgs()
         {
         }
+        public static new ImageAgentFeatureArgs Empty => new ImageAgentFeatureArgs();
     }
 }

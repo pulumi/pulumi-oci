@@ -22,28 +22,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLibraryMaskingFormats = Oci.DataSafe.GetLibraryMaskingFormats.Invoke(new()
         ///     {
-        ///         var testLibraryMaskingFormats = Output.Create(Oci.DataSafe.GetLibraryMaskingFormats.InvokeAsync(new Oci.DataSafe.GetLibraryMaskingFormatsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Library_masking_format_access_level,
-        ///             CompartmentIdInSubtree = @var.Library_masking_format_compartment_id_in_subtree,
-        ///             DisplayName = @var.Library_masking_format_display_name,
-        ///             LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
-        ///             LibraryMaskingFormatSource = @var.Library_masking_format_library_masking_format_source,
-        ///             State = @var.Library_masking_format_state,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Library_masking_format_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Library_masking_format_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Library_masking_format_access_level,
+        ///         CompartmentIdInSubtree = @var.Library_masking_format_compartment_id_in_subtree,
+        ///         DisplayName = @var.Library_masking_format_display_name,
+        ///         LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
+        ///         LibraryMaskingFormatSource = @var.Library_masking_format_library_masking_format_source,
+        ///         State = @var.Library_masking_format_state,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Library_masking_format_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Library_masking_format_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,28 +60,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLibraryMaskingFormats = Oci.DataSafe.GetLibraryMaskingFormats.Invoke(new()
         ///     {
-        ///         var testLibraryMaskingFormats = Output.Create(Oci.DataSafe.GetLibraryMaskingFormats.InvokeAsync(new Oci.DataSafe.GetLibraryMaskingFormatsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Library_masking_format_access_level,
-        ///             CompartmentIdInSubtree = @var.Library_masking_format_compartment_id_in_subtree,
-        ///             DisplayName = @var.Library_masking_format_display_name,
-        ///             LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
-        ///             LibraryMaskingFormatSource = @var.Library_masking_format_library_masking_format_source,
-        ///             State = @var.Library_masking_format_state,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Library_masking_format_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Library_masking_format_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Library_masking_format_access_level,
+        ///         CompartmentIdInSubtree = @var.Library_masking_format_compartment_id_in_subtree,
+        ///         DisplayName = @var.Library_masking_format_display_name,
+        ///         LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
+        ///         LibraryMaskingFormatSource = @var.Library_masking_format_library_masking_format_source,
+        ///         State = @var.Library_masking_format_state,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Library_masking_format_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Library_masking_format_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetLibraryMaskingFormatsArgs : Pulumi.InvokeArgs
+    public sealed class GetLibraryMaskingFormatsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -160,9 +156,10 @@ namespace Pulumi.Oci.DataSafe
         public GetLibraryMaskingFormatsArgs()
         {
         }
+        public static new GetLibraryMaskingFormatsArgs Empty => new GetLibraryMaskingFormatsArgs();
     }
 
-    public sealed class GetLibraryMaskingFormatsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLibraryMaskingFormatsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -229,6 +226,7 @@ namespace Pulumi.Oci.DataSafe
         public GetLibraryMaskingFormatsInvokeArgs()
         {
         }
+        public static new GetLibraryMaskingFormatsInvokeArgs Empty => new GetLibraryMaskingFormatsInvokeArgs();
     }
 
 

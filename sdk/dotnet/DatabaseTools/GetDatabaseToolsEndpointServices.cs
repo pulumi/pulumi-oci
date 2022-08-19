@@ -22,23 +22,21 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsEndpointServices = Oci.DatabaseTools.GetDatabaseToolsEndpointServices.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsEndpointServices = Output.Create(Oci.DatabaseTools.GetDatabaseToolsEndpointServices.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsEndpointServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_tools_endpoint_service_display_name,
-        ///             Name = @var.Database_tools_endpoint_service_name,
-        ///             State = @var.Database_tools_endpoint_service_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_tools_endpoint_service_display_name,
+        ///         Name = @var.Database_tools_endpoint_service_name,
+        ///         State = @var.Database_tools_endpoint_service_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsEndpointServices = Oci.DatabaseTools.GetDatabaseToolsEndpointServices.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsEndpointServices = Output.Create(Oci.DatabaseTools.GetDatabaseToolsEndpointServices.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsEndpointServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_tools_endpoint_service_display_name,
-        ///             Name = @var.Database_tools_endpoint_service_name,
-        ///             State = @var.Database_tools_endpoint_service_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_tools_endpoint_service_display_name,
+        ///         Name = @var.Database_tools_endpoint_service_name,
+        ///         State = @var.Database_tools_endpoint_service_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DatabaseTools
     }
 
 
-    public sealed class GetDatabaseToolsEndpointServicesArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsEndpointServicesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsEndpointServicesArgs()
         {
         }
+        public static new GetDatabaseToolsEndpointServicesArgs Empty => new GetDatabaseToolsEndpointServicesArgs();
     }
 
-    public sealed class GetDatabaseToolsEndpointServicesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsEndpointServicesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsEndpointServicesInvokeArgs()
         {
         }
+        public static new GetDatabaseToolsEndpointServicesInvokeArgs Empty => new GetDatabaseToolsEndpointServicesInvokeArgs();
     }
 
 

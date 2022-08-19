@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceCredential = Oci.Core.GetInstanceCredentials.Invoke(new()
         ///     {
-        ///         var testInstanceCredential = Output.Create(Oci.Core.GetInstanceCredentials.InvokeAsync(new Oci.Core.GetInstanceCredentialsArgs
-        ///         {
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///         }));
-        ///     }
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceCredential = Oci.Core.GetInstanceCredentials.Invoke(new()
         ///     {
-        ///         var testInstanceCredential = Output.Create(Oci.Core.GetInstanceCredentials.InvokeAsync(new Oci.Core.GetInstanceCredentialsArgs
-        ///         {
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///         }));
-        ///     }
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstanceCredentialsArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceCredentialsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -90,9 +86,10 @@ namespace Pulumi.Oci.Core
         public GetInstanceCredentialsArgs()
         {
         }
+        public static new GetInstanceCredentialsArgs Empty => new GetInstanceCredentialsArgs();
     }
 
-    public sealed class GetInstanceCredentialsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceCredentialsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -103,6 +100,7 @@ namespace Pulumi.Oci.Core
         public GetInstanceCredentialsInvokeArgs()
         {
         }
+        public static new GetInstanceCredentialsInvokeArgs Empty => new GetInstanceCredentialsInvokeArgs();
     }
 
 

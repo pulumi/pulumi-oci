@@ -26,305 +26,6 @@ namespace Pulumi.Oci.Waas
     /// 
     /// **Note:** After sending the POST request, the new object's state will temporarily be `CREATING`. Ensure that the resource's state has changed to `ACTIVE` before use.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testWaasPolicy = new Oci.Waas.Policy("testWaasPolicy", new Oci.Waas.PolicyArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Domain = @var.Waas_policy_domain,
-    ///             AdditionalDomains = @var.Waas_policy_additional_domains,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Waas_policy_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             OriginGroups = 
-    ///             {
-    ///                 new Oci.Waas.Inputs.PolicyOriginGroupArgs
-    ///                 {
-    ///                     Origins = @var.Waas_policy_origin_groups_origins,
-    ///                 },
-    ///             },
-    ///             Origins = 
-    ///             {
-    ///                 new Oci.Waas.Inputs.PolicyOriginArgs
-    ///                 {
-    ///                     Uri = @var.Waas_policy_origins_uri,
-    ///                     CustomHeaders = 
-    ///                     {
-    ///                         new Oci.Waas.Inputs.PolicyOriginCustomHeaderArgs
-    ///                         {
-    ///                             Name = @var.Waas_policy_origins_custom_headers_name,
-    ///                             Value = @var.Waas_policy_origins_custom_headers_value,
-    ///                         },
-    ///                     },
-    ///                     HttpPort = @var.Waas_policy_origins_http_port,
-    ///                     HttpsPort = @var.Waas_policy_origins_https_port,
-    ///                 },
-    ///             },
-    ///             PolicyConfig = new Oci.Waas.Inputs.PolicyPolicyConfigArgs
-    ///             {
-    ///                 CertificateId = oci_waas_certificate.Test_certificate.Id,
-    ///                 CipherGroup = @var.Waas_policy_policy_config_cipher_group,
-    ///                 ClientAddressHeader = @var.Waas_policy_policy_config_client_address_header,
-    ///                 HealthChecks = new Oci.Waas.Inputs.PolicyPolicyConfigHealthChecksArgs
-    ///                 {
-    ///                     ExpectedResponseCodeGroups = @var.Waas_policy_policy_config_health_checks_expected_response_code_group,
-    ///                     ExpectedResponseText = @var.Waas_policy_policy_config_health_checks_expected_response_text,
-    ///                     Headers = @var.Waas_policy_policy_config_health_checks_headers,
-    ///                     HealthyThreshold = @var.Waas_policy_policy_config_health_checks_healthy_threshold,
-    ///                     IntervalInSeconds = @var.Waas_policy_policy_config_health_checks_interval_in_seconds,
-    ///                     IsEnabled = @var.Waas_policy_policy_config_health_checks_is_enabled,
-    ///                     IsResponseTextCheckEnabled = @var.Waas_policy_policy_config_health_checks_is_response_text_check_enabled,
-    ///                     Method = @var.Waas_policy_policy_config_health_checks_method,
-    ///                     Path = @var.Waas_policy_policy_config_health_checks_path,
-    ///                     TimeoutInSeconds = @var.Waas_policy_policy_config_health_checks_timeout_in_seconds,
-    ///                     UnhealthyThreshold = @var.Waas_policy_policy_config_health_checks_unhealthy_threshold,
-    ///                 },
-    ///                 IsBehindCdn = @var.Waas_policy_policy_config_is_behind_cdn,
-    ///                 IsCacheControlRespected = @var.Waas_policy_policy_config_is_cache_control_respected,
-    ///                 IsHttpsEnabled = @var.Waas_policy_policy_config_is_https_enabled,
-    ///                 IsHttpsForced = @var.Waas_policy_policy_config_is_https_forced,
-    ///                 IsOriginCompressionEnabled = @var.Waas_policy_policy_config_is_origin_compression_enabled,
-    ///                 IsResponseBufferingEnabled = @var.Waas_policy_policy_config_is_response_buffering_enabled,
-    ///                 IsSniEnabled = @var.Waas_policy_policy_config_is_sni_enabled,
-    ///                 LoadBalancingMethod = new Oci.Waas.Inputs.PolicyPolicyConfigLoadBalancingMethodArgs
-    ///                 {
-    ///                     Method = @var.Waas_policy_policy_config_load_balancing_method_method,
-    ///                     Domain = @var.Waas_policy_policy_config_load_balancing_method_domain,
-    ///                     ExpirationTimeInSeconds = @var.Waas_policy_policy_config_load_balancing_method_expiration_time_in_seconds,
-    ///                     Name = @var.Waas_policy_policy_config_load_balancing_method_name,
-    ///                 },
-    ///                 TlsProtocols = @var.Waas_policy_policy_config_tls_protocols,
-    ///                 WebsocketPathPrefixes = @var.Waas_policy_policy_config_websocket_path_prefixes,
-    ///             },
-    ///             WafConfig = new Oci.Waas.Inputs.PolicyWafConfigArgs
-    ///             {
-    ///                 AccessRules = 
-    ///                 {
-    ///                     new Oci.Waas.Inputs.PolicyWafConfigAccessRuleArgs
-    ///                     {
-    ///                         Action = @var.Waas_policy_waf_config_access_rules_action,
-    ///                         Criterias = 
-    ///                         {
-    ///                             new Oci.Waas.Inputs.PolicyWafConfigAccessRuleCriteriaArgs
-    ///                             {
-    ///                                 Condition = @var.Waas_policy_waf_config_access_rules_criteria_condition,
-    ///                                 Value = @var.Waas_policy_waf_config_access_rules_criteria_value,
-    ///                                 IsCaseSensitive = @var.Waas_policy_waf_config_access_rules_criteria_is_case_sensitive,
-    ///                             },
-    ///                         },
-    ///                         Name = @var.Waas_policy_waf_config_access_rules_name,
-    ///                         BlockAction = @var.Waas_policy_waf_config_access_rules_block_action,
-    ///                         BlockErrorPageCode = @var.Waas_policy_waf_config_access_rules_block_error_page_code,
-    ///                         BlockErrorPageDescription = @var.Waas_policy_waf_config_access_rules_block_error_page_description,
-    ///                         BlockErrorPageMessage = @var.Waas_policy_waf_config_access_rules_block_error_page_message,
-    ///                         BlockResponseCode = @var.Waas_policy_waf_config_access_rules_block_response_code,
-    ///                         BypassChallenges = @var.Waas_policy_waf_config_access_rules_bypass_challenges,
-    ///                         CaptchaFooter = @var.Waas_policy_waf_config_access_rules_captcha_footer,
-    ///                         CaptchaHeader = @var.Waas_policy_waf_config_access_rules_captcha_header,
-    ///                         CaptchaSubmitLabel = @var.Waas_policy_waf_config_access_rules_captcha_submit_label,
-    ///                         CaptchaTitle = @var.Waas_policy_waf_config_access_rules_captcha_title,
-    ///                         RedirectResponseCode = @var.Waas_policy_waf_config_access_rules_redirect_response_code,
-    ///                         RedirectUrl = @var.Waas_policy_waf_config_access_rules_redirect_url,
-    ///                         ResponseHeaderManipulations = 
-    ///                         {
-    ///                             new Oci.Waas.Inputs.PolicyWafConfigAccessRuleResponseHeaderManipulationArgs
-    ///                             {
-    ///                                 Action = @var.Waas_policy_waf_config_access_rules_response_header_manipulation_action,
-    ///                                 Header = @var.Waas_policy_waf_config_access_rules_response_header_manipulation_header,
-    ///                                 Value = @var.Waas_policy_waf_config_access_rules_response_header_manipulation_value,
-    ///                             },
-    ///                         },
-    ///                     },
-    ///                 },
-    ///                 AddressRateLimiting = new Oci.Waas.Inputs.PolicyWafConfigAddressRateLimitingArgs
-    ///                 {
-    ///                     IsEnabled = @var.Waas_policy_waf_config_address_rate_limiting_is_enabled,
-    ///                     AllowedRatePerAddress = @var.Waas_policy_waf_config_address_rate_limiting_allowed_rate_per_address,
-    ///                     BlockResponseCode = @var.Waas_policy_waf_config_address_rate_limiting_block_response_code,
-    ///                     MaxDelayedCountPerAddress = @var.Waas_policy_waf_config_address_rate_limiting_max_delayed_count_per_address,
-    ///                 },
-    ///                 CachingRules = 
-    ///                 {
-    ///                     new Oci.Waas.Inputs.PolicyWafConfigCachingRuleArgs
-    ///                     {
-    ///                         Action = @var.Waas_policy_waf_config_caching_rules_action,
-    ///                         Criterias = 
-    ///                         {
-    ///                             new Oci.Waas.Inputs.PolicyWafConfigCachingRuleCriteriaArgs
-    ///                             {
-    ///                                 Condition = @var.Waas_policy_waf_config_caching_rules_criteria_condition,
-    ///                                 Value = @var.Waas_policy_waf_config_caching_rules_criteria_value,
-    ///                             },
-    ///                         },
-    ///                         Name = @var.Waas_policy_waf_config_caching_rules_name,
-    ///                         CachingDuration = @var.Waas_policy_waf_config_caching_rules_caching_duration,
-    ///                         ClientCachingDuration = @var.Waas_policy_waf_config_caching_rules_client_caching_duration,
-    ///                         IsClientCachingEnabled = @var.Waas_policy_waf_config_caching_rules_is_client_caching_enabled,
-    ///                         Key = @var.Waas_policy_waf_config_caching_rules_key,
-    ///                     },
-    ///                 },
-    ///                 Captchas = 
-    ///                 {
-    ///                     new Oci.Waas.Inputs.PolicyWafConfigCaptchaArgs
-    ///                     {
-    ///                         FailureMessage = @var.Waas_policy_waf_config_captchas_failure_message,
-    ///                         SessionExpirationInSeconds = @var.Waas_policy_waf_config_captchas_session_expiration_in_seconds,
-    ///                         SubmitLabel = @var.Waas_policy_waf_config_captchas_submit_label,
-    ///                         Title = @var.Waas_policy_waf_config_captchas_title,
-    ///                         Url = @var.Waas_policy_waf_config_captchas_url,
-    ///                         FooterText = @var.Waas_policy_waf_config_captchas_footer_text,
-    ///                         HeaderText = @var.Waas_policy_waf_config_captchas_header_text,
-    ///                     },
-    ///                 },
-    ///                 CustomProtectionRules = 
-    ///                 {
-    ///                     new Oci.Waas.Inputs.PolicyWafConfigCustomProtectionRuleArgs
-    ///                     {
-    ///                         Action = @var.Waas_policy_waf_config_custom_protection_rules_action,
-    ///                         Exclusions = 
-    ///                         {
-    ///                             new Oci.Waas.Inputs.PolicyWafConfigCustomProtectionRuleExclusionArgs
-    ///                             {
-    ///                                 Exclusions = @var.Waas_policy_waf_config_custom_protection_rules_exclusions_exclusions,
-    ///                                 Target = @var.Waas_policy_waf_config_custom_protection_rules_exclusions_target,
-    ///                             },
-    ///                         },
-    ///                         Id = @var.Waas_policy_waf_config_custom_protection_rules_id,
-    ///                     },
-    ///                 },
-    ///                 DeviceFingerprintChallenge = new Oci.Waas.Inputs.PolicyWafConfigDeviceFingerprintChallengeArgs
-    ///                 {
-    ///                     IsEnabled = @var.Waas_policy_waf_config_device_fingerprint_challenge_is_enabled,
-    ///                     Action = @var.Waas_policy_waf_config_device_fingerprint_challenge_action,
-    ///                     ActionExpirationInSeconds = @var.Waas_policy_waf_config_device_fingerprint_challenge_action_expiration_in_seconds,
-    ///                     ChallengeSettings = new Oci.Waas.Inputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs
-    ///                     {
-    ///                         BlockAction = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_action,
-    ///                         BlockErrorPageCode = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_code,
-    ///                         BlockErrorPageDescription = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_description,
-    ///                         BlockErrorPageMessage = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_message,
-    ///                         BlockResponseCode = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_response_code,
-    ///                         CaptchaFooter = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_footer,
-    ///                         CaptchaHeader = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_header,
-    ///                         CaptchaSubmitLabel = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_submit_label,
-    ///                         CaptchaTitle = @var.Waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_title,
-    ///                     },
-    ///                     FailureThreshold = @var.Waas_policy_waf_config_device_fingerprint_challenge_failure_threshold,
-    ///                     FailureThresholdExpirationInSeconds = @var.Waas_policy_waf_config_device_fingerprint_challenge_failure_threshold_expiration_in_seconds,
-    ///                     MaxAddressCount = @var.Waas_policy_waf_config_device_fingerprint_challenge_max_address_count,
-    ///                     MaxAddressCountExpirationInSeconds = @var.Waas_policy_waf_config_device_fingerprint_challenge_max_address_count_expiration_in_seconds,
-    ///                 },
-    ///                 HumanInteractionChallenge = new Oci.Waas.Inputs.PolicyWafConfigHumanInteractionChallengeArgs
-    ///                 {
-    ///                     IsEnabled = @var.Waas_policy_waf_config_human_interaction_challenge_is_enabled,
-    ///                     Action = @var.Waas_policy_waf_config_human_interaction_challenge_action,
-    ///                     ActionExpirationInSeconds = @var.Waas_policy_waf_config_human_interaction_challenge_action_expiration_in_seconds,
-    ///                     ChallengeSettings = new Oci.Waas.Inputs.PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs
-    ///                     {
-    ///                         BlockAction = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_action,
-    ///                         BlockErrorPageCode = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_code,
-    ///                         BlockErrorPageDescription = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_description,
-    ///                         BlockErrorPageMessage = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_message,
-    ///                         BlockResponseCode = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_response_code,
-    ///                         CaptchaFooter = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_footer,
-    ///                         CaptchaHeader = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_header,
-    ///                         CaptchaSubmitLabel = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_submit_label,
-    ///                         CaptchaTitle = @var.Waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_title,
-    ///                     },
-    ///                     FailureThreshold = @var.Waas_policy_waf_config_human_interaction_challenge_failure_threshold,
-    ///                     FailureThresholdExpirationInSeconds = @var.Waas_policy_waf_config_human_interaction_challenge_failure_threshold_expiration_in_seconds,
-    ///                     InteractionThreshold = @var.Waas_policy_waf_config_human_interaction_challenge_interaction_threshold,
-    ///                     IsNatEnabled = @var.Waas_policy_waf_config_human_interaction_challenge_is_nat_enabled,
-    ///                     RecordingPeriodInSeconds = @var.Waas_policy_waf_config_human_interaction_challenge_recording_period_in_seconds,
-    ///                     SetHttpHeader = new Oci.Waas.Inputs.PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs
-    ///                     {
-    ///                         Name = @var.Waas_policy_waf_config_human_interaction_challenge_set_http_header_name,
-    ///                         Value = @var.Waas_policy_waf_config_human_interaction_challenge_set_http_header_value,
-    ///                     },
-    ///                 },
-    ///                 JsChallenge = new Oci.Waas.Inputs.PolicyWafConfigJsChallengeArgs
-    ///                 {
-    ///                     IsEnabled = @var.Waas_policy_waf_config_js_challenge_is_enabled,
-    ///                     Action = @var.Waas_policy_waf_config_js_challenge_action,
-    ///                     ActionExpirationInSeconds = @var.Waas_policy_waf_config_js_challenge_action_expiration_in_seconds,
-    ///                     AreRedirectsChallenged = @var.Waas_policy_waf_config_js_challenge_are_redirects_challenged,
-    ///                     ChallengeSettings = new Oci.Waas.Inputs.PolicyWafConfigJsChallengeChallengeSettingsArgs
-    ///                     {
-    ///                         BlockAction = @var.Waas_policy_waf_config_js_challenge_challenge_settings_block_action,
-    ///                         BlockErrorPageCode = @var.Waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_code,
-    ///                         BlockErrorPageDescription = @var.Waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_description,
-    ///                         BlockErrorPageMessage = @var.Waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_message,
-    ///                         BlockResponseCode = @var.Waas_policy_waf_config_js_challenge_challenge_settings_block_response_code,
-    ///                         CaptchaFooter = @var.Waas_policy_waf_config_js_challenge_challenge_settings_captcha_footer,
-    ///                         CaptchaHeader = @var.Waas_policy_waf_config_js_challenge_challenge_settings_captcha_header,
-    ///                         CaptchaSubmitLabel = @var.Waas_policy_waf_config_js_challenge_challenge_settings_captcha_submit_label,
-    ///                         CaptchaTitle = @var.Waas_policy_waf_config_js_challenge_challenge_settings_captcha_title,
-    ///                     },
-    ///                     Criterias = 
-    ///                     {
-    ///                         new Oci.Waas.Inputs.PolicyWafConfigJsChallengeCriteriaArgs
-    ///                         {
-    ///                             Condition = @var.Waas_policy_waf_config_js_challenge_criteria_condition,
-    ///                             Value = @var.Waas_policy_waf_config_js_challenge_criteria_value,
-    ///                             IsCaseSensitive = @var.Waas_policy_waf_config_js_challenge_criteria_is_case_sensitive,
-    ///                         },
-    ///                     },
-    ///                     FailureThreshold = @var.Waas_policy_waf_config_js_challenge_failure_threshold,
-    ///                     IsNatEnabled = @var.Waas_policy_waf_config_js_challenge_is_nat_enabled,
-    ///                     SetHttpHeader = new Oci.Waas.Inputs.PolicyWafConfigJsChallengeSetHttpHeaderArgs
-    ///                     {
-    ///                         Name = @var.Waas_policy_waf_config_js_challenge_set_http_header_name,
-    ///                         Value = @var.Waas_policy_waf_config_js_challenge_set_http_header_value,
-    ///                     },
-    ///                 },
-    ///                 Origin = @var.Waas_policy_waf_config_origin,
-    ///                 OriginGroups = @var.Waas_policy_waf_config_origin_groups,
-    ///                 ProtectionSettings = new Oci.Waas.Inputs.PolicyWafConfigProtectionSettingsArgs
-    ///                 {
-    ///                     AllowedHttpMethods = @var.Waas_policy_waf_config_protection_settings_allowed_http_methods,
-    ///                     BlockAction = @var.Waas_policy_waf_config_protection_settings_block_action,
-    ///                     BlockErrorPageCode = @var.Waas_policy_waf_config_protection_settings_block_error_page_code,
-    ///                     BlockErrorPageDescription = @var.Waas_policy_waf_config_protection_settings_block_error_page_description,
-    ///                     BlockErrorPageMessage = @var.Waas_policy_waf_config_protection_settings_block_error_page_message,
-    ///                     BlockResponseCode = @var.Waas_policy_waf_config_protection_settings_block_response_code,
-    ///                     IsResponseInspected = @var.Waas_policy_waf_config_protection_settings_is_response_inspected,
-    ///                     MaxArgumentCount = @var.Waas_policy_waf_config_protection_settings_max_argument_count,
-    ///                     MaxNameLengthPerArgument = @var.Waas_policy_waf_config_protection_settings_max_name_length_per_argument,
-    ///                     MaxResponseSizeInKiB = @var.Waas_policy_waf_config_protection_settings_max_response_size_in_ki_b,
-    ///                     MaxTotalNameLengthOfArguments = @var.Waas_policy_waf_config_protection_settings_max_total_name_length_of_arguments,
-    ///                     MediaTypes = @var.Waas_policy_waf_config_protection_settings_media_types,
-    ///                     RecommendationsPeriodInDays = @var.Waas_policy_waf_config_protection_settings_recommendations_period_in_days,
-    ///                 },
-    ///                 Whitelists = 
-    ///                 {
-    ///                     new Oci.Waas.Inputs.PolicyWafConfigWhitelistArgs
-    ///                     {
-    ///                         Name = @var.Waas_policy_waf_config_whitelists_name,
-    ///                         AddressLists = @var.Waas_policy_waf_config_whitelists_address_lists,
-    ///                         Addresses = @var.Waas_policy_waf_config_whitelists_addresses,
-    ///                     },
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// WaasPolicies can be imported using the `id`, e.g.
@@ -334,7 +35,7 @@ namespace Pulumi.Oci.Waas
     /// ```
     /// </summary>
     [OciResourceType("oci:Waas/policy:Policy")]
-    public partial class Policy : Pulumi.CustomResource
+    public partial class Policy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) An array of additional domains for the specified web application.
@@ -458,7 +159,7 @@ namespace Pulumi.Oci.Waas
         }
     }
 
-    public sealed class PolicyArgs : Pulumi.ResourceArgs
+    public sealed class PolicyArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalDomains")]
         private InputList<string>? _additionalDomains;
@@ -553,9 +254,10 @@ namespace Pulumi.Oci.Waas
         public PolicyArgs()
         {
         }
+        public static new PolicyArgs Empty => new PolicyArgs();
     }
 
-    public sealed class PolicyState : Pulumi.ResourceArgs
+    public sealed class PolicyState : global::Pulumi.ResourceArgs
     {
         [Input("additionalDomains")]
         private InputList<string>? _additionalDomains;
@@ -668,5 +370,6 @@ namespace Pulumi.Oci.Waas
         public PolicyState()
         {
         }
+        public static new PolicyState Empty => new PolicyState();
     }
 }

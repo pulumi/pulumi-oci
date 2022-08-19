@@ -17,42 +17,40 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDeployPipeline = new Oci.DevOps.DeployPipeline("testDeployPipeline", new()
     ///     {
-    ///         var testDeployPipeline = new Oci.DevOps.DeployPipeline("testDeployPipeline", new Oci.DevOps.DeployPipelineArgs
+    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             ProjectId = oci_devops_project.Test_project.Id,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DeployPipelineParameters = new Oci.DevOps.Inputs.DeployPipelineDeployPipelineParametersArgs
+    ///         {
+    ///             Items = new[]
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DeployPipelineParameters = new Oci.DevOps.Inputs.DeployPipelineDeployPipelineParametersArgs
-    ///             {
-    ///                 Items = 
+    ///                 new Oci.DevOps.Inputs.DeployPipelineDeployPipelineParametersItemArgs
     ///                 {
-    ///                     new Oci.DevOps.Inputs.DeployPipelineDeployPipelineParametersItemArgs
-    ///                     {
-    ///                         Name = @var.Deploy_pipeline_deploy_pipeline_parameters_items_name,
-    ///                         DefaultValue = @var.Deploy_pipeline_deploy_pipeline_parameters_items_default_value,
-    ///                         Description = @var.Deploy_pipeline_deploy_pipeline_parameters_items_description,
-    ///                     },
+    ///                     Name = @var.Deploy_pipeline_deploy_pipeline_parameters_items_name,
+    ///                     DefaultValue = @var.Deploy_pipeline_deploy_pipeline_parameters_items_default_value,
+    ///                     Description = @var.Deploy_pipeline_deploy_pipeline_parameters_items_description,
     ///                 },
     ///             },
-    ///             Description = @var.Deploy_pipeline_description,
-    ///             DisplayName = @var.Deploy_pipeline_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         Description = @var.Deploy_pipeline_description,
+    ///         DisplayName = @var.Deploy_pipeline_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -64,7 +62,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/deployPipeline:DeployPipeline")]
-    public partial class DeployPipeline : Pulumi.CustomResource
+    public partial class DeployPipeline : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment where the pipeline is created.
@@ -194,7 +192,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class DeployPipelineArgs : Pulumi.ResourceArgs
+    public sealed class DeployPipelineArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -247,9 +245,10 @@ namespace Pulumi.Oci.DevOps
         public DeployPipelineArgs()
         {
         }
+        public static new DeployPipelineArgs Empty => new DeployPipelineArgs();
     }
 
-    public sealed class DeployPipelineState : Pulumi.ResourceArgs
+    public sealed class DeployPipelineState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment where the pipeline is created.
@@ -368,5 +367,6 @@ namespace Pulumi.Oci.DevOps
         public DeployPipelineState()
         {
         }
+        public static new DeployPipelineState Empty => new DeployPipelineState();
     }
 }

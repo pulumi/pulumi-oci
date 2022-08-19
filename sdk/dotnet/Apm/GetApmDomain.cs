@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Apm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApmDomain = Oci.Apm.GetApmDomain.Invoke(new()
         ///     {
-        ///         var testApmDomain = Output.Create(Oci.Apm.GetApmDomain.InvokeAsync(new Oci.Apm.GetApmDomainArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Apm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApmDomain = Oci.Apm.GetApmDomain.Invoke(new()
         ///     {
-        ///         var testApmDomain = Output.Create(Oci.Apm.GetApmDomain.InvokeAsync(new Oci.Apm.GetApmDomainArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Apm
     }
 
 
-    public sealed class GetApmDomainArgs : Pulumi.InvokeArgs
+    public sealed class GetApmDomainArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the APM domain
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Apm
         public GetApmDomainArgs()
         {
         }
+        public static new GetApmDomainArgs Empty => new GetApmDomainArgs();
     }
 
-    public sealed class GetApmDomainInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetApmDomainInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the APM domain
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Apm
         public GetApmDomainInvokeArgs()
         {
         }
+        public static new GetApmDomainInvokeArgs Empty => new GetApmDomainInvokeArgs();
     }
 
 

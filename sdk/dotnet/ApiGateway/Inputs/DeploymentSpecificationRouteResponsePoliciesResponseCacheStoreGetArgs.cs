@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreGetArgs()
         {
         }
+        public static new DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreGetArgs Empty => new DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreGetArgs();
     }
 }

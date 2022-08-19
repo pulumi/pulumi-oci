@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Audit
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConfiguration = Oci.Audit.GetConfiguration.Invoke(new()
         ///     {
-        ///         var testConfiguration = Output.Create(Oci.Audit.GetConfiguration.InvokeAsync(new Oci.Audit.GetConfigurationArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Audit
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConfiguration = Oci.Audit.GetConfiguration.Invoke(new()
         ///     {
-        ///         var testConfiguration = Output.Create(Oci.Audit.GetConfiguration.InvokeAsync(new Oci.Audit.GetConfigurationArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Audit
     }
 
 
-    public sealed class GetConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// ID of the root compartment (tenancy)
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Audit
         public GetConfigurationArgs()
         {
         }
+        public static new GetConfigurationArgs Empty => new GetConfigurationArgs();
     }
 
-    public sealed class GetConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// ID of the root compartment (tenancy)
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Audit
         public GetConfigurationInvokeArgs()
         {
         }
+        public static new GetConfigurationInvokeArgs Empty => new GetConfigurationInvokeArgs();
     }
 
 

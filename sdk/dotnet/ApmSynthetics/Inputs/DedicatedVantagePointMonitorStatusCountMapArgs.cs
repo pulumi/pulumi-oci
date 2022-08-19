@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class DedicatedVantagePointMonitorStatusCountMapArgs : Pulumi.ResourceArgs
+    public sealed class DedicatedVantagePointMonitorStatusCountMapArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Number of disabled monitors using the script.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public DedicatedVantagePointMonitorStatusCountMapArgs()
         {
         }
+        public static new DedicatedVantagePointMonitorStatusCountMapArgs Empty => new DedicatedVantagePointMonitorStatusCountMapArgs();
     }
 }

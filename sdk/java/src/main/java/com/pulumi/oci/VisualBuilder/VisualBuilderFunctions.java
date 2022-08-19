@@ -26,6 +26,34 @@ public final class VisualBuilderFunctions {
      * Gets a VbInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
+     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVbInstanceResult> getVbInstance(GetVbInstanceArgs args) {
@@ -37,6 +65,34 @@ public final class VisualBuilderFunctions {
      * Gets a VbInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
+     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVbInstanceResult> getVbInstancePlain(GetVbInstancePlainArgs args) {
@@ -48,6 +104,34 @@ public final class VisualBuilderFunctions {
      * Gets a VbInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
+     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVbInstanceResult> getVbInstance(GetVbInstanceArgs args, InvokeOptions options) {
@@ -59,6 +143,34 @@ public final class VisualBuilderFunctions {
      * Gets a VbInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
+     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVbInstanceResult> getVbInstancePlain(GetVbInstancePlainArgs args, InvokeOptions options) {
@@ -70,6 +182,35 @@ public final class VisualBuilderFunctions {
      * Returns a list of published and staged applications of a Visual Builder instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
+     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVbInstanceApplicationsResult> getVbInstanceApplications(GetVbInstanceApplicationsArgs args) {
@@ -81,6 +222,35 @@ public final class VisualBuilderFunctions {
      * Returns a list of published and staged applications of a Visual Builder instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
+     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVbInstanceApplicationsResult> getVbInstanceApplicationsPlain(GetVbInstanceApplicationsPlainArgs args) {
@@ -92,6 +262,35 @@ public final class VisualBuilderFunctions {
      * Returns a list of published and staged applications of a Visual Builder instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
+     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVbInstanceApplicationsResult> getVbInstanceApplications(GetVbInstanceApplicationsArgs args, InvokeOptions options) {
@@ -103,6 +302,35 @@ public final class VisualBuilderFunctions {
      * Returns a list of published and staged applications of a Visual Builder instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstanceApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
+     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVbInstanceApplicationsResult> getVbInstanceApplicationsPlain(GetVbInstanceApplicationsPlainArgs args, InvokeOptions options) {
@@ -114,6 +342,36 @@ public final class VisualBuilderFunctions {
      * Returns a list of Vb Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vb_instance_display_name())
+     *             .state(var_.vb_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVbInstancesResult> getVbInstances(GetVbInstancesArgs args) {
@@ -125,6 +383,36 @@ public final class VisualBuilderFunctions {
      * Returns a list of Vb Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vb_instance_display_name())
+     *             .state(var_.vb_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVbInstancesResult> getVbInstancesPlain(GetVbInstancesPlainArgs args) {
@@ -136,6 +424,36 @@ public final class VisualBuilderFunctions {
      * Returns a list of Vb Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vb_instance_display_name())
+     *             .state(var_.vb_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVbInstancesResult> getVbInstances(GetVbInstancesArgs args, InvokeOptions options) {
@@ -147,6 +465,36 @@ public final class VisualBuilderFunctions {
      * Returns a list of Vb Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.VisualBuilder.VisualBuilderFunctions;
+     * import com.pulumi.oci.VisualBuilder.inputs.GetVbInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vb_instance_display_name())
+     *             .state(var_.vb_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVbInstancesResult> getVbInstancesPlain(GetVbInstancesPlainArgs args, InvokeOptions options) {

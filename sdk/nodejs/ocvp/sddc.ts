@@ -51,6 +51,7 @@ import * as utilities from "../utilities";
  *     instanceDisplayNamePrefix: _var.sddc_instance_display_name_prefix,
  *     isHcxEnabled: _var.sddc_is_hcx_enabled,
  *     isShieldedInstanceEnabled: _var.sddc_is_shielded_instance_enabled,
+ *     isSingleHostSddc: _var.sddc_is_single_host_sddc,
  *     provisioningVlanId: oci_core_vlan.test_vlan.id,
  *     refreshHcxLicenseStatus: true,
  *     replicationVlanId: oci_core_vlan.test_vlan.id,
@@ -120,7 +121,7 @@ export class Sddc extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      */
     public readonly esxiHostsCount!: pulumi.Output<number>;
     /**
@@ -187,6 +188,10 @@ export class Sddc extends pulumi.CustomResource {
      * Indicates whether shielded instance is enabled for this SDDC.
      */
     public readonly isShieldedInstanceEnabled!: pulumi.Output<boolean>;
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     */
+    public readonly isSingleHostSddc!: pulumi.Output<boolean>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
      */
@@ -344,6 +349,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["isHcxEnterpriseEnabled"] = state ? state.isHcxEnterpriseEnabled : undefined;
             resourceInputs["isHcxPendingDowngrade"] = state ? state.isHcxPendingDowngrade : undefined;
             resourceInputs["isShieldedInstanceEnabled"] = state ? state.isShieldedInstanceEnabled : undefined;
+            resourceInputs["isSingleHostSddc"] = state ? state.isSingleHostSddc : undefined;
             resourceInputs["nsxEdgeUplink1vlanId"] = state ? state.nsxEdgeUplink1vlanId : undefined;
             resourceInputs["nsxEdgeUplink2vlanId"] = state ? state.nsxEdgeUplink2vlanId : undefined;
             resourceInputs["nsxEdgeUplinkIpId"] = state ? state.nsxEdgeUplinkIpId : undefined;
@@ -430,6 +436,7 @@ export class Sddc extends pulumi.CustomResource {
             resourceInputs["instanceDisplayNamePrefix"] = args ? args.instanceDisplayNamePrefix : undefined;
             resourceInputs["isHcxEnabled"] = args ? args.isHcxEnabled : undefined;
             resourceInputs["isShieldedInstanceEnabled"] = args ? args.isShieldedInstanceEnabled : undefined;
+            resourceInputs["isSingleHostSddc"] = args ? args.isSingleHostSddc : undefined;
             resourceInputs["nsxEdgeUplink1vlanId"] = args ? args.nsxEdgeUplink1vlanId : undefined;
             resourceInputs["nsxEdgeUplink2vlanId"] = args ? args.nsxEdgeUplink2vlanId : undefined;
             resourceInputs["nsxEdgeVtepVlanId"] = args ? args.nsxEdgeVtepVlanId : undefined;
@@ -503,7 +510,7 @@ export interface SddcState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      */
     esxiHostsCount?: pulumi.Input<number>;
     /**
@@ -570,6 +577,10 @@ export interface SddcState {
      * Indicates whether shielded instance is enabled for this SDDC.
      */
     isShieldedInstanceEnabled?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     */
+    isSingleHostSddc?: pulumi.Input<boolean>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
      */
@@ -717,7 +728,7 @@ export interface SddcArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      */
     esxiHostsCount: pulumi.Input<number>;
     /**
@@ -756,6 +767,10 @@ export interface SddcArgs {
      * Indicates whether shielded instance is enabled for this SDDC.
      */
     isShieldedInstanceEnabled?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     */
+    isSingleHostSddc?: pulumi.Input<boolean>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
      */

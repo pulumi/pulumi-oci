@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Emulation type for the boot volume.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs();
     }
 }

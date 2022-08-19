@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Waa
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppAccelerationPolicy = Oci.Waa.GetAppAccelerationPolicy.Invoke(new()
         ///     {
-        ///         var testWebAppAccelerationPolicy = Output.Create(Oci.Waa.GetAppAccelerationPolicy.InvokeAsync(new Oci.Waa.GetAppAccelerationPolicyArgs
-        ///         {
-        ///             WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
-        ///         }));
-        ///     }
+        ///         WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Waa
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppAccelerationPolicy = Oci.Waa.GetAppAccelerationPolicy.Invoke(new()
         ///     {
-        ///         var testWebAppAccelerationPolicy = Output.Create(Oci.Waa.GetAppAccelerationPolicy.InvokeAsync(new Oci.Waa.GetAppAccelerationPolicyArgs
-        ///         {
-        ///             WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
-        ///         }));
-        ///     }
+        ///         WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Waa
     }
 
 
-    public sealed class GetAppAccelerationPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetAppAccelerationPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAccelerationPolicy.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Waa
         public GetAppAccelerationPolicyArgs()
         {
         }
+        public static new GetAppAccelerationPolicyArgs Empty => new GetAppAccelerationPolicyArgs();
     }
 
-    public sealed class GetAppAccelerationPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppAccelerationPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAccelerationPolicy.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Waa
         public GetAppAccelerationPolicyInvokeArgs()
         {
         }
+        public static new GetAppAccelerationPolicyInvokeArgs Empty => new GetAppAccelerationPolicyInvokeArgs();
     }
 
 

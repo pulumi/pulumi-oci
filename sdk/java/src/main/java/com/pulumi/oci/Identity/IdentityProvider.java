@@ -36,6 +36,42 @@ import javax.annotation.Nullable;
  * [UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.IdentityProvider;
+ * import com.pulumi.oci.Identity.IdentityProviderArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIdentityProvider = new IdentityProvider(&#34;testIdentityProvider&#34;, IdentityProviderArgs.builder()        
+ *             .compartmentId(var_.tenancy_ocid())
+ *             .description(var_.identity_provider_description())
+ *             .metadata(var_.identity_provider_metadata())
+ *             .metadataUrl(var_.identity_provider_metadata_url())
+ *             .productType(var_.identity_provider_product_type())
+ *             .protocol(var_.identity_provider_protocol())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformAttributes(var_.identity_provider_freeform_attributes())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

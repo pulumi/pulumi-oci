@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.UsageProxy.Inputs
 {
 
-    public sealed class GetSubscriptionRedeemableUsersFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionRedeemableUsersFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.UsageProxy.Inputs
         public GetSubscriptionRedeemableUsersFilterArgs()
         {
         }
+        public static new GetSubscriptionRedeemableUsersFilterArgs Empty => new GetSubscriptionRedeemableUsersFilterArgs();
     }
 }

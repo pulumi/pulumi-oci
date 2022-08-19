@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class DedicatedVantagePointDvpStackDetailsArgs : Pulumi.ResourceArgs
+    public sealed class DedicatedVantagePointDvpStackDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public DedicatedVantagePointDvpStackDetailsArgs()
         {
         }
+        public static new DedicatedVantagePointDvpStackDetailsArgs Empty => new DedicatedVantagePointDvpStackDetailsArgs();
     }
 }

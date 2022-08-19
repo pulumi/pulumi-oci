@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeploymentDeployArtifactOverrideArgumentsGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentDeployArtifactOverrideArgumentsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.DeploymentDeployArtifactOverrideArgumentsItemGetArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeploymentDeployArtifactOverrideArgumentsGetArgs()
         {
         }
+        public static new DeploymentDeployArtifactOverrideArgumentsGetArgs Empty => new DeploymentDeployArtifactOverrideArgumentsGetArgs();
     }
 }

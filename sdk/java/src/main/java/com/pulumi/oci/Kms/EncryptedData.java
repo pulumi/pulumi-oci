@@ -23,6 +23,40 @@ import javax.annotation.Nullable;
  * Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Kms.EncryptedData;
+ * import com.pulumi.oci.Kms.EncryptedDataArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testEncryptedData = new EncryptedData(&#34;testEncryptedData&#34;, EncryptedDataArgs.builder()        
+ *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
+ *             .keyId(oci_kms_key.test_key().id())
+ *             .plaintext(var_.encrypted_data_plaintext())
+ *             .associatedData(var_.encrypted_data_associated_data())
+ *             .encryptionAlgorithm(var_.encrypted_data_encryption_algorithm())
+ *             .keyVersionId(oci_kms_key_version.test_key_version().id())
+ *             .loggingContext(var_.encrypted_data_logging_context())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

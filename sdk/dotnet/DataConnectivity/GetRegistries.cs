@@ -22,23 +22,21 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistries = Oci.DataConnectivity.GetRegistries.Invoke(new()
         ///     {
-        ///         var testRegistries = Output.Create(Oci.DataConnectivity.GetRegistries.InvokeAsync(new Oci.DataConnectivity.GetRegistriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsDeepLookup = @var.Registry_is_deep_lookup,
-        ///             Name = @var.Registry_name,
-        ///             State = @var.Registry_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsDeepLookup = @var.Registry_is_deep_lookup,
+        ///         Name = @var.Registry_name,
+        ///         State = @var.Registry_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistries = Oci.DataConnectivity.GetRegistries.Invoke(new()
         ///     {
-        ///         var testRegistries = Output.Create(Oci.DataConnectivity.GetRegistries.InvokeAsync(new Oci.DataConnectivity.GetRegistriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsDeepLookup = @var.Registry_is_deep_lookup,
-        ///             Name = @var.Registry_name,
-        ///             State = @var.Registry_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsDeepLookup = @var.Registry_is_deep_lookup,
+        ///         Name = @var.Registry_name,
+        ///         State = @var.Registry_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistriesArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the resources you want to list.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistriesArgs()
         {
         }
+        public static new GetRegistriesArgs Empty => new GetRegistriesArgs();
     }
 
-    public sealed class GetRegistriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the resources you want to list.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistriesInvokeArgs()
         {
         }
+        public static new GetRegistriesInvokeArgs Empty => new GetRegistriesInvokeArgs();
     }
 
 

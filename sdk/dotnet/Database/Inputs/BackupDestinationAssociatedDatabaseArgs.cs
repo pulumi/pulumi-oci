@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class BackupDestinationAssociatedDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class BackupDestinationAssociatedDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The display name of the database that is associated with the backup destination.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Database.Inputs
         public BackupDestinationAssociatedDatabaseArgs()
         {
         }
+        public static new BackupDestinationAssociatedDatabaseArgs Empty => new BackupDestinationAssociatedDatabaseArgs();
     }
 }

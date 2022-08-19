@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageApprovalPolicyArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageApprovalPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Approval policy type.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageApprovalPolicyArgs()
         {
         }
+        public static new DeployStageApprovalPolicyArgs Empty => new DeployStageApprovalPolicyArgs();
     }
 }

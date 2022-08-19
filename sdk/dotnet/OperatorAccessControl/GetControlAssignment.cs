@@ -21,20 +21,18 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorControlAssignment = Oci.OperatorAccessControl.GetControlAssignment.Invoke(new()
         ///     {
-        ///         var testOperatorControlAssignment = Output.Create(Oci.OperatorAccessControl.GetControlAssignment.InvokeAsync(new Oci.OperatorAccessControl.GetControlAssignmentArgs
-        ///         {
-        ///             OperatorControlAssignmentId = oci_operator_access_control_operator_control_assignment.Test_operator_control_assignment.Id,
-        ///         }));
-        ///     }
+        ///         OperatorControlAssignmentId = oci_operator_access_control_operator_control_assignment.Test_operator_control_assignment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorControlAssignment = Oci.OperatorAccessControl.GetControlAssignment.Invoke(new()
         ///     {
-        ///         var testOperatorControlAssignment = Output.Create(Oci.OperatorAccessControl.GetControlAssignment.InvokeAsync(new Oci.OperatorAccessControl.GetControlAssignmentArgs
-        ///         {
-        ///             OperatorControlAssignmentId = oci_operator_access_control_operator_control_assignment.Test_operator_control_assignment.Id,
-        ///         }));
-        ///     }
+        ///         OperatorControlAssignmentId = oci_operator_access_control_operator_control_assignment.Test_operator_control_assignment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     }
 
 
-    public sealed class GetControlAssignmentArgs : Pulumi.InvokeArgs
+    public sealed class GetControlAssignmentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique OperatorControl identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetControlAssignmentArgs()
         {
         }
+        public static new GetControlAssignmentArgs Empty => new GetControlAssignmentArgs();
     }
 
-    public sealed class GetControlAssignmentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetControlAssignmentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique OperatorControl identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetControlAssignmentInvokeArgs()
         {
         }
+        public static new GetControlAssignmentInvokeArgs Empty => new GetControlAssignmentInvokeArgs();
     }
 
 

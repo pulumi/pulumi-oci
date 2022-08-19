@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSuppression = Oci.Email.GetSuppression.Invoke(new()
         ///     {
-        ///         var testSuppression = Output.Create(Oci.Email.GetSuppression.InvokeAsync(new Oci.Email.GetSuppressionArgs
-        ///         {
-        ///             SuppressionId = oci_email_suppression.Test_suppression.Id,
-        ///         }));
-        ///     }
+        ///         SuppressionId = oci_email_suppression.Test_suppression.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSuppression = Oci.Email.GetSuppression.Invoke(new()
         ///     {
-        ///         var testSuppression = Output.Create(Oci.Email.GetSuppression.InvokeAsync(new Oci.Email.GetSuppressionArgs
-        ///         {
-        ///             SuppressionId = oci_email_suppression.Test_suppression.Id,
-        ///         }));
-        ///     }
+        ///         SuppressionId = oci_email_suppression.Test_suppression.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Email
     }
 
 
-    public sealed class GetSuppressionArgs : Pulumi.InvokeArgs
+    public sealed class GetSuppressionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID of the suppression.
@@ -90,9 +86,10 @@ namespace Pulumi.Oci.Email
         public GetSuppressionArgs()
         {
         }
+        public static new GetSuppressionArgs Empty => new GetSuppressionArgs();
     }
 
-    public sealed class GetSuppressionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSuppressionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID of the suppression.
@@ -103,6 +100,7 @@ namespace Pulumi.Oci.Email
         public GetSuppressionInvokeArgs()
         {
         }
+        public static new GetSuppressionInvokeArgs Empty => new GetSuppressionInvokeArgs();
     }
 
 

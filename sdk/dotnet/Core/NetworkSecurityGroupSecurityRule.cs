@@ -17,59 +17,57 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNetworkSecurityGroupSecurityRule = new Oci.Core.NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule", new()
     ///     {
-    ///         var testNetworkSecurityGroupSecurityRule = new Oci.Core.NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule", new Oci.Core.NetworkSecurityGroupSecurityRuleArgs
+    ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+    ///         Direction = @var.Network_security_group_security_rule_direction,
+    ///         Protocol = @var.Network_security_group_security_rule_protocol,
+    ///         Description = @var.Network_security_group_security_rule_description,
+    ///         Destination = @var.Network_security_group_security_rule_destination,
+    ///         DestinationType = @var.Network_security_group_security_rule_destination_type,
+    ///         IcmpOptions = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs
     ///         {
-    ///             NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-    ///             Direction = @var.Network_security_group_security_rule_direction,
-    ///             Protocol = @var.Network_security_group_security_rule_protocol,
-    ///             Description = @var.Network_security_group_security_rule_description,
-    ///             Destination = @var.Network_security_group_security_rule_destination,
-    ///             DestinationType = @var.Network_security_group_security_rule_destination_type,
-    ///             IcmpOptions = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs
+    ///             Type = @var.Network_security_group_security_rule_icmp_options_type,
+    ///             Code = @var.Network_security_group_security_rule_icmp_options_code,
+    ///         },
+    ///         Source = @var.Network_security_group_security_rule_source,
+    ///         SourceType = @var.Network_security_group_security_rule_source_type,
+    ///         Stateless = @var.Network_security_group_security_rule_stateless,
+    ///         TcpOptions = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleTcpOptionsArgs
+    ///         {
+    ///             DestinationPortRange = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs
     ///             {
-    ///                 Type = @var.Network_security_group_security_rule_icmp_options_type,
-    ///                 Code = @var.Network_security_group_security_rule_icmp_options_code,
+    ///                 Max = @var.Network_security_group_security_rule_tcp_options_destination_port_range_max,
+    ///                 Min = @var.Network_security_group_security_rule_tcp_options_destination_port_range_min,
     ///             },
-    ///             Source = @var.Network_security_group_security_rule_source,
-    ///             SourceType = @var.Network_security_group_security_rule_source_type,
-    ///             Stateless = @var.Network_security_group_security_rule_stateless,
-    ///             TcpOptions = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleTcpOptionsArgs
+    ///             SourcePortRange = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs
     ///             {
-    ///                 DestinationPortRange = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs
-    ///                 {
-    ///                     Max = @var.Network_security_group_security_rule_tcp_options_destination_port_range_max,
-    ///                     Min = @var.Network_security_group_security_rule_tcp_options_destination_port_range_min,
-    ///                 },
-    ///                 SourcePortRange = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs
-    ///                 {
-    ///                     Max = @var.Network_security_group_security_rule_tcp_options_source_port_range_max,
-    ///                     Min = @var.Network_security_group_security_rule_tcp_options_source_port_range_min,
-    ///                 },
+    ///                 Max = @var.Network_security_group_security_rule_tcp_options_source_port_range_max,
+    ///                 Min = @var.Network_security_group_security_rule_tcp_options_source_port_range_min,
     ///             },
-    ///             UdpOptions = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleUdpOptionsArgs
+    ///         },
+    ///         UdpOptions = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleUdpOptionsArgs
+    ///         {
+    ///             DestinationPortRange = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs
     ///             {
-    ///                 DestinationPortRange = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs
-    ///                 {
-    ///                     Max = @var.Network_security_group_security_rule_udp_options_destination_port_range_max,
-    ///                     Min = @var.Network_security_group_security_rule_udp_options_destination_port_range_min,
-    ///                 },
-    ///                 SourcePortRange = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs
-    ///                 {
-    ///                     Max = @var.Network_security_group_security_rule_udp_options_source_port_range_max,
-    ///                     Min = @var.Network_security_group_security_rule_udp_options_source_port_range_min,
-    ///                 },
+    ///                 Max = @var.Network_security_group_security_rule_udp_options_destination_port_range_max,
+    ///                 Min = @var.Network_security_group_security_rule_udp_options_destination_port_range_min,
     ///             },
-    ///         });
-    ///     }
+    ///             SourcePortRange = new Oci.Core.Inputs.NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs
+    ///             {
+    ///                 Max = @var.Network_security_group_security_rule_udp_options_source_port_range_max,
+    ///                 Min = @var.Network_security_group_security_rule_udp_options_source_port_range_min,
+    ///             },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -81,7 +79,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule")]
-    public partial class NetworkSecurityGroupSecurityRule : Pulumi.CustomResource
+    public partial class NetworkSecurityGroupSecurityRule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// An optional description of your choice for the rule. Avoid entering confidential information.
@@ -216,7 +214,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class NetworkSecurityGroupSecurityRuleArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityGroupSecurityRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// An optional description of your choice for the rule. Avoid entering confidential information.
@@ -298,9 +296,10 @@ namespace Pulumi.Oci.Core
         public NetworkSecurityGroupSecurityRuleArgs()
         {
         }
+        public static new NetworkSecurityGroupSecurityRuleArgs Empty => new NetworkSecurityGroupSecurityRuleArgs();
     }
 
-    public sealed class NetworkSecurityGroupSecurityRuleState : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityGroupSecurityRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// An optional description of your choice for the rule. Avoid entering confidential information.
@@ -394,5 +393,6 @@ namespace Pulumi.Oci.Core
         public NetworkSecurityGroupSecurityRuleState()
         {
         }
+        public static new NetworkSecurityGroupSecurityRuleState Empty => new NetworkSecurityGroupSecurityRuleState();
     }
 }

@@ -20,6 +20,40 @@ import javax.annotation.Nullable;
  * Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.AppCatalogSubscription;
+ * import com.pulumi.oci.Core.AppCatalogSubscriptionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAppCatalogSubscription = new AppCatalogSubscription(&#34;testAppCatalogSubscription&#34;, AppCatalogSubscriptionArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+ *             .listingResourceVersion(var_.app_catalog_subscription_listing_resource_version())
+ *             .oracleTermsOfUseLink(var_.app_catalog_subscription_oracle_terms_of_use_link())
+ *             .signature(var_.app_catalog_subscription_signature())
+ *             .timeRetrieved(var_.app_catalog_subscription_time_retrieved())
+ *             .eulaLink(var_.app_catalog_subscription_eula_link())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

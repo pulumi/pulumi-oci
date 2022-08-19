@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetNamespaceMetadataArgs : Pulumi.InvokeArgs
+    public sealed class GetNamespaceMetadataArgs : global::Pulumi.InvokeArgs
     {
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -27,9 +27,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetNamespaceMetadataArgs()
         {
         }
+        public static new GetNamespaceMetadataArgs Empty => new GetNamespaceMetadataArgs();
     }
 
-    public sealed class GetNamespaceMetadataInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNamespaceMetadataInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -37,6 +38,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetNamespaceMetadataInvokeArgs()
         {
         }
+        public static new GetNamespaceMetadataInvokeArgs Empty => new GetNamespaceMetadataInvokeArgs();
     }
 
 

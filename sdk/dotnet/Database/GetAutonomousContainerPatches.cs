@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousContainerPatches = Oci.Database.GetAutonomousContainerPatches.Invoke(new()
         ///     {
-        ///         var testAutonomousContainerPatches = Output.Create(Oci.Database.GetAutonomousContainerPatches.InvokeAsync(new Oci.Database.GetAutonomousContainerPatchesArgs
-        ///         {
-        ///             AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousContainerPatches = Oci.Database.GetAutonomousContainerPatches.Invoke(new()
         ///     {
-        ///         var testAutonomousContainerPatches = Output.Create(Oci.Database.GetAutonomousContainerPatches.InvokeAsync(new Oci.Database.GetAutonomousContainerPatchesArgs
-        ///         {
-        ///             AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousContainerPatchesArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousContainerPatchesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousContainerPatchesArgs()
         {
         }
+        public static new GetAutonomousContainerPatchesArgs Empty => new GetAutonomousContainerPatchesArgs();
     }
 
-    public sealed class GetAutonomousContainerPatchesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousContainerPatchesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousContainerPatchesInvokeArgs()
         {
         }
+        public static new GetAutonomousContainerPatchesInvokeArgs Empty => new GetAutonomousContainerPatchesInvokeArgs();
     }
 
 

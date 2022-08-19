@@ -23,20 +23,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseTableStatistics = Oci.DatabaseManagement.GetManagedDatabaseTableStatistics.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseTableStatistics = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseTableStatistics.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseTableStatisticsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseTableStatistics = Oci.DatabaseManagement.GetManagedDatabaseTableStatistics.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseTableStatistics = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseTableStatistics.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseTableStatisticsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseTableStatisticsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseTableStatisticsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseTableStatisticsFilterArgs>? _filters;
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseTableStatisticsArgs()
         {
         }
+        public static new GetManagedDatabaseTableStatisticsArgs Empty => new GetManagedDatabaseTableStatisticsArgs();
     }
 
-    public sealed class GetManagedDatabaseTableStatisticsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseTableStatisticsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseTableStatisticsFilterInputArgs>? _filters;
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseTableStatisticsInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseTableStatisticsInvokeArgs Empty => new GetManagedDatabaseTableStatisticsInvokeArgs();
     }
 
 

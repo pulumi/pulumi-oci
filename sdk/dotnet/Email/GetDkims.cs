@@ -21,23 +21,21 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDkims = Oci.Email.GetDkims.Invoke(new()
         ///     {
-        ///         var testDkims = Output.Create(Oci.Email.GetDkims.InvokeAsync(new Oci.Email.GetDkimsArgs
-        ///         {
-        ///             EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
-        ///             Id = @var.Dkim_id,
-        ///             Name = @var.Dkim_name,
-        ///             State = @var.Dkim_state,
-        ///         }));
-        ///     }
+        ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
+        ///         Id = @var.Dkim_id,
+        ///         Name = @var.Dkim_name,
+        ///         State = @var.Dkim_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDkims = Oci.Email.GetDkims.Invoke(new()
         ///     {
-        ///         var testDkims = Output.Create(Oci.Email.GetDkims.InvokeAsync(new Oci.Email.GetDkimsArgs
-        ///         {
-        ///             EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
-        ///             Id = @var.Dkim_id,
-        ///             Name = @var.Dkim_name,
-        ///             State = @var.Dkim_state,
-        ///         }));
-        ///     }
+        ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
+        ///         Id = @var.Dkim_id,
+        ///         Name = @var.Dkim_name,
+        ///         State = @var.Dkim_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Email
     }
 
 
-    public sealed class GetDkimsArgs : Pulumi.InvokeArgs
+    public sealed class GetDkimsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Email
         public GetDkimsArgs()
         {
         }
+        public static new GetDkimsArgs Empty => new GetDkimsArgs();
     }
 
-    public sealed class GetDkimsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDkimsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.Email
         public GetDkimsInvokeArgs()
         {
         }
+        public static new GetDkimsInvokeArgs Empty => new GetDkimsInvokeArgs();
     }
 
 

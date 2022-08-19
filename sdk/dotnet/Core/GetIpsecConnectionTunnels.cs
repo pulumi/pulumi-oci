@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpSecConnectionTunnels = Oci.Core.GetIpsecConnectionTunnels.Invoke(new()
         ///     {
-        ///         var testIpSecConnectionTunnels = Output.Create(Oci.Core.GetIpsecConnectionTunnels.InvokeAsync(new Oci.Core.GetIpsecConnectionTunnelsArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpSecConnectionTunnels = Oci.Core.GetIpsecConnectionTunnels.Invoke(new()
         ///     {
-        ///         var testIpSecConnectionTunnels = Output.Create(Oci.Core.GetIpsecConnectionTunnels.InvokeAsync(new Oci.Core.GetIpsecConnectionTunnelsArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetIpsecConnectionTunnelsArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConnectionTunnelsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetIpsecConnectionTunnelsFilterArgs>? _filters;
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Core
         public GetIpsecConnectionTunnelsArgs()
         {
         }
+        public static new GetIpsecConnectionTunnelsArgs Empty => new GetIpsecConnectionTunnelsArgs();
     }
 
-    public sealed class GetIpsecConnectionTunnelsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConnectionTunnelsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetIpsecConnectionTunnelsFilterInputArgs>? _filters;
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Core
         public GetIpsecConnectionTunnelsInvokeArgs()
         {
         }
+        public static new GetIpsecConnectionTunnelsInvokeArgs Empty => new GetIpsecConnectionTunnelsInvokeArgs();
     }
 
 

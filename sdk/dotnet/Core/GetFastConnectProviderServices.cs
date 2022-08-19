@@ -28,20 +28,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFastConnectProviderServices = Oci.Core.GetFastConnectProviderServices.Invoke(new()
         ///     {
-        ///         var testFastConnectProviderServices = Output.Create(Oci.Core.GetFastConnectProviderServices.InvokeAsync(new Oci.Core.GetFastConnectProviderServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,20 +64,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFastConnectProviderServices = Oci.Core.GetFastConnectProviderServices.Invoke(new()
         ///     {
-        ///         var testFastConnectProviderServices = Output.Create(Oci.Core.GetFastConnectProviderServices.InvokeAsync(new Oci.Core.GetFastConnectProviderServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetFastConnectProviderServicesArgs : Pulumi.InvokeArgs
+    public sealed class GetFastConnectProviderServicesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -108,9 +104,10 @@ namespace Pulumi.Oci.Core
         public GetFastConnectProviderServicesArgs()
         {
         }
+        public static new GetFastConnectProviderServicesArgs Empty => new GetFastConnectProviderServicesArgs();
     }
 
-    public sealed class GetFastConnectProviderServicesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFastConnectProviderServicesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Core
         public GetFastConnectProviderServicesInvokeArgs()
         {
         }
+        public static new GetFastConnectProviderServicesInvokeArgs Empty => new GetFastConnectProviderServicesInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools.Inputs
 {
 
-    public sealed class DatabaseToolsConnectionKeyStoreGetArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsConnectionKeyStoreGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The key store content.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         public DatabaseToolsConnectionKeyStoreGetArgs()
         {
         }
+        public static new DatabaseToolsConnectionKeyStoreGetArgs Empty => new DatabaseToolsConnectionKeyStoreGetArgs();
     }
 }

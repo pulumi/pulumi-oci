@@ -17,41 +17,39 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRepository = new Oci.DevOps.Repository("testRepository", new()
     ///     {
-    ///         var testRepository = new Oci.DevOps.Repository("testRepository", new Oci.DevOps.RepositoryArgs
+    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         RepositoryType = @var.Repository_repository_type,
+    ///         DefaultBranch = @var.Repository_default_branch,
+    ///         DefinedTags = 
     ///         {
-    ///             ProjectId = oci_devops_project.Test_project.Id,
-    ///             RepositoryType = @var.Repository_repository_type,
-    ///             DefaultBranch = @var.Repository_default_branch,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Repository_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         MirrorRepositoryConfig = new Oci.DevOps.Inputs.RepositoryMirrorRepositoryConfigArgs
+    ///         {
+    ///             ConnectorId = oci_devops_connector.Test_connector.Id,
+    ///             RepositoryUrl = @var.Repository_mirror_repository_config_repository_url,
+    ///             TriggerSchedule = new Oci.DevOps.Inputs.RepositoryMirrorRepositoryConfigTriggerScheduleArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
+    ///                 ScheduleType = @var.Repository_mirror_repository_config_trigger_schedule_schedule_type,
+    ///                 CustomSchedule = @var.Repository_mirror_repository_config_trigger_schedule_custom_schedule,
     ///             },
-    ///             Description = @var.Repository_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             MirrorRepositoryConfig = new Oci.DevOps.Inputs.RepositoryMirrorRepositoryConfigArgs
-    ///             {
-    ///                 ConnectorId = oci_devops_connector.Test_connector.Id,
-    ///                 RepositoryUrl = @var.Repository_mirror_repository_config_repository_url,
-    ///                 TriggerSchedule = new Oci.DevOps.Inputs.RepositoryMirrorRepositoryConfigTriggerScheduleArgs
-    ///                 {
-    ///                     ScheduleType = @var.Repository_mirror_repository_config_trigger_schedule_schedule_type,
-    ///                     CustomSchedule = @var.Repository_mirror_repository_config_trigger_schedule_custom_schedule,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -63,7 +61,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/repository:Repository")]
-    public partial class Repository : Pulumi.CustomResource
+    public partial class Repository : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The count of the branches present in the repository.
@@ -241,7 +239,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class RepositoryArgs : Pulumi.ResourceArgs
+    public sealed class RepositoryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The default branch of the repository.
@@ -306,9 +304,10 @@ namespace Pulumi.Oci.DevOps
         public RepositoryArgs()
         {
         }
+        public static new RepositoryArgs Empty => new RepositoryArgs();
     }
 
-    public sealed class RepositoryState : Pulumi.ResourceArgs
+    public sealed class RepositoryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The count of the branches present in the repository.
@@ -469,5 +468,6 @@ namespace Pulumi.Oci.DevOps
         public RepositoryState()
         {
         }
+        public static new RepositoryState Empty => new RepositoryState();
     }
 }

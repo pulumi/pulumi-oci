@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpoint = Oci.ResourceManager.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testPrivateEndpoint = Output.Create(Oci.ResourceManager.GetPrivateEndpoint.InvokeAsync(new Oci.ResourceManager.GetPrivateEndpointArgs
-        ///         {
-        ///             PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpoint = Oci.ResourceManager.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testPrivateEndpoint = Output.Create(Oci.ResourceManager.GetPrivateEndpoint.InvokeAsync(new Oci.ResourceManager.GetPrivateEndpointArgs
-        ///         {
-        ///             PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ResourceManager
     }
 
 
-    public sealed class GetPrivateEndpointArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ResourceManager
         public GetPrivateEndpointArgs()
         {
         }
+        public static new GetPrivateEndpointArgs Empty => new GetPrivateEndpointArgs();
     }
 
-    public sealed class GetPrivateEndpointInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ResourceManager
         public GetPrivateEndpointInvokeArgs()
         {
         }
+        public static new GetPrivateEndpointInvokeArgs Empty => new GetPrivateEndpointInvokeArgs();
     }
 
 

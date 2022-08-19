@@ -24,6 +24,35 @@ import javax.annotation.Nullable;
  * Enables Data Safe in the tenancy and region.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.DataSafeConfiguration;
+ * import com.pulumi.oci.DataSafe.DataSafeConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDataSafeConfiguration = new DataSafeConfiguration(&#34;testDataSafeConfiguration&#34;, DataSafeConfigurationArgs.builder()        
+ *             .isEnabled(var_.data_safe_configuration_is_enabled())
+ *             .compartmentId(var_.compartment_id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

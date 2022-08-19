@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms.Inputs
 {
 
-    public sealed class KeyRestoreFromFileGetArgs : Pulumi.ResourceArgs
+    public sealed class KeyRestoreFromFileGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) content length of key's backup binary file
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Kms.Inputs
         public KeyRestoreFromFileGetArgs()
         {
         }
+        public static new KeyRestoreFromFileGetArgs Empty => new KeyRestoreFromFileGetArgs();
     }
 }

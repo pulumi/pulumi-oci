@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDbPreviewVersions = Oci.Database.GetAutonomousDbPreviewVersions.Invoke(new()
         ///     {
-        ///         var testAutonomousDbPreviewVersions = Output.Create(Oci.Database.GetAutonomousDbPreviewVersions.InvokeAsync(new Oci.Database.GetAutonomousDbPreviewVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDbPreviewVersions = Oci.Database.GetAutonomousDbPreviewVersions.Invoke(new()
         ///     {
-        ///         var testAutonomousDbPreviewVersions = Output.Create(Oci.Database.GetAutonomousDbPreviewVersions.InvokeAsync(new Oci.Database.GetAutonomousDbPreviewVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousDbPreviewVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDbPreviewVersionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDbPreviewVersionsArgs()
         {
         }
+        public static new GetAutonomousDbPreviewVersionsArgs Empty => new GetAutonomousDbPreviewVersionsArgs();
     }
 
-    public sealed class GetAutonomousDbPreviewVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDbPreviewVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDbPreviewVersionsInvokeArgs()
         {
         }
+        public static new GetAutonomousDbPreviewVersionsInvokeArgs Empty => new GetAutonomousDbPreviewVersionsInvokeArgs();
     }
 
 

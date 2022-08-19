@@ -21,24 +21,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDiscoveryAnalytics = Oci.DataSafe.GetDiscoveryAnalytics.Invoke(new()
         ///     {
-        ///         var testDiscoveryAnalytics = Output.Create(Oci.DataSafe.GetDiscoveryAnalytics.InvokeAsync(new Oci.DataSafe.GetDiscoveryAnalyticsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
-        ///             GroupBy = @var.Discovery_analytic_group_by,
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
+        ///         GroupBy = @var.Discovery_analytic_group_by,
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,24 +54,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDiscoveryAnalytics = Oci.DataSafe.GetDiscoveryAnalytics.Invoke(new()
         ///     {
-        ///         var testDiscoveryAnalytics = Output.Create(Oci.DataSafe.GetDiscoveryAnalytics.InvokeAsync(new Oci.DataSafe.GetDiscoveryAnalyticsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
-        ///             GroupBy = @var.Discovery_analytic_group_by,
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
+        ///         GroupBy = @var.Discovery_analytic_group_by,
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetDiscoveryAnalyticsArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryAnalyticsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.DataSafe
         public GetDiscoveryAnalyticsArgs()
         {
         }
+        public static new GetDiscoveryAnalyticsArgs Empty => new GetDiscoveryAnalyticsArgs();
     }
 
-    public sealed class GetDiscoveryAnalyticsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryAnalyticsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.DataSafe
         public GetDiscoveryAnalyticsInvokeArgs()
         {
         }
+        public static new GetDiscoveryAnalyticsInvokeArgs Empty => new GetDiscoveryAnalyticsInvokeArgs();
     }
 
 

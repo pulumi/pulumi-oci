@@ -24,31 +24,29 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgents = Oci.ManagementAgent.GetManagementAgents.Invoke(new()
         ///     {
-        ///         var testManagementAgents = Output.Create(Oci.ManagementAgent.GetManagementAgents.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Management_agent_access_level,
-        ///             AvailabilityStatus = @var.Management_agent_availability_status,
-        ///             CompartmentIdInSubtree = @var.Management_agent_compartment_id_in_subtree,
-        ///             DisplayName = @var.Management_agent_display_name,
-        ///             HostId = oci_management_agent_host.Test_host.Id,
-        ///             InstallType = @var.Management_agent_install_type,
-        ///             IsCustomerDeployed = @var.Management_agent_is_customer_deployed,
-        ///             PlatformTypes = @var.Management_agent_platform_type,
-        ///             PluginNames = @var.Management_agent_plugin_name,
-        ///             State = @var.Management_agent_state,
-        ///             Versions = @var.Management_agent_version,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Management_agent_access_level,
+        ///         AvailabilityStatus = @var.Management_agent_availability_status,
+        ///         CompartmentIdInSubtree = @var.Management_agent_compartment_id_in_subtree,
+        ///         DisplayName = @var.Management_agent_display_name,
+        ///         HostId = oci_management_agent_host.Test_host.Id,
+        ///         InstallType = @var.Management_agent_install_type,
+        ///         IsCustomerDeployed = @var.Management_agent_is_customer_deployed,
+        ///         PlatformTypes = @var.Management_agent_platform_type,
+        ///         PluginNames = @var.Management_agent_plugin_name,
+        ///         State = @var.Management_agent_state,
+        ///         Versions = @var.Management_agent_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -69,31 +67,29 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgents = Oci.ManagementAgent.GetManagementAgents.Invoke(new()
         ///     {
-        ///         var testManagementAgents = Output.Create(Oci.ManagementAgent.GetManagementAgents.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Management_agent_access_level,
-        ///             AvailabilityStatus = @var.Management_agent_availability_status,
-        ///             CompartmentIdInSubtree = @var.Management_agent_compartment_id_in_subtree,
-        ///             DisplayName = @var.Management_agent_display_name,
-        ///             HostId = oci_management_agent_host.Test_host.Id,
-        ///             InstallType = @var.Management_agent_install_type,
-        ///             IsCustomerDeployed = @var.Management_agent_is_customer_deployed,
-        ///             PlatformTypes = @var.Management_agent_platform_type,
-        ///             PluginNames = @var.Management_agent_plugin_name,
-        ///             State = @var.Management_agent_state,
-        ///             Versions = @var.Management_agent_version,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Management_agent_access_level,
+        ///         AvailabilityStatus = @var.Management_agent_availability_status,
+        ///         CompartmentIdInSubtree = @var.Management_agent_compartment_id_in_subtree,
+        ///         DisplayName = @var.Management_agent_display_name,
+        ///         HostId = oci_management_agent_host.Test_host.Id,
+        ///         InstallType = @var.Management_agent_install_type,
+        ///         IsCustomerDeployed = @var.Management_agent_is_customer_deployed,
+        ///         PlatformTypes = @var.Management_agent_platform_type,
+        ///         PluginNames = @var.Management_agent_plugin_name,
+        ///         State = @var.Management_agent_state,
+        ///         Versions = @var.Management_agent_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -103,7 +99,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
@@ -206,9 +202,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentsArgs()
         {
         }
+        public static new GetManagementAgentsArgs Empty => new GetManagementAgentsArgs();
     }
 
-    public sealed class GetManagementAgentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
@@ -311,6 +308,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentsInvokeArgs()
         {
         }
+        public static new GetManagementAgentsInvokeArgs Empty => new GetManagementAgentsInvokeArgs();
     }
 
 

@@ -20,6 +20,35 @@ import javax.annotation.Nullable;
  * Sets the saved user assessment as the baseline in the compartment where the specified assessment resides. The user assessment needs to be of type &#39;SAVED&#39;.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.SetUserAssessmentBaseline;
+ * import com.pulumi.oci.DataSafe.SetUserAssessmentBaselineArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSetUserAssessmentBaseline = new SetUserAssessmentBaseline(&#34;testSetUserAssessmentBaseline&#34;, SetUserAssessmentBaselineArgs.builder()        
+ *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+ *             .assessmentIds(var_.set_user_assessment_baseline_assessment_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetAllowedDomainLicenseTypesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetAllowedDomainLicenseTypesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The license type name.  Example: "Oracle Apps Premium"
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetAllowedDomainLicenseTypesFilterInputArgs()
         {
         }
+        public static new GetAllowedDomainLicenseTypesFilterInputArgs Empty => new GetAllowedDomainLicenseTypesFilterInputArgs();
     }
 }

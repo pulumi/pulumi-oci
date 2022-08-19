@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigCustomProtectionRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigCustomProtectionRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigCustomProtectionRuleGetArgs()
         {
         }
+        public static new PolicyWafConfigCustomProtectionRuleGetArgs Empty => new PolicyWafConfigCustomProtectionRuleGetArgs();
     }
 }

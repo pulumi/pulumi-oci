@@ -17,37 +17,35 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testModel = new Oci.AiAnomalyDetection.Model("testModel", new()
     ///     {
-    ///         var testModel = new Oci.AiAnomalyDetection.Model("testModel", new Oci.AiAnomalyDetection.ModelArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ModelTrainingDetails = new Oci.AiAnomalyDetection.Inputs.ModelModelTrainingDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ModelTrainingDetails = new Oci.AiAnomalyDetection.Inputs.ModelModelTrainingDetailsArgs
-    ///             {
-    ///                 DataAssetIds = @var.Model_model_training_details_data_asset_ids,
-    ///                 TargetFap = @var.Model_model_training_details_target_fap,
-    ///                 TrainingFraction = @var.Model_model_training_details_training_fraction,
-    ///             },
-    ///             ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Model_description,
-    ///             DisplayName = @var.Model_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             DataAssetIds = @var.Model_model_training_details_data_asset_ids,
+    ///             TargetFap = @var.Model_model_training_details_target_fap,
+    ///             TrainingFraction = @var.Model_model_training_details_training_fraction,
+    ///         },
+    ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Model_description,
+    ///         DisplayName = @var.Model_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -59,7 +57,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// ```
     /// </summary>
     [OciResourceType("oci:AiAnomalyDetection/model:Model")]
-    public partial class Model : Pulumi.CustomResource
+    public partial class Model : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID for the ai model's compartment.
@@ -183,7 +181,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         }
     }
 
-    public sealed class ModelArgs : Pulumi.ResourceArgs
+    public sealed class ModelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID for the ai model's compartment.
@@ -242,9 +240,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public ModelArgs()
         {
         }
+        public static new ModelArgs Empty => new ModelArgs();
     }
 
-    public sealed class ModelState : Pulumi.ResourceArgs
+    public sealed class ModelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID for the ai model's compartment.
@@ -351,5 +350,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public ModelState()
         {
         }
+        public static new ModelState Empty => new ModelState();
     }
 }

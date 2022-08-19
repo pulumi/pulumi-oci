@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class ExternalDatabaseConnectorConnectionStringArgs : Pulumi.ResourceArgs
+    public sealed class ExternalDatabaseConnectorConnectionStringArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The host name of the database.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Database.Inputs
         public ExternalDatabaseConnectorConnectionStringArgs()
         {
         }
+        public static new ExternalDatabaseConnectorConnectionStringArgs Empty => new ExternalDatabaseConnectorConnectionStringArgs();
     }
 }

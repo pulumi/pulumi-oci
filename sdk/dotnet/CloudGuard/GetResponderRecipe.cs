@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResponderRecipe = Oci.CloudGuard.GetResponderRecipe.Invoke(new()
         ///     {
-        ///         var testResponderRecipe = Output.Create(Oci.CloudGuard.GetResponderRecipe.InvokeAsync(new Oci.CloudGuard.GetResponderRecipeArgs
-        ///         {
-        ///             ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
-        ///         }));
-        ///     }
+        ///         ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResponderRecipe = Oci.CloudGuard.GetResponderRecipe.Invoke(new()
         ///     {
-        ///         var testResponderRecipe = Output.Create(Oci.CloudGuard.GetResponderRecipe.InvokeAsync(new Oci.CloudGuard.GetResponderRecipeArgs
-        ///         {
-        ///             ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
-        ///         }));
-        ///     }
+        ///         ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetResponderRecipeArgs : Pulumi.InvokeArgs
+    public sealed class GetResponderRecipeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of ResponderRecipe
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetResponderRecipeArgs()
         {
         }
+        public static new GetResponderRecipeArgs Empty => new GetResponderRecipeArgs();
     }
 
-    public sealed class GetResponderRecipeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetResponderRecipeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of ResponderRecipe
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetResponderRecipeInvokeArgs()
         {
         }
+        public static new GetResponderRecipeInvokeArgs Empty => new GetResponderRecipeInvokeArgs();
     }
 
 

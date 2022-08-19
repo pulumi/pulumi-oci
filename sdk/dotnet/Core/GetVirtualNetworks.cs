@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVirtualNetworksArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualNetworksArgs : global::Pulumi.InvokeArgs
     {
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -41,9 +41,10 @@ namespace Pulumi.Oci.Core
         public GetVirtualNetworksArgs()
         {
         }
+        public static new GetVirtualNetworksArgs Empty => new GetVirtualNetworksArgs();
     }
 
-    public sealed class GetVirtualNetworksInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualNetworksInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.Core
         public GetVirtualNetworksInvokeArgs()
         {
         }
+        public static new GetVirtualNetworksInvokeArgs Empty => new GetVirtualNetworksInvokeArgs();
     }
 
 

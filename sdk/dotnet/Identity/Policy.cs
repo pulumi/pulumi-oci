@@ -29,31 +29,29 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPolicy = new Oci.Identity.Policy("testPolicy", new()
     ///     {
-    ///         var testPolicy = new Oci.Identity.Policy("testPolicy", new Oci.Identity.PolicyArgs
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         Description = @var.Policy_description,
+    ///         Statements = @var.Policy_statements,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             Description = @var.Policy_description,
-    ///             Statements = @var.Policy_statements,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             VersionDate = @var.Policy_version_date,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         VersionDate = @var.Policy_version_date,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/policy:Policy")]
-    public partial class Policy : Pulumi.CustomResource
+    public partial class Policy : global::Pulumi.CustomResource
     {
         [Output("ETag")]
         public Output<string> ETag { get; private set; } = null!;
@@ -180,7 +178,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class PolicyArgs : Pulumi.ResourceArgs
+    public sealed class PolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the policy (either the tenancy or another compartment).
@@ -245,9 +243,10 @@ namespace Pulumi.Oci.Identity
         public PolicyArgs()
         {
         }
+        public static new PolicyArgs Empty => new PolicyArgs();
     }
 
-    public sealed class PolicyState : Pulumi.ResourceArgs
+    public sealed class PolicyState : global::Pulumi.ResourceArgs
     {
         [Input("ETag")]
         public Input<string>? ETag { get; set; }
@@ -339,5 +338,6 @@ namespace Pulumi.Oci.Identity
         public PolicyState()
         {
         }
+        public static new PolicyState Empty => new PolicyState();
     }
 }

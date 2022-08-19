@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResourceAction = Oci.Optimizer.GetResourceAction.Invoke(new()
         ///     {
-        ///         var testResourceAction = Output.Create(Oci.Optimizer.GetResourceAction.InvokeAsync(new Oci.Optimizer.GetResourceActionArgs
-        ///         {
-        ///             ResourceActionId = oci_optimizer_resource_action.Test_resource_action.Id,
-        ///         }));
-        ///     }
+        ///         ResourceActionId = oci_optimizer_resource_action.Test_resource_action.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResourceAction = Oci.Optimizer.GetResourceAction.Invoke(new()
         ///     {
-        ///         var testResourceAction = Output.Create(Oci.Optimizer.GetResourceAction.InvokeAsync(new Oci.Optimizer.GetResourceActionArgs
-        ///         {
-        ///             ResourceActionId = oci_optimizer_resource_action.Test_resource_action.Id,
-        ///         }));
-        ///     }
+        ///         ResourceActionId = oci_optimizer_resource_action.Test_resource_action.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetResourceActionArgs : Pulumi.InvokeArgs
+    public sealed class GetResourceActionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the resource action.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Optimizer
         public GetResourceActionArgs()
         {
         }
+        public static new GetResourceActionArgs Empty => new GetResourceActionArgs();
     }
 
-    public sealed class GetResourceActionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetResourceActionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the resource action.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Optimizer
         public GetResourceActionInvokeArgs()
         {
         }
+        public static new GetResourceActionInvokeArgs Empty => new GetResourceActionInvokeArgs();
     }
 
 

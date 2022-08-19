@@ -22,22 +22,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningSets = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSets.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningSets = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSets.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSetsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             NameContains = @var.Managed_database_sql_tuning_set_name_contains,
-        ///             Owner = @var.Managed_database_sql_tuning_set_owner,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         NameContains = @var.Managed_database_sql_tuning_set_name_contains,
+        ///         Owner = @var.Managed_database_sql_tuning_set_owner,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningSets = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSets.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningSets = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSets.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSetsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             NameContains = @var.Managed_database_sql_tuning_set_name_contains,
-        ///             Owner = @var.Managed_database_sql_tuning_set_owner,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         NameContains = @var.Managed_database_sql_tuning_set_name_contains,
+        ///         Owner = @var.Managed_database_sql_tuning_set_owner,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseSqlTuningSetsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningSetsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseSqlTuningSetsFilterArgs>? _filters;
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningSetsArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningSetsArgs Empty => new GetManagedDatabaseSqlTuningSetsArgs();
     }
 
-    public sealed class GetManagedDatabaseSqlTuningSetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningSetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseSqlTuningSetsFilterInputArgs>? _filters;
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningSetsInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningSetsInvokeArgs Empty => new GetManagedDatabaseSqlTuningSetsInvokeArgs();
     }
 
 

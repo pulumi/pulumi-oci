@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class ZoneExternalMasterArgs : Pulumi.ResourceArgs
+    public sealed class ZoneExternalMasterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The server's IP address (IPv4 or IPv6).
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public ZoneExternalMasterArgs()
         {
         }
+        public static new ZoneExternalMasterArgs Empty => new ZoneExternalMasterArgs();
     }
 }

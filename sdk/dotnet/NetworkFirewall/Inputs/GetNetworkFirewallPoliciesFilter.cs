@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class GetNetworkFirewallPoliciesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkFirewallPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Name for the Security rule, must be unique within the policy.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public GetNetworkFirewallPoliciesFilterArgs()
         {
         }
+        public static new GetNetworkFirewallPoliciesFilterArgs Empty => new GetNetworkFirewallPoliciesFilterArgs();
     }
 }

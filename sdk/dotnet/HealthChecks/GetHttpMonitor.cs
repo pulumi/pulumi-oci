@@ -22,20 +22,18 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHttpMonitor = Oci.HealthChecks.GetHttpMonitor.Invoke(new()
         ///     {
-        ///         var testHttpMonitor = Output.Create(Oci.HealthChecks.GetHttpMonitor.InvokeAsync(new Oci.HealthChecks.GetHttpMonitorArgs
-        ///         {
-        ///             MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///         }));
-        ///     }
+        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHttpMonitor = Oci.HealthChecks.GetHttpMonitor.Invoke(new()
         ///     {
-        ///         var testHttpMonitor = Output.Create(Oci.HealthChecks.GetHttpMonitor.InvokeAsync(new Oci.HealthChecks.GetHttpMonitorArgs
-        ///         {
-        ///             MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///         }));
-        ///     }
+        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.HealthChecks
     }
 
 
-    public sealed class GetHttpMonitorArgs : Pulumi.InvokeArgs
+    public sealed class GetHttpMonitorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of a monitor.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.HealthChecks
         public GetHttpMonitorArgs()
         {
         }
+        public static new GetHttpMonitorArgs Empty => new GetHttpMonitorArgs();
     }
 
-    public sealed class GetHttpMonitorInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHttpMonitorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of a monitor.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.HealthChecks
         public GetHttpMonitorInvokeArgs()
         {
         }
+        public static new GetHttpMonitorInvokeArgs Empty => new GetHttpMonitorInvokeArgs();
     }
 
 

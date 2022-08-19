@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseConnectionStringProfileGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseConnectionStringProfileGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Consumer group used by the connection.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseConnectionStringProfileGetArgs()
         {
         }
+        public static new AutonomousDatabaseConnectionStringProfileGetArgs Empty => new AutonomousDatabaseConnectionStringProfileGetArgs();
     }
 }

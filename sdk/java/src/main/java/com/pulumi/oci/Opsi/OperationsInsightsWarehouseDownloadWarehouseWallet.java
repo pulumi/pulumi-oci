@@ -19,6 +19,35 @@ import javax.annotation.Nullable;
  * Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Opsi.OperationsInsightsWarehouseDownloadWarehouseWallet;
+ * import com.pulumi.oci.Opsi.OperationsInsightsWarehouseDownloadWarehouseWalletArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOperationsInsightsWarehouseDownloadWarehouseWallet = new OperationsInsightsWarehouseDownloadWarehouseWallet(&#34;testOperationsInsightsWarehouseDownloadWarehouseWallet&#34;, OperationsInsightsWarehouseDownloadWarehouseWalletArgs.builder()        
+ *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+ *             .operationsInsightsWarehouseWalletPassword(var_.operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

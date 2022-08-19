@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationDatapumpSettingsExportDirectoryObjectGetArgs : Pulumi.ResourceArgs
+    public sealed class MigrationDatapumpSettingsExportDirectoryObjectGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of directory object in database
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationDatapumpSettingsExportDirectoryObjectGetArgs()
         {
         }
+        public static new MigrationDatapumpSettingsExportDirectoryObjectGetArgs Empty => new MigrationDatapumpSettingsExportDirectoryObjectGetArgs();
     }
 }

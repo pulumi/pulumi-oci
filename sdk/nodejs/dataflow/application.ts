@@ -25,6 +25,10 @@ import * as utilities from "../utilities";
  *     language: _var.application_language,
  *     numExecutors: _var.application_num_executors,
  *     sparkVersion: _var.application_spark_version,
+ *     applicationLogConfig: {
+ *         logGroupId: oci_logging_log_group.test_log_group.id,
+ *         logId: oci_logging_log.test_log.id,
+ *     },
  *     archiveUri: _var.application_archive_uri,
  *     arguments: _var.application_arguments,
  *     className: _var.application_class_name,
@@ -93,6 +97,10 @@ export class Application extends pulumi.CustomResource {
         return obj['__pulumiType'] === Application.__pulumiType;
     }
 
+    /**
+     * (Updatable) Logging details of Application logs for Data Flow Run.
+     */
+    public readonly applicationLogConfig!: pulumi.Output<outputs.DataFlow.ApplicationApplicationLogConfig>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
@@ -223,6 +231,7 @@ export class Application extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApplicationState | undefined;
+            resourceInputs["applicationLogConfig"] = state ? state.applicationLogConfig : undefined;
             resourceInputs["archiveUri"] = state ? state.archiveUri : undefined;
             resourceInputs["arguments"] = state ? state.arguments : undefined;
             resourceInputs["className"] = state ? state.className : undefined;
@@ -278,6 +287,7 @@ export class Application extends pulumi.CustomResource {
             if ((!args || args.sparkVersion === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'sparkVersion'");
             }
+            resourceInputs["applicationLogConfig"] = args ? args.applicationLogConfig : undefined;
             resourceInputs["archiveUri"] = args ? args.archiveUri : undefined;
             resourceInputs["arguments"] = args ? args.arguments : undefined;
             resourceInputs["className"] = args ? args.className : undefined;
@@ -317,6 +327,10 @@ export class Application extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Application resources.
  */
 export interface ApplicationState {
+    /**
+     * (Updatable) Logging details of Application logs for Data Flow Run.
+     */
+    applicationLogConfig?: pulumi.Input<inputs.DataFlow.ApplicationApplicationLogConfig>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
@@ -439,6 +453,10 @@ export interface ApplicationState {
  * The set of arguments for constructing a Application resource.
  */
 export interface ApplicationArgs {
+    /**
+     * (Updatable) Logging details of Application logs for Data Flow Run.
+     */
+    applicationLogConfig?: pulumi.Input<inputs.DataFlow.ApplicationApplicationLogConfig>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */

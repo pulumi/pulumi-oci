@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.EmWarehouse.Inputs
 {
 
-    public sealed class GetEmWarehousesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetEmWarehousesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.EmWarehouse.Inputs
         public GetEmWarehousesFilterInputArgs()
         {
         }
+        public static new GetEmWarehousesFilterInputArgs Empty => new GetEmWarehousesFilterInputArgs();
     }
 }

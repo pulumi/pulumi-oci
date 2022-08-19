@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics.Inputs
 {
 
-    public sealed class LogAnalyticsImportCustomContentChangeListArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsImportCustomContentChangeListArgs : global::Pulumi.ResourceArgs
     {
         [Input("conflictFieldDisplayNames")]
         private InputList<string>? _conflictFieldDisplayNames;
@@ -123,5 +123,6 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public LogAnalyticsImportCustomContentChangeListArgs()
         {
         }
+        public static new LogAnalyticsImportCustomContentChangeListArgs Empty => new LogAnalyticsImportCustomContentChangeListArgs();
     }
 }

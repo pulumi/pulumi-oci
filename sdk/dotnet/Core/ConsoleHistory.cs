@@ -33,29 +33,27 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testConsoleHistory = new Oci.Core.ConsoleHistory("testConsoleHistory", new()
     ///     {
-    ///         var testConsoleHistory = new Oci.Core.ConsoleHistory("testConsoleHistory", new Oci.Core.ConsoleHistoryArgs
+    ///         InstanceId = oci_core_instance.Test_instance.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             InstanceId = oci_core_instance.Test_instance.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Console_history_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Console_history_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -67,7 +65,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/consoleHistory:ConsoleHistory")]
-    public partial class ConsoleHistory : Pulumi.CustomResource
+    public partial class ConsoleHistory : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
@@ -161,7 +159,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class ConsoleHistoryArgs : Pulumi.ResourceArgs
+    public sealed class ConsoleHistoryArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -202,9 +200,10 @@ namespace Pulumi.Oci.Core
         public ConsoleHistoryArgs()
         {
         }
+        public static new ConsoleHistoryArgs Empty => new ConsoleHistoryArgs();
     }
 
-    public sealed class ConsoleHistoryState : Pulumi.ResourceArgs
+    public sealed class ConsoleHistoryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
@@ -269,5 +268,6 @@ namespace Pulumi.Oci.Core
         public ConsoleHistoryState()
         {
         }
+        public static new ConsoleHistoryState Empty => new ConsoleHistoryState();
     }
 }

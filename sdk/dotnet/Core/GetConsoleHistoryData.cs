@@ -24,22 +24,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConsoleHistoryData = Oci.Core.GetConsoleHistoryData.Invoke(new()
         ///     {
-        ///         var testConsoleHistoryData = Output.Create(Oci.Core.GetConsoleHistoryData.InvokeAsync(new Oci.Core.GetConsoleHistoryDataArgs
-        ///         {
-        ///             ConsoleHistoryId = oci_core_console_history.Test_console_history.Id,
-        ///             Length = @var.Console_history_content_length,
-        ///             Offset = @var.Console_history_content_offset,
-        ///         }));
-        ///     }
+        ///         ConsoleHistoryId = oci_core_console_history.Test_console_history.Id,
+        ///         Length = @var.Console_history_content_length,
+        ///         Offset = @var.Console_history_content_offset,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,22 +58,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConsoleHistoryData = Oci.Core.GetConsoleHistoryData.Invoke(new()
         ///     {
-        ///         var testConsoleHistoryData = Output.Create(Oci.Core.GetConsoleHistoryData.InvokeAsync(new Oci.Core.GetConsoleHistoryDataArgs
-        ///         {
-        ///             ConsoleHistoryId = oci_core_console_history.Test_console_history.Id,
-        ///             Length = @var.Console_history_content_length,
-        ///             Offset = @var.Console_history_content_offset,
-        ///         }));
-        ///     }
+        ///         ConsoleHistoryId = oci_core_console_history.Test_console_history.Id,
+        ///         Length = @var.Console_history_content_length,
+        ///         Offset = @var.Console_history_content_offset,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetConsoleHistoryDataArgs : Pulumi.InvokeArgs
+    public sealed class GetConsoleHistoryDataArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the console history.
@@ -108,9 +104,10 @@ namespace Pulumi.Oci.Core
         public GetConsoleHistoryDataArgs()
         {
         }
+        public static new GetConsoleHistoryDataArgs Empty => new GetConsoleHistoryDataArgs();
     }
 
-    public sealed class GetConsoleHistoryDataInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConsoleHistoryDataInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the console history.
@@ -133,6 +130,7 @@ namespace Pulumi.Oci.Core
         public GetConsoleHistoryDataInvokeArgs()
         {
         }
+        public static new GetConsoleHistoryDataInvokeArgs Empty => new GetConsoleHistoryDataInvokeArgs();
     }
 
 

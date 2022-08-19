@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayAccessLoggingGetArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayAccessLoggingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Determines if the logging configuration is enabled.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayAccessLoggingGetArgs()
         {
         }
+        public static new IngressGatewayAccessLoggingGetArgs Empty => new IngressGatewayAccessLoggingGetArgs();
     }
 }

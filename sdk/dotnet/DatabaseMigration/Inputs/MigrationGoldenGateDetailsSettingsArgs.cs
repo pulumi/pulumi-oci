@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationGoldenGateDetailsSettingsArgs : Pulumi.ResourceArgs
+    public sealed class MigrationGoldenGateDetailsSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationGoldenGateDetailsSettingsArgs()
         {
         }
+        public static new MigrationGoldenGateDetailsSettingsArgs Empty => new MigrationGoldenGateDetailsSettingsArgs();
     }
 }

@@ -24,23 +24,21 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs
-        ///         {
-        ///             ExecutionId = oci_database_management_execution.Test_execution.Id,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             SqlObjectId = oci_objectstorage_object.Test_object.Id,
-        ///             SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         }));
-        ///     }
+        ///         ExecutionId = oci_database_management_execution.Test_execution.Id,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         SqlObjectId = oci_objectstorage_object.Test_object.Id,
+        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs
-        ///         {
-        ///             ExecutionId = oci_database_management_execution.Test_execution.Id,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             SqlObjectId = oci_objectstorage_object.Test_object.Id,
-        ///             SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         }));
-        ///     }
+        ///         ExecutionId = oci_database_management_execution.Test_execution.Id,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         SqlObjectId = oci_objectstorage_object.Test_object.Id,
+        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -116,9 +112,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs();
     }
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs();
     }
 
 

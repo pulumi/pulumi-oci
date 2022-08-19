@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class CustomTableSavedCustomTableArgs : Pulumi.ResourceArgs
+    public sealed class CustomTableSavedCustomTableArgs : global::Pulumi.ResourceArgs
     {
         [Input("columnGroupBies")]
         private InputList<string>? _columnGroupBies;
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public CustomTableSavedCustomTableArgs()
         {
         }
+        public static new CustomTableSavedCustomTableArgs Empty => new CustomTableSavedCustomTableArgs();
     }
 }

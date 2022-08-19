@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi.Inputs
 {
 
-    public sealed class GetOperationsInsightsWarehouseUsersFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetOperationsInsightsWarehouseUsersFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Opsi.Inputs
         public GetOperationsInsightsWarehouseUsersFilterInputArgs()
         {
         }
+        public static new GetOperationsInsightsWarehouseUsersFilterInputArgs Empty => new GetOperationsInsightsWarehouseUsersFilterInputArgs();
     }
 }

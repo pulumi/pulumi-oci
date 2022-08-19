@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCaptureFilter = Oci.Core.GetCaptureFilter.Invoke(new()
         ///     {
-        ///         var testCaptureFilter = Output.Create(Oci.Core.GetCaptureFilter.InvokeAsync(new Oci.Core.GetCaptureFilterArgs
-        ///         {
-        ///             CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
-        ///         }));
-        ///     }
+        ///         CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCaptureFilter = Oci.Core.GetCaptureFilter.Invoke(new()
         ///     {
-        ///         var testCaptureFilter = Output.Create(Oci.Core.GetCaptureFilter.InvokeAsync(new Oci.Core.GetCaptureFilterArgs
-        ///         {
-        ///             CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
-        ///         }));
-        ///     }
+        ///         CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetCaptureFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetCaptureFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetCaptureFilterArgs()
         {
         }
+        public static new GetCaptureFilterArgs Empty => new GetCaptureFilterArgs();
     }
 
-    public sealed class GetCaptureFilterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCaptureFilterInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetCaptureFilterInvokeArgs()
         {
         }
+        public static new GetCaptureFilterInvokeArgs Empty => new GetCaptureFilterInvokeArgs();
     }
 
 

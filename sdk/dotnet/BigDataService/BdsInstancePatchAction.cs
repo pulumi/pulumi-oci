@@ -17,22 +17,20 @@ namespace Pulumi.Oci.BigDataService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBdsInstancePatchAction = new Oci.BigDataService.BdsInstancePatchAction("testBdsInstancePatchAction", new()
     ///     {
-    ///         var testBdsInstancePatchAction = new Oci.BigDataService.BdsInstancePatchAction("testBdsInstancePatchAction", new Oci.BigDataService.BdsInstancePatchActionArgs
-    ///         {
-    ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-    ///             ClusterAdminPassword = @var.Bds_instance_patch_action_cluster_admin_password,
-    ///             Version = @var.Bds_instance_patch_action_version,
-    ///         });
-    ///     }
+    ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+    ///         ClusterAdminPassword = @var.Bds_instance_patch_action_cluster_admin_password,
+    ///         Version = @var.Bds_instance_patch_action_version,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.BigDataService
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction")]
-    public partial class BdsInstancePatchAction : Pulumi.CustomResource
+    public partial class BdsInstancePatchAction : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -104,7 +102,7 @@ namespace Pulumi.Oci.BigDataService
         }
     }
 
-    public sealed class BdsInstancePatchActionArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstancePatchActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -127,9 +125,10 @@ namespace Pulumi.Oci.BigDataService
         public BdsInstancePatchActionArgs()
         {
         }
+        public static new BdsInstancePatchActionArgs Empty => new BdsInstancePatchActionArgs();
     }
 
-    public sealed class BdsInstancePatchActionState : Pulumi.ResourceArgs
+    public sealed class BdsInstancePatchActionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -152,5 +151,6 @@ namespace Pulumi.Oci.BigDataService
         public BdsInstancePatchActionState()
         {
         }
+        public static new BdsInstancePatchActionState Empty => new BdsInstancePatchActionState();
     }
 }

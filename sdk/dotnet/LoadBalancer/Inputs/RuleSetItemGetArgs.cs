@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class RuleSetItemGetArgs : Pulumi.ResourceArgs
+    public sealed class RuleSetItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
@@ -111,5 +111,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public RuleSetItemGetArgs()
         {
         }
+        public static new RuleSetItemGetArgs Empty => new RuleSetItemGetArgs();
     }
 }

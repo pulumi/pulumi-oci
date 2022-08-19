@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Apm.Inputs
 {
 
-    public sealed class GetDataKeysFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetDataKeysFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Apm.Inputs
         public GetDataKeysFilterInputArgs()
         {
         }
+        public static new GetDataKeysFilterInputArgs Empty => new GetDataKeysFilterInputArgs();
     }
 }

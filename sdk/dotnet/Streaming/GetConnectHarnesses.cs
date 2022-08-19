@@ -21,23 +21,21 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnectHarnesses = Oci.Streaming.GetConnectHarnesses.Invoke(new()
         ///     {
-        ///         var testConnectHarnesses = Output.Create(Oci.Streaming.GetConnectHarnesses.InvokeAsync(new Oci.Streaming.GetConnectHarnessesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Connect_harness_id,
-        ///             Name = @var.Connect_harness_name,
-        ///             State = @var.Connect_harness_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Connect_harness_id,
+        ///         Name = @var.Connect_harness_name,
+        ///         State = @var.Connect_harness_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnectHarnesses = Oci.Streaming.GetConnectHarnesses.Invoke(new()
         ///     {
-        ///         var testConnectHarnesses = Output.Create(Oci.Streaming.GetConnectHarnesses.InvokeAsync(new Oci.Streaming.GetConnectHarnessesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Connect_harness_id,
-        ///             Name = @var.Connect_harness_name,
-        ///             State = @var.Connect_harness_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Connect_harness_id,
+        ///         Name = @var.Connect_harness_name,
+        ///         State = @var.Connect_harness_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Streaming
     }
 
 
-    public sealed class GetConnectHarnessesArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectHarnessesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Streaming
         public GetConnectHarnessesArgs()
         {
         }
+        public static new GetConnectHarnessesArgs Empty => new GetConnectHarnessesArgs();
     }
 
-    public sealed class GetConnectHarnessesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectHarnessesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.Streaming
         public GetConnectHarnessesInvokeArgs()
         {
         }
+        public static new GetConnectHarnessesInvokeArgs Empty => new GetConnectHarnessesInvokeArgs();
     }
 
 

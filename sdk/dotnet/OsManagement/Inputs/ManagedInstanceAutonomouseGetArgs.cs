@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagement.Inputs
 {
 
-    public sealed class ManagedInstanceAutonomouseGetArgs : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceAutonomouseGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// True if daily updates are enabled
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.OsManagement.Inputs
         public ManagedInstanceAutonomouseGetArgs()
         {
         }
+        public static new ManagedInstanceAutonomouseGetArgs Empty => new ManagedInstanceAutonomouseGetArgs();
     }
 }

@@ -31,30 +31,28 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDynamicGroup = new Oci.Identity.DynamicGroup("testDynamicGroup", new()
     ///     {
-    ///         var testDynamicGroup = new Oci.Identity.DynamicGroup("testDynamicGroup", new Oci.Identity.DynamicGroupArgs
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         Description = @var.Dynamic_group_description,
+    ///         MatchingRule = @var.Dynamic_group_matching_rule,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             Description = @var.Dynamic_group_description,
-    ///             MatchingRule = @var.Dynamic_group_matching_rule,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -66,7 +64,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/dynamicGroup:DynamicGroup")]
-    public partial class DynamicGroup : Pulumi.CustomResource
+    public partial class DynamicGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the tenancy containing the group.
@@ -166,7 +164,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class DynamicGroupArgs : Pulumi.ResourceArgs
+    public sealed class DynamicGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy containing the group.
@@ -219,9 +217,10 @@ namespace Pulumi.Oci.Identity
         public DynamicGroupArgs()
         {
         }
+        public static new DynamicGroupArgs Empty => new DynamicGroupArgs();
     }
 
-    public sealed class DynamicGroupState : Pulumi.ResourceArgs
+    public sealed class DynamicGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy containing the group.
@@ -292,5 +291,6 @@ namespace Pulumi.Oci.Identity
         public DynamicGroupState()
         {
         }
+        public static new DynamicGroupState Empty => new DynamicGroupState();
     }
 }

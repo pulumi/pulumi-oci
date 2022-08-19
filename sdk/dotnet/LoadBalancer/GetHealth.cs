@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerHealth = Oci.LoadBalancer.GetHealth.Invoke(new()
         ///     {
-        ///         var testLoadBalancerHealth = Output.Create(Oci.LoadBalancer.GetHealth.InvokeAsync(new Oci.LoadBalancer.GetHealthArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerHealth = Oci.LoadBalancer.GetHealth.Invoke(new()
         ///     {
-        ///         var testLoadBalancerHealth = Output.Create(Oci.LoadBalancer.GetHealth.InvokeAsync(new Oci.LoadBalancer.GetHealthArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetHealthArgs : Pulumi.InvokeArgs
+    public sealed class GetHealthArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to return health status for.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetHealthArgs()
         {
         }
+        public static new GetHealthArgs Empty => new GetHealthArgs();
     }
 
-    public sealed class GetHealthInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHealthInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to return health status for.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetHealthInvokeArgs()
         {
         }
+        public static new GetHealthInvokeArgs Empty => new GetHealthInvokeArgs();
     }
 
 

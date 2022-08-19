@@ -21,29 +21,27 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingPolicies = Oci.DataSafe.GetMaskingPolicies.Invoke(new()
         ///     {
-        ///         var testMaskingPolicies = Output.Create(Oci.DataSafe.GetMaskingPolicies.InvokeAsync(new Oci.DataSafe.GetMaskingPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Masking_policy_access_level,
-        ///             CompartmentIdInSubtree = @var.Masking_policy_compartment_id_in_subtree,
-        ///             DisplayName = @var.Masking_policy_display_name,
-        ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///             State = @var.Masking_policy_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Masking_policy_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Masking_policy_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Masking_policy_access_level,
+        ///         CompartmentIdInSubtree = @var.Masking_policy_compartment_id_in_subtree,
+        ///         DisplayName = @var.Masking_policy_display_name,
+        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         State = @var.Masking_policy_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Masking_policy_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Masking_policy_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,29 +59,27 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingPolicies = Oci.DataSafe.GetMaskingPolicies.Invoke(new()
         ///     {
-        ///         var testMaskingPolicies = Output.Create(Oci.DataSafe.GetMaskingPolicies.InvokeAsync(new Oci.DataSafe.GetMaskingPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Masking_policy_access_level,
-        ///             CompartmentIdInSubtree = @var.Masking_policy_compartment_id_in_subtree,
-        ///             DisplayName = @var.Masking_policy_display_name,
-        ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///             State = @var.Masking_policy_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Masking_policy_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Masking_policy_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Masking_policy_access_level,
+        ///         CompartmentIdInSubtree = @var.Masking_policy_compartment_id_in_subtree,
+        ///         DisplayName = @var.Masking_policy_display_name,
+        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         State = @var.Masking_policy_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Masking_policy_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Masking_policy_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetMaskingPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -166,9 +162,10 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingPoliciesArgs()
         {
         }
+        public static new GetMaskingPoliciesArgs Empty => new GetMaskingPoliciesArgs();
     }
 
-    public sealed class GetMaskingPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -241,6 +238,7 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingPoliciesInvokeArgs()
         {
         }
+        public static new GetMaskingPoliciesInvokeArgs Empty => new GetMaskingPoliciesInvokeArgs();
     }
 
 

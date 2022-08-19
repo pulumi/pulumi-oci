@@ -21,21 +21,19 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstanceApiKey = Oci.BigDataService.GetBdsInstanceApiKey.Invoke(new()
         ///     {
-        ///         var testBdsInstanceApiKey = Output.Create(Oci.BigDataService.GetBdsInstanceApiKey.InvokeAsync(new Oci.BigDataService.GetBdsInstanceApiKeyArgs
-        ///         {
-        ///             ApiKeyId = oci_identity_api_key.Test_api_key.Id,
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         }));
-        ///     }
+        ///         ApiKeyId = oci_identity_api_key.Test_api_key.Id,
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstanceApiKey = Oci.BigDataService.GetBdsInstanceApiKey.Invoke(new()
         ///     {
-        ///         var testBdsInstanceApiKey = Output.Create(Oci.BigDataService.GetBdsInstanceApiKey.InvokeAsync(new Oci.BigDataService.GetBdsInstanceApiKeyArgs
-        ///         {
-        ///             ApiKeyId = oci_identity_api_key.Test_api_key.Id,
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         }));
-        ///     }
+        ///         ApiKeyId = oci_identity_api_key.Test_api_key.Id,
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.BigDataService
     }
 
 
-    public sealed class GetBdsInstanceApiKeyArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstanceApiKeyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The API key identifier.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstanceApiKeyArgs()
         {
         }
+        public static new GetBdsInstanceApiKeyArgs Empty => new GetBdsInstanceApiKeyArgs();
     }
 
-    public sealed class GetBdsInstanceApiKeyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstanceApiKeyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The API key identifier.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstanceApiKeyInvokeArgs()
         {
         }
+        public static new GetBdsInstanceApiKeyInvokeArgs Empty => new GetBdsInstanceApiKeyInvokeArgs();
     }
 
 

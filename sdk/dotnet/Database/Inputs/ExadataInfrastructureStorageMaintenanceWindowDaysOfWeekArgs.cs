@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs : Pulumi.ResourceArgs
+    public sealed class ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -18,5 +18,6 @@ namespace Pulumi.Oci.Database.Inputs
         public ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs()
         {
         }
+        public static new ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs Empty => new ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs();
     }
 }

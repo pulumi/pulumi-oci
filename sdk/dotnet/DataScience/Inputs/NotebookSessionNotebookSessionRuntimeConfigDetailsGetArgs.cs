@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class NotebookSessionNotebookSessionRuntimeConfigDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class NotebookSessionNotebookSessionRuntimeConfigDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("customEnvironmentVariables")]
         private InputMap<object>? _customEnvironmentVariables;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public NotebookSessionNotebookSessionRuntimeConfigDetailsGetArgs()
         {
         }
+        public static new NotebookSessionNotebookSessionRuntimeConfigDetailsGetArgs Empty => new NotebookSessionNotebookSessionRuntimeConfigDetailsGetArgs();
     }
 }

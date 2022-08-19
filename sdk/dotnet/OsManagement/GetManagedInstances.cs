@@ -22,22 +22,20 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstances = Oci.OsManagement.GetManagedInstances.Invoke(new()
         ///     {
-        ///         var testManagedInstances = Output.Create(Oci.OsManagement.GetManagedInstances.InvokeAsync(new Oci.OsManagement.GetManagedInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Managed_instance_display_name,
-        ///             OsFamily = @var.Managed_instance_os_family,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Managed_instance_display_name,
+        ///         OsFamily = @var.Managed_instance_os_family,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstances = Oci.OsManagement.GetManagedInstances.Invoke(new()
         ///     {
-        ///         var testManagedInstances = Output.Create(Oci.OsManagement.GetManagedInstances.InvokeAsync(new Oci.OsManagement.GetManagedInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Managed_instance_display_name,
-        ///             OsFamily = @var.Managed_instance_os_family,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Managed_instance_display_name,
+        ///         OsFamily = @var.Managed_instance_os_family,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetManagedInstancesArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstancesArgs()
         {
         }
+        public static new GetManagedInstancesArgs Empty => new GetManagedInstancesArgs();
     }
 
-    public sealed class GetManagedInstancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstancesInvokeArgs()
         {
         }
+        public static new GetManagedInstancesInvokeArgs Empty => new GetManagedInstancesInvokeArgs();
     }
 
 

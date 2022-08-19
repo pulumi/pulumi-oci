@@ -25,21 +25,19 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReplicationStatus = Oci.Kms.GetReplicationStatus.Invoke(new()
         ///     {
-        ///         var testReplicationStatus = Output.Create(Oci.Kms.GetReplicationStatus.InvokeAsync(new Oci.Kms.GetReplicationStatusArgs
-        ///         {
-        ///             ReplicationId = oci_kms_replication.Test_replication.Id,
-        ///             ManagementEndpoint = @var.Replication_status_management_endpoint,
-        ///         }));
-        ///     }
+        ///         ReplicationId = oci_kms_replication.Test_replication.Id,
+        ///         ManagementEndpoint = @var.Replication_status_management_endpoint,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,21 +59,19 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReplicationStatus = Oci.Kms.GetReplicationStatus.Invoke(new()
         ///     {
-        ///         var testReplicationStatus = Output.Create(Oci.Kms.GetReplicationStatus.InvokeAsync(new Oci.Kms.GetReplicationStatusArgs
-        ///         {
-        ///             ReplicationId = oci_kms_replication.Test_replication.Id,
-        ///             ManagementEndpoint = @var.Replication_status_management_endpoint,
-        ///         }));
-        ///     }
+        ///         ReplicationId = oci_kms_replication.Test_replication.Id,
+        ///         ManagementEndpoint = @var.Replication_status_management_endpoint,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Kms
     }
 
 
-    public sealed class GetReplicationStatusArgs : Pulumi.InvokeArgs
+    public sealed class GetReplicationStatusArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The service endpoint to perform management operations against. See Vault Management endpoint.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Kms
         public GetReplicationStatusArgs()
         {
         }
+        public static new GetReplicationStatusArgs Empty => new GetReplicationStatusArgs();
     }
 
-    public sealed class GetReplicationStatusInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetReplicationStatusInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The service endpoint to perform management operations against. See Vault Management endpoint.
@@ -121,6 +118,7 @@ namespace Pulumi.Oci.Kms
         public GetReplicationStatusInvokeArgs()
         {
         }
+        public static new GetReplicationStatusInvokeArgs Empty => new GetReplicationStatusInvokeArgs();
     }
 
 

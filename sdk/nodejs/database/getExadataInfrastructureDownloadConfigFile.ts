@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testExadataInfrastructureDownloadConfigFile = oci.Database.getExadataInfrastructureDownloadConfigFile({
  *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     base64EncodeContent: "false",
+ *     base64EncodeContent: false,
  * });
  * ```
  */

@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterUpdateHistoryEntry = Oci.Database.GetVmClusterUpdateHistoryEntry.Invoke(new()
         ///     {
-        ///         var testVmClusterUpdateHistoryEntry = Output.Create(Oci.Database.GetVmClusterUpdateHistoryEntry.InvokeAsync(new Oci.Database.GetVmClusterUpdateHistoryEntryArgs
-        ///         {
-        ///             UpdateHistoryEntryId = oci_database_update_history_entry.Test_update_history_entry.Id,
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         UpdateHistoryEntryId = oci_database_update_history_entry.Test_update_history_entry.Id,
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterUpdateHistoryEntry = Oci.Database.GetVmClusterUpdateHistoryEntry.Invoke(new()
         ///     {
-        ///         var testVmClusterUpdateHistoryEntry = Output.Create(Oci.Database.GetVmClusterUpdateHistoryEntry.InvokeAsync(new Oci.Database.GetVmClusterUpdateHistoryEntryArgs
-        ///         {
-        ///             UpdateHistoryEntryId = oci_database_update_history_entry.Test_update_history_entry.Id,
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         UpdateHistoryEntryId = oci_database_update_history_entry.Test_update_history_entry.Id,
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetVmClusterUpdateHistoryEntryArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterUpdateHistoryEntryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetVmClusterUpdateHistoryEntryArgs()
         {
         }
+        public static new GetVmClusterUpdateHistoryEntryArgs Empty => new GetVmClusterUpdateHistoryEntryArgs();
     }
 
-    public sealed class GetVmClusterUpdateHistoryEntryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterUpdateHistoryEntryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Database
         public GetVmClusterUpdateHistoryEntryInvokeArgs()
         {
         }
+        public static new GetVmClusterUpdateHistoryEntryInvokeArgs Empty => new GetVmClusterUpdateHistoryEntryInvokeArgs();
     }
 
 

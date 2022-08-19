@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNodePool = Oci.ContainerEngine.GetNodePool.Invoke(new()
         ///     {
-        ///         var testNodePool = Output.Create(Oci.ContainerEngine.GetNodePool.InvokeAsync(new Oci.ContainerEngine.GetNodePoolArgs
-        ///         {
-        ///             NodePoolId = oci_containerengine_node_pool.Test_node_pool.Id,
-        ///         }));
-        ///     }
+        ///         NodePoolId = oci_containerengine_node_pool.Test_node_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNodePool = Oci.ContainerEngine.GetNodePool.Invoke(new()
         ///     {
-        ///         var testNodePool = Output.Create(Oci.ContainerEngine.GetNodePool.InvokeAsync(new Oci.ContainerEngine.GetNodePoolArgs
-        ///         {
-        ///             NodePoolId = oci_containerengine_node_pool.Test_node_pool.Id,
-        ///         }));
-        ///     }
+        ///         NodePoolId = oci_containerengine_node_pool.Test_node_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ContainerEngine
     }
 
 
-    public sealed class GetNodePoolArgs : Pulumi.InvokeArgs
+    public sealed class GetNodePoolArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the node pool.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ContainerEngine
         public GetNodePoolArgs()
         {
         }
+        public static new GetNodePoolArgs Empty => new GetNodePoolArgs();
     }
 
-    public sealed class GetNodePoolInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNodePoolInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the node pool.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ContainerEngine
         public GetNodePoolInvokeArgs()
         {
         }
+        public static new GetNodePoolInvokeArgs Empty => new GetNodePoolInvokeArgs();
     }
 
 

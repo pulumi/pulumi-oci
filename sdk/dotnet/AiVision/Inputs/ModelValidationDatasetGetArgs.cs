@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiVision.Inputs
 {
 
-    public sealed class ModelValidationDatasetGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelValidationDatasetGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the ObjectStorage bucket that contains the input data file.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.AiVision.Inputs
         public ModelValidationDatasetGetArgs()
         {
         }
+        public static new ModelValidationDatasetGetArgs Empty => new ModelValidationDatasetGetArgs();
     }
 }

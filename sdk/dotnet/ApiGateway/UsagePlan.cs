@@ -17,56 +17,54 @@ namespace Pulumi.Oci.ApiGateway
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUsagePlan = new Oci.ApiGateway.UsagePlan("testUsagePlan", new()
     ///     {
-    ///         var testUsagePlan = new Oci.ApiGateway.UsagePlan("testUsagePlan", new Oci.ApiGateway.UsagePlanArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Entitlements = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Entitlements = 
+    ///             new Oci.ApiGateway.Inputs.UsagePlanEntitlementArgs
     ///             {
-    ///                 new Oci.ApiGateway.Inputs.UsagePlanEntitlementArgs
+    ///                 Name = @var.Usage_plan_entitlements_name,
+    ///                 Description = @var.Usage_plan_entitlements_description,
+    ///                 Quota = new Oci.ApiGateway.Inputs.UsagePlanEntitlementQuotaArgs
     ///                 {
-    ///                     Name = @var.Usage_plan_entitlements_name,
-    ///                     Description = @var.Usage_plan_entitlements_description,
-    ///                     Quota = new Oci.ApiGateway.Inputs.UsagePlanEntitlementQuotaArgs
+    ///                     OperationOnBreach = @var.Usage_plan_entitlements_quota_operation_on_breach,
+    ///                     ResetPolicy = @var.Usage_plan_entitlements_quota_reset_policy,
+    ///                     Unit = @var.Usage_plan_entitlements_quota_unit,
+    ///                     Value = @var.Usage_plan_entitlements_quota_value,
+    ///                 },
+    ///                 RateLimit = new Oci.ApiGateway.Inputs.UsagePlanEntitlementRateLimitArgs
+    ///                 {
+    ///                     Unit = @var.Usage_plan_entitlements_rate_limit_unit,
+    ///                     Value = @var.Usage_plan_entitlements_rate_limit_value,
+    ///                 },
+    ///                 Targets = new[]
+    ///                 {
+    ///                     new Oci.ApiGateway.Inputs.UsagePlanEntitlementTargetArgs
     ///                     {
-    ///                         OperationOnBreach = @var.Usage_plan_entitlements_quota_operation_on_breach,
-    ///                         ResetPolicy = @var.Usage_plan_entitlements_quota_reset_policy,
-    ///                         Unit = @var.Usage_plan_entitlements_quota_unit,
-    ///                         Value = @var.Usage_plan_entitlements_quota_value,
-    ///                     },
-    ///                     RateLimit = new Oci.ApiGateway.Inputs.UsagePlanEntitlementRateLimitArgs
-    ///                     {
-    ///                         Unit = @var.Usage_plan_entitlements_rate_limit_unit,
-    ///                         Value = @var.Usage_plan_entitlements_rate_limit_value,
-    ///                     },
-    ///                     Targets = 
-    ///                     {
-    ///                         new Oci.ApiGateway.Inputs.UsagePlanEntitlementTargetArgs
-    ///                         {
-    ///                             DeploymentId = oci_apigateway_deployment.Test_deployment.Id,
-    ///                         },
+    ///                         DeploymentId = oci_apigateway_deployment.Test_deployment.Id,
     ///                     },
     ///                 },
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Usage_plan_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Usage_plan_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -78,7 +76,7 @@ namespace Pulumi.Oci.ApiGateway
     /// ```
     /// </summary>
     [OciResourceType("oci:ApiGateway/usagePlan:UsagePlan")]
-    public partial class UsagePlan : Pulumi.CustomResource
+    public partial class UsagePlan : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -178,7 +176,7 @@ namespace Pulumi.Oci.ApiGateway
         }
     }
 
-    public sealed class UsagePlanArgs : Pulumi.ResourceArgs
+    public sealed class UsagePlanArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -231,9 +229,10 @@ namespace Pulumi.Oci.ApiGateway
         public UsagePlanArgs()
         {
         }
+        public static new UsagePlanArgs Empty => new UsagePlanArgs();
     }
 
-    public sealed class UsagePlanState : Pulumi.ResourceArgs
+    public sealed class UsagePlanState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -310,5 +309,6 @@ namespace Pulumi.Oci.ApiGateway
         public UsagePlanState()
         {
         }
+        public static new UsagePlanState Empty => new UsagePlanState();
     }
 }

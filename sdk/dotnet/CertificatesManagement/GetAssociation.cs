@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAssociation = Oci.CertificatesManagement.GetAssociation.Invoke(new()
         ///     {
-        ///         var testAssociation = Output.Create(Oci.CertificatesManagement.GetAssociation.InvokeAsync(new Oci.CertificatesManagement.GetAssociationArgs
-        ///         {
-        ///             AssociationId = oci_certificates_management_association.Test_association.Id,
-        ///         }));
-        ///     }
+        ///         AssociationId = oci_certificates_management_association.Test_association.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAssociation = Oci.CertificatesManagement.GetAssociation.Invoke(new()
         ///     {
-        ///         var testAssociation = Output.Create(Oci.CertificatesManagement.GetAssociation.InvokeAsync(new Oci.CertificatesManagement.GetAssociationArgs
-        ///         {
-        ///             AssociationId = oci_certificates_management_association.Test_association.Id,
-        ///         }));
-        ///     }
+        ///         AssociationId = oci_certificates_management_association.Test_association.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CertificatesManagement
     }
 
 
-    public sealed class GetAssociationArgs : Pulumi.InvokeArgs
+    public sealed class GetAssociationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of an association between a certificate-related resource and another Oracle Cloud Infrastructure resource.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetAssociationArgs()
         {
         }
+        public static new GetAssociationArgs Empty => new GetAssociationArgs();
     }
 
-    public sealed class GetAssociationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAssociationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of an association between a certificate-related resource and another Oracle Cloud Infrastructure resource.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetAssociationInvokeArgs()
         {
         }
+        public static new GetAssociationInvokeArgs Empty => new GetAssociationInvokeArgs();
     }
 
 

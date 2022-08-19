@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * const testVmClusterNetworkDownloadConfigFile = oci.Database.getVmClusterNetworkDownloadConfigFile({
  *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
  *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
- *     base64EncodeContent: "false",
+ *     base64EncodeContent: false,
  * });
  * ```
  */

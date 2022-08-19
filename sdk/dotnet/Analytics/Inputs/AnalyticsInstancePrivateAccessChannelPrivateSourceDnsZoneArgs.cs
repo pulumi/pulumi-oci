@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Analytics.Inputs
 {
 
-    public sealed class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Description of private source dns zone.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Analytics.Inputs
         public AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs()
         {
         }
+        public static new AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs Empty => new AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs();
     }
 }

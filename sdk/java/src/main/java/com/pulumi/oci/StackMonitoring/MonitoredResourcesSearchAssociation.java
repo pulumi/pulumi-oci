@@ -22,6 +22,41 @@ import javax.annotation.Nullable;
  * Returns a list of monitored resource associations.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourcesSearchAssociation;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourcesSearchAssociationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMonitoredResourcesSearchAssociation = new MonitoredResourcesSearchAssociation(&#34;testMonitoredResourcesSearchAssociation&#34;, MonitoredResourcesSearchAssociationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .associationType(var_.monitored_resources_search_association_association_type())
+ *             .destinationResourceId(oci_stack_monitoring_destination_resource.test_destination_resource().id())
+ *             .destinationResourceName(var_.monitored_resources_search_association_destination_resource_name())
+ *             .destinationResourceType(var_.monitored_resources_search_association_destination_resource_type())
+ *             .sourceResourceId(oci_stack_monitoring_source_resource.test_source_resource().id())
+ *             .sourceResourceName(var_.monitored_resources_search_association_source_resource_name())
+ *             .sourceResourceType(var_.monitored_resources_search_association_source_resource_type())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

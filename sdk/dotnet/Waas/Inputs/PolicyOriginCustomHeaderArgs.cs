@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyOriginCustomHeaderArgs : Pulumi.ResourceArgs
+    public sealed class PolicyOriginCustomHeaderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The unique name of the whitelist.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyOriginCustomHeaderArgs()
         {
         }
+        public static new PolicyOriginCustomHeaderArgs Empty => new PolicyOriginCustomHeaderArgs();
     }
 }

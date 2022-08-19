@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class BucketRetentionRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class BucketRetentionRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public BucketRetentionRuleGetArgs()
         {
         }
+        public static new BucketRetentionRuleGetArgs Empty => new BucketRetentionRuleGetArgs();
     }
 }

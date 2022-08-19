@@ -27,6 +27,63 @@ import javax.annotation.Nullable;
  * To create a cloud VM cluster in an Exadata Cloud Service instance, use the [CreateCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster) operation.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.VmClusterNetwork;
+ * import com.pulumi.oci.Database.VmClusterNetworkArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterNetworkScanArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterNetworkVmNetworkArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVmClusterNetwork = new VmClusterNetwork(&#34;testVmClusterNetwork&#34;, VmClusterNetworkArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.vm_cluster_network_display_name())
+ *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+ *             .scans(VmClusterNetworkScanArgs.builder()
+ *                 .hostname(var_.vm_cluster_network_scans_hostname())
+ *                 .ips(var_.vm_cluster_network_scans_ips())
+ *                 .port(var_.vm_cluster_network_scans_port())
+ *                 .scanListenerPortTcp(var_.vm_cluster_network_scans_scan_listener_port_tcp())
+ *                 .scanListenerPortTcpSsl(var_.vm_cluster_network_scans_scan_listener_port_tcp_ssl())
+ *                 .build())
+ *             .vmNetworks(VmClusterNetworkVmNetworkArgs.builder()
+ *                 .domainName(var_.vm_cluster_network_vm_networks_domain_name())
+ *                 .gateway(var_.vm_cluster_network_vm_networks_gateway())
+ *                 .netmask(var_.vm_cluster_network_vm_networks_netmask())
+ *                 .networkType(var_.vm_cluster_network_vm_networks_network_type())
+ *                 .nodes(VmClusterNetworkVmNetworkNodeArgs.builder()
+ *                     .hostname(var_.vm_cluster_network_vm_networks_nodes_hostname())
+ *                     .ip(var_.vm_cluster_network_vm_networks_nodes_ip())
+ *                     .vip(var_.vm_cluster_network_vm_networks_nodes_vip())
+ *                     .vipHostname(var_.vm_cluster_network_vm_networks_nodes_vip_hostname())
+ *                     .build())
+ *                 .vlanId(var_.vm_cluster_network_vm_networks_vlan_id())
+ *                 .build())
+ *             .definedTags(var_.vm_cluster_network_defined_tags())
+ *             .dns(var_.vm_cluster_network_dns())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .ntps(var_.vm_cluster_network_ntp())
+ *             .validateVmClusterNetwork(var_.vm_cluster_network_validate_vm_cluster_network())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterUpdate = Oci.Database.GetVmClusterUpdate.Invoke(new()
         ///     {
-        ///         var testVmClusterUpdate = Output.Create(Oci.Database.GetVmClusterUpdate.InvokeAsync(new Oci.Database.GetVmClusterUpdateArgs
-        ///         {
-        ///             UpdateId = oci_database_update.Test_update.Id,
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         UpdateId = oci_database_update.Test_update.Id,
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterUpdate = Oci.Database.GetVmClusterUpdate.Invoke(new()
         ///     {
-        ///         var testVmClusterUpdate = Output.Create(Oci.Database.GetVmClusterUpdate.InvokeAsync(new Oci.Database.GetVmClusterUpdateArgs
-        ///         {
-        ///             UpdateId = oci_database_update.Test_update.Id,
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         UpdateId = oci_database_update.Test_update.Id,
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetVmClusterUpdateArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterUpdateArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetVmClusterUpdateArgs()
         {
         }
+        public static new GetVmClusterUpdateArgs Empty => new GetVmClusterUpdateArgs();
     }
 
-    public sealed class GetVmClusterUpdateInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterUpdateInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Database
         public GetVmClusterUpdateInvokeArgs()
         {
         }
+        public static new GetVmClusterUpdateInvokeArgs Empty => new GetVmClusterUpdateInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetComputeCapacityReservationsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeCapacityReservationsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetComputeCapacityReservationsFilterArgs()
         {
         }
+        public static new GetComputeCapacityReservationsFilterArgs Empty => new GetComputeCapacityReservationsFilterArgs();
     }
 }

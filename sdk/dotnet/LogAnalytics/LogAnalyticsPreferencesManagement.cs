@@ -17,28 +17,26 @@ namespace Pulumi.Oci.LogAnalytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogAnalyticsPreferencesManagement = new Oci.LogAnalytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement", new()
     ///     {
-    ///         var testLogAnalyticsPreferencesManagement = new Oci.LogAnalytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement", new Oci.LogAnalytics.LogAnalyticsPreferencesManagementArgs
+    ///         Namespace = @var.Log_analytics_preferences_management_namespace,
+    ///         Items = new[]
     ///         {
-    ///             Namespace = @var.Log_analytics_preferences_management_namespace,
-    ///             Items = 
+    ///             new Oci.LogAnalytics.Inputs.LogAnalyticsPreferencesManagementItemArgs
     ///             {
-    ///                 new Oci.LogAnalytics.Inputs.LogAnalyticsPreferencesManagementItemArgs
-    ///                 {
-    ///                     Name = @var.Log_analytics_preferences_management_items_name,
-    ///                     Value = @var.Log_analytics_preferences_management_items_value,
-    ///                 },
+    ///                 Name = @var.Log_analytics_preferences_management_items_name,
+    ///                 Value = @var.Log_analytics_preferences_management_items_value,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// Import is not supported for LogAnalyticsPreferencesManagement
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement")]
-    public partial class LogAnalyticsPreferencesManagement : Pulumi.CustomResource
+    public partial class LogAnalyticsPreferencesManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// An array of tenant preference details.
@@ -104,7 +102,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class LogAnalyticsPreferencesManagementArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsPreferencesManagementArgs : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.LogAnalyticsPreferencesManagementItemArgs>? _items;
@@ -127,9 +125,10 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsPreferencesManagementArgs()
         {
         }
+        public static new LogAnalyticsPreferencesManagementArgs Empty => new LogAnalyticsPreferencesManagementArgs();
     }
 
-    public sealed class LogAnalyticsPreferencesManagementState : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsPreferencesManagementState : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.LogAnalyticsPreferencesManagementItemGetArgs>? _items;
@@ -152,5 +151,6 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsPreferencesManagementState()
         {
         }
+        public static new LogAnalyticsPreferencesManagementState Empty => new LogAnalyticsPreferencesManagementState();
     }
 }

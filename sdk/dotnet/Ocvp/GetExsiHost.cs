@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEsxiHost = Oci.Ocvp.GetExsiHost.Invoke(new()
         ///     {
-        ///         var testEsxiHost = Output.Create(Oci.Ocvp.GetExsiHost.InvokeAsync(new Oci.Ocvp.GetExsiHostArgs
-        ///         {
-        ///             EsxiHostId = oci_ocvp_esxi_host.Test_esxi_host.Id,
-        ///         }));
-        ///     }
+        ///         EsxiHostId = oci_ocvp_esxi_host.Test_esxi_host.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEsxiHost = Oci.Ocvp.GetExsiHost.Invoke(new()
         ///     {
-        ///         var testEsxiHost = Output.Create(Oci.Ocvp.GetExsiHost.InvokeAsync(new Oci.Ocvp.GetExsiHostArgs
-        ///         {
-        ///             EsxiHostId = oci_ocvp_esxi_host.Test_esxi_host.Id,
-        ///         }));
-        ///     }
+        ///         EsxiHostId = oci_ocvp_esxi_host.Test_esxi_host.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Ocvp
     }
 
 
-    public sealed class GetExsiHostArgs : Pulumi.InvokeArgs
+    public sealed class GetExsiHostArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Ocvp
         public GetExsiHostArgs()
         {
         }
+        public static new GetExsiHostArgs Empty => new GetExsiHostArgs();
     }
 
-    public sealed class GetExsiHostInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExsiHostInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Ocvp
         public GetExsiHostInvokeArgs()
         {
         }
+        public static new GetExsiHostInvokeArgs Empty => new GetExsiHostInvokeArgs();
     }
 
 

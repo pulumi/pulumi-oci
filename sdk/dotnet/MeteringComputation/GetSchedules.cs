@@ -22,21 +22,19 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSchedules = Oci.MeteringComputation.GetSchedules.Invoke(new()
         ///     {
-        ///         var testSchedules = Output.Create(Oci.MeteringComputation.GetSchedules.InvokeAsync(new Oci.MeteringComputation.GetSchedulesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Schedule_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Schedule_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSchedules = Oci.MeteringComputation.GetSchedules.Invoke(new()
         ///     {
-        ///         var testSchedules = Output.Create(Oci.MeteringComputation.GetSchedules.InvokeAsync(new Oci.MeteringComputation.GetSchedulesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Schedule_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Schedule_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.MeteringComputation
     }
 
 
-    public sealed class GetSchedulesArgs : Pulumi.InvokeArgs
+    public sealed class GetSchedulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment ID in which to list resources.
@@ -108,9 +104,10 @@ namespace Pulumi.Oci.MeteringComputation
         public GetSchedulesArgs()
         {
         }
+        public static new GetSchedulesArgs Empty => new GetSchedulesArgs();
     }
 
-    public sealed class GetSchedulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSchedulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment ID in which to list resources.
@@ -139,6 +136,7 @@ namespace Pulumi.Oci.MeteringComputation
         public GetSchedulesInvokeArgs()
         {
         }
+        public static new GetSchedulesInvokeArgs Empty => new GetSchedulesInvokeArgs();
     }
 
 

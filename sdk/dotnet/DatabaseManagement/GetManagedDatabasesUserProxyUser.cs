@@ -21,22 +21,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabasesUserProxyUser = Oci.DatabaseManagement.GetManagedDatabasesUserProxyUser.Invoke(new()
         ///     {
-        ///         var testManagedDatabasesUserProxyUser = Output.Create(Oci.DatabaseManagement.GetManagedDatabasesUserProxyUser.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabasesUserProxyUserArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_databases_user_proxy_user_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_databases_user_proxy_user_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabasesUserProxyUser = Oci.DatabaseManagement.GetManagedDatabasesUserProxyUser.Invoke(new()
         ///     {
-        ///         var testManagedDatabasesUserProxyUser = Output.Create(Oci.DatabaseManagement.GetManagedDatabasesUserProxyUser.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabasesUserProxyUserArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_databases_user_proxy_user_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_databases_user_proxy_user_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabasesUserProxyUserArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabasesUserProxyUserArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabasesUserProxyUserArgs()
         {
         }
+        public static new GetManagedDatabasesUserProxyUserArgs Empty => new GetManagedDatabasesUserProxyUserArgs();
     }
 
-    public sealed class GetManagedDatabasesUserProxyUserInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabasesUserProxyUserInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabasesUserProxyUserInvokeArgs()
         {
         }
+        public static new GetManagedDatabasesUserProxyUserInvokeArgs Empty => new GetManagedDatabasesUserProxyUserInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp.Inputs
 {
 
-    public sealed class GetSupportedSkusFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSupportedSkusFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// name of SKU
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Ocvp.Inputs
         public GetSupportedSkusFilterInputArgs()
         {
         }
+        public static new GetSupportedSkusFilterInputArgs Empty => new GetSupportedSkusFilterInputArgs();
     }
 }

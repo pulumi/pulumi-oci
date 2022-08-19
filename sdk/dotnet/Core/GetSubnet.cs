@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubnet = Oci.Core.GetSubnet.Invoke(new()
         ///     {
-        ///         var testSubnet = Output.Create(Oci.Core.GetSubnet.InvokeAsync(new Oci.Core.GetSubnetArgs
-        ///         {
-        ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///         }));
-        ///     }
+        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubnet = Oci.Core.GetSubnet.Invoke(new()
         ///     {
-        ///         var testSubnet = Output.Create(Oci.Core.GetSubnet.InvokeAsync(new Oci.Core.GetSubnetArgs
-        ///         {
-        ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///         }));
-        ///     }
+        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetSubnetArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetSubnetArgs()
         {
         }
+        public static new GetSubnetArgs Empty => new GetSubnetArgs();
     }
 
-    public sealed class GetSubnetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetSubnetInvokeArgs()
         {
         }
+        public static new GetSubnetInvokeArgs Empty => new GetSubnetInvokeArgs();
     }
 
 

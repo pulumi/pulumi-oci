@@ -18,29 +18,27 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPluggableDatabase = new Oci.Database.PluggableDatabase("testPluggableDatabase", new()
     ///     {
-    ///         var testPluggableDatabase = new Oci.Database.PluggableDatabase("testPluggableDatabase", new Oci.Database.PluggableDatabaseArgs
+    ///         ContainerDatabaseId = oci_database_database.Test_database.Id,
+    ///         PdbName = @var.Pluggable_database_pdb_name,
+    ///         DefinedTags = @var.Pluggable_database_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             ContainerDatabaseId = oci_database_database.Test_database.Id,
-    ///             PdbName = @var.Pluggable_database_pdb_name,
-    ///             DefinedTags = @var.Pluggable_database_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             PdbAdminPassword = @var.Pluggable_database_pdb_admin_password,
-    ///             ShouldPdbAdminAccountBeLocked = @var.Pluggable_database_should_pdb_admin_account_be_locked,
-    ///             TdeWalletPassword = @var.Pluggable_database_tde_wallet_password,
-    ///         });
-    ///     }
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PdbAdminPassword = @var.Pluggable_database_pdb_admin_password,
+    ///         ShouldPdbAdminAccountBeLocked = @var.Pluggable_database_should_pdb_admin_account_be_locked,
+    ///         TdeWalletPassword = @var.Pluggable_database_tde_wallet_password,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/pluggableDatabase:PluggableDatabase")]
-    public partial class PluggableDatabase : Pulumi.CustomResource
+    public partial class PluggableDatabase : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -182,7 +180,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class PluggableDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class PluggableDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
@@ -241,9 +239,10 @@ namespace Pulumi.Oci.Database
         public PluggableDatabaseArgs()
         {
         }
+        public static new PluggableDatabaseArgs Empty => new PluggableDatabaseArgs();
     }
 
-    public sealed class PluggableDatabaseState : Pulumi.ResourceArgs
+    public sealed class PluggableDatabaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -350,5 +349,6 @@ namespace Pulumi.Oci.Database
         public PluggableDatabaseState()
         {
         }
+        public static new PluggableDatabaseState Empty => new PluggableDatabaseState();
     }
 }

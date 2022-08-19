@@ -23,26 +23,24 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExadataInsights = Oci.Opsi.GetExadataInsights.Invoke(new()
         ///     {
-        ///         var testExadataInsights = Output.Create(Oci.Opsi.GetExadataInsights.InvokeAsync(new Oci.Opsi.GetExadataInsightsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Exadata_insight_compartment_id_in_subtree,
-        ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///             ExadataTypes = @var.Exadata_insight_exadata_type,
-        ///             Id = @var.Exadata_insight_id,
-        ///             States = @var.Exadata_insight_state,
-        ///             Statuses = @var.Exadata_insight_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Exadata_insight_compartment_id_in_subtree,
+        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///         ExadataTypes = @var.Exadata_insight_exadata_type,
+        ///         Id = @var.Exadata_insight_id,
+        ///         States = @var.Exadata_insight_state,
+        ///         Statuses = @var.Exadata_insight_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,26 +60,24 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExadataInsights = Oci.Opsi.GetExadataInsights.Invoke(new()
         ///     {
-        ///         var testExadataInsights = Output.Create(Oci.Opsi.GetExadataInsights.InvokeAsync(new Oci.Opsi.GetExadataInsightsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Exadata_insight_compartment_id_in_subtree,
-        ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///             ExadataTypes = @var.Exadata_insight_exadata_type,
-        ///             Id = @var.Exadata_insight_id,
-        ///             States = @var.Exadata_insight_state,
-        ///             Statuses = @var.Exadata_insight_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Exadata_insight_compartment_id_in_subtree,
+        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///         ExadataTypes = @var.Exadata_insight_exadata_type,
+        ///         Id = @var.Exadata_insight_id,
+        ///         States = @var.Exadata_insight_state,
+        ///         Statuses = @var.Exadata_insight_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetExadataInsightsArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataInsightsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -164,9 +160,10 @@ namespace Pulumi.Oci.Opsi
         public GetExadataInsightsArgs()
         {
         }
+        public static new GetExadataInsightsArgs Empty => new GetExadataInsightsArgs();
     }
 
-    public sealed class GetExadataInsightsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataInsightsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -239,6 +236,7 @@ namespace Pulumi.Oci.Opsi
         public GetExadataInsightsInvokeArgs()
         {
         }
+        public static new GetExadataInsightsInvokeArgs Empty => new GetExadataInsightsInvokeArgs();
     }
 
 

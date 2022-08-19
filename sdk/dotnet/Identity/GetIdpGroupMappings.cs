@@ -24,20 +24,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIdpGroupMappings = Oci.Identity.GetIdpGroupMappings.Invoke(new()
         ///     {
-        ///         var testIdpGroupMappings = Output.Create(Oci.Identity.GetIdpGroupMappings.InvokeAsync(new Oci.Identity.GetIdpGroupMappingsArgs
-        ///         {
-        ///             IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-        ///         }));
-        ///     }
+        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,20 +56,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIdpGroupMappings = Oci.Identity.GetIdpGroupMappings.Invoke(new()
         ///     {
-        ///         var testIdpGroupMappings = Output.Create(Oci.Identity.GetIdpGroupMappings.InvokeAsync(new Oci.Identity.GetIdpGroupMappingsArgs
-        ///         {
-        ///             IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-        ///         }));
-        ///     }
+        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetIdpGroupMappingsArgs : Pulumi.InvokeArgs
+    public sealed class GetIdpGroupMappingsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetIdpGroupMappingsFilterArgs>? _filters;
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Identity
         public GetIdpGroupMappingsArgs()
         {
         }
+        public static new GetIdpGroupMappingsArgs Empty => new GetIdpGroupMappingsArgs();
     }
 
-    public sealed class GetIdpGroupMappingsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIdpGroupMappingsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetIdpGroupMappingsFilterInputArgs>? _filters;
@@ -121,6 +118,7 @@ namespace Pulumi.Oci.Identity
         public GetIdpGroupMappingsInvokeArgs()
         {
         }
+        public static new GetIdpGroupMappingsInvokeArgs Empty => new GetIdpGroupMappingsInvokeArgs();
     }
 
 

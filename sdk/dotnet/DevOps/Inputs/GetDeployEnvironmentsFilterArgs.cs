@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class GetDeployEnvironmentsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetDeployEnvironmentsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public GetDeployEnvironmentsFilterInputArgs()
         {
         }
+        public static new GetDeployEnvironmentsFilterInputArgs Empty => new GetDeployEnvironmentsFilterInputArgs();
     }
 }

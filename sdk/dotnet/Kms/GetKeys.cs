@@ -27,25 +27,23 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKeys = Oci.Kms.GetKeys.Invoke(new()
         ///     {
-        ///         var testKeys = Output.Create(Oci.Kms.GetKeys.InvokeAsync(new Oci.Kms.GetKeysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ManagementEndpoint = @var.Key_management_endpoint,
-        ///             Algorithm = @var.Key_algorithm,
-        ///             Length = @var.Key_length,
-        ///             CurveId = oci_kms_curve.Test_curve.Id,
-        ///             ProtectionMode = @var.Key_protection_mode,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ManagementEndpoint = @var.Key_management_endpoint,
+        ///         Algorithm = @var.Key_algorithm,
+        ///         Length = @var.Key_length,
+        ///         CurveId = oci_kms_curve.Test_curve.Id,
+        ///         ProtectionMode = @var.Key_protection_mode,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -69,25 +67,23 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKeys = Oci.Kms.GetKeys.Invoke(new()
         ///     {
-        ///         var testKeys = Output.Create(Oci.Kms.GetKeys.InvokeAsync(new Oci.Kms.GetKeysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ManagementEndpoint = @var.Key_management_endpoint,
-        ///             Algorithm = @var.Key_algorithm,
-        ///             Length = @var.Key_length,
-        ///             CurveId = oci_kms_curve.Test_curve.Id,
-        ///             ProtectionMode = @var.Key_protection_mode,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ManagementEndpoint = @var.Key_management_endpoint,
+        ///         Algorithm = @var.Key_algorithm,
+        ///         Length = @var.Key_length,
+        ///         CurveId = oci_kms_curve.Test_curve.Id,
+        ///         ProtectionMode = @var.Key_protection_mode,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -97,7 +93,7 @@ namespace Pulumi.Oci.Kms
     }
 
 
-    public sealed class GetKeysArgs : Pulumi.InvokeArgs
+    public sealed class GetKeysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
@@ -146,9 +142,10 @@ namespace Pulumi.Oci.Kms
         public GetKeysArgs()
         {
         }
+        public static new GetKeysArgs Empty => new GetKeysArgs();
     }
 
-    public sealed class GetKeysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
@@ -197,6 +194,7 @@ namespace Pulumi.Oci.Kms
         public GetKeysInvokeArgs()
         {
         }
+        public static new GetKeysInvokeArgs Empty => new GetKeysInvokeArgs();
     }
 
 

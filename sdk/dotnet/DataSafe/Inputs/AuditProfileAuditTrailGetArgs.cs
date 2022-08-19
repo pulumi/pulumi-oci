@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class AuditProfileAuditTrailGetArgs : Pulumi.ResourceArgs
+    public sealed class AuditProfileAuditTrailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -141,5 +141,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public AuditProfileAuditTrailGetArgs()
         {
         }
+        public static new AuditProfileAuditTrailGetArgs Empty => new AuditProfileAuditTrailGetArgs();
     }
 }

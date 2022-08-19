@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class NetworkFirewallPolicyDecryptionProfileGetArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicyDecryptionProfileGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
@@ -80,5 +80,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public NetworkFirewallPolicyDecryptionProfileGetArgs()
         {
         }
+        public static new NetworkFirewallPolicyDecryptionProfileGetArgs Empty => new NetworkFirewallPolicyDecryptionProfileGetArgs();
     }
 }

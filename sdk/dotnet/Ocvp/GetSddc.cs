@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSddc = Oci.Ocvp.GetSddc.Invoke(new()
         ///     {
-        ///         var testSddc = Output.Create(Oci.Ocvp.GetSddc.InvokeAsync(new Oci.Ocvp.GetSddcArgs
-        ///         {
-        ///             SddcId = oci_ocvp_sddc.Test_sddc.Id,
-        ///         }));
-        ///     }
+        ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSddc = Oci.Ocvp.GetSddc.Invoke(new()
         ///     {
-        ///         var testSddc = Output.Create(Oci.Ocvp.GetSddc.InvokeAsync(new Oci.Ocvp.GetSddcArgs
-        ///         {
-        ///             SddcId = oci_ocvp_sddc.Test_sddc.Id,
-        ///         }));
-        ///     }
+        ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Ocvp
     }
 
 
-    public sealed class GetSddcArgs : Pulumi.InvokeArgs
+    public sealed class GetSddcArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Ocvp
         public GetSddcArgs()
         {
         }
+        public static new GetSddcArgs Empty => new GetSddcArgs();
     }
 
-    public sealed class GetSddcInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSddcInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Ocvp
         public GetSddcInvokeArgs()
         {
         }
+        public static new GetSddcInvokeArgs Empty => new GetSddcInvokeArgs();
     }
 
 
@@ -198,6 +196,10 @@ namespace Pulumi.Oci.Ocvp
         /// Indicates whether shielded instance is enabled at the SDDC level.
         /// </summary>
         public readonly bool IsShieldedInstanceEnabled;
+        /// <summary>
+        /// Indicates whether this SDDC is designated for only single ESXi host.
+        /// </summary>
+        public readonly bool IsSingleHostSddc;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
         /// </summary>
@@ -364,6 +366,8 @@ namespace Pulumi.Oci.Ocvp
 
             bool isShieldedInstanceEnabled,
 
+            bool isSingleHostSddc,
+
             string nsxEdgeUplink1vlanId,
 
             string nsxEdgeUplink2vlanId,
@@ -450,6 +454,7 @@ namespace Pulumi.Oci.Ocvp
             IsHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
             IsHcxPendingDowngrade = isHcxPendingDowngrade;
             IsShieldedInstanceEnabled = isShieldedInstanceEnabled;
+            IsSingleHostSddc = isSingleHostSddc;
             NsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
             NsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
             NsxEdgeUplinkIpId = nsxEdgeUplinkIpId;

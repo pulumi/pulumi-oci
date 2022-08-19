@@ -22,6 +22,48 @@ import javax.annotation.Nullable;
  * Creates a new connection.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.Connection;
+ * import com.pulumi.oci.DevOps.ConnectionArgs;
+ * import com.pulumi.oci.DevOps.inputs.ConnectionTlsVerifyConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testConnection = new Connection(&#34;testConnection&#34;, ConnectionArgs.builder()        
+ *             .connectionType(var_.connection_connection_type())
+ *             .projectId(oci_devops_project.test_project().id())
+ *             .accessToken(var_.connection_access_token())
+ *             .appPassword(var_.connection_app_password())
+ *             .baseUrl(var_.connection_base_url())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.connection_description())
+ *             .displayName(var_.connection_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .tlsVerifyConfig(ConnectionTlsVerifyConfigArgs.builder()
+ *                 .caCertificateBundleId(oci_devops_ca_certificate_bundle.test_ca_certificate_bundle().id())
+ *                 .tlsVerifyMode(var_.connection_tls_verify_config_tls_verify_mode())
+ *                 .build())
+ *             .username(var_.connection_username())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

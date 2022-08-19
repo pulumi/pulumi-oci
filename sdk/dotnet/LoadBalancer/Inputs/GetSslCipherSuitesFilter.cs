@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetSslCipherSuitesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSslCipherSuitesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetSslCipherSuitesFilterArgs()
         {
         }
+        public static new GetSslCipherSuitesFilterArgs Empty => new GetSslCipherSuitesFilterArgs();
     }
 }

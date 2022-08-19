@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseScheduledOperationGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseScheduledOperationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Day of the week.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseScheduledOperationGetArgs()
         {
         }
+        public static new AutonomousDatabaseScheduledOperationGetArgs Empty => new AutonomousDatabaseScheduledOperationGetArgs();
     }
 }

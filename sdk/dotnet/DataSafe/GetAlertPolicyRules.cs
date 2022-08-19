@@ -23,20 +23,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlertPolicyRules = Oci.DataSafe.GetAlertPolicyRules.Invoke(new()
         ///     {
-        ///         var testAlertPolicyRules = Output.Create(Oci.DataSafe.GetAlertPolicyRules.InvokeAsync(new Oci.DataSafe.GetAlertPolicyRulesArgs
-        ///         {
-        ///             AlertPolicyId = oci_data_safe_alert_policy.Test_alert_policy.Id,
-        ///         }));
-        ///     }
+        ///         AlertPolicyId = oci_data_safe_alert_policy.Test_alert_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlertPolicyRules = Oci.DataSafe.GetAlertPolicyRules.Invoke(new()
         ///     {
-        ///         var testAlertPolicyRules = Output.Create(Oci.DataSafe.GetAlertPolicyRules.InvokeAsync(new Oci.DataSafe.GetAlertPolicyRulesArgs
-        ///         {
-        ///             AlertPolicyId = oci_data_safe_alert_policy.Test_alert_policy.Id,
-        ///         }));
-        ///     }
+        ///         AlertPolicyId = oci_data_safe_alert_policy.Test_alert_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAlertPolicyRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetAlertPolicyRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the alert policy.
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAlertPolicyRulesArgs()
         {
         }
+        public static new GetAlertPolicyRulesArgs Empty => new GetAlertPolicyRulesArgs();
     }
 
-    public sealed class GetAlertPolicyRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAlertPolicyRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the alert policy.
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAlertPolicyRulesInvokeArgs()
         {
         }
+        public static new GetAlertPolicyRulesInvokeArgs Empty => new GetAlertPolicyRulesInvokeArgs();
     }
 
 

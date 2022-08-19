@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class DataMaskRuleTargetSelectedGetArgs : Pulumi.ResourceArgs
+    public sealed class DataMaskRuleTargetSelectedGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Target selection.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public DataMaskRuleTargetSelectedGetArgs()
         {
         }
+        public static new DataMaskRuleTargetSelectedGetArgs Empty => new DataMaskRuleTargetSelectedGetArgs();
     }
 }

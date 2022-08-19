@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceConfiguration = Oci.Core.GetInstanceConfiguration.Invoke(new()
         ///     {
-        ///         var testInstanceConfiguration = Output.Create(Oci.Core.GetInstanceConfiguration.InvokeAsync(new Oci.Core.GetInstanceConfigurationArgs
-        ///         {
-        ///             InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
-        ///         }));
-        ///     }
+        ///         InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceConfiguration = Oci.Core.GetInstanceConfiguration.Invoke(new()
         ///     {
-        ///         var testInstanceConfiguration = Output.Create(Oci.Core.GetInstanceConfiguration.InvokeAsync(new Oci.Core.GetInstanceConfigurationArgs
-        ///         {
-        ///             InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
-        ///         }));
-        ///     }
+        ///         InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstanceConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the instance configuration.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetInstanceConfigurationArgs()
         {
         }
+        public static new GetInstanceConfigurationArgs Empty => new GetInstanceConfigurationArgs();
     }
 
-    public sealed class GetInstanceConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the instance configuration.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetInstanceConfigurationInvokeArgs()
         {
         }
+        public static new GetInstanceConfigurationInvokeArgs Empty => new GetInstanceConfigurationInvokeArgs();
     }
 
 

@@ -23,7 +23,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/managedList:ManagedList")]
-    public partial class ManagedList : Pulumi.CustomResource
+    public partial class ManagedList : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.CloudGuard
         }
     }
 
-    public sealed class ManagedListArgs : Pulumi.ResourceArgs
+    public sealed class ManagedListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -230,9 +230,10 @@ namespace Pulumi.Oci.CloudGuard
         public ManagedListArgs()
         {
         }
+        public static new ManagedListArgs Empty => new ManagedListArgs();
     }
 
-    public sealed class ManagedListState : Pulumi.ResourceArgs
+    public sealed class ManagedListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -351,5 +352,6 @@ namespace Pulumi.Oci.CloudGuard
         public ManagedListState()
         {
         }
+        public static new ManagedListState Empty => new ManagedListState();
     }
 }

@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityAssessmentFindings = Oci.DataSafe.GetSecurityAssessmentFindings.Invoke(new()
         ///     {
-        ///         var testSecurityAssessmentFindings = Output.Create(Oci.DataSafe.GetSecurityAssessmentFindings.InvokeAsync(new Oci.DataSafe.GetSecurityAssessmentFindingsArgs
-        ///         {
-        ///             SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-        ///             AccessLevel = @var.Security_assessment_finding_access_level,
-        ///             CompartmentIdInSubtree = @var.Security_assessment_finding_compartment_id_in_subtree,
-        ///             FindingKey = @var.Security_assessment_finding_finding_key,
-        ///             Severity = @var.Security_assessment_finding_severity,
-        ///         }));
-        ///     }
+        ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+        ///         AccessLevel = @var.Security_assessment_finding_access_level,
+        ///         CompartmentIdInSubtree = @var.Security_assessment_finding_compartment_id_in_subtree,
+        ///         FindingKey = @var.Security_assessment_finding_finding_key,
+        ///         Severity = @var.Security_assessment_finding_severity,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityAssessmentFindings = Oci.DataSafe.GetSecurityAssessmentFindings.Invoke(new()
         ///     {
-        ///         var testSecurityAssessmentFindings = Output.Create(Oci.DataSafe.GetSecurityAssessmentFindings.InvokeAsync(new Oci.DataSafe.GetSecurityAssessmentFindingsArgs
-        ///         {
-        ///             SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-        ///             AccessLevel = @var.Security_assessment_finding_access_level,
-        ///             CompartmentIdInSubtree = @var.Security_assessment_finding_compartment_id_in_subtree,
-        ///             FindingKey = @var.Security_assessment_finding_finding_key,
-        ///             Severity = @var.Security_assessment_finding_severity,
-        ///         }));
-        ///     }
+        ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+        ///         AccessLevel = @var.Security_assessment_finding_access_level,
+        ///         CompartmentIdInSubtree = @var.Security_assessment_finding_compartment_id_in_subtree,
+        ///         FindingKey = @var.Security_assessment_finding_finding_key,
+        ///         Severity = @var.Security_assessment_finding_severity,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSecurityAssessmentFindingsArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityAssessmentFindingsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSecurityAssessmentFindingsArgs()
         {
         }
+        public static new GetSecurityAssessmentFindingsArgs Empty => new GetSecurityAssessmentFindingsArgs();
     }
 
-    public sealed class GetSecurityAssessmentFindingsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityAssessmentFindingsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSecurityAssessmentFindingsInvokeArgs()
         {
         }
+        public static new GetSecurityAssessmentFindingsInvokeArgs Empty => new GetSecurityAssessmentFindingsInvokeArgs();
     }
 
 

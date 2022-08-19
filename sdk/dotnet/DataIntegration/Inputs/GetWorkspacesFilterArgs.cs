@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration.Inputs
 {
 
-    public sealed class GetWorkspacesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetWorkspacesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Used to filter by the name of the object.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public GetWorkspacesFilterInputArgs()
         {
         }
+        public static new GetWorkspacesFilterInputArgs Empty => new GetWorkspacesFilterInputArgs();
     }
 }

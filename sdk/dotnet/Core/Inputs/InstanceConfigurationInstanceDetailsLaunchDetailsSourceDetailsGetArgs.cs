@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the boot volume used to boot the instance.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsGetArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsGetArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsGetArgs();
     }
 }

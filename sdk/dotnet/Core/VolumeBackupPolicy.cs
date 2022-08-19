@@ -20,46 +20,44 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVolumeBackupPolicy = new Oci.Core.VolumeBackupPolicy("testVolumeBackupPolicy", new()
     ///     {
-    ///         var testVolumeBackupPolicy = new Oci.Core.VolumeBackupPolicy("testVolumeBackupPolicy", new Oci.Core.VolumeBackupPolicyArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DestinationRegion = @var.Volume_backup_policy_destination_region,
+    ///         DisplayName = @var.Volume_backup_policy_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Schedules = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.VolumeBackupPolicyScheduleArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 BackupType = @var.Volume_backup_policy_schedules_backup_type,
+    ///                 Period = @var.Volume_backup_policy_schedules_period,
+    ///                 RetentionSeconds = @var.Volume_backup_policy_schedules_retention_seconds,
+    ///                 DayOfMonth = @var.Volume_backup_policy_schedules_day_of_month,
+    ///                 DayOfWeek = @var.Volume_backup_policy_schedules_day_of_week,
+    ///                 HourOfDay = @var.Volume_backup_policy_schedules_hour_of_day,
+    ///                 Month = @var.Volume_backup_policy_schedules_month,
+    ///                 OffsetSeconds = @var.Volume_backup_policy_schedules_offset_seconds,
+    ///                 OffsetType = @var.Volume_backup_policy_schedules_offset_type,
+    ///                 TimeZone = @var.Volume_backup_policy_schedules_time_zone,
     ///             },
-    ///             DestinationRegion = @var.Volume_backup_policy_destination_region,
-    ///             DisplayName = @var.Volume_backup_policy_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Schedules = 
-    ///             {
-    ///                 new Oci.Core.Inputs.VolumeBackupPolicyScheduleArgs
-    ///                 {
-    ///                     BackupType = @var.Volume_backup_policy_schedules_backup_type,
-    ///                     Period = @var.Volume_backup_policy_schedules_period,
-    ///                     RetentionSeconds = @var.Volume_backup_policy_schedules_retention_seconds,
-    ///                     DayOfMonth = @var.Volume_backup_policy_schedules_day_of_month,
-    ///                     DayOfWeek = @var.Volume_backup_policy_schedules_day_of_week,
-    ///                     HourOfDay = @var.Volume_backup_policy_schedules_hour_of_day,
-    ///                     Month = @var.Volume_backup_policy_schedules_month,
-    ///                     OffsetSeconds = @var.Volume_backup_policy_schedules_offset_seconds,
-    ///                     OffsetType = @var.Volume_backup_policy_schedules_offset_type,
-    ///                     TimeZone = @var.Volume_backup_policy_schedules_time_zone,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -71,7 +69,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeBackupPolicy:VolumeBackupPolicy")]
-    public partial class VolumeBackupPolicy : Pulumi.CustomResource
+    public partial class VolumeBackupPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -159,7 +157,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VolumeBackupPolicyArgs : Pulumi.ResourceArgs
+    public sealed class VolumeBackupPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -218,9 +216,10 @@ namespace Pulumi.Oci.Core
         public VolumeBackupPolicyArgs()
         {
         }
+        public static new VolumeBackupPolicyArgs Empty => new VolumeBackupPolicyArgs();
     }
 
-    public sealed class VolumeBackupPolicyState : Pulumi.ResourceArgs
+    public sealed class VolumeBackupPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -285,5 +284,6 @@ namespace Pulumi.Oci.Core
         public VolumeBackupPolicyState()
         {
         }
+        public static new VolumeBackupPolicyState Empty => new VolumeBackupPolicyState();
     }
 }

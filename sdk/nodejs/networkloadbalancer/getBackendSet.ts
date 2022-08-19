@@ -9,19 +9,6 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
  *
  * Retrieves the configuration information for the specified backend set.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testBackendSet = oci.NetworkLoadBalancer.getBackendSet({
- *     backendSetName: oci_network_load_balancer_backend_set.test_backend_set.name,
- *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
- *     ipVersion: _var.backend_set_ip_version,
- * });
- * ```
  */
 export function getBackendSet(args: GetBackendSetArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetResult> {
     if (!opts) {

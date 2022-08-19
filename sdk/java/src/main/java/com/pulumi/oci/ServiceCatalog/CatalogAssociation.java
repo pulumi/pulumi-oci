@@ -19,6 +19,36 @@ import javax.annotation.Nullable;
  * Creates an association between service catalog and a resource.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ServiceCatalog.CatalogAssociation;
+ * import com.pulumi.oci.ServiceCatalog.CatalogAssociationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testServiceCatalogAssociation = new CatalogAssociation(&#34;testServiceCatalogAssociation&#34;, CatalogAssociationArgs.builder()        
+ *             .entityId(oci_service_catalog_entity.test_entity().id())
+ *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+ *             .entityType(var_.service_catalog_association_entity_type())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

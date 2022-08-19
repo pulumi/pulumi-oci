@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateAuthorityCurrentVersionRevocationStatusArgs : Pulumi.ResourceArgs
+    public sealed class CertificateAuthorityCurrentVersionRevocationStatusArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The reason the certificate or certificate authority (CA) was revoked.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateAuthorityCurrentVersionRevocationStatusArgs()
         {
         }
+        public static new CertificateAuthorityCurrentVersionRevocationStatusArgs Empty => new CertificateAuthorityCurrentVersionRevocationStatusArgs();
     }
 }

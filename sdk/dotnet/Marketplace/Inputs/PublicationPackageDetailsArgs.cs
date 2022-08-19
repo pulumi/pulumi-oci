@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class PublicationPackageDetailsArgs : Pulumi.ResourceArgs
+    public sealed class PublicationPackageDetailsArgs : global::Pulumi.ResourceArgs
     {
         [Input("eulas", required: true)]
         private InputList<Inputs.PublicationPackageDetailsEulaArgs>? _eulas;
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public PublicationPackageDetailsArgs()
         {
         }
+        public static new PublicationPackageDetailsArgs Empty => new PublicationPackageDetailsArgs();
     }
 }

@@ -21,21 +21,19 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRuleSet = Oci.LoadBalancer.GetRuleSet.Invoke(new()
         ///     {
-        ///         var testRuleSet = Output.Create(Oci.LoadBalancer.GetRuleSet.InvokeAsync(new Oci.LoadBalancer.GetRuleSetArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///             Name = @var.Rule_set_name,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///         Name = @var.Rule_set_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRuleSet = Oci.LoadBalancer.GetRuleSet.Invoke(new()
         ///     {
-        ///         var testRuleSet = Output.Create(Oci.LoadBalancer.GetRuleSet.InvokeAsync(new Oci.LoadBalancer.GetRuleSetArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///             Name = @var.Rule_set_name,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///         Name = @var.Rule_set_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetRuleSetArgs : Pulumi.InvokeArgs
+    public sealed class GetRuleSetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetRuleSetArgs()
         {
         }
+        public static new GetRuleSetArgs Empty => new GetRuleSetArgs();
     }
 
-    public sealed class GetRuleSetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRuleSetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetRuleSetInvokeArgs()
         {
         }
+        public static new GetRuleSetInvokeArgs Empty => new GetRuleSetInvokeArgs();
     }
 
 

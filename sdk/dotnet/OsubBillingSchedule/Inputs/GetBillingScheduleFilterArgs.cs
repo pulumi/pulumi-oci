@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsubBillingSchedule.Inputs
 {
 
-    public sealed class GetBillingScheduleFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetBillingScheduleFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Product name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OsubBillingSchedule.Inputs
         public GetBillingScheduleFilterInputArgs()
         {
         }
+        public static new GetBillingScheduleFilterInputArgs Empty => new GetBillingScheduleFilterInputArgs();
     }
 }

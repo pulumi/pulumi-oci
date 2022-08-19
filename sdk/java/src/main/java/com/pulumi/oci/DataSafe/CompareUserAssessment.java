@@ -20,6 +20,35 @@ import javax.annotation.Nullable;
  * As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.CompareUserAssessment;
+ * import com.pulumi.oci.DataSafe.CompareUserAssessmentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCompareUserAssessment = new CompareUserAssessment(&#34;testCompareUserAssessment&#34;, CompareUserAssessmentArgs.builder()        
+ *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+ *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

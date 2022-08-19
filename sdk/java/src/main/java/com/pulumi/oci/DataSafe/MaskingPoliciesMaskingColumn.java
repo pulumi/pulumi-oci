@@ -41,6 +41,71 @@ import javax.annotation.Nullable;
  * masked data across the columns in a group continue to retain the same logical relationship.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.MaskingPoliciesMaskingColumn;
+ * import com.pulumi.oci.DataSafe.MaskingPoliciesMaskingColumnArgs;
+ * import com.pulumi.oci.DataSafe.inputs.MaskingPoliciesMaskingColumnMaskingFormatArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMaskingPoliciesMaskingColumn = new MaskingPoliciesMaskingColumn(&#34;testMaskingPoliciesMaskingColumn&#34;, MaskingPoliciesMaskingColumnArgs.builder()        
+ *             .columnName(var_.masking_policies_masking_column_column_name())
+ *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+ *             .object(var_.masking_policies_masking_column_object())
+ *             .schemaName(var_.masking_policies_masking_column_schema_name())
+ *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
+ *             .maskingColumnGroup(var_.masking_policies_masking_column_masking_column_group())
+ *             .maskingFormats(MaskingPoliciesMaskingColumnMaskingFormatArgs.builder()
+ *                 .formatEntries(MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs.builder()
+ *                     .type(var_.masking_policies_masking_column_masking_formats_format_entries_type())
+ *                     .columnName(var_.masking_policies_masking_column_masking_formats_format_entries_column_name())
+ *                     .description(var_.masking_policies_masking_column_masking_formats_format_entries_description())
+ *                     .endDate(var_.masking_policies_masking_column_masking_formats_format_entries_end_date())
+ *                     .endLength(var_.masking_policies_masking_column_masking_formats_format_entries_end_length())
+ *                     .endValue(var_.masking_policies_masking_column_masking_formats_format_entries_end_value())
+ *                     .fixedNumber(var_.masking_policies_masking_column_masking_formats_format_entries_fixed_number())
+ *                     .fixedString(var_.masking_policies_masking_column_masking_formats_format_entries_fixed_string())
+ *                     .groupingColumns(var_.masking_policies_masking_column_masking_formats_format_entries_grouping_columns())
+ *                     .length(var_.masking_policies_masking_column_masking_formats_format_entries_length())
+ *                     .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+ *                     .postProcessingFunction(var_.masking_policies_masking_column_masking_formats_format_entries_post_processing_function())
+ *                     .randomLists(var_.masking_policies_masking_column_masking_formats_format_entries_random_list())
+ *                     .regularExpression(var_.masking_policies_masking_column_masking_formats_format_entries_regular_expression())
+ *                     .replaceWith(var_.masking_policies_masking_column_masking_formats_format_entries_replace_with())
+ *                     .schemaName(var_.masking_policies_masking_column_masking_formats_format_entries_schema_name())
+ *                     .sqlExpression(var_.masking_policies_masking_column_masking_formats_format_entries_sql_expression())
+ *                     .startDate(var_.masking_policies_masking_column_masking_formats_format_entries_start_date())
+ *                     .startLength(var_.masking_policies_masking_column_masking_formats_format_entries_start_length())
+ *                     .startPosition(var_.masking_policies_masking_column_masking_formats_format_entries_start_position())
+ *                     .startValue(var_.masking_policies_masking_column_masking_formats_format_entries_start_value())
+ *                     .tableName(oci_nosql_table.test_table().name())
+ *                     .userDefinedFunction(var_.masking_policies_masking_column_masking_formats_format_entries_user_defined_function())
+ *                     .build())
+ *                 .condition(var_.masking_policies_masking_column_masking_formats_condition())
+ *                 .description(var_.masking_policies_masking_column_masking_formats_description())
+ *                 .build())
+ *             .objectType(var_.masking_policies_masking_column_object_type())
+ *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

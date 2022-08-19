@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpsecConnectionTunnelRoutes = Oci.Core.GetIpsecConnectionTunnelRoutes.Invoke(new()
         ///     {
-        ///         var testIpsecConnectionTunnelRoutes = Output.Create(Oci.Core.GetIpsecConnectionTunnelRoutes.InvokeAsync(new Oci.Core.GetIpsecConnectionTunnelRoutesArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///             TunnelId = oci_core_tunnel.Test_tunnel.Id,
-        ///             Advertiser = @var.Ipsec_connection_tunnel_route_advertiser,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
+        ///         Advertiser = @var.Ipsec_connection_tunnel_route_advertiser,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpsecConnectionTunnelRoutes = Oci.Core.GetIpsecConnectionTunnelRoutes.Invoke(new()
         ///     {
-        ///         var testIpsecConnectionTunnelRoutes = Output.Create(Oci.Core.GetIpsecConnectionTunnelRoutes.InvokeAsync(new Oci.Core.GetIpsecConnectionTunnelRoutesArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///             TunnelId = oci_core_tunnel.Test_tunnel.Id,
-        ///             Advertiser = @var.Ipsec_connection_tunnel_route_advertiser,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
+        ///         Advertiser = @var.Ipsec_connection_tunnel_route_advertiser,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetIpsecConnectionTunnelRoutesArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConnectionTunnelRoutesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Core
         public GetIpsecConnectionTunnelRoutesArgs()
         {
         }
+        public static new GetIpsecConnectionTunnelRoutesArgs Empty => new GetIpsecConnectionTunnelRoutesArgs();
     }
 
-    public sealed class GetIpsecConnectionTunnelRoutesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConnectionTunnelRoutesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Core
         public GetIpsecConnectionTunnelRoutesInvokeArgs()
         {
         }
+        public static new GetIpsecConnectionTunnelRoutesInvokeArgs Empty => new GetIpsecConnectionTunnelRoutesInvokeArgs();
     }
 
 

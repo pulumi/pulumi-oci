@@ -21,22 +21,20 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalogType = Oci.DataCatalog.GetCatalogType.Invoke(new()
         ///     {
-        ///         var testCatalogType = Output.Create(Oci.DataCatalog.GetCatalogType.InvokeAsync(new Oci.DataCatalog.GetCatalogTypeArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             TypeKey = @var.Catalog_type_type_key,
-        ///             Fields = @var.Catalog_type_fields,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///         TypeKey = @var.Catalog_type_type_key,
+        ///         Fields = @var.Catalog_type_fields,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalogType = Oci.DataCatalog.GetCatalogType.Invoke(new()
         ///     {
-        ///         var testCatalogType = Output.Create(Oci.DataCatalog.GetCatalogType.InvokeAsync(new Oci.DataCatalog.GetCatalogTypeArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             TypeKey = @var.Catalog_type_type_key,
-        ///             Fields = @var.Catalog_type_fields,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///         TypeKey = @var.Catalog_type_type_key,
+        ///         Fields = @var.Catalog_type_fields,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetCatalogTypeArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogTypeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -108,9 +104,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogTypeArgs()
         {
         }
+        public static new GetCatalogTypeArgs Empty => new GetCatalogTypeArgs();
     }
 
-    public sealed class GetCatalogTypeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogTypeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -139,6 +136,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogTypeInvokeArgs()
         {
         }
+        public static new GetCatalogTypeInvokeArgs Empty => new GetCatalogTypeInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class LoadBalancerRoutingPolicyRuleArgs : Pulumi.ResourceArgs
+    public sealed class LoadBalancerRoutingPolicyRuleArgs : global::Pulumi.ResourceArgs
     {
         [Input("actions", required: true)]
         private InputList<Inputs.LoadBalancerRoutingPolicyRuleActionArgs>? _actions;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public LoadBalancerRoutingPolicyRuleArgs()
         {
         }
+        public static new LoadBalancerRoutingPolicyRuleArgs Empty => new LoadBalancerRoutingPolicyRuleArgs();
     }
 }

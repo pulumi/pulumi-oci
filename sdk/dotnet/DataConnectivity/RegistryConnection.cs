@@ -17,117 +17,115 @@ namespace Pulumi.Oci.DataConnectivity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRegistryConnection = new Oci.DataConnectivity.RegistryConnection("testRegistryConnection", new()
     ///     {
-    ///         var testRegistryConnection = new Oci.DataConnectivity.RegistryConnection("testRegistryConnection", new Oci.DataConnectivity.RegistryConnectionArgs
+    ///         Identifier = @var.Registry_connection_identifier,
+    ///         Properties = @var.Registry_connection_properties,
+    ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+    ///         Type = @var.Registry_connection_type,
+    ///         ConnectionProperties = new[]
     ///         {
-    ///             Identifier = @var.Registry_connection_identifier,
-    ///             Properties = @var.Registry_connection_properties,
-    ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-    ///             Type = @var.Registry_connection_type,
-    ///             ConnectionProperties = 
+    ///             new Oci.DataConnectivity.Inputs.RegistryConnectionConnectionPropertyArgs
     ///             {
-    ///                 new Oci.DataConnectivity.Inputs.RegistryConnectionConnectionPropertyArgs
-    ///                 {
-    ///                     Name = @var.Registry_connection_connection_properties_name,
-    ///                     Value = @var.Registry_connection_connection_properties_value,
-    ///                 },
+    ///                 Name = @var.Registry_connection_connection_properties_name,
+    ///                 Value = @var.Registry_connection_connection_properties_value,
     ///             },
-    ///             Description = @var.Registry_connection_description,
-    ///             IsDefault = @var.Registry_connection_is_default,
-    ///             Key = @var.Registry_connection_key,
-    ///             Metadata = new Oci.DataConnectivity.Inputs.RegistryConnectionMetadataArgs
+    ///         },
+    ///         Description = @var.Registry_connection_description,
+    ///         IsDefault = @var.Registry_connection_is_default,
+    ///         Key = @var.Registry_connection_key,
+    ///         Metadata = new Oci.DataConnectivity.Inputs.RegistryConnectionMetadataArgs
+    ///         {
+    ///             Aggregator = new Oci.DataConnectivity.Inputs.RegistryConnectionMetadataAggregatorArgs
     ///             {
-    ///                 Aggregator = new Oci.DataConnectivity.Inputs.RegistryConnectionMetadataAggregatorArgs
-    ///                 {
-    ///                     Description = @var.Registry_connection_metadata_aggregator_description,
-    ///                     Identifier = @var.Registry_connection_metadata_aggregator_identifier,
-    ///                     Key = @var.Registry_connection_metadata_aggregator_key,
-    ///                     Name = @var.Registry_connection_metadata_aggregator_name,
-    ///                     Type = @var.Registry_connection_metadata_aggregator_type,
-    ///                 },
-    ///                 AggregatorKey = @var.Registry_connection_metadata_aggregator_key,
-    ///                 CreatedBy = @var.Registry_connection_metadata_created_by,
-    ///                 CreatedByName = @var.Registry_connection_metadata_created_by_name,
-    ///                 IdentifierPath = @var.Registry_connection_metadata_identifier_path,
-    ///                 InfoFields = @var.Registry_connection_metadata_info_fields,
-    ///                 IsFavorite = @var.Registry_connection_metadata_is_favorite,
-    ///                 Labels = @var.Registry_connection_metadata_labels,
-    ///                 RegistryVersion = @var.Registry_connection_metadata_registry_version,
-    ///                 TimeCreated = @var.Registry_connection_metadata_time_created,
-    ///                 TimeUpdated = @var.Registry_connection_metadata_time_updated,
-    ///                 UpdatedBy = @var.Registry_connection_metadata_updated_by,
-    ///                 UpdatedByName = @var.Registry_connection_metadata_updated_by_name,
+    ///                 Description = @var.Registry_connection_metadata_aggregator_description,
+    ///                 Identifier = @var.Registry_connection_metadata_aggregator_identifier,
+    ///                 Key = @var.Registry_connection_metadata_aggregator_key,
+    ///                 Name = @var.Registry_connection_metadata_aggregator_name,
+    ///                 Type = @var.Registry_connection_metadata_aggregator_type,
     ///             },
-    ///             ModelType = @var.Registry_connection_model_type,
-    ///             ModelVersion = @var.Registry_connection_model_version,
-    ///             ObjectStatus = @var.Registry_connection_object_status,
-    ///             ObjectVersion = @var.Registry_connection_object_version,
-    ///             PrimarySchema = new Oci.DataConnectivity.Inputs.RegistryConnectionPrimarySchemaArgs
+    ///             AggregatorKey = @var.Registry_connection_metadata_aggregator_key,
+    ///             CreatedBy = @var.Registry_connection_metadata_created_by,
+    ///             CreatedByName = @var.Registry_connection_metadata_created_by_name,
+    ///             IdentifierPath = @var.Registry_connection_metadata_identifier_path,
+    ///             InfoFields = @var.Registry_connection_metadata_info_fields,
+    ///             IsFavorite = @var.Registry_connection_metadata_is_favorite,
+    ///             Labels = @var.Registry_connection_metadata_labels,
+    ///             RegistryVersion = @var.Registry_connection_metadata_registry_version,
+    ///             TimeCreated = @var.Registry_connection_metadata_time_created,
+    ///             TimeUpdated = @var.Registry_connection_metadata_time_updated,
+    ///             UpdatedBy = @var.Registry_connection_metadata_updated_by,
+    ///             UpdatedByName = @var.Registry_connection_metadata_updated_by_name,
+    ///         },
+    ///         ModelType = @var.Registry_connection_model_type,
+    ///         ModelVersion = @var.Registry_connection_model_version,
+    ///         ObjectStatus = @var.Registry_connection_object_status,
+    ///         ObjectVersion = @var.Registry_connection_object_version,
+    ///         PrimarySchema = new Oci.DataConnectivity.Inputs.RegistryConnectionPrimarySchemaArgs
+    ///         {
+    ///             Identifier = @var.Registry_connection_primary_schema_identifier,
+    ///             Key = @var.Registry_connection_primary_schema_key,
+    ///             ModelType = @var.Registry_connection_primary_schema_model_type,
+    ///             Name = @var.Registry_connection_primary_schema_name,
+    ///             DefaultConnection = @var.Registry_connection_primary_schema_default_connection,
+    ///             Description = @var.Registry_connection_primary_schema_description,
+    ///             ExternalKey = @var.Registry_connection_primary_schema_external_key,
+    ///             IsHasContainers = @var.Registry_connection_primary_schema_is_has_containers,
+    ///             Metadata = new Oci.DataConnectivity.Inputs.RegistryConnectionPrimarySchemaMetadataArgs
     ///             {
-    ///                 Identifier = @var.Registry_connection_primary_schema_identifier,
-    ///                 Key = @var.Registry_connection_primary_schema_key,
-    ///                 ModelType = @var.Registry_connection_primary_schema_model_type,
-    ///                 Name = @var.Registry_connection_primary_schema_name,
-    ///                 DefaultConnection = @var.Registry_connection_primary_schema_default_connection,
-    ///                 Description = @var.Registry_connection_primary_schema_description,
-    ///                 ExternalKey = @var.Registry_connection_primary_schema_external_key,
-    ///                 IsHasContainers = @var.Registry_connection_primary_schema_is_has_containers,
-    ///                 Metadata = new Oci.DataConnectivity.Inputs.RegistryConnectionPrimarySchemaMetadataArgs
+    ///                 Aggregator = new Oci.DataConnectivity.Inputs.RegistryConnectionPrimarySchemaMetadataAggregatorArgs
     ///                 {
-    ///                     Aggregator = new Oci.DataConnectivity.Inputs.RegistryConnectionPrimarySchemaMetadataAggregatorArgs
-    ///                     {
-    ///                         Description = @var.Registry_connection_primary_schema_metadata_aggregator_description,
-    ///                         Identifier = @var.Registry_connection_primary_schema_metadata_aggregator_identifier,
-    ///                         Key = @var.Registry_connection_primary_schema_metadata_aggregator_key,
-    ///                         Name = @var.Registry_connection_primary_schema_metadata_aggregator_name,
-    ///                         Type = @var.Registry_connection_primary_schema_metadata_aggregator_type,
-    ///                     },
-    ///                     AggregatorKey = @var.Registry_connection_primary_schema_metadata_aggregator_key,
-    ///                     CreatedBy = @var.Registry_connection_primary_schema_metadata_created_by,
-    ///                     CreatedByName = @var.Registry_connection_primary_schema_metadata_created_by_name,
-    ///                     IdentifierPath = @var.Registry_connection_primary_schema_metadata_identifier_path,
-    ///                     InfoFields = @var.Registry_connection_primary_schema_metadata_info_fields,
-    ///                     IsFavorite = @var.Registry_connection_primary_schema_metadata_is_favorite,
-    ///                     Labels = @var.Registry_connection_primary_schema_metadata_labels,
-    ///                     RegistryVersion = @var.Registry_connection_primary_schema_metadata_registry_version,
-    ///                     TimeCreated = @var.Registry_connection_primary_schema_metadata_time_created,
-    ///                     TimeUpdated = @var.Registry_connection_primary_schema_metadata_time_updated,
-    ///                     UpdatedBy = @var.Registry_connection_primary_schema_metadata_updated_by,
-    ///                     UpdatedByName = @var.Registry_connection_primary_schema_metadata_updated_by_name,
+    ///                     Description = @var.Registry_connection_primary_schema_metadata_aggregator_description,
+    ///                     Identifier = @var.Registry_connection_primary_schema_metadata_aggregator_identifier,
+    ///                     Key = @var.Registry_connection_primary_schema_metadata_aggregator_key,
+    ///                     Name = @var.Registry_connection_primary_schema_metadata_aggregator_name,
+    ///                     Type = @var.Registry_connection_primary_schema_metadata_aggregator_type,
     ///                 },
-    ///                 ModelVersion = @var.Registry_connection_primary_schema_model_version,
-    ///                 ObjectStatus = @var.Registry_connection_primary_schema_object_status,
-    ///                 ObjectVersion = @var.Registry_connection_primary_schema_object_version,
-    ///                 ParentRef = new Oci.DataConnectivity.Inputs.RegistryConnectionPrimarySchemaParentRefArgs
-    ///                 {
-    ///                     Parent = @var.Registry_connection_primary_schema_parent_ref_parent,
-    ///                 },
-    ///                 ResourceName = @var.Registry_connection_primary_schema_resource_name,
+    ///                 AggregatorKey = @var.Registry_connection_primary_schema_metadata_aggregator_key,
+    ///                 CreatedBy = @var.Registry_connection_primary_schema_metadata_created_by,
+    ///                 CreatedByName = @var.Registry_connection_primary_schema_metadata_created_by_name,
+    ///                 IdentifierPath = @var.Registry_connection_primary_schema_metadata_identifier_path,
+    ///                 InfoFields = @var.Registry_connection_primary_schema_metadata_info_fields,
+    ///                 IsFavorite = @var.Registry_connection_primary_schema_metadata_is_favorite,
+    ///                 Labels = @var.Registry_connection_primary_schema_metadata_labels,
+    ///                 RegistryVersion = @var.Registry_connection_primary_schema_metadata_registry_version,
+    ///                 TimeCreated = @var.Registry_connection_primary_schema_metadata_time_created,
+    ///                 TimeUpdated = @var.Registry_connection_primary_schema_metadata_time_updated,
+    ///                 UpdatedBy = @var.Registry_connection_primary_schema_metadata_updated_by,
+    ///                 UpdatedByName = @var.Registry_connection_primary_schema_metadata_updated_by_name,
     ///             },
-    ///             RegistryMetadata = new Oci.DataConnectivity.Inputs.RegistryConnectionRegistryMetadataArgs
+    ///             ModelVersion = @var.Registry_connection_primary_schema_model_version,
+    ///             ObjectStatus = @var.Registry_connection_primary_schema_object_status,
+    ///             ObjectVersion = @var.Registry_connection_primary_schema_object_version,
+    ///             ParentRef = new Oci.DataConnectivity.Inputs.RegistryConnectionPrimarySchemaParentRefArgs
     ///             {
-    ///                 AggregatorKey = @var.Registry_connection_registry_metadata_aggregator_key,
-    ///                 CreatedByUserId = oci_identity_user.Test_user.Id,
-    ///                 CreatedByUserName = oci_identity_user.Test_user.Name,
-    ///                 IsFavorite = @var.Registry_connection_registry_metadata_is_favorite,
-    ///                 Key = @var.Registry_connection_registry_metadata_key,
-    ///                 Labels = @var.Registry_connection_registry_metadata_labels,
-    ///                 RegistryVersion = @var.Registry_connection_registry_metadata_registry_version,
-    ///                 TimeCreated = @var.Registry_connection_registry_metadata_time_created,
-    ///                 TimeUpdated = @var.Registry_connection_registry_metadata_time_updated,
-    ///                 UpdatedByUserId = oci_identity_user.Test_user.Id,
-    ///                 UpdatedByUserName = oci_identity_user.Test_user.Name,
+    ///                 Parent = @var.Registry_connection_primary_schema_parent_ref_parent,
     ///             },
-    ///         });
-    ///     }
+    ///             ResourceName = @var.Registry_connection_primary_schema_resource_name,
+    ///         },
+    ///         RegistryMetadata = new Oci.DataConnectivity.Inputs.RegistryConnectionRegistryMetadataArgs
+    ///         {
+    ///             AggregatorKey = @var.Registry_connection_registry_metadata_aggregator_key,
+    ///             CreatedByUserId = oci_identity_user.Test_user.Id,
+    ///             CreatedByUserName = oci_identity_user.Test_user.Name,
+    ///             IsFavorite = @var.Registry_connection_registry_metadata_is_favorite,
+    ///             Key = @var.Registry_connection_registry_metadata_key,
+    ///             Labels = @var.Registry_connection_registry_metadata_labels,
+    ///             RegistryVersion = @var.Registry_connection_registry_metadata_registry_version,
+    ///             TimeCreated = @var.Registry_connection_registry_metadata_time_created,
+    ///             TimeUpdated = @var.Registry_connection_registry_metadata_time_updated,
+    ///             UpdatedByUserId = oci_identity_user.Test_user.Id,
+    ///             UpdatedByUserName = oci_identity_user.Test_user.Name,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.DataConnectivity
     /// ```
     /// </summary>
     [OciResourceType("oci:DataConnectivity/registryConnection:RegistryConnection")]
-    public partial class RegistryConnection : Pulumi.CustomResource
+    public partial class RegistryConnection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The properties for the connection.
@@ -281,7 +279,7 @@ namespace Pulumi.Oci.DataConnectivity
         }
     }
 
-    public sealed class RegistryConnectionArgs : Pulumi.ResourceArgs
+    public sealed class RegistryConnectionArgs : global::Pulumi.ResourceArgs
     {
         [Input("connectionProperties")]
         private InputList<Inputs.RegistryConnectionConnectionPropertyArgs>? _connectionProperties;
@@ -394,9 +392,10 @@ namespace Pulumi.Oci.DataConnectivity
         public RegistryConnectionArgs()
         {
         }
+        public static new RegistryConnectionArgs Empty => new RegistryConnectionArgs();
     }
 
-    public sealed class RegistryConnectionState : Pulumi.ResourceArgs
+    public sealed class RegistryConnectionState : global::Pulumi.ResourceArgs
     {
         [Input("connectionProperties")]
         private InputList<Inputs.RegistryConnectionConnectionPropertyGetArgs>? _connectionProperties;
@@ -509,5 +508,6 @@ namespace Pulumi.Oci.DataConnectivity
         public RegistryConnectionState()
         {
         }
+        public static new RegistryConnectionState Empty => new RegistryConnectionState();
     }
 }

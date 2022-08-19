@@ -28,6 +28,40 @@ import javax.annotation.Nullable;
  * new resource model.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.ExadataIormConfig;
+ * import com.pulumi.oci.Database.ExadataIormConfigArgs;
+ * import com.pulumi.oci.Database.inputs.ExadataIormConfigDbPlanArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExadataIormConfig = new ExadataIormConfig(&#34;testExadataIormConfig&#34;, ExadataIormConfigArgs.builder()        
+ *             .dbPlans(ExadataIormConfigDbPlanArgs.builder()
+ *                 .dbName(var_.exadata_iorm_config_db_plans_db_name())
+ *                 .share(var_.exadata_iorm_config_db_plans_share())
+ *                 .build())
+ *             .dbSystemId(oci_database_db_system.test_db_system().id())
+ *             .objective(&#34;AUTO&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

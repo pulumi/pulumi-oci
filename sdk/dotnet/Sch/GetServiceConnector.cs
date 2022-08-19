@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Sch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceConnector = Oci.Sch.GetServiceConnector.Invoke(new()
         ///     {
-        ///         var testServiceConnector = Output.Create(Oci.Sch.GetServiceConnector.InvokeAsync(new Oci.Sch.GetServiceConnectorArgs
-        ///         {
-        ///             ServiceConnectorId = oci_sch_service_connector.Test_service_connector.Id,
-        ///         }));
-        ///     }
+        ///         ServiceConnectorId = oci_sch_service_connector.Test_service_connector.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Sch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceConnector = Oci.Sch.GetServiceConnector.Invoke(new()
         ///     {
-        ///         var testServiceConnector = Output.Create(Oci.Sch.GetServiceConnector.InvokeAsync(new Oci.Sch.GetServiceConnectorArgs
-        ///         {
-        ///             ServiceConnectorId = oci_sch_service_connector.Test_service_connector.Id,
-        ///         }));
-        ///     }
+        ///         ServiceConnectorId = oci_sch_service_connector.Test_service_connector.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Sch
     }
 
 
-    public sealed class GetServiceConnectorArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceConnectorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Sch
         public GetServiceConnectorArgs()
         {
         }
+        public static new GetServiceConnectorArgs Empty => new GetServiceConnectorArgs();
     }
 
-    public sealed class GetServiceConnectorInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceConnectorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Sch
         public GetServiceConnectorInvokeArgs()
         {
         }
+        public static new GetServiceConnectorInvokeArgs Empty => new GetServiceConnectorInvokeArgs();
     }
 
 

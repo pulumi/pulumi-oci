@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class GetAccessPoliciesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public GetAccessPoliciesFilterArgs()
         {
         }
+        public static new GetAccessPoliciesFilterArgs Empty => new GetAccessPoliciesFilterArgs();
     }
 }

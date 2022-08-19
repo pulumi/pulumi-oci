@@ -18,24 +18,22 @@ namespace Pulumi.Oci.Dns
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTsigKey = new Oci.Dns.TsigKey("testTsigKey", new()
     ///     {
-    ///         var testTsigKey = new Oci.Dns.TsigKey("testTsigKey", new Oci.Dns.TsigKeyArgs
-    ///         {
-    ///             Algorithm = @var.Tsig_key_algorithm,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Secret = @var.Tsig_key_secret,
-    ///             DefinedTags = @var.Tsig_key_defined_tags,
-    ///             FreeformTags = @var.Tsig_key_freeform_tags,
-    ///         });
-    ///     }
+    ///         Algorithm = @var.Tsig_key_algorithm,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Secret = @var.Tsig_key_secret,
+    ///         DefinedTags = @var.Tsig_key_defined_tags,
+    ///         FreeformTags = @var.Tsig_key_freeform_tags,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Oci.Dns
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/tsigKey:TsigKey")]
-    public partial class TsigKey : Pulumi.CustomResource
+    public partial class TsigKey : global::Pulumi.CustomResource
     {
         /// <summary>
         /// TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
@@ -153,7 +151,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class TsigKeyArgs : Pulumi.ResourceArgs
+    public sealed class TsigKeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
@@ -206,9 +204,10 @@ namespace Pulumi.Oci.Dns
         public TsigKeyArgs()
         {
         }
+        public static new TsigKeyArgs Empty => new TsigKeyArgs();
     }
 
-    public sealed class TsigKeyState : Pulumi.ResourceArgs
+    public sealed class TsigKeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
@@ -285,5 +284,6 @@ namespace Pulumi.Oci.Dns
         public TsigKeyState()
         {
         }
+        public static new TsigKeyState Empty => new TsigKeyState();
     }
 }

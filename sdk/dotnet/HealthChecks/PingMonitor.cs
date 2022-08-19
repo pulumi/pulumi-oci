@@ -19,36 +19,34 @@ namespace Pulumi.Oci.HealthChecks
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPingMonitor = new Oci.HealthChecks.PingMonitor("testPingMonitor", new()
     ///     {
-    ///         var testPingMonitor = new Oci.HealthChecks.PingMonitor("testPingMonitor", new Oci.HealthChecks.PingMonitorArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Ping_monitor_display_name,
+    ///         IntervalInSeconds = @var.Ping_monitor_interval_in_seconds,
+    ///         Protocol = @var.Ping_monitor_protocol,
+    ///         Targets = @var.Ping_monitor_targets,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Ping_monitor_display_name,
-    ///             IntervalInSeconds = @var.Ping_monitor_interval_in_seconds,
-    ///             Protocol = @var.Ping_monitor_protocol,
-    ///             Targets = @var.Ping_monitor_targets,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsEnabled = @var.Ping_monitor_is_enabled,
-    ///             Port = @var.Ping_monitor_port,
-    ///             TimeoutInSeconds = @var.Ping_monitor_timeout_in_seconds,
-    ///             VantagePointNames = @var.Ping_monitor_vantage_point_names,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsEnabled = @var.Ping_monitor_is_enabled,
+    ///         Port = @var.Ping_monitor_port,
+    ///         TimeoutInSeconds = @var.Ping_monitor_timeout_in_seconds,
+    ///         VantagePointNames = @var.Ping_monitor_vantage_point_names,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.HealthChecks
     /// ```
     /// </summary>
     [OciResourceType("oci:HealthChecks/pingMonitor:PingMonitor")]
-    public partial class PingMonitor : Pulumi.CustomResource
+    public partial class PingMonitor : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment.
@@ -190,7 +188,7 @@ namespace Pulumi.Oci.HealthChecks
         }
     }
 
-    public sealed class PingMonitorArgs : Pulumi.ResourceArgs
+    public sealed class PingMonitorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment.
@@ -285,9 +283,10 @@ namespace Pulumi.Oci.HealthChecks
         public PingMonitorArgs()
         {
         }
+        public static new PingMonitorArgs Empty => new PingMonitorArgs();
     }
 
-    public sealed class PingMonitorState : Pulumi.ResourceArgs
+    public sealed class PingMonitorState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment.
@@ -400,5 +399,6 @@ namespace Pulumi.Oci.HealthChecks
         public PingMonitorState()
         {
         }
+        public static new PingMonitorState Empty => new PingMonitorState();
     }
 }

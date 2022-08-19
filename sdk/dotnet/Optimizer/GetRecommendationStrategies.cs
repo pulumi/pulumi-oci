@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRecommendationStrategies = Oci.Optimizer.GetRecommendationStrategies.Invoke(new()
         ///     {
-        ///         var testRecommendationStrategies = Output.Create(Oci.Optimizer.GetRecommendationStrategies.InvokeAsync(new Oci.Optimizer.GetRecommendationStrategiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Recommendation_strategy_compartment_id_in_subtree,
-        ///             Name = @var.Recommendation_strategy_name,
-        ///             RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Recommendation_strategy_compartment_id_in_subtree,
+        ///         Name = @var.Recommendation_strategy_name,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRecommendationStrategies = Oci.Optimizer.GetRecommendationStrategies.Invoke(new()
         ///     {
-        ///         var testRecommendationStrategies = Output.Create(Oci.Optimizer.GetRecommendationStrategies.InvokeAsync(new Oci.Optimizer.GetRecommendationStrategiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Recommendation_strategy_compartment_id_in_subtree,
-        ///             Name = @var.Recommendation_strategy_name,
-        ///             RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Recommendation_strategy_compartment_id_in_subtree,
+        ///         Name = @var.Recommendation_strategy_name,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetRecommendationStrategiesArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationStrategiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Optimizer
         public GetRecommendationStrategiesArgs()
         {
         }
+        public static new GetRecommendationStrategiesArgs Empty => new GetRecommendationStrategiesArgs();
     }
 
-    public sealed class GetRecommendationStrategiesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationStrategiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Optimizer
         public GetRecommendationStrategiesInvokeArgs()
         {
         }
+        public static new GetRecommendationStrategiesInvokeArgs Empty => new GetRecommendationStrategiesInvokeArgs();
     }
 
 

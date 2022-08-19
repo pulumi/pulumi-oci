@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class BdsInstanceNodeAttachedBlockVolumeGetArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceNodeAttachedBlockVolumeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the volume attachment.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public BdsInstanceNodeAttachedBlockVolumeGetArgs()
         {
         }
+        public static new BdsInstanceNodeAttachedBlockVolumeGetArgs Empty => new BdsInstanceNodeAttachedBlockVolumeGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class DomainReplicaRegionArgs : Pulumi.ResourceArgs
+    public sealed class DomainReplicaRegionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public DomainReplicaRegionArgs()
         {
         }
+        public static new DomainReplicaRegionArgs Empty => new DomainReplicaRegionArgs();
     }
 }

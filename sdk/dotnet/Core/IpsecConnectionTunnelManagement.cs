@@ -31,43 +31,41 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIpSecConnectionTunnel = new Oci.Core.IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", new()
     ///     {
-    ///         var testIpSecConnectionTunnel = new Oci.Core.IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", new Oci.Core.IpsecConnectionTunnelManagementArgs
+    ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+    ///         TunnelId = data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id,
+    ///         Routing = @var.Ip_sec_connection_tunnel_management_routing,
+    ///         BgpSessionInfos = new[]
     ///         {
-    ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-    ///             TunnelId = data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id,
-    ///             Routing = @var.Ip_sec_connection_tunnel_management_routing,
-    ///             BgpSessionInfos = 
+    ///             new Oci.Core.Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs
     ///             {
-    ///                 new Oci.Core.Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs
-    ///                 {
-    ///                     CustomerBgpAsn = @var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn,
-    ///                     CustomerInterfaceIp = @var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip,
-    ///                     OracleInterfaceIp = @var.Ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip,
-    ///                 },
+    ///                 CustomerBgpAsn = @var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn,
+    ///                 CustomerInterfaceIp = @var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip,
+    ///                 OracleInterfaceIp = @var.Ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip,
     ///             },
-    ///             DisplayName = @var.Ip_sec_connection_tunnel_management_display_name,
-    ///             EncryptionDomainConfig = new Oci.Core.Inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs
-    ///             {
-    ///                 CpeTrafficSelectors = @var.Ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector,
-    ///                 OracleTrafficSelectors = @var.Ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector,
-    ///             },
-    ///             SharedSecret = @var.Ip_sec_connection_tunnel_management_shared_secret,
-    ///             IkeVersion = "V1",
-    ///         });
-    ///     }
+    ///         },
+    ///         DisplayName = @var.Ip_sec_connection_tunnel_management_display_name,
+    ///         EncryptionDomainConfig = new Oci.Core.Inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs
+    ///         {
+    ///             CpeTrafficSelectors = @var.Ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector,
+    ///             OracleTrafficSelectors = @var.Ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector,
+    ///         },
+    ///         SharedSecret = @var.Ip_sec_connection_tunnel_management_shared_secret,
+    ///         IkeVersion = "V1",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/ipsecConnectionTunnelManagement:IpsecConnectionTunnelManagement")]
-    public partial class IpsecConnectionTunnelManagement : Pulumi.CustomResource
+    public partial class IpsecConnectionTunnelManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
@@ -224,7 +222,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class IpsecConnectionTunnelManagementArgs : Pulumi.ResourceArgs
+    public sealed class IpsecConnectionTunnelManagementArgs : global::Pulumi.ResourceArgs
     {
         [Input("bgpSessionInfos")]
         private InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs>? _bgpSessionInfos;
@@ -291,9 +289,10 @@ namespace Pulumi.Oci.Core
         public IpsecConnectionTunnelManagementArgs()
         {
         }
+        public static new IpsecConnectionTunnelManagementArgs Empty => new IpsecConnectionTunnelManagementArgs();
     }
 
-    public sealed class IpsecConnectionTunnelManagementState : Pulumi.ResourceArgs
+    public sealed class IpsecConnectionTunnelManagementState : global::Pulumi.ResourceArgs
     {
         [Input("bgpSessionInfos")]
         private InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoGetArgs>? _bgpSessionInfos;
@@ -430,5 +429,6 @@ namespace Pulumi.Oci.Core
         public IpsecConnectionTunnelManagementState()
         {
         }
+        public static new IpsecConnectionTunnelManagementState Empty => new IpsecConnectionTunnelManagementState();
     }
 }

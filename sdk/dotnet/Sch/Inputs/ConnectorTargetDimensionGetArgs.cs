@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorTargetDimensionGetArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorTargetDimensionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorTargetDimensionGetArgs()
         {
         }
+        public static new ConnectorTargetDimensionGetArgs Empty => new ConnectorTargetDimensionGetArgs();
     }
 }

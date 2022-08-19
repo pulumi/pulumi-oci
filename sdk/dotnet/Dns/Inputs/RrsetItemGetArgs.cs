@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class RrsetItemGetArgs : Pulumi.ResourceArgs
+    public sealed class RrsetItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The fully qualified domain name where the record can be located.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public RrsetItemGetArgs()
         {
         }
+        public static new RrsetItemGetArgs Empty => new RrsetItemGetArgs();
     }
 }

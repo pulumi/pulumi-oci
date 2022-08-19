@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUiPassword = Oci.Identity.GetUiPassword.Invoke(new()
         ///     {
-        ///         var testUiPassword = Output.Create(Oci.Identity.GetUiPassword.InvokeAsync(new Oci.Identity.GetUiPasswordArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUiPassword = Oci.Identity.GetUiPassword.Invoke(new()
         ///     {
-        ///         var testUiPassword = Output.Create(Oci.Identity.GetUiPassword.InvokeAsync(new Oci.Identity.GetUiPasswordArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetUiPasswordArgs : Pulumi.InvokeArgs
+    public sealed class GetUiPasswordArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the user.
@@ -90,9 +86,10 @@ namespace Pulumi.Oci.Identity
         public GetUiPasswordArgs()
         {
         }
+        public static new GetUiPasswordArgs Empty => new GetUiPasswordArgs();
     }
 
-    public sealed class GetUiPasswordInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUiPasswordInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the user.
@@ -103,6 +100,7 @@ namespace Pulumi.Oci.Identity
         public GetUiPasswordInvokeArgs()
         {
         }
+        public static new GetUiPasswordInvokeArgs Empty => new GetUiPasswordInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDkim = Oci.Email.GetDkim.Invoke(new()
         ///     {
-        ///         var testDkim = Output.Create(Oci.Email.GetDkim.InvokeAsync(new Oci.Email.GetDkimArgs
-        ///         {
-        ///             DkimId = oci_email_dkim.Test_dkim.Id,
-        ///         }));
-        ///     }
+        ///         DkimId = oci_email_dkim.Test_dkim.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDkim = Oci.Email.GetDkim.Invoke(new()
         ///     {
-        ///         var testDkim = Output.Create(Oci.Email.GetDkim.InvokeAsync(new Oci.Email.GetDkimArgs
-        ///         {
-        ///             DkimId = oci_email_dkim.Test_dkim.Id,
-        ///         }));
-        ///     }
+        ///         DkimId = oci_email_dkim.Test_dkim.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Email
     }
 
 
-    public sealed class GetDkimArgs : Pulumi.InvokeArgs
+    public sealed class GetDkimArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DKIM.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Email
         public GetDkimArgs()
         {
         }
+        public static new GetDkimArgs Empty => new GetDkimArgs();
     }
 
-    public sealed class GetDkimInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDkimInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DKIM.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Email
         public GetDkimInvokeArgs()
         {
         }
+        public static new GetDkimInvokeArgs Empty => new GetDkimInvokeArgs();
     }
 
 

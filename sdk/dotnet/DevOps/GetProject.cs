@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProject = Oci.DevOps.GetProject.Invoke(new()
         ///     {
-        ///         var testProject = Output.Create(Oci.DevOps.GetProject.InvokeAsync(new Oci.DevOps.GetProjectArgs
-        ///         {
-        ///             ProjectId = oci_devops_project.Test_project.Id,
-        ///         }));
-        ///     }
+        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProject = Oci.DevOps.GetProject.Invoke(new()
         ///     {
-        ///         var testProject = Output.Create(Oci.DevOps.GetProject.InvokeAsync(new Oci.DevOps.GetProjectArgs
-        ///         {
-        ///             ProjectId = oci_devops_project.Test_project.Id,
-        ///         }));
-        ///     }
+        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetProjectArgs : Pulumi.InvokeArgs
+    public sealed class GetProjectArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique project identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DevOps
         public GetProjectArgs()
         {
         }
+        public static new GetProjectArgs Empty => new GetProjectArgs();
     }
 
-    public sealed class GetProjectInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProjectInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique project identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DevOps
         public GetProjectInvokeArgs()
         {
         }
+        public static new GetProjectInvokeArgs Empty => new GetProjectInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsubUsage.Inputs
 {
 
-    public sealed class GetCommitmentAggregatedsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetCommitmentAggregatedsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Product name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OsubUsage.Inputs
         public GetCommitmentAggregatedsFilterArgs()
         {
         }
+        public static new GetCommitmentAggregatedsFilterArgs Empty => new GetCommitmentAggregatedsFilterArgs();
     }
 }

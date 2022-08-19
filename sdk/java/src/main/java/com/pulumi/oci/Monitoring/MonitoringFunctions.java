@@ -40,6 +40,34 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlarmResult> getAlarm(GetAlarmArgs args) {
@@ -56,6 +84,34 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlarmResult> getAlarmPlain(GetAlarmPlainArgs args) {
@@ -72,6 +128,34 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlarmResult> getAlarm(GetAlarmArgs args, InvokeOptions options) {
@@ -88,6 +172,34 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlarmResult> getAlarmPlain(GetAlarmPlainArgs args, InvokeOptions options) {
@@ -104,6 +216,37 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .alarmHistorytype(var_.alarm_history_collection_alarm_historytype())
+     *             .timestampGreaterThanOrEqualTo(var_.alarm_history_collection_timestamp_greater_than_or_equal_to())
+     *             .timestampLessThan(var_.alarm_history_collection_timestamp_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlarmHistoryCollectionResult> getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs args) {
@@ -120,6 +263,37 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .alarmHistorytype(var_.alarm_history_collection_alarm_historytype())
+     *             .timestampGreaterThanOrEqualTo(var_.alarm_history_collection_timestamp_greater_than_or_equal_to())
+     *             .timestampLessThan(var_.alarm_history_collection_timestamp_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlarmHistoryCollectionResult> getAlarmHistoryCollectionPlain(GetAlarmHistoryCollectionPlainArgs args) {
@@ -136,6 +310,37 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .alarmHistorytype(var_.alarm_history_collection_alarm_historytype())
+     *             .timestampGreaterThanOrEqualTo(var_.alarm_history_collection_timestamp_greater_than_or_equal_to())
+     *             .timestampLessThan(var_.alarm_history_collection_timestamp_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlarmHistoryCollectionResult> getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs args, InvokeOptions options) {
@@ -152,6 +357,37 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmHistoryCollectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
+     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .alarmHistorytype(var_.alarm_history_collection_alarm_historytype())
+     *             .timestampGreaterThanOrEqualTo(var_.alarm_history_collection_timestamp_greater_than_or_equal_to())
+     *             .timestampLessThan(var_.alarm_history_collection_timestamp_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlarmHistoryCollectionResult> getAlarmHistoryCollectionPlain(GetAlarmHistoryCollectionPlainArgs args, InvokeOptions options) {
@@ -168,6 +404,36 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
+     *             .displayName(var_.alarm_status_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlarmStatusesResult> getAlarmStatuses(GetAlarmStatusesArgs args) {
@@ -184,6 +450,36 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
+     *             .displayName(var_.alarm_status_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlarmStatusesResult> getAlarmStatusesPlain(GetAlarmStatusesPlainArgs args) {
@@ -200,6 +496,36 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
+     *             .displayName(var_.alarm_status_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlarmStatusesResult> getAlarmStatuses(GetAlarmStatusesArgs args, InvokeOptions options) {
@@ -216,6 +542,36 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
+     *             .displayName(var_.alarm_status_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlarmStatusesResult> getAlarmStatusesPlain(GetAlarmStatusesPlainArgs args, InvokeOptions options) {
@@ -232,6 +588,37 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.alarm_compartment_id_in_subtree())
+     *             .displayName(var_.alarm_display_name())
+     *             .state(var_.alarm_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlarmsResult> getAlarms(GetAlarmsArgs args) {
@@ -248,6 +635,37 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.alarm_compartment_id_in_subtree())
+     *             .displayName(var_.alarm_display_name())
+     *             .state(var_.alarm_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlarmsResult> getAlarmsPlain(GetAlarmsPlainArgs args) {
@@ -264,6 +682,37 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.alarm_compartment_id_in_subtree())
+     *             .displayName(var_.alarm_display_name())
+     *             .state(var_.alarm_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlarmsResult> getAlarms(GetAlarmsArgs args, InvokeOptions options) {
@@ -280,6 +729,37 @@ public final class MonitoringFunctions {
      * or transactions, per second (TPS) for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetAlarmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.alarm_compartment_id_in_subtree())
+     *             .displayName(var_.alarm_display_name())
+     *             .state(var_.alarm_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlarmsResult> getAlarmsPlain(GetAlarmsPlainArgs args, InvokeOptions options) {
@@ -295,6 +775,41 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.metric_data_namespace())
+     *             .query(var_.metric_data_query())
+     *             .compartmentIdInSubtree(var_.metric_data_compartment_id_in_subtree())
+     *             .endTime(var_.metric_data_end_time())
+     *             .resolution(var_.metric_data_resolution())
+     *             .resourceGroup(var_.metric_data_resource_group())
+     *             .startTime(var_.metric_data_start_time())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMetricDataResult> getMetricData(GetMetricDataArgs args) {
@@ -310,6 +825,41 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.metric_data_namespace())
+     *             .query(var_.metric_data_query())
+     *             .compartmentIdInSubtree(var_.metric_data_compartment_id_in_subtree())
+     *             .endTime(var_.metric_data_end_time())
+     *             .resolution(var_.metric_data_resolution())
+     *             .resourceGroup(var_.metric_data_resource_group())
+     *             .startTime(var_.metric_data_start_time())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMetricDataResult> getMetricDataPlain(GetMetricDataPlainArgs args) {
@@ -325,6 +875,41 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.metric_data_namespace())
+     *             .query(var_.metric_data_query())
+     *             .compartmentIdInSubtree(var_.metric_data_compartment_id_in_subtree())
+     *             .endTime(var_.metric_data_end_time())
+     *             .resolution(var_.metric_data_resolution())
+     *             .resourceGroup(var_.metric_data_resource_group())
+     *             .startTime(var_.metric_data_start_time())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMetricDataResult> getMetricData(GetMetricDataArgs args, InvokeOptions options) {
@@ -340,6 +925,41 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.metric_data_namespace())
+     *             .query(var_.metric_data_query())
+     *             .compartmentIdInSubtree(var_.metric_data_compartment_id_in_subtree())
+     *             .endTime(var_.metric_data_end_time())
+     *             .resolution(var_.metric_data_resolution())
+     *             .resourceGroup(var_.metric_data_resource_group())
+     *             .startTime(var_.metric_data_start_time())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMetricDataResult> getMetricDataPlain(GetMetricDataPlainArgs args, InvokeOptions options) {
@@ -355,6 +975,40 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.metric_compartment_id_in_subtree())
+     *             .dimensionFilters(var_.metric_dimension_filters())
+     *             .groupBies(var_.metric_group_by())
+     *             .name(var_.metric_name())
+     *             .namespace(var_.metric_namespace())
+     *             .resourceGroup(var_.metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMetricsResult> getMetrics(GetMetricsArgs args) {
@@ -370,6 +1024,40 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.metric_compartment_id_in_subtree())
+     *             .dimensionFilters(var_.metric_dimension_filters())
+     *             .groupBies(var_.metric_group_by())
+     *             .name(var_.metric_name())
+     *             .namespace(var_.metric_namespace())
+     *             .resourceGroup(var_.metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMetricsResult> getMetricsPlain(GetMetricsPlainArgs args) {
@@ -385,6 +1073,40 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.metric_compartment_id_in_subtree())
+     *             .dimensionFilters(var_.metric_dimension_filters())
+     *             .groupBies(var_.metric_group_by())
+     *             .name(var_.metric_name())
+     *             .namespace(var_.metric_namespace())
+     *             .resourceGroup(var_.metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMetricsResult> getMetrics(GetMetricsArgs args, InvokeOptions options) {
@@ -400,6 +1122,40 @@ public final class MonitoringFunctions {
      * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Monitoring.MonitoringFunctions;
+     * import com.pulumi.oci.Monitoring.inputs.GetMetricsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.metric_compartment_id_in_subtree())
+     *             .dimensionFilters(var_.metric_dimension_filters())
+     *             .groupBies(var_.metric_group_by())
+     *             .name(var_.metric_name())
+     *             .namespace(var_.metric_namespace())
+     *             .resourceGroup(var_.metric_resource_group())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMetricsResult> getMetricsPlain(GetMetricsPlainArgs args, InvokeOptions options) {

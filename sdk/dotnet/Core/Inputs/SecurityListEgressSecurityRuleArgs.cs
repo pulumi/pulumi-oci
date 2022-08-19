@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class SecurityListEgressSecurityRuleArgs : Pulumi.ResourceArgs
+    public sealed class SecurityListEgressSecurityRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An optional description of your choice for the rule.
@@ -65,5 +65,6 @@ namespace Pulumi.Oci.Core.Inputs
         public SecurityListEgressSecurityRuleArgs()
         {
         }
+        public static new SecurityListEgressSecurityRuleArgs Empty => new SecurityListEgressSecurityRuleArgs();
     }
 }

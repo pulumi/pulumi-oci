@@ -24,32 +24,30 @@ namespace Pulumi.Oci.ObjectStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testObject = new Oci.ObjectStorage.StorageObject("testObject", new()
     ///     {
-    ///         var testObject = new Oci.ObjectStorage.StorageObject("testObject", new Oci.ObjectStorage.StorageObjectArgs
-    ///         {
-    ///             Bucket = @var.Object_bucket,
-    ///             Content = @var.Object_content,
-    ///             Namespace = @var.Object_namespace,
-    ///             Object = @var.Object_object,
-    ///             CacheControl = @var.Object_cache_control,
-    ///             ContentDisposition = @var.Object_content_disposition,
-    ///             ContentEncoding = @var.Object_content_encoding,
-    ///             ContentLanguage = @var.Object_content_language,
-    ///             ContentType = @var.Object_content_type,
-    ///             DeleteAllObjectVersions = @var.Object_delete_all_object_versions,
-    ///             Metadata = @var.Object_metadata,
-    ///             StorageTier = @var.Object_storage_tier,
-    ///             OpcSseKmsKeyId = @var.Object_opc_sse_kms_key_id,
-    ///         });
-    ///     }
+    ///         Bucket = @var.Object_bucket,
+    ///         Content = @var.Object_content,
+    ///         Namespace = @var.Object_namespace,
+    ///         Object = @var.Object_object,
+    ///         CacheControl = @var.Object_cache_control,
+    ///         ContentDisposition = @var.Object_content_disposition,
+    ///         ContentEncoding = @var.Object_content_encoding,
+    ///         ContentLanguage = @var.Object_content_language,
+    ///         ContentType = @var.Object_content_type,
+    ///         DeleteAllObjectVersions = @var.Object_delete_all_object_versions,
+    ///         Metadata = @var.Object_metadata,
+    ///         StorageTier = @var.Object_storage_tier,
+    ///         OpcSseKmsKeyId = @var.Object_opc_sse_kms_key_id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -61,7 +59,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:ObjectStorage/storageObject:StorageObject")]
-    public partial class StorageObject : Pulumi.CustomResource
+    public partial class StorageObject : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the bucket for the source object.
@@ -220,7 +218,7 @@ namespace Pulumi.Oci.ObjectStorage
         }
     }
 
-    public sealed class StorageObjectArgs : Pulumi.ResourceArgs
+    public sealed class StorageObjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket for the source object.
@@ -329,9 +327,10 @@ namespace Pulumi.Oci.ObjectStorage
         public StorageObjectArgs()
         {
         }
+        public static new StorageObjectArgs Empty => new StorageObjectArgs();
     }
 
-    public sealed class StorageObjectState : Pulumi.ResourceArgs
+    public sealed class StorageObjectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket for the source object.
@@ -455,5 +454,6 @@ namespace Pulumi.Oci.ObjectStorage
         public StorageObjectState()
         {
         }
+        public static new StorageObjectState Empty => new StorageObjectState();
     }
 }

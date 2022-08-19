@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousPatch = Oci.Database.GetAutonomousPatch.Invoke(new()
         ///     {
-        ///         var testAutonomousPatch = Output.Create(Oci.Database.GetAutonomousPatch.InvokeAsync(new Oci.Database.GetAutonomousPatchArgs
-        ///         {
-        ///             AutonomousPatchId = oci_database_autonomous_patch.Test_autonomous_patch.Id,
-        ///         }));
-        ///     }
+        ///         AutonomousPatchId = oci_database_autonomous_patch.Test_autonomous_patch.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousPatch = Oci.Database.GetAutonomousPatch.Invoke(new()
         ///     {
-        ///         var testAutonomousPatch = Output.Create(Oci.Database.GetAutonomousPatch.InvokeAsync(new Oci.Database.GetAutonomousPatchArgs
-        ///         {
-        ///             AutonomousPatchId = oci_database_autonomous_patch.Test_autonomous_patch.Id,
-        ///         }));
-        ///     }
+        ///         AutonomousPatchId = oci_database_autonomous_patch.Test_autonomous_patch.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousPatchArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousPatchArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The autonomous patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousPatchArgs()
         {
         }
+        public static new GetAutonomousPatchArgs Empty => new GetAutonomousPatchArgs();
     }
 
-    public sealed class GetAutonomousPatchInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousPatchInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The autonomous patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousPatchInvokeArgs()
         {
         }
+        public static new GetAutonomousPatchInvokeArgs Empty => new GetAutonomousPatchInvokeArgs();
     }
 
 

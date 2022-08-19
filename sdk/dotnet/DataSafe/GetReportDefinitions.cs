@@ -24,27 +24,25 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReportDefinitions = Oci.DataSafe.GetReportDefinitions.Invoke(new()
         ///     {
-        ///         var testReportDefinitions = Output.Create(Oci.DataSafe.GetReportDefinitions.InvokeAsync(new Oci.DataSafe.GetReportDefinitionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Report_definition_access_level,
-        ///             Category = @var.Report_definition_category,
-        ///             CompartmentIdInSubtree = @var.Report_definition_compartment_id_in_subtree,
-        ///             DataSource = @var.Report_definition_data_source,
-        ///             DisplayName = @var.Report_definition_display_name,
-        ///             IsSeeded = @var.Report_definition_is_seeded,
-        ///             State = @var.Report_definition_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Report_definition_access_level,
+        ///         Category = @var.Report_definition_category,
+        ///         CompartmentIdInSubtree = @var.Report_definition_compartment_id_in_subtree,
+        ///         DataSource = @var.Report_definition_data_source,
+        ///         DisplayName = @var.Report_definition_display_name,
+        ///         IsSeeded = @var.Report_definition_is_seeded,
+        ///         State = @var.Report_definition_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -65,27 +63,25 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReportDefinitions = Oci.DataSafe.GetReportDefinitions.Invoke(new()
         ///     {
-        ///         var testReportDefinitions = Output.Create(Oci.DataSafe.GetReportDefinitions.InvokeAsync(new Oci.DataSafe.GetReportDefinitionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Report_definition_access_level,
-        ///             Category = @var.Report_definition_category,
-        ///             CompartmentIdInSubtree = @var.Report_definition_compartment_id_in_subtree,
-        ///             DataSource = @var.Report_definition_data_source,
-        ///             DisplayName = @var.Report_definition_display_name,
-        ///             IsSeeded = @var.Report_definition_is_seeded,
-        ///             State = @var.Report_definition_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Report_definition_access_level,
+        ///         Category = @var.Report_definition_category,
+        ///         CompartmentIdInSubtree = @var.Report_definition_compartment_id_in_subtree,
+        ///         DataSource = @var.Report_definition_data_source,
+        ///         DisplayName = @var.Report_definition_display_name,
+        ///         IsSeeded = @var.Report_definition_is_seeded,
+        ///         State = @var.Report_definition_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetReportDefinitionsArgs : Pulumi.InvokeArgs
+    public sealed class GetReportDefinitionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -156,9 +152,10 @@ namespace Pulumi.Oci.DataSafe
         public GetReportDefinitionsArgs()
         {
         }
+        public static new GetReportDefinitionsArgs Empty => new GetReportDefinitionsArgs();
     }
 
-    public sealed class GetReportDefinitionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetReportDefinitionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -219,6 +216,7 @@ namespace Pulumi.Oci.DataSafe
         public GetReportDefinitionsInvokeArgs()
         {
         }
+        public static new GetReportDefinitionsInvokeArgs Empty => new GetReportDefinitionsInvokeArgs();
     }
 
 

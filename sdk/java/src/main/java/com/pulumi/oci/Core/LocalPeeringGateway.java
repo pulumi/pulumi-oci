@@ -23,6 +23,40 @@ import javax.annotation.Nullable;
  * Creates a new local peering gateway (LPG) for the specified VCN.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.LocalPeeringGateway;
+ * import com.pulumi.oci.Core.LocalPeeringGatewayArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLocalPeeringGateway = new LocalPeeringGateway(&#34;testLocalPeeringGateway&#34;, LocalPeeringGatewayArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.local_peering_gateway_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .peerId(oci_core_local_peering_gateway.test_local_peering_gateway2().id())
+ *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

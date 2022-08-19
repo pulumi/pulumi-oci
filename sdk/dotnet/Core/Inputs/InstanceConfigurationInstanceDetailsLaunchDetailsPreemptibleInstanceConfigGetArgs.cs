@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The action to run when the preemptible instance is interrupted for eviction.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigGetArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigGetArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigGetArgs();
     }
 }

@@ -19,6 +19,36 @@ import javax.annotation.Nullable;
  * Perform a new Autonomous Container Database Dataguard Association Operation on an Autonomous Container Database that has Dataguard enabled
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseDataguardAssociationOperation;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseDataguardAssociationOperationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var switchover = new AutonomousContainerDatabaseDataguardAssociationOperation(&#34;switchover&#34;, AutonomousContainerDatabaseDataguardAssociationOperationArgs.builder()        
+ *             .operation(&#34;switchover&#34;)
+ *             .autonomousContainerDatabaseId(data.oci_database_autonomous_container_database_dataguard_associations().dataguard_associations().autonomous_container_database_dataguard_associations()[0].autonomous_container_database_id())
+ *             .autonomousContainerDatabaseDataguardAssociationId(data.oci_database_autonomous_container_database_dataguard_associations().dataguard_associations().autonomous_container_database_dataguard_associations()[0].id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

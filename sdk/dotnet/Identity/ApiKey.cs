@@ -28,21 +28,19 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testApiKey = new Oci.Identity.ApiKey("testApiKey", new()
     ///     {
-    ///         var testApiKey = new Oci.Identity.ApiKey("testApiKey", new Oci.Identity.ApiKeyArgs
-    ///         {
-    ///             KeyValue = @var.Api_key_key_value,
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         KeyValue = @var.Api_key_key_value,
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/apiKey:ApiKey")]
-    public partial class ApiKey : Pulumi.CustomResource
+    public partial class ApiKey : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
@@ -136,7 +134,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class ApiKeyArgs : Pulumi.ResourceArgs
+    public sealed class ApiKeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The public key.  Must be an RSA key in PEM format.
@@ -153,9 +151,10 @@ namespace Pulumi.Oci.Identity
         public ApiKeyArgs()
         {
         }
+        public static new ApiKeyArgs Empty => new ApiKeyArgs();
     }
 
-    public sealed class ApiKeyState : Pulumi.ResourceArgs
+    public sealed class ApiKeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
@@ -196,5 +195,6 @@ namespace Pulumi.Oci.Identity
         public ApiKeyState()
         {
         }
+        public static new ApiKeyState Empty => new ApiKeyState();
     }
 }

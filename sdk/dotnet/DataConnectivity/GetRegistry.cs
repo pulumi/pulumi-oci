@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistry = Oci.DataConnectivity.GetRegistry.Invoke(new()
         ///     {
-        ///         var testRegistry = Output.Create(Oci.DataConnectivity.GetRegistry.InvokeAsync(new Oci.DataConnectivity.GetRegistryArgs
-        ///         {
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///         }));
-        ///     }
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistry = Oci.DataConnectivity.GetRegistry.Invoke(new()
         ///     {
-        ///         var testRegistry = Output.Create(Oci.DataConnectivity.GetRegistry.InvokeAsync(new Oci.DataConnectivity.GetRegistryArgs
-        ///         {
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///         }));
-        ///     }
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistryArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The registry Ocid.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryArgs()
         {
         }
+        public static new GetRegistryArgs Empty => new GetRegistryArgs();
     }
 
-    public sealed class GetRegistryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The registry Ocid.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryInvokeArgs()
         {
         }
+        public static new GetRegistryInvokeArgs Empty => new GetRegistryInvokeArgs();
     }
 
 

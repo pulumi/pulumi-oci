@@ -17,80 +17,78 @@ namespace Pulumi.Oci.Mysql
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMysqlDbSystem = new Oci.Mysql.MysqlDbSystem("testMysqlDbSystem", new()
     ///     {
-    ///         var testMysqlDbSystem = new Oci.Mysql.MysqlDbSystem("testMysqlDbSystem", new Oci.Mysql.MysqlDbSystemArgs
+    ///         AvailabilityDomain = @var.Mysql_db_system_availability_domain,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ShapeName = @var.Mysql_shape_name,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         AdminPassword = @var.Mysql_db_system_admin_password,
+    ///         AdminUsername = @var.Mysql_db_system_admin_username,
+    ///         BackupPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyArgs
     ///         {
-    ///             AvailabilityDomain = @var.Mysql_db_system_availability_domain,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ShapeName = @var.Mysql_shape_name,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             AdminPassword = @var.Mysql_db_system_admin_password,
-    ///             AdminUsername = @var.Mysql_db_system_admin_username,
-    ///             BackupPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyArgs
-    ///             {
-    ///                 DefinedTags = 
-    ///                 {
-    ///                     { "foo-namespace.bar-key", "value" },
-    ///                 },
-    ///                 FreeformTags = 
-    ///                 {
-    ///                     { "bar-key", "value" },
-    ///                 },
-    ///                 IsEnabled = @var.Mysql_db_system_backup_policy_is_enabled,
-    ///                 PitrPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs
-    ///                 {
-    ///                     IsEnabled = @var.Mysql_db_system_backup_policy_pitr_policy_is_enabled,
-    ///                 },
-    ///                 RetentionInDays = @var.Mysql_db_system_backup_policy_retention_in_days,
-    ///                 WindowStartTime = @var.Mysql_db_system_backup_policy_window_start_time,
-    ///             },
-    ///             ConfigurationId = oci_audit_configuration.Test_configuration.Id,
-    ///             CrashRecovery = @var.Mysql_db_system_crash_recovery,
-    ///             DataStorageSizeInGb = @var.Mysql_db_system_data_storage_size_in_gb,
     ///             DefinedTags = 
     ///             {
     ///                 { "foo-namespace.bar-key", "value" },
     ///             },
-    ///             DeletionPolicies = 
-    ///             {
-    ///                 new Oci.Mysql.Inputs.MysqlDbSystemDeletionPolicyArgs
-    ///                 {
-    ///                     AutomaticBackupRetention = @var.Mysql_db_system_deletion_policy_automatic_backup_retention,
-    ///                     FinalBackup = @var.Mysql_db_system_deletion_policy_final_backup,
-    ///                     IsDeleteProtected = @var.Mysql_db_system_deletion_policy_is_delete_protected,
-    ///                 },
-    ///             },
-    ///             Description = @var.Mysql_db_system_description,
-    ///             DisplayName = @var.Mysql_db_system_display_name,
-    ///             FaultDomain = @var.Mysql_db_system_fault_domain,
     ///             FreeformTags = 
     ///             {
     ///                 { "bar-key", "value" },
     ///             },
-    ///             HostnameLabel = @var.Mysql_db_system_hostname_label,
-    ///             IpAddress = @var.Mysql_db_system_ip_address,
-    ///             IsHighlyAvailable = @var.Mysql_db_system_is_highly_available,
-    ///             Maintenance = new Oci.Mysql.Inputs.MysqlDbSystemMaintenanceArgs
+    ///             IsEnabled = @var.Mysql_db_system_backup_policy_is_enabled,
+    ///             PitrPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs
     ///             {
-    ///                 WindowStartTime = @var.Mysql_db_system_maintenance_window_start_time,
+    ///                 IsEnabled = @var.Mysql_db_system_backup_policy_pitr_policy_is_enabled,
     ///             },
-    ///             Port = @var.Mysql_db_system_port,
-    ///             PortX = @var.Mysql_db_system_port_x,
-    ///             Source = new Oci.Mysql.Inputs.MysqlDbSystemSourceArgs
+    ///             RetentionInDays = @var.Mysql_db_system_backup_policy_retention_in_days,
+    ///             WindowStartTime = @var.Mysql_db_system_backup_policy_window_start_time,
+    ///         },
+    ///         ConfigurationId = oci_audit_configuration.Test_configuration.Id,
+    ///         CrashRecovery = @var.Mysql_db_system_crash_recovery,
+    ///         DataStorageSizeInGb = @var.Mysql_db_system_data_storage_size_in_gb,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DeletionPolicies = new[]
+    ///         {
+    ///             new Oci.Mysql.Inputs.MysqlDbSystemDeletionPolicyArgs
     ///             {
-    ///                 SourceType = @var.Mysql_db_system_source_source_type,
-    ///                 BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+    ///                 AutomaticBackupRetention = @var.Mysql_db_system_deletion_policy_automatic_backup_retention,
+    ///                 FinalBackup = @var.Mysql_db_system_deletion_policy_final_backup,
+    ///                 IsDeleteProtected = @var.Mysql_db_system_deletion_policy_is_delete_protected,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         Description = @var.Mysql_db_system_description,
+    ///         DisplayName = @var.Mysql_db_system_display_name,
+    ///         FaultDomain = @var.Mysql_db_system_fault_domain,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         HostnameLabel = @var.Mysql_db_system_hostname_label,
+    ///         IpAddress = @var.Mysql_db_system_ip_address,
+    ///         IsHighlyAvailable = @var.Mysql_db_system_is_highly_available,
+    ///         Maintenance = new Oci.Mysql.Inputs.MysqlDbSystemMaintenanceArgs
+    ///         {
+    ///             WindowStartTime = @var.Mysql_db_system_maintenance_window_start_time,
+    ///         },
+    ///         Port = @var.Mysql_db_system_port,
+    ///         PortX = @var.Mysql_db_system_port_x,
+    ///         Source = new Oci.Mysql.Inputs.MysqlDbSystemSourceArgs
+    ///         {
+    ///             SourceType = @var.Mysql_db_system_source_source_type,
+    ///             BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -102,7 +100,7 @@ namespace Pulumi.Oci.Mysql
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/mysqlDbSystem:MysqlDbSystem")]
-    public partial class MysqlDbSystem : Pulumi.CustomResource
+    public partial class MysqlDbSystem : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -371,7 +369,7 @@ namespace Pulumi.Oci.Mysql
         }
     }
 
-    public sealed class MysqlDbSystemArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -551,9 +549,10 @@ namespace Pulumi.Oci.Mysql
         public MysqlDbSystemArgs()
         {
         }
+        public static new MysqlDbSystemArgs Empty => new MysqlDbSystemArgs();
     }
 
-    public sealed class MysqlDbSystemState : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -835,5 +834,6 @@ namespace Pulumi.Oci.Mysql
         public MysqlDbSystemState()
         {
         }
+        public static new MysqlDbSystemState Empty => new MysqlDbSystemState();
     }
 }

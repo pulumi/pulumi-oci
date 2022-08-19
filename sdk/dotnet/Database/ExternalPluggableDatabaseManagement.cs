@@ -19,21 +19,19 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExternalPluggableDatabaseManagement = new Oci.Database.ExternalPluggableDatabaseManagement("testExternalPluggableDatabaseManagement", new()
     ///     {
-    ///         var testExternalPluggableDatabaseManagement = new Oci.Database.ExternalPluggableDatabaseManagement("testExternalPluggableDatabaseManagement", new Oci.Database.ExternalPluggableDatabaseManagementArgs
-    ///         {
-    ///             ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
-    ///             ExternalPluggableDatabaseId = oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
-    ///         });
-    ///     }
+    ///         ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
+    ///         ExternalPluggableDatabaseId = oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement")]
-    public partial class ExternalPluggableDatabaseManagement : Pulumi.CustomResource
+    public partial class ExternalPluggableDatabaseManagement : global::Pulumi.CustomResource
     {
         [Output("enableManagement")]
         public Output<bool> EnableManagement { get; private set; } = null!;
@@ -102,7 +100,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExternalPluggableDatabaseManagementArgs : Pulumi.ResourceArgs
+    public sealed class ExternalPluggableDatabaseManagementArgs : global::Pulumi.ResourceArgs
     {
         [Input("enableManagement", required: true)]
         public Input<bool> EnableManagement { get; set; } = null!;
@@ -122,9 +120,10 @@ namespace Pulumi.Oci.Database
         public ExternalPluggableDatabaseManagementArgs()
         {
         }
+        public static new ExternalPluggableDatabaseManagementArgs Empty => new ExternalPluggableDatabaseManagementArgs();
     }
 
-    public sealed class ExternalPluggableDatabaseManagementState : Pulumi.ResourceArgs
+    public sealed class ExternalPluggableDatabaseManagementState : global::Pulumi.ResourceArgs
     {
         [Input("enableManagement")]
         public Input<bool>? EnableManagement { get; set; }
@@ -144,5 +143,6 @@ namespace Pulumi.Oci.Database
         public ExternalPluggableDatabaseManagementState()
         {
         }
+        public static new ExternalPluggableDatabaseManagementState Empty => new ExternalPluggableDatabaseManagementState();
     }
 }

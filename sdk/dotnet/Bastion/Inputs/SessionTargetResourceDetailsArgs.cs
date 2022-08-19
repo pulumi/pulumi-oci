@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Bastion.Inputs
 {
 
-    public sealed class SessionTargetResourceDetailsArgs : Pulumi.ResourceArgs
+    public sealed class SessionTargetResourceDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The session type.
@@ -53,5 +53,6 @@ namespace Pulumi.Oci.Bastion.Inputs
         public SessionTargetResourceDetailsArgs()
         {
         }
+        public static new SessionTargetResourceDetailsArgs Empty => new SessionTargetResourceDetailsArgs();
     }
 }

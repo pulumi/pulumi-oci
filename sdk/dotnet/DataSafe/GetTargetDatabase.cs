@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabase = Oci.DataSafe.GetTargetDatabase.Invoke(new()
         ///     {
-        ///         var testTargetDatabase = Output.Create(Oci.DataSafe.GetTargetDatabase.InvokeAsync(new Oci.DataSafe.GetTargetDatabaseArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabase = Oci.DataSafe.GetTargetDatabase.Invoke(new()
         ///     {
-        ///         var testTargetDatabase = Output.Create(Oci.DataSafe.GetTargetDatabase.InvokeAsync(new Oci.DataSafe.GetTargetDatabaseArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetTargetDatabaseArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabaseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Data Safe target database.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabaseArgs()
         {
         }
+        public static new GetTargetDatabaseArgs Empty => new GetTargetDatabaseArgs();
     }
 
-    public sealed class GetTargetDatabaseInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabaseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Data Safe target database.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabaseInvokeArgs()
         {
         }
+        public static new GetTargetDatabaseInvokeArgs Empty => new GetTargetDatabaseInvokeArgs();
     }
 
 

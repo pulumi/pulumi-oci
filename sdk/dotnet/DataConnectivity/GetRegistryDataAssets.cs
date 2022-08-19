@@ -22,28 +22,26 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryDataAssets = Oci.DataConnectivity.GetRegistryDataAssets.Invoke(new()
         ///     {
-        ///         var testRegistryDataAssets = Output.Create(Oci.DataConnectivity.GetRegistryDataAssets.InvokeAsync(new Oci.DataConnectivity.GetRegistryDataAssetsArgs
-        ///         {
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///             EndpointIds = @var.Registry_data_asset_endpoint_ids,
-        ///             ExcludeEndpointIds = @var.Registry_data_asset_exclude_endpoint_ids,
-        ///             ExcludeTypes = @var.Registry_data_asset_exclude_types,
-        ///             FavoritesQueryParam = @var.Registry_data_asset_favorites_query_param,
-        ///             Fields = @var.Registry_data_asset_fields,
-        ///             FolderId = oci_data_connectivity_folder.Test_folder.Id,
-        ///             IncludeTypes = @var.Registry_data_asset_include_types,
-        ///             Name = @var.Registry_data_asset_name,
-        ///         }));
-        ///     }
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///         EndpointIds = @var.Registry_data_asset_endpoint_ids,
+        ///         ExcludeEndpointIds = @var.Registry_data_asset_exclude_endpoint_ids,
+        ///         ExcludeTypes = @var.Registry_data_asset_exclude_types,
+        ///         FavoritesQueryParam = @var.Registry_data_asset_favorites_query_param,
+        ///         Fields = @var.Registry_data_asset_fields,
+        ///         FolderId = oci_data_connectivity_folder.Test_folder.Id,
+        ///         IncludeTypes = @var.Registry_data_asset_include_types,
+        ///         Name = @var.Registry_data_asset_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,28 +60,26 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryDataAssets = Oci.DataConnectivity.GetRegistryDataAssets.Invoke(new()
         ///     {
-        ///         var testRegistryDataAssets = Output.Create(Oci.DataConnectivity.GetRegistryDataAssets.InvokeAsync(new Oci.DataConnectivity.GetRegistryDataAssetsArgs
-        ///         {
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///             EndpointIds = @var.Registry_data_asset_endpoint_ids,
-        ///             ExcludeEndpointIds = @var.Registry_data_asset_exclude_endpoint_ids,
-        ///             ExcludeTypes = @var.Registry_data_asset_exclude_types,
-        ///             FavoritesQueryParam = @var.Registry_data_asset_favorites_query_param,
-        ///             Fields = @var.Registry_data_asset_fields,
-        ///             FolderId = oci_data_connectivity_folder.Test_folder.Id,
-        ///             IncludeTypes = @var.Registry_data_asset_include_types,
-        ///             Name = @var.Registry_data_asset_name,
-        ///         }));
-        ///     }
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///         EndpointIds = @var.Registry_data_asset_endpoint_ids,
+        ///         ExcludeEndpointIds = @var.Registry_data_asset_exclude_endpoint_ids,
+        ///         ExcludeTypes = @var.Registry_data_asset_exclude_types,
+        ///         FavoritesQueryParam = @var.Registry_data_asset_favorites_query_param,
+        ///         Fields = @var.Registry_data_asset_fields,
+        ///         FolderId = oci_data_connectivity_folder.Test_folder.Id,
+        ///         IncludeTypes = @var.Registry_data_asset_include_types,
+        ///         Name = @var.Registry_data_asset_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistryDataAssetsArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryDataAssetsArgs : global::Pulumi.InvokeArgs
     {
         [Input("endpointIds")]
         private List<string>? _endpointIds;
@@ -196,9 +192,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryDataAssetsArgs()
         {
         }
+        public static new GetRegistryDataAssetsArgs Empty => new GetRegistryDataAssetsArgs();
     }
 
-    public sealed class GetRegistryDataAssetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryDataAssetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("endpointIds")]
         private InputList<string>? _endpointIds;
@@ -301,6 +298,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryDataAssetsInvokeArgs()
         {
         }
+        public static new GetRegistryDataAssetsInvokeArgs Empty => new GetRegistryDataAssetsInvokeArgs();
     }
 
 

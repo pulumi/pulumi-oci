@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApiKeys = Oci.Identity.GetApiKeys.Invoke(new()
         ///     {
-        ///         var testApiKeys = Output.Create(Oci.Identity.GetApiKeys.InvokeAsync(new Oci.Identity.GetApiKeysArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApiKeys = Oci.Identity.GetApiKeys.Invoke(new()
         ///     {
-        ///         var testApiKeys = Output.Create(Oci.Identity.GetApiKeys.InvokeAsync(new Oci.Identity.GetApiKeysArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetApiKeysArgs : Pulumi.InvokeArgs
+    public sealed class GetApiKeysArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetApiKeysFilterArgs>? _filters;
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Identity
         public GetApiKeysArgs()
         {
         }
+        public static new GetApiKeysArgs Empty => new GetApiKeysArgs();
     }
 
-    public sealed class GetApiKeysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetApiKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetApiKeysFilterInputArgs>? _filters;
@@ -123,6 +120,7 @@ namespace Pulumi.Oci.Identity
         public GetApiKeysInvokeArgs()
         {
         }
+        public static new GetApiKeysInvokeArgs Empty => new GetApiKeysInvokeArgs();
     }
 
 

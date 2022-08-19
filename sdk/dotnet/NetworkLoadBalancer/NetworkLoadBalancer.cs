@@ -17,41 +17,39 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNetworkLoadBalancer = new Oci.NetworkLoadBalancer.NetworkLoadBalancer("testNetworkLoadBalancer", new()
     ///     {
-    ///         var testNetworkLoadBalancer = new Oci.NetworkLoadBalancer.NetworkLoadBalancer("testNetworkLoadBalancer", new Oci.NetworkLoadBalancer.NetworkLoadBalancerArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Network_load_balancer_display_name,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Network_load_balancer_display_name,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsPreserveSourceDestination = @var.Network_load_balancer_is_preserve_source_destination,
+    ///         IsPrivate = @var.Network_load_balancer_is_private,
+    ///         NetworkSecurityGroupIds = @var.Network_load_balancer_network_security_group_ids,
+    ///         NlbIpVersion = @var.Network_load_balancer_nlb_ip_version,
+    ///         ReservedIps = new[]
+    ///         {
+    ///             new Oci.NetworkLoadBalancer.Inputs.NetworkLoadBalancerReservedIpArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 Id = @var.Network_load_balancer_reserved_ips_id,
     ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsPreserveSourceDestination = @var.Network_load_balancer_is_preserve_source_destination,
-    ///             IsPrivate = @var.Network_load_balancer_is_private,
-    ///             NetworkSecurityGroupIds = @var.Network_load_balancer_network_security_group_ids,
-    ///             NlbIpVersion = @var.Network_load_balancer_nlb_ip_version,
-    ///             ReservedIps = 
-    ///             {
-    ///                 new Oci.NetworkLoadBalancer.Inputs.NetworkLoadBalancerReservedIpArgs
-    ///                 {
-    ///                     Id = @var.Network_load_balancer_reserved_ips_id,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -63,7 +61,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer")]
-    public partial class NetworkLoadBalancer : Pulumi.CustomResource
+    public partial class NetworkLoadBalancer : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
@@ -205,7 +203,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         }
     }
 
-    public sealed class NetworkLoadBalancerArgs : Pulumi.ResourceArgs
+    public sealed class NetworkLoadBalancerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
@@ -294,9 +292,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public NetworkLoadBalancerArgs()
         {
         }
+        public static new NetworkLoadBalancerArgs Empty => new NetworkLoadBalancerArgs();
     }
 
-    public sealed class NetworkLoadBalancerState : Pulumi.ResourceArgs
+    public sealed class NetworkLoadBalancerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
@@ -433,5 +432,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public NetworkLoadBalancerState()
         {
         }
+        public static new NetworkLoadBalancerState Empty => new NetworkLoadBalancerState();
     }
 }

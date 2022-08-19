@@ -17,40 +17,38 @@ namespace Pulumi.Oci.LicenseManager
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testProductLicense = new Oci.LicenseManager.ProductLicense("testProductLicense", new()
     ///     {
-    ///         var testProductLicense = new Oci.LicenseManager.ProductLicense("testProductLicense", new Oci.LicenseManager.ProductLicenseArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Product_license_display_name,
+    ///         IsVendorOracle = @var.Product_license_is_vendor_oracle,
+    ///         LicenseUnit = @var.Product_license_license_unit,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Product_license_display_name,
-    ///             IsVendorOracle = @var.Product_license_is_vendor_oracle,
-    ///             LicenseUnit = @var.Product_license_license_unit,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Images = new[]
+    ///         {
+    ///             new Oci.LicenseManager.Inputs.ProductLicenseImageArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
+    ///                 ListingId = oci_marketplace_listing.Test_listing.Id,
+    ///                 PackageVersion = @var.Product_license_images_package_version,
     ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Images = 
-    ///             {
-    ///                 new Oci.LicenseManager.Inputs.ProductLicenseImageArgs
-    ///                 {
-    ///                     ListingId = oci_marketplace_listing.Test_listing.Id,
-    ///                     PackageVersion = @var.Product_license_images_package_version,
-    ///                 },
-    ///             },
-    ///             VendorName = @var.Product_license_vendor_name,
-    ///         });
-    ///     }
+    ///         },
+    ///         VendorName = @var.Product_license_vendor_name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -62,7 +60,7 @@ namespace Pulumi.Oci.LicenseManager
     /// ```
     /// </summary>
     [OciResourceType("oci:LicenseManager/productLicense:ProductLicense")]
-    public partial class ProductLicense : Pulumi.CustomResource
+    public partial class ProductLicense : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The number of active license records associated with the product license.
@@ -228,7 +226,7 @@ namespace Pulumi.Oci.LicenseManager
         }
     }
 
-    public sealed class ProductLicenseArgs : Pulumi.ResourceArgs
+    public sealed class ProductLicenseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
@@ -299,9 +297,10 @@ namespace Pulumi.Oci.LicenseManager
         public ProductLicenseArgs()
         {
         }
+        public static new ProductLicenseArgs Empty => new ProductLicenseArgs();
     }
 
-    public sealed class ProductLicenseState : Pulumi.ResourceArgs
+    public sealed class ProductLicenseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The number of active license records associated with the product license.
@@ -450,5 +449,6 @@ namespace Pulumi.Oci.LicenseManager
         public ProductLicenseState()
         {
         }
+        public static new ProductLicenseState Empty => new ProductLicenseState();
     }
 }

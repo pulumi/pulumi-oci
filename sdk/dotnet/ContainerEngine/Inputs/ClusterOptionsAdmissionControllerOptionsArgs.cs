@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterOptionsAdmissionControllerOptionsArgs : Pulumi.ResourceArgs
+    public sealed class ClusterOptionsAdmissionControllerOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether or not to enable the Pod Security Policy admission controller.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterOptionsAdmissionControllerOptionsArgs()
         {
         }
+        public static new ClusterOptionsAdmissionControllerOptionsArgs Empty => new ClusterOptionsAdmissionControllerOptionsArgs();
     }
 }

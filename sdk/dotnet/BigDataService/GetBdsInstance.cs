@@ -21,20 +21,18 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstance = Oci.BigDataService.GetBdsInstance.Invoke(new()
         ///     {
-        ///         var testBdsInstance = Output.Create(Oci.BigDataService.GetBdsInstance.InvokeAsync(new Oci.BigDataService.GetBdsInstanceArgs
-        ///         {
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         }));
-        ///     }
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstance = Oci.BigDataService.GetBdsInstance.Invoke(new()
         ///     {
-        ///         var testBdsInstance = Output.Create(Oci.BigDataService.GetBdsInstance.InvokeAsync(new Oci.BigDataService.GetBdsInstanceArgs
-        ///         {
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         }));
-        ///     }
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.BigDataService
     }
 
 
-    public sealed class GetBdsInstanceArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstanceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstanceArgs()
         {
         }
+        public static new GetBdsInstanceArgs Empty => new GetBdsInstanceArgs();
     }
 
-    public sealed class GetBdsInstanceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstanceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstanceInvokeArgs()
         {
         }
+        public static new GetBdsInstanceInvokeArgs Empty => new GetBdsInstanceInvokeArgs();
     }
 
 
@@ -162,6 +160,10 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         public readonly bool IsSecure;
         public readonly string KerberosRealmName;
+        /// <summary>
+        /// The OCID of the Key Management master encryption key.
+        /// </summary>
+        public readonly string KmsKeyId;
         public readonly ImmutableArray<Outputs.GetBdsInstanceMasterNodeResult> MasterNodes;
         /// <summary>
         /// Additional configuration of the user's network.
@@ -228,6 +230,8 @@ namespace Pulumi.Oci.BigDataService
 
             string kerberosRealmName,
 
+            string kmsKeyId,
+
             ImmutableArray<Outputs.GetBdsInstanceMasterNodeResult> masterNodes,
 
             ImmutableArray<Outputs.GetBdsInstanceNetworkConfigResult> networkConfigs,
@@ -264,6 +268,7 @@ namespace Pulumi.Oci.BigDataService
             IsHighAvailability = isHighAvailability;
             IsSecure = isSecure;
             KerberosRealmName = kerberosRealmName;
+            KmsKeyId = kmsKeyId;
             MasterNodes = masterNodes;
             NetworkConfigs = networkConfigs;
             Nodes = nodes;

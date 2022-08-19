@@ -24,23 +24,21 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpoints = Oci.ResourceManager.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testPrivateEndpoints = Output.Create(Oci.ResourceManager.GetPrivateEndpoints.InvokeAsync(new Oci.ResourceManager.GetPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Private_endpoint_display_name,
-        ///             PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Private_endpoint_display_name,
+        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpoints = Oci.ResourceManager.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testPrivateEndpoints = Output.Create(Oci.ResourceManager.GetPrivateEndpoints.InvokeAsync(new Oci.ResourceManager.GetPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Private_endpoint_display_name,
-        ///             PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Private_endpoint_display_name,
+        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.ResourceManager
     }
 
 
-    public sealed class GetPrivateEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.ResourceManager
         public GetPrivateEndpointsArgs()
         {
         }
+        public static new GetPrivateEndpointsArgs Empty => new GetPrivateEndpointsArgs();
     }
 
-    public sealed class GetPrivateEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.ResourceManager
         public GetPrivateEndpointsInvokeArgs()
         {
         }
+        public static new GetPrivateEndpointsInvokeArgs Empty => new GetPrivateEndpointsInvokeArgs();
     }
 
 

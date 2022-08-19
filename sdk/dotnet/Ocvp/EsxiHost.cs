@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Ocvp
     /// ```
     /// </summary>
     [OciResourceType("oci:Ocvp/esxiHost:EsxiHost")]
-    public partial class EsxiHost : Pulumi.CustomResource
+    public partial class EsxiHost : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
@@ -188,7 +188,7 @@ namespace Pulumi.Oci.Ocvp
         }
     }
 
-    public sealed class EsxiHostArgs : Pulumi.ResourceArgs
+    public sealed class EsxiHostArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -271,9 +271,10 @@ namespace Pulumi.Oci.Ocvp
         public EsxiHostArgs()
         {
         }
+        public static new EsxiHostArgs Empty => new EsxiHostArgs();
     }
 
-    public sealed class EsxiHostState : Pulumi.ResourceArgs
+    public sealed class EsxiHostState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
@@ -404,5 +405,6 @@ namespace Pulumi.Oci.Ocvp
         public EsxiHostState()
         {
         }
+        public static new EsxiHostState Empty => new EsxiHostState();
     }
 }

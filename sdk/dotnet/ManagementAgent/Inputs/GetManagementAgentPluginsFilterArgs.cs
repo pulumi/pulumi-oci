@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ManagementAgent.Inputs
 {
 
-    public sealed class GetManagementAgentPluginsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetManagementAgentPluginsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Management Agent Plugin Name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         public GetManagementAgentPluginsFilterInputArgs()
         {
         }
+        public static new GetManagementAgentPluginsFilterInputArgs Empty => new GetManagementAgentPluginsFilterInputArgs();
     }
 }

@@ -22,51 +22,49 @@ namespace Pulumi.Oci.Monitoring
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAlarm = new Oci.Monitoring.Alarm("testAlarm", new()
     ///     {
-    ///         var testAlarm = new Oci.Monitoring.Alarm("testAlarm", new Oci.Monitoring.AlarmArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Destinations = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Destinations = 
-    ///             {
-    ///                 oci_ons_notification_topic.Test_notification_topic.Id,
-    ///             },
-    ///             DisplayName = @var.Alarm_display_name,
-    ///             IsEnabled = @var.Alarm_is_enabled,
-    ///             MetricCompartmentId = @var.Alarm_metric_compartment_id,
-    ///             Namespace = @var.Alarm_namespace,
-    ///             Query = @var.Alarm_query,
-    ///             Severity = @var.Alarm_severity,
-    ///             Body = @var.Alarm_body,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             MessageFormat = @var.Alarm_message_format,
-    ///             MetricCompartmentIdInSubtree = @var.Alarm_metric_compartment_id_in_subtree,
-    ///             PendingDuration = @var.Alarm_pending_duration,
-    ///             RepeatNotificationDuration = @var.Alarm_repeat_notification_duration,
-    ///             Resolution = @var.Alarm_resolution,
-    ///             ResourceGroup = @var.Alarm_resource_group,
-    ///             Suppression = new Oci.Monitoring.Inputs.AlarmSuppressionArgs
-    ///             {
-    ///                 TimeSuppressFrom = @var.Alarm_suppression_time_suppress_from,
-    ///                 TimeSuppressUntil = @var.Alarm_suppression_time_suppress_until,
-    ///                 Description = @var.Alarm_suppression_description,
-    ///             },
-    ///         });
-    ///     }
+    ///             oci_ons_notification_topic.Test_notification_topic.Id,
+    ///         },
+    ///         DisplayName = @var.Alarm_display_name,
+    ///         IsEnabled = @var.Alarm_is_enabled,
+    ///         MetricCompartmentId = @var.Alarm_metric_compartment_id,
+    ///         Namespace = @var.Alarm_namespace,
+    ///         Query = @var.Alarm_query,
+    ///         Severity = @var.Alarm_severity,
+    ///         Body = @var.Alarm_body,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         MessageFormat = @var.Alarm_message_format,
+    ///         MetricCompartmentIdInSubtree = @var.Alarm_metric_compartment_id_in_subtree,
+    ///         PendingDuration = @var.Alarm_pending_duration,
+    ///         RepeatNotificationDuration = @var.Alarm_repeat_notification_duration,
+    ///         Resolution = @var.Alarm_resolution,
+    ///         ResourceGroup = @var.Alarm_resource_group,
+    ///         Suppression = new Oci.Monitoring.Inputs.AlarmSuppressionArgs
+    ///         {
+    ///             TimeSuppressFrom = @var.Alarm_suppression_time_suppress_from,
+    ///             TimeSuppressUntil = @var.Alarm_suppression_time_suppress_until,
+    ///             Description = @var.Alarm_suppression_description,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -78,7 +76,7 @@ namespace Pulumi.Oci.Monitoring
     /// ```
     /// </summary>
     [OciResourceType("oci:Monitoring/alarm:Alarm")]
-    public partial class Alarm : Pulumi.CustomResource
+    public partial class Alarm : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
@@ -250,7 +248,7 @@ namespace Pulumi.Oci.Monitoring
         }
     }
 
-    public sealed class AlarmArgs : Pulumi.ResourceArgs
+    public sealed class AlarmArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
@@ -381,9 +379,10 @@ namespace Pulumi.Oci.Monitoring
         public AlarmArgs()
         {
         }
+        public static new AlarmArgs Empty => new AlarmArgs();
     }
 
-    public sealed class AlarmState : Pulumi.ResourceArgs
+    public sealed class AlarmState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
@@ -532,5 +531,6 @@ namespace Pulumi.Oci.Monitoring
         public AlarmState()
         {
         }
+        public static new AlarmState Empty => new AlarmState();
     }
 }

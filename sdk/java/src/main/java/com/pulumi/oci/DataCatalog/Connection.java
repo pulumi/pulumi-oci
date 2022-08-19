@@ -23,6 +23,41 @@ import javax.annotation.Nullable;
  * Creates a new connection.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataCatalog.Connection;
+ * import com.pulumi.oci.DataCatalog.ConnectionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testConnection = new Connection(&#34;testConnection&#34;, ConnectionArgs.builder()        
+ *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
+ *             .dataAssetKey(var_.connection_data_asset_key())
+ *             .displayName(var_.connection_display_name())
+ *             .properties(var_.connection_properties())
+ *             .typeKey(var_.connection_type_key())
+ *             .description(var_.connection_description())
+ *             .encProperties(var_.connection_enc_properties())
+ *             .isDefault(var_.connection_is_default())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

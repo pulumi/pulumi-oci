@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class ManagedDatabaseGroupManagedDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class ManagedDatabaseGroupManagedDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public ManagedDatabaseGroupManagedDatabaseArgs()
         {
         }
+        public static new ManagedDatabaseGroupManagedDatabaseArgs Empty => new ManagedDatabaseGroupManagedDatabaseArgs();
     }
 }

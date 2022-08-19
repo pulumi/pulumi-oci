@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemGetArgs : Pulumi.ResourceArgs
+    public sealed class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of a stage
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemGetArgs()
         {
         }
+        public static new DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemGetArgs Empty => new DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemGetArgs();
     }
 }

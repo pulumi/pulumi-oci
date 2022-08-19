@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class ReportDefinitionColumnSortingArgs : Pulumi.ResourceArgs
+    public sealed class ReportDefinitionColumnSortingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the column that must be sorted.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public ReportDefinitionColumnSortingArgs()
         {
         }
+        public static new ReportDefinitionColumnSortingArgs Empty => new ReportDefinitionColumnSortingArgs();
     }
 }

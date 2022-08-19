@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppFirewallPolicies = Oci.Waf.GetWebAppFirewallPolicies.Invoke(new()
         ///     {
-        ///         var testWebAppFirewallPolicies = Output.Create(Oci.Waf.GetWebAppFirewallPolicies.InvokeAsync(new Oci.Waf.GetWebAppFirewallPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Web_app_firewall_policy_display_name,
-        ///             Id = @var.Web_app_firewall_policy_id,
-        ///             States = @var.Web_app_firewall_policy_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Web_app_firewall_policy_display_name,
+        ///         Id = @var.Web_app_firewall_policy_id,
+        ///         States = @var.Web_app_firewall_policy_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppFirewallPolicies = Oci.Waf.GetWebAppFirewallPolicies.Invoke(new()
         ///     {
-        ///         var testWebAppFirewallPolicies = Output.Create(Oci.Waf.GetWebAppFirewallPolicies.InvokeAsync(new Oci.Waf.GetWebAppFirewallPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Web_app_firewall_policy_display_name,
-        ///             Id = @var.Web_app_firewall_policy_id,
-        ///             States = @var.Web_app_firewall_policy_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Web_app_firewall_policy_display_name,
+        ///         Id = @var.Web_app_firewall_policy_id,
+        ///         States = @var.Web_app_firewall_policy_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Waf
     }
 
 
-    public sealed class GetWebAppFirewallPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetWebAppFirewallPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Waf
         public GetWebAppFirewallPoliciesArgs()
         {
         }
+        public static new GetWebAppFirewallPoliciesArgs Empty => new GetWebAppFirewallPoliciesArgs();
     }
 
-    public sealed class GetWebAppFirewallPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetWebAppFirewallPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.Waf
         public GetWebAppFirewallPoliciesInvokeArgs()
         {
         }
+        public static new GetWebAppFirewallPoliciesInvokeArgs Empty => new GetWebAppFirewallPoliciesInvokeArgs();
     }
 
 

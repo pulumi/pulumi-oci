@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class IpsecConnectionTunnelManagementEncryptionDomainConfigArgs : Pulumi.ResourceArgs
+    public sealed class IpsecConnectionTunnelManagementEncryptionDomainConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("cpeTrafficSelectors")]
         private InputList<string>? _cpeTrafficSelectors;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Core.Inputs
         public IpsecConnectionTunnelManagementEncryptionDomainConfigArgs()
         {
         }
+        public static new IpsecConnectionTunnelManagementEncryptionDomainConfigArgs Empty => new IpsecConnectionTunnelManagementEncryptionDomainConfigArgs();
     }
 }

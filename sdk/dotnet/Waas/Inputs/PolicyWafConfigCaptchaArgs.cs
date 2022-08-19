@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigCaptchaArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigCaptchaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigCaptchaArgs()
         {
         }
+        public static new PolicyWafConfigCaptchaArgs Empty => new PolicyWafConfigCaptchaArgs();
     }
 }

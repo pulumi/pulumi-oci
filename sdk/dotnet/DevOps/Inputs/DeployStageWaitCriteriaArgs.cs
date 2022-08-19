@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageWaitCriteriaArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageWaitCriteriaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageWaitCriteriaArgs()
         {
         }
+        public static new DeployStageWaitCriteriaArgs Empty => new DeployStageWaitCriteriaArgs();
     }
 }

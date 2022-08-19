@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCostTrackingTags = Oci.Identity.GetCostTrackingTags.Invoke(new()
         ///     {
-        ///         var testCostTrackingTags = Output.Create(Oci.Identity.GetCostTrackingTags.InvokeAsync(new Oci.Identity.GetCostTrackingTagsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCostTrackingTags = Oci.Identity.GetCostTrackingTags.Invoke(new()
         ///     {
-        ///         var testCostTrackingTags = Output.Create(Oci.Identity.GetCostTrackingTags.InvokeAsync(new Oci.Identity.GetCostTrackingTagsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetCostTrackingTagsArgs : Pulumi.InvokeArgs
+    public sealed class GetCostTrackingTagsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Identity
         public GetCostTrackingTagsArgs()
         {
         }
+        public static new GetCostTrackingTagsArgs Empty => new GetCostTrackingTagsArgs();
     }
 
-    public sealed class GetCostTrackingTagsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCostTrackingTagsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Identity
         public GetCostTrackingTagsInvokeArgs()
         {
         }
+        public static new GetCostTrackingTagsInvokeArgs Empty => new GetCostTrackingTagsInvokeArgs();
     }
 
 

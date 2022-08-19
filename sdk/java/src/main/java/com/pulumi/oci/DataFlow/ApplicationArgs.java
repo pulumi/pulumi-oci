@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataFlow.inputs.ApplicationApplicationLogConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationDriverShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationExecutorShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationParameterArgs;
@@ -21,6 +22,21 @@ import javax.annotation.Nullable;
 public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ApplicationArgs Empty = new ApplicationArgs();
+
+    /**
+     * (Updatable) Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    @Import(name="applicationLogConfig")
+    private @Nullable Output<ApplicationApplicationLogConfigArgs> applicationLogConfig;
+
+    /**
+     * @return (Updatable) Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    public Optional<Output<ApplicationApplicationLogConfigArgs>> applicationLogConfig() {
+        return Optional.ofNullable(this.applicationLogConfig);
+    }
 
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -385,6 +401,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
     private ApplicationArgs() {}
 
     private ApplicationArgs(ApplicationArgs $) {
+        this.applicationLogConfig = $.applicationLogConfig;
         this.archiveUri = $.archiveUri;
         this.arguments = $.arguments;
         this.className = $.className;
@@ -427,6 +444,27 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(ApplicationArgs defaults) {
             $ = new ApplicationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param applicationLogConfig (Updatable) Logging details of Application logs for Data Flow Run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationLogConfig(@Nullable Output<ApplicationApplicationLogConfigArgs> applicationLogConfig) {
+            $.applicationLogConfig = applicationLogConfig;
+            return this;
+        }
+
+        /**
+         * @param applicationLogConfig (Updatable) Logging details of Application logs for Data Flow Run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationLogConfig(ApplicationApplicationLogConfigArgs applicationLogConfig) {
+            return applicationLogConfig(Output.of(applicationLogConfig));
         }
 
         /**

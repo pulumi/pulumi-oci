@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataFlow.ApplicationArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationState;
+import com.pulumi.oci.DataFlow.outputs.ApplicationApplicationLogConfig;
 import com.pulumi.oci.DataFlow.outputs.ApplicationDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.ApplicationExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.ApplicationParameter;
@@ -27,6 +28,74 @@ import javax.annotation.Nullable;
  * Creates an application.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataFlow.Application;
+ * import com.pulumi.oci.DataFlow.ApplicationArgs;
+ * import com.pulumi.oci.DataFlow.inputs.ApplicationApplicationLogConfigArgs;
+ * import com.pulumi.oci.DataFlow.inputs.ApplicationDriverShapeConfigArgs;
+ * import com.pulumi.oci.DataFlow.inputs.ApplicationExecutorShapeConfigArgs;
+ * import com.pulumi.oci.DataFlow.inputs.ApplicationParameterArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testApplication = new Application(&#34;testApplication&#34;, ApplicationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.application_display_name())
+ *             .driverShape(var_.application_driver_shape())
+ *             .executorShape(var_.application_executor_shape())
+ *             .fileUri(var_.application_file_uri())
+ *             .language(var_.application_language())
+ *             .numExecutors(var_.application_num_executors())
+ *             .sparkVersion(var_.application_spark_version())
+ *             .applicationLogConfig(ApplicationApplicationLogConfigArgs.builder()
+ *                 .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                 .logId(oci_logging_log.test_log().id())
+ *                 .build())
+ *             .archiveUri(var_.application_archive_uri())
+ *             .arguments(var_.application_arguments())
+ *             .className(var_.application_class_name())
+ *             .configuration(var_.application_configuration())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.application_description())
+ *             .driverShapeConfig(ApplicationDriverShapeConfigArgs.builder()
+ *                 .memoryInGbs(var_.application_driver_shape_config_memory_in_gbs())
+ *                 .ocpus(var_.application_driver_shape_config_ocpus())
+ *                 .build())
+ *             .execute(var_.application_execute())
+ *             .executorShapeConfig(ApplicationExecutorShapeConfigArgs.builder()
+ *                 .memoryInGbs(var_.application_executor_shape_config_memory_in_gbs())
+ *                 .ocpus(var_.application_executor_shape_config_ocpus())
+ *                 .build())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .logsBucketUri(var_.application_logs_bucket_uri())
+ *             .metastoreId(var_.metastore_id())
+ *             .parameters(ApplicationParameterArgs.builder()
+ *                 .name(var_.application_parameters_name())
+ *                 .value(var_.application_parameters_value())
+ *                 .build())
+ *             .privateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *             .type(var_.application_type())
+ *             .warehouseBucketUri(var_.application_warehouse_bucket_uri())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -39,6 +108,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DataFlow/application:Application")
 public class Application extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    @Export(name="applicationLogConfig", type=ApplicationApplicationLogConfig.class, parameters={})
+    private Output<ApplicationApplicationLogConfig> applicationLogConfig;
+
+    /**
+     * @return (Updatable) Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    public Output<ApplicationApplicationLogConfig> applicationLogConfig() {
+        return this.applicationLogConfig;
+    }
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 

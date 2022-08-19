@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterOptionsKubernetesNetworkConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class ClusterOptionsKubernetesNetworkConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterOptionsKubernetesNetworkConfigGetArgs()
         {
         }
+        public static new ClusterOptionsKubernetesNetworkConfigGetArgs Empty => new ClusterOptionsKubernetesNetworkConfigGetArgs();
     }
 }

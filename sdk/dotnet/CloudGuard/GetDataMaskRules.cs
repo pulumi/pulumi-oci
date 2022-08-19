@@ -22,27 +22,25 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataMaskRules = Oci.CloudGuard.GetDataMaskRules.Invoke(new()
         ///     {
-        ///         var testDataMaskRules = Output.Create(Oci.CloudGuard.GetDataMaskRules.InvokeAsync(new Oci.CloudGuard.GetDataMaskRulesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Data_mask_rule_access_level,
-        ///             DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
-        ///             DisplayName = @var.Data_mask_rule_display_name,
-        ///             IamGroupId = oci_identity_group.Test_group.Id,
-        ///             State = @var.Data_mask_rule_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TargetType = @var.Data_mask_rule_target_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Data_mask_rule_access_level,
+        ///         DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
+        ///         DisplayName = @var.Data_mask_rule_display_name,
+        ///         IamGroupId = oci_identity_group.Test_group.Id,
+        ///         State = @var.Data_mask_rule_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TargetType = @var.Data_mask_rule_target_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,27 +59,25 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataMaskRules = Oci.CloudGuard.GetDataMaskRules.Invoke(new()
         ///     {
-        ///         var testDataMaskRules = Output.Create(Oci.CloudGuard.GetDataMaskRules.InvokeAsync(new Oci.CloudGuard.GetDataMaskRulesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Data_mask_rule_access_level,
-        ///             DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
-        ///             DisplayName = @var.Data_mask_rule_display_name,
-        ///             IamGroupId = oci_identity_group.Test_group.Id,
-        ///             State = @var.Data_mask_rule_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TargetType = @var.Data_mask_rule_target_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Data_mask_rule_access_level,
+        ///         DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
+        ///         DisplayName = @var.Data_mask_rule_display_name,
+        ///         IamGroupId = oci_identity_group.Test_group.Id,
+        ///         State = @var.Data_mask_rule_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TargetType = @var.Data_mask_rule_target_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetDataMaskRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetDataMaskRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetDataMaskRulesArgs()
         {
         }
+        public static new GetDataMaskRulesArgs Empty => new GetDataMaskRulesArgs();
     }
 
-    public sealed class GetDataMaskRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataMaskRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -215,6 +212,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetDataMaskRulesInvokeArgs()
         {
         }
+        public static new GetDataMaskRulesInvokeArgs Empty => new GetDataMaskRulesInvokeArgs();
     }
 
 

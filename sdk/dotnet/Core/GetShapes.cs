@@ -23,22 +23,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testShapes = Oci.Core.GetShapes.Invoke(new()
         ///     {
-        ///         var testShapes = Output.Create(Oci.Core.GetShapes.InvokeAsync(new Oci.Core.GetShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Shape_availability_domain,
-        ///             ImageId = oci_core_image.Test_image.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Shape_availability_domain,
+        ///         ImageId = oci_core_image.Test_image.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testShapes = Oci.Core.GetShapes.Invoke(new()
         ///     {
-        ///         var testShapes = Output.Create(Oci.Core.GetShapes.InvokeAsync(new Oci.Core.GetShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Shape_availability_domain,
-        ///             ImageId = oci_core_image.Test_image.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Shape_availability_domain,
+        ///         ImageId = oci_core_image.Test_image.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.Core
         public GetShapesArgs()
         {
         }
+        public static new GetShapesArgs Empty => new GetShapesArgs();
     }
 
-    public sealed class GetShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.Core
         public GetShapesInvokeArgs()
         {
         }
+        public static new GetShapesInvokeArgs Empty => new GetShapesInvokeArgs();
     }
 
 

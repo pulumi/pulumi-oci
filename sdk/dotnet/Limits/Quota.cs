@@ -17,39 +17,37 @@ namespace Pulumi.Oci.Limits
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testQuota = new Oci.Limits.Quota("testQuota", new()
     ///     {
-    ///         var testQuota = new Oci.Limits.Quota("testQuota", new Oci.Limits.QuotaArgs
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         Description = @var.Quota_description,
+    ///         Statements = @var.Quota_statements,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             Description = @var.Quota_description,
-    ///             Statements = @var.Quota_statements,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.Limits.Inputs.QuotaLockArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 Type = @var.Quota_locks_type,
+    ///                 Message = @var.Quota_locks_message,
+    ///                 RelatedResourceId = oci_limits_related_resource.Test_related_resource.Id,
     ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Locks = 
-    ///             {
-    ///                 new Oci.Limits.Inputs.QuotaLockArgs
-    ///                 {
-    ///                     Type = @var.Quota_locks_type,
-    ///                     Message = @var.Quota_locks_message,
-    ///                     RelatedResourceId = oci_limits_related_resource.Test_related_resource.Id,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -61,7 +59,7 @@ namespace Pulumi.Oci.Limits
     /// ```
     /// </summary>
     [OciResourceType("oci:Limits/quota:Quota")]
-    public partial class Quota : Pulumi.CustomResource
+    public partial class Quota : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment containing the resource this quota applies to.
@@ -167,7 +165,7 @@ namespace Pulumi.Oci.Limits
         }
     }
 
-    public sealed class QuotaArgs : Pulumi.ResourceArgs
+    public sealed class QuotaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the resource this quota applies to.
@@ -238,9 +236,10 @@ namespace Pulumi.Oci.Limits
         public QuotaArgs()
         {
         }
+        public static new QuotaArgs Empty => new QuotaArgs();
     }
 
-    public sealed class QuotaState : Pulumi.ResourceArgs
+    public sealed class QuotaState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the resource this quota applies to.
@@ -329,5 +328,6 @@ namespace Pulumi.Oci.Limits
         public QuotaState()
         {
         }
+        public static new QuotaState Empty => new QuotaState();
     }
 }

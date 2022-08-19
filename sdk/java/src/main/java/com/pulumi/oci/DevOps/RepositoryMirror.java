@@ -19,6 +19,34 @@ import javax.annotation.Nullable;
  * Synchronize a mirrored repository to the latest version from external providers.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.RepositoryMirror;
+ * import com.pulumi.oci.DevOps.RepositoryMirrorArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRepositoryMirror = new RepositoryMirror(&#34;testRepositoryMirror&#34;, RepositoryMirrorArgs.builder()        
+ *             .repositoryId(oci_devops_repository.test_repository().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

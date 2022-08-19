@@ -17,41 +17,39 @@ namespace Pulumi.Oci.LogAnalytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogAnalyticsObjectCollectionRule = new Oci.LogAnalytics.LogAnalyticsObjectCollectionRule("testLogAnalyticsObjectCollectionRule", new()
     ///     {
-    ///         var testLogAnalyticsObjectCollectionRule = new Oci.LogAnalytics.LogAnalyticsObjectCollectionRule("testLogAnalyticsObjectCollectionRule", new Oci.LogAnalytics.LogAnalyticsObjectCollectionRuleArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///         LogSourceName = @var.Log_analytics_object_collection_rule_log_source_name,
+    ///         Namespace = @var.Log_analytics_object_collection_rule_namespace,
+    ///         OsBucketName = oci_objectstorage_bucket.Test_bucket.Name,
+    ///         OsNamespace = @var.Log_analytics_object_collection_rule_os_namespace,
+    ///         CharEncoding = @var.Log_analytics_object_collection_rule_char_encoding,
+    ///         CollectionType = @var.Log_analytics_object_collection_rule_collection_type,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogSourceName = @var.Log_analytics_object_collection_rule_log_source_name,
-    ///             Namespace = @var.Log_analytics_object_collection_rule_namespace,
-    ///             OsBucketName = oci_objectstorage_bucket.Test_bucket.Name,
-    ///             OsNamespace = @var.Log_analytics_object_collection_rule_os_namespace,
-    ///             CharEncoding = @var.Log_analytics_object_collection_rule_char_encoding,
-    ///             CollectionType = @var.Log_analytics_object_collection_rule_collection_type,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Log_analytics_object_collection_rule_description,
-    ///             EntityId = oci_log_analytics_entity.Test_entity.Id,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             ObjectNameFilters = @var.Log_analytics_object_collection_rule_object_name_filters,
-    ///             Overrides = @var.Log_analytics_object_collection_rule_overrides,
-    ///             PollSince = @var.Log_analytics_object_collection_rule_poll_since,
-    ///             PollTill = @var.Log_analytics_object_collection_rule_poll_till,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Log_analytics_object_collection_rule_description,
+    ///         EntityId = oci_log_analytics_entity.Test_entity.Id,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         ObjectNameFilters = @var.Log_analytics_object_collection_rule_object_name_filters,
+    ///         Overrides = @var.Log_analytics_object_collection_rule_overrides,
+    ///         PollSince = @var.Log_analytics_object_collection_rule_poll_since,
+    ///         PollTill = @var.Log_analytics_object_collection_rule_poll_till,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -63,7 +61,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule")]
-    public partial class LogAnalyticsObjectCollectionRule : Pulumi.CustomResource
+    public partial class LogAnalyticsObjectCollectionRule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
@@ -235,7 +233,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class LogAnalyticsObjectCollectionRuleArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsObjectCollectionRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
@@ -366,9 +364,10 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsObjectCollectionRuleArgs()
         {
         }
+        public static new LogAnalyticsObjectCollectionRuleArgs Empty => new LogAnalyticsObjectCollectionRuleArgs();
     }
 
-    public sealed class LogAnalyticsObjectCollectionRuleState : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsObjectCollectionRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
@@ -523,5 +522,6 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsObjectCollectionRuleState()
         {
         }
+        public static new LogAnalyticsObjectCollectionRuleState Empty => new LogAnalyticsObjectCollectionRuleState();
     }
 }

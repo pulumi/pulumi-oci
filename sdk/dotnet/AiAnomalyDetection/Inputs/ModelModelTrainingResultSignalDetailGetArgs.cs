@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 {
 
-    public sealed class ModelModelTrainingResultSignalDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelModelTrainingResultSignalDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// detailed information for a signal.
@@ -72,5 +72,6 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public ModelModelTrainingResultSignalDetailGetArgs()
         {
         }
+        public static new ModelModelTrainingResultSignalDetailGetArgs Empty => new ModelModelTrainingResultSignalDetailGetArgs();
     }
 }

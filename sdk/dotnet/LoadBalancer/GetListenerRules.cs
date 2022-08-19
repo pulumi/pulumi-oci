@@ -28,21 +28,19 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListenerRules = Oci.LoadBalancer.GetListenerRules.Invoke(new()
         ///     {
-        ///         var testListenerRules = Output.Create(Oci.LoadBalancer.GetListenerRules.InvokeAsync(new Oci.LoadBalancer.GetListenerRulesArgs
-        ///         {
-        ///             ListenerName = oci_load_balancer_listener.Test_listener.Name,
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         ListenerName = oci_load_balancer_listener.Test_listener.Name,
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -67,21 +65,19 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListenerRules = Oci.LoadBalancer.GetListenerRules.Invoke(new()
         ///     {
-        ///         var testListenerRules = Output.Create(Oci.LoadBalancer.GetListenerRules.InvokeAsync(new Oci.LoadBalancer.GetListenerRulesArgs
-        ///         {
-        ///             ListenerName = oci_load_balancer_listener.Test_listener.Name,
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         ListenerName = oci_load_balancer_listener.Test_listener.Name,
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetListenerRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetListenerRulesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetListenerRulesFilterArgs>? _filters;
@@ -116,9 +112,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetListenerRulesArgs()
         {
         }
+        public static new GetListenerRulesArgs Empty => new GetListenerRulesArgs();
     }
 
-    public sealed class GetListenerRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetListenerRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetListenerRulesFilterInputArgs>? _filters;
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetListenerRulesInvokeArgs()
         {
         }
+        public static new GetListenerRulesInvokeArgs Empty => new GetListenerRulesInvokeArgs();
     }
 
 

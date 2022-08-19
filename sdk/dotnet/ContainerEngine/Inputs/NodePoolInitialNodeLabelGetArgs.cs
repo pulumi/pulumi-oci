@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolInitialNodeLabelGetArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolInitialNodeLabelGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The key of the pair.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolInitialNodeLabelGetArgs()
         {
         }
+        public static new NodePoolInitialNodeLabelGetArgs Empty => new NodePoolInitialNodeLabelGetArgs();
     }
 }

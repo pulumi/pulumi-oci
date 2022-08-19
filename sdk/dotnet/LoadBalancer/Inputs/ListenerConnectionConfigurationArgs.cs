@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class ListenerConnectionConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class ListenerConnectionConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public ListenerConnectionConfigurationArgs()
         {
         }
+        public static new ListenerConnectionConfigurationArgs Empty => new ListenerConnectionConfigurationArgs();
     }
 }

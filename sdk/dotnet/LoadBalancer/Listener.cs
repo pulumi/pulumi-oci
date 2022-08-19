@@ -17,49 +17,47 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testListener = new Oci.LoadBalancer.Listener("testListener", new()
     ///     {
-    ///         var testListener = new Oci.LoadBalancer.Listener("testListener", new Oci.LoadBalancer.ListenerArgs
+    ///         DefaultBackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         Port = @var.Listener_port,
+    ///         Protocol = @var.Listener_protocol,
+    ///         ConnectionConfiguration = new Oci.LoadBalancer.Inputs.ListenerConnectionConfigurationArgs
     ///         {
-    ///             DefaultBackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///             Port = @var.Listener_port,
-    ///             Protocol = @var.Listener_protocol,
-    ///             ConnectionConfiguration = new Oci.LoadBalancer.Inputs.ListenerConnectionConfigurationArgs
-    ///             {
-    ///                 IdleTimeoutInSeconds = @var.Listener_connection_configuration_idle_timeout_in_seconds,
-    ///                 BackendTcpProxyProtocolVersion = @var.Listener_connection_configuration_backend_tcp_proxy_protocol_version,
-    ///             },
-    ///             HostnameNames = 
-    ///             {
-    ///                 oci_load_balancer_hostname.Test_hostname.Name,
-    ///             },
-    ///             PathRouteSetName = oci_load_balancer_path_route_set.Test_path_route_set.Name,
-    ///             RoutingPolicyName = oci_load_balancer_load_balancer_routing_policy.Test_load_balancer_routing_policy.Name,
-    ///             RuleSetNames = 
-    ///             {
-    ///                 oci_load_balancer_rule_set.Test_rule_set.Name,
-    ///             },
-    ///             SslConfiguration = new Oci.LoadBalancer.Inputs.ListenerSslConfigurationArgs
-    ///             {
-    ///                 CertificateName = oci_load_balancer_certificate.Test_certificate.Name,
-    ///                 CertificateIds = @var.Listener_ssl_configuration_certificate_ids,
-    ///                 CipherSuiteName = @var.Listener_ssl_configuration_cipher_suite_name,
-    ///                 Protocols = @var.Listener_ssl_configuration_protocols,
-    ///                 ServerOrderPreference = @var.Listener_ssl_configuration_server_order_preference,
-    ///                 TrustedCertificateAuthorityIds = @var.Listener_ssl_configuration_trusted_certificate_authority_ids,
-    ///                 VerifyDepth = @var.Listener_ssl_configuration_verify_depth,
-    ///                 VerifyPeerCertificate = @var.Listener_ssl_configuration_verify_peer_certificate,
-    ///             },
-    ///         });
-    ///     }
+    ///             IdleTimeoutInSeconds = @var.Listener_connection_configuration_idle_timeout_in_seconds,
+    ///             BackendTcpProxyProtocolVersion = @var.Listener_connection_configuration_backend_tcp_proxy_protocol_version,
+    ///         },
+    ///         HostnameNames = new[]
+    ///         {
+    ///             oci_load_balancer_hostname.Test_hostname.Name,
+    ///         },
+    ///         PathRouteSetName = oci_load_balancer_path_route_set.Test_path_route_set.Name,
+    ///         RoutingPolicyName = oci_load_balancer_load_balancer_routing_policy.Test_load_balancer_routing_policy.Name,
+    ///         RuleSetNames = new[]
+    ///         {
+    ///             oci_load_balancer_rule_set.Test_rule_set.Name,
+    ///         },
+    ///         SslConfiguration = new Oci.LoadBalancer.Inputs.ListenerSslConfigurationArgs
+    ///         {
+    ///             CertificateName = oci_load_balancer_certificate.Test_certificate.Name,
+    ///             CertificateIds = @var.Listener_ssl_configuration_certificate_ids,
+    ///             CipherSuiteName = @var.Listener_ssl_configuration_cipher_suite_name,
+    ///             Protocols = @var.Listener_ssl_configuration_protocols,
+    ///             ServerOrderPreference = @var.Listener_ssl_configuration_server_order_preference,
+    ///             TrustedCertificateAuthorityIds = @var.Listener_ssl_configuration_trusted_certificate_authority_ids,
+    ///             VerifyDepth = @var.Listener_ssl_configuration_verify_depth,
+    ///             VerifyPeerCertificate = @var.Listener_ssl_configuration_verify_peer_certificate,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -71,7 +69,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/listener:Listener")]
-    public partial class Listener : Pulumi.CustomResource
+    public partial class Listener : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Configuration details for the connection between the client and backend servers.
@@ -186,7 +184,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class ListenerArgs : Pulumi.ResourceArgs
+    public sealed class ListenerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Configuration details for the connection between the client and backend servers.
@@ -269,9 +267,10 @@ namespace Pulumi.Oci.LoadBalancer
         public ListenerArgs()
         {
         }
+        public static new ListenerArgs Empty => new ListenerArgs();
     }
 
-    public sealed class ListenerState : Pulumi.ResourceArgs
+    public sealed class ListenerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Configuration details for the connection between the client and backend servers.
@@ -357,5 +356,6 @@ namespace Pulumi.Oci.LoadBalancer
         public ListenerState()
         {
         }
+        public static new ListenerState Empty => new ListenerState();
     }
 }

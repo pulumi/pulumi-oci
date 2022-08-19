@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DbSystemsUpgradeIormConfigCachDbPlanArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemsUpgradeIormConfigCachDbPlanArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database name. For the default `DbPlan`, the `dbName` is `default`.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DbSystemsUpgradeIormConfigCachDbPlanArgs()
         {
         }
+        public static new DbSystemsUpgradeIormConfigCachDbPlanArgs Empty => new DbSystemsUpgradeIormConfigCachDbPlanArgs();
     }
 }

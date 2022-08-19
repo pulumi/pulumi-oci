@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class MaintenanceRunEstimatedPatchingTimeArgs : Pulumi.ResourceArgs
+    public sealed class MaintenanceRunEstimatedPatchingTimeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The estimated time required in minutes for database server patching.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Database.Inputs
         public MaintenanceRunEstimatedPatchingTimeArgs()
         {
         }
+        public static new MaintenanceRunEstimatedPatchingTimeArgs Empty => new MaintenanceRunEstimatedPatchingTimeArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class GetTsigKeysFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetTsigKeysFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of a resource.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public GetTsigKeysFilterArgs()
         {
         }
+        public static new GetTsigKeysFilterArgs Empty => new GetTsigKeysFilterArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class GetReplicationPoliciesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetReplicationPoliciesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the policy.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public GetReplicationPoliciesFilterInputArgs()
         {
         }
+        public static new GetReplicationPoliciesFilterInputArgs Empty => new GetReplicationPoliciesFilterInputArgs();
     }
 }

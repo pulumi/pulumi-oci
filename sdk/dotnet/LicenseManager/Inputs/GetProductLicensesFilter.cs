@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LicenseManager.Inputs
 {
 
-    public sealed class GetProductLicensesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetProductLicensesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.LicenseManager.Inputs
         public GetProductLicensesFilterArgs()
         {
         }
+        public static new GetProductLicensesFilterArgs Empty => new GetProductLicensesFilterArgs();
     }
 }

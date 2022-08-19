@@ -21,22 +21,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUserRoles = Oci.DatabaseManagement.GetManagedDatabaseUserRoles.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUserRoles = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUserRoles.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUserRolesArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_database_user_role_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_database_user_role_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUserRoles = Oci.DatabaseManagement.GetManagedDatabaseUserRoles.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUserRoles = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUserRoles.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUserRolesArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_database_user_role_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_database_user_role_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseUserRolesArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUserRolesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseUserRolesFilterArgs>? _filters;
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUserRolesArgs()
         {
         }
+        public static new GetManagedDatabaseUserRolesArgs Empty => new GetManagedDatabaseUserRolesArgs();
     }
 
-    public sealed class GetManagedDatabaseUserRolesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUserRolesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseUserRolesFilterInputArgs>? _filters;
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUserRolesInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseUserRolesInvokeArgs Empty => new GetManagedDatabaseUserRolesInvokeArgs();
     }
 
 

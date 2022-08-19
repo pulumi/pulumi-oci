@@ -21,31 +21,29 @@ namespace Pulumi.Oci.Ons
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSubscription = new Oci.Ons.Subscription("testSubscription", new()
     ///     {
-    ///         var testSubscription = new Oci.Ons.Subscription("testSubscription", new Oci.Ons.SubscriptionArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Endpoint = @var.Subscription_endpoint,
+    ///         Protocol = @var.Subscription_protocol,
+    ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Endpoint = @var.Subscription_endpoint,
-    ///             Protocol = @var.Subscription_protocol,
-    ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.Ons
     /// ```
     /// </summary>
     [OciResourceType("oci:Ons/subscription:Subscription")]
-    public partial class Subscription : Pulumi.CustomResource
+    public partial class Subscription : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
@@ -163,7 +161,7 @@ namespace Pulumi.Oci.Ons
         }
     }
 
-    public sealed class SubscriptionArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
@@ -222,9 +220,10 @@ namespace Pulumi.Oci.Ons
         public SubscriptionArgs()
         {
         }
+        public static new SubscriptionArgs Empty => new SubscriptionArgs();
     }
 
-    public sealed class SubscriptionState : Pulumi.ResourceArgs
+    public sealed class SubscriptionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
@@ -301,5 +300,6 @@ namespace Pulumi.Oci.Ons
         public SubscriptionState()
         {
         }
+        public static new SubscriptionState Empty => new SubscriptionState();
     }
 }

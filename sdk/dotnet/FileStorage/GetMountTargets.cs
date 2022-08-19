@@ -22,25 +22,23 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMountTargets = Oci.FileStorage.GetMountTargets.Invoke(new()
         ///     {
-        ///         var testMountTargets = Output.Create(Oci.FileStorage.GetMountTargets.InvokeAsync(new Oci.FileStorage.GetMountTargetsArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Mount_target_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Mount_target_display_name,
-        ///             ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
-        ///             Id = @var.Mount_target_id,
-        ///             State = @var.Mount_target_state,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Mount_target_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Mount_target_display_name,
+        ///         ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
+        ///         Id = @var.Mount_target_id,
+        ///         State = @var.Mount_target_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMountTargets = Oci.FileStorage.GetMountTargets.Invoke(new()
         ///     {
-        ///         var testMountTargets = Output.Create(Oci.FileStorage.GetMountTargets.InvokeAsync(new Oci.FileStorage.GetMountTargetsArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Mount_target_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Mount_target_display_name,
-        ///             ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
-        ///             Id = @var.Mount_target_id,
-        ///             State = @var.Mount_target_state,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Mount_target_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Mount_target_display_name,
+        ///         ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
+        ///         Id = @var.Mount_target_id,
+        ///         State = @var.Mount_target_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.FileStorage
     }
 
 
-    public sealed class GetMountTargetsArgs : Pulumi.InvokeArgs
+    public sealed class GetMountTargetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.FileStorage
         public GetMountTargetsArgs()
         {
         }
+        public static new GetMountTargetsArgs Empty => new GetMountTargetsArgs();
     }
 
-    public sealed class GetMountTargetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMountTargetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.FileStorage
         public GetMountTargetsInvokeArgs()
         {
         }
+        public static new GetMountTargetsInvokeArgs Empty => new GetMountTargetsInvokeArgs();
     }
 
 

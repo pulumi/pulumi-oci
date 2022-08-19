@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagement.Inputs
 {
 
-    public sealed class ManagedInstanceManagementParentSoftwareSourceArgs : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceManagementParentSoftwareSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// software source identifier
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.OsManagement.Inputs
         public ManagedInstanceManagementParentSoftwareSourceArgs()
         {
         }
+        public static new ManagedInstanceManagementParentSoftwareSourceArgs Empty => new ManagedInstanceManagementParentSoftwareSourceArgs();
     }
 }

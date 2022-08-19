@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class GetPublicationsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetPublicationsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the publication.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public GetPublicationsFilterInputArgs()
         {
         }
+        public static new GetPublicationsFilterInputArgs Empty => new GetPublicationsFilterInputArgs();
     }
 }

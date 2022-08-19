@@ -25,38 +25,36 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testServiceGateway = new Oci.Core.ServiceGateway("testServiceGateway", new()
     ///     {
-    ///         var testServiceGateway = new Oci.Core.ServiceGateway("testServiceGateway", new Oci.Core.ServiceGatewayArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Services = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Services = 
+    ///             new Oci.Core.Inputs.ServiceGatewayServiceArgs
     ///             {
-    ///                 new Oci.Core.Inputs.ServiceGatewayServiceArgs
-    ///                 {
-    ///                     ServiceId = data.Oci_core_services.Test_services.Services[0].Id,
-    ///                 },
+    ///                 ServiceId = data.Oci_core_services.Test_services.Services[0].Id,
     ///             },
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Service_gateway_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Service_gateway_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -68,7 +66,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/serviceGateway:ServiceGateway")]
-    public partial class ServiceGateway : Pulumi.CustomResource
+    public partial class ServiceGateway : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
@@ -174,7 +172,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class ServiceGatewayArgs : Pulumi.ResourceArgs
+    public sealed class ServiceGatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
@@ -239,9 +237,10 @@ namespace Pulumi.Oci.Core
         public ServiceGatewayArgs()
         {
         }
+        public static new ServiceGatewayArgs Empty => new ServiceGatewayArgs();
     }
 
-    public sealed class ServiceGatewayState : Pulumi.ResourceArgs
+    public sealed class ServiceGatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
@@ -324,5 +323,6 @@ namespace Pulumi.Oci.Core
         public ServiceGatewayState()
         {
         }
+        public static new ServiceGatewayState Empty => new ServiceGatewayState();
     }
 }

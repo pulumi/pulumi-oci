@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.EmWarehouse.Inputs
 {
 
-    public sealed class GetEtlRunsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetEtlRunsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.EmWarehouse.Inputs
         public GetEtlRunsFilterArgs()
         {
         }
+        public static new GetEtlRunsFilterArgs Empty => new GetEtlRunsFilterArgs();
     }
 }

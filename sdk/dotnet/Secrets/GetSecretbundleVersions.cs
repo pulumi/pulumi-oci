@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Secrets
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecretbundleVersions = Oci.Secrets.GetSecretbundleVersions.Invoke(new()
         ///     {
-        ///         var testSecretbundleVersions = Output.Create(Oci.Secrets.GetSecretbundleVersions.InvokeAsync(new Oci.Secrets.GetSecretbundleVersionsArgs
-        ///         {
-        ///             SecretId = oci_vault_secret.Test_secret.Id,
-        ///         }));
-        ///     }
+        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Secrets
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecretbundleVersions = Oci.Secrets.GetSecretbundleVersions.Invoke(new()
         ///     {
-        ///         var testSecretbundleVersions = Output.Create(Oci.Secrets.GetSecretbundleVersions.InvokeAsync(new Oci.Secrets.GetSecretbundleVersionsArgs
-        ///         {
-        ///             SecretId = oci_vault_secret.Test_secret.Id,
-        ///         }));
-        ///     }
+        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Secrets
     }
 
 
-    public sealed class GetSecretbundleVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretbundleVersionsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetSecretbundleVersionsFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Secrets
         public GetSecretbundleVersionsArgs()
         {
         }
+        public static new GetSecretbundleVersionsArgs Empty => new GetSecretbundleVersionsArgs();
     }
 
-    public sealed class GetSecretbundleVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretbundleVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetSecretbundleVersionsFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Secrets
         public GetSecretbundleVersionsInvokeArgs()
         {
         }
+        public static new GetSecretbundleVersionsInvokeArgs Empty => new GetSecretbundleVersionsInvokeArgs();
     }
 
 

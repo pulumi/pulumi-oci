@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms.Inputs
 {
 
-    public sealed class GetInstallationSitesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetInstallationSitesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the operating system as provided by the Java system property os.name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Jms.Inputs
         public GetInstallationSitesFilterArgs()
         {
         }
+        public static new GetInstallationSitesFilterArgs Empty => new GetInstallationSitesFilterArgs();
     }
 }

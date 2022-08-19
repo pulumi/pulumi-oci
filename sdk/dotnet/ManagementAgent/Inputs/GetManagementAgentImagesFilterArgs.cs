@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ManagementAgent.Inputs
 {
 
-    public sealed class GetManagementAgentImagesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetManagementAgentImagesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire platform name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         public GetManagementAgentImagesFilterInputArgs()
         {
         }
+        public static new GetManagementAgentImagesFilterInputArgs Empty => new GetManagementAgentImagesFilterInputArgs();
     }
 }

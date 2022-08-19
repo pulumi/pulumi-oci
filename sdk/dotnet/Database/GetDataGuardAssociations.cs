@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataGuardAssociations = Oci.Database.GetDataGuardAssociations.Invoke(new()
         ///     {
-        ///         var testDataGuardAssociations = Output.Create(Oci.Database.GetDataGuardAssociations.InvokeAsync(new Oci.Database.GetDataGuardAssociationsArgs
-        ///         {
-        ///             DatabaseId = oci_database_database.Test_database.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataGuardAssociations = Oci.Database.GetDataGuardAssociations.Invoke(new()
         ///     {
-        ///         var testDataGuardAssociations = Output.Create(Oci.Database.GetDataGuardAssociations.InvokeAsync(new Oci.Database.GetDataGuardAssociationsArgs
-        ///         {
-        ///             DatabaseId = oci_database_database.Test_database.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDataGuardAssociationsArgs : Pulumi.InvokeArgs
+    public sealed class GetDataGuardAssociationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDataGuardAssociationsArgs()
         {
         }
+        public static new GetDataGuardAssociationsArgs Empty => new GetDataGuardAssociationsArgs();
     }
 
-    public sealed class GetDataGuardAssociationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataGuardAssociationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetDataGuardAssociationsInvokeArgs()
         {
         }
+        public static new GetDataGuardAssociationsInvokeArgs Empty => new GetDataGuardAssociationsInvokeArgs();
     }
 
 

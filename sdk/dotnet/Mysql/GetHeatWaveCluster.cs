@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHeatWaveCluster = Oci.Mysql.GetHeatWaveCluster.Invoke(new()
         ///     {
-        ///         var testHeatWaveCluster = Output.Create(Oci.Mysql.GetHeatWaveCluster.InvokeAsync(new Oci.Mysql.GetHeatWaveClusterArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHeatWaveCluster = Oci.Mysql.GetHeatWaveCluster.Invoke(new()
         ///     {
-        ///         var testHeatWaveCluster = Output.Create(Oci.Mysql.GetHeatWaveCluster.InvokeAsync(new Oci.Mysql.GetHeatWaveClusterArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetHeatWaveClusterArgs : Pulumi.InvokeArgs
+    public sealed class GetHeatWaveClusterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Mysql
         public GetHeatWaveClusterArgs()
         {
         }
+        public static new GetHeatWaveClusterArgs Empty => new GetHeatWaveClusterArgs();
     }
 
-    public sealed class GetHeatWaveClusterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHeatWaveClusterInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Mysql
         public GetHeatWaveClusterInvokeArgs()
         {
         }
+        public static new GetHeatWaveClusterInvokeArgs Empty => new GetHeatWaveClusterInvokeArgs();
     }
 
 

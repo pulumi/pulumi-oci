@@ -22,23 +22,21 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptionProducts = Oci.UsageProxy.GetSubscriptionProducts.Invoke(new()
         ///     {
-        ///         var testSubscriptionProducts = Output.Create(Oci.UsageProxy.GetSubscriptionProducts.InvokeAsync(new Oci.UsageProxy.GetSubscriptionProductsArgs
-        ///         {
-        ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///             UsagePeriodKey = @var.Subscription_product_usage_period_key,
-        ///             Producttype = @var.Subscription_product_producttype,
-        ///         }));
-        ///     }
+        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///         UsagePeriodKey = @var.Subscription_product_usage_period_key,
+        ///         Producttype = @var.Subscription_product_producttype,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptionProducts = Oci.UsageProxy.GetSubscriptionProducts.Invoke(new()
         ///     {
-        ///         var testSubscriptionProducts = Output.Create(Oci.UsageProxy.GetSubscriptionProducts.InvokeAsync(new Oci.UsageProxy.GetSubscriptionProductsArgs
-        ///         {
-        ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///             UsagePeriodKey = @var.Subscription_product_usage_period_key,
-        ///             Producttype = @var.Subscription_product_producttype,
-        ///         }));
-        ///     }
+        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///         UsagePeriodKey = @var.Subscription_product_usage_period_key,
+        ///         Producttype = @var.Subscription_product_producttype,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.UsageProxy
     }
 
 
-    public sealed class GetSubscriptionProductsArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionProductsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetSubscriptionProductsFilterArgs>? _filters;
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.UsageProxy
         public GetSubscriptionProductsArgs()
         {
         }
+        public static new GetSubscriptionProductsArgs Empty => new GetSubscriptionProductsArgs();
     }
 
-    public sealed class GetSubscriptionProductsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionProductsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetSubscriptionProductsFilterInputArgs>? _filters;
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.UsageProxy
         public GetSubscriptionProductsInvokeArgs()
         {
         }
+        public static new GetSubscriptionProductsInvokeArgs Empty => new GetSubscriptionProductsInvokeArgs();
     }
 
 

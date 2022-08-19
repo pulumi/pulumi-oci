@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemSourceArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the backup to be used as the source for the new DB System.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemSourceArgs()
         {
         }
+        public static new MysqlDbSystemSourceArgs Empty => new MysqlDbSystemSourceArgs();
     }
 }

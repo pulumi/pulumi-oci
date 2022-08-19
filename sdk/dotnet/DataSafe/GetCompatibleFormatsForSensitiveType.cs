@@ -25,22 +25,20 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCompatibleFormatsForSensitiveType = Oci.DataSafe.GetCompatibleFormatsForSensitiveType.Invoke(new()
         ///     {
-        ///         var testCompatibleFormatsForSensitiveType = Output.Create(Oci.DataSafe.GetCompatibleFormatsForSensitiveType.InvokeAsync(new Oci.DataSafe.GetCompatibleFormatsForSensitiveTypeArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Compatible_formats_for_sensitive_type_access_level,
-        ///             CompartmentIdInSubtree = @var.Compatible_formats_for_sensitive_type_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Compatible_formats_for_sensitive_type_access_level,
+        ///         CompartmentIdInSubtree = @var.Compatible_formats_for_sensitive_type_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,22 +60,20 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCompatibleFormatsForSensitiveType = Oci.DataSafe.GetCompatibleFormatsForSensitiveType.Invoke(new()
         ///     {
-        ///         var testCompatibleFormatsForSensitiveType = Output.Create(Oci.DataSafe.GetCompatibleFormatsForSensitiveType.InvokeAsync(new Oci.DataSafe.GetCompatibleFormatsForSensitiveTypeArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Compatible_formats_for_sensitive_type_access_level,
-        ///             CompartmentIdInSubtree = @var.Compatible_formats_for_sensitive_type_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Compatible_formats_for_sensitive_type_access_level,
+        ///         CompartmentIdInSubtree = @var.Compatible_formats_for_sensitive_type_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetCompatibleFormatsForSensitiveTypeArgs : Pulumi.InvokeArgs
+    public sealed class GetCompatibleFormatsForSensitiveTypeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.DataSafe
         public GetCompatibleFormatsForSensitiveTypeArgs()
         {
         }
+        public static new GetCompatibleFormatsForSensitiveTypeArgs Empty => new GetCompatibleFormatsForSensitiveTypeArgs();
     }
 
-    public sealed class GetCompatibleFormatsForSensitiveTypeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCompatibleFormatsForSensitiveTypeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -135,6 +132,7 @@ namespace Pulumi.Oci.DataSafe
         public GetCompatibleFormatsForSensitiveTypeInvokeArgs()
         {
         }
+        public static new GetCompatibleFormatsForSensitiveTypeInvokeArgs Empty => new GetCompatibleFormatsForSensitiveTypeInvokeArgs();
     }
 
 

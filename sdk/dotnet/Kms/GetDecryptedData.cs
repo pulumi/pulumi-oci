@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDecryptedData = Oci.Kms.GetDecryptedData.Invoke(new()
         ///     {
-        ///         var testDecryptedData = Output.Create(Oci.Kms.GetDecryptedData.InvokeAsync(new Oci.Kms.GetDecryptedDataArgs
-        ///         {
-        ///             Ciphertext = @var.Decrypted_data_ciphertext,
-        ///             CryptoEndpoint = @var.Decrypted_data_crypto_endpoint,
-        ///             KeyId = oci_kms_key.Test_key.Id,
-        ///             AssociatedData = @var.Decrypted_data_associated_data,
-        ///         }));
-        ///     }
+        ///         Ciphertext = @var.Decrypted_data_ciphertext,
+        ///         CryptoEndpoint = @var.Decrypted_data_crypto_endpoint,
+        ///         KeyId = oci_kms_key.Test_key.Id,
+        ///         AssociatedData = @var.Decrypted_data_associated_data,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDecryptedData = Oci.Kms.GetDecryptedData.Invoke(new()
         ///     {
-        ///         var testDecryptedData = Output.Create(Oci.Kms.GetDecryptedData.InvokeAsync(new Oci.Kms.GetDecryptedDataArgs
-        ///         {
-        ///             Ciphertext = @var.Decrypted_data_ciphertext,
-        ///             CryptoEndpoint = @var.Decrypted_data_crypto_endpoint,
-        ///             KeyId = oci_kms_key.Test_key.Id,
-        ///             AssociatedData = @var.Decrypted_data_associated_data,
-        ///         }));
-        ///     }
+        ///         Ciphertext = @var.Decrypted_data_ciphertext,
+        ///         CryptoEndpoint = @var.Decrypted_data_crypto_endpoint,
+        ///         KeyId = oci_kms_key.Test_key.Id,
+        ///         AssociatedData = @var.Decrypted_data_associated_data,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Kms
     }
 
 
-    public sealed class GetDecryptedDataArgs : Pulumi.InvokeArgs
+    public sealed class GetDecryptedDataArgs : global::Pulumi.InvokeArgs
     {
         [Input("associatedData")]
         private Dictionary<string, object>? _associatedData;
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Kms
         public GetDecryptedDataArgs()
         {
         }
+        public static new GetDecryptedDataArgs Empty => new GetDecryptedDataArgs();
     }
 
-    public sealed class GetDecryptedDataInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDecryptedDataInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("associatedData")]
         private InputMap<object>? _associatedData;
@@ -155,6 +152,7 @@ namespace Pulumi.Oci.Kms
         public GetDecryptedDataInvokeArgs()
         {
         }
+        public static new GetDecryptedDataInvokeArgs Empty => new GetDecryptedDataInvokeArgs();
     }
 
 

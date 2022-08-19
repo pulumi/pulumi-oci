@@ -35,6 +35,49 @@ import javax.annotation.Nullable;
  * Destroying this resource will not delete any associations.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.OsManagement.ManagedInstanceManagement;
+ * import com.pulumi.oci.OsManagement.ManagedInstanceManagementArgs;
+ * import com.pulumi.oci.OsManagement.inputs.ManagedInstanceManagementParentSoftwareSourceArgs;
+ * import com.pulumi.oci.OsManagement.inputs.ManagedInstanceManagementManagedInstanceGroupArgs;
+ * import com.pulumi.oci.OsManagement.inputs.ManagedInstanceManagementChildSoftwareSourceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testManagedInstanceManagement = new ManagedInstanceManagement(&#34;testManagedInstanceManagement&#34;, ManagedInstanceManagementArgs.builder()        
+ *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+ *             .parentSoftwareSource(ManagedInstanceManagementParentSoftwareSourceArgs.builder()
+ *                 .id(oci_osmanagement_software_source.test_parent_software_source().id())
+ *                 .name(oci_osmanagement_software_source.test_parent_software_source().display_name())
+ *                 .build())
+ *             .managedInstanceGroups(ManagedInstanceManagementManagedInstanceGroupArgs.builder()
+ *                 .id(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+ *                 .displayName(var_.managed_instance_group_display_name())
+ *                 .build())
+ *             .childSoftwareSources(ManagedInstanceManagementChildSoftwareSourceArgs.builder()
+ *                 .id(oci_osmanagement_software_source.test_software_source_child().id())
+ *                 .name(oci_osmanagement_software_source.test_software_source_child().display_name())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

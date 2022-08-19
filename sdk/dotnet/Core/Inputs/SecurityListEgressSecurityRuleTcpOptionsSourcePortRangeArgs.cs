@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs : Pulumi.ResourceArgs
+    public sealed class SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs()
         {
         }
+        public static new SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs Empty => new SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs();
     }
 }

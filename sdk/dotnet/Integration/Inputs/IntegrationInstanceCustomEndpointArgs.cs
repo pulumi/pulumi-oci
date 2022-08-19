@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Integration.Inputs
 {
 
-    public sealed class IntegrationInstanceCustomEndpointArgs : Pulumi.ResourceArgs
+    public sealed class IntegrationInstanceCustomEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Integration.Inputs
         public IntegrationInstanceCustomEndpointArgs()
         {
         }
+        public static new IntegrationInstanceCustomEndpointArgs Empty => new IntegrationInstanceCustomEndpointArgs();
     }
 }

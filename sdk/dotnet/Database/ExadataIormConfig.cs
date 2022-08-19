@@ -24,29 +24,27 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExadataIormConfig = new Oci.Database.ExadataIormConfig("testExadataIormConfig", new()
     ///     {
-    ///         var testExadataIormConfig = new Oci.Database.ExadataIormConfig("testExadataIormConfig", new Oci.Database.ExadataIormConfigArgs
+    ///         DbPlans = new[]
     ///         {
-    ///             DbPlans = 
+    ///             new Oci.Database.Inputs.ExadataIormConfigDbPlanArgs
     ///             {
-    ///                 new Oci.Database.Inputs.ExadataIormConfigDbPlanArgs
-    ///                 {
-    ///                     DbName = @var.Exadata_iorm_config_db_plans_db_name,
-    ///                     Share = @var.Exadata_iorm_config_db_plans_share,
-    ///                 },
+    ///                 DbName = @var.Exadata_iorm_config_db_plans_db_name,
+    ///                 Share = @var.Exadata_iorm_config_db_plans_share,
     ///             },
-    ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///             Objective = "AUTO",
-    ///         });
-    ///     }
+    ///         },
+    ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+    ///         Objective = "AUTO",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/exadataIormConfig:ExadataIormConfig")]
-    public partial class ExadataIormConfig : Pulumi.CustomResource
+    public partial class ExadataIormConfig : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Array of IORM Setting for all the database in this Exadata DB System
@@ -130,7 +128,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExadataIormConfigArgs : Pulumi.ResourceArgs
+    public sealed class ExadataIormConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("dbPlans", required: true)]
         private InputList<Inputs.ExadataIormConfigDbPlanArgs>? _dbPlans;
@@ -159,9 +157,10 @@ namespace Pulumi.Oci.Database
         public ExadataIormConfigArgs()
         {
         }
+        public static new ExadataIormConfigArgs Empty => new ExadataIormConfigArgs();
     }
 
-    public sealed class ExadataIormConfigState : Pulumi.ResourceArgs
+    public sealed class ExadataIormConfigState : global::Pulumi.ResourceArgs
     {
         [Input("dbPlans")]
         private InputList<Inputs.ExadataIormConfigDbPlanGetArgs>? _dbPlans;
@@ -202,5 +201,6 @@ namespace Pulumi.Oci.Database
         public ExadataIormConfigState()
         {
         }
+        public static new ExadataIormConfigState Empty => new ExadataIormConfigState();
     }
 }

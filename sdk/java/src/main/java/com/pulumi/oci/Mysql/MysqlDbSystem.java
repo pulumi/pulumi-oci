@@ -35,6 +35,79 @@ import javax.annotation.Nullable;
  * Creates and launches a DB System.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Mysql.MysqlDbSystem;
+ * import com.pulumi.oci.Mysql.MysqlDbSystemArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemSourceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMysqlDbSystem = new MysqlDbSystem(&#34;testMysqlDbSystem&#34;, MysqlDbSystemArgs.builder()        
+ *             .availabilityDomain(var_.mysql_db_system_availability_domain())
+ *             .compartmentId(var_.compartment_id())
+ *             .shapeName(var_.mysql_shape_name())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .adminPassword(var_.mysql_db_system_admin_password())
+ *             .adminUsername(var_.mysql_db_system_admin_username())
+ *             .backupPolicy(MysqlDbSystemBackupPolicyArgs.builder()
+ *                 .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *                 .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *                 .isEnabled(var_.mysql_db_system_backup_policy_is_enabled())
+ *                 .pitrPolicy(MysqlDbSystemBackupPolicyPitrPolicyArgs.builder()
+ *                     .isEnabled(var_.mysql_db_system_backup_policy_pitr_policy_is_enabled())
+ *                     .build())
+ *                 .retentionInDays(var_.mysql_db_system_backup_policy_retention_in_days())
+ *                 .windowStartTime(var_.mysql_db_system_backup_policy_window_start_time())
+ *                 .build())
+ *             .configurationId(oci_audit_configuration.test_configuration().id())
+ *             .crashRecovery(var_.mysql_db_system_crash_recovery())
+ *             .dataStorageSizeInGb(var_.mysql_db_system_data_storage_size_in_gb())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .deletionPolicies(MysqlDbSystemDeletionPolicyArgs.builder()
+ *                 .automaticBackupRetention(var_.mysql_db_system_deletion_policy_automatic_backup_retention())
+ *                 .finalBackup(var_.mysql_db_system_deletion_policy_final_backup())
+ *                 .isDeleteProtected(var_.mysql_db_system_deletion_policy_is_delete_protected())
+ *                 .build())
+ *             .description(var_.mysql_db_system_description())
+ *             .displayName(var_.mysql_db_system_display_name())
+ *             .faultDomain(var_.mysql_db_system_fault_domain())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .hostnameLabel(var_.mysql_db_system_hostname_label())
+ *             .ipAddress(var_.mysql_db_system_ip_address())
+ *             .isHighlyAvailable(var_.mysql_db_system_is_highly_available())
+ *             .maintenance(MysqlDbSystemMaintenanceArgs.builder()
+ *                 .windowStartTime(var_.mysql_db_system_maintenance_window_start_time())
+ *                 .build())
+ *             .port(var_.mysql_db_system_port())
+ *             .portX(var_.mysql_db_system_port_x())
+ *             .source(MysqlDbSystemSourceArgs.builder()
+ *                 .sourceType(var_.mysql_db_system_source_source_type())
+ *                 .backupId(oci_mysql_mysql_backup.test_backup().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

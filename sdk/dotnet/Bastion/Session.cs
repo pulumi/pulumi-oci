@@ -17,35 +17,33 @@ namespace Pulumi.Oci.Bastion
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSession = new Oci.Bastion.Session("testSession", new()
     ///     {
-    ///         var testSession = new Oci.Bastion.Session("testSession", new Oci.Bastion.SessionArgs
+    ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
+    ///         KeyDetails = new Oci.Bastion.Inputs.SessionKeyDetailsArgs
     ///         {
-    ///             BastionId = oci_bastion_bastion.Test_bastion.Id,
-    ///             KeyDetails = new Oci.Bastion.Inputs.SessionKeyDetailsArgs
-    ///             {
-    ///                 PublicKeyContent = @var.Session_key_details_public_key_content,
-    ///             },
-    ///             TargetResourceDetails = new Oci.Bastion.Inputs.SessionTargetResourceDetailsArgs
-    ///             {
-    ///                 SessionType = @var.Session_target_resource_details_session_type,
-    ///                 TargetResourceId = oci_bastion_target_resource.Test_target_resource.Id,
-    ///                 TargetResourceOperatingSystemUserName = oci_identity_user.Test_user.Name,
-    ///                 TargetResourcePort = @var.Session_target_resource_details_target_resource_port,
-    ///                 TargetResourcePrivateIpAddress = @var.Session_target_resource_details_target_resource_private_ip_address,
-    ///             },
-    ///             DisplayName = @var.Session_display_name,
-    ///             KeyType = @var.Session_key_type,
-    ///             SessionTtlInSeconds = @var.Session_session_ttl_in_seconds,
-    ///         });
-    ///     }
+    ///             PublicKeyContent = @var.Session_key_details_public_key_content,
+    ///         },
+    ///         TargetResourceDetails = new Oci.Bastion.Inputs.SessionTargetResourceDetailsArgs
+    ///         {
+    ///             SessionType = @var.Session_target_resource_details_session_type,
+    ///             TargetResourceId = oci_bastion_target_resource.Test_target_resource.Id,
+    ///             TargetResourceOperatingSystemUserName = oci_identity_user.Test_user.Name,
+    ///             TargetResourcePort = @var.Session_target_resource_details_target_resource_port,
+    ///             TargetResourcePrivateIpAddress = @var.Session_target_resource_details_target_resource_private_ip_address,
+    ///         },
+    ///         DisplayName = @var.Session_display_name,
+    ///         KeyType = @var.Session_key_type,
+    ///         SessionTtlInSeconds = @var.Session_session_ttl_in_seconds,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.Bastion
     /// ```
     /// </summary>
     [OciResourceType("oci:Bastion/session:Session")]
-    public partial class Session : Pulumi.CustomResource
+    public partial class Session : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The unique identifier (OCID) of the bastion on which to create this session.
@@ -187,7 +185,7 @@ namespace Pulumi.Oci.Bastion
         }
     }
 
-    public sealed class SessionArgs : Pulumi.ResourceArgs
+    public sealed class SessionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique identifier (OCID) of the bastion on which to create this session.
@@ -228,9 +226,10 @@ namespace Pulumi.Oci.Bastion
         public SessionArgs()
         {
         }
+        public static new SessionArgs Empty => new SessionArgs();
     }
 
-    public sealed class SessionState : Pulumi.ResourceArgs
+    public sealed class SessionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique identifier (OCID) of the bastion on which to create this session.
@@ -325,5 +324,6 @@ namespace Pulumi.Oci.Bastion
         public SessionState()
         {
         }
+        public static new SessionState Empty => new SessionState();
     }
 }

@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDomain = Oci.Identity.GetDomain.Invoke(new()
         ///     {
-        ///         var testDomain = Output.Create(Oci.Identity.GetDomain.InvokeAsync(new Oci.Identity.GetDomainArgs
-        ///         {
-        ///             DomainId = oci_identity_domain.Test_domain.Id,
-        ///         }));
-        ///     }
+        ///         DomainId = oci_identity_domain.Test_domain.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDomain = Oci.Identity.GetDomain.Invoke(new()
         ///     {
-        ///         var testDomain = Output.Create(Oci.Identity.GetDomain.InvokeAsync(new Oci.Identity.GetDomainArgs
-        ///         {
-        ///             DomainId = oci_identity_domain.Test_domain.Id,
-        ///         }));
-        ///     }
+        ///         DomainId = oci_identity_domain.Test_domain.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetDomainArgs : Pulumi.InvokeArgs
+    public sealed class GetDomainArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the domain
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Identity
         public GetDomainArgs()
         {
         }
+        public static new GetDomainArgs Empty => new GetDomainArgs();
     }
 
-    public sealed class GetDomainInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDomainInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the domain
@@ -107,6 +104,7 @@ namespace Pulumi.Oci.Identity
         public GetDomainInvokeArgs()
         {
         }
+        public static new GetDomainInvokeArgs Empty => new GetDomainInvokeArgs();
     }
 
 

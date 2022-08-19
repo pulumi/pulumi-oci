@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Kms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testReplication = new Oci.Kms.VaultVerification("testReplication", new()
     ///     {
-    ///         var testReplication = new Oci.Kms.VaultVerification("testReplication", new Oci.Kms.VaultVerificationArgs
-    ///         {
-    ///             VaultId = oci_kms_vault.Test_vault.Id,
-    ///             ReplicaRegion = @var.Replica_region,
-    ///         });
-    ///     }
+    ///         VaultId = oci_kms_vault.Test_vault.Id,
+    ///         ReplicaRegion = @var.Replica_region,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [OciResourceType("oci:Kms/vaultVerification:VaultVerification")]
-    public partial class VaultVerification : Pulumi.CustomResource
+    public partial class VaultVerification : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The region to be created replica to. When updated,
@@ -98,7 +96,7 @@ namespace Pulumi.Oci.Kms
         }
     }
 
-    public sealed class VaultVerificationArgs : Pulumi.ResourceArgs
+    public sealed class VaultVerificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The region to be created replica to. When updated,
@@ -116,9 +114,10 @@ namespace Pulumi.Oci.Kms
         public VaultVerificationArgs()
         {
         }
+        public static new VaultVerificationArgs Empty => new VaultVerificationArgs();
     }
 
-    public sealed class VaultVerificationState : Pulumi.ResourceArgs
+    public sealed class VaultVerificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The region to be created replica to. When updated,
@@ -136,5 +135,6 @@ namespace Pulumi.Oci.Kms
         public VaultVerificationState()
         {
         }
+        public static new VaultVerificationState Empty => new VaultVerificationState();
     }
 }

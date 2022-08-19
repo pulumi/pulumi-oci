@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetBootVolumeBackupsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetBootVolumeBackupsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetBootVolumeBackupsFilterInputArgs()
         {
         }
+        public static new GetBootVolumeBackupsFilterInputArgs Empty => new GetBootVolumeBackupsFilterInputArgs();
     }
 }

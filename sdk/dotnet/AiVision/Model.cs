@@ -17,59 +17,57 @@ namespace Pulumi.Oci.AiVision
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testModel = new Oci.AiVision.Model("testModel", new()
     ///     {
-    ///         var testModel = new Oci.AiVision.Model("testModel", new Oci.AiVision.ModelArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ModelType = @var.Model_model_type,
+    ///         ProjectId = oci_ai_vision_project.Test_project.Id,
+    ///         TrainingDataset = new Oci.AiVision.Inputs.ModelTrainingDatasetArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ModelType = @var.Model_model_type,
-    ///             ProjectId = oci_ai_vision_project.Test_project.Id,
-    ///             TrainingDataset = new Oci.AiVision.Inputs.ModelTrainingDatasetArgs
-    ///             {
-    ///                 DatasetType = @var.Model_training_dataset_dataset_type,
-    ///                 Bucket = @var.Model_training_dataset_bucket,
-    ///                 DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///                 NamespaceName = @var.Model_training_dataset_namespace,
-    ///                 Object = @var.Model_training_dataset_object,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Model_description,
-    ///             DisplayName = @var.Model_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsQuickMode = @var.Model_is_quick_mode,
-    ///             MaxTrainingDurationInHours = @var.Model_max_training_duration_in_hours,
-    ///             ModelVersion = @var.Model_model_version,
-    ///             TestingDataset = new Oci.AiVision.Inputs.ModelTestingDatasetArgs
-    ///             {
-    ///                 DatasetType = @var.Model_testing_dataset_dataset_type,
-    ///                 Bucket = @var.Model_testing_dataset_bucket,
-    ///                 DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///                 NamespaceName = @var.Model_testing_dataset_namespace,
-    ///                 Object = @var.Model_testing_dataset_object,
-    ///             },
-    ///             ValidationDataset = new Oci.AiVision.Inputs.ModelValidationDatasetArgs
-    ///             {
-    ///                 DatasetType = @var.Model_validation_dataset_dataset_type,
-    ///                 Bucket = @var.Model_validation_dataset_bucket,
-    ///                 DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///                 NamespaceName = @var.Model_validation_dataset_namespace,
-    ///                 Object = @var.Model_validation_dataset_object,
-    ///             },
-    ///         });
-    ///     }
+    ///             DatasetType = @var.Model_training_dataset_dataset_type,
+    ///             Bucket = @var.Model_training_dataset_bucket,
+    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+    ///             NamespaceName = @var.Model_training_dataset_namespace,
+    ///             Object = @var.Model_training_dataset_object,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Model_description,
+    ///         DisplayName = @var.Model_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsQuickMode = @var.Model_is_quick_mode,
+    ///         MaxTrainingDurationInHours = @var.Model_max_training_duration_in_hours,
+    ///         ModelVersion = @var.Model_model_version,
+    ///         TestingDataset = new Oci.AiVision.Inputs.ModelTestingDatasetArgs
+    ///         {
+    ///             DatasetType = @var.Model_testing_dataset_dataset_type,
+    ///             Bucket = @var.Model_testing_dataset_bucket,
+    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+    ///             NamespaceName = @var.Model_testing_dataset_namespace,
+    ///             Object = @var.Model_testing_dataset_object,
+    ///         },
+    ///         ValidationDataset = new Oci.AiVision.Inputs.ModelValidationDatasetArgs
+    ///         {
+    ///             DatasetType = @var.Model_validation_dataset_dataset_type,
+    ///             Bucket = @var.Model_validation_dataset_bucket,
+    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+    ///             NamespaceName = @var.Model_validation_dataset_namespace,
+    ///             Object = @var.Model_validation_dataset_object,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -81,7 +79,7 @@ namespace Pulumi.Oci.AiVision
     /// ```
     /// </summary>
     [OciResourceType("oci:AiVision/model:Model")]
-    public partial class Model : Pulumi.CustomResource
+    public partial class Model : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Average precision of the trained model
@@ -283,7 +281,7 @@ namespace Pulumi.Oci.AiVision
         }
     }
 
-    public sealed class ModelArgs : Pulumi.ResourceArgs
+    public sealed class ModelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -378,9 +376,10 @@ namespace Pulumi.Oci.AiVision
         public ModelArgs()
         {
         }
+        public static new ModelArgs Empty => new ModelArgs();
     }
 
-    public sealed class ModelState : Pulumi.ResourceArgs
+    public sealed class ModelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Average precision of the trained model
@@ -559,5 +558,6 @@ namespace Pulumi.Oci.AiVision
         public ModelState()
         {
         }
+        public static new ModelState Empty => new ModelState();
     }
 }

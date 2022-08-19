@@ -23,6 +23,34 @@ public final class AppMgmtControlFunctions {
      * Gets a monitored instance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
+     *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitoredInstanceResult> getMonitoredInstance(GetMonitoredInstanceArgs args) {
@@ -34,6 +62,34 @@ public final class AppMgmtControlFunctions {
      * Gets a monitored instance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
+     *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitoredInstanceResult> getMonitoredInstancePlain(GetMonitoredInstancePlainArgs args) {
@@ -45,6 +101,34 @@ public final class AppMgmtControlFunctions {
      * Gets a monitored instance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
+     *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitoredInstanceResult> getMonitoredInstance(GetMonitoredInstanceArgs args, InvokeOptions options) {
@@ -56,6 +140,34 @@ public final class AppMgmtControlFunctions {
      * Gets a monitored instance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
+     *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitoredInstanceResult> getMonitoredInstancePlain(GetMonitoredInstancePlainArgs args, InvokeOptions options) {
@@ -67,6 +179,35 @@ public final class AppMgmtControlFunctions {
      * Returns a list of monitored instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.monitored_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitoredInstancesResult> getMonitoredInstances(GetMonitoredInstancesArgs args) {
@@ -78,6 +219,35 @@ public final class AppMgmtControlFunctions {
      * Returns a list of monitored instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.monitored_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitoredInstancesResult> getMonitoredInstancesPlain(GetMonitoredInstancesPlainArgs args) {
@@ -89,6 +259,35 @@ public final class AppMgmtControlFunctions {
      * Returns a list of monitored instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.monitored_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitoredInstancesResult> getMonitoredInstances(GetMonitoredInstancesArgs args, InvokeOptions options) {
@@ -100,6 +299,35 @@ public final class AppMgmtControlFunctions {
      * Returns a list of monitored instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
+     * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.monitored_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitoredInstancesResult> getMonitoredInstancesPlain(GetMonitoredInstancesPlainArgs args, InvokeOptions options) {

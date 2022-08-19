@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class ReportDefinitionColumnInfoGetArgs : Pulumi.ResourceArgs
+    public sealed class ReportDefinitionColumnInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies the data type of the column.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public ReportDefinitionColumnInfoGetArgs()
         {
         }
+        public static new ReportDefinitionColumnInfoGetArgs Empty => new ReportDefinitionColumnInfoGetArgs();
     }
 }

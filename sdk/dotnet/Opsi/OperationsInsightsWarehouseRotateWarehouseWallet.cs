@@ -17,20 +17,18 @@ namespace Pulumi.Oci.Opsi
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOperationsInsightsWarehouseRotateWarehouseWallet = new Oci.Opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", new()
     ///     {
-    ///         var testOperationsInsightsWarehouseRotateWarehouseWallet = new Oci.Opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", new Oci.Opsi.OperationsInsightsWarehouseRotateWarehouseWalletArgs
-    ///         {
-    ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-    ///         });
-    ///     }
+    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -42,7 +40,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet")]
-    public partial class OperationsInsightsWarehouseRotateWarehouseWallet : Pulumi.CustomResource
+    public partial class OperationsInsightsWarehouseRotateWarehouseWallet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique Operations Insights Warehouse identifier
@@ -94,7 +92,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class OperationsInsightsWarehouseRotateWarehouseWalletArgs : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsWarehouseRotateWarehouseWalletArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique Operations Insights Warehouse identifier
@@ -105,9 +103,10 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsWarehouseRotateWarehouseWalletArgs()
         {
         }
+        public static new OperationsInsightsWarehouseRotateWarehouseWalletArgs Empty => new OperationsInsightsWarehouseRotateWarehouseWalletArgs();
     }
 
-    public sealed class OperationsInsightsWarehouseRotateWarehouseWalletState : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsWarehouseRotateWarehouseWalletState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique Operations Insights Warehouse identifier
@@ -118,5 +117,6 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsWarehouseRotateWarehouseWalletState()
         {
         }
+        public static new OperationsInsightsWarehouseRotateWarehouseWalletState Empty => new OperationsInsightsWarehouseRotateWarehouseWalletState();
     }
 }

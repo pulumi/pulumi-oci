@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class BdsInstanceMasterNodeArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceMasterNodeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public BdsInstanceMasterNodeArgs()
         {
         }
+        public static new BdsInstanceMasterNodeArgs Empty => new BdsInstanceMasterNodeArgs();
     }
 }

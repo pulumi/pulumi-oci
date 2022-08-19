@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog.Inputs
 {
 
-    public sealed class GetCatalogsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataCatalog.Inputs
         public GetCatalogsFilterArgs()
         {
         }
+        public static new GetCatalogsFilterArgs Empty => new GetCatalogsFilterArgs();
     }
 }

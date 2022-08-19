@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationAdvisorSettingsArgs : Pulumi.ResourceArgs
+    public sealed class MigrationAdvisorSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationAdvisorSettingsArgs()
         {
         }
+        public static new MigrationAdvisorSettingsArgs Empty => new MigrationAdvisorSettingsArgs();
     }
 }

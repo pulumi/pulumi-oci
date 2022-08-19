@@ -35,25 +35,23 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargets = Oci.CloudGuard.GetGuardTargets.Invoke(new()
         ///     {
-        ///         var testTargets = Output.Create(Oci.CloudGuard.GetGuardTargets.InvokeAsync(new Oci.CloudGuard.GetGuardTargetsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Target_access_level,
-        ///             CompartmentIdInSubtree = @var.Target_compartment_id_in_subtree,
-        ///             DisplayName = @var.Target_display_name,
-        ///             IsNonSecurityZoneTargetsOnlyQuery = @var.Target_is_non_security_zone_targets_only_query,
-        ///             State = @var.Target_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Target_access_level,
+        ///         CompartmentIdInSubtree = @var.Target_compartment_id_in_subtree,
+        ///         DisplayName = @var.Target_display_name,
+        ///         IsNonSecurityZoneTargetsOnlyQuery = @var.Target_is_non_security_zone_targets_only_query,
+        ///         State = @var.Target_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,25 +83,23 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargets = Oci.CloudGuard.GetGuardTargets.Invoke(new()
         ///     {
-        ///         var testTargets = Output.Create(Oci.CloudGuard.GetGuardTargets.InvokeAsync(new Oci.CloudGuard.GetGuardTargetsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Target_access_level,
-        ///             CompartmentIdInSubtree = @var.Target_compartment_id_in_subtree,
-        ///             DisplayName = @var.Target_display_name,
-        ///             IsNonSecurityZoneTargetsOnlyQuery = @var.Target_is_non_security_zone_targets_only_query,
-        ///             State = @var.Target_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Target_access_level,
+        ///         CompartmentIdInSubtree = @var.Target_compartment_id_in_subtree,
+        ///         DisplayName = @var.Target_display_name,
+        ///         IsNonSecurityZoneTargetsOnlyQuery = @var.Target_is_non_security_zone_targets_only_query,
+        ///         State = @var.Target_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -113,7 +109,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetGuardTargetsArgs : Pulumi.InvokeArgs
+    public sealed class GetGuardTargetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -162,9 +158,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetGuardTargetsArgs()
         {
         }
+        public static new GetGuardTargetsArgs Empty => new GetGuardTargetsArgs();
     }
 
-    public sealed class GetGuardTargetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGuardTargetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -213,6 +210,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetGuardTargetsInvokeArgs()
         {
         }
+        public static new GetGuardTargetsInvokeArgs Empty => new GetGuardTargetsInvokeArgs();
     }
 
 

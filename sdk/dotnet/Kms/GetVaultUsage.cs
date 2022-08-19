@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVaultUsage = Oci.Kms.GetVaultUsage.Invoke(new()
         ///     {
-        ///         var testVaultUsage = Output.Create(Oci.Kms.GetVaultUsage.InvokeAsync(new Oci.Kms.GetVaultUsageArgs
-        ///         {
-        ///             VaultId = oci_kms_vault.Test_vault.Id,
-        ///         }));
-        ///     }
+        ///         VaultId = oci_kms_vault.Test_vault.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVaultUsage = Oci.Kms.GetVaultUsage.Invoke(new()
         ///     {
-        ///         var testVaultUsage = Output.Create(Oci.Kms.GetVaultUsage.InvokeAsync(new Oci.Kms.GetVaultUsageArgs
-        ///         {
-        ///             VaultId = oci_kms_vault.Test_vault.Id,
-        ///         }));
-        ///     }
+        ///         VaultId = oci_kms_vault.Test_vault.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Kms
     }
 
 
-    public sealed class GetVaultUsageArgs : Pulumi.InvokeArgs
+    public sealed class GetVaultUsageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the vault.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Kms
         public GetVaultUsageArgs()
         {
         }
+        public static new GetVaultUsageArgs Empty => new GetVaultUsageArgs();
     }
 
-    public sealed class GetVaultUsageInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVaultUsageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the vault.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Kms
         public GetVaultUsageInvokeArgs()
         {
         }
+        public static new GetVaultUsageInvokeArgs Empty => new GetVaultUsageInvokeArgs();
     }
 
 

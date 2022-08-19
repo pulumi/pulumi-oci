@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetCrossConnectLocationsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCrossConnectLocationsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the location.  Example: `CyrusOne, Chandler, AZ`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetCrossConnectLocationsFilterInputArgs()
         {
         }
+        public static new GetCrossConnectLocationsFilterInputArgs Empty => new GetCrossConnectLocationsFilterInputArgs();
     }
 }

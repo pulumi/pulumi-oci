@@ -32,49 +32,47 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBootVolume = new Oci.Core.BootVolume("testBootVolume", new()
     ///     {
-    ///         var testBootVolume = new Oci.Core.BootVolume("testBootVolume", new Oci.Core.BootVolumeArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         SourceDetails = new Oci.Core.Inputs.BootVolumeSourceDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             SourceDetails = new Oci.Core.Inputs.BootVolumeSourceDetailsArgs
+    ///             Id = @var.Boot_volume_source_details_id,
+    ///             Type = @var.Boot_volume_source_details_type,
+    ///         },
+    ///         AvailabilityDomain = @var.Boot_volume_availability_domain,
+    ///         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
+    ///         BootVolumeReplicas = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.BootVolumeBootVolumeReplicaArgs
     ///             {
-    ///                 Id = @var.Boot_volume_source_details_id,
-    ///                 Type = @var.Boot_volume_source_details_type,
+    ///                 AvailabilityDomain = @var.Boot_volume_boot_volume_replicas_availability_domain,
+    ///                 DisplayName = @var.Boot_volume_boot_volume_replicas_display_name,
     ///             },
-    ///             AvailabilityDomain = @var.Boot_volume_availability_domain,
-    ///             BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
-    ///             BootVolumeReplicas = 
-    ///             {
-    ///                 new Oci.Core.Inputs.BootVolumeBootVolumeReplicaArgs
-    ///                 {
-    ///                     AvailabilityDomain = @var.Boot_volume_boot_volume_replicas_availability_domain,
-    ///                     DisplayName = @var.Boot_volume_boot_volume_replicas_display_name,
-    ///                 },
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Boot_volume_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsAutoTuneEnabled = @var.Boot_volume_is_auto_tune_enabled,
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             SizeInGbs = @var.Boot_volume_size_in_gbs,
-    ///             VpusPerGb = @var.Boot_volume_vpus_per_gb,
-    ///             BootVolumeReplicasDeletion = true,
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Boot_volume_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsAutoTuneEnabled = @var.Boot_volume_is_auto_tune_enabled,
+    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         SizeInGbs = @var.Boot_volume_size_in_gbs,
+    ///         VpusPerGb = @var.Boot_volume_vpus_per_gb,
+    ///         BootVolumeReplicasDeletion = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -86,7 +84,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/bootVolume:BootVolume")]
-    public partial class BootVolume : Pulumi.CustomResource
+    public partial class BootVolume : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
@@ -252,7 +250,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class BootVolumeArgs : Pulumi.ResourceArgs
+    public sealed class BootVolumeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -347,9 +345,10 @@ namespace Pulumi.Oci.Core
         public BootVolumeArgs()
         {
         }
+        public static new BootVolumeArgs Empty => new BootVolumeArgs();
     }
 
-    public sealed class BootVolumeState : Pulumi.ResourceArgs
+    public sealed class BootVolumeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
@@ -498,5 +497,6 @@ namespace Pulumi.Oci.Core
         public BootVolumeState()
         {
         }
+        public static new BootVolumeState Empty => new BootVolumeState();
     }
 }

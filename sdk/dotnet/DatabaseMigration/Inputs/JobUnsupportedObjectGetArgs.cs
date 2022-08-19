@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class JobUnsupportedObjectGetArgs : Pulumi.ResourceArgs
+    public sealed class JobUnsupportedObjectGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the object (regular expression is allowed)
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public JobUnsupportedObjectGetArgs()
         {
         }
+        public static new JobUnsupportedObjectGetArgs Empty => new JobUnsupportedObjectGetArgs();
     }
 }

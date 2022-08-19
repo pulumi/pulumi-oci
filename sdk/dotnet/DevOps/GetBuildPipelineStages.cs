@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuildPipelineStages = Oci.DevOps.GetBuildPipelineStages.Invoke(new()
         ///     {
-        ///         var testBuildPipelineStages = Output.Create(Oci.DevOps.GetBuildPipelineStages.InvokeAsync(new Oci.DevOps.GetBuildPipelineStagesArgs
-        ///         {
-        ///             BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Build_pipeline_stage_display_name,
-        ///             Id = @var.Build_pipeline_stage_id,
-        ///             State = @var.Build_pipeline_stage_state,
-        ///         }));
-        ///     }
+        ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Build_pipeline_stage_display_name,
+        ///         Id = @var.Build_pipeline_stage_id,
+        ///         State = @var.Build_pipeline_stage_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuildPipelineStages = Oci.DevOps.GetBuildPipelineStages.Invoke(new()
         ///     {
-        ///         var testBuildPipelineStages = Output.Create(Oci.DevOps.GetBuildPipelineStages.InvokeAsync(new Oci.DevOps.GetBuildPipelineStagesArgs
-        ///         {
-        ///             BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Build_pipeline_stage_display_name,
-        ///             Id = @var.Build_pipeline_stage_id,
-        ///             State = @var.Build_pipeline_stage_state,
-        ///         }));
-        ///     }
+        ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Build_pipeline_stage_display_name,
+        ///         Id = @var.Build_pipeline_stage_id,
+        ///         State = @var.Build_pipeline_stage_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetBuildPipelineStagesArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildPipelineStagesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the parent build pipeline.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.DevOps
         public GetBuildPipelineStagesArgs()
         {
         }
+        public static new GetBuildPipelineStagesArgs Empty => new GetBuildPipelineStagesArgs();
     }
 
-    public sealed class GetBuildPipelineStagesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildPipelineStagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the parent build pipeline.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.DevOps
         public GetBuildPipelineStagesInvokeArgs()
         {
         }
+        public static new GetBuildPipelineStagesInvokeArgs Empty => new GetBuildPipelineStagesInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class MonitoredResourceCredentialsGetArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourceCredentialsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public MonitoredResourceCredentialsGetArgs()
         {
         }
+        public static new MonitoredResourceCredentialsGetArgs Empty => new MonitoredResourceCredentialsGetArgs();
     }
 }

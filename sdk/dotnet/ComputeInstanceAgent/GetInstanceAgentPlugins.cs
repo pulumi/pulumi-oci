@@ -21,22 +21,20 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceAgentPlugins = Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.Invoke(new()
         ///     {
-        ///         var testInstanceAgentPlugins = Output.Create(Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.InvokeAsync(new Oci.ComputeInstanceAgent.GetInstanceAgentPluginsArgs
-        ///         {
-        ///             InstanceagentId = oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
-        ///             Name = @var.Instance_agent_plugin_name,
-        ///             Status = @var.Instance_agent_plugin_status,
-        ///         }));
-        ///     }
+        ///         InstanceagentId = oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
+        ///         Name = @var.Instance_agent_plugin_name,
+        ///         Status = @var.Instance_agent_plugin_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceAgentPlugins = Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.Invoke(new()
         ///     {
-        ///         var testInstanceAgentPlugins = Output.Create(Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.InvokeAsync(new Oci.ComputeInstanceAgent.GetInstanceAgentPluginsArgs
-        ///         {
-        ///             InstanceagentId = oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
-        ///             Name = @var.Instance_agent_plugin_name,
-        ///             Status = @var.Instance_agent_plugin_status,
-        ///         }));
-        ///     }
+        ///         InstanceagentId = oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
+        ///         Name = @var.Instance_agent_plugin_name,
+        ///         Status = @var.Instance_agent_plugin_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
     }
 
 
-    public sealed class GetInstanceAgentPluginsArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceAgentPluginsArgs : global::Pulumi.InvokeArgs
     {
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -113,9 +109,10 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         public GetInstanceAgentPluginsArgs()
         {
         }
+        public static new GetInstanceAgentPluginsArgs Empty => new GetInstanceAgentPluginsArgs();
     }
 
-    public sealed class GetInstanceAgentPluginsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceAgentPluginsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -149,6 +146,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         public GetInstanceAgentPluginsInvokeArgs()
         {
         }
+        public static new GetInstanceAgentPluginsInvokeArgs Empty => new GetInstanceAgentPluginsInvokeArgs();
     }
 
 

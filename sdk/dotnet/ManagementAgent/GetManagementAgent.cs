@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgent = Oci.ManagementAgent.GetManagementAgent.Invoke(new()
         ///     {
-        ///         var testManagementAgent = Output.Create(Oci.ManagementAgent.GetManagementAgent.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentArgs
-        ///         {
-        ///             ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-        ///         }));
-        ///     }
+        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgent = Oci.ManagementAgent.GetManagementAgent.Invoke(new()
         ///     {
-        ///         var testManagementAgent = Output.Create(Oci.ManagementAgent.GetManagementAgent.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentArgs
-        ///         {
-        ///             ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-        ///         }));
-        ///     }
+        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Management Agent identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentArgs()
         {
         }
+        public static new GetManagementAgentArgs Empty => new GetManagementAgentArgs();
     }
 
-    public sealed class GetManagementAgentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Management Agent identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentInvokeArgs()
         {
         }
+        public static new GetManagementAgentInvokeArgs Empty => new GetManagementAgentInvokeArgs();
     }
 
 

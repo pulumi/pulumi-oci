@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseConnectionStringGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseConnectionStringGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("allConnectionStrings")]
         private InputMap<object>? _allConnectionStrings;
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseConnectionStringGetArgs()
         {
         }
+        public static new AutonomousDatabaseConnectionStringGetArgs Empty => new AutonomousDatabaseConnectionStringGetArgs();
     }
 }

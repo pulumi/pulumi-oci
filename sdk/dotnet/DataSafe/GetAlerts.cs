@@ -22,25 +22,23 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlerts = Oci.DataSafe.GetAlerts.Invoke(new()
         ///     {
-        ///         var testAlerts = Output.Create(Oci.DataSafe.GetAlerts.InvokeAsync(new Oci.DataSafe.GetAlertsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Alert_access_level,
-        ///             CompartmentIdInSubtree = @var.Alert_compartment_id_in_subtree,
-        ///             Fields = @var.Alert_field,
-        ///             Id = @var.Alert_id,
-        ///             ScimQuery = @var.Alert_scim_query,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Alert_access_level,
+        ///         CompartmentIdInSubtree = @var.Alert_compartment_id_in_subtree,
+        ///         Fields = @var.Alert_field,
+        ///         Id = @var.Alert_id,
+        ///         ScimQuery = @var.Alert_scim_query,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlerts = Oci.DataSafe.GetAlerts.Invoke(new()
         ///     {
-        ///         var testAlerts = Output.Create(Oci.DataSafe.GetAlerts.InvokeAsync(new Oci.DataSafe.GetAlertsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Alert_access_level,
-        ///             CompartmentIdInSubtree = @var.Alert_compartment_id_in_subtree,
-        ///             Fields = @var.Alert_field,
-        ///             Id = @var.Alert_id,
-        ///             ScimQuery = @var.Alert_scim_query,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Alert_access_level,
+        ///         CompartmentIdInSubtree = @var.Alert_compartment_id_in_subtree,
+        ///         Fields = @var.Alert_field,
+        ///         Id = @var.Alert_id,
+        ///         ScimQuery = @var.Alert_scim_query,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAlertsArgs : Pulumi.InvokeArgs
+    public sealed class GetAlertsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -142,9 +138,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAlertsArgs()
         {
         }
+        public static new GetAlertsArgs Empty => new GetAlertsArgs();
     }
 
-    public sealed class GetAlertsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAlertsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -199,6 +196,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAlertsInvokeArgs()
         {
         }
+        public static new GetAlertsInvokeArgs Empty => new GetAlertsInvokeArgs();
     }
 
 

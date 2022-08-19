@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataFlow.InvokeRunArgs;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunState;
+import com.pulumi.oci.DataFlow.outputs.InvokeRunApplicationLogConfig;
 import com.pulumi.oci.DataFlow.outputs.InvokeRunDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.InvokeRunExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.InvokeRunParameter;
@@ -28,6 +29,70 @@ import javax.annotation.Nullable;
  * Creates a run for an application.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataFlow.InvokeRun;
+ * import com.pulumi.oci.DataFlow.InvokeRunArgs;
+ * import com.pulumi.oci.DataFlow.inputs.InvokeRunApplicationLogConfigArgs;
+ * import com.pulumi.oci.DataFlow.inputs.InvokeRunDriverShapeConfigArgs;
+ * import com.pulumi.oci.DataFlow.inputs.InvokeRunExecutorShapeConfigArgs;
+ * import com.pulumi.oci.DataFlow.inputs.InvokeRunParameterArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testInvokeRun = new InvokeRun(&#34;testInvokeRun&#34;, InvokeRunArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .applicationId(oci_dataflow_application.test_application().id())
+ *             .applicationLogConfig(InvokeRunApplicationLogConfigArgs.builder()
+ *                 .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                 .logId(oci_logging_log.test_log().id())
+ *                 .build())
+ *             .archiveUri(var_.invoke_run_archive_uri())
+ *             .arguments(var_.invoke_run_arguments())
+ *             .configuration(var_.invoke_run_configuration())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.invoke_run_display_name())
+ *             .driverShape(var_.invoke_run_driver_shape())
+ *             .driverShapeConfig(InvokeRunDriverShapeConfigArgs.builder()
+ *                 .memoryInGbs(var_.invoke_run_driver_shape_config_memory_in_gbs())
+ *                 .ocpus(var_.invoke_run_driver_shape_config_ocpus())
+ *                 .build())
+ *             .execute(var_.invoke_run_execute())
+ *             .executorShape(var_.invoke_run_executor_shape())
+ *             .executorShapeConfig(InvokeRunExecutorShapeConfigArgs.builder()
+ *                 .memoryInGbs(var_.invoke_run_executor_shape_config_memory_in_gbs())
+ *                 .ocpus(var_.invoke_run_executor_shape_config_ocpus())
+ *                 .build())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .logsBucketUri(var_.invoke_run_logs_bucket_uri())
+ *             .metastoreId(var_.metastore_id())
+ *             .numExecutors(var_.invoke_run_num_executors())
+ *             .parameters(InvokeRunParameterArgs.builder()
+ *                 .name(var_.invoke_run_parameters_name())
+ *                 .value(var_.invoke_run_parameters_value())
+ *                 .build())
+ *             .sparkVersion(var_.invoke_run_spark_version())
+ *             .type(var_.invoke_run_type())
+ *             .warehouseBucketUri(var_.invoke_run_warehouse_bucket_uri())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * ## Note
  * 
  * At a time service allows only one run to succeed if user is trying to invoke runs on multiple applications which have Private Endpoints and service will proceed invoking only one run and put the rest of them in failed state.
@@ -56,6 +121,20 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      */
     public Output<String> applicationId() {
         return this.applicationId;
+    }
+    /**
+     * Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    @Export(name="applicationLogConfig", type=InvokeRunApplicationLogConfig.class, parameters={})
+    private Output<InvokeRunApplicationLogConfig> applicationLogConfig;
+
+    /**
+     * @return Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    public Output<InvokeRunApplicationLogConfig> applicationLogConfig() {
+        return this.applicationLogConfig;
     }
     /**
      * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.

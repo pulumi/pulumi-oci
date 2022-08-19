@@ -21,20 +21,18 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVbInstance = Oci.VisualBuilder.GetVbInstance.Invoke(new()
         ///     {
-        ///         var testVbInstance = Output.Create(Oci.VisualBuilder.GetVbInstance.InvokeAsync(new Oci.VisualBuilder.GetVbInstanceArgs
-        ///         {
-        ///             VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
-        ///         }));
-        ///     }
+        ///         VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVbInstance = Oci.VisualBuilder.GetVbInstance.Invoke(new()
         ///     {
-        ///         var testVbInstance = Output.Create(Oci.VisualBuilder.GetVbInstance.InvokeAsync(new Oci.VisualBuilder.GetVbInstanceArgs
-        ///         {
-        ///             VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
-        ///         }));
-        ///     }
+        ///         VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.VisualBuilder
     }
 
 
-    public sealed class GetVbInstanceArgs : Pulumi.InvokeArgs
+    public sealed class GetVbInstanceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Vb Instance identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.VisualBuilder
         public GetVbInstanceArgs()
         {
         }
+        public static new GetVbInstanceArgs Empty => new GetVbInstanceArgs();
     }
 
-    public sealed class GetVbInstanceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVbInstanceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Vb Instance identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.VisualBuilder
         public GetVbInstanceInvokeArgs()
         {
         }
+        public static new GetVbInstanceInvokeArgs Empty => new GetVbInstanceInvokeArgs();
     }
 
 

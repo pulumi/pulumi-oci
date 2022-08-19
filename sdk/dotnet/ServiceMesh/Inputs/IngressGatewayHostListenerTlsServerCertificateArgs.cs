@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayHostListenerTlsServerCertificateArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayHostListenerTlsServerCertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the leaf certificate resource.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayHostListenerTlsServerCertificateArgs()
         {
         }
+        public static new IngressGatewayHostListenerTlsServerCertificateArgs Empty => new IngressGatewayHostListenerTlsServerCertificateArgs();
     }
 }

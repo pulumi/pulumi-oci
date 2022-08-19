@@ -17,30 +17,28 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOnPremConnector = new Oci.DataSafe.OnPremConnector("testOnPremConnector", new()
     ///     {
-    ///         var testOnPremConnector = new Oci.DataSafe.OnPremConnector("testOnPremConnector", new Oci.DataSafe.OnPremConnectorArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.On_prem_connector_description,
-    ///             DisplayName = @var.On_prem_connector_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.On_prem_connector_description,
+    ///         DisplayName = @var.On_prem_connector_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/onPremConnector:OnPremConnector")]
-    public partial class OnPremConnector : Pulumi.CustomResource
+    public partial class OnPremConnector : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Latest available version of the on-premises connector.
@@ -164,7 +162,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class OnPremConnectorArgs : Pulumi.ResourceArgs
+    public sealed class OnPremConnectorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the on-premises connector.
@@ -211,9 +209,10 @@ namespace Pulumi.Oci.DataSafe
         public OnPremConnectorArgs()
         {
         }
+        public static new OnPremConnectorArgs Empty => new OnPremConnectorArgs();
     }
 
-    public sealed class OnPremConnectorState : Pulumi.ResourceArgs
+    public sealed class OnPremConnectorState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Latest available version of the on-premises connector.
@@ -302,5 +301,6 @@ namespace Pulumi.Oci.DataSafe
         public OnPremConnectorState()
         {
         }
+        public static new OnPremConnectorState Empty => new OnPremConnectorState();
     }
 }

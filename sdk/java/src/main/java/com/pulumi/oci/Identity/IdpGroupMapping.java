@@ -22,6 +22,36 @@ import javax.annotation.Nullable;
  * [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.IdpGroupMapping;
+ * import com.pulumi.oci.Identity.IdpGroupMappingArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIdpGroupMapping = new IdpGroupMapping(&#34;testIdpGroupMapping&#34;, IdpGroupMappingArgs.builder()        
+ *             .groupId(oci_identity_group.test_group().id())
+ *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+ *             .idpGroupName(var_.idp_group_mapping_idp_group_name())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

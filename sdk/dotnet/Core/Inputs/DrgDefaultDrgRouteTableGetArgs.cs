@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DrgDefaultDrgRouteTableGetArgs : Pulumi.ResourceArgs
+    public sealed class DrgDefaultDrgRouteTableGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DrgDefaultDrgRouteTableGetArgs()
         {
         }
+        public static new DrgDefaultDrgRouteTableGetArgs Empty => new DrgDefaultDrgRouteTableGetArgs();
     }
 }

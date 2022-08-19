@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlBackup = Oci.Mysql.GetMysqlBackup.Invoke(new()
         ///     {
-        ///         var testMysqlBackup = Output.Create(Oci.Mysql.GetMysqlBackup.InvokeAsync(new Oci.Mysql.GetMysqlBackupArgs
-        ///         {
-        ///             BackupId = oci_mysql_mysql_backup.Test_backup.Id,
-        ///         }));
-        ///     }
+        ///         BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlBackup = Oci.Mysql.GetMysqlBackup.Invoke(new()
         ///     {
-        ///         var testMysqlBackup = Output.Create(Oci.Mysql.GetMysqlBackup.InvokeAsync(new Oci.Mysql.GetMysqlBackupArgs
-        ///         {
-        ///             BackupId = oci_mysql_mysql_backup.Test_backup.Id,
-        ///         }));
-        ///     }
+        ///         BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetMysqlBackupArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlBackupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Backup
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlBackupArgs()
         {
         }
+        public static new GetMysqlBackupArgs Empty => new GetMysqlBackupArgs();
     }
 
-    public sealed class GetMysqlBackupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlBackupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Backup
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlBackupInvokeArgs()
         {
         }
+        public static new GetMysqlBackupInvokeArgs Empty => new GetMysqlBackupInvokeArgs();
     }
 
 

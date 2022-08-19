@@ -22,23 +22,21 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabasesDatabaseParameters = Oci.DatabaseManagement.GetManagedDatabasesDatabaseParameters.Invoke(new()
         ///     {
-        ///         var testManagedDatabasesDatabaseParameters = Output.Create(Oci.DatabaseManagement.GetManagedDatabasesDatabaseParameters.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabasesDatabaseParametersArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             IsAllowedValuesIncluded = @var.Managed_databases_database_parameter_is_allowed_values_included,
-        ///             Name = @var.Managed_databases_database_parameter_name,
-        ///             Source = @var.Managed_databases_database_parameter_source,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         IsAllowedValuesIncluded = @var.Managed_databases_database_parameter_is_allowed_values_included,
+        ///         Name = @var.Managed_databases_database_parameter_name,
+        ///         Source = @var.Managed_databases_database_parameter_source,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabasesDatabaseParameters = Oci.DatabaseManagement.GetManagedDatabasesDatabaseParameters.Invoke(new()
         ///     {
-        ///         var testManagedDatabasesDatabaseParameters = Output.Create(Oci.DatabaseManagement.GetManagedDatabasesDatabaseParameters.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabasesDatabaseParametersArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             IsAllowedValuesIncluded = @var.Managed_databases_database_parameter_is_allowed_values_included,
-        ///             Name = @var.Managed_databases_database_parameter_name,
-        ///             Source = @var.Managed_databases_database_parameter_source,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         IsAllowedValuesIncluded = @var.Managed_databases_database_parameter_is_allowed_values_included,
+        ///         Name = @var.Managed_databases_database_parameter_name,
+        ///         Source = @var.Managed_databases_database_parameter_source,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabasesDatabaseParametersArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabasesDatabaseParametersArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabasesDatabaseParametersFilterArgs>? _filters;
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabasesDatabaseParametersArgs()
         {
         }
+        public static new GetManagedDatabasesDatabaseParametersArgs Empty => new GetManagedDatabasesDatabaseParametersArgs();
     }
 
-    public sealed class GetManagedDatabasesDatabaseParametersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabasesDatabaseParametersInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabasesDatabaseParametersFilterInputArgs>? _filters;
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabasesDatabaseParametersInvokeArgs()
         {
         }
+        public static new GetManagedDatabasesDatabaseParametersInvokeArgs Empty => new GetManagedDatabasesDatabaseParametersInvokeArgs();
     }
 
 

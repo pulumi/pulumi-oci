@@ -18,33 +18,31 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNatGateway = new Oci.Core.NatGateway("testNatGateway", new()
     ///     {
-    ///         var testNatGateway = new Oci.Core.NatGateway("testNatGateway", new Oci.Core.NatGatewayArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         BlockTraffic = @var.Nat_gateway_block_traffic,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             BlockTraffic = @var.Nat_gateway_block_traffic,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Nat_gateway_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             PublicIpId = oci_core_public_ip.Test_public_ip.Id,
-    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Nat_gateway_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PublicIpId = oci_core_public_ip.Test_public_ip.Id,
+    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/natGateway:NatGateway")]
-    public partial class NatGateway : Pulumi.CustomResource
+    public partial class NatGateway : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
@@ -168,7 +166,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class NatGatewayArgs : Pulumi.ResourceArgs
+    public sealed class NatGatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
@@ -233,9 +231,10 @@ namespace Pulumi.Oci.Core
         public NatGatewayArgs()
         {
         }
+        public static new NatGatewayArgs Empty => new NatGatewayArgs();
     }
 
-    public sealed class NatGatewayState : Pulumi.ResourceArgs
+    public sealed class NatGatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
@@ -318,5 +317,6 @@ namespace Pulumi.Oci.Core
         public NatGatewayState()
         {
         }
+        public static new NatGatewayState Empty => new NatGatewayState();
     }
 }

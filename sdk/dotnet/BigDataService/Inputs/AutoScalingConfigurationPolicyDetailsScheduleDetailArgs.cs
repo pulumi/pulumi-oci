@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type of schedule.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public AutoScalingConfigurationPolicyDetailsScheduleDetailArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyDetailsScheduleDetailArgs Empty => new AutoScalingConfigurationPolicyDetailsScheduleDetailArgs();
     }
 }

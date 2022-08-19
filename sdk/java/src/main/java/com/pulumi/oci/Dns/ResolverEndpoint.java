@@ -22,6 +22,42 @@ import javax.annotation.Nullable;
  * Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.ResolverEndpoint;
+ * import com.pulumi.oci.Dns.ResolverEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testResolverEndpoint = new ResolverEndpoint(&#34;testResolverEndpoint&#34;, ResolverEndpointArgs.builder()        
+ *             .isForwarding(var_.resolver_endpoint_is_forwarding())
+ *             .isListening(var_.resolver_endpoint_is_listening())
+ *             .resolverId(oci_dns_resolver.test_resolver().id())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .scope(&#34;PRIVATE&#34;)
+ *             .endpointType(var_.resolver_endpoint_endpoint_type())
+ *             .forwardingAddress(var_.resolver_endpoint_forwarding_address())
+ *             .listeningAddress(var_.resolver_endpoint_listening_address())
+ *             .nsgIds(var_.resolver_endpoint_nsg_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class CustomTableSavedCustomTableGroupByTagGetArgs : Pulumi.ResourceArgs
+    public sealed class CustomTableSavedCustomTableGroupByTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The tag key.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public CustomTableSavedCustomTableGroupByTagGetArgs()
         {
         }
+        public static new CustomTableSavedCustomTableGroupByTagGetArgs Empty => new CustomTableSavedCustomTableGroupByTagGetArgs();
     }
 }

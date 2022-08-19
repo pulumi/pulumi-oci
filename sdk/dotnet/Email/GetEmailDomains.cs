@@ -21,23 +21,21 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmailDomains = Oci.Email.GetEmailDomains.Invoke(new()
         ///     {
-        ///         var testEmailDomains = Output.Create(Oci.Email.GetEmailDomains.InvokeAsync(new Oci.Email.GetEmailDomainsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Email_domain_id,
-        ///             Name = @var.Email_domain_name,
-        ///             State = @var.Email_domain_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Email_domain_id,
+        ///         Name = @var.Email_domain_name,
+        ///         State = @var.Email_domain_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmailDomains = Oci.Email.GetEmailDomains.Invoke(new()
         ///     {
-        ///         var testEmailDomains = Output.Create(Oci.Email.GetEmailDomains.InvokeAsync(new Oci.Email.GetEmailDomainsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Email_domain_id,
-        ///             Name = @var.Email_domain_name,
-        ///             State = @var.Email_domain_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Email_domain_id,
+        ///         Name = @var.Email_domain_name,
+        ///         State = @var.Email_domain_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Email
     }
 
 
-    public sealed class GetEmailDomainsArgs : Pulumi.InvokeArgs
+    public sealed class GetEmailDomainsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID for the compartment.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Email
         public GetEmailDomainsArgs()
         {
         }
+        public static new GetEmailDomainsArgs Empty => new GetEmailDomainsArgs();
     }
 
-    public sealed class GetEmailDomainsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEmailDomainsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID for the compartment.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.Email
         public GetEmailDomainsInvokeArgs()
         {
         }
+        public static new GetEmailDomainsInvokeArgs Empty => new GetEmailDomainsInvokeArgs();
     }
 
 

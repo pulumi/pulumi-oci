@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateCurrentVersionGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateCurrentVersionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the certificate.
@@ -105,5 +105,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateCurrentVersionGetArgs()
         {
         }
+        public static new CertificateCurrentVersionGetArgs Empty => new CertificateCurrentVersionGetArgs();
     }
 }

@@ -23,21 +23,19 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJavaFamilies = Oci.Jms.GetJavaFamilies.Invoke(new()
         ///     {
-        ///         var testJavaFamilies = Output.Create(Oci.Jms.GetJavaFamilies.InvokeAsync(new Oci.Jms.GetJavaFamiliesArgs
-        ///         {
-        ///             DisplayName = @var.Java_family_display_name,
-        ///             FamilyVersion = @var.Java_family_family_version,
-        ///         }));
-        ///     }
+        ///         DisplayName = @var.Java_family_display_name,
+        ///         FamilyVersion = @var.Java_family_family_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJavaFamilies = Oci.Jms.GetJavaFamilies.Invoke(new()
         ///     {
-        ///         var testJavaFamilies = Output.Create(Oci.Jms.GetJavaFamilies.InvokeAsync(new Oci.Jms.GetJavaFamiliesArgs
-        ///         {
-        ///             DisplayName = @var.Java_family_display_name,
-        ///             FamilyVersion = @var.Java_family_family_version,
-        ///         }));
-        ///     }
+        ///         DisplayName = @var.Java_family_display_name,
+        ///         FamilyVersion = @var.Java_family_family_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetJavaFamiliesArgs : Pulumi.InvokeArgs
+    public sealed class GetJavaFamiliesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The display name for the Java family.
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Jms
         public GetJavaFamiliesArgs()
         {
         }
+        public static new GetJavaFamiliesArgs Empty => new GetJavaFamiliesArgs();
     }
 
-    public sealed class GetJavaFamiliesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJavaFamiliesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The display name for the Java family.
@@ -133,6 +130,7 @@ namespace Pulumi.Oci.Jms
         public GetJavaFamiliesInvokeArgs()
         {
         }
+        public static new GetJavaFamiliesInvokeArgs Empty => new GetJavaFamiliesInvokeArgs();
     }
 
 

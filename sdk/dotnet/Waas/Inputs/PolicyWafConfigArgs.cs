@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("accessRules")]
         private InputList<Inputs.PolicyWafConfigAccessRuleArgs>? _accessRules;
@@ -123,5 +123,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigArgs()
         {
         }
+        public static new PolicyWafConfigArgs Empty => new PolicyWafConfigArgs();
     }
 }

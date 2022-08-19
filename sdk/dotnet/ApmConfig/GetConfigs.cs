@@ -21,27 +21,25 @@ namespace Pulumi.Oci.ApmConfig
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConfigs = Oci.ApmConfig.GetConfigs.Invoke(new()
         ///     {
-        ///         var testConfigs = Output.Create(Oci.ApmConfig.GetConfigs.InvokeAsync(new Oci.ApmConfig.GetConfigsArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             ConfigType = @var.Config_config_type,
-        ///             DefinedTagEquals = @var.Config_defined_tag_equals,
-        ///             DefinedTagExists = @var.Config_defined_tag_exists,
-        ///             DisplayName = @var.Config_display_name,
-        ///             FreeformTagEquals = @var.Config_freeform_tag_equals,
-        ///             FreeformTagExists = @var.Config_freeform_tag_exists,
-        ///             OptionsGroup = @var.Config_options_group,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         ConfigType = @var.Config_config_type,
+        ///         DefinedTagEquals = @var.Config_defined_tag_equals,
+        ///         DefinedTagExists = @var.Config_defined_tag_exists,
+        ///         DisplayName = @var.Config_display_name,
+        ///         FreeformTagEquals = @var.Config_freeform_tag_equals,
+        ///         FreeformTagExists = @var.Config_freeform_tag_exists,
+        ///         OptionsGroup = @var.Config_options_group,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,27 +57,25 @@ namespace Pulumi.Oci.ApmConfig
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConfigs = Oci.ApmConfig.GetConfigs.Invoke(new()
         ///     {
-        ///         var testConfigs = Output.Create(Oci.ApmConfig.GetConfigs.InvokeAsync(new Oci.ApmConfig.GetConfigsArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             ConfigType = @var.Config_config_type,
-        ///             DefinedTagEquals = @var.Config_defined_tag_equals,
-        ///             DefinedTagExists = @var.Config_defined_tag_exists,
-        ///             DisplayName = @var.Config_display_name,
-        ///             FreeformTagEquals = @var.Config_freeform_tag_equals,
-        ///             FreeformTagExists = @var.Config_freeform_tag_exists,
-        ///             OptionsGroup = @var.Config_options_group,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         ConfigType = @var.Config_config_type,
+        ///         DefinedTagEquals = @var.Config_defined_tag_equals,
+        ///         DefinedTagExists = @var.Config_defined_tag_exists,
+        ///         DisplayName = @var.Config_display_name,
+        ///         FreeformTagEquals = @var.Config_freeform_tag_equals,
+        ///         FreeformTagExists = @var.Config_freeform_tag_exists,
+        ///         OptionsGroup = @var.Config_options_group,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.ApmConfig
     }
 
 
-    public sealed class GetConfigsArgs : Pulumi.InvokeArgs
+    public sealed class GetConfigsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -174,9 +170,10 @@ namespace Pulumi.Oci.ApmConfig
         public GetConfigsArgs()
         {
         }
+        public static new GetConfigsArgs Empty => new GetConfigsArgs();
     }
 
-    public sealed class GetConfigsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConfigsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -261,6 +258,7 @@ namespace Pulumi.Oci.ApmConfig
         public GetConfigsInvokeArgs()
         {
         }
+        public static new GetConfigsInvokeArgs Empty => new GetConfigsInvokeArgs();
     }
 
 

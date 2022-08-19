@@ -23,6 +23,43 @@ import javax.annotation.Nullable;
  * Creates a new license record for the given product license ID.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LicenseManager.LicenseRecord;
+ * import com.pulumi.oci.LicenseManager.LicenseRecordArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLicenseRecord = new LicenseRecord(&#34;testLicenseRecord&#34;, LicenseRecordArgs.builder()        
+ *             .displayName(var_.license_record_display_name())
+ *             .isPerpetual(var_.license_record_is_perpetual())
+ *             .isUnlimited(var_.license_record_is_unlimited())
+ *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .expirationDate(var_.license_record_expiration_date())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .licenseCount(var_.license_record_license_count())
+ *             .productId(oci_license_manager_product.test_product().id())
+ *             .supportEndDate(var_.license_record_support_end_date())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

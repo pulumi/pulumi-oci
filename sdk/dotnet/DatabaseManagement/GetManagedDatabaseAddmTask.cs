@@ -23,22 +23,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseAddmTask = Oci.DatabaseManagement.GetManagedDatabaseAddmTask.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseAddmTask = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseAddmTask.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseAddmTaskArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             TimeEnd = @var.Managed_database_addm_task_time_end,
-        ///             TimeStart = @var.Managed_database_addm_task_time_start,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         TimeEnd = @var.Managed_database_addm_task_time_end,
+        ///         TimeStart = @var.Managed_database_addm_task_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseAddmTask = Oci.DatabaseManagement.GetManagedDatabaseAddmTask.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseAddmTask = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseAddmTask.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseAddmTaskArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             TimeEnd = @var.Managed_database_addm_task_time_end,
-        ///             TimeStart = @var.Managed_database_addm_task_time_start,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         TimeEnd = @var.Managed_database_addm_task_time_end,
+        ///         TimeStart = @var.Managed_database_addm_task_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseAddmTaskArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAddmTaskArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseAddmTaskArgs()
         {
         }
+        public static new GetManagedDatabaseAddmTaskArgs Empty => new GetManagedDatabaseAddmTaskArgs();
     }
 
-    public sealed class GetManagedDatabaseAddmTaskInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAddmTaskInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseAddmTaskInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseAddmTaskInvokeArgs Empty => new GetManagedDatabaseAddmTaskInvokeArgs();
     }
 
 

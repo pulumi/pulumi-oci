@@ -17,30 +17,28 @@ namespace Pulumi.Oci.CertificatesManagement
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCaBundle = new Oci.CertificatesManagement.CaBundle("testCaBundle", new()
     ///     {
-    ///         var testCaBundle = new Oci.CertificatesManagement.CaBundle("testCaBundle", new Oci.CertificatesManagement.CaBundleArgs
+    ///         CaBundlePem = @var.Ca_bundle_ca_bundle_pem,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CaBundlePem = @var.Ca_bundle_ca_bundle_pem,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Ca_bundle_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Ca_bundle_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.CertificatesManagement
     /// ```
     /// </summary>
     [OciResourceType("oci:CertificatesManagement/caBundle:CaBundle")]
-    public partial class CaBundle : Pulumi.CustomResource
+    public partial class CaBundle : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Certificates (in PEM format) to include in the CA bundle.
@@ -152,7 +150,7 @@ namespace Pulumi.Oci.CertificatesManagement
         }
     }
 
-    public sealed class CaBundleArgs : Pulumi.ResourceArgs
+    public sealed class CaBundleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Certificates (in PEM format) to include in the CA bundle.
@@ -205,9 +203,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public CaBundleArgs()
         {
         }
+        public static new CaBundleArgs Empty => new CaBundleArgs();
     }
 
-    public sealed class CaBundleState : Pulumi.ResourceArgs
+    public sealed class CaBundleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Certificates (in PEM format) to include in the CA bundle.
@@ -278,5 +277,6 @@ namespace Pulumi.Oci.CertificatesManagement
         public CaBundleState()
         {
         }
+        public static new CaBundleState Empty => new CaBundleState();
     }
 }

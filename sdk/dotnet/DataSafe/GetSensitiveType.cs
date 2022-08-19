@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveType = Oci.DataSafe.GetSensitiveType.Invoke(new()
         ///     {
-        ///         var testSensitiveType = Output.Create(Oci.DataSafe.GetSensitiveType.InvokeAsync(new Oci.DataSafe.GetSensitiveTypeArgs
-        ///         {
-        ///             SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         }));
-        ///     }
+        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveType = Oci.DataSafe.GetSensitiveType.Invoke(new()
         ///     {
-        ///         var testSensitiveType = Output.Create(Oci.DataSafe.GetSensitiveType.InvokeAsync(new Oci.DataSafe.GetSensitiveTypeArgs
-        ///         {
-        ///             SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         }));
-        ///     }
+        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSensitiveTypeArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveTypeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the sensitive type.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveTypeArgs()
         {
         }
+        public static new GetSensitiveTypeArgs Empty => new GetSensitiveTypeArgs();
     }
 
-    public sealed class GetSensitiveTypeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveTypeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the sensitive type.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveTypeInvokeArgs()
         {
         }
+        public static new GetSensitiveTypeInvokeArgs Empty => new GetSensitiveTypeInvokeArgs();
     }
 
 

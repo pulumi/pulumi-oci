@@ -20,21 +20,19 @@ namespace Pulumi.Oci.Email
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSuppression = new Oci.Email.Suppression("testSuppression", new()
     ///     {
-    ///         var testSuppression = new Oci.Email.Suppression("testSuppression", new Oci.Email.SuppressionArgs
-    ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             EmailAddress = @var.Suppression_email_address,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         EmailAddress = @var.Suppression_email_address,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.Email
     /// ```
     /// </summary>
     [OciResourceType("oci:Email/suppression:Suppression")]
-    public partial class Suppression : Pulumi.CustomResource
+    public partial class Suppression : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
@@ -140,7 +138,7 @@ namespace Pulumi.Oci.Email
         }
     }
 
-    public sealed class SuppressionArgs : Pulumi.ResourceArgs
+    public sealed class SuppressionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
@@ -157,9 +155,10 @@ namespace Pulumi.Oci.Email
         public SuppressionArgs()
         {
         }
+        public static new SuppressionArgs Empty => new SuppressionArgs();
     }
 
-    public sealed class SuppressionState : Pulumi.ResourceArgs
+    public sealed class SuppressionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
@@ -212,5 +211,6 @@ namespace Pulumi.Oci.Email
         public SuppressionState()
         {
         }
+        public static new SuppressionState Empty => new SuppressionState();
     }
 }

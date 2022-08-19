@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterOptionsAddOnsArgs : Pulumi.ResourceArgs
+    public sealed class ClusterOptionsAddOnsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether or not to enable the Kubernetes Dashboard add-on.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterOptionsAddOnsArgs()
         {
         }
+        public static new ClusterOptionsAddOnsArgs Empty => new ClusterOptionsAddOnsArgs();
     }
 }

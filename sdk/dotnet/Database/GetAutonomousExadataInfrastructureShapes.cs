@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousExadataInfrastructureShapes = Oci.Database.GetAutonomousExadataInfrastructureShapes.Invoke(new()
         ///     {
-        ///         var testAutonomousExadataInfrastructureShapes = Output.Create(Oci.Database.GetAutonomousExadataInfrastructureShapes.InvokeAsync(new Oci.Database.GetAutonomousExadataInfrastructureShapesArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Autonomous_exadata_infrastructure_shape_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Autonomous_exadata_infrastructure_shape_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousExadataInfrastructureShapes = Oci.Database.GetAutonomousExadataInfrastructureShapes.Invoke(new()
         ///     {
-        ///         var testAutonomousExadataInfrastructureShapes = Output.Create(Oci.Database.GetAutonomousExadataInfrastructureShapes.InvokeAsync(new Oci.Database.GetAutonomousExadataInfrastructureShapesArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Autonomous_exadata_infrastructure_shape_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Autonomous_exadata_infrastructure_shape_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousExadataInfrastructureShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousExadataInfrastructureShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Availability Domain.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousExadataInfrastructureShapesArgs()
         {
         }
+        public static new GetAutonomousExadataInfrastructureShapesArgs Empty => new GetAutonomousExadataInfrastructureShapesArgs();
     }
 
-    public sealed class GetAutonomousExadataInfrastructureShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousExadataInfrastructureShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Availability Domain.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousExadataInfrastructureShapesInvokeArgs()
         {
         }
+        public static new GetAutonomousExadataInfrastructureShapesInvokeArgs Empty => new GetAutonomousExadataInfrastructureShapesInvokeArgs();
     }
 
 

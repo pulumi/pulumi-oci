@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Unique key of referenced protection capability.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs()
         {
         }
+        public static new AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs Empty => new AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs();
     }
 }

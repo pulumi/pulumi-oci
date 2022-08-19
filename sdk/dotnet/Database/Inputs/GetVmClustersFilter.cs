@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetVmClustersFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClustersFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetVmClustersFilterArgs()
         {
         }
+        public static new GetVmClustersFilterArgs Empty => new GetVmClustersFilterArgs();
     }
 }

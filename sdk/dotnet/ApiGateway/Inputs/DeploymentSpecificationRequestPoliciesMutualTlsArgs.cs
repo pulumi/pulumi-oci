@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRequestPoliciesMutualTlsArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRequestPoliciesMutualTlsArgs : global::Pulumi.ResourceArgs
     {
         [Input("allowedSans")]
         private InputList<string>? _allowedSans;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRequestPoliciesMutualTlsArgs()
         {
         }
+        public static new DeploymentSpecificationRequestPoliciesMutualTlsArgs Empty => new DeploymentSpecificationRequestPoliciesMutualTlsArgs();
     }
 }

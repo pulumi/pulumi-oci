@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class AnalyticsClusterClusterNodeArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsClusterClusterNodeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The ID of the node within MySQL Analytics Cluster.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public AnalyticsClusterClusterNodeArgs()
         {
         }
+        public static new AnalyticsClusterClusterNodeArgs Empty => new AnalyticsClusterClusterNodeArgs();
     }
 }

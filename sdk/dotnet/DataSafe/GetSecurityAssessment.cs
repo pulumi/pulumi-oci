@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityAssessment = Oci.DataSafe.GetSecurityAssessment.Invoke(new()
         ///     {
-        ///         var testSecurityAssessment = Output.Create(Oci.DataSafe.GetSecurityAssessment.InvokeAsync(new Oci.DataSafe.GetSecurityAssessmentArgs
-        ///         {
-        ///             SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-        ///         }));
-        ///     }
+        ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityAssessment = Oci.DataSafe.GetSecurityAssessment.Invoke(new()
         ///     {
-        ///         var testSecurityAssessment = Output.Create(Oci.DataSafe.GetSecurityAssessment.InvokeAsync(new Oci.DataSafe.GetSecurityAssessmentArgs
-        ///         {
-        ///             SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-        ///         }));
-        ///     }
+        ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSecurityAssessmentArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityAssessmentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the security assessment.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSecurityAssessmentArgs()
         {
         }
+        public static new GetSecurityAssessmentArgs Empty => new GetSecurityAssessmentArgs();
     }
 
-    public sealed class GetSecurityAssessmentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityAssessmentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the security assessment.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSecurityAssessmentInvokeArgs()
         {
         }
+        public static new GetSecurityAssessmentInvokeArgs Empty => new GetSecurityAssessmentInvokeArgs();
     }
 
 

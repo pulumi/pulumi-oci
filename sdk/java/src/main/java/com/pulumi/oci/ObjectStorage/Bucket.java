@@ -26,6 +26,54 @@ import javax.annotation.Nullable;
  * confidential information in bucket names.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ObjectStorage.Bucket;
+ * import com.pulumi.oci.ObjectStorage.BucketArgs;
+ * import com.pulumi.oci.ObjectStorage.inputs.BucketRetentionRuleArgs;
+ * import com.pulumi.oci.ObjectStorage.inputs.BucketRetentionRuleDurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBucket = new Bucket(&#34;testBucket&#34;, BucketArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .namespace(var_.bucket_namespace())
+ *             .accessType(var_.bucket_access_type())
+ *             .autoTiering(var_.bucket_auto_tiering())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .kmsKeyId(oci_kms_key.test_key().id())
+ *             .metadata(var_.bucket_metadata())
+ *             .objectEventsEnabled(var_.bucket_object_events_enabled())
+ *             .storageTier(var_.bucket_storage_tier())
+ *             .retentionRules(BucketRetentionRuleArgs.builder()
+ *                 .displayName(var_.retention_rule_display_name())
+ *                 .duration(BucketRetentionRuleDurationArgs.builder()
+ *                     .timeAmount(var_.retention_rule_duration_time_amount())
+ *                     .timeUnit(var_.retention_rule_duration_time_unit())
+ *                     .build())
+ *                 .timeRuleLocked(var_.retention_rule_time_rule_locked())
+ *                 .build())
+ *             .versioning(var_.bucket_versioning())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

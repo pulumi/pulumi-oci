@@ -17,62 +17,60 @@ namespace Pulumi.Oci.BigDataService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAutoScalingConfiguration = new Oci.BigDataService.AutoScalingConfiguration("testAutoScalingConfiguration", new()
     ///     {
-    ///         var testAutoScalingConfiguration = new Oci.BigDataService.AutoScalingConfiguration("testAutoScalingConfiguration", new Oci.BigDataService.AutoScalingConfigurationArgs
+    ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+    ///         ClusterAdminPassword = @var.Auto_scaling_configuration_cluster_admin_password,
+    ///         IsEnabled = @var.Auto_scaling_configuration_is_enabled,
+    ///         NodeType = @var.Auto_scaling_configuration_node_type,
+    ///         DisplayName = @var.Auto_scaling_configuration_display_name,
+    ///         PolicyDetails = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsArgs
     ///         {
-    ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-    ///             ClusterAdminPassword = @var.Auto_scaling_configuration_cluster_admin_password,
-    ///             IsEnabled = @var.Auto_scaling_configuration_is_enabled,
-    ///             NodeType = @var.Auto_scaling_configuration_node_type,
-    ///             DisplayName = @var.Auto_scaling_configuration_display_name,
-    ///             PolicyDetails = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsArgs
+    ///             PolicyType = @var.Auto_scaling_configuration_policy_details_policy_type,
+    ///             ScaleDownConfig = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs
     ///             {
-    ///                 PolicyType = @var.Auto_scaling_configuration_policy_details_policy_type,
-    ///                 ScaleDownConfig = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs
+    ///                 MemoryStepSize = @var.Auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+    ///                 Metric = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs
     ///                 {
-    ///                     MemoryStepSize = @var.Auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
-    ///                     Metric = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs
+    ///                     MetricType = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
+    ///                     Threshold = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs
     ///                     {
-    ///                         MetricType = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
-    ///                         Threshold = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs
-    ///                         {
-    ///                             DurationInMinutes = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
-    ///                             Operator = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
-    ///                             Value = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
-    ///                         },
+    ///                         DurationInMinutes = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+    ///                         Operator = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
+    ///                         Value = @var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
     ///                     },
-    ///                     MinMemoryPerNode = @var.Auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
-    ///                     MinOcpusPerNode = @var.Auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
-    ///                     OcpuStepSize = @var.Auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
     ///                 },
-    ///                 ScaleUpConfig = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs
-    ///                 {
-    ///                     MaxMemoryPerNode = @var.Auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
-    ///                     MaxOcpusPerNode = @var.Auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
-    ///                     MemoryStepSize = @var.Auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
-    ///                     Metric = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs
-    ///                     {
-    ///                         MetricType = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
-    ///                         Threshold = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs
-    ///                         {
-    ///                             DurationInMinutes = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
-    ///                             Operator = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
-    ///                             Value = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
-    ///                         },
-    ///                     },
-    ///                     OcpuStepSize = @var.Auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
-    ///                 },
+    ///                 MinMemoryPerNode = @var.Auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
+    ///                 MinOcpusPerNode = @var.Auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
+    ///                 OcpuStepSize = @var.Auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
     ///             },
-    ///         });
-    ///     }
+    ///             ScaleUpConfig = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs
+    ///             {
+    ///                 MaxMemoryPerNode = @var.Auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
+    ///                 MaxOcpusPerNode = @var.Auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
+    ///                 MemoryStepSize = @var.Auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+    ///                 Metric = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs
+    ///                 {
+    ///                     MetricType = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
+    ///                     Threshold = new Oci.BigDataService.Inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs
+    ///                     {
+    ///                         DurationInMinutes = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+    ///                         Operator = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
+    ///                         Value = @var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+    ///                     },
+    ///                 },
+    ///                 OcpuStepSize = @var.Auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+    ///             },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -84,7 +82,7 @@ namespace Pulumi.Oci.BigDataService
     /// ```
     /// </summary>
     [OciResourceType("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration")]
-    public partial class AutoScalingConfiguration : Pulumi.CustomResource
+    public partial class AutoScalingConfiguration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -190,7 +188,7 @@ namespace Pulumi.Oci.BigDataService
         }
     }
 
-    public sealed class AutoScalingConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -237,9 +235,10 @@ namespace Pulumi.Oci.BigDataService
         public AutoScalingConfigurationArgs()
         {
         }
+        public static new AutoScalingConfigurationArgs Empty => new AutoScalingConfigurationArgs();
     }
 
-    public sealed class AutoScalingConfigurationState : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -304,5 +303,6 @@ namespace Pulumi.Oci.BigDataService
         public AutoScalingConfigurationState()
         {
         }
+        public static new AutoScalingConfigurationState Empty => new AutoScalingConfigurationState();
     }
 }

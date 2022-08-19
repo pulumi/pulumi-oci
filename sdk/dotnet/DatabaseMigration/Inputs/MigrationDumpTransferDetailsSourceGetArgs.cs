@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationDumpTransferDetailsSourceGetArgs : Pulumi.ResourceArgs
+    public sealed class MigrationDumpTransferDetailsSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationDumpTransferDetailsSourceGetArgs()
         {
         }
+        public static new MigrationDumpTransferDetailsSourceGetArgs Empty => new MigrationDumpTransferDetailsSourceGetArgs();
     }
 }

@@ -56,6 +56,34 @@ public final class WaasFunctions {
      * Gets the details of an address list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
+     *             .addressListId(oci_waas_address_list.test_address_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAddressListResult> getAddressList(GetAddressListArgs args) {
@@ -67,6 +95,34 @@ public final class WaasFunctions {
      * Gets the details of an address list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
+     *             .addressListId(oci_waas_address_list.test_address_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAddressListResult> getAddressListPlain(GetAddressListPlainArgs args) {
@@ -78,6 +134,34 @@ public final class WaasFunctions {
      * Gets the details of an address list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
+     *             .addressListId(oci_waas_address_list.test_address_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAddressListResult> getAddressList(GetAddressListArgs args, InvokeOptions options) {
@@ -89,6 +173,34 @@ public final class WaasFunctions {
      * Gets the details of an address list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetAddressListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
+     *             .addressListId(oci_waas_address_list.test_address_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAddressListResult> getAddressListPlain(GetAddressListPlainArgs args, InvokeOptions options) {
@@ -100,6 +212,39 @@ public final class WaasFunctions {
      * Gets a list of address lists that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressLists = WaasFunctions.getAddressLists(GetAddressListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ids(var_.address_list_ids())
+     *             .names(var_.address_list_names())
+     *             .states(var_.address_list_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.address_list_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.address_list_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAddressListsResult> getAddressLists(GetAddressListsArgs args) {
@@ -111,6 +256,39 @@ public final class WaasFunctions {
      * Gets a list of address lists that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressLists = WaasFunctions.getAddressLists(GetAddressListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ids(var_.address_list_ids())
+     *             .names(var_.address_list_names())
+     *             .states(var_.address_list_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.address_list_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.address_list_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAddressListsResult> getAddressListsPlain(GetAddressListsPlainArgs args) {
@@ -122,6 +300,39 @@ public final class WaasFunctions {
      * Gets a list of address lists that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressLists = WaasFunctions.getAddressLists(GetAddressListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ids(var_.address_list_ids())
+     *             .names(var_.address_list_names())
+     *             .states(var_.address_list_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.address_list_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.address_list_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAddressListsResult> getAddressLists(GetAddressListsArgs args, InvokeOptions options) {
@@ -133,6 +344,39 @@ public final class WaasFunctions {
      * Gets a list of address lists that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetAddressListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAddressLists = WaasFunctions.getAddressLists(GetAddressListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ids(var_.address_list_ids())
+     *             .names(var_.address_list_names())
+     *             .states(var_.address_list_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.address_list_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.address_list_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAddressListsResult> getAddressListsPlain(GetAddressListsPlainArgs args, InvokeOptions options) {
@@ -144,6 +388,34 @@ public final class WaasFunctions {
      * Gets the details of an SSL certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_waas_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args) {
@@ -155,6 +427,34 @@ public final class WaasFunctions {
      * Gets the details of an SSL certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_waas_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args) {
@@ -166,6 +466,34 @@ public final class WaasFunctions {
      * Gets the details of an SSL certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_waas_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
@@ -177,6 +505,34 @@ public final class WaasFunctions {
      * Gets the details of an SSL certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_waas_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args, InvokeOptions options) {
@@ -188,6 +544,39 @@ public final class WaasFunctions {
      * Gets a list of SSL certificates that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = WaasFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.certificate_display_names())
+     *             .ids(var_.certificate_ids())
+     *             .states(var_.certificate_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.certificate_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.certificate_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args) {
@@ -199,6 +588,39 @@ public final class WaasFunctions {
      * Gets a list of SSL certificates that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = WaasFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.certificate_display_names())
+     *             .ids(var_.certificate_ids())
+     *             .states(var_.certificate_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.certificate_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.certificate_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args) {
@@ -210,6 +632,39 @@ public final class WaasFunctions {
      * Gets a list of SSL certificates that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = WaasFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.certificate_display_names())
+     *             .ids(var_.certificate_ids())
+     *             .states(var_.certificate_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.certificate_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.certificate_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
@@ -221,6 +676,39 @@ public final class WaasFunctions {
      * Gets a list of SSL certificates that can be used in a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = WaasFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.certificate_display_names())
+     *             .ids(var_.certificate_ids())
+     *             .states(var_.certificate_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.certificate_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.certificate_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {
@@ -232,6 +720,34 @@ public final class WaasFunctions {
      * Gets the details of a custom protection rule.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
+     *             .customProtectionRuleId(oci_waas_custom_protection_rule.test_custom_protection_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomProtectionRuleResult> getCustomProtectionRule(GetCustomProtectionRuleArgs args) {
@@ -243,6 +759,34 @@ public final class WaasFunctions {
      * Gets the details of a custom protection rule.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
+     *             .customProtectionRuleId(oci_waas_custom_protection_rule.test_custom_protection_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomProtectionRuleResult> getCustomProtectionRulePlain(GetCustomProtectionRulePlainArgs args) {
@@ -254,6 +798,34 @@ public final class WaasFunctions {
      * Gets the details of a custom protection rule.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
+     *             .customProtectionRuleId(oci_waas_custom_protection_rule.test_custom_protection_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomProtectionRuleResult> getCustomProtectionRule(GetCustomProtectionRuleArgs args, InvokeOptions options) {
@@ -265,6 +837,34 @@ public final class WaasFunctions {
      * Gets the details of a custom protection rule.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
+     *             .customProtectionRuleId(oci_waas_custom_protection_rule.test_custom_protection_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomProtectionRuleResult> getCustomProtectionRulePlain(GetCustomProtectionRulePlainArgs args, InvokeOptions options) {
@@ -276,6 +876,39 @@ public final class WaasFunctions {
      * Gets a list of custom protection rules for the specified Web Application Firewall.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomProtectionRules = WaasFunctions.getCustomProtectionRules(GetCustomProtectionRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.custom_protection_rule_display_names())
+     *             .ids(var_.custom_protection_rule_ids())
+     *             .states(var_.custom_protection_rule_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.custom_protection_rule_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.custom_protection_rule_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomProtectionRulesResult> getCustomProtectionRules(GetCustomProtectionRulesArgs args) {
@@ -287,6 +920,39 @@ public final class WaasFunctions {
      * Gets a list of custom protection rules for the specified Web Application Firewall.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomProtectionRules = WaasFunctions.getCustomProtectionRules(GetCustomProtectionRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.custom_protection_rule_display_names())
+     *             .ids(var_.custom_protection_rule_ids())
+     *             .states(var_.custom_protection_rule_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.custom_protection_rule_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.custom_protection_rule_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomProtectionRulesResult> getCustomProtectionRulesPlain(GetCustomProtectionRulesPlainArgs args) {
@@ -298,6 +964,39 @@ public final class WaasFunctions {
      * Gets a list of custom protection rules for the specified Web Application Firewall.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomProtectionRules = WaasFunctions.getCustomProtectionRules(GetCustomProtectionRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.custom_protection_rule_display_names())
+     *             .ids(var_.custom_protection_rule_ids())
+     *             .states(var_.custom_protection_rule_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.custom_protection_rule_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.custom_protection_rule_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomProtectionRulesResult> getCustomProtectionRules(GetCustomProtectionRulesArgs args, InvokeOptions options) {
@@ -309,6 +1008,39 @@ public final class WaasFunctions {
      * Gets a list of custom protection rules for the specified Web Application Firewall.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetCustomProtectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomProtectionRules = WaasFunctions.getCustomProtectionRules(GetCustomProtectionRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.custom_protection_rule_display_names())
+     *             .ids(var_.custom_protection_rule_ids())
+     *             .states(var_.custom_protection_rule_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.custom_protection_rule_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.custom_protection_rule_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomProtectionRulesResult> getCustomProtectionRulesPlain(GetCustomProtectionRulesPlainArgs args, InvokeOptions options) {
@@ -320,6 +1052,32 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEdgeSubnetsResult> getEdgeSubnets() {
@@ -331,6 +1089,32 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEdgeSubnetsResult> getEdgeSubnetsPlain() {
@@ -342,6 +1126,32 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEdgeSubnetsResult> getEdgeSubnets(GetEdgeSubnetsArgs args) {
@@ -353,6 +1163,32 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEdgeSubnetsResult> getEdgeSubnetsPlain(GetEdgeSubnetsPlainArgs args) {
@@ -364,6 +1200,32 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEdgeSubnetsResult> getEdgeSubnets(GetEdgeSubnetsArgs args, InvokeOptions options) {
@@ -375,6 +1237,32 @@ public final class WaasFunctions {
      * Return the list of the tenant&#39;s edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetEdgeSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEdgeSubnets = WaasFunctions.getEdgeSubnets();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEdgeSubnetsResult> getEdgeSubnetsPlain(GetEdgeSubnetsPlainArgs args, InvokeOptions options) {
@@ -386,6 +1274,34 @@ public final class WaasFunctions {
      * Gets the details of a HTTP Redirect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
+     *             .httpRedirectId(oci_waas_http_redirect.test_http_redirect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpRedirectResult> getHttpRedirect(GetHttpRedirectArgs args) {
@@ -397,6 +1313,34 @@ public final class WaasFunctions {
      * Gets the details of a HTTP Redirect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
+     *             .httpRedirectId(oci_waas_http_redirect.test_http_redirect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpRedirectResult> getHttpRedirectPlain(GetHttpRedirectPlainArgs args) {
@@ -408,6 +1352,34 @@ public final class WaasFunctions {
      * Gets the details of a HTTP Redirect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
+     *             .httpRedirectId(oci_waas_http_redirect.test_http_redirect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpRedirectResult> getHttpRedirect(GetHttpRedirectArgs args, InvokeOptions options) {
@@ -419,6 +1391,34 @@ public final class WaasFunctions {
      * Gets the details of a HTTP Redirect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetHttpRedirectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
+     *             .httpRedirectId(oci_waas_http_redirect.test_http_redirect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpRedirectResult> getHttpRedirectPlain(GetHttpRedirectPlainArgs args, InvokeOptions options) {
@@ -430,6 +1430,39 @@ public final class WaasFunctions {
      * Gets a list of HTTP Redirects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpRedirects = WaasFunctions.getHttpRedirects(GetHttpRedirectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.http_redirect_display_names())
+     *             .ids(var_.http_redirect_ids())
+     *             .states(var_.http_redirect_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.http_redirect_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.http_redirect_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpRedirectsResult> getHttpRedirects(GetHttpRedirectsArgs args) {
@@ -441,6 +1474,39 @@ public final class WaasFunctions {
      * Gets a list of HTTP Redirects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpRedirects = WaasFunctions.getHttpRedirects(GetHttpRedirectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.http_redirect_display_names())
+     *             .ids(var_.http_redirect_ids())
+     *             .states(var_.http_redirect_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.http_redirect_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.http_redirect_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpRedirectsResult> getHttpRedirectsPlain(GetHttpRedirectsPlainArgs args) {
@@ -452,6 +1518,39 @@ public final class WaasFunctions {
      * Gets a list of HTTP Redirects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpRedirects = WaasFunctions.getHttpRedirects(GetHttpRedirectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.http_redirect_display_names())
+     *             .ids(var_.http_redirect_ids())
+     *             .states(var_.http_redirect_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.http_redirect_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.http_redirect_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpRedirectsResult> getHttpRedirects(GetHttpRedirectsArgs args, InvokeOptions options) {
@@ -463,6 +1562,39 @@ public final class WaasFunctions {
      * Gets a list of HTTP Redirects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetHttpRedirectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpRedirects = WaasFunctions.getHttpRedirects(GetHttpRedirectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.http_redirect_display_names())
+     *             .ids(var_.http_redirect_ids())
+     *             .states(var_.http_redirect_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.http_redirect_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.http_redirect_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpRedirectsResult> getHttpRedirectsPlain(GetHttpRedirectsPlainArgs args, InvokeOptions options) {
@@ -474,6 +1606,35 @@ public final class WaasFunctions {
      * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
+     *             .protectionRuleKey(var_.protection_rule_protection_rule_key())
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtectionRuleResult> getProtectionRule(GetProtectionRuleArgs args) {
@@ -485,6 +1646,35 @@ public final class WaasFunctions {
      * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
+     *             .protectionRuleKey(var_.protection_rule_protection_rule_key())
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtectionRuleResult> getProtectionRulePlain(GetProtectionRulePlainArgs args) {
@@ -496,6 +1686,35 @@ public final class WaasFunctions {
      * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
+     *             .protectionRuleKey(var_.protection_rule_protection_rule_key())
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtectionRuleResult> getProtectionRule(GetProtectionRuleArgs args, InvokeOptions options) {
@@ -507,6 +1726,35 @@ public final class WaasFunctions {
      * Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetProtectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
+     *             .protectionRuleKey(var_.protection_rule_protection_rule_key())
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtectionRuleResult> getProtectionRulePlain(GetProtectionRulePlainArgs args, InvokeOptions options) {
@@ -519,6 +1767,36 @@ public final class WaasFunctions {
      * The list is sorted by `key`, in ascending order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .actions(var_.protection_rule_action())
+     *             .modSecurityRuleIds(oci_events_rule.test_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtectionRulesResult> getProtectionRules(GetProtectionRulesArgs args) {
@@ -531,6 +1809,36 @@ public final class WaasFunctions {
      * The list is sorted by `key`, in ascending order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .actions(var_.protection_rule_action())
+     *             .modSecurityRuleIds(oci_events_rule.test_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtectionRulesResult> getProtectionRulesPlain(GetProtectionRulesPlainArgs args) {
@@ -543,6 +1851,36 @@ public final class WaasFunctions {
      * The list is sorted by `key`, in ascending order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .actions(var_.protection_rule_action())
+     *             .modSecurityRuleIds(oci_events_rule.test_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtectionRulesResult> getProtectionRules(GetProtectionRulesArgs args, InvokeOptions options) {
@@ -555,6 +1893,36 @@ public final class WaasFunctions {
      * The list is sorted by `key`, in ascending order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetProtectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .actions(var_.protection_rule_action())
+     *             .modSecurityRuleIds(oci_events_rule.test_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtectionRulesResult> getProtectionRulesPlain(GetProtectionRulesPlainArgs args, InvokeOptions options) {
@@ -566,6 +1934,39 @@ public final class WaasFunctions {
      * Gets a list of WAAS policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWaasPolicies = WaasFunctions.getWaasPolicies(GetWaasPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.waas_policy_display_names())
+     *             .ids(var_.waas_policy_ids())
+     *             .states(var_.waas_policy_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.waas_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.waas_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWaasPoliciesResult> getWaasPolicies(GetWaasPoliciesArgs args) {
@@ -577,6 +1978,39 @@ public final class WaasFunctions {
      * Gets a list of WAAS policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWaasPolicies = WaasFunctions.getWaasPolicies(GetWaasPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.waas_policy_display_names())
+     *             .ids(var_.waas_policy_ids())
+     *             .states(var_.waas_policy_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.waas_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.waas_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWaasPoliciesResult> getWaasPoliciesPlain(GetWaasPoliciesPlainArgs args) {
@@ -588,6 +2022,39 @@ public final class WaasFunctions {
      * Gets a list of WAAS policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWaasPolicies = WaasFunctions.getWaasPolicies(GetWaasPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.waas_policy_display_names())
+     *             .ids(var_.waas_policy_ids())
+     *             .states(var_.waas_policy_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.waas_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.waas_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWaasPoliciesResult> getWaasPolicies(GetWaasPoliciesArgs args, InvokeOptions options) {
@@ -599,6 +2066,39 @@ public final class WaasFunctions {
      * Gets a list of WAAS policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetWaasPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWaasPolicies = WaasFunctions.getWaasPolicies(GetWaasPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayNames(var_.waas_policy_display_names())
+     *             .ids(var_.waas_policy_ids())
+     *             .states(var_.waas_policy_states())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.waas_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.waas_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWaasPoliciesResult> getWaasPoliciesPlain(GetWaasPoliciesPlainArgs args, InvokeOptions options) {
@@ -610,6 +2110,34 @@ public final class WaasFunctions {
      * Gets the details of a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWaasPolicyResult> getWaasPolicy(GetWaasPolicyArgs args) {
@@ -621,6 +2149,34 @@ public final class WaasFunctions {
      * Gets the details of a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWaasPolicyResult> getWaasPolicyPlain(GetWaasPolicyPlainArgs args) {
@@ -632,6 +2188,34 @@ public final class WaasFunctions {
      * Gets the details of a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWaasPolicyResult> getWaasPolicy(GetWaasPolicyArgs args, InvokeOptions options) {
@@ -643,6 +2227,34 @@ public final class WaasFunctions {
      * Gets the details of a WAAS policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waas.WaasFunctions;
+     * import com.pulumi.oci.Waas.inputs.GetWaasPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
+     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWaasPolicyResult> getWaasPolicyPlain(GetWaasPolicyPlainArgs args, InvokeOptions options) {

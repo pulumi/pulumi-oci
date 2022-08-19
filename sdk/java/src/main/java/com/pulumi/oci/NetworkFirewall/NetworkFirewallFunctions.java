@@ -29,6 +29,34 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewall by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
+     *             .networkFirewallId(oci_network_firewall_network_firewall.test_network_firewall().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkFirewallResult> getNetworkFirewall(GetNetworkFirewallArgs args) {
@@ -40,6 +68,34 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewall by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
+     *             .networkFirewallId(oci_network_firewall_network_firewall.test_network_firewall().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkFirewallResult> getNetworkFirewallPlain(GetNetworkFirewallPlainArgs args) {
@@ -51,6 +107,34 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewall by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
+     *             .networkFirewallId(oci_network_firewall_network_firewall.test_network_firewall().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkFirewallResult> getNetworkFirewall(GetNetworkFirewallArgs args, InvokeOptions options) {
@@ -62,6 +146,34 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewall by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
+     *             .networkFirewallId(oci_network_firewall_network_firewall.test_network_firewall().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkFirewallResult> getNetworkFirewallPlain(GetNetworkFirewallPlainArgs args, InvokeOptions options) {
@@ -73,6 +185,37 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicies = NetworkFirewallFunctions.getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_firewall_policy_display_name())
+     *             .id(var_.network_firewall_policy_id())
+     *             .state(var_.network_firewall_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkFirewallPoliciesResult> getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs args) {
@@ -84,6 +227,37 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicies = NetworkFirewallFunctions.getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_firewall_policy_display_name())
+     *             .id(var_.network_firewall_policy_id())
+     *             .state(var_.network_firewall_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPoliciesResult> getNetworkFirewallPoliciesPlain(GetNetworkFirewallPoliciesPlainArgs args) {
@@ -95,6 +269,37 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicies = NetworkFirewallFunctions.getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_firewall_policy_display_name())
+     *             .id(var_.network_firewall_policy_id())
+     *             .state(var_.network_firewall_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkFirewallPoliciesResult> getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs args, InvokeOptions options) {
@@ -106,6 +311,37 @@ public final class NetworkFirewallFunctions {
      * Returns a list of Network Firewall Policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicies = NetworkFirewallFunctions.getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_firewall_policy_display_name())
+     *             .id(var_.network_firewall_policy_id())
+     *             .state(var_.network_firewall_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPoliciesResult> getNetworkFirewallPoliciesPlain(GetNetworkFirewallPoliciesPlainArgs args, InvokeOptions options) {
@@ -117,6 +353,34 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs args) {
@@ -128,6 +392,34 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicyPlain(GetNetworkFirewallPolicyPlainArgs args) {
@@ -139,6 +431,34 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs args, InvokeOptions options) {
@@ -150,6 +470,34 @@ public final class NetworkFirewallFunctions {
      * Gets a NetworkFirewallPolicy given the network firewall policy identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyResult> getNetworkFirewallPolicyPlain(GetNetworkFirewallPolicyPlainArgs args, InvokeOptions options) {
@@ -161,6 +509,39 @@ public final class NetworkFirewallFunctions {
      * Returns a list of NetworkFirewalls.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewalls = NetworkFirewallFunctions.getNetworkFirewalls(GetNetworkFirewallsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.network_firewall_availability_domain())
+     *             .displayName(var_.network_firewall_display_name())
+     *             .id(var_.network_firewall_id())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .state(var_.network_firewall_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkFirewallsResult> getNetworkFirewalls(GetNetworkFirewallsArgs args) {
@@ -172,6 +553,39 @@ public final class NetworkFirewallFunctions {
      * Returns a list of NetworkFirewalls.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewalls = NetworkFirewallFunctions.getNetworkFirewalls(GetNetworkFirewallsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.network_firewall_availability_domain())
+     *             .displayName(var_.network_firewall_display_name())
+     *             .id(var_.network_firewall_id())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .state(var_.network_firewall_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkFirewallsResult> getNetworkFirewallsPlain(GetNetworkFirewallsPlainArgs args) {
@@ -183,6 +597,39 @@ public final class NetworkFirewallFunctions {
      * Returns a list of NetworkFirewalls.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewalls = NetworkFirewallFunctions.getNetworkFirewalls(GetNetworkFirewallsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.network_firewall_availability_domain())
+     *             .displayName(var_.network_firewall_display_name())
+     *             .id(var_.network_firewall_id())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .state(var_.network_firewall_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkFirewallsResult> getNetworkFirewalls(GetNetworkFirewallsArgs args, InvokeOptions options) {
@@ -194,6 +641,39 @@ public final class NetworkFirewallFunctions {
      * Returns a list of NetworkFirewalls.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewalls = NetworkFirewallFunctions.getNetworkFirewalls(GetNetworkFirewallsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.network_firewall_availability_domain())
+     *             .displayName(var_.network_firewall_display_name())
+     *             .id(var_.network_firewall_id())
+     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .state(var_.network_firewall_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkFirewallsResult> getNetworkFirewallsPlain(GetNetworkFirewallsPlainArgs args, InvokeOptions options) {

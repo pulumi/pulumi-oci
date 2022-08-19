@@ -47,6 +47,35 @@ public final class BigDataServiceFunctions {
      * Returns details of the autoscale configuration identified by the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args) {
@@ -58,6 +87,35 @@ public final class BigDataServiceFunctions {
      * Returns details of the autoscale configuration identified by the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args) {
@@ -69,6 +127,35 @@ public final class BigDataServiceFunctions {
      * Returns details of the autoscale configuration identified by the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args, InvokeOptions options) {
@@ -80,6 +167,35 @@ public final class BigDataServiceFunctions {
      * Returns details of the autoscale configuration identified by the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args, InvokeOptions options) {
@@ -103,6 +219,34 @@ public final class BigDataServiceFunctions {
      * Returns information about the Big Data Service cluster identified by the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceResult> getBdsInstance(GetBdsInstanceArgs args) {
@@ -114,6 +258,34 @@ public final class BigDataServiceFunctions {
      * Returns information about the Big Data Service cluster identified by the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceResult> getBdsInstancePlain(GetBdsInstancePlainArgs args) {
@@ -125,6 +297,34 @@ public final class BigDataServiceFunctions {
      * Returns information about the Big Data Service cluster identified by the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceResult> getBdsInstance(GetBdsInstanceArgs args, InvokeOptions options) {
@@ -136,6 +336,34 @@ public final class BigDataServiceFunctions {
      * Returns information about the Big Data Service cluster identified by the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceResult> getBdsInstancePlain(GetBdsInstancePlainArgs args, InvokeOptions options) {
@@ -147,6 +375,35 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceApiKeyResult> getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs args) {
@@ -158,6 +415,35 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceApiKeyResult> getBdsInstanceApiKeyPlain(GetBdsInstanceApiKeyPlainArgs args) {
@@ -169,6 +455,35 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceApiKeyResult> getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs args, InvokeOptions options) {
@@ -180,6 +495,35 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceApiKeyResult> getBdsInstanceApiKeyPlain(GetBdsInstanceApiKeyPlainArgs args, InvokeOptions options) {
@@ -191,6 +535,35 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeys(GetBdsInstanceApiKeysArgs args) {
@@ -202,6 +575,35 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeysPlain(GetBdsInstanceApiKeysPlainArgs args) {
@@ -213,6 +615,35 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeys(GetBdsInstanceApiKeysArgs args, InvokeOptions options) {
@@ -224,6 +655,35 @@ public final class BigDataServiceFunctions {
      * Returns the user&#39;s API key information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
+     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceApiKeysResult> getBdsInstanceApiKeysPlain(GetBdsInstanceApiKeysPlainArgs args, InvokeOptions options) {
@@ -235,6 +695,35 @@ public final class BigDataServiceFunctions {
      * Returns the BDS Metastore configuration information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .metastoreConfigId(oci_apm_config_config.test_config().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs args) {
@@ -246,6 +735,35 @@ public final class BigDataServiceFunctions {
      * Returns the BDS Metastore configuration information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .metastoreConfigId(oci_apm_config_config.test_config().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfigPlain(GetBdsInstanceMetastoreConfigPlainArgs args) {
@@ -257,6 +775,35 @@ public final class BigDataServiceFunctions {
      * Returns the BDS Metastore configuration information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .metastoreConfigId(oci_apm_config_config.test_config().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs args, InvokeOptions options) {
@@ -268,6 +815,35 @@ public final class BigDataServiceFunctions {
      * Returns the BDS Metastore configuration information for the given ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .metastoreConfigId(oci_apm_config_config.test_config().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigResult> getBdsInstanceMetastoreConfigPlain(GetBdsInstanceMetastoreConfigPlainArgs args, InvokeOptions options) {
@@ -279,6 +855,39 @@ public final class BigDataServiceFunctions {
      * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .displayName(var_.bds_instance_metastore_config_display_name())
+     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+     *             .metastoreType(var_.bds_instance_metastore_config_metastore_type())
+     *             .state(var_.bds_instance_metastore_config_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs args) {
@@ -290,6 +899,39 @@ public final class BigDataServiceFunctions {
      * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .displayName(var_.bds_instance_metastore_config_display_name())
+     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+     *             .metastoreType(var_.bds_instance_metastore_config_metastore_type())
+     *             .state(var_.bds_instance_metastore_config_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigsPlain(GetBdsInstanceMetastoreConfigsPlainArgs args) {
@@ -301,6 +943,39 @@ public final class BigDataServiceFunctions {
      * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .displayName(var_.bds_instance_metastore_config_display_name())
+     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+     *             .metastoreType(var_.bds_instance_metastore_config_metastore_type())
+     *             .state(var_.bds_instance_metastore_config_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs args, InvokeOptions options) {
@@ -312,6 +987,39 @@ public final class BigDataServiceFunctions {
      * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
+     *             .displayName(var_.bds_instance_metastore_config_display_name())
+     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+     *             .metastoreType(var_.bds_instance_metastore_config_metastore_type())
+     *             .state(var_.bds_instance_metastore_config_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigsPlain(GetBdsInstanceMetastoreConfigsPlainArgs args, InvokeOptions options) {
@@ -323,6 +1031,36 @@ public final class BigDataServiceFunctions {
      * List the patch history of this cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .patchVersion(var_.bds_instance_patch_history_patch_version())
+     *             .state(var_.bds_instance_patch_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs args) {
@@ -334,6 +1072,36 @@ public final class BigDataServiceFunctions {
      * List the patch history of this cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .patchVersion(var_.bds_instance_patch_history_patch_version())
+     *             .state(var_.bds_instance_patch_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistoriesPlain(GetBdsInstancePatchHistoriesPlainArgs args) {
@@ -345,6 +1113,36 @@ public final class BigDataServiceFunctions {
      * List the patch history of this cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .patchVersion(var_.bds_instance_patch_history_patch_version())
+     *             .state(var_.bds_instance_patch_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs args, InvokeOptions options) {
@@ -356,6 +1154,36 @@ public final class BigDataServiceFunctions {
      * List the patch history of this cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .patchVersion(var_.bds_instance_patch_history_patch_version())
+     *             .state(var_.bds_instance_patch_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstancePatchHistoriesResult> getBdsInstancePatchHistoriesPlain(GetBdsInstancePatchHistoriesPlainArgs args, InvokeOptions options) {
@@ -367,6 +1195,34 @@ public final class BigDataServiceFunctions {
      * List all the available patches for this cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstancePatchesResult> getBdsInstancePatches(GetBdsInstancePatchesArgs args) {
@@ -378,6 +1234,34 @@ public final class BigDataServiceFunctions {
      * List all the available patches for this cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstancePatchesResult> getBdsInstancePatchesPlain(GetBdsInstancePatchesPlainArgs args) {
@@ -389,6 +1273,34 @@ public final class BigDataServiceFunctions {
      * List all the available patches for this cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstancePatchesResult> getBdsInstancePatches(GetBdsInstancePatchesArgs args, InvokeOptions options) {
@@ -400,6 +1312,34 @@ public final class BigDataServiceFunctions {
      * List all the available patches for this cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
+     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstancePatchesResult> getBdsInstancePatchesPlain(GetBdsInstancePatchesPlainArgs args, InvokeOptions options) {
@@ -411,6 +1351,36 @@ public final class BigDataServiceFunctions {
      * Returns a list of all Big Data Service clusters in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.bds_instance_display_name())
+     *             .state(var_.bds_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstancesResult> getBdsInstances(GetBdsInstancesArgs args) {
@@ -422,6 +1392,36 @@ public final class BigDataServiceFunctions {
      * Returns a list of all Big Data Service clusters in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.bds_instance_display_name())
+     *             .state(var_.bds_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstancesResult> getBdsInstancesPlain(GetBdsInstancesPlainArgs args) {
@@ -433,6 +1433,36 @@ public final class BigDataServiceFunctions {
      * Returns a list of all Big Data Service clusters in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.bds_instance_display_name())
+     *             .state(var_.bds_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBdsInstancesResult> getBdsInstances(GetBdsInstancesArgs args, InvokeOptions options) {
@@ -444,6 +1474,36 @@ public final class BigDataServiceFunctions {
      * Returns a list of all Big Data Service clusters in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.bds_instance_display_name())
+     *             .state(var_.bds_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBdsInstancesResult> getBdsInstancesPlain(GetBdsInstancesPlainArgs args, InvokeOptions options) {

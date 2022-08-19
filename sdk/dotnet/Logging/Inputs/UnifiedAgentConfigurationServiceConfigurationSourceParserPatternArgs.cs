@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs : Pulumi.ResourceArgs
+    public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Process value using the specified format. This is available only when time_type is a string.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs()
         {
         }
+        public static new UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs Empty => new UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs();
     }
 }

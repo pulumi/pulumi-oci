@@ -22,26 +22,24 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReport.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReport.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///             BeginExecIdGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
-        ///             EndExecIdLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
-        ///             SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
-        ///             TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///         BeginExecIdGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
+        ///         EndExecIdLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
+        ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
+        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,26 +58,24 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReport.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReport.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///             BeginExecIdGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
-        ///             EndExecIdLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
-        ///             SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
-        ///             TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///         BeginExecIdGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
+        ///         EndExecIdLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
+        ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
+        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs();
     }
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportInvokeArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportInvokeArgs();
     }
 
 

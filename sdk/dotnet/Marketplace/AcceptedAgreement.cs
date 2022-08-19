@@ -18,33 +18,31 @@ namespace Pulumi.Oci.Marketplace
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAcceptedAgreement = new Oci.Marketplace.AcceptedAgreement("testAcceptedAgreement", new()
     ///     {
-    ///         var testAcceptedAgreement = new Oci.Marketplace.AcceptedAgreement("testAcceptedAgreement", new Oci.Marketplace.AcceptedAgreementArgs
+    ///         AgreementId = oci_marketplace_agreement.Test_agreement.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ListingId = oci_marketplace_listing.Test_listing.Id,
+    ///         PackageVersion = @var.Accepted_agreement_package_version,
+    ///         Signature = @var.Accepted_agreement_signature,
+    ///         DefinedTags = 
     ///         {
-    ///             AgreementId = oci_marketplace_agreement.Test_agreement.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ListingId = oci_marketplace_listing.Test_listing.Id,
-    ///             PackageVersion = @var.Accepted_agreement_package_version,
-    ///             Signature = @var.Accepted_agreement_signature,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Accepted_agreement_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Accepted_agreement_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.Marketplace
     /// ```
     /// </summary>
     [OciResourceType("oci:Marketplace/acceptedAgreement:AcceptedAgreement")]
-    public partial class AcceptedAgreement : Pulumi.CustomResource
+    public partial class AcceptedAgreement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The agreement to accept.
@@ -156,7 +154,7 @@ namespace Pulumi.Oci.Marketplace
         }
     }
 
-    public sealed class AcceptedAgreementArgs : Pulumi.ResourceArgs
+    public sealed class AcceptedAgreementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The agreement to accept.
@@ -221,9 +219,10 @@ namespace Pulumi.Oci.Marketplace
         public AcceptedAgreementArgs()
         {
         }
+        public static new AcceptedAgreementArgs Empty => new AcceptedAgreementArgs();
     }
 
-    public sealed class AcceptedAgreementState : Pulumi.ResourceArgs
+    public sealed class AcceptedAgreementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The agreement to accept.
@@ -294,5 +293,6 @@ namespace Pulumi.Oci.Marketplace
         public AcceptedAgreementState()
         {
         }
+        public static new AcceptedAgreementState Empty => new AcceptedAgreementState();
     }
 }

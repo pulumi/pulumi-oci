@@ -49,6 +49,42 @@ import javax.annotation.Nullable;
  * [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Ipsec;
+ * import com.pulumi.oci.Core.IpsecArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIpSecConnection = new Ipsec(&#34;testIpSecConnection&#34;, IpsecArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .cpeId(oci_core_cpe.test_cpe().id())
+ *             .drgId(oci_core_drg.test_drg().id())
+ *             .staticRoutes(var_.ip_sec_connection_static_routes())
+ *             .cpeLocalIdentifier(var_.ip_sec_connection_cpe_local_identifier())
+ *             .cpeLocalIdentifierType(var_.ip_sec_connection_cpe_local_identifier_type())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.ip_sec_connection_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

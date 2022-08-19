@@ -17,114 +17,112 @@ namespace Pulumi.Oci.ApmSynthetics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMonitor = new Oci.ApmSynthetics.Config("testMonitor", new()
     ///     {
-    ///         var testMonitor = new Oci.ApmSynthetics.Config("testMonitor", new Oci.ApmSynthetics.ConfigArgs
+    ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+    ///         DisplayName = @var.Monitor_display_name,
+    ///         MonitorType = @var.Monitor_monitor_type,
+    ///         RepeatIntervalInSeconds = @var.Monitor_repeat_interval_in_seconds,
+    ///         VantagePoints = new[] {},
+    ///         BatchIntervalInSeconds = @var.Monitor_batch_interval_in_seconds,
+    ///         Configuration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationArgs
     ///         {
-    ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-    ///             DisplayName = @var.Monitor_display_name,
-    ///             MonitorType = @var.Monitor_monitor_type,
-    ///             RepeatIntervalInSeconds = @var.Monitor_repeat_interval_in_seconds,
-    ///             VantagePoints = {},
-    ///             BatchIntervalInSeconds = @var.Monitor_batch_interval_in_seconds,
-    ///             Configuration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationArgs
+    ///             ConfigType = @var.Monitor_configuration_config_type,
+    ///             DnsConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationDnsConfigurationArgs
     ///             {
-    ///                 ConfigType = @var.Monitor_configuration_config_type,
-    ///                 DnsConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationDnsConfigurationArgs
+    ///                 IsOverrideDns = @var.Monitor_configuration_dns_configuration_is_override_dns,
+    ///                 OverrideDnsIp = @var.Monitor_configuration_dns_configuration_override_dns_ip,
+    ///             },
+    ///             IsCertificateValidationEnabled = @var.Monitor_configuration_is_certificate_validation_enabled,
+    ///             IsFailureRetried = @var.Monitor_configuration_is_failure_retried,
+    ///             IsRedirectionEnabled = @var.Monitor_configuration_is_redirection_enabled,
+    ///             NetworkConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationNetworkConfigurationArgs
+    ///             {
+    ///                 NumberOfHops = @var.Monitor_configuration_network_configuration_number_of_hops,
+    ///                 ProbeMode = @var.Monitor_configuration_network_configuration_probe_mode,
+    ///                 ProbePerHop = @var.Monitor_configuration_network_configuration_probe_per_hop,
+    ///                 Protocol = @var.Monitor_configuration_network_configuration_protocol,
+    ///                 TransmissionRate = @var.Monitor_configuration_network_configuration_transmission_rate,
+    ///             },
+    ///             ReqAuthenticationDetails = new Oci.ApmSynthetics.Inputs.ConfigConfigurationReqAuthenticationDetailsArgs
+    ///             {
+    ///                 AuthHeaders = new[]
     ///                 {
-    ///                     IsOverrideDns = @var.Monitor_configuration_dns_configuration_is_override_dns,
-    ///                     OverrideDnsIp = @var.Monitor_configuration_dns_configuration_override_dns_ip,
-    ///                 },
-    ///                 IsCertificateValidationEnabled = @var.Monitor_configuration_is_certificate_validation_enabled,
-    ///                 IsFailureRetried = @var.Monitor_configuration_is_failure_retried,
-    ///                 IsRedirectionEnabled = @var.Monitor_configuration_is_redirection_enabled,
-    ///                 NetworkConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationNetworkConfigurationArgs
-    ///                 {
-    ///                     NumberOfHops = @var.Monitor_configuration_network_configuration_number_of_hops,
-    ///                     ProbeMode = @var.Monitor_configuration_network_configuration_probe_mode,
-    ///                     ProbePerHop = @var.Monitor_configuration_network_configuration_probe_per_hop,
-    ///                     Protocol = @var.Monitor_configuration_network_configuration_protocol,
-    ///                     TransmissionRate = @var.Monitor_configuration_network_configuration_transmission_rate,
-    ///                 },
-    ///                 ReqAuthenticationDetails = new Oci.ApmSynthetics.Inputs.ConfigConfigurationReqAuthenticationDetailsArgs
-    ///                 {
-    ///                     AuthHeaders = 
+    ///                     new Oci.ApmSynthetics.Inputs.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs
     ///                     {
-    ///                         new Oci.ApmSynthetics.Inputs.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs
-    ///                         {
-    ///                             HeaderName = @var.Monitor_configuration_req_authentication_details_auth_headers_header_name,
-    ///                             HeaderValue = @var.Monitor_configuration_req_authentication_details_auth_headers_header_value,
-    ///                         },
-    ///                     },
-    ///                     AuthRequestMethod = @var.Monitor_configuration_req_authentication_details_auth_request_method,
-    ///                     AuthRequestPostBody = @var.Monitor_configuration_req_authentication_details_auth_request_post_body,
-    ///                     AuthToken = @var.Monitor_configuration_req_authentication_details_auth_token,
-    ///                     AuthUrl = @var.Monitor_configuration_req_authentication_details_auth_url,
-    ///                     AuthUserName = oci_identity_user.Test_user.Name,
-    ///                     AuthUserPassword = @var.Monitor_configuration_req_authentication_details_auth_user_password,
-    ///                     OauthScheme = @var.Monitor_configuration_req_authentication_details_oauth_scheme,
-    ///                 },
-    ///                 ReqAuthenticationScheme = @var.Monitor_configuration_req_authentication_scheme,
-    ///                 RequestHeaders = 
-    ///                 {
-    ///                     new Oci.ApmSynthetics.Inputs.ConfigConfigurationRequestHeaderArgs
-    ///                     {
-    ///                         HeaderName = @var.Monitor_configuration_request_headers_header_name,
-    ///                         HeaderValue = @var.Monitor_configuration_request_headers_header_value,
+    ///                         HeaderName = @var.Monitor_configuration_req_authentication_details_auth_headers_header_name,
+    ///                         HeaderValue = @var.Monitor_configuration_req_authentication_details_auth_headers_header_value,
     ///                     },
     ///                 },
-    ///                 RequestMethod = @var.Monitor_configuration_request_method,
-    ///                 RequestPostBody = @var.Monitor_configuration_request_post_body,
-    ///                 RequestQueryParams = 
+    ///                 AuthRequestMethod = @var.Monitor_configuration_req_authentication_details_auth_request_method,
+    ///                 AuthRequestPostBody = @var.Monitor_configuration_req_authentication_details_auth_request_post_body,
+    ///                 AuthToken = @var.Monitor_configuration_req_authentication_details_auth_token,
+    ///                 AuthUrl = @var.Monitor_configuration_req_authentication_details_auth_url,
+    ///                 AuthUserName = oci_identity_user.Test_user.Name,
+    ///                 AuthUserPassword = @var.Monitor_configuration_req_authentication_details_auth_user_password,
+    ///                 OauthScheme = @var.Monitor_configuration_req_authentication_details_oauth_scheme,
+    ///             },
+    ///             ReqAuthenticationScheme = @var.Monitor_configuration_req_authentication_scheme,
+    ///             RequestHeaders = new[]
+    ///             {
+    ///                 new Oci.ApmSynthetics.Inputs.ConfigConfigurationRequestHeaderArgs
     ///                 {
-    ///                     new Oci.ApmSynthetics.Inputs.ConfigConfigurationRequestQueryParamArgs
-    ///                     {
-    ///                         ParamName = @var.Monitor_configuration_request_query_params_param_name,
-    ///                         ParamValue = @var.Monitor_configuration_request_query_params_param_value,
-    ///                     },
-    ///                 },
-    ///                 VerifyResponseCodes = @var.Monitor_configuration_verify_response_codes,
-    ///                 VerifyResponseContent = @var.Monitor_configuration_verify_response_content,
-    ///                 VerifyTexts = 
-    ///                 {
-    ///                     new Oci.ApmSynthetics.Inputs.ConfigConfigurationVerifyTextArgs
-    ///                     {
-    ///                         Text = @var.Monitor_configuration_verify_texts_text,
-    ///                     },
+    ///                     HeaderName = @var.Monitor_configuration_request_headers_header_name,
+    ///                     HeaderValue = @var.Monitor_configuration_request_headers_header_value,
     ///                 },
     ///             },
-    ///             DefinedTags = 
+    ///             RequestMethod = @var.Monitor_configuration_request_method,
+    ///             RequestPostBody = @var.Monitor_configuration_request_post_body,
+    ///             RequestQueryParams = new[]
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsRunNow = @var.Monitor_is_run_now,
-    ///             IsRunOnce = @var.Monitor_is_run_once,
-    ///             SchedulingPolicy = @var.Monitor_scheduling_policy,
-    ///             ScriptId = oci_apm_synthetics_script.Test_script.Id,
-    ///             ScriptParameters = 
-    ///             {
-    ///                 new Oci.ApmSynthetics.Inputs.ConfigScriptParameterArgs
+    ///                 new Oci.ApmSynthetics.Inputs.ConfigConfigurationRequestQueryParamArgs
     ///                 {
-    ///                     ParamName = @var.Monitor_script_parameters_param_name,
-    ///                     ParamValue = @var.Monitor_script_parameters_param_value,
+    ///                     ParamName = @var.Monitor_configuration_request_query_params_param_name,
+    ///                     ParamValue = @var.Monitor_configuration_request_query_params_param_value,
     ///                 },
     ///             },
-    ///             Status = @var.Monitor_status,
-    ///             Target = @var.Monitor_target,
-    ///             TimeoutInSeconds = @var.Monitor_timeout_in_seconds,
-    ///         });
-    ///     }
+    ///             VerifyResponseCodes = @var.Monitor_configuration_verify_response_codes,
+    ///             VerifyResponseContent = @var.Monitor_configuration_verify_response_content,
+    ///             VerifyTexts = new[]
+    ///             {
+    ///                 new Oci.ApmSynthetics.Inputs.ConfigConfigurationVerifyTextArgs
+    ///                 {
+    ///                     Text = @var.Monitor_configuration_verify_texts_text,
+    ///                 },
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsRunNow = @var.Monitor_is_run_now,
+    ///         IsRunOnce = @var.Monitor_is_run_once,
+    ///         SchedulingPolicy = @var.Monitor_scheduling_policy,
+    ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
+    ///         ScriptParameters = new[]
+    ///         {
+    ///             new Oci.ApmSynthetics.Inputs.ConfigScriptParameterArgs
+    ///             {
+    ///                 ParamName = @var.Monitor_script_parameters_param_name,
+    ///                 ParamValue = @var.Monitor_script_parameters_param_value,
+    ///             },
+    ///         },
+    ///         Status = @var.Monitor_status,
+    ///         Target = @var.Monitor_target,
+    ///         TimeoutInSeconds = @var.Monitor_timeout_in_seconds,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -136,7 +134,7 @@ namespace Pulumi.Oci.ApmSynthetics
     /// ```
     /// </summary>
     [OciResourceType("oci:ApmSynthetics/config:Config")]
-    public partial class Config : Pulumi.CustomResource
+    public partial class Config : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for. 
@@ -310,7 +308,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
     }
 
-    public sealed class ConfigArgs : Pulumi.ResourceArgs
+    public sealed class ConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for. 
@@ -449,9 +447,10 @@ namespace Pulumi.Oci.ApmSynthetics
         public ConfigArgs()
         {
         }
+        public static new ConfigArgs Empty => new ConfigArgs();
     }
 
-    public sealed class ConfigState : Pulumi.ResourceArgs
+    public sealed class ConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for. 
@@ -608,5 +607,6 @@ namespace Pulumi.Oci.ApmSynthetics
         public ConfigState()
         {
         }
+        public static new ConfigState Empty => new ConfigState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Bastion.Inputs
 {
 
-    public sealed class SessionKeyDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class SessionKeyDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Bastion.Inputs
         public SessionKeyDetailsGetArgs()
         {
         }
+        public static new SessionKeyDetailsGetArgs Empty => new SessionKeyDetailsGetArgs();
     }
 }

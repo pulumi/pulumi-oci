@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class ScheduleResultLocationArgs : Pulumi.ResourceArgs
+    public sealed class ScheduleResultLocationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The bucket name where usage/cost CSVs will be uploaded
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public ScheduleResultLocationArgs()
         {
         }
+        public static new ScheduleResultLocationArgs Empty => new ScheduleResultLocationArgs();
     }
 }

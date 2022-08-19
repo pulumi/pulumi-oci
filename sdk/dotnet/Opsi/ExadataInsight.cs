@@ -17,33 +17,31 @@ namespace Pulumi.Oci.Opsi
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExadataInsight = new Oci.Opsi.ExadataInsight("testExadataInsight", new()
     ///     {
-    ///         var testExadataInsight = new Oci.Opsi.ExadataInsight("testExadataInsight", new Oci.Opsi.ExadataInsightArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+    ///         EnterpriseManagerEntityIdentifier = @var.Exadata_insight_enterprise_manager_entity_identifier,
+    ///         EnterpriseManagerIdentifier = @var.Exadata_insight_enterprise_manager_identifier,
+    ///         EntitySource = @var.Exadata_insight_entity_source,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-    ///             EnterpriseManagerEntityIdentifier = @var.Exadata_insight_enterprise_manager_entity_identifier,
-    ///             EnterpriseManagerIdentifier = @var.Exadata_insight_enterprise_manager_identifier,
-    ///             EntitySource = @var.Exadata_insight_entity_source,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsAutoSyncEnabled = @var.Exadata_insight_is_auto_sync_enabled,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsAutoSyncEnabled = @var.Exadata_insight_is_auto_sync_enabled,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/exadataInsight:ExadataInsight")]
-    public partial class ExadataInsight : Pulumi.CustomResource
+    public partial class ExadataInsight : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of Exadata insight
@@ -233,7 +231,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class ExadataInsightArgs : Pulumi.ResourceArgs
+    public sealed class ExadataInsightArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of Exadata insight
@@ -304,9 +302,10 @@ namespace Pulumi.Oci.Opsi
         public ExadataInsightArgs()
         {
         }
+        public static new ExadataInsightArgs Empty => new ExadataInsightArgs();
     }
 
-    public sealed class ExadataInsightState : Pulumi.ResourceArgs
+    public sealed class ExadataInsightState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of Exadata insight
@@ -461,5 +460,6 @@ namespace Pulumi.Oci.Opsi
         public ExadataInsightState()
         {
         }
+        public static new ExadataInsightState Empty => new ExadataInsightState();
     }
 }

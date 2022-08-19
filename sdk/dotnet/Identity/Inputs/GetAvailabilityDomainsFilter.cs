@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetAvailabilityDomainsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAvailabilityDomainsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Availability Domain.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetAvailabilityDomainsFilterArgs()
         {
         }
+        public static new GetAvailabilityDomainsFilterArgs Empty => new GetAvailabilityDomainsFilterArgs();
     }
 }

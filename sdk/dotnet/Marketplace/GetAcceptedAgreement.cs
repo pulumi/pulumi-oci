@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAcceptedAgreement = Oci.Marketplace.GetAcceptedAgreement.Invoke(new()
         ///     {
-        ///         var testAcceptedAgreement = Output.Create(Oci.Marketplace.GetAcceptedAgreement.InvokeAsync(new Oci.Marketplace.GetAcceptedAgreementArgs
-        ///         {
-        ///             AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
-        ///         }));
-        ///     }
+        ///         AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAcceptedAgreement = Oci.Marketplace.GetAcceptedAgreement.Invoke(new()
         ///     {
-        ///         var testAcceptedAgreement = Output.Create(Oci.Marketplace.GetAcceptedAgreement.InvokeAsync(new Oci.Marketplace.GetAcceptedAgreementArgs
-        ///         {
-        ///             AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
-        ///         }));
-        ///     }
+        ///         AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Marketplace
     }
 
 
-    public sealed class GetAcceptedAgreementArgs : Pulumi.InvokeArgs
+    public sealed class GetAcceptedAgreementArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the accepted terms of use agreement.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Marketplace
         public GetAcceptedAgreementArgs()
         {
         }
+        public static new GetAcceptedAgreementArgs Empty => new GetAcceptedAgreementArgs();
     }
 
-    public sealed class GetAcceptedAgreementInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAcceptedAgreementInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the accepted terms of use agreement.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Marketplace
         public GetAcceptedAgreementInvokeArgs()
         {
         }
+        public static new GetAcceptedAgreementInvokeArgs Empty => new GetAcceptedAgreementInvokeArgs();
     }
 
 

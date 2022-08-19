@@ -22,6 +22,39 @@ import javax.annotation.Nullable;
  * Create a new private reverse connection endpoint.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataCatalog.CatalogPrivateEndpoint;
+ * import com.pulumi.oci.DataCatalog.CatalogPrivateEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCatalogPrivateEndpoint = new CatalogPrivateEndpoint(&#34;testCatalogPrivateEndpoint&#34;, CatalogPrivateEndpointArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .dnsZones(var_.catalog_private_endpoint_dns_zones())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.catalog_private_endpoint_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

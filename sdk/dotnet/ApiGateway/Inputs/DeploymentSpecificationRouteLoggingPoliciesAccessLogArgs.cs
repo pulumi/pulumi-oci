@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether this policy is currently enabled.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs()
         {
         }
+        public static new DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs Empty => new DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs();
     }
 }

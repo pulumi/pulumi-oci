@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Nosql.Inputs
 {
 
-    public sealed class TableTableLimitsArgs : Pulumi.ResourceArgs
+    public sealed class TableTableLimitsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Nosql.Inputs
         public TableTableLimitsArgs()
         {
         }
+        public static new TableTableLimitsArgs Empty => new TableTableLimitsArgs();
     }
 }

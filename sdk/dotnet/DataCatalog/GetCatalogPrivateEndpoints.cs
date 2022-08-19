@@ -22,22 +22,20 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalogPrivateEndpoints = Oci.DataCatalog.GetCatalogPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testCatalogPrivateEndpoints = Output.Create(Oci.DataCatalog.GetCatalogPrivateEndpoints.InvokeAsync(new Oci.DataCatalog.GetCatalogPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Catalog_private_endpoint_display_name,
-        ///             State = @var.Catalog_private_endpoint_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Catalog_private_endpoint_display_name,
+        ///         State = @var.Catalog_private_endpoint_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalogPrivateEndpoints = Oci.DataCatalog.GetCatalogPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testCatalogPrivateEndpoints = Output.Create(Oci.DataCatalog.GetCatalogPrivateEndpoints.InvokeAsync(new Oci.DataCatalog.GetCatalogPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Catalog_private_endpoint_display_name,
-        ///             State = @var.Catalog_private_endpoint_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Catalog_private_endpoint_display_name,
+        ///         State = @var.Catalog_private_endpoint_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetCatalogPrivateEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogPrivateEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment where you want to list resources.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogPrivateEndpointsArgs()
         {
         }
+        public static new GetCatalogPrivateEndpointsArgs Empty => new GetCatalogPrivateEndpointsArgs();
     }
 
-    public sealed class GetCatalogPrivateEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogPrivateEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment where you want to list resources.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogPrivateEndpointsInvokeArgs()
         {
         }
+        public static new GetCatalogPrivateEndpointsInvokeArgs Empty => new GetCatalogPrivateEndpointsInvokeArgs();
     }
 
 

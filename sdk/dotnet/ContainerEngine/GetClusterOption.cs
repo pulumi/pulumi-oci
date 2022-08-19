@@ -21,21 +21,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testClusterOption = Oci.ContainerEngine.GetClusterOption.Invoke(new()
         ///     {
-        ///         var testClusterOption = Output.Create(Oci.ContainerEngine.GetClusterOption.InvokeAsync(new Oci.ContainerEngine.GetClusterOptionArgs
-        ///         {
-        ///             ClusterOptionId = oci_containerengine_cluster_option.Test_cluster_option.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         ClusterOptionId = oci_containerengine_cluster_option.Test_cluster_option.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testClusterOption = Oci.ContainerEngine.GetClusterOption.Invoke(new()
         ///     {
-        ///         var testClusterOption = Output.Create(Oci.ContainerEngine.GetClusterOption.InvokeAsync(new Oci.ContainerEngine.GetClusterOptionArgs
-        ///         {
-        ///             ClusterOptionId = oci_containerengine_cluster_option.Test_cluster_option.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         ClusterOptionId = oci_containerengine_cluster_option.Test_cluster_option.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.ContainerEngine
     }
 
 
-    public sealed class GetClusterOptionArgs : Pulumi.InvokeArgs
+    public sealed class GetClusterOptionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.ContainerEngine
         public GetClusterOptionArgs()
         {
         }
+        public static new GetClusterOptionArgs Empty => new GetClusterOptionArgs();
     }
 
-    public sealed class GetClusterOptionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetClusterOptionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.ContainerEngine
         public GetClusterOptionInvokeArgs()
         {
         }
+        public static new GetClusterOptionInvokeArgs Empty => new GetClusterOptionInvokeArgs();
     }
 
 

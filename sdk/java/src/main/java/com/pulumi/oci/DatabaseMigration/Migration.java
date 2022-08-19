@@ -32,6 +32,168 @@ import javax.annotation.Nullable;
  * details, credentials, etc.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseMigration.Migration;
+ * import com.pulumi.oci.DatabaseMigration.MigrationArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationAdvisorSettingsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsObjectStorageDetailsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDatapumpSettingsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDatapumpSettingsDataPumpParametersArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDatapumpSettingsExportDirectoryObjectArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDatapumpSettingsImportDirectoryObjectArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDumpTransferDetailsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDumpTransferDetailsSourceArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDumpTransferDetailsTargetArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationExcludeObjectArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubRestAdminCredentialsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsSettingsArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsSettingsExtractArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsSettingsReplicatArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationIncludeObjectArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationVaultDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMigration = new Migration(&#34;testMigration&#34;, MigrationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .sourceDatabaseConnectionId(oci_database_migration_connection.test_connection().id())
+ *             .targetDatabaseConnectionId(oci_database_migration_connection.test_connection().id())
+ *             .type(var_.migration_type())
+ *             .advisorSettings(MigrationAdvisorSettingsArgs.builder()
+ *                 .isIgnoreErrors(var_.migration_advisor_settings_is_ignore_errors())
+ *                 .isSkipAdvisor(var_.migration_advisor_settings_is_skip_advisor())
+ *                 .build())
+ *             .agentId(oci_database_migration_agent.test_agent().id())
+ *             .dataTransferMediumDetails(MigrationDataTransferMediumDetailsArgs.builder()
+ *                 .databaseLinkDetails(MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs.builder()
+ *                     .name(var_.migration_data_transfer_medium_details_database_link_details_name())
+ *                     .walletBucket(MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs.builder()
+ *                         .bucket(var_.migration_data_transfer_medium_details_database_link_details_wallet_bucket_bucket())
+ *                         .namespace(var_.migration_data_transfer_medium_details_database_link_details_wallet_bucket_namespace())
+ *                         .build())
+ *                     .build())
+ *                 .objectStorageDetails(MigrationDataTransferMediumDetailsObjectStorageDetailsArgs.builder()
+ *                     .bucket(var_.migration_data_transfer_medium_details_object_storage_details_bucket())
+ *                     .namespace(var_.migration_data_transfer_medium_details_object_storage_details_namespace())
+ *                     .build())
+ *                 .build())
+ *             .datapumpSettings(MigrationDatapumpSettingsArgs.builder()
+ *                 .dataPumpParameters(MigrationDatapumpSettingsDataPumpParametersArgs.builder()
+ *                     .estimate(var_.migration_datapump_settings_data_pump_parameters_estimate())
+ *                     .excludeParameters(var_.migration_datapump_settings_data_pump_parameters_exclude_parameters())
+ *                     .exportParallelismDegree(var_.migration_datapump_settings_data_pump_parameters_export_parallelism_degree())
+ *                     .importParallelismDegree(var_.migration_datapump_settings_data_pump_parameters_import_parallelism_degree())
+ *                     .isCluster(var_.migration_datapump_settings_data_pump_parameters_is_cluster())
+ *                     .tableExistsAction(var_.migration_datapump_settings_data_pump_parameters_table_exists_action())
+ *                     .build())
+ *                 .exportDirectoryObject(MigrationDatapumpSettingsExportDirectoryObjectArgs.builder()
+ *                     .name(var_.migration_datapump_settings_export_directory_object_name())
+ *                     .path(var_.migration_datapump_settings_export_directory_object_path())
+ *                     .build())
+ *                 .importDirectoryObject(MigrationDatapumpSettingsImportDirectoryObjectArgs.builder()
+ *                     .name(var_.migration_datapump_settings_import_directory_object_name())
+ *                     .path(var_.migration_datapump_settings_import_directory_object_path())
+ *                     .build())
+ *                 .jobMode(var_.migration_datapump_settings_job_mode())
+ *                 .metadataRemaps(MigrationDatapumpSettingsMetadataRemapArgs.builder()
+ *                     .newValue(var_.migration_datapump_settings_metadata_remaps_new_value())
+ *                     .oldValue(var_.migration_datapump_settings_metadata_remaps_old_value())
+ *                     .type(var_.migration_datapump_settings_metadata_remaps_type())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.migration_display_name())
+ *             .dumpTransferDetails(MigrationDumpTransferDetailsArgs.builder()
+ *                 .source(MigrationDumpTransferDetailsSourceArgs.builder()
+ *                     .kind(var_.migration_dump_transfer_details_source_kind())
+ *                     .ociHome(var_.migration_dump_transfer_details_source_oci_home())
+ *                     .build())
+ *                 .target(MigrationDumpTransferDetailsTargetArgs.builder()
+ *                     .kind(var_.migration_dump_transfer_details_target_kind())
+ *                     .ociHome(var_.migration_dump_transfer_details_target_oci_home())
+ *                     .build())
+ *                 .build())
+ *             .excludeObjects(MigrationExcludeObjectArgs.builder()
+ *                 .object(var_.migration_exclude_objects_object())
+ *                 .owner(var_.migration_exclude_objects_owner())
+ *                 .type(var_.migration_exclude_objects_type())
+ *                 .build())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .goldenGateDetails(MigrationGoldenGateDetailsArgs.builder()
+ *                 .hub(MigrationGoldenGateDetailsHubArgs.builder()
+ *                     .restAdminCredentials(MigrationGoldenGateDetailsHubRestAdminCredentialsArgs.builder()
+ *                         .password(var_.migration_golden_gate_details_hub_rest_admin_credentials_password())
+ *                         .username(var_.migration_golden_gate_details_hub_rest_admin_credentials_username())
+ *                         .build())
+ *                     .sourceDbAdminCredentials(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs.builder()
+ *                         .password(var_.migration_golden_gate_details_hub_source_db_admin_credentials_password())
+ *                         .username(var_.migration_golden_gate_details_hub_source_db_admin_credentials_username())
+ *                         .build())
+ *                     .sourceMicroservicesDeploymentName(oci_apigateway_deployment.test_deployment().name())
+ *                     .targetDbAdminCredentials(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs.builder()
+ *                         .password(var_.migration_golden_gate_details_hub_target_db_admin_credentials_password())
+ *                         .username(var_.migration_golden_gate_details_hub_target_db_admin_credentials_username())
+ *                         .build())
+ *                     .targetMicroservicesDeploymentName(oci_apigateway_deployment.test_deployment().name())
+ *                     .url(var_.migration_golden_gate_details_hub_url())
+ *                     .computeId(oci_database_migration_compute.test_compute().id())
+ *                     .sourceContainerDbAdminCredentials(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs.builder()
+ *                         .password(var_.migration_golden_gate_details_hub_source_container_db_admin_credentials_password())
+ *                         .username(var_.migration_golden_gate_details_hub_source_container_db_admin_credentials_username())
+ *                         .build())
+ *                     .build())
+ *                 .settings(MigrationGoldenGateDetailsSettingsArgs.builder()
+ *                     .acceptableLag(var_.migration_golden_gate_details_settings_acceptable_lag())
+ *                     .extract(MigrationGoldenGateDetailsSettingsExtractArgs.builder()
+ *                         .longTransDuration(var_.migration_golden_gate_details_settings_extract_long_trans_duration())
+ *                         .performanceProfile(var_.migration_golden_gate_details_settings_extract_performance_profile())
+ *                         .build())
+ *                     .replicat(MigrationGoldenGateDetailsSettingsReplicatArgs.builder()
+ *                         .mapParallelism(var_.migration_golden_gate_details_settings_replicat_map_parallelism())
+ *                         .maxApplyParallelism(var_.migration_golden_gate_details_settings_replicat_max_apply_parallelism())
+ *                         .minApplyParallelism(var_.migration_golden_gate_details_settings_replicat_min_apply_parallelism())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .includeObjects(MigrationIncludeObjectArgs.builder()
+ *                 .object(var_.migration_include_objects_object())
+ *                 .owner(var_.migration_include_objects_owner())
+ *                 .type(var_.migration_include_objects_type())
+ *                 .build())
+ *             .sourceContainerDatabaseConnectionId(oci_database_migration_connection.test_connection().id())
+ *             .vaultDetails(MigrationVaultDetailsArgs.builder()
+ *                 .compartmentId(var_.compartment_id())
+ *                 .keyId(oci_kms_key.test_key().id())
+ *                 .vaultId(oci_kms_vault.test_vault().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageRollbackPolicyGetArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageRollbackPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type of policy used for rolling out a deployment stage.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageRollbackPolicyGetArgs()
         {
         }
+        public static new DeployStageRollbackPolicyGetArgs Empty => new DeployStageRollbackPolicyGetArgs();
     }
 }

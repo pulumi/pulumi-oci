@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class GetEnrollmentStatusesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetEnrollmentStatusesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public GetEnrollmentStatusesFilterInputArgs()
         {
         }
+        public static new GetEnrollmentStatusesFilterInputArgs Empty => new GetEnrollmentStatusesFilterInputArgs();
     }
 }

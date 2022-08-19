@@ -20,25 +20,23 @@ namespace Pulumi.Oci.HealthChecks
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPingProbe = new Oci.HealthChecks.PingProbe("testPingProbe", new()
     ///     {
-    ///         var testPingProbe = new Oci.HealthChecks.PingProbe("testPingProbe", new Oci.HealthChecks.PingProbeArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Protocol = @var.Ping_probe_protocol,
-    ///             Targets = @var.Ping_probe_targets,
-    ///             Port = @var.Ping_probe_port,
-    ///             TimeoutInSeconds = @var.Ping_probe_timeout_in_seconds,
-    ///             VantagePointNames = @var.Ping_probe_vantage_point_names,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Protocol = @var.Ping_probe_protocol,
+    ///         Targets = @var.Ping_probe_targets,
+    ///         Port = @var.Ping_probe_port,
+    ///         TimeoutInSeconds = @var.Ping_probe_timeout_in_seconds,
+    ///         VantagePointNames = @var.Ping_probe_vantage_point_names,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -50,7 +48,7 @@ namespace Pulumi.Oci.HealthChecks
     /// ```
     /// </summary>
     [OciResourceType("oci:HealthChecks/pingProbe:PingProbe")]
-    public partial class PingProbe : Pulumi.CustomResource
+    public partial class PingProbe : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -150,7 +148,7 @@ namespace Pulumi.Oci.HealthChecks
         }
     }
 
-    public sealed class PingProbeArgs : Pulumi.ResourceArgs
+    public sealed class PingProbeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -203,9 +201,10 @@ namespace Pulumi.Oci.HealthChecks
         public PingProbeArgs()
         {
         }
+        public static new PingProbeArgs Empty => new PingProbeArgs();
     }
 
-    public sealed class PingProbeState : Pulumi.ResourceArgs
+    public sealed class PingProbeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -276,5 +275,6 @@ namespace Pulumi.Oci.HealthChecks
         public PingProbeState()
         {
         }
+        public static new PingProbeState Empty => new PingProbeState();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmailDomain = Oci.Email.GetEmailDomain.Invoke(new()
         ///     {
-        ///         var testEmailDomain = Output.Create(Oci.Email.GetEmailDomain.InvokeAsync(new Oci.Email.GetEmailDomainArgs
-        ///         {
-        ///             EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
-        ///         }));
-        ///     }
+        ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmailDomain = Oci.Email.GetEmailDomain.Invoke(new()
         ///     {
-        ///         var testEmailDomain = Output.Create(Oci.Email.GetEmailDomain.InvokeAsync(new Oci.Email.GetEmailDomainArgs
-        ///         {
-        ///             EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
-        ///         }));
-        ///     }
+        ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Email
     }
 
 
-    public sealed class GetEmailDomainArgs : Pulumi.InvokeArgs
+    public sealed class GetEmailDomainArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Email
         public GetEmailDomainArgs()
         {
         }
+        public static new GetEmailDomainArgs Empty => new GetEmailDomainArgs();
     }
 
-    public sealed class GetEmailDomainInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEmailDomainInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Email
         public GetEmailDomainInvokeArgs()
         {
         }
+        public static new GetEmailDomainInvokeArgs Empty => new GetEmailDomainInvokeArgs();
     }
 
 

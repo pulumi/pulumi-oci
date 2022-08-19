@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateCurrentVersionValidityArgs : Pulumi.ResourceArgs
+    public sealed class CertificateCurrentVersionValidityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateCurrentVersionValidityArgs()
         {
         }
+        public static new CertificateCurrentVersionValidityArgs Empty => new CertificateCurrentVersionValidityArgs();
     }
 }

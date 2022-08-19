@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/dhcpOptions:DhcpOptions")]
-    public partial class DhcpOptions : Pulumi.CustomResource
+    public partial class DhcpOptions : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the set of DHCP options.
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DhcpOptionsArgs : Pulumi.ResourceArgs
+    public sealed class DhcpOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the set of DHCP options.
@@ -203,9 +203,10 @@ namespace Pulumi.Oci.Core
         public DhcpOptionsArgs()
         {
         }
+        public static new DhcpOptionsArgs Empty => new DhcpOptionsArgs();
     }
 
-    public sealed class DhcpOptionsState : Pulumi.ResourceArgs
+    public sealed class DhcpOptionsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the set of DHCP options.
@@ -282,5 +283,6 @@ namespace Pulumi.Oci.Core
         public DhcpOptionsState()
         {
         }
+        public static new DhcpOptionsState Empty => new DhcpOptionsState();
     }
 }

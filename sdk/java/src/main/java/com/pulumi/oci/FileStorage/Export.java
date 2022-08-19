@@ -21,6 +21,45 @@ import javax.annotation.Nullable;
  * file system.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.FileStorage.Export;
+ * import com.pulumi.oci.FileStorage.ExportArgs;
+ * import com.pulumi.oci.FileStorage.inputs.ExportExportOptionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExport = new Export(&#34;testExport&#34;, ExportArgs.builder()        
+ *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+ *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+ *             .path(var_.export_path())
+ *             .exportOptions(ExportExportOptionArgs.builder()
+ *                 .source(var_.export_export_options_source())
+ *                 .access(var_.export_export_options_access())
+ *                 .anonymousGid(var_.export_export_options_anonymous_gid())
+ *                 .anonymousUid(var_.export_export_options_anonymous_uid())
+ *                 .identitySquash(var_.export_export_options_identity_squash())
+ *                 .requirePrivilegedSourcePort(var_.export_export_options_require_privileged_source_port())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

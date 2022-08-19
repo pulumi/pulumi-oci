@@ -21,6 +21,38 @@ import javax.annotation.Nullable;
  * Creates a new Database Management private endpoint.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.DbManagementPrivateEndpoint;
+ * import com.pulumi.oci.DatabaseManagement.DbManagementPrivateEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDbManagementPrivateEndpoint = new DbManagementPrivateEndpoint(&#34;testDbManagementPrivateEndpoint&#34;, DbManagementPrivateEndpointArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .description(var_.db_management_private_endpoint_description())
+ *             .isCluster(var_.db_management_private_endpoint_is_cluster())
+ *             .nsgIds(var_.db_management_private_endpoint_nsg_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

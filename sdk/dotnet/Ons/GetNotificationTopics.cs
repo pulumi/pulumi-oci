@@ -24,23 +24,21 @@ namespace Pulumi.Oci.Ons
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNotificationTopics = Oci.Ons.GetNotificationTopics.Invoke(new()
         ///     {
-        ///         var testNotificationTopics = Output.Create(Oci.Ons.GetNotificationTopics.InvokeAsync(new Oci.Ons.GetNotificationTopicsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Notification_topic_id,
-        ///             Name = @var.Notification_topic_name,
-        ///             State = @var.Notification_topic_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Notification_topic_id,
+        ///         Name = @var.Notification_topic_name,
+        ///         State = @var.Notification_topic_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.Ons
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNotificationTopics = Oci.Ons.GetNotificationTopics.Invoke(new()
         ///     {
-        ///         var testNotificationTopics = Output.Create(Oci.Ons.GetNotificationTopics.InvokeAsync(new Oci.Ons.GetNotificationTopicsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Notification_topic_id,
-        ///             Name = @var.Notification_topic_name,
-        ///             State = @var.Notification_topic_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Notification_topic_id,
+        ///         Name = @var.Notification_topic_name,
+        ///         State = @var.Notification_topic_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Ons
     }
 
 
-    public sealed class GetNotificationTopicsArgs : Pulumi.InvokeArgs
+    public sealed class GetNotificationTopicsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.Ons
         public GetNotificationTopicsArgs()
         {
         }
+        public static new GetNotificationTopicsArgs Empty => new GetNotificationTopicsArgs();
     }
 
-    public sealed class GetNotificationTopicsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNotificationTopicsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.Ons
         public GetNotificationTopicsInvokeArgs()
         {
         }
+        public static new GetNotificationTopicsInvokeArgs Empty => new GetNotificationTopicsInvokeArgs();
     }
 
 

@@ -22,6 +22,39 @@ import javax.annotation.Nullable;
  * Managed Databases when it is created, and they must be added later.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.ManagedDatabaseGroup;
+ * import com.pulumi.oci.DatabaseManagement.ManagedDatabaseGroupArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabaseGroupManagedDatabaseArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testManagedDatabaseGroup = new ManagedDatabaseGroup(&#34;testManagedDatabaseGroup&#34;, ManagedDatabaseGroupArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .description(var_.managed_database_group_description())
+ *             .managedDatabases(ManagedDatabaseGroupManagedDatabaseArgs.builder()
+ *                 .id(var_.managed_database_id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

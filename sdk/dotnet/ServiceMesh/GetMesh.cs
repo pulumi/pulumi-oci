@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMesh = Oci.ServiceMesh.GetMesh.Invoke(new()
         ///     {
-        ///         var testMesh = Output.Create(Oci.ServiceMesh.GetMesh.InvokeAsync(new Oci.ServiceMesh.GetMeshArgs
-        ///         {
-        ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///         }));
-        ///     }
+        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMesh = Oci.ServiceMesh.GetMesh.Invoke(new()
         ///     {
-        ///         var testMesh = Output.Create(Oci.ServiceMesh.GetMesh.InvokeAsync(new Oci.ServiceMesh.GetMeshArgs
-        ///         {
-        ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///         }));
-        ///     }
+        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetMeshArgs : Pulumi.InvokeArgs
+    public sealed class GetMeshArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Mesh identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetMeshArgs()
         {
         }
+        public static new GetMeshArgs Empty => new GetMeshArgs();
     }
 
-    public sealed class GetMeshInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMeshInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Mesh identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetMeshInvokeArgs()
         {
         }
+        public static new GetMeshInvokeArgs Empty => new GetMeshInvokeArgs();
     }
 
 

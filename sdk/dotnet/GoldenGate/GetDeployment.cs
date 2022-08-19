@@ -22,20 +22,18 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployment = Oci.GoldenGate.GetDeployment.Invoke(new()
         ///     {
-        ///         var testDeployment = Output.Create(Oci.GoldenGate.GetDeployment.InvokeAsync(new Oci.GoldenGate.GetDeploymentArgs
-        ///         {
-        ///             DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         }));
-        ///     }
+        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployment = Oci.GoldenGate.GetDeployment.Invoke(new()
         ///     {
-        ///         var testDeployment = Output.Create(Oci.GoldenGate.GetDeployment.InvokeAsync(new Oci.GoldenGate.GetDeploymentArgs
-        ///         {
-        ///             DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         }));
-        ///     }
+        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.GoldenGate
     }
 
 
-    public sealed class GetDeploymentArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A unique Deployment identifier.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.GoldenGate
         public GetDeploymentArgs()
         {
         }
+        public static new GetDeploymentArgs Empty => new GetDeploymentArgs();
     }
 
-    public sealed class GetDeploymentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A unique Deployment identifier.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.GoldenGate
         public GetDeploymentInvokeArgs()
         {
         }
+        public static new GetDeploymentInvokeArgs Empty => new GetDeploymentInvokeArgs();
     }
 
 

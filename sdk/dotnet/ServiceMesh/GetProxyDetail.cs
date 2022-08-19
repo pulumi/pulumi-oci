@@ -22,17 +22,15 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testProxyDetail = Output.Create(Oci.ServiceMesh.GetProxyDetail.InvokeAsync());
-        ///     }
+        ///     var testProxyDetail = Oci.ServiceMesh.GetProxyDetail.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}

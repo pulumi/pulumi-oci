@@ -34,24 +34,22 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSoftwareSourceStreamProfiles = Oci.OsManagement.GetSoftwareSourceStreamProfile.Invoke(new()
         ///     {
-        ///         var testSoftwareSourceStreamProfiles = Output.Create(Oci.OsManagement.GetSoftwareSourceStreamProfile.InvokeAsync(new Oci.OsManagement.GetSoftwareSourceStreamProfileArgs
-        ///         {
-        ///             SoftwareSourceId = @var.Software_source.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ModuleName = @var.Software_source_module_name,
-        ///             ProfileName = @var.Software_source_module_stream_profile_name,
-        ///             StreamName = @var.Software_source_module_stream_name,
-        ///         }));
-        ///     }
+        ///         SoftwareSourceId = @var.Software_source.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ModuleName = @var.Software_source_module_name,
+        ///         ProfileName = @var.Software_source_module_stream_profile_name,
+        ///         StreamName = @var.Software_source_module_stream_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -82,24 +80,22 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSoftwareSourceStreamProfiles = Oci.OsManagement.GetSoftwareSourceStreamProfile.Invoke(new()
         ///     {
-        ///         var testSoftwareSourceStreamProfiles = Output.Create(Oci.OsManagement.GetSoftwareSourceStreamProfile.InvokeAsync(new Oci.OsManagement.GetSoftwareSourceStreamProfileArgs
-        ///         {
-        ///             SoftwareSourceId = @var.Software_source.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ModuleName = @var.Software_source_module_name,
-        ///             ProfileName = @var.Software_source_module_stream_profile_name,
-        ///             StreamName = @var.Software_source_module_stream_name,
-        ///         }));
-        ///     }
+        ///         SoftwareSourceId = @var.Software_source.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ModuleName = @var.Software_source_module_name,
+        ///         ProfileName = @var.Software_source_module_stream_profile_name,
+        ///         StreamName = @var.Software_source_module_stream_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -109,7 +105,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetSoftwareSourceStreamProfileArgs : Pulumi.InvokeArgs
+    public sealed class GetSoftwareSourceStreamProfileArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.OsManagement
         public GetSoftwareSourceStreamProfileArgs()
         {
         }
+        public static new GetSoftwareSourceStreamProfileArgs Empty => new GetSoftwareSourceStreamProfileArgs();
     }
 
-    public sealed class GetSoftwareSourceStreamProfileInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSoftwareSourceStreamProfileInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
@@ -197,6 +194,7 @@ namespace Pulumi.Oci.OsManagement
         public GetSoftwareSourceStreamProfileInvokeArgs()
         {
         }
+        public static new GetSoftwareSourceStreamProfileInvokeArgs Empty => new GetSoftwareSourceStreamProfileInvokeArgs();
     }
 
 

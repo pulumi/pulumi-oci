@@ -24,20 +24,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolumeBackupPolicyAssignments = Oci.Core.GetVolumeBackupPolicyAssignments.Invoke(new()
         ///     {
-        ///         var testVolumeBackupPolicyAssignments = Output.Create(Oci.Core.GetVolumeBackupPolicyAssignments.InvokeAsync(new Oci.Core.GetVolumeBackupPolicyAssignmentsArgs
-        ///         {
-        ///             AssetId = oci_core_volume.Test_volume.Id,
-        ///         }));
-        ///     }
+        ///         AssetId = oci_core_volume.Test_volume.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,20 +56,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolumeBackupPolicyAssignments = Oci.Core.GetVolumeBackupPolicyAssignments.Invoke(new()
         ///     {
-        ///         var testVolumeBackupPolicyAssignments = Output.Create(Oci.Core.GetVolumeBackupPolicyAssignments.InvokeAsync(new Oci.Core.GetVolumeBackupPolicyAssignmentsArgs
-        ///         {
-        ///             AssetId = oci_core_volume.Test_volume.Id,
-        ///         }));
-        ///     }
+        ///         AssetId = oci_core_volume.Test_volume.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVolumeBackupPolicyAssignmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumeBackupPolicyAssignmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of an asset (e.g. a volume).
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Core
         public GetVolumeBackupPolicyAssignmentsArgs()
         {
         }
+        public static new GetVolumeBackupPolicyAssignmentsArgs Empty => new GetVolumeBackupPolicyAssignmentsArgs();
     }
 
-    public sealed class GetVolumeBackupPolicyAssignmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumeBackupPolicyAssignmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of an asset (e.g. a volume).
@@ -121,6 +118,7 @@ namespace Pulumi.Oci.Core
         public GetVolumeBackupPolicyAssignmentsInvokeArgs()
         {
         }
+        public static new GetVolumeBackupPolicyAssignmentsInvokeArgs Empty => new GetVolumeBackupPolicyAssignmentsInvokeArgs();
     }
 
 

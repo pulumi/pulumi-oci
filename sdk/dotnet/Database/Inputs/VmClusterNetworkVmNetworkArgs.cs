@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class VmClusterNetworkVmNetworkArgs : Pulumi.ResourceArgs
+    public sealed class VmClusterNetworkVmNetworkArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The network domain name.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Database.Inputs
         public VmClusterNetworkVmNetworkArgs()
         {
         }
+        public static new VmClusterNetworkVmNetworkArgs Empty => new VmClusterNetworkVmNetworkArgs();
     }
 }

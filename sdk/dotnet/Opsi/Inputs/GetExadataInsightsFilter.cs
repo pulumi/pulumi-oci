@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi.Inputs
 {
 
-    public sealed class GetExadataInsightsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataInsightsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Opsi.Inputs
         public GetExadataInsightsFilterArgs()
         {
         }
+        public static new GetExadataInsightsFilterArgs Empty => new GetExadataInsightsFilterArgs();
     }
 }

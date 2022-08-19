@@ -41,6 +41,34 @@ public final class EmailFunctions {
      * Retrieves the specified DKIM.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetDkimArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
+     *             .dkimId(oci_email_dkim.test_dkim().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDkimResult> getDkim(GetDkimArgs args) {
@@ -52,6 +80,34 @@ public final class EmailFunctions {
      * Retrieves the specified DKIM.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetDkimArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
+     *             .dkimId(oci_email_dkim.test_dkim().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDkimResult> getDkimPlain(GetDkimPlainArgs args) {
@@ -63,6 +119,34 @@ public final class EmailFunctions {
      * Retrieves the specified DKIM.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetDkimArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
+     *             .dkimId(oci_email_dkim.test_dkim().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDkimResult> getDkim(GetDkimArgs args, InvokeOptions options) {
@@ -74,6 +158,34 @@ public final class EmailFunctions {
      * Retrieves the specified DKIM.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetDkimArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
+     *             .dkimId(oci_email_dkim.test_dkim().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDkimResult> getDkimPlain(GetDkimPlainArgs args, InvokeOptions options) {
@@ -85,6 +197,37 @@ public final class EmailFunctions {
      * Lists DKIMs for a email domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
+     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .id(var_.dkim_id())
+     *             .name(var_.dkim_name())
+     *             .state(var_.dkim_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDkimsResult> getDkims(GetDkimsArgs args) {
@@ -96,6 +239,37 @@ public final class EmailFunctions {
      * Lists DKIMs for a email domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
+     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .id(var_.dkim_id())
+     *             .name(var_.dkim_name())
+     *             .state(var_.dkim_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDkimsResult> getDkimsPlain(GetDkimsPlainArgs args) {
@@ -107,6 +281,37 @@ public final class EmailFunctions {
      * Lists DKIMs for a email domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
+     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .id(var_.dkim_id())
+     *             .name(var_.dkim_name())
+     *             .state(var_.dkim_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDkimsResult> getDkims(GetDkimsArgs args, InvokeOptions options) {
@@ -118,6 +323,37 @@ public final class EmailFunctions {
      * Lists DKIMs for a email domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetDkimsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
+     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .id(var_.dkim_id())
+     *             .name(var_.dkim_name())
+     *             .state(var_.dkim_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDkimsResult> getDkimsPlain(GetDkimsPlainArgs args, InvokeOptions options) {
@@ -129,6 +365,34 @@ public final class EmailFunctions {
      * Retrieves the specified email domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
+     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmailDomainResult> getEmailDomain(GetEmailDomainArgs args) {
@@ -140,6 +404,34 @@ public final class EmailFunctions {
      * Retrieves the specified email domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
+     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmailDomainResult> getEmailDomainPlain(GetEmailDomainPlainArgs args) {
@@ -151,6 +443,34 @@ public final class EmailFunctions {
      * Retrieves the specified email domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
+     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmailDomainResult> getEmailDomain(GetEmailDomainArgs args, InvokeOptions options) {
@@ -162,6 +482,34 @@ public final class EmailFunctions {
      * Retrieves the specified email domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
+     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmailDomainResult> getEmailDomainPlain(GetEmailDomainPlainArgs args, InvokeOptions options) {
@@ -173,6 +521,37 @@ public final class EmailFunctions {
      * Lists email domains in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailDomains = EmailFunctions.getEmailDomains(GetEmailDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.email_domain_id())
+     *             .name(var_.email_domain_name())
+     *             .state(var_.email_domain_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmailDomainsResult> getEmailDomains(GetEmailDomainsArgs args) {
@@ -184,6 +563,37 @@ public final class EmailFunctions {
      * Lists email domains in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailDomains = EmailFunctions.getEmailDomains(GetEmailDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.email_domain_id())
+     *             .name(var_.email_domain_name())
+     *             .state(var_.email_domain_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmailDomainsResult> getEmailDomainsPlain(GetEmailDomainsPlainArgs args) {
@@ -195,6 +605,37 @@ public final class EmailFunctions {
      * Lists email domains in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailDomains = EmailFunctions.getEmailDomains(GetEmailDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.email_domain_id())
+     *             .name(var_.email_domain_name())
+     *             .state(var_.email_domain_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmailDomainsResult> getEmailDomains(GetEmailDomainsArgs args, InvokeOptions options) {
@@ -206,6 +647,37 @@ public final class EmailFunctions {
      * Lists email domains in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailDomains = EmailFunctions.getEmailDomains(GetEmailDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.email_domain_id())
+     *             .name(var_.email_domain_name())
+     *             .state(var_.email_domain_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmailDomainsResult> getEmailDomainsPlain(GetEmailDomainsPlainArgs args, InvokeOptions options) {
@@ -217,6 +689,34 @@ public final class EmailFunctions {
      * Gets an approved sender for a given `senderId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSenderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
+     *             .senderId(oci_email_sender.test_sender().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSenderResult> getSender(GetSenderArgs args) {
@@ -228,6 +728,34 @@ public final class EmailFunctions {
      * Gets an approved sender for a given `senderId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSenderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
+     *             .senderId(oci_email_sender.test_sender().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSenderResult> getSenderPlain(GetSenderPlainArgs args) {
@@ -239,6 +767,34 @@ public final class EmailFunctions {
      * Gets an approved sender for a given `senderId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSenderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
+     *             .senderId(oci_email_sender.test_sender().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSenderResult> getSender(GetSenderArgs args, InvokeOptions options) {
@@ -250,6 +806,34 @@ public final class EmailFunctions {
      * Gets an approved sender for a given `senderId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSenderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
+     *             .senderId(oci_email_sender.test_sender().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSenderResult> getSenderPlain(GetSenderPlainArgs args, InvokeOptions options) {
@@ -261,6 +845,37 @@ public final class EmailFunctions {
      * Gets a collection of approved sender email addresses and sender IDs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSendersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSenders = EmailFunctions.getSenders(GetSendersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .domain(var_.sender_domain())
+     *             .emailAddress(var_.sender_email_address())
+     *             .state(var_.sender_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSendersResult> getSenders(GetSendersArgs args) {
@@ -272,6 +887,37 @@ public final class EmailFunctions {
      * Gets a collection of approved sender email addresses and sender IDs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSendersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSenders = EmailFunctions.getSenders(GetSendersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .domain(var_.sender_domain())
+     *             .emailAddress(var_.sender_email_address())
+     *             .state(var_.sender_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSendersResult> getSendersPlain(GetSendersPlainArgs args) {
@@ -283,6 +929,37 @@ public final class EmailFunctions {
      * Gets a collection of approved sender email addresses and sender IDs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSendersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSenders = EmailFunctions.getSenders(GetSendersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .domain(var_.sender_domain())
+     *             .emailAddress(var_.sender_email_address())
+     *             .state(var_.sender_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSendersResult> getSenders(GetSendersArgs args, InvokeOptions options) {
@@ -294,6 +971,37 @@ public final class EmailFunctions {
      * Gets a collection of approved sender email addresses and sender IDs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSendersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSenders = EmailFunctions.getSenders(GetSendersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .domain(var_.sender_domain())
+     *             .emailAddress(var_.sender_email_address())
+     *             .state(var_.sender_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSendersResult> getSendersPlain(GetSendersPlainArgs args, InvokeOptions options) {
@@ -306,6 +1014,34 @@ public final class EmailFunctions {
      * `suppressionId`. Each suppression is given a unique OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
+     *             .suppressionId(oci_email_suppression.test_suppression().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSuppressionResult> getSuppression(GetSuppressionArgs args) {
@@ -318,6 +1054,34 @@ public final class EmailFunctions {
      * `suppressionId`. Each suppression is given a unique OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
+     *             .suppressionId(oci_email_suppression.test_suppression().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSuppressionResult> getSuppressionPlain(GetSuppressionPlainArgs args) {
@@ -330,6 +1094,34 @@ public final class EmailFunctions {
      * `suppressionId`. Each suppression is given a unique OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
+     *             .suppressionId(oci_email_suppression.test_suppression().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSuppressionResult> getSuppression(GetSuppressionArgs args, InvokeOptions options) {
@@ -342,6 +1134,34 @@ public final class EmailFunctions {
      * `suppressionId`. Each suppression is given a unique OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
+     *             .suppressionId(oci_email_suppression.test_suppression().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSuppressionResult> getSuppressionPlain(GetSuppressionPlainArgs args, InvokeOptions options) {
@@ -355,6 +1175,37 @@ public final class EmailFunctions {
      * is sorted by creation time in descending order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSuppressions = EmailFunctions.getSuppressions(GetSuppressionsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .emailAddress(var_.suppression_email_address())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.suppression_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.suppression_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSuppressionsResult> getSuppressions(GetSuppressionsArgs args) {
@@ -368,6 +1219,37 @@ public final class EmailFunctions {
      * is sorted by creation time in descending order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSuppressions = EmailFunctions.getSuppressions(GetSuppressionsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .emailAddress(var_.suppression_email_address())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.suppression_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.suppression_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSuppressionsResult> getSuppressionsPlain(GetSuppressionsPlainArgs args) {
@@ -381,6 +1263,37 @@ public final class EmailFunctions {
      * is sorted by creation time in descending order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSuppressions = EmailFunctions.getSuppressions(GetSuppressionsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .emailAddress(var_.suppression_email_address())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.suppression_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.suppression_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSuppressionsResult> getSuppressions(GetSuppressionsArgs args, InvokeOptions options) {
@@ -394,6 +1307,37 @@ public final class EmailFunctions {
      * is sorted by creation time in descending order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSuppressions = EmailFunctions.getSuppressions(GetSuppressionsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .emailAddress(var_.suppression_email_address())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.suppression_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.suppression_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSuppressionsResult> getSuppressionsPlain(GetSuppressionsPlainArgs args, InvokeOptions options) {

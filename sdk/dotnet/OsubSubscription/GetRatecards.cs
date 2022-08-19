@@ -23,25 +23,23 @@ namespace Pulumi.Oci.OsubSubscription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRatecards = Oci.OsubSubscription.GetRatecards.Invoke(new()
         ///     {
-        ///         var testRatecards = Output.Create(Oci.OsubSubscription.GetRatecards.InvokeAsync(new Oci.OsubSubscription.GetRatecardsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
-        ///             PartNumber = @var.Ratecard_part_number,
-        ///             TimeFrom = @var.Ratecard_time_from,
-        ///             TimeTo = @var.Ratecard_time_to,
-        ///             XOneOriginRegion = @var.Ratecard_x_one_origin_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
+        ///         PartNumber = @var.Ratecard_part_number,
+        ///         TimeFrom = @var.Ratecard_time_from,
+        ///         TimeTo = @var.Ratecard_time_to,
+        ///         XOneOriginRegion = @var.Ratecard_x_one_origin_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,25 +59,23 @@ namespace Pulumi.Oci.OsubSubscription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRatecards = Oci.OsubSubscription.GetRatecards.Invoke(new()
         ///     {
-        ///         var testRatecards = Output.Create(Oci.OsubSubscription.GetRatecards.InvokeAsync(new Oci.OsubSubscription.GetRatecardsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
-        ///             PartNumber = @var.Ratecard_part_number,
-        ///             TimeFrom = @var.Ratecard_time_from,
-        ///             TimeTo = @var.Ratecard_time_to,
-        ///             XOneOriginRegion = @var.Ratecard_x_one_origin_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
+        ///         PartNumber = @var.Ratecard_part_number,
+        ///         TimeFrom = @var.Ratecard_time_from,
+        ///         TimeTo = @var.Ratecard_time_to,
+        ///         XOneOriginRegion = @var.Ratecard_x_one_origin_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.OsubSubscription
     }
 
 
-    public sealed class GetRatecardsArgs : Pulumi.InvokeArgs
+    public sealed class GetRatecardsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -138,9 +134,10 @@ namespace Pulumi.Oci.OsubSubscription
         public GetRatecardsArgs()
         {
         }
+        public static new GetRatecardsArgs Empty => new GetRatecardsArgs();
     }
 
-    public sealed class GetRatecardsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRatecardsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -189,6 +186,7 @@ namespace Pulumi.Oci.OsubSubscription
         public GetRatecardsInvokeArgs()
         {
         }
+        public static new GetRatecardsInvokeArgs Empty => new GetRatecardsInvokeArgs();
     }
 
 

@@ -21,29 +21,27 @@ namespace Pulumi.Oci.Email
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDkim = new Oci.Email.Dkim("testDkim", new()
     ///     {
-    ///         var testDkim = new Oci.Email.Dkim("testDkim", new Oci.Email.DkimArgs
+    ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Dkim_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Dkim_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Email
     /// ```
     /// </summary>
     [OciResourceType("oci:Email/dkim:Dkim")]
-    public partial class Dkim : Pulumi.CustomResource
+    public partial class Dkim : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
@@ -185,7 +183,7 @@ namespace Pulumi.Oci.Email
         }
     }
 
-    public sealed class DkimArgs : Pulumi.ResourceArgs
+    public sealed class DkimArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -232,9 +230,10 @@ namespace Pulumi.Oci.Email
         public DkimArgs()
         {
         }
+        public static new DkimArgs Empty => new DkimArgs();
     }
 
-    public sealed class DkimState : Pulumi.ResourceArgs
+    public sealed class DkimState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
@@ -341,5 +340,6 @@ namespace Pulumi.Oci.Email
         public DkimState()
         {
         }
+        public static new DkimState Empty => new DkimState();
     }
 }

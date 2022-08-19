@@ -17,38 +17,36 @@ namespace Pulumi.Oci.MeteringComputation
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCustomTable = new Oci.MeteringComputation.CustomTable("testCustomTable", new()
     ///     {
-    ///         var testCustomTable = new Oci.MeteringComputation.CustomTable("testCustomTable", new Oci.MeteringComputation.CustomTableArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         SavedCustomTable = new Oci.MeteringComputation.Inputs.CustomTableSavedCustomTableArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             SavedCustomTable = new Oci.MeteringComputation.Inputs.CustomTableSavedCustomTableArgs
+    ///             DisplayName = @var.Custom_table_saved_custom_table_display_name,
+    ///             ColumnGroupBies = @var.Custom_table_saved_custom_table_column_group_by,
+    ///             CompartmentDepth = @var.Custom_table_saved_custom_table_compartment_depth,
+    ///             GroupByTags = new[]
     ///             {
-    ///                 DisplayName = @var.Custom_table_saved_custom_table_display_name,
-    ///                 ColumnGroupBies = @var.Custom_table_saved_custom_table_column_group_by,
-    ///                 CompartmentDepth = @var.Custom_table_saved_custom_table_compartment_depth,
-    ///                 GroupByTags = 
+    ///                 new Oci.MeteringComputation.Inputs.CustomTableSavedCustomTableGroupByTagArgs
     ///                 {
-    ///                     new Oci.MeteringComputation.Inputs.CustomTableSavedCustomTableGroupByTagArgs
-    ///                     {
-    ///                         Key = @var.Custom_table_saved_custom_table_group_by_tag_key,
-    ///                         Namespace = @var.Custom_table_saved_custom_table_group_by_tag_namespace,
-    ///                         Value = @var.Custom_table_saved_custom_table_group_by_tag_value,
-    ///                     },
+    ///                     Key = @var.Custom_table_saved_custom_table_group_by_tag_key,
+    ///                     Namespace = @var.Custom_table_saved_custom_table_group_by_tag_namespace,
+    ///                     Value = @var.Custom_table_saved_custom_table_group_by_tag_value,
     ///                 },
-    ///                 RowGroupBies = @var.Custom_table_saved_custom_table_row_group_by,
-    ///                 Version = @var.Custom_table_saved_custom_table_version,
     ///             },
-    ///             SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
-    ///         });
-    ///     }
+    ///             RowGroupBies = @var.Custom_table_saved_custom_table_row_group_by,
+    ///             Version = @var.Custom_table_saved_custom_table_version,
+    ///         },
+    ///         SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// ```
     /// </summary>
     [OciResourceType("oci:MeteringComputation/customTable:CustomTable")]
-    public partial class CustomTable : Pulumi.CustomResource
+    public partial class CustomTable : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The compartment OCID.
@@ -124,7 +122,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
     }
 
-    public sealed class CustomTableArgs : Pulumi.ResourceArgs
+    public sealed class CustomTableArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartment OCID.
@@ -147,9 +145,10 @@ namespace Pulumi.Oci.MeteringComputation
         public CustomTableArgs()
         {
         }
+        public static new CustomTableArgs Empty => new CustomTableArgs();
     }
 
-    public sealed class CustomTableState : Pulumi.ResourceArgs
+    public sealed class CustomTableState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartment OCID.
@@ -172,5 +171,6 @@ namespace Pulumi.Oci.MeteringComputation
         public CustomTableState()
         {
         }
+        public static new CustomTableState Empty => new CustomTableState();
     }
 }

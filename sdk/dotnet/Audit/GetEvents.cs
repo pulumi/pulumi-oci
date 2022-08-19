@@ -23,22 +23,20 @@ namespace Pulumi.Oci.Audit
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditEvents = Oci.Audit.GetEvents.Invoke(new()
         ///     {
-        ///         var testAuditEvents = Output.Create(Oci.Audit.GetEvents.InvokeAsync(new Oci.Audit.GetEventsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             EndTime = @var.Audit_event_end_time,
-        ///             StartTime = @var.Audit_event_start_time,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         EndTime = @var.Audit_event_end_time,
+        ///         StartTime = @var.Audit_event_start_time,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.Audit
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditEvents = Oci.Audit.GetEvents.Invoke(new()
         ///     {
-        ///         var testAuditEvents = Output.Create(Oci.Audit.GetEvents.InvokeAsync(new Oci.Audit.GetEventsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             EndTime = @var.Audit_event_end_time,
-        ///             StartTime = @var.Audit_event_start_time,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         EndTime = @var.Audit_event_end_time,
+        ///         StartTime = @var.Audit_event_start_time,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Audit
     }
 
 
-    public sealed class GetEventsArgs : Pulumi.InvokeArgs
+    public sealed class GetEventsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.Audit
         public GetEventsArgs()
         {
         }
+        public static new GetEventsArgs Empty => new GetEventsArgs();
     }
 
-    public sealed class GetEventsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEventsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.Audit
         public GetEventsInvokeArgs()
         {
         }
+        public static new GetEventsInvokeArgs Empty => new GetEventsInvokeArgs();
     }
 
 

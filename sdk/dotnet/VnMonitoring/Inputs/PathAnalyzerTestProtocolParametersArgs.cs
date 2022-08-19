@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VnMonitoring.Inputs
 {
 
-    public sealed class PathAnalyzerTestProtocolParametersArgs : Pulumi.ResourceArgs
+    public sealed class PathAnalyzerTestProtocolParametersArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The destination port to use in a `PathAnalyzerTest` resource.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.VnMonitoring.Inputs
         public PathAnalyzerTestProtocolParametersArgs()
         {
         }
+        public static new PathAnalyzerTestProtocolParametersArgs Empty => new PathAnalyzerTestProtocolParametersArgs();
     }
 }

@@ -20,6 +20,37 @@ import javax.annotation.Nullable;
  * Creates a replication policy for the specified bucket.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ObjectStorage.ReplicationPolicy;
+ * import com.pulumi.oci.ObjectStorage.ReplicationPolicyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testReplicationPolicy = new ReplicationPolicy(&#34;testReplicationPolicy&#34;, ReplicationPolicyArgs.builder()        
+ *             .bucket(var_.replication_policy_bucket())
+ *             .destinationBucketName(oci_objectstorage_bucket.test_bucket().name())
+ *             .destinationRegionName(oci_identity_region.test_region().name())
+ *             .namespace(var_.replication_policy_namespace())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

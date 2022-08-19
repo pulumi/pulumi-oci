@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildPipelineStageWaitCriteriaGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildPipelineStageWaitCriteriaGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildPipelineStageWaitCriteriaGetArgs()
         {
         }
+        public static new BuildPipelineStageWaitCriteriaGetArgs Empty => new BuildPipelineStageWaitCriteriaGetArgs();
     }
 }

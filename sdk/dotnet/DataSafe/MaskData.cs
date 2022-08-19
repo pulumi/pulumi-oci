@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     [OciResourceType("oci:DataSafe/maskData:MaskData")]
-    public partial class MaskData : Pulumi.CustomResource
+    public partial class MaskData : global::Pulumi.CustomResource
     {
         [Output("maskingPolicyId")]
         public Output<string> MaskingPolicyId { get; private set; } = null!;
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class MaskDataArgs : Pulumi.ResourceArgs
+    public sealed class MaskDataArgs : global::Pulumi.ResourceArgs
     {
         [Input("maskingPolicyId", required: true)]
         public Input<string> MaskingPolicyId { get; set; } = null!;
@@ -73,9 +73,10 @@ namespace Pulumi.Oci.DataSafe
         public MaskDataArgs()
         {
         }
+        public static new MaskDataArgs Empty => new MaskDataArgs();
     }
 
-    public sealed class MaskDataState : Pulumi.ResourceArgs
+    public sealed class MaskDataState : global::Pulumi.ResourceArgs
     {
         [Input("maskingPolicyId")]
         public Input<string>? MaskingPolicyId { get; set; }
@@ -86,5 +87,6 @@ namespace Pulumi.Oci.DataSafe
         public MaskDataState()
         {
         }
+        public static new MaskDataState Empty => new MaskDataState();
     }
 }

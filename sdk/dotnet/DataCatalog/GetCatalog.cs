@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalog = Oci.DataCatalog.GetCatalog.Invoke(new()
         ///     {
-        ///         var testCatalog = Output.Create(Oci.DataCatalog.GetCatalog.InvokeAsync(new Oci.DataCatalog.GetCatalogArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalog = Oci.DataCatalog.GetCatalog.Invoke(new()
         ///     {
-        ///         var testCatalog = Output.Create(Oci.DataCatalog.GetCatalog.InvokeAsync(new Oci.DataCatalog.GetCatalogArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetCatalogArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogArgs()
         {
         }
+        public static new GetCatalogArgs Empty => new GetCatalogArgs();
     }
 
-    public sealed class GetCatalogInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogInvokeArgs()
         {
         }
+        public static new GetCatalogInvokeArgs Empty => new GetCatalogInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPathRouteSets = Oci.LoadBalancer.GetPathRouteSets.Invoke(new()
         ///     {
-        ///         var testPathRouteSets = Output.Create(Oci.LoadBalancer.GetPathRouteSets.InvokeAsync(new Oci.LoadBalancer.GetPathRouteSetsArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPathRouteSets = Oci.LoadBalancer.GetPathRouteSets.Invoke(new()
         ///     {
-        ///         var testPathRouteSets = Output.Create(Oci.LoadBalancer.GetPathRouteSets.InvokeAsync(new Oci.LoadBalancer.GetPathRouteSetsArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetPathRouteSetsArgs : Pulumi.InvokeArgs
+    public sealed class GetPathRouteSetsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetPathRouteSetsFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetPathRouteSetsArgs()
         {
         }
+        public static new GetPathRouteSetsArgs Empty => new GetPathRouteSetsArgs();
     }
 
-    public sealed class GetPathRouteSetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPathRouteSetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetPathRouteSetsFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetPathRouteSetsInvokeArgs()
         {
         }
+        public static new GetPathRouteSetsInvokeArgs Empty => new GetPathRouteSetsInvokeArgs();
     }
 
 

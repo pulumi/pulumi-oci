@@ -17,41 +17,39 @@ namespace Pulumi.Oci.ServiceMesh
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMesh = new Oci.ServiceMesh.Mesh("testMesh", new()
     ///     {
-    ///         var testMesh = new Oci.ServiceMesh.Mesh("testMesh", new Oci.ServiceMesh.MeshArgs
+    ///         CertificateAuthorities = new[]
     ///         {
-    ///             CertificateAuthorities = 
+    ///             new Oci.ServiceMesh.Inputs.MeshCertificateAuthorityArgs
     ///             {
-    ///                 new Oci.ServiceMesh.Inputs.MeshCertificateAuthorityArgs
-    ///                 {
-    ///                     Id = @var.Mesh_certificate_authorities_id,
-    ///                 },
+    ///                 Id = @var.Mesh_certificate_authorities_id,
     ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Mesh_display_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Mesh_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Mtls = new Oci.ServiceMesh.Inputs.MeshMtlsArgs
-    ///             {
-    ///                 Minimum = @var.Mesh_mtls_minimum,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Mesh_display_name,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Mesh_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Mtls = new Oci.ServiceMesh.Inputs.MeshMtlsArgs
+    ///         {
+    ///             Minimum = @var.Mesh_mtls_minimum,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -63,7 +61,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/mesh:Mesh")]
-    public partial class Mesh : Pulumi.CustomResource
+    public partial class Mesh : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the certificate authority resource OCID to use for creating leaf certificates.
@@ -181,7 +179,7 @@ namespace Pulumi.Oci.ServiceMesh
         }
     }
 
-    public sealed class MeshArgs : Pulumi.ResourceArgs
+    public sealed class MeshArgs : global::Pulumi.ResourceArgs
     {
         [Input("certificateAuthorities", required: true)]
         private InputList<Inputs.MeshCertificateAuthorityArgs>? _certificateAuthorities;
@@ -246,9 +244,10 @@ namespace Pulumi.Oci.ServiceMesh
         public MeshArgs()
         {
         }
+        public static new MeshArgs Empty => new MeshArgs();
     }
 
-    public sealed class MeshState : Pulumi.ResourceArgs
+    public sealed class MeshState : global::Pulumi.ResourceArgs
     {
         [Input("certificateAuthorities")]
         private InputList<Inputs.MeshCertificateAuthorityGetArgs>? _certificateAuthorities;
@@ -349,5 +348,6 @@ namespace Pulumi.Oci.ServiceMesh
         public MeshState()
         {
         }
+        public static new MeshState Empty => new MeshState();
     }
 }

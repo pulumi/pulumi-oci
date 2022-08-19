@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDbVersions = Oci.Database.GetAutonomousDbVersions.Invoke(new()
         ///     {
-        ///         var testAutonomousDbVersions = Output.Create(Oci.Database.GetAutonomousDbVersions.InvokeAsync(new Oci.Database.GetAutonomousDbVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DbWorkload = @var.Autonomous_db_version_db_workload,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DbWorkload = @var.Autonomous_db_version_db_workload,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDbVersions = Oci.Database.GetAutonomousDbVersions.Invoke(new()
         ///     {
-        ///         var testAutonomousDbVersions = Output.Create(Oci.Database.GetAutonomousDbVersions.InvokeAsync(new Oci.Database.GetAutonomousDbVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DbWorkload = @var.Autonomous_db_version_db_workload,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DbWorkload = @var.Autonomous_db_version_db_workload,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousDbVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDbVersionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDbVersionsArgs()
         {
         }
+        public static new GetAutonomousDbVersionsArgs Empty => new GetAutonomousDbVersionsArgs();
     }
 
-    public sealed class GetAutonomousDbVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDbVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDbVersionsInvokeArgs()
         {
         }
+        public static new GetAutonomousDbVersionsInvokeArgs Empty => new GetAutonomousDbVersionsInvokeArgs();
     }
 
 

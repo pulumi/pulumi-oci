@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApplications = Oci.DataFlow.GetApplications.Invoke(new()
         ///     {
-        ///         var testApplications = Output.Create(Oci.DataFlow.GetApplications.InvokeAsync(new Oci.DataFlow.GetApplicationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Application_display_name,
-        ///             DisplayNameStartsWith = @var.Application_display_name_starts_with,
-        ///             OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///             SparkVersion = @var.Application_spark_version,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Application_display_name,
+        ///         DisplayNameStartsWith = @var.Application_display_name_starts_with,
+        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
+        ///         SparkVersion = @var.Application_spark_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApplications = Oci.DataFlow.GetApplications.Invoke(new()
         ///     {
-        ///         var testApplications = Output.Create(Oci.DataFlow.GetApplications.InvokeAsync(new Oci.DataFlow.GetApplicationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Application_display_name,
-        ///             DisplayNameStartsWith = @var.Application_display_name_starts_with,
-        ///             OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///             SparkVersion = @var.Application_spark_version,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Application_display_name,
+        ///         DisplayNameStartsWith = @var.Application_display_name_starts_with,
+        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
+        ///         SparkVersion = @var.Application_spark_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataFlow
     }
 
 
-    public sealed class GetApplicationsArgs : Pulumi.InvokeArgs
+    public sealed class GetApplicationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.DataFlow
         public GetApplicationsArgs()
         {
         }
+        public static new GetApplicationsArgs Empty => new GetApplicationsArgs();
     }
 
-    public sealed class GetApplicationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetApplicationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.DataFlow
         public GetApplicationsInvokeArgs()
         {
         }
+        public static new GetApplicationsInvokeArgs Empty => new GetApplicationsInvokeArgs();
     }
 
 

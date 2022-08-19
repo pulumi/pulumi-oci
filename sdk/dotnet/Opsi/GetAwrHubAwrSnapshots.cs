@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAwrHubAwrSnapshots = Oci.Opsi.GetAwrHubAwrSnapshots.Invoke(new()
         ///     {
-        ///         var testAwrHubAwrSnapshots = Output.Create(Oci.Opsi.GetAwrHubAwrSnapshots.InvokeAsync(new Oci.Opsi.GetAwrHubAwrSnapshotsArgs
-        ///         {
-        ///             AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///             AwrSourceDatabaseIdentifier = @var.Awr_hub_awr_snapshot_awr_source_database_identifier,
-        ///             TimeGreaterThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_less_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
+        ///         AwrSourceDatabaseIdentifier = @var.Awr_hub_awr_snapshot_awr_source_database_identifier,
+        ///         TimeGreaterThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_less_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAwrHubAwrSnapshots = Oci.Opsi.GetAwrHubAwrSnapshots.Invoke(new()
         ///     {
-        ///         var testAwrHubAwrSnapshots = Output.Create(Oci.Opsi.GetAwrHubAwrSnapshots.InvokeAsync(new Oci.Opsi.GetAwrHubAwrSnapshotsArgs
-        ///         {
-        ///             AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///             AwrSourceDatabaseIdentifier = @var.Awr_hub_awr_snapshot_awr_source_database_identifier,
-        ///             TimeGreaterThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_less_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
+        ///         AwrSourceDatabaseIdentifier = @var.Awr_hub_awr_snapshot_awr_source_database_identifier,
+        ///         TimeGreaterThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_less_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetAwrHubAwrSnapshotsArgs : Pulumi.InvokeArgs
+    public sealed class GetAwrHubAwrSnapshotsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Awr Hub identifier
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Opsi
         public GetAwrHubAwrSnapshotsArgs()
         {
         }
+        public static new GetAwrHubAwrSnapshotsArgs Empty => new GetAwrHubAwrSnapshotsArgs();
     }
 
-    public sealed class GetAwrHubAwrSnapshotsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAwrHubAwrSnapshotsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Awr Hub identifier
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.Opsi
         public GetAwrHubAwrSnapshotsInvokeArgs()
         {
         }
+        public static new GetAwrHubAwrSnapshotsInvokeArgs Empty => new GetAwrHubAwrSnapshotsInvokeArgs();
     }
 
 

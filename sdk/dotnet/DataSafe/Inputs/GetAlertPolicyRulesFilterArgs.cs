@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class GetAlertPolicyRulesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetAlertPolicyRulesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public GetAlertPolicyRulesFilterInputArgs()
         {
         }
+        public static new GetAlertPolicyRulesFilterInputArgs Empty => new GetAlertPolicyRulesFilterInputArgs();
     }
 }

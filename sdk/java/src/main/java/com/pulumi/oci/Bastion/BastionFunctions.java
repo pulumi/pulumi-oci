@@ -29,6 +29,34 @@ public final class BastionFunctions {
      * Retrieves a bastion identified by the bastion ID. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBastionResult> getBastion(GetBastionArgs args) {
@@ -40,6 +68,34 @@ public final class BastionFunctions {
      * Retrieves a bastion identified by the bastion ID. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBastionResult> getBastionPlain(GetBastionPlainArgs args) {
@@ -51,6 +107,34 @@ public final class BastionFunctions {
      * Retrieves a bastion identified by the bastion ID. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBastionResult> getBastion(GetBastionArgs args, InvokeOptions options) {
@@ -62,6 +146,34 @@ public final class BastionFunctions {
      * Retrieves a bastion identified by the bastion ID. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBastionResult> getBastionPlain(GetBastionPlainArgs args, InvokeOptions options) {
@@ -73,6 +185,37 @@ public final class BastionFunctions {
      * Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .bastionLifecycleState(var_.bastion_bastion_lifecycle_state())
+     *             .name(var_.bastion_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBastionsResult> getBastions(GetBastionsArgs args) {
@@ -84,6 +227,37 @@ public final class BastionFunctions {
      * Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .bastionLifecycleState(var_.bastion_bastion_lifecycle_state())
+     *             .name(var_.bastion_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBastionsResult> getBastionsPlain(GetBastionsPlainArgs args) {
@@ -95,6 +269,37 @@ public final class BastionFunctions {
      * Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .bastionLifecycleState(var_.bastion_bastion_lifecycle_state())
+     *             .name(var_.bastion_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBastionsResult> getBastions(GetBastionsArgs args, InvokeOptions options) {
@@ -106,6 +311,37 @@ public final class BastionFunctions {
      * Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .bastionLifecycleState(var_.bastion_bastion_lifecycle_state())
+     *             .name(var_.bastion_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBastionsResult> getBastionsPlain(GetBastionsPlainArgs args, InvokeOptions options) {
@@ -117,6 +353,34 @@ public final class BastionFunctions {
      * Retrieves a session identified by the session ID. A bastion session lets authorized users connect to a target resource for a predetermined amount of time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
+     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSessionResult> getSession(GetSessionArgs args) {
@@ -128,6 +392,34 @@ public final class BastionFunctions {
      * Retrieves a session identified by the session ID. A bastion session lets authorized users connect to a target resource for a predetermined amount of time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
+     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSessionResult> getSessionPlain(GetSessionPlainArgs args) {
@@ -139,6 +431,34 @@ public final class BastionFunctions {
      * Retrieves a session identified by the session ID. A bastion session lets authorized users connect to a target resource for a predetermined amount of time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
+     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSessionResult> getSession(GetSessionArgs args, InvokeOptions options) {
@@ -150,6 +470,34 @@ public final class BastionFunctions {
      * Retrieves a session identified by the session ID. A bastion session lets authorized users connect to a target resource for a predetermined amount of time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
+     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSessionResult> getSessionPlain(GetSessionPlainArgs args, InvokeOptions options) {
@@ -161,6 +509,37 @@ public final class BastionFunctions {
      * Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .displayName(var_.session_display_name())
+     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .sessionLifecycleState(var_.session_session_lifecycle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSessionsResult> getSessions(GetSessionsArgs args) {
@@ -172,6 +551,37 @@ public final class BastionFunctions {
      * Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .displayName(var_.session_display_name())
+     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .sessionLifecycleState(var_.session_session_lifecycle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSessionsResult> getSessionsPlain(GetSessionsPlainArgs args) {
@@ -183,6 +593,37 @@ public final class BastionFunctions {
      * Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .displayName(var_.session_display_name())
+     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .sessionLifecycleState(var_.session_session_lifecycle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSessionsResult> getSessions(GetSessionsArgs args, InvokeOptions options) {
@@ -194,6 +635,37 @@ public final class BastionFunctions {
      * Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Bastion.BastionFunctions;
+     * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
+     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .displayName(var_.session_display_name())
+     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .sessionLifecycleState(var_.session_session_lifecycle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSessionsResult> getSessionsPlain(GetSessionsPlainArgs args, InvokeOptions options) {

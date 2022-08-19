@@ -22,17 +22,15 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testMigrationObjectTypes = Output.Create(Oci.DatabaseMigration.GetMigrationObjectTypes.InvokeAsync());
-        ///     }
+        ///     var testMigrationObjectTypes = Oci.DatabaseMigration.GetMigrationObjectTypes.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -51,17 +49,15 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testMigrationObjectTypes = Output.Create(Oci.DatabaseMigration.GetMigrationObjectTypes.InvokeAsync());
-        ///     }
+        ///     var testMigrationObjectTypes = Oci.DatabaseMigration.GetMigrationObjectTypes.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,7 +67,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetMigrationObjectTypesArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrationObjectTypesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetMigrationObjectTypesFilterArgs>? _filters;
@@ -84,9 +80,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetMigrationObjectTypesArgs()
         {
         }
+        public static new GetMigrationObjectTypesArgs Empty => new GetMigrationObjectTypesArgs();
     }
 
-    public sealed class GetMigrationObjectTypesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrationObjectTypesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetMigrationObjectTypesFilterInputArgs>? _filters;
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetMigrationObjectTypesInvokeArgs()
         {
         }
+        public static new GetMigrationObjectTypesInvokeArgs Empty => new GetMigrationObjectTypesInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class UsagePlanEntitlementQuotaArgs : Pulumi.ResourceArgs
+    public sealed class UsagePlanEntitlementQuotaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public UsagePlanEntitlementQuotaArgs()
         {
         }
+        public static new UsagePlanEntitlementQuotaArgs Empty => new UsagePlanEntitlementQuotaArgs();
     }
 }

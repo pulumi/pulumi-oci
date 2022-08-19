@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgRouteTable = Oci.Core.GetDrgRouteRule.Invoke(new()
         ///     {
-        ///         var testDrgRouteTable = Output.Create(Oci.Core.GetDrgRouteRule.InvokeAsync(new Oci.Core.GetDrgRouteRuleArgs
-        ///         {
-        ///             DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-        ///         }));
-        ///     }
+        ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgRouteTable = Oci.Core.GetDrgRouteRule.Invoke(new()
         ///     {
-        ///         var testDrgRouteTable = Output.Create(Oci.Core.GetDrgRouteRule.InvokeAsync(new Oci.Core.GetDrgRouteRuleArgs
-        ///         {
-        ///             DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-        ///         }));
-        ///     }
+        ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDrgRouteRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgRouteRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetDrgRouteRuleArgs()
         {
         }
+        public static new GetDrgRouteRuleArgs Empty => new GetDrgRouteRuleArgs();
     }
 
-    public sealed class GetDrgRouteRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgRouteRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetDrgRouteRuleInvokeArgs()
         {
         }
+        public static new GetDrgRouteRuleInvokeArgs Empty => new GetDrgRouteRuleInvokeArgs();
     }
 
 

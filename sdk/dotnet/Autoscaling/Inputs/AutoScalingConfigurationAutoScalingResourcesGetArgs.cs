@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling.Inputs
 {
 
-    public sealed class AutoScalingConfigurationAutoScalingResourcesGetArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationAutoScalingResourcesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public AutoScalingConfigurationAutoScalingResourcesGetArgs()
         {
         }
+        public static new AutoScalingConfigurationAutoScalingResourcesGetArgs Empty => new AutoScalingConfigurationAutoScalingResourcesGetArgs();
     }
 }

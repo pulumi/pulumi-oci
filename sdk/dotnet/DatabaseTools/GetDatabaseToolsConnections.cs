@@ -22,23 +22,21 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsConnections = Oci.DatabaseTools.GetDatabaseToolsConnections.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsConnections = Output.Create(Oci.DatabaseTools.GetDatabaseToolsConnections.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsConnectionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_tools_connection_display_name,
-        ///             State = @var.Database_tools_connection_state,
-        ///             Types = @var.Database_tools_connection_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_tools_connection_display_name,
+        ///         State = @var.Database_tools_connection_state,
+        ///         Types = @var.Database_tools_connection_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsConnections = Oci.DatabaseTools.GetDatabaseToolsConnections.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsConnections = Output.Create(Oci.DatabaseTools.GetDatabaseToolsConnections.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsConnectionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_tools_connection_display_name,
-        ///             State = @var.Database_tools_connection_state,
-        ///             Types = @var.Database_tools_connection_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_tools_connection_display_name,
+        ///         State = @var.Database_tools_connection_state,
+        ///         Types = @var.Database_tools_connection_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DatabaseTools
     }
 
 
-    public sealed class GetDatabaseToolsConnectionsArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsConnectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsConnectionsArgs()
         {
         }
+        public static new GetDatabaseToolsConnectionsArgs Empty => new GetDatabaseToolsConnectionsArgs();
     }
 
-    public sealed class GetDatabaseToolsConnectionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsConnectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsConnectionsInvokeArgs()
         {
         }
+        public static new GetDatabaseToolsConnectionsInvokeArgs Empty => new GetDatabaseToolsConnectionsInvokeArgs();
     }
 
 

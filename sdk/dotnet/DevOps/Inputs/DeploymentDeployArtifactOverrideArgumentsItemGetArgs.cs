@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeploymentDeployArtifactOverrideArgumentsItemGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentDeployArtifactOverrideArgumentsItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the artifact to which this parameter applies.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeploymentDeployArtifactOverrideArgumentsItemGetArgs()
         {
         }
+        public static new DeploymentDeployArtifactOverrideArgumentsItemGetArgs Empty => new DeploymentDeployArtifactOverrideArgumentsItemGetArgs();
     }
 }

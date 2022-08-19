@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics.Inputs
 {
 
-    public sealed class NamespaceScheduledTaskSchedulesScheduleGetArgs : Pulumi.ResourceArgs
+    public sealed class NamespaceScheduledTaskSchedulesScheduleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Value in cron format.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public NamespaceScheduledTaskSchedulesScheduleGetArgs()
         {
         }
+        public static new NamespaceScheduledTaskSchedulesScheduleGetArgs Empty => new NamespaceScheduledTaskSchedulesScheduleGetArgs();
     }
 }

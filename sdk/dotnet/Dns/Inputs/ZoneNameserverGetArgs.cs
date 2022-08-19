@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class ZoneNameserverGetArgs : Pulumi.ResourceArgs
+    public sealed class ZoneNameserverGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The hostname of the nameserver.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public ZoneNameserverGetArgs()
         {
         }
+        public static new ZoneNameserverGetArgs Empty => new ZoneNameserverGetArgs();
     }
 }

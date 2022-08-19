@@ -17,27 +17,25 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVmClusterRemoveVirtualMachine = new Oci.Database.VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine", new()
     ///     {
-    ///         var testVmClusterRemoveVirtualMachine = new Oci.Database.VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine", new Oci.Database.VmClusterRemoveVirtualMachineArgs
+    ///         DbServers = new[]
     ///         {
-    ///             DbServers = 
+    ///             new Oci.Database.Inputs.VmClusterRemoveVirtualMachineDbServerArgs
     ///             {
-    ///                 new Oci.Database.Inputs.VmClusterRemoveVirtualMachineDbServerArgs
-    ///                 {
-    ///                     DbServerId = oci_database_db_server.Test_db_server.Id,
-    ///                 },
+    ///                 DbServerId = oci_database_db_server.Test_db_server.Id,
     ///             },
-    ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine")]
-    public partial class VmClusterRemoveVirtualMachine : Pulumi.CustomResource
+    public partial class VmClusterRemoveVirtualMachine : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -245,7 +243,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class VmClusterRemoveVirtualMachineArgs : Pulumi.ResourceArgs
+    public sealed class VmClusterRemoveVirtualMachineArgs : global::Pulumi.ResourceArgs
     {
         [Input("dbServers", required: true)]
         private InputList<Inputs.VmClusterRemoveVirtualMachineDbServerArgs>? _dbServers;
@@ -268,9 +266,10 @@ namespace Pulumi.Oci.Database
         public VmClusterRemoveVirtualMachineArgs()
         {
         }
+        public static new VmClusterRemoveVirtualMachineArgs Empty => new VmClusterRemoveVirtualMachineArgs();
     }
 
-    public sealed class VmClusterRemoveVirtualMachineState : Pulumi.ResourceArgs
+    public sealed class VmClusterRemoveVirtualMachineState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -455,5 +454,6 @@ namespace Pulumi.Oci.Database
         public VmClusterRemoveVirtualMachineState()
         {
         }
+        public static new VmClusterRemoveVirtualMachineState Empty => new VmClusterRemoveVirtualMachineState();
     }
 }

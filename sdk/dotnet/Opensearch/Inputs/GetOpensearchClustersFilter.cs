@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opensearch.Inputs
 {
 
-    public sealed class GetOpensearchClustersFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetOpensearchClustersFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Opensearch.Inputs
         public GetOpensearchClustersFilterArgs()
         {
         }
+        public static new GetOpensearchClustersFilterArgs Empty => new GetOpensearchClustersFilterArgs();
     }
 }

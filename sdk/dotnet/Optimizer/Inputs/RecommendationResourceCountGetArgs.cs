@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class RecommendationResourceCountGetArgs : Pulumi.ResourceArgs
+    public sealed class RecommendationResourceCountGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The count of resources.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public RecommendationResourceCountGetArgs()
         {
         }
+        public static new RecommendationResourceCountGetArgs Empty => new RecommendationResourceCountGetArgs();
     }
 }

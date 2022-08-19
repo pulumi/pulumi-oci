@@ -22,20 +22,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConfiguration = Oci.MeteringComputation.GetConfiguration.Invoke(new()
         ///     {
-        ///         var testConfiguration = Output.Create(Oci.MeteringComputation.GetConfiguration.InvokeAsync(new Oci.MeteringComputation.GetConfigurationArgs
-        ///         {
-        ///             TenantId = oci_metering_computation_tenant.Test_tenant.Id,
-        ///         }));
-        ///     }
+        ///         TenantId = oci_metering_computation_tenant.Test_tenant.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConfiguration = Oci.MeteringComputation.GetConfiguration.Invoke(new()
         ///     {
-        ///         var testConfiguration = Output.Create(Oci.MeteringComputation.GetConfiguration.InvokeAsync(new Oci.MeteringComputation.GetConfigurationArgs
-        ///         {
-        ///             TenantId = oci_metering_computation_tenant.Test_tenant.Id,
-        ///         }));
-        ///     }
+        ///         TenantId = oci_metering_computation_tenant.Test_tenant.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.MeteringComputation
     }
 
 
-    public sealed class GetConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// tenant id
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.MeteringComputation
         public GetConfigurationArgs()
         {
         }
+        public static new GetConfigurationArgs Empty => new GetConfigurationArgs();
     }
 
-    public sealed class GetConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// tenant id
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.MeteringComputation
         public GetConfigurationInvokeArgs()
         {
         }
+        public static new GetConfigurationInvokeArgs Empty => new GetConfigurationInvokeArgs();
     }
 
 

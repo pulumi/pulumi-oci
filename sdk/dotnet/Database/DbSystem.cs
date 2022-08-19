@@ -53,7 +53,7 @@ namespace Pulumi.Oci.Database
     ///  }
     /// </summary>
     [OciResourceType("oci:Database/dbSystem:DbSystem")]
-    public partial class DbSystem : Pulumi.CustomResource
+    public partial class DbSystem : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain where the DB system is located.
@@ -418,7 +418,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class DbSystemArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain where the DB system is located.
@@ -676,9 +676,10 @@ namespace Pulumi.Oci.Database
         public DbSystemArgs()
         {
         }
+        public static new DbSystemArgs Empty => new DbSystemArgs();
     }
 
-    public sealed class DbSystemState : Pulumi.ResourceArgs
+    public sealed class DbSystemState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain where the DB system is located.
@@ -1062,5 +1063,6 @@ namespace Pulumi.Oci.Database
         public DbSystemState()
         {
         }
+        public static new DbSystemState Empty => new DbSystemState();
     }
 }

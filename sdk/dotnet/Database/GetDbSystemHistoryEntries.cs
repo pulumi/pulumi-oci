@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemPatchHistoryEntries = Oci.Database.GetDbSystemHistoryEntries.Invoke(new()
         ///     {
-        ///         var testDbSystemPatchHistoryEntries = Output.Create(Oci.Database.GetDbSystemHistoryEntries.InvokeAsync(new Oci.Database.GetDbSystemHistoryEntriesArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemPatchHistoryEntries = Oci.Database.GetDbSystemHistoryEntries.Invoke(new()
         ///     {
-        ///         var testDbSystemPatchHistoryEntries = Output.Create(Oci.Database.GetDbSystemHistoryEntries.InvokeAsync(new Oci.Database.GetDbSystemHistoryEntriesArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbSystemHistoryEntriesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemHistoryEntriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDbSystemHistoryEntriesArgs()
         {
         }
+        public static new GetDbSystemHistoryEntriesArgs Empty => new GetDbSystemHistoryEntriesArgs();
     }
 
-    public sealed class GetDbSystemHistoryEntriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemHistoryEntriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetDbSystemHistoryEntriesInvokeArgs()
         {
         }
+        public static new GetDbSystemHistoryEntriesInvokeArgs Empty => new GetDbSystemHistoryEntriesInvokeArgs();
     }
 
 

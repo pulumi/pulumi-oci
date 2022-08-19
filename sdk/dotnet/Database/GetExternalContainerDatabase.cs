@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalContainerDatabase = Oci.Database.GetExternalContainerDatabase.Invoke(new()
         ///     {
-        ///         var testExternalContainerDatabase = Output.Create(Oci.Database.GetExternalContainerDatabase.InvokeAsync(new Oci.Database.GetExternalContainerDatabaseArgs
-        ///         {
-        ///             ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-        ///         }));
-        ///     }
+        ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalContainerDatabase = Oci.Database.GetExternalContainerDatabase.Invoke(new()
         ///     {
-        ///         var testExternalContainerDatabase = Output.Create(Oci.Database.GetExternalContainerDatabase.InvokeAsync(new Oci.Database.GetExternalContainerDatabaseArgs
-        ///         {
-        ///             ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-        ///         }));
-        ///     }
+        ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetExternalContainerDatabaseArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalContainerDatabaseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetExternalContainerDatabaseArgs()
         {
         }
+        public static new GetExternalContainerDatabaseArgs Empty => new GetExternalContainerDatabaseArgs();
     }
 
-    public sealed class GetExternalContainerDatabaseInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalContainerDatabaseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetExternalContainerDatabaseInvokeArgs()
         {
         }
+        public static new GetExternalContainerDatabaseInvokeArgs Empty => new GetExternalContainerDatabaseInvokeArgs();
     }
 
 

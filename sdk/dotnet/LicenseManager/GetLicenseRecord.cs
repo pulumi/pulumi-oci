@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLicenseRecord = Oci.LicenseManager.GetLicenseRecord.Invoke(new()
         ///     {
-        ///         var testLicenseRecord = Output.Create(Oci.LicenseManager.GetLicenseRecord.InvokeAsync(new Oci.LicenseManager.GetLicenseRecordArgs
-        ///         {
-        ///             LicenseRecordId = oci_license_manager_license_record.Test_license_record.Id,
-        ///         }));
-        ///     }
+        ///         LicenseRecordId = oci_license_manager_license_record.Test_license_record.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLicenseRecord = Oci.LicenseManager.GetLicenseRecord.Invoke(new()
         ///     {
-        ///         var testLicenseRecord = Output.Create(Oci.LicenseManager.GetLicenseRecord.InvokeAsync(new Oci.LicenseManager.GetLicenseRecordArgs
-        ///         {
-        ///             LicenseRecordId = oci_license_manager_license_record.Test_license_record.Id,
-        ///         }));
-        ///     }
+        ///         LicenseRecordId = oci_license_manager_license_record.Test_license_record.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LicenseManager
     }
 
 
-    public sealed class GetLicenseRecordArgs : Pulumi.InvokeArgs
+    public sealed class GetLicenseRecordArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique license record identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.LicenseManager
         public GetLicenseRecordArgs()
         {
         }
+        public static new GetLicenseRecordArgs Empty => new GetLicenseRecordArgs();
     }
 
-    public sealed class GetLicenseRecordInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLicenseRecordInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique license record identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.LicenseManager
         public GetLicenseRecordInvokeArgs()
         {
         }
+        public static new GetLicenseRecordInvokeArgs Empty => new GetLicenseRecordInvokeArgs();
     }
 
 

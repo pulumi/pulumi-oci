@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolNodeConfigDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolNodeConfigDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -87,5 +87,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolNodeConfigDetailsGetArgs()
         {
         }
+        public static new NodePoolNodeConfigDetailsGetArgs Empty => new NodePoolNodeConfigDetailsGetArgs();
     }
 }

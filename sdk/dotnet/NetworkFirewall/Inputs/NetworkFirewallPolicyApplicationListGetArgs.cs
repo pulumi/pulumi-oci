@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class NetworkFirewallPolicyApplicationListGetArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicyApplicationListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("icmpCode")]
         public Input<int>? IcmpCode { get; set; }
@@ -38,5 +38,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public NetworkFirewallPolicyApplicationListGetArgs()
         {
         }
+        public static new NetworkFirewallPolicyApplicationListGetArgs Empty => new NetworkFirewallPolicyApplicationListGetArgs();
     }
 }

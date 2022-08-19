@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuthTokens = Oci.Identity.GetAuthTokens.Invoke(new()
         ///     {
-        ///         var testAuthTokens = Output.Create(Oci.Identity.GetAuthTokens.InvokeAsync(new Oci.Identity.GetAuthTokensArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuthTokens = Oci.Identity.GetAuthTokens.Invoke(new()
         ///     {
-        ///         var testAuthTokens = Output.Create(Oci.Identity.GetAuthTokens.InvokeAsync(new Oci.Identity.GetAuthTokensArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetAuthTokensArgs : Pulumi.InvokeArgs
+    public sealed class GetAuthTokensArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetAuthTokensFilterArgs>? _filters;
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Identity
         public GetAuthTokensArgs()
         {
         }
+        public static new GetAuthTokensArgs Empty => new GetAuthTokensArgs();
     }
 
-    public sealed class GetAuthTokensInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuthTokensInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetAuthTokensFilterInputArgs>? _filters;
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Identity
         public GetAuthTokensInvokeArgs()
         {
         }
+        public static new GetAuthTokensInvokeArgs Empty => new GetAuthTokensInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Nosql.Inputs
 {
 
-    public sealed class TableSchemaGetArgs : Pulumi.ResourceArgs
+    public sealed class TableSchemaGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("columns")]
         private InputList<Inputs.TableSchemaColumnGetArgs>? _columns;
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Nosql.Inputs
         public TableSchemaGetArgs()
         {
         }
+        public static new TableSchemaGetArgs Empty => new TableSchemaGetArgs();
     }
 }

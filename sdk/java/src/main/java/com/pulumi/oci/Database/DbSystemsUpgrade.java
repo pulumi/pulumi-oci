@@ -27,6 +27,38 @@ import javax.annotation.Nullable;
  * Upgrades the operating system and grid infrastructure of the DB system.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.DbSystemsUpgrade;
+ * import com.pulumi.oci.Database.DbSystemsUpgradeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDbSystemsUpgrade = new DbSystemsUpgrade(&#34;testDbSystemsUpgrade&#34;, DbSystemsUpgradeArgs.builder()        
+ *             .action(var_.db_systems_upgrade_action())
+ *             .dbSystemId(oci_database_db_system.test_db_system().id())
+ *             .isSnapshotRetentionDaysForceUpdated(var_.db_systems_upgrade_is_snapshot_retention_days_force_updated())
+ *             .newGiVersion(var_.db_systems_upgrade_new_gi_version())
+ *             .snapshotRetentionPeriodInDays(var_.db_systems_upgrade_snapshot_retention_period_in_days())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

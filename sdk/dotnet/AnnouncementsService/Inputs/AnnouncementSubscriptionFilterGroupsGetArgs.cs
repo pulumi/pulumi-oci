@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AnnouncementsService.Inputs
 {
 
-    public sealed class AnnouncementSubscriptionFilterGroupsGetArgs : Pulumi.ResourceArgs
+    public sealed class AnnouncementSubscriptionFilterGroupsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("filters", required: true)]
         private InputList<Inputs.AnnouncementSubscriptionFilterGroupsFilterGetArgs>? _filters;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.AnnouncementsService.Inputs
         public AnnouncementSubscriptionFilterGroupsGetArgs()
         {
         }
+        public static new AnnouncementSubscriptionFilterGroupsGetArgs Empty => new AnnouncementSubscriptionFilterGroupsGetArgs();
     }
 }

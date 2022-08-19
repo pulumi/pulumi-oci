@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppFirewalls = Oci.Waf.GetFirewalls.Invoke(new()
         ///     {
-        ///         var testWebAppFirewalls = Output.Create(Oci.Waf.GetFirewalls.InvokeAsync(new Oci.Waf.GetFirewallsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Web_app_firewall_display_name,
-        ///             Id = @var.Web_app_firewall_id,
-        ///             States = @var.Web_app_firewall_state,
-        ///             WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Web_app_firewall_display_name,
+        ///         Id = @var.Web_app_firewall_id,
+        ///         States = @var.Web_app_firewall_state,
+        ///         WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppFirewalls = Oci.Waf.GetFirewalls.Invoke(new()
         ///     {
-        ///         var testWebAppFirewalls = Output.Create(Oci.Waf.GetFirewalls.InvokeAsync(new Oci.Waf.GetFirewallsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Web_app_firewall_display_name,
-        ///             Id = @var.Web_app_firewall_id,
-        ///             States = @var.Web_app_firewall_state,
-        ///             WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Web_app_firewall_display_name,
+        ///         Id = @var.Web_app_firewall_id,
+        ///         States = @var.Web_app_firewall_state,
+        ///         WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Waf
     }
 
 
-    public sealed class GetFirewallsArgs : Pulumi.InvokeArgs
+    public sealed class GetFirewallsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Waf
         public GetFirewallsArgs()
         {
         }
+        public static new GetFirewallsArgs Empty => new GetFirewallsArgs();
     }
 
-    public sealed class GetFirewallsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFirewallsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.Waf
         public GetFirewallsInvokeArgs()
         {
         }
+        public static new GetFirewallsInvokeArgs Empty => new GetFirewallsInvokeArgs();
     }
 
 

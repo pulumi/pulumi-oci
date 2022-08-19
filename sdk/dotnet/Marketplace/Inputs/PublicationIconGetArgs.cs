@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class PublicationIconGetArgs : Pulumi.ResourceArgs
+    public sealed class PublicationIconGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The content URL of the upload data.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public PublicationIconGetArgs()
         {
         }
+        public static new PublicationIconGetArgs Empty => new PublicationIconGetArgs();
     }
 }

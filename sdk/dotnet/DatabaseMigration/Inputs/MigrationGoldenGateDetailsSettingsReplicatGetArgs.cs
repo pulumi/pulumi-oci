@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationGoldenGateDetailsSettingsReplicatGetArgs : Pulumi.ResourceArgs
+    public sealed class MigrationGoldenGateDetailsSettingsReplicatGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationGoldenGateDetailsSettingsReplicatGetArgs()
         {
         }
+        public static new MigrationGoldenGateDetailsSettingsReplicatGetArgs Empty => new MigrationGoldenGateDetailsSettingsReplicatGetArgs();
     }
 }

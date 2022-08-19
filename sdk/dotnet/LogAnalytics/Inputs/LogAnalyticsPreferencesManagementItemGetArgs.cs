@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics.Inputs
 {
 
-    public sealed class LogAnalyticsPreferencesManagementItemGetArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsPreferencesManagementItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The preference name. Currently, only "DEFAULT_HOMEPAGE" is supported.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public LogAnalyticsPreferencesManagementItemGetArgs()
         {
         }
+        public static new LogAnalyticsPreferencesManagementItemGetArgs Empty => new LogAnalyticsPreferencesManagementItemGetArgs();
     }
 }

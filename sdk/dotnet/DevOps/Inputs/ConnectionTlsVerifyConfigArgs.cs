@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class ConnectionTlsVerifyConfigArgs : Pulumi.ResourceArgs
+    public sealed class ConnectionTlsVerifyConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public ConnectionTlsVerifyConfigArgs()
         {
         }
+        public static new ConnectionTlsVerifyConfigArgs Empty => new ConnectionTlsVerifyConfigArgs();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPluggableDatabase = Oci.Database.GetPluggableDatabase.Invoke(new()
         ///     {
-        ///         var testPluggableDatabase = Output.Create(Oci.Database.GetPluggableDatabase.InvokeAsync(new Oci.Database.GetPluggableDatabaseArgs
-        ///         {
-        ///             PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
-        ///         }));
-        ///     }
+        ///         PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPluggableDatabase = Oci.Database.GetPluggableDatabase.Invoke(new()
         ///     {
-        ///         var testPluggableDatabase = Output.Create(Oci.Database.GetPluggableDatabase.InvokeAsync(new Oci.Database.GetPluggableDatabaseArgs
-        ///         {
-        ///             PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
-        ///         }));
-        ///     }
+        ///         PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetPluggableDatabaseArgs : Pulumi.InvokeArgs
+    public sealed class GetPluggableDatabaseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetPluggableDatabaseArgs()
         {
         }
+        public static new GetPluggableDatabaseArgs Empty => new GetPluggableDatabaseArgs();
     }
 
-    public sealed class GetPluggableDatabaseInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPluggableDatabaseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetPluggableDatabaseInvokeArgs()
         {
         }
+        public static new GetPluggableDatabaseInvokeArgs Empty => new GetPluggableDatabaseInvokeArgs();
     }
 
 

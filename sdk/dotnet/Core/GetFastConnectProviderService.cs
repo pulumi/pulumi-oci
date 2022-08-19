@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFastConnectProviderService = Oci.Core.GetFastConnectProviderService.Invoke(new()
         ///     {
-        ///         var testFastConnectProviderService = Output.Create(Oci.Core.GetFastConnectProviderService.InvokeAsync(new Oci.Core.GetFastConnectProviderServiceArgs
-        ///         {
-        ///             ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-        ///         }));
-        ///     }
+        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFastConnectProviderService = Oci.Core.GetFastConnectProviderService.Invoke(new()
         ///     {
-        ///         var testFastConnectProviderService = Output.Create(Oci.Core.GetFastConnectProviderService.InvokeAsync(new Oci.Core.GetFastConnectProviderServiceArgs
-        ///         {
-        ///             ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-        ///         }));
-        ///     }
+        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetFastConnectProviderServiceArgs : Pulumi.InvokeArgs
+    public sealed class GetFastConnectProviderServiceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
@@ -90,9 +86,10 @@ namespace Pulumi.Oci.Core
         public GetFastConnectProviderServiceArgs()
         {
         }
+        public static new GetFastConnectProviderServiceArgs Empty => new GetFastConnectProviderServiceArgs();
     }
 
-    public sealed class GetFastConnectProviderServiceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFastConnectProviderServiceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
@@ -103,6 +100,7 @@ namespace Pulumi.Oci.Core
         public GetFastConnectProviderServiceInvokeArgs()
         {
         }
+        public static new GetFastConnectProviderServiceInvokeArgs Empty => new GetFastConnectProviderServiceInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type descriminator.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs()
         {
         }
+        public static new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs Empty => new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs();
     }
 }

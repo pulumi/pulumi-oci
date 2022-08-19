@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogs = Oci.Logging.GetLogs.Invoke(new()
         ///     {
-        ///         var testLogs = Output.Create(Oci.Logging.GetLogs.InvokeAsync(new Oci.Logging.GetLogsArgs
-        ///         {
-        ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-        ///             DisplayName = @var.Log_display_name,
-        ///             LogType = @var.Log_log_type,
-        ///             SourceResource = @var.Log_source_resource,
-        ///             SourceService = @var.Log_source_service,
-        ///             State = @var.Log_state,
-        ///         }));
-        ///     }
+        ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
+        ///         DisplayName = @var.Log_display_name,
+        ///         LogType = @var.Log_log_type,
+        ///         SourceResource = @var.Log_source_resource,
+        ///         SourceService = @var.Log_source_service,
+        ///         State = @var.Log_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogs = Oci.Logging.GetLogs.Invoke(new()
         ///     {
-        ///         var testLogs = Output.Create(Oci.Logging.GetLogs.InvokeAsync(new Oci.Logging.GetLogsArgs
-        ///         {
-        ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-        ///             DisplayName = @var.Log_display_name,
-        ///             LogType = @var.Log_log_type,
-        ///             SourceResource = @var.Log_source_resource,
-        ///             SourceService = @var.Log_source_service,
-        ///             State = @var.Log_state,
-        ///         }));
-        ///     }
+        ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
+        ///         DisplayName = @var.Log_display_name,
+        ///         LogType = @var.Log_log_type,
+        ///         SourceResource = @var.Log_source_resource,
+        ///         SourceService = @var.Log_source_service,
+        ///         State = @var.Log_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Logging
     }
 
 
-    public sealed class GetLogsArgs : Pulumi.InvokeArgs
+    public sealed class GetLogsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Resource name
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Logging
         public GetLogsArgs()
         {
         }
+        public static new GetLogsArgs Empty => new GetLogsArgs();
     }
 
-    public sealed class GetLogsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Resource name
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.Logging
         public GetLogsInvokeArgs()
         {
         }
+        public static new GetLogsInvokeArgs Empty => new GetLogsInvokeArgs();
     }
 
 

@@ -24,24 +24,22 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExports = Oci.FileStorage.GetExports.Invoke(new()
         ///     {
-        ///         var testExports = Output.Create(Oci.FileStorage.GetExports.InvokeAsync(new Oci.FileStorage.GetExportsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
-        ///             FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///             Id = @var.Export_id,
-        ///             State = @var.Export_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
+        ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+        ///         Id = @var.Export_id,
+        ///         State = @var.Export_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,24 +60,22 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExports = Oci.FileStorage.GetExports.Invoke(new()
         ///     {
-        ///         var testExports = Output.Create(Oci.FileStorage.GetExports.InvokeAsync(new Oci.FileStorage.GetExportsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
-        ///             FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///             Id = @var.Export_id,
-        ///             State = @var.Export_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
+        ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+        ///         Id = @var.Export_id,
+        ///         State = @var.Export_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.FileStorage
     }
 
 
-    public sealed class GetExportsArgs : Pulumi.InvokeArgs
+    public sealed class GetExportsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -132,9 +128,10 @@ namespace Pulumi.Oci.FileStorage
         public GetExportsArgs()
         {
         }
+        public static new GetExportsArgs Empty => new GetExportsArgs();
     }
 
-    public sealed class GetExportsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExportsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -177,6 +174,7 @@ namespace Pulumi.Oci.FileStorage
         public GetExportsInvokeArgs()
         {
         }
+        public static new GetExportsInvokeArgs Empty => new GetExportsInvokeArgs();
     }
 
 

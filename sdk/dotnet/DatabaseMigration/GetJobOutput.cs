@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobOutput = Oci.DatabaseMigration.GetJobOutput.Invoke(new()
         ///     {
-        ///         var testJobOutput = Output.Create(Oci.DatabaseMigration.GetJobOutput.InvokeAsync(new Oci.DatabaseMigration.GetJobOutputArgs
-        ///         {
-        ///             JobId = oci_database_migration_job.Test_job.Id,
-        ///         }));
-        ///     }
+        ///         JobId = oci_database_migration_job.Test_job.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobOutput = Oci.DatabaseMigration.GetJobOutput.Invoke(new()
         ///     {
-        ///         var testJobOutput = Output.Create(Oci.DatabaseMigration.GetJobOutput.InvokeAsync(new Oci.DatabaseMigration.GetJobOutputArgs
-        ///         {
-        ///             JobId = oci_database_migration_job.Test_job.Id,
-        ///         }));
-        ///     }
+        ///         JobId = oci_database_migration_job.Test_job.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetJobOutputArgs : Pulumi.InvokeArgs
+    public sealed class GetJobOutputArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the job
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetJobOutputArgs()
         {
         }
+        public static new GetJobOutputArgs Empty => new GetJobOutputArgs();
     }
 
-    public sealed class GetJobOutputInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJobOutputInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the job
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetJobOutputInvokeArgs()
         {
         }
+        public static new GetJobOutputInvokeArgs Empty => new GetJobOutputInvokeArgs();
     }
 
 

@@ -22,25 +22,23 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProtectionCapabilities = Oci.Waf.GetProtectionCapabilities.Invoke(new()
         ///     {
-        ///         var testProtectionCapabilities = Output.Create(Oci.Waf.GetProtectionCapabilities.InvokeAsync(new Oci.Waf.GetProtectionCapabilitiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Protection_capability_display_name,
-        ///             GroupTags = @var.Protection_capability_group_tag,
-        ///             IsLatestVersions = @var.Protection_capability_is_latest_version,
-        ///             Key = @var.Protection_capability_key,
-        ///             Type = @var.Protection_capability_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Protection_capability_display_name,
+        ///         GroupTags = @var.Protection_capability_group_tag,
+        ///         IsLatestVersions = @var.Protection_capability_is_latest_version,
+        ///         Key = @var.Protection_capability_key,
+        ///         Type = @var.Protection_capability_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProtectionCapabilities = Oci.Waf.GetProtectionCapabilities.Invoke(new()
         ///     {
-        ///         var testProtectionCapabilities = Output.Create(Oci.Waf.GetProtectionCapabilities.InvokeAsync(new Oci.Waf.GetProtectionCapabilitiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Protection_capability_display_name,
-        ///             GroupTags = @var.Protection_capability_group_tag,
-        ///             IsLatestVersions = @var.Protection_capability_is_latest_version,
-        ///             Key = @var.Protection_capability_key,
-        ///             Type = @var.Protection_capability_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Protection_capability_display_name,
+        ///         GroupTags = @var.Protection_capability_group_tag,
+        ///         IsLatestVersions = @var.Protection_capability_is_latest_version,
+        ///         Key = @var.Protection_capability_key,
+        ///         Type = @var.Protection_capability_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Waf
     }
 
 
-    public sealed class GetProtectionCapabilitiesArgs : Pulumi.InvokeArgs
+    public sealed class GetProtectionCapabilitiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -148,9 +144,10 @@ namespace Pulumi.Oci.Waf
         public GetProtectionCapabilitiesArgs()
         {
         }
+        public static new GetProtectionCapabilitiesArgs Empty => new GetProtectionCapabilitiesArgs();
     }
 
-    public sealed class GetProtectionCapabilitiesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProtectionCapabilitiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -211,6 +208,7 @@ namespace Pulumi.Oci.Waf
         public GetProtectionCapabilitiesInvokeArgs()
         {
         }
+        public static new GetProtectionCapabilitiesInvokeArgs Empty => new GetProtectionCapabilitiesInvokeArgs();
     }
 
 

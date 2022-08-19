@@ -45,6 +45,44 @@ import javax.annotation.Nullable;
  *   of values that you supply with [EnumTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/EnumTagDefinitionValidator).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.Tag;
+ * import com.pulumi.oci.Identity.TagArgs;
+ * import com.pulumi.oci.Identity.inputs.TagValidatorArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTag = new Tag(&#34;testTag&#34;, TagArgs.builder()        
+ *             .description(var_.tag_description())
+ *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isCostTracking(var_.tag_is_cost_tracking())
+ *             .validator(TagValidatorArgs.builder()
+ *                 .validatorType(var_.tag_validator_validator_type())
+ *                 .values(var_.tag_validator_values())
+ *                 .build())
+ *             .isRetired(false)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

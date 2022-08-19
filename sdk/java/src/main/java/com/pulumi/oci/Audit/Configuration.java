@@ -18,6 +18,35 @@ import javax.annotation.Nullable;
  * This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Audit.Configuration;
+ * import com.pulumi.oci.Audit.ConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testConfiguration = new Configuration(&#34;testConfiguration&#34;, ConfigurationArgs.builder()        
+ *             .compartmentId(var_.tenancy_ocid())
+ *             .retentionPeriodDays(var_.configuration_retention_period_days())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

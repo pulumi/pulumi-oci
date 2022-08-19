@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class BdsInstanceCloudSqlDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceCloudSqlDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public BdsInstanceCloudSqlDetailGetArgs()
         {
         }
+        public static new BdsInstanceCloudSqlDetailGetArgs Empty => new BdsInstanceCloudSqlDetailGetArgs();
     }
 }

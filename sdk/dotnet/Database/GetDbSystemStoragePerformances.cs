@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemStoragePerformances = Oci.Database.GetDbSystemStoragePerformances.Invoke(new()
         ///     {
-        ///         var testDbSystemStoragePerformances = Output.Create(Oci.Database.GetDbSystemStoragePerformances.InvokeAsync(new Oci.Database.GetDbSystemStoragePerformancesArgs
-        ///         {
-        ///             StorageManagement = @var.Db_system_storage_performance_storage_management,
-        ///             ShapeType = @var.Db_system_storage_performance_shape_type,
-        ///         }));
-        ///     }
+        ///         StorageManagement = @var.Db_system_storage_performance_storage_management,
+        ///         ShapeType = @var.Db_system_storage_performance_shape_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemStoragePerformances = Oci.Database.GetDbSystemStoragePerformances.Invoke(new()
         ///     {
-        ///         var testDbSystemStoragePerformances = Output.Create(Oci.Database.GetDbSystemStoragePerformances.InvokeAsync(new Oci.Database.GetDbSystemStoragePerformancesArgs
-        ///         {
-        ///             StorageManagement = @var.Db_system_storage_performance_storage_management,
-        ///             ShapeType = @var.Db_system_storage_performance_shape_type,
-        ///         }));
-        ///     }
+        ///         StorageManagement = @var.Db_system_storage_performance_storage_management,
+        ///         ShapeType = @var.Db_system_storage_performance_shape_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbSystemStoragePerformancesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemStoragePerformancesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetDbSystemStoragePerformancesFilterArgs>? _filters;
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Database
         public GetDbSystemStoragePerformancesArgs()
         {
         }
+        public static new GetDbSystemStoragePerformancesArgs Empty => new GetDbSystemStoragePerformancesArgs();
     }
 
-    public sealed class GetDbSystemStoragePerformancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemStoragePerformancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetDbSystemStoragePerformancesFilterInputArgs>? _filters;
@@ -135,6 +132,7 @@ namespace Pulumi.Oci.Database
         public GetDbSystemStoragePerformancesInvokeArgs()
         {
         }
+        public static new GetDbSystemStoragePerformancesInvokeArgs Empty => new GetDbSystemStoragePerformancesInvokeArgs();
     }
 
 

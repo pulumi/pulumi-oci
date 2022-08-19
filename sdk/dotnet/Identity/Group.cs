@@ -33,29 +33,27 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testGroup = new Oci.Identity.Group("testGroup", new()
     ///     {
-    ///         var testGroup = new Oci.Identity.Group("testGroup", new Oci.Identity.GroupArgs
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         Description = @var.Group_description,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             Description = @var.Group_description,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -67,7 +65,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/group:Group")]
-    public partial class Group : Pulumi.CustomResource
+    public partial class Group : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the tenancy containing the group.
@@ -161,7 +159,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class GroupArgs : Pulumi.ResourceArgs
+    public sealed class GroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy containing the group.
@@ -208,9 +206,10 @@ namespace Pulumi.Oci.Identity
         public GroupArgs()
         {
         }
+        public static new GroupArgs Empty => new GroupArgs();
     }
 
-    public sealed class GroupState : Pulumi.ResourceArgs
+    public sealed class GroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy containing the group.
@@ -275,5 +274,6 @@ namespace Pulumi.Oci.Identity
         public GroupState()
         {
         }
+        public static new GroupState Empty => new GroupState();
     }
 }

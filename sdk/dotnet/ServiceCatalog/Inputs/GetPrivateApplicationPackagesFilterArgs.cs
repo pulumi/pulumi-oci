@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceCatalog.Inputs
 {
 
-    public sealed class GetPrivateApplicationPackagesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetPrivateApplicationPackagesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ServiceCatalog.Inputs
         public GetPrivateApplicationPackagesFilterInputArgs()
         {
         }
+        public static new GetPrivateApplicationPackagesFilterInputArgs Empty => new GetPrivateApplicationPackagesFilterInputArgs();
     }
 }

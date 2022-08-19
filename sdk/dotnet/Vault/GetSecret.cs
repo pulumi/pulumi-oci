@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Vault
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecret = Oci.Vault.GetSecret.Invoke(new()
         ///     {
-        ///         var testSecret = Output.Create(Oci.Vault.GetSecret.InvokeAsync(new Oci.Vault.GetSecretArgs
-        ///         {
-        ///             SecretId = oci_vault_secret.Test_secret.Id,
-        ///         }));
-        ///     }
+        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Vault
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecret = Oci.Vault.GetSecret.Invoke(new()
         ///     {
-        ///         var testSecret = Output.Create(Oci.Vault.GetSecret.InvokeAsync(new Oci.Vault.GetSecretArgs
-        ///         {
-        ///             SecretId = oci_vault_secret.Test_secret.Id,
-        ///         }));
-        ///     }
+        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Vault
     }
 
 
-    public sealed class GetSecretArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the secret.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Vault
         public GetSecretArgs()
         {
         }
+        public static new GetSecretArgs Empty => new GetSecretArgs();
     }
 
-    public sealed class GetSecretInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the secret.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Vault
         public GetSecretInvokeArgs()
         {
         }
+        public static new GetSecretInvokeArgs Empty => new GetSecretInvokeArgs();
     }
 
 

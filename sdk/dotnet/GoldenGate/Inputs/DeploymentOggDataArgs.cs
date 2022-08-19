@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate.Inputs
 {
 
-    public sealed class DeploymentOggDataArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentOggDataArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public DeploymentOggDataArgs()
         {
         }
+        public static new DeploymentOggDataArgs Empty => new DeploymentOggDataArgs();
     }
 }

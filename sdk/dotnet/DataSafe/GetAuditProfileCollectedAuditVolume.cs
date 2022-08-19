@@ -21,23 +21,21 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditProfileCollectedAuditVolume = Oci.DataSafe.GetAuditProfileCollectedAuditVolume.Invoke(new()
         ///     {
-        ///         var testAuditProfileCollectedAuditVolume = Output.Create(Oci.DataSafe.GetAuditProfileCollectedAuditVolume.InvokeAsync(new Oci.DataSafe.GetAuditProfileCollectedAuditVolumeArgs
-        ///         {
-        ///             AuditProfileId = oci_data_safe_audit_profile.Test_audit_profile.Id,
-        ///             WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
-        ///             MonthInConsiderationGreaterThan = @var.Audit_profile_collected_audit_volume_month_in_consideration_greater_than,
-        ///             MonthInConsiderationLessThan = @var.Audit_profile_collected_audit_volume_month_in_consideration_less_than,
-        ///         }));
-        ///     }
+        ///         AuditProfileId = oci_data_safe_audit_profile.Test_audit_profile.Id,
+        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
+        ///         MonthInConsiderationGreaterThan = @var.Audit_profile_collected_audit_volume_month_in_consideration_greater_than,
+        ///         MonthInConsiderationLessThan = @var.Audit_profile_collected_audit_volume_month_in_consideration_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditProfileCollectedAuditVolume = Oci.DataSafe.GetAuditProfileCollectedAuditVolume.Invoke(new()
         ///     {
-        ///         var testAuditProfileCollectedAuditVolume = Output.Create(Oci.DataSafe.GetAuditProfileCollectedAuditVolume.InvokeAsync(new Oci.DataSafe.GetAuditProfileCollectedAuditVolumeArgs
-        ///         {
-        ///             AuditProfileId = oci_data_safe_audit_profile.Test_audit_profile.Id,
-        ///             WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
-        ///             MonthInConsiderationGreaterThan = @var.Audit_profile_collected_audit_volume_month_in_consideration_greater_than,
-        ///             MonthInConsiderationLessThan = @var.Audit_profile_collected_audit_volume_month_in_consideration_less_than,
-        ///         }));
-        ///     }
+        ///         AuditProfileId = oci_data_safe_audit_profile.Test_audit_profile.Id,
+        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
+        ///         MonthInConsiderationGreaterThan = @var.Audit_profile_collected_audit_volume_month_in_consideration_greater_than,
+        ///         MonthInConsiderationLessThan = @var.Audit_profile_collected_audit_volume_month_in_consideration_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditProfileCollectedAuditVolumeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditProfileCollectedAuditVolumeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the audit.
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditProfileCollectedAuditVolumeArgs()
         {
         }
+        public static new GetAuditProfileCollectedAuditVolumeArgs Empty => new GetAuditProfileCollectedAuditVolumeArgs();
     }
 
-    public sealed class GetAuditProfileCollectedAuditVolumeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditProfileCollectedAuditVolumeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the audit.
@@ -141,6 +138,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditProfileCollectedAuditVolumeInvokeArgs()
         {
         }
+        public static new GetAuditProfileCollectedAuditVolumeInvokeArgs Empty => new GetAuditProfileCollectedAuditVolumeInvokeArgs();
     }
 
 

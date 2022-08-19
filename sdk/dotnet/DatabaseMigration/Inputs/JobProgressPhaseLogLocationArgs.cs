@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class JobProgressPhaseLogLocationArgs : Pulumi.ResourceArgs
+    public sealed class JobProgressPhaseLogLocationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the bucket containing the log file.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public JobProgressPhaseLogLocationArgs()
         {
         }
+        public static new JobProgressPhaseLogLocationArgs Empty => new JobProgressPhaseLogLocationArgs();
     }
 }

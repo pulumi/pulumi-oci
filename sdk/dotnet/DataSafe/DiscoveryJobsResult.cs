@@ -15,19 +15,15 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testDiscoveryJobsResult = new Oci.DataSafe.DiscoveryJobsResult("testDiscoveryJobsResult", new Oci.DataSafe.DiscoveryJobsResultArgs
-    ///         {
-    ///         });
-    ///     }
+    ///     var testDiscoveryJobsResult = new Oci.DataSafe.DiscoveryJobsResult("testDiscoveryJobsResult");
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -39,7 +35,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult")]
-    public partial class DiscoveryJobsResult : Pulumi.CustomResource
+    public partial class DiscoveryJobsResult : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -202,7 +198,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class DiscoveryJobsResultArgs : Pulumi.ResourceArgs
+    public sealed class DiscoveryJobsResultArgs : global::Pulumi.ResourceArgs
     {
         [Input("discoveryJobId", required: true)]
         public Input<string> DiscoveryJobId { get; set; } = null!;
@@ -210,9 +206,10 @@ namespace Pulumi.Oci.DataSafe
         public DiscoveryJobsResultArgs()
         {
         }
+        public static new DiscoveryJobsResultArgs Empty => new DiscoveryJobsResultArgs();
     }
 
-    public sealed class DiscoveryJobsResultState : Pulumi.ResourceArgs
+    public sealed class DiscoveryJobsResultState : global::Pulumi.ResourceArgs
     {
         [Input("appDefinedChildColumnKeys")]
         private InputList<string>? _appDefinedChildColumnKeys;
@@ -364,5 +361,6 @@ namespace Pulumi.Oci.DataSafe
         public DiscoveryJobsResultState()
         {
         }
+        public static new DiscoveryJobsResultState Empty => new DiscoveryJobsResultState();
     }
 }

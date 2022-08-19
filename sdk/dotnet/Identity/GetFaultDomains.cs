@@ -24,21 +24,19 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFaultDomains = Oci.Identity.GetFaultDomains.Invoke(new()
         ///     {
-        ///         var testFaultDomains = Output.Create(Oci.Identity.GetFaultDomains.InvokeAsync(new Oci.Identity.GetFaultDomainsArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Fault_domain_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Fault_domain_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,21 +57,19 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFaultDomains = Oci.Identity.GetFaultDomains.Invoke(new()
         ///     {
-        ///         var testFaultDomains = Output.Create(Oci.Identity.GetFaultDomains.InvokeAsync(new Oci.Identity.GetFaultDomainsArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Fault_domain_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Fault_domain_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetFaultDomainsArgs : Pulumi.InvokeArgs
+    public sealed class GetFaultDomainsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availibilityDomain.
@@ -108,9 +104,10 @@ namespace Pulumi.Oci.Identity
         public GetFaultDomainsArgs()
         {
         }
+        public static new GetFaultDomainsArgs Empty => new GetFaultDomainsArgs();
     }
 
-    public sealed class GetFaultDomainsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFaultDomainsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availibilityDomain.
@@ -135,6 +132,7 @@ namespace Pulumi.Oci.Identity
         public GetFaultDomainsInvokeArgs()
         {
         }
+        public static new GetFaultDomainsInvokeArgs Empty => new GetFaultDomainsInvokeArgs();
     }
 
 

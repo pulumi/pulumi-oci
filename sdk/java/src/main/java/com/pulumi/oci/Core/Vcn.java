@@ -63,6 +63,48 @@ import javax.annotation.Nullable;
  * * `oci.Core.VirtualNetwork`
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Vcn;
+ * import com.pulumi.oci.Core.VcnArgs;
+ * import com.pulumi.oci.Core.inputs.VcnByoipv6cidrDetailArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVcn = new Vcn(&#34;testVcn&#34;, VcnArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .byoipv6cidrDetails(VcnByoipv6cidrDetailArgs.builder()
+ *                 .byoipv6rangeId(oci_core_byoipv6range.test_byoipv6range().id())
+ *                 .ipv6cidrBlock(var_.vcn_byoipv6cidr_details_ipv6cidr_block())
+ *                 .build())
+ *             .cidrBlock(var_.vcn_cidr_block())
+ *             .cidrBlocks(var_.vcn_cidr_blocks())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.vcn_display_name())
+ *             .dnsLabel(var_.vcn_dns_label())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .ipv6privateCidrBlocks(var_.vcn_ipv6private_cidr_blocks())
+ *             .isIpv6enabled(var_.vcn_is_ipv6enabled())
+ *             .isOracleGuaAllocationEnabled(var_.vcn_is_oracle_gua_allocation_enabled())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

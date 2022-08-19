@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class MonitoredResourceAliasesCredentialArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourceAliasesCredentialArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) property name
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public MonitoredResourceAliasesCredentialArgs()
         {
         }
+        public static new MonitoredResourceAliasesCredentialArgs Empty => new MonitoredResourceAliasesCredentialArgs();
     }
 }

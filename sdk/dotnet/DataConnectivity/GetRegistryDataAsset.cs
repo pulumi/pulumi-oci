@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryDataAsset = Oci.DataConnectivity.GetRegistryDataAsset.Invoke(new()
         ///     {
-        ///         var testRegistryDataAsset = Output.Create(Oci.DataConnectivity.GetRegistryDataAsset.InvokeAsync(new Oci.DataConnectivity.GetRegistryDataAssetArgs
-        ///         {
-        ///             DataAssetKey = @var.Registry_data_asset_data_asset_key,
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///         }));
-        ///     }
+        ///         DataAssetKey = @var.Registry_data_asset_data_asset_key,
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryDataAsset = Oci.DataConnectivity.GetRegistryDataAsset.Invoke(new()
         ///     {
-        ///         var testRegistryDataAsset = Output.Create(Oci.DataConnectivity.GetRegistryDataAsset.InvokeAsync(new Oci.DataConnectivity.GetRegistryDataAssetArgs
-        ///         {
-        ///             DataAssetKey = @var.Registry_data_asset_data_asset_key,
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///         }));
-        ///     }
+        ///         DataAssetKey = @var.Registry_data_asset_data_asset_key,
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistryDataAssetArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryDataAssetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The data asset key.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryDataAssetArgs()
         {
         }
+        public static new GetRegistryDataAssetArgs Empty => new GetRegistryDataAssetArgs();
     }
 
-    public sealed class GetRegistryDataAssetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryDataAssetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The data asset key.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryDataAssetInvokeArgs()
         {
         }
+        public static new GetRegistryDataAssetInvokeArgs Empty => new GetRegistryDataAssetInvokeArgs();
     }
 
 

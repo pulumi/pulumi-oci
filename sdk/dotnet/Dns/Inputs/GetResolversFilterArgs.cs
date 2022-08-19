@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class GetResolversFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetResolversFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public GetResolversFilterInputArgs()
         {
         }
+        public static new GetResolversFilterInputArgs Empty => new GetResolversFilterInputArgs();
     }
 }

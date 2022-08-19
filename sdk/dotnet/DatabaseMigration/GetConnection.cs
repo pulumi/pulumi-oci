@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnection = Oci.DatabaseMigration.GetConnection.Invoke(new()
         ///     {
-        ///         var testConnection = Output.Create(Oci.DatabaseMigration.GetConnection.InvokeAsync(new Oci.DatabaseMigration.GetConnectionArgs
-        ///         {
-        ///             ConnectionId = oci_database_migration_connection.Test_connection.Id,
-        ///         }));
-        ///     }
+        ///         ConnectionId = oci_database_migration_connection.Test_connection.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnection = Oci.DatabaseMigration.GetConnection.Invoke(new()
         ///     {
-        ///         var testConnection = Output.Create(Oci.DatabaseMigration.GetConnection.InvokeAsync(new Oci.DatabaseMigration.GetConnectionArgs
-        ///         {
-        ///             ConnectionId = oci_database_migration_connection.Test_connection.Id,
-        ///         }));
-        ///     }
+        ///         ConnectionId = oci_database_migration_connection.Test_connection.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetConnectionArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the database connection
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetConnectionArgs()
         {
         }
+        public static new GetConnectionArgs Empty => new GetConnectionArgs();
     }
 
-    public sealed class GetConnectionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the database connection
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetConnectionInvokeArgs()
         {
         }
+        public static new GetConnectionInvokeArgs Empty => new GetConnectionInvokeArgs();
     }
 
 

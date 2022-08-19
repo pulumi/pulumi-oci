@@ -21,22 +21,20 @@ namespace Pulumi.Oci.Blockchain
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBlockchainPlatforms = Oci.Blockchain.GetBlockchainPlatforms.Invoke(new()
         ///     {
-        ///         var testBlockchainPlatforms = Output.Create(Oci.Blockchain.GetBlockchainPlatforms.InvokeAsync(new Oci.Blockchain.GetBlockchainPlatformsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Blockchain_platform_display_name,
-        ///             State = @var.Blockchain_platform_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Blockchain_platform_display_name,
+        ///         State = @var.Blockchain_platform_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.Blockchain
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBlockchainPlatforms = Oci.Blockchain.GetBlockchainPlatforms.Invoke(new()
         ///     {
-        ///         var testBlockchainPlatforms = Output.Create(Oci.Blockchain.GetBlockchainPlatforms.InvokeAsync(new Oci.Blockchain.GetBlockchainPlatformsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Blockchain_platform_display_name,
-        ///             State = @var.Blockchain_platform_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Blockchain_platform_display_name,
+        ///         State = @var.Blockchain_platform_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Blockchain
     }
 
 
-    public sealed class GetBlockchainPlatformsArgs : Pulumi.InvokeArgs
+    public sealed class GetBlockchainPlatformsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.Blockchain
         public GetBlockchainPlatformsArgs()
         {
         }
+        public static new GetBlockchainPlatformsArgs Empty => new GetBlockchainPlatformsArgs();
     }
 
-    public sealed class GetBlockchainPlatformsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBlockchainPlatformsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Blockchain
         public GetBlockchainPlatformsInvokeArgs()
         {
         }
+        public static new GetBlockchainPlatformsInvokeArgs Empty => new GetBlockchainPlatformsInvokeArgs();
     }
 
 

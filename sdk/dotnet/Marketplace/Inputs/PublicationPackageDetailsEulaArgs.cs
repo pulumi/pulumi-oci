@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class PublicationPackageDetailsEulaArgs : Pulumi.ResourceArgs
+    public sealed class PublicationPackageDetailsEulaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The end user license agreement's type.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public PublicationPackageDetailsEulaArgs()
         {
         }
+        public static new PublicationPackageDetailsEulaArgs Empty => new PublicationPackageDetailsEulaArgs();
     }
 }

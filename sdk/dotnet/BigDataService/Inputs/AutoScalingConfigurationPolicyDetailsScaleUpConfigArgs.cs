@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs Empty => new AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs();
     }
 }

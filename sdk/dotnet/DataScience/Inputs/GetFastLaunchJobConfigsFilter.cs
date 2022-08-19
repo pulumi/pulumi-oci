@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class GetFastLaunchJobConfigsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetFastLaunchJobConfigsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the fast launch job config
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public GetFastLaunchJobConfigsFilterArgs()
         {
         }
+        public static new GetFastLaunchJobConfigsFilterArgs Empty => new GetFastLaunchJobConfigsFilterArgs();
     }
 }

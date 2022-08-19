@@ -22,23 +22,21 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryDiffs = Oci.DevOps.GetRepositoryDiffs.Invoke(new()
         ///     {
-        ///         var testRepositoryDiffs = Output.Create(Oci.DevOps.GetRepositoryDiffs.InvokeAsync(new Oci.DevOps.GetRepositoryDiffsArgs
-        ///         {
-        ///             BaseVersion = @var.Repository_diff_base_version,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             TargetVersion = @var.Repository_diff_target_version,
-        ///             IsComparisonFromMergeBase = @var.Repository_diff_is_comparison_from_merge_base,
-        ///         }));
-        ///     }
+        ///         BaseVersion = @var.Repository_diff_base_version,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         TargetVersion = @var.Repository_diff_target_version,
+        ///         IsComparisonFromMergeBase = @var.Repository_diff_is_comparison_from_merge_base,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryDiffs = Oci.DevOps.GetRepositoryDiffs.Invoke(new()
         ///     {
-        ///         var testRepositoryDiffs = Output.Create(Oci.DevOps.GetRepositoryDiffs.InvokeAsync(new Oci.DevOps.GetRepositoryDiffsArgs
-        ///         {
-        ///             BaseVersion = @var.Repository_diff_base_version,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             TargetVersion = @var.Repository_diff_target_version,
-        ///             IsComparisonFromMergeBase = @var.Repository_diff_is_comparison_from_merge_base,
-        ///         }));
-        ///     }
+        ///         BaseVersion = @var.Repository_diff_base_version,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         TargetVersion = @var.Repository_diff_target_version,
+        ///         IsComparisonFromMergeBase = @var.Repository_diff_is_comparison_from_merge_base,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryDiffsArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryDiffsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The commit or reference name to compare changes against.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryDiffsArgs()
         {
         }
+        public static new GetRepositoryDiffsArgs Empty => new GetRepositoryDiffsArgs();
     }
 
-    public sealed class GetRepositoryDiffsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryDiffsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The commit or reference name to compare changes against.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryDiffsInvokeArgs()
         {
         }
+        public static new GetRepositoryDiffsInvokeArgs Empty => new GetRepositoryDiffsInvokeArgs();
     }
 
 

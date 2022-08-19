@@ -17,27 +17,25 @@ namespace Pulumi.Oci.DataCatalog
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testConnection = new Oci.DataCatalog.Connection("testConnection", new()
     ///     {
-    ///         var testConnection = new Oci.DataCatalog.Connection("testConnection", new Oci.DataCatalog.ConnectionArgs
-    ///         {
-    ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-    ///             DataAssetKey = @var.Connection_data_asset_key,
-    ///             DisplayName = @var.Connection_display_name,
-    ///             Properties = @var.Connection_properties,
-    ///             TypeKey = @var.Connection_type_key,
-    ///             Description = @var.Connection_description,
-    ///             EncProperties = @var.Connection_enc_properties,
-    ///             IsDefault = @var.Connection_is_default,
-    ///         });
-    ///     }
+    ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+    ///         DataAssetKey = @var.Connection_data_asset_key,
+    ///         DisplayName = @var.Connection_display_name,
+    ///         Properties = @var.Connection_properties,
+    ///         TypeKey = @var.Connection_type_key,
+    ///         Description = @var.Connection_description,
+    ///         EncProperties = @var.Connection_enc_properties,
+    ///         IsDefault = @var.Connection_is_default,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.DataCatalog
     /// ```
     /// </summary>
     [OciResourceType("oci:DataCatalog/connection:Connection")]
-    public partial class Connection : Pulumi.CustomResource
+    public partial class Connection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -197,7 +195,7 @@ namespace Pulumi.Oci.DataCatalog
         }
     }
 
-    public sealed class ConnectionArgs : Pulumi.ResourceArgs
+    public sealed class ConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -262,9 +260,10 @@ namespace Pulumi.Oci.DataCatalog
         public ConnectionArgs()
         {
         }
+        public static new ConnectionArgs Empty => new ConnectionArgs();
     }
 
-    public sealed class ConnectionState : Pulumi.ResourceArgs
+    public sealed class ConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -383,5 +382,6 @@ namespace Pulumi.Oci.DataCatalog
         public ConnectionState()
         {
         }
+        public static new ConnectionState Empty => new ConnectionState();
     }
 }

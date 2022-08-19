@@ -17,21 +17,19 @@ namespace Pulumi.Oci.Opsi
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOperationsInsightsWarehouseDownloadWarehouseWallet = new Oci.Opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet", new()
     ///     {
-    ///         var testOperationsInsightsWarehouseDownloadWarehouseWallet = new Oci.Opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet", new Oci.Opsi.OperationsInsightsWarehouseDownloadWarehouseWalletArgs
-    ///         {
-    ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-    ///             OperationsInsightsWarehouseWalletPassword = @var.Operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password,
-    ///         });
-    ///     }
+    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///         OperationsInsightsWarehouseWalletPassword = @var.Operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet")]
-    public partial class OperationsInsightsWarehouseDownloadWarehouseWallet : Pulumi.CustomResource
+    public partial class OperationsInsightsWarehouseDownloadWarehouseWallet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique Operations Insights Warehouse identifier
@@ -101,7 +99,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class OperationsInsightsWarehouseDownloadWarehouseWalletArgs : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsWarehouseDownloadWarehouseWalletArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique Operations Insights Warehouse identifier
@@ -118,9 +116,10 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsWarehouseDownloadWarehouseWalletArgs()
         {
         }
+        public static new OperationsInsightsWarehouseDownloadWarehouseWalletArgs Empty => new OperationsInsightsWarehouseDownloadWarehouseWalletArgs();
     }
 
-    public sealed class OperationsInsightsWarehouseDownloadWarehouseWalletState : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsWarehouseDownloadWarehouseWalletState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique Operations Insights Warehouse identifier
@@ -137,5 +136,6 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsWarehouseDownloadWarehouseWalletState()
         {
         }
+        public static new OperationsInsightsWarehouseDownloadWarehouseWalletState Empty => new OperationsInsightsWarehouseDownloadWarehouseWalletState();
     }
 }

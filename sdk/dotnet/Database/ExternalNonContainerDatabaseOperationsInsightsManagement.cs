@@ -18,22 +18,20 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExternalNonContainerDatabaseOperationsInsightsManagement = new Oci.Database.ExternalNonContainerDatabaseOperationsInsightsManagement("testExternalNonContainerDatabaseOperationsInsightsManagement", new()
     ///     {
-    ///         var testExternalNonContainerDatabaseOperationsInsightsManagement = new Oci.Database.ExternalNonContainerDatabaseOperationsInsightsManagement("testExternalNonContainerDatabaseOperationsInsightsManagement", new Oci.Database.ExternalNonContainerDatabaseOperationsInsightsManagementArgs
-    ///         {
-    ///             ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
-    ///             ExternalNonContainerDatabaseId = oci_database_external_non_container_database.Test_external_non_container_database.Id,
-    ///             EnableOperationsInsights = true,
-    ///         });
-    ///     }
+    ///         ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
+    ///         ExternalNonContainerDatabaseId = oci_database_external_non_container_database.Test_external_non_container_database.Id,
+    ///         EnableOperationsInsights = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement")]
-    public partial class ExternalNonContainerDatabaseOperationsInsightsManagement : Pulumi.CustomResource
+    public partial class ExternalNonContainerDatabaseOperationsInsightsManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
@@ -105,7 +103,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExternalNonContainerDatabaseOperationsInsightsManagementArgs : Pulumi.ResourceArgs
+    public sealed class ExternalNonContainerDatabaseOperationsInsightsManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
@@ -128,9 +126,10 @@ namespace Pulumi.Oci.Database
         public ExternalNonContainerDatabaseOperationsInsightsManagementArgs()
         {
         }
+        public static new ExternalNonContainerDatabaseOperationsInsightsManagementArgs Empty => new ExternalNonContainerDatabaseOperationsInsightsManagementArgs();
     }
 
-    public sealed class ExternalNonContainerDatabaseOperationsInsightsManagementState : Pulumi.ResourceArgs
+    public sealed class ExternalNonContainerDatabaseOperationsInsightsManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
@@ -153,5 +152,6 @@ namespace Pulumi.Oci.Database
         public ExternalNonContainerDatabaseOperationsInsightsManagementState()
         {
         }
+        public static new ExternalNonContainerDatabaseOperationsInsightsManagementState Empty => new ExternalNonContainerDatabaseOperationsInsightsManagementState();
     }
 }

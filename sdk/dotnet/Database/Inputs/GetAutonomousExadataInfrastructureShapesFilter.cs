@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetAutonomousExadataInfrastructureShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousExadataInfrastructureShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the shape used for the Autonomous Exadata Infrastructure.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetAutonomousExadataInfrastructureShapesFilterArgs()
         {
         }
+        public static new GetAutonomousExadataInfrastructureShapesFilterArgs Empty => new GetAutonomousExadataInfrastructureShapesFilterArgs();
     }
 }

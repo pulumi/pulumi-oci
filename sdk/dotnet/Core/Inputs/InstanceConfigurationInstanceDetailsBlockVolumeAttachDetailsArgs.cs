@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The device name.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs Empty => new InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs();
     }
 }

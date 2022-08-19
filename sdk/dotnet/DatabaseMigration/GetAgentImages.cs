@@ -21,17 +21,15 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testAgentImages = Output.Create(Oci.DatabaseMigration.GetAgentImages.InvokeAsync());
-        ///     }
+        ///     var testAgentImages = Oci.DatabaseMigration.GetAgentImages.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -49,17 +47,15 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testAgentImages = Output.Create(Oci.DatabaseMigration.GetAgentImages.InvokeAsync());
-        ///     }
+        ///     var testAgentImages = Oci.DatabaseMigration.GetAgentImages.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -69,7 +65,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetAgentImagesArgs : Pulumi.InvokeArgs
+    public sealed class GetAgentImagesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetAgentImagesFilterArgs>? _filters;
@@ -82,9 +78,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetAgentImagesArgs()
         {
         }
+        public static new GetAgentImagesArgs Empty => new GetAgentImagesArgs();
     }
 
-    public sealed class GetAgentImagesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAgentImagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetAgentImagesFilterInputArgs>? _filters;
@@ -97,6 +94,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetAgentImagesInvokeArgs()
         {
         }
+        public static new GetAgentImagesInvokeArgs Empty => new GetAgentImagesInvokeArgs();
     }
 
 

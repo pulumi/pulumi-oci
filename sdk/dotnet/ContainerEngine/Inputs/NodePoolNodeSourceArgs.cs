@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolNodeSourceArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolNodeSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the image used to boot the node.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolNodeSourceArgs()
         {
         }
+        public static new NodePoolNodeSourceArgs Empty => new NodePoolNodeSourceArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OperatorAccessControl.Inputs
 {
 
-    public sealed class GetControlsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetControlsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.OperatorAccessControl.Inputs
         public GetControlsFilterArgs()
         {
         }
+        public static new GetControlsFilterArgs Empty => new GetControlsFilterArgs();
     }
 }

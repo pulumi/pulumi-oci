@@ -20,22 +20,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCompartment = Oci.Identity.GetAvailabilityDomain.Invoke(new()
         ///     {
-        ///         var testCompartment = Output.Create(Oci.Identity.GetAvailabilityDomain.InvokeAsync(new Oci.Identity.GetAvailabilityDomainArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Id = @var.Id,
-        ///             AdNumber = @var.Ad_number,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Id = @var.Id,
+        ///         AdNumber = @var.Ad_number,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,22 +50,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCompartment = Oci.Identity.GetAvailabilityDomain.Invoke(new()
         ///     {
-        ///         var testCompartment = Output.Create(Oci.Identity.GetAvailabilityDomain.InvokeAsync(new Oci.Identity.GetAvailabilityDomainArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Id = @var.Id,
-        ///             AdNumber = @var.Ad_number,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Id = @var.Id,
+        ///         AdNumber = @var.Ad_number,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetAvailabilityDomainArgs : Pulumi.InvokeArgs
+    public sealed class GetAvailabilityDomainArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Identity
         public GetAvailabilityDomainArgs()
         {
         }
+        public static new GetAvailabilityDomainArgs Empty => new GetAvailabilityDomainArgs();
     }
 
-    public sealed class GetAvailabilityDomainInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAvailabilityDomainInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.
@@ -125,6 +122,7 @@ namespace Pulumi.Oci.Identity
         public GetAvailabilityDomainInvokeArgs()
         {
         }
+        public static new GetAvailabilityDomainInvokeArgs Empty => new GetAvailabilityDomainInvokeArgs();
     }
 
 

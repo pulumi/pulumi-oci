@@ -17,31 +17,29 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAiPrivateEndpoint = new Oci.AiAnomalyDetection.AiPrivateEndpoint("testAiPrivateEndpoint", new()
     ///     {
-    ///         var testAiPrivateEndpoint = new Oci.AiAnomalyDetection.AiPrivateEndpoint("testAiPrivateEndpoint", new Oci.AiAnomalyDetection.AiPrivateEndpointArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DnsZones = @var.Ai_private_endpoint_dns_zones,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DnsZones = @var.Ai_private_endpoint_dns_zones,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Ai_private_endpoint_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Ai_private_endpoint_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// ```
     /// </summary>
     [OciResourceType("oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint")]
-    public partial class AiPrivateEndpoint : Pulumi.CustomResource
+    public partial class AiPrivateEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The list of dataAssets using the private reverse connection endpoint.
@@ -171,7 +169,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         }
     }
 
-    public sealed class AiPrivateEndpointArgs : Pulumi.ResourceArgs
+    public sealed class AiPrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment identifier.
@@ -230,9 +228,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public AiPrivateEndpointArgs()
         {
         }
+        public static new AiPrivateEndpointArgs Empty => new AiPrivateEndpointArgs();
     }
 
-    public sealed class AiPrivateEndpointState : Pulumi.ResourceArgs
+    public sealed class AiPrivateEndpointState : global::Pulumi.ResourceArgs
     {
         [Input("attachedDataAssets")]
         private InputList<string>? _attachedDataAssets;
@@ -339,5 +338,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public AiPrivateEndpointState()
         {
         }
+        public static new AiPrivateEndpointState Empty => new AiPrivateEndpointState();
     }
 }

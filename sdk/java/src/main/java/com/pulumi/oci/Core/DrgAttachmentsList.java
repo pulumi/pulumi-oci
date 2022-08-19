@@ -23,6 +23,36 @@ import javax.annotation.Nullable;
  * Returns a complete list of DRG attachments that belong to a particular DRG.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.DrgAttachmentsList;
+ * import com.pulumi.oci.Core.DrgAttachmentsListArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDrgAttachmentsList = new DrgAttachmentsList(&#34;testDrgAttachmentsList&#34;, DrgAttachmentsListArgs.builder()        
+ *             .drgId(oci_core_drg.test_drg().id())
+ *             .attachmentType(var_.drg_attachments_list_attachment_type())
+ *             .isCrossTenancy(var_.drg_attachments_list_is_cross_tenancy())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

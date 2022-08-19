@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNotebookSessionShapes = Oci.DataScience.GetNotebookSessionShapes.Invoke(new()
         ///     {
-        ///         var testNotebookSessionShapes = Output.Create(Oci.DataScience.GetNotebookSessionShapes.InvokeAsync(new Oci.DataScience.GetNotebookSessionShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNotebookSessionShapes = Oci.DataScience.GetNotebookSessionShapes.Invoke(new()
         ///     {
-        ///         var testNotebookSessionShapes = Output.Create(Oci.DataScience.GetNotebookSessionShapes.InvokeAsync(new Oci.DataScience.GetNotebookSessionShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetNotebookSessionShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetNotebookSessionShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataScience
         public GetNotebookSessionShapesArgs()
         {
         }
+        public static new GetNotebookSessionShapesArgs Empty => new GetNotebookSessionShapesArgs();
     }
 
-    public sealed class GetNotebookSessionShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNotebookSessionShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.DataScience
         public GetNotebookSessionShapesInvokeArgs()
         {
         }
+        public static new GetNotebookSessionShapesInvokeArgs Empty => new GetNotebookSessionShapesInvokeArgs();
     }
 
 

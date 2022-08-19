@@ -26,6 +26,34 @@ public final class VaultFunctions {
      * Gets information about the specified secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretResult> getSecret(GetSecretArgs args) {
@@ -37,6 +65,34 @@ public final class VaultFunctions {
      * Gets information about the specified secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretResult> getSecretPlain(GetSecretPlainArgs args) {
@@ -48,6 +104,34 @@ public final class VaultFunctions {
      * Gets information about the specified secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretResult> getSecret(GetSecretArgs args, InvokeOptions options) {
@@ -59,6 +143,34 @@ public final class VaultFunctions {
      * Gets information about the specified secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecret = VaultFunctions.getSecret(GetSecretArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretResult> getSecretPlain(GetSecretPlainArgs args, InvokeOptions options) {
@@ -70,6 +182,35 @@ public final class VaultFunctions {
      * Gets information about the specified version of a secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretVersionNumber(var_.secret_version_secret_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretVersionResult> getSecretVersion(GetSecretVersionArgs args) {
@@ -81,6 +222,35 @@ public final class VaultFunctions {
      * Gets information about the specified version of a secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretVersionNumber(var_.secret_version_secret_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretVersionResult> getSecretVersionPlain(GetSecretVersionPlainArgs args) {
@@ -92,6 +262,35 @@ public final class VaultFunctions {
      * Gets information about the specified version of a secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretVersionNumber(var_.secret_version_secret_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretVersionResult> getSecretVersion(GetSecretVersionArgs args, InvokeOptions options) {
@@ -103,6 +302,35 @@ public final class VaultFunctions {
      * Gets information about the specified version of a secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretVersion = VaultFunctions.getSecretVersion(GetSecretVersionArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretVersionNumber(var_.secret_version_secret_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretVersionResult> getSecretVersionPlain(GetSecretVersionPlainArgs args, InvokeOptions options) {
@@ -114,6 +342,37 @@ public final class VaultFunctions {
      * Lists all secrets in the specified vault and compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecrets = VaultFunctions.getSecrets(GetSecretsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.secret_name())
+     *             .state(var_.secret_state())
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretsResult> getSecrets(GetSecretsArgs args) {
@@ -125,6 +384,37 @@ public final class VaultFunctions {
      * Lists all secrets in the specified vault and compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecrets = VaultFunctions.getSecrets(GetSecretsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.secret_name())
+     *             .state(var_.secret_state())
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretsResult> getSecretsPlain(GetSecretsPlainArgs args) {
@@ -136,6 +426,37 @@ public final class VaultFunctions {
      * Lists all secrets in the specified vault and compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecrets = VaultFunctions.getSecrets(GetSecretsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.secret_name())
+     *             .state(var_.secret_state())
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretsResult> getSecrets(GetSecretsArgs args, InvokeOptions options) {
@@ -147,6 +468,37 @@ public final class VaultFunctions {
      * Lists all secrets in the specified vault and compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Vault.VaultFunctions;
+     * import com.pulumi.oci.Vault.inputs.GetSecretsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecrets = VaultFunctions.getSecrets(GetSecretsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.secret_name())
+     *             .state(var_.secret_state())
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretsResult> getSecretsPlain(GetSecretsPlainArgs args, InvokeOptions options) {

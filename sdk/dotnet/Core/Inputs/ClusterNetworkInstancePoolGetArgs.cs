@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class ClusterNetworkInstancePoolGetArgs : Pulumi.ResourceArgs
+    public sealed class ClusterNetworkInstancePoolGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -105,5 +105,6 @@ namespace Pulumi.Oci.Core.Inputs
         public ClusterNetworkInstancePoolGetArgs()
         {
         }
+        public static new ClusterNetworkInstancePoolGetArgs Empty => new ClusterNetworkInstancePoolGetArgs();
     }
 }

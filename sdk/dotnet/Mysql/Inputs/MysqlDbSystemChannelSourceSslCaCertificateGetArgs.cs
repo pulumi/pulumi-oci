@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemChannelSourceSslCaCertificateGetArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemChannelSourceSslCaCertificateGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of CA certificate.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemChannelSourceSslCaCertificateGetArgs()
         {
         }
+        public static new MysqlDbSystemChannelSourceSslCaCertificateGetArgs Empty => new MysqlDbSystemChannelSourceSslCaCertificateGetArgs();
     }
 }

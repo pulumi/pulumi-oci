@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opensearch.Inputs
 {
 
-    public sealed class GetOpensearchVersionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetOpensearchVersionsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Opensearch.Inputs
         public GetOpensearchVersionsFilterArgs()
         {
         }
+        public static new GetOpensearchVersionsFilterArgs Empty => new GetOpensearchVersionsFilterArgs();
     }
 }

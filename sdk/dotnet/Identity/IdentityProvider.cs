@@ -32,34 +32,32 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIdentityProvider = new Oci.Identity.IdentityProvider("testIdentityProvider", new()
     ///     {
-    ///         var testIdentityProvider = new Oci.Identity.IdentityProvider("testIdentityProvider", new Oci.Identity.IdentityProviderArgs
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         Description = @var.Identity_provider_description,
+    ///         Metadata = @var.Identity_provider_metadata,
+    ///         MetadataUrl = @var.Identity_provider_metadata_url,
+    ///         ProductType = @var.Identity_provider_product_type,
+    ///         Protocol = @var.Identity_provider_protocol,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             Description = @var.Identity_provider_description,
-    ///             Metadata = @var.Identity_provider_metadata,
-    ///             MetadataUrl = @var.Identity_provider_metadata_url,
-    ///             ProductType = @var.Identity_provider_product_type,
-    ///             Protocol = @var.Identity_provider_protocol,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformAttributes = @var.Identity_provider_freeform_attributes,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformAttributes = @var.Identity_provider_freeform_attributes,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -71,7 +69,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/identityProvider:IdentityProvider")]
-    public partial class IdentityProvider : Pulumi.CustomResource
+    public partial class IdentityProvider : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of your tenancy.
@@ -207,7 +205,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class IdentityProviderArgs : Pulumi.ResourceArgs
+    public sealed class IdentityProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of your tenancy.
@@ -290,9 +288,10 @@ namespace Pulumi.Oci.Identity
         public IdentityProviderArgs()
         {
         }
+        public static new IdentityProviderArgs Empty => new IdentityProviderArgs();
     }
 
-    public sealed class IdentityProviderState : Pulumi.ResourceArgs
+    public sealed class IdentityProviderState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of your tenancy.
@@ -405,5 +404,6 @@ namespace Pulumi.Oci.Identity
         public IdentityProviderState()
         {
         }
+        public static new IdentityProviderState Empty => new IdentityProviderState();
     }
 }

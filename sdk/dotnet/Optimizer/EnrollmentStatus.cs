@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Optimizer
     /// ```
     /// </summary>
     [OciResourceType("oci:Optimizer/enrollmentStatus:EnrollmentStatus")]
-    public partial class EnrollmentStatus : Pulumi.CustomResource
+    public partial class EnrollmentStatus : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -111,7 +111,7 @@ namespace Pulumi.Oci.Optimizer
         }
     }
 
-    public sealed class EnrollmentStatusArgs : Pulumi.ResourceArgs
+    public sealed class EnrollmentStatusArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique OCID associated with the enrollment status.
@@ -128,9 +128,10 @@ namespace Pulumi.Oci.Optimizer
         public EnrollmentStatusArgs()
         {
         }
+        public static new EnrollmentStatusArgs Empty => new EnrollmentStatusArgs();
     }
 
-    public sealed class EnrollmentStatusState : Pulumi.ResourceArgs
+    public sealed class EnrollmentStatusState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -177,5 +178,6 @@ namespace Pulumi.Oci.Optimizer
         public EnrollmentStatusState()
         {
         }
+        public static new EnrollmentStatusState Empty => new EnrollmentStatusState();
     }
 }

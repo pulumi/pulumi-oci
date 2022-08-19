@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRequestPoliciesAuthenticationGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRequestPoliciesAuthenticationGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("audiences")]
         private InputList<string>? _audiences;
@@ -99,5 +99,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRequestPoliciesAuthenticationGetArgs()
         {
         }
+        public static new DeploymentSpecificationRequestPoliciesAuthenticationGetArgs Empty => new DeploymentSpecificationRequestPoliciesAuthenticationGetArgs();
     }
 }

@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbServer = Oci.Database.GetDbServer.Invoke(new()
         ///     {
-        ///         var testDbServer = Output.Create(Oci.Database.GetDbServer.InvokeAsync(new Oci.Database.GetDbServerArgs
-        ///         {
-        ///             DbServerId = oci_database_db_server.Test_db_server.Id,
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///         }));
-        ///     }
+        ///         DbServerId = oci_database_db_server.Test_db_server.Id,
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbServer = Oci.Database.GetDbServer.Invoke(new()
         ///     {
-        ///         var testDbServer = Output.Create(Oci.Database.GetDbServer.InvokeAsync(new Oci.Database.GetDbServerArgs
-        ///         {
-        ///             DbServerId = oci_database_db_server.Test_db_server.Id,
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///         }));
-        ///     }
+        ///         DbServerId = oci_database_db_server.Test_db_server.Id,
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbServerArgs : Pulumi.InvokeArgs
+    public sealed class GetDbServerArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB server [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDbServerArgs()
         {
         }
+        public static new GetDbServerArgs Empty => new GetDbServerArgs();
     }
 
-    public sealed class GetDbServerInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbServerInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB server [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Database
         public GetDbServerInvokeArgs()
         {
         }
+        public static new GetDbServerInvokeArgs Empty => new GetDbServerInvokeArgs();
     }
 
 

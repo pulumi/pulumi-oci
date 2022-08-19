@@ -29,6 +29,34 @@ public final class FunctionsFunctions {
      * Retrieves an application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(oci_functions_application.test_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args) {
@@ -40,6 +68,34 @@ public final class FunctionsFunctions {
      * Retrieves an application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(oci_functions_application.test_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args) {
@@ -51,6 +107,34 @@ public final class FunctionsFunctions {
      * Retrieves an application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(oci_functions_application.test_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args, InvokeOptions options) {
@@ -62,6 +146,34 @@ public final class FunctionsFunctions {
      * Retrieves an application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(oci_functions_application.test_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args, InvokeOptions options) {
@@ -73,6 +185,37 @@ public final class FunctionsFunctions {
      * Lists applications for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.application_display_name())
+     *             .id(var_.application_id())
+     *             .state(var_.application_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args) {
@@ -84,6 +227,37 @@ public final class FunctionsFunctions {
      * Lists applications for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.application_display_name())
+     *             .id(var_.application_id())
+     *             .state(var_.application_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args) {
@@ -95,6 +269,37 @@ public final class FunctionsFunctions {
      * Lists applications for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.application_display_name())
+     *             .id(var_.application_id())
+     *             .state(var_.application_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args, InvokeOptions options) {
@@ -106,6 +311,37 @@ public final class FunctionsFunctions {
      * Lists applications for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.application_display_name())
+     *             .id(var_.application_id())
+     *             .state(var_.application_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args, InvokeOptions options) {
@@ -117,6 +353,34 @@ public final class FunctionsFunctions {
      * Retrieves a function.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
+     *             .functionId(oci_functions_function.test_function().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFunctionResult> getFunction(GetFunctionArgs args) {
@@ -128,6 +392,34 @@ public final class FunctionsFunctions {
      * Retrieves a function.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
+     *             .functionId(oci_functions_function.test_function().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFunctionResult> getFunctionPlain(GetFunctionPlainArgs args) {
@@ -139,6 +431,34 @@ public final class FunctionsFunctions {
      * Retrieves a function.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
+     *             .functionId(oci_functions_function.test_function().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFunctionResult> getFunction(GetFunctionArgs args, InvokeOptions options) {
@@ -150,6 +470,34 @@ public final class FunctionsFunctions {
      * Retrieves a function.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
+     *             .functionId(oci_functions_function.test_function().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFunctionResult> getFunctionPlain(GetFunctionPlainArgs args, InvokeOptions options) {
@@ -161,6 +509,37 @@ public final class FunctionsFunctions {
      * Lists functions for an application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
+     *             .applicationId(oci_functions_application.test_application().id())
+     *             .displayName(var_.function_display_name())
+     *             .id(var_.function_id())
+     *             .state(var_.function_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFunctionsResult> getFunctions(GetFunctionsArgs args) {
@@ -172,6 +551,37 @@ public final class FunctionsFunctions {
      * Lists functions for an application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
+     *             .applicationId(oci_functions_application.test_application().id())
+     *             .displayName(var_.function_display_name())
+     *             .id(var_.function_id())
+     *             .state(var_.function_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFunctionsResult> getFunctionsPlain(GetFunctionsPlainArgs args) {
@@ -183,6 +593,37 @@ public final class FunctionsFunctions {
      * Lists functions for an application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
+     *             .applicationId(oci_functions_application.test_application().id())
+     *             .displayName(var_.function_display_name())
+     *             .id(var_.function_id())
+     *             .state(var_.function_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFunctionsResult> getFunctions(GetFunctionsArgs args, InvokeOptions options) {
@@ -194,6 +635,37 @@ public final class FunctionsFunctions {
      * Lists functions for an application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Functions.FunctionsFunctions;
+     * import com.pulumi.oci.Functions.inputs.GetFunctionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
+     *             .applicationId(oci_functions_application.test_application().id())
+     *             .displayName(var_.function_display_name())
+     *             .id(var_.function_id())
+     *             .state(var_.function_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFunctionsResult> getFunctionsPlain(GetFunctionsPlainArgs args, InvokeOptions options) {

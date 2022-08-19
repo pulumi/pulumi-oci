@@ -25,23 +25,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRouteTables = Oci.Core.GetRouteTables.Invoke(new()
         ///     {
-        ///         var testRouteTables = Output.Create(Oci.Core.GetRouteTables.InvokeAsync(new Oci.Core.GetRouteTablesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Route_table_display_name,
-        ///             State = @var.Route_table_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Route_table_display_name,
+        ///         State = @var.Route_table_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,23 +61,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRouteTables = Oci.Core.GetRouteTables.Invoke(new()
         ///     {
-        ///         var testRouteTables = Output.Create(Oci.Core.GetRouteTables.InvokeAsync(new Oci.Core.GetRouteTablesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Route_table_display_name,
-        ///             State = @var.Route_table_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Route_table_display_name,
+        ///         State = @var.Route_table_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetRouteTablesArgs : Pulumi.InvokeArgs
+    public sealed class GetRouteTablesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Core
         public GetRouteTablesArgs()
         {
         }
+        public static new GetRouteTablesArgs Empty => new GetRouteTablesArgs();
     }
 
-    public sealed class GetRouteTablesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRouteTablesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -165,6 +162,7 @@ namespace Pulumi.Oci.Core
         public GetRouteTablesInvokeArgs()
         {
         }
+        public static new GetRouteTablesInvokeArgs Empty => new GetRouteTablesInvokeArgs();
     }
 
 

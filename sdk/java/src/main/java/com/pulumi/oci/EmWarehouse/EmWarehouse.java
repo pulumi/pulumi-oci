@@ -21,6 +21,39 @@ import javax.annotation.Nullable;
  * Creates a new EmWarehouse.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.EmWarehouse.EmWarehouse;
+ * import com.pulumi.oci.EmWarehouse.EmWarehouseArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testEmWarehouse = new EmWarehouse(&#34;testEmWarehouse&#34;, EmWarehouseArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .emBridgeId(oci_em_warehouse_em_bridge.test_em_bridge().id())
+ *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.em_warehouse_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

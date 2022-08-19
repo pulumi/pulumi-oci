@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityZone = Oci.CloudGuard.GetSecurityZone.Invoke(new()
         ///     {
-        ///         var testSecurityZone = Output.Create(Oci.CloudGuard.GetSecurityZone.InvokeAsync(new Oci.CloudGuard.GetSecurityZoneArgs
-        ///         {
-        ///             SecurityZoneId = oci_cloud_guard_security_zone.Test_security_zone.Id,
-        ///         }));
-        ///     }
+        ///         SecurityZoneId = oci_cloud_guard_security_zone.Test_security_zone.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityZone = Oci.CloudGuard.GetSecurityZone.Invoke(new()
         ///     {
-        ///         var testSecurityZone = Output.Create(Oci.CloudGuard.GetSecurityZone.InvokeAsync(new Oci.CloudGuard.GetSecurityZoneArgs
-        ///         {
-        ///             SecurityZoneId = oci_cloud_guard_security_zone.Test_security_zone.Id,
-        ///         }));
-        ///     }
+        ///         SecurityZoneId = oci_cloud_guard_security_zone.Test_security_zone.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetSecurityZoneArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityZoneArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the security zone (`SecurityZone`)
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetSecurityZoneArgs()
         {
         }
+        public static new GetSecurityZoneArgs Empty => new GetSecurityZoneArgs();
     }
 
-    public sealed class GetSecurityZoneInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityZoneInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the security zone (`SecurityZone`)
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetSecurityZoneInvokeArgs()
         {
         }
+        public static new GetSecurityZoneInvokeArgs Empty => new GetSecurityZoneInvokeArgs();
     }
 
 

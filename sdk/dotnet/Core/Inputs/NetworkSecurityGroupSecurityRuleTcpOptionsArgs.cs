@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class NetworkSecurityGroupSecurityRuleTcpOptionsArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityGroupSecurityRuleTcpOptionsArgs : global::Pulumi.ResourceArgs
     {
         [Input("destinationPortRange")]
         public Input<Inputs.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs>? DestinationPortRange { get; set; }
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public NetworkSecurityGroupSecurityRuleTcpOptionsArgs()
         {
         }
+        public static new NetworkSecurityGroupSecurityRuleTcpOptionsArgs Empty => new NetworkSecurityGroupSecurityRuleTcpOptionsArgs();
     }
 }

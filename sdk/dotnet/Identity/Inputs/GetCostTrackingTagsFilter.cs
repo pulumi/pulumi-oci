@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetCostTrackingTagsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetCostTrackingTagsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
@@ -36,5 +36,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetCostTrackingTagsFilterArgs()
         {
         }
+        public static new GetCostTrackingTagsFilterArgs Empty => new GetCostTrackingTagsFilterArgs();
     }
 }

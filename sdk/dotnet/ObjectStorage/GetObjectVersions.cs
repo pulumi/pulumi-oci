@@ -29,27 +29,25 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testObjectVersions = Oci.ObjectStorage.GetObjectVersions.Invoke(new()
         ///     {
-        ///         var testObjectVersions = Output.Create(Oci.ObjectStorage.GetObjectVersions.InvokeAsync(new Oci.ObjectStorage.GetObjectVersionsArgs
-        ///         {
-        ///             Bucket = @var.Object_version_bucket,
-        ///             Namespace = @var.Object_version_namespace,
-        ///             Delimiter = @var.Object_version_delimiter,
-        ///             End = @var.Object_version_end,
-        ///             Fields = @var.Object_version_fields,
-        ///             Prefix = @var.Object_version_prefix,
-        ///             Start = @var.Object_version_start,
-        ///             StartAfter = @var.Object_version_start_after,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Object_version_bucket,
+        ///         Namespace = @var.Object_version_namespace,
+        ///         Delimiter = @var.Object_version_delimiter,
+        ///         End = @var.Object_version_end,
+        ///         Fields = @var.Object_version_fields,
+        ///         Prefix = @var.Object_version_prefix,
+        ///         Start = @var.Object_version_start,
+        ///         StartAfter = @var.Object_version_start_after,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,27 +73,25 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testObjectVersions = Oci.ObjectStorage.GetObjectVersions.Invoke(new()
         ///     {
-        ///         var testObjectVersions = Output.Create(Oci.ObjectStorage.GetObjectVersions.InvokeAsync(new Oci.ObjectStorage.GetObjectVersionsArgs
-        ///         {
-        ///             Bucket = @var.Object_version_bucket,
-        ///             Namespace = @var.Object_version_namespace,
-        ///             Delimiter = @var.Object_version_delimiter,
-        ///             End = @var.Object_version_end,
-        ///             Fields = @var.Object_version_fields,
-        ///             Prefix = @var.Object_version_prefix,
-        ///             Start = @var.Object_version_start,
-        ///             StartAfter = @var.Object_version_start_after,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Object_version_bucket,
+        ///         Namespace = @var.Object_version_namespace,
+        ///         Delimiter = @var.Object_version_delimiter,
+        ///         End = @var.Object_version_end,
+        ///         Fields = @var.Object_version_fields,
+        ///         Prefix = @var.Object_version_prefix,
+        ///         Start = @var.Object_version_start,
+        ///         StartAfter = @var.Object_version_start_after,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -105,7 +101,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetObjectVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectVersionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -166,9 +162,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectVersionsArgs()
         {
         }
+        public static new GetObjectVersionsArgs Empty => new GetObjectVersionsArgs();
     }
 
-    public sealed class GetObjectVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -229,6 +226,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectVersionsInvokeArgs()
         {
         }
+        public static new GetObjectVersionsInvokeArgs Empty => new GetObjectVersionsInvokeArgs();
     }
 
 

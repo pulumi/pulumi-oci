@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class LoadBalancerRoutingPolicyRuleActionGetArgs : Pulumi.ResourceArgs
+    public sealed class LoadBalancerRoutingPolicyRuleActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public LoadBalancerRoutingPolicyRuleActionGetArgs()
         {
         }
+        public static new LoadBalancerRoutingPolicyRuleActionGetArgs Empty => new LoadBalancerRoutingPolicyRuleActionGetArgs();
     }
 }

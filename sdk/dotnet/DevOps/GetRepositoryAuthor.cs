@@ -22,21 +22,19 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryAuthor = Oci.DevOps.GetRepositoryAuthor.Invoke(new()
         ///     {
-        ///         var testRepositoryAuthor = Output.Create(Oci.DevOps.GetRepositoryAuthor.InvokeAsync(new Oci.DevOps.GetRepositoryAuthorArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             RefName = @var.Repository_author_ref_name,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         RefName = @var.Repository_author_ref_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryAuthor = Oci.DevOps.GetRepositoryAuthor.Invoke(new()
         ///     {
-        ///         var testRepositoryAuthor = Output.Create(Oci.DevOps.GetRepositoryAuthor.InvokeAsync(new Oci.DevOps.GetRepositoryAuthorArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             RefName = @var.Repository_author_ref_name,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         RefName = @var.Repository_author_ref_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryAuthorArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryAuthorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given reference name.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryAuthorArgs()
         {
         }
+        public static new GetRepositoryAuthorArgs Empty => new GetRepositoryAuthorArgs();
     }
 
-    public sealed class GetRepositoryAuthorInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryAuthorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given reference name.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryAuthorInvokeArgs()
         {
         }
+        public static new GetRepositoryAuthorInvokeArgs Empty => new GetRepositoryAuthorInvokeArgs();
     }
 
 

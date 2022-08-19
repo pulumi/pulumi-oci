@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigConfigurationReqAuthenticationDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class ConfigConfigurationReqAuthenticationDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("authHeaders")]
         private InputList<Inputs.ConfigConfigurationReqAuthenticationDetailsAuthHeaderGetArgs>? _authHeaders;
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigConfigurationReqAuthenticationDetailsGetArgs()
         {
         }
+        public static new ConfigConfigurationReqAuthenticationDetailsGetArgs Empty => new ConfigConfigurationReqAuthenticationDetailsGetArgs();
     }
 }

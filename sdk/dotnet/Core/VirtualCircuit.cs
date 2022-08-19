@@ -37,61 +37,59 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVirtualCircuit = new Oci.Core.VirtualCircuit("testVirtualCircuit", new()
     ///     {
-    ///         var testVirtualCircuit = new Oci.Core.VirtualCircuit("testVirtualCircuit", new Oci.Core.VirtualCircuitArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Type = @var.Virtual_circuit_type,
+    ///         BandwidthShapeName = @var.Virtual_circuit_bandwidth_shape_name,
+    ///         BgpAdminState = @var.Virtual_circuit_bgp_admin_state,
+    ///         CrossConnectMappings = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Type = @var.Virtual_circuit_type,
-    ///             BandwidthShapeName = @var.Virtual_circuit_bandwidth_shape_name,
-    ///             BgpAdminState = @var.Virtual_circuit_bgp_admin_state,
-    ///             CrossConnectMappings = 
+    ///             new Oci.Core.Inputs.VirtualCircuitCrossConnectMappingArgs
     ///             {
-    ///                 new Oci.Core.Inputs.VirtualCircuitCrossConnectMappingArgs
-    ///                 {
-    ///                     BgpMd5authKey = @var.Virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
-    ///                     CrossConnectOrCrossConnectGroupId = oci_core_cross_connect_or_cross_connect_group.Test_cross_connect_or_cross_connect_group.Id,
-    ///                     CustomerBgpPeeringIp = @var.Virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
-    ///                     CustomerBgpPeeringIpv6 = @var.Virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
-    ///                     OracleBgpPeeringIp = @var.Virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
-    ///                     OracleBgpPeeringIpv6 = @var.Virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
-    ///                     Vlan = @var.Virtual_circuit_cross_connect_mappings_vlan,
-    ///                 },
+    ///                 BgpMd5authKey = @var.Virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
+    ///                 CrossConnectOrCrossConnectGroupId = oci_core_cross_connect_or_cross_connect_group.Test_cross_connect_or_cross_connect_group.Id,
+    ///                 CustomerBgpPeeringIp = @var.Virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
+    ///                 CustomerBgpPeeringIpv6 = @var.Virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
+    ///                 OracleBgpPeeringIp = @var.Virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
+    ///                 OracleBgpPeeringIpv6 = @var.Virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
+    ///                 Vlan = @var.Virtual_circuit_cross_connect_mappings_vlan,
     ///             },
-    ///             CustomerAsn = @var.Virtual_circuit_customer_asn,
-    ///             CustomerBgpAsn = @var.Virtual_circuit_customer_bgp_asn,
-    ///             DefinedTags = 
+    ///         },
+    ///         CustomerAsn = @var.Virtual_circuit_customer_asn,
+    ///         CustomerBgpAsn = @var.Virtual_circuit_customer_bgp_asn,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Virtual_circuit_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IpMtu = @var.Virtual_circuit_ip_mtu,
+    ///         IsBfdEnabled = @var.Virtual_circuit_is_bfd_enabled,
+    ///         GatewayId = oci_core_gateway.Test_gateway.Id,
+    ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+    ///         ProviderServiceKeyName = @var.Virtual_circuit_provider_service_key_name,
+    ///         PublicPrefixes = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.VirtualCircuitPublicPrefixArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 CidrBlock = @var.Virtual_circuit_public_prefixes_cidr_block,
     ///             },
-    ///             DisplayName = @var.Virtual_circuit_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IpMtu = @var.Virtual_circuit_ip_mtu,
-    ///             IsBfdEnabled = @var.Virtual_circuit_is_bfd_enabled,
-    ///             GatewayId = oci_core_gateway.Test_gateway.Id,
-    ///             ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-    ///             ProviderServiceKeyName = @var.Virtual_circuit_provider_service_key_name,
-    ///             PublicPrefixes = 
-    ///             {
-    ///                 new Oci.Core.Inputs.VirtualCircuitPublicPrefixArgs
-    ///                 {
-    ///                     CidrBlock = @var.Virtual_circuit_public_prefixes_cidr_block,
-    ///                 },
-    ///             },
-    ///             Region = @var.Virtual_circuit_region,
-    ///             RoutingPolicies = @var.Virtual_circuit_routing_policy,
-    ///         });
-    ///     }
+    ///         },
+    ///         Region = @var.Virtual_circuit_region,
+    ///         RoutingPolicies = @var.Virtual_circuit_routing_policy,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -103,7 +101,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/virtualCircuit:VirtualCircuit")]
-    public partial class VirtualCircuit : Pulumi.CustomResource
+    public partial class VirtualCircuit : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
@@ -311,7 +309,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VirtualCircuitArgs : Pulumi.ResourceArgs
+    public sealed class VirtualCircuitArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
@@ -454,9 +452,10 @@ namespace Pulumi.Oci.Core
         public VirtualCircuitArgs()
         {
         }
+        public static new VirtualCircuitArgs Empty => new VirtualCircuitArgs();
     }
 
-    public sealed class VirtualCircuitState : Pulumi.ResourceArgs
+    public sealed class VirtualCircuitState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
@@ -653,5 +652,6 @@ namespace Pulumi.Oci.Core
         public VirtualCircuitState()
         {
         }
+        public static new VirtualCircuitState Empty => new VirtualCircuitState();
     }
 }

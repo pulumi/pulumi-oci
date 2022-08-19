@@ -31,6 +31,92 @@ import javax.annotation.Nullable;
  * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabase;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousContainerDatabase = new AutonomousContainerDatabase(&#34;testAutonomousContainerDatabase&#34;, AutonomousContainerDatabaseArgs.builder()        
+ *             .displayName(var_.autonomous_container_database_display_name())
+ *             .patchModel(var_.autonomous_container_database_patch_model())
+ *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+ *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+ *             .backupConfig(AutonomousContainerDatabaseBackupConfigArgs.builder()
+ *                 .backupDestinationDetails(AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs.builder()
+ *                     .type(var_.autonomous_container_database_backup_config_backup_destination_details_type())
+ *                     .id(var_.autonomous_container_database_backup_config_backup_destination_details_id())
+ *                     .internetProxy(var_.autonomous_container_database_backup_config_backup_destination_details_internet_proxy())
+ *                     .vpcPassword(var_.autonomous_container_database_backup_config_backup_destination_details_vpc_password())
+ *                     .vpcUser(var_.autonomous_container_database_backup_config_backup_destination_details_vpc_user())
+ *                     .build())
+ *                 .recoveryWindowInDays(var_.autonomous_container_database_backup_config_recovery_window_in_days())
+ *                 .build())
+ *             .compartmentId(var_.compartment_id())
+ *             .dbUniqueName(var_.autonomous_container_database_db_unique_name())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isAutomaticFailoverEnabled(var_.autonomous_container_database_is_automatic_failover_enabled())
+ *             .keyStoreId(oci_database_key_store.test_key_store().id())
+ *             .kmsKeyId(oci_kms_key.test_key().id())
+ *             .maintenanceWindowDetails(AutonomousContainerDatabaseMaintenanceWindowDetailsArgs.builder()
+ *                 .preference(var_.autonomous_container_database_maintenance_window_details_preference())
+ *                 .customActionTimeoutInMins(var_.autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins())
+ *                 .daysOfWeeks(AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs.builder()
+ *                     .name(var_.autonomous_container_database_maintenance_window_details_days_of_week_name())
+ *                     .build())
+ *                 .hoursOfDays(var_.autonomous_container_database_maintenance_window_details_hours_of_day())
+ *                 .isCustomActionTimeoutEnabled(var_.autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled())
+ *                 .leadTimeInWeeks(var_.autonomous_container_database_maintenance_window_details_lead_time_in_weeks())
+ *                 .months(AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs.builder()
+ *                     .name(var_.autonomous_container_database_maintenance_window_details_months_name())
+ *                     .build())
+ *                 .patchingMode(var_.autonomous_container_database_maintenance_window_details_patching_mode())
+ *                 .weeksOfMonths(var_.autonomous_container_database_maintenance_window_details_weeks_of_month())
+ *                 .build())
+ *             .peerAutonomousContainerDatabaseDisplayName(var_.autonomous_container_database_peer_autonomous_container_database_display_name())
+ *             .peerCloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+ *             .protectionMode(var_.autonomous_container_database_protection_mode())
+ *             .peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs.builder()
+ *                 .backupDestinationDetails(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
+ *                     .type(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type())
+ *                     .id(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id())
+ *                     .internetProxy(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy())
+ *                     .vpcPassword(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password())
+ *                     .vpcUser(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user())
+ *                     .build())
+ *                 .recoveryWindowInDays(var_.autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days())
+ *                 .build())
+ *             .peerAutonomousContainerDatabaseCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .peerAutonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+ *             .peerDbUniqueName(var_.autonomous_container_database_peer_db_unique_name())
+ *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
+ *             .vaultId(oci_kms_vault.test_vault().id())
+ *             .standbyMaintenanceBufferInDays(var_.autonomous_container_database_standby_maintenance_buffer_in_days())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

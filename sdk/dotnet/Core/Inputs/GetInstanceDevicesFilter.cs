@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetInstanceDevicesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceDevicesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only devices that match the given name exactly.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetInstanceDevicesFilterArgs()
         {
         }
+        public static new GetInstanceDevicesFilterArgs Empty => new GetInstanceDevicesFilterArgs();
     }
 }

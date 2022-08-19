@@ -17,49 +17,47 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCloudVmCluster = new Oci.Database.CloudVmCluster("testCloudVmCluster", new()
     ///     {
-    ///         var testCloudVmCluster = new Oci.Database.CloudVmCluster("testCloudVmCluster", new Oci.Database.CloudVmClusterArgs
+    ///         BackupSubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         CpuCoreCount = @var.Cloud_vm_cluster_cpu_core_count,
+    ///         DisplayName = @var.Cloud_vm_cluster_display_name,
+    ///         GiVersion = @var.Cloud_vm_cluster_gi_version,
+    ///         Hostname = @var.Cloud_vm_cluster_hostname,
+    ///         SshPublicKeys = @var.Cloud_vm_cluster_ssh_public_keys,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         BackupNetworkNsgIds = @var.Cloud_vm_cluster_backup_network_nsg_ids,
+    ///         ClusterName = @var.Cloud_vm_cluster_cluster_name,
+    ///         DataCollectionOptions = new Oci.Database.Inputs.CloudVmClusterDataCollectionOptionsArgs
     ///         {
-    ///             BackupSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             CpuCoreCount = @var.Cloud_vm_cluster_cpu_core_count,
-    ///             DisplayName = @var.Cloud_vm_cluster_display_name,
-    ///             GiVersion = @var.Cloud_vm_cluster_gi_version,
-    ///             Hostname = @var.Cloud_vm_cluster_hostname,
-    ///             SshPublicKeys = @var.Cloud_vm_cluster_ssh_public_keys,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             BackupNetworkNsgIds = @var.Cloud_vm_cluster_backup_network_nsg_ids,
-    ///             ClusterName = @var.Cloud_vm_cluster_cluster_name,
-    ///             DataCollectionOptions = new Oci.Database.Inputs.CloudVmClusterDataCollectionOptionsArgs
-    ///             {
-    ///                 IsDiagnosticsEventsEnabled = @var.Cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-    ///             },
-    ///             DataStoragePercentage = @var.Cloud_vm_cluster_data_storage_percentage,
-    ///             DefinedTags = @var.Cloud_vm_cluster_defined_tags,
-    ///             Domain = @var.Cloud_vm_cluster_domain,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsLocalBackupEnabled = @var.Cloud_vm_cluster_is_local_backup_enabled,
-    ///             IsSparseDiskgroupEnabled = @var.Cloud_vm_cluster_is_sparse_diskgroup_enabled,
-    ///             LicenseModel = @var.Cloud_vm_cluster_license_model,
-    ///             NsgIds = @var.Cloud_vm_cluster_nsg_ids,
-    ///             OcpuCount = @var.Cloud_vm_cluster_ocpu_count,
-    ///             ScanListenerPortTcp = @var.Cloud_vm_cluster_scan_listener_port_tcp,
-    ///             ScanListenerPortTcpSsl = @var.Cloud_vm_cluster_scan_listener_port_tcp_ssl,
-    ///             TimeZone = @var.Cloud_vm_cluster_time_zone,
-    ///         });
-    ///     }
+    ///             IsDiagnosticsEventsEnabled = @var.Cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+    ///         },
+    ///         DataStoragePercentage = @var.Cloud_vm_cluster_data_storage_percentage,
+    ///         DefinedTags = @var.Cloud_vm_cluster_defined_tags,
+    ///         Domain = @var.Cloud_vm_cluster_domain,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsLocalBackupEnabled = @var.Cloud_vm_cluster_is_local_backup_enabled,
+    ///         IsSparseDiskgroupEnabled = @var.Cloud_vm_cluster_is_sparse_diskgroup_enabled,
+    ///         LicenseModel = @var.Cloud_vm_cluster_license_model,
+    ///         NsgIds = @var.Cloud_vm_cluster_nsg_ids,
+    ///         OcpuCount = @var.Cloud_vm_cluster_ocpu_count,
+    ///         ScanListenerPortTcp = @var.Cloud_vm_cluster_scan_listener_port_tcp,
+    ///         ScanListenerPortTcpSsl = @var.Cloud_vm_cluster_scan_listener_port_tcp_ssl,
+    ///         TimeZone = @var.Cloud_vm_cluster_time_zone,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -71,7 +69,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/cloudVmCluster:CloudVmCluster")]
-    public partial class CloudVmCluster : Pulumi.CustomResource
+    public partial class CloudVmCluster : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
@@ -374,7 +372,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class CloudVmClusterArgs : Pulumi.ResourceArgs
+    public sealed class CloudVmClusterArgs : global::Pulumi.ResourceArgs
     {
         [Input("backupNetworkNsgIds")]
         private InputList<string>? _backupNetworkNsgIds;
@@ -564,9 +562,10 @@ namespace Pulumi.Oci.Database
         public CloudVmClusterArgs()
         {
         }
+        public static new CloudVmClusterArgs Empty => new CloudVmClusterArgs();
     }
 
-    public sealed class CloudVmClusterState : Pulumi.ResourceArgs
+    public sealed class CloudVmClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
@@ -876,5 +875,6 @@ namespace Pulumi.Oci.Database
         public CloudVmClusterState()
         {
         }
+        public static new CloudVmClusterState Empty => new CloudVmClusterState();
     }
 }

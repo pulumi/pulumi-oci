@@ -21,20 +21,18 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkFirewall = Oci.NetworkFirewall.GetNetworkFirewall.Invoke(new()
         ///     {
-        ///         var testNetworkFirewall = Output.Create(Oci.NetworkFirewall.GetNetworkFirewall.InvokeAsync(new Oci.NetworkFirewall.GetNetworkFirewallArgs
-        ///         {
-        ///             NetworkFirewallId = oci_network_firewall_network_firewall.Test_network_firewall.Id,
-        ///         }));
-        ///     }
+        ///         NetworkFirewallId = oci_network_firewall_network_firewall.Test_network_firewall.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkFirewall = Oci.NetworkFirewall.GetNetworkFirewall.Invoke(new()
         ///     {
-        ///         var testNetworkFirewall = Output.Create(Oci.NetworkFirewall.GetNetworkFirewall.InvokeAsync(new Oci.NetworkFirewall.GetNetworkFirewallArgs
-        ///         {
-        ///             NetworkFirewallId = oci_network_firewall_network_firewall.Test_network_firewall.Id,
-        ///         }));
-        ///     }
+        ///         NetworkFirewallId = oci_network_firewall_network_firewall.Test_network_firewall.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.NetworkFirewall
     }
 
 
-    public sealed class GetNetworkFirewallArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkFirewallArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.NetworkFirewall
         public GetNetworkFirewallArgs()
         {
         }
+        public static new GetNetworkFirewallArgs Empty => new GetNetworkFirewallArgs();
     }
 
-    public sealed class GetNetworkFirewallInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkFirewallInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public GetNetworkFirewallInvokeArgs()
         {
         }
+        public static new GetNetworkFirewallInvokeArgs Empty => new GetNetworkFirewallInvokeArgs();
     }
 
 

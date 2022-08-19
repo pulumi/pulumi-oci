@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class ObjectLifecyclePolicyRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class ObjectLifecyclePolicyRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public ObjectLifecyclePolicyRuleGetArgs()
         {
         }
+        public static new ObjectLifecyclePolicyRuleGetArgs Empty => new ObjectLifecyclePolicyRuleGetArgs();
     }
 }

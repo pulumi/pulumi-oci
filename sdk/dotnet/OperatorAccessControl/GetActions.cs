@@ -22,23 +22,21 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorActions = Oci.OperatorAccessControl.GetActions.Invoke(new()
         ///     {
-        ///         var testOperatorActions = Output.Create(Oci.OperatorAccessControl.GetActions.InvokeAsync(new Oci.OperatorAccessControl.GetActionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Operator_action_name,
-        ///             ResourceType = @var.Operator_action_resource_type,
-        ///             State = @var.Operator_action_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Operator_action_name,
+        ///         ResourceType = @var.Operator_action_resource_type,
+        ///         State = @var.Operator_action_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorActions = Oci.OperatorAccessControl.GetActions.Invoke(new()
         ///     {
-        ///         var testOperatorActions = Output.Create(Oci.OperatorAccessControl.GetActions.InvokeAsync(new Oci.OperatorAccessControl.GetActionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Operator_action_name,
-        ///             ResourceType = @var.Operator_action_resource_type,
-        ///             State = @var.Operator_action_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Operator_action_name,
+        ///         ResourceType = @var.Operator_action_resource_type,
+        ///         State = @var.Operator_action_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     }
 
 
-    public sealed class GetActionsArgs : Pulumi.InvokeArgs
+    public sealed class GetActionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetActionsArgs()
         {
         }
+        public static new GetActionsArgs Empty => new GetActionsArgs();
     }
 
-    public sealed class GetActionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetActionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetActionsInvokeArgs()
         {
         }
+        public static new GetActionsInvokeArgs Empty => new GetActionsInvokeArgs();
     }
 
 

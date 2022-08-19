@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryDataAssetRegistryMetadataGetArgs : Pulumi.ResourceArgs
+    public sealed class RegistryDataAssetRegistryMetadataGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The owning object's key for this object.
@@ -87,5 +87,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryDataAssetRegistryMetadataGetArgs()
         {
         }
+        public static new RegistryDataAssetRegistryMetadataGetArgs Empty => new RegistryDataAssetRegistryMetadataGetArgs();
     }
 }

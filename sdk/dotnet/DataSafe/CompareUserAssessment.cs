@@ -18,21 +18,19 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCompareUserAssessment = new Oci.DataSafe.CompareUserAssessment("testCompareUserAssessment", new()
     ///     {
-    ///         var testCompareUserAssessment = new Oci.DataSafe.CompareUserAssessment("testCompareUserAssessment", new Oci.DataSafe.CompareUserAssessmentArgs
-    ///         {
-    ///             ComparisonUserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-    ///             UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-    ///         });
-    ///     }
+    ///         ComparisonUserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+    ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/compareUserAssessment:CompareUserAssessment")]
-    public partial class CompareUserAssessment : Pulumi.CustomResource
+    public partial class CompareUserAssessment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
@@ -102,7 +100,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class CompareUserAssessmentArgs : Pulumi.ResourceArgs
+    public sealed class CompareUserAssessmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
@@ -119,9 +117,10 @@ namespace Pulumi.Oci.DataSafe
         public CompareUserAssessmentArgs()
         {
         }
+        public static new CompareUserAssessmentArgs Empty => new CompareUserAssessmentArgs();
     }
 
-    public sealed class CompareUserAssessmentState : Pulumi.ResourceArgs
+    public sealed class CompareUserAssessmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
@@ -138,5 +137,6 @@ namespace Pulumi.Oci.DataSafe
         public CompareUserAssessmentState()
         {
         }
+        public static new CompareUserAssessmentState Empty => new CompareUserAssessmentState();
     }
 }

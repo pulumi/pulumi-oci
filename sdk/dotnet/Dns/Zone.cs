@@ -18,34 +18,32 @@ namespace Pulumi.Oci.Dns
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testZone = new Oci.Dns.Zone("testZone", new()
     ///     {
-    ///         var testZone = new Oci.Dns.Zone("testZone", new Oci.Dns.ZoneArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ZoneType = @var.Zone_zone_type,
+    ///         DefinedTags = @var.Zone_defined_tags,
+    ///         ExternalMasters = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ZoneType = @var.Zone_zone_type,
-    ///             DefinedTags = @var.Zone_defined_tags,
-    ///             ExternalMasters = 
+    ///             new Oci.Dns.Inputs.ZoneExternalMasterArgs
     ///             {
-    ///                 new Oci.Dns.Inputs.ZoneExternalMasterArgs
-    ///                 {
-    ///                     Address = @var.Zone_external_masters_address,
-    ///                     Port = @var.Zone_external_masters_port,
-    ///                     TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
-    ///                 },
+    ///                 Address = @var.Zone_external_masters_address,
+    ///                 Port = @var.Zone_external_masters_port,
+    ///                 TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
     ///             },
-    ///             FreeformTags = @var.Zone_freeform_tags,
-    ///             Scope = @var.Zone_scope,
-    ///             ViewId = oci_dns_view.Test_view.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         FreeformTags = @var.Zone_freeform_tags,
+    ///         Scope = @var.Zone_scope,
+    ///         ViewId = oci_dns_view.Test_view.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.Dns
     ///  skip adding `{view_id}` at the end if Zone was created without `view_id`.
     /// </summary>
     [OciResourceType("oci:Dns/zone:Zone")]
-    public partial class Zone : Pulumi.CustomResource
+    public partial class Zone : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to.
@@ -202,7 +200,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class ZoneArgs : Pulumi.ResourceArgs
+    public sealed class ZoneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to.
@@ -274,9 +272,10 @@ namespace Pulumi.Oci.Dns
         public ZoneArgs()
         {
         }
+        public static new ZoneArgs Empty => new ZoneArgs();
     }
 
-    public sealed class ZoneState : Pulumi.ResourceArgs
+    public sealed class ZoneState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to.
@@ -396,5 +395,6 @@ namespace Pulumi.Oci.Dns
         public ZoneState()
         {
         }
+        public static new ZoneState Empty => new ZoneState();
     }
 }

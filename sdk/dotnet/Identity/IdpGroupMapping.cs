@@ -20,22 +20,20 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIdpGroupMapping = new Oci.Identity.IdpGroupMapping("testIdpGroupMapping", new()
     ///     {
-    ///         var testIdpGroupMapping = new Oci.Identity.IdpGroupMapping("testIdpGroupMapping", new Oci.Identity.IdpGroupMappingArgs
-    ///         {
-    ///             GroupId = oci_identity_group.Test_group.Id,
-    ///             IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-    ///             IdpGroupName = @var.Idp_group_mapping_idp_group_name,
-    ///         });
-    ///     }
+    ///         GroupId = oci_identity_group.Test_group.Id,
+    ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+    ///         IdpGroupName = @var.Idp_group_mapping_idp_group_name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/idpGroupMapping:IdpGroupMapping")]
-    public partial class IdpGroupMapping : Pulumi.CustomResource
+    public partial class IdpGroupMapping : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the tenancy containing the `IdentityProvider`.
@@ -135,7 +133,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class IdpGroupMappingArgs : Pulumi.ResourceArgs
+    public sealed class IdpGroupMappingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
@@ -158,9 +156,10 @@ namespace Pulumi.Oci.Identity
         public IdpGroupMappingArgs()
         {
         }
+        public static new IdpGroupMappingArgs Empty => new IdpGroupMappingArgs();
     }
 
-    public sealed class IdpGroupMappingState : Pulumi.ResourceArgs
+    public sealed class IdpGroupMappingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy containing the `IdentityProvider`.
@@ -207,5 +206,6 @@ namespace Pulumi.Oci.Identity
         public IdpGroupMappingState()
         {
         }
+        public static new IdpGroupMappingState Empty => new IdpGroupMappingState();
     }
 }

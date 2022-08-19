@@ -21,21 +21,19 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstanceMetastoreConfig = Oci.BigDataService.GetBdsInstanceMetastoreConfig.Invoke(new()
         ///     {
-        ///         var testBdsInstanceMetastoreConfig = Output.Create(Oci.BigDataService.GetBdsInstanceMetastoreConfig.InvokeAsync(new Oci.BigDataService.GetBdsInstanceMetastoreConfigArgs
-        ///         {
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///             MetastoreConfigId = oci_apm_config_config.Test_config.Id,
-        ///         }));
-        ///     }
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         MetastoreConfigId = oci_apm_config_config.Test_config.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstanceMetastoreConfig = Oci.BigDataService.GetBdsInstanceMetastoreConfig.Invoke(new()
         ///     {
-        ///         var testBdsInstanceMetastoreConfig = Output.Create(Oci.BigDataService.GetBdsInstanceMetastoreConfig.InvokeAsync(new Oci.BigDataService.GetBdsInstanceMetastoreConfigArgs
-        ///         {
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///             MetastoreConfigId = oci_apm_config_config.Test_config.Id,
-        ///         }));
-        ///     }
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         MetastoreConfigId = oci_apm_config_config.Test_config.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.BigDataService
     }
 
 
-    public sealed class GetBdsInstanceMetastoreConfigArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstanceMetastoreConfigArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstanceMetastoreConfigArgs()
         {
         }
+        public static new GetBdsInstanceMetastoreConfigArgs Empty => new GetBdsInstanceMetastoreConfigArgs();
     }
 
-    public sealed class GetBdsInstanceMetastoreConfigInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstanceMetastoreConfigInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstanceMetastoreConfigInvokeArgs()
         {
         }
+        public static new GetBdsInstanceMetastoreConfigInvokeArgs Empty => new GetBdsInstanceMetastoreConfigInvokeArgs();
     }
 
 

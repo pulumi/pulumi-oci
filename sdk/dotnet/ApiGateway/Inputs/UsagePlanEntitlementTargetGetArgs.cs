@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class UsagePlanEntitlementTargetGetArgs : Pulumi.ResourceArgs
+    public sealed class UsagePlanEntitlementTargetGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public UsagePlanEntitlementTargetGetArgs()
         {
         }
+        public static new UsagePlanEntitlementTargetGetArgs Empty => new UsagePlanEntitlementTargetGetArgs();
     }
 }

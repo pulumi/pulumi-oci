@@ -18,32 +18,30 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPathRouteSet = new Oci.LoadBalancer.PathRouteSet("testPathRouteSet", new()
     ///     {
-    ///         var testPathRouteSet = new Oci.LoadBalancer.PathRouteSet("testPathRouteSet", new Oci.LoadBalancer.PathRouteSetArgs
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         PathRoutes = new[]
     ///         {
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///             PathRoutes = 
+    ///             new Oci.LoadBalancer.Inputs.PathRouteSetPathRouteArgs
     ///             {
-    ///                 new Oci.LoadBalancer.Inputs.PathRouteSetPathRouteArgs
+    ///                 BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+    ///                 Path = @var.Path_route_set_path_routes_path,
+    ///                 PathMatchType = new Oci.LoadBalancer.Inputs.PathRouteSetPathRoutePathMatchTypeArgs
     ///                 {
-    ///                     BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///                     Path = @var.Path_route_set_path_routes_path,
-    ///                     PathMatchType = new Oci.LoadBalancer.Inputs.PathRouteSetPathRoutePathMatchTypeArgs
-    ///                     {
-    ///                         MatchType = @var.Path_route_set_path_routes_path_match_type_match_type,
-    ///                     },
+    ///                     MatchType = @var.Path_route_set_path_routes_path_match_type_match_type,
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/pathRouteSet:PathRouteSet")]
-    public partial class PathRouteSet : Pulumi.CustomResource
+    public partial class PathRouteSet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
@@ -122,7 +120,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class PathRouteSetArgs : Pulumi.ResourceArgs
+    public sealed class PathRouteSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
@@ -151,9 +149,10 @@ namespace Pulumi.Oci.LoadBalancer
         public PathRouteSetArgs()
         {
         }
+        public static new PathRouteSetArgs Empty => new PathRouteSetArgs();
     }
 
-    public sealed class PathRouteSetState : Pulumi.ResourceArgs
+    public sealed class PathRouteSetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
@@ -185,5 +184,6 @@ namespace Pulumi.Oci.LoadBalancer
         public PathRouteSetState()
         {
         }
+        public static new PathRouteSetState Empty => new PathRouteSetState();
     }
 }

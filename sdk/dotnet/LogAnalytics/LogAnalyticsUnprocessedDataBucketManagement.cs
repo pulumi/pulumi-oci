@@ -19,21 +19,19 @@ namespace Pulumi.Oci.LogAnalytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogAnalyticsUnprocessedDataBucketManagement = new Oci.LogAnalytics.LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement", new()
     ///     {
-    ///         var testLogAnalyticsUnprocessedDataBucketManagement = new Oci.LogAnalytics.LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement", new Oci.LogAnalytics.LogAnalyticsUnprocessedDataBucketManagementArgs
-    ///         {
-    ///             Bucket = @var.Log_analytics_unprocessed_data_bucket_management_bucket,
-    ///             Namespace = @var.Log_analytics_unprocessed_data_bucket_management_namespace,
-    ///         });
-    ///     }
+    ///         Bucket = @var.Log_analytics_unprocessed_data_bucket_management_bucket,
+    ///         Namespace = @var.Log_analytics_unprocessed_data_bucket_management_namespace,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// Import is not supported for LogAnalyticsUnprocessedDataBucketManagement
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement")]
-    public partial class LogAnalyticsUnprocessedDataBucketManagement : Pulumi.CustomResource
+    public partial class LogAnalyticsUnprocessedDataBucketManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Name of the Object Storage bucket.
@@ -117,7 +115,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class LogAnalyticsUnprocessedDataBucketManagementArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsUnprocessedDataBucketManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the Object Storage bucket.
@@ -140,9 +138,10 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsUnprocessedDataBucketManagementArgs()
         {
         }
+        public static new LogAnalyticsUnprocessedDataBucketManagementArgs Empty => new LogAnalyticsUnprocessedDataBucketManagementArgs();
     }
 
-    public sealed class LogAnalyticsUnprocessedDataBucketManagementState : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsUnprocessedDataBucketManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the Object Storage bucket.
@@ -177,5 +176,6 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsUnprocessedDataBucketManagementState()
         {
         }
+        public static new LogAnalyticsUnprocessedDataBucketManagementState Empty => new LogAnalyticsUnprocessedDataBucketManagementState();
     }
 }

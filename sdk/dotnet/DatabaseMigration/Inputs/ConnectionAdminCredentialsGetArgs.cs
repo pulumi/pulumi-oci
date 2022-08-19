@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class ConnectionAdminCredentialsGetArgs : Pulumi.ResourceArgs
+    public sealed class ConnectionAdminCredentialsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Administrator password
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public ConnectionAdminCredentialsGetArgs()
         {
         }
+        public static new ConnectionAdminCredentialsGetArgs Empty => new ConnectionAdminCredentialsGetArgs();
     }
 }

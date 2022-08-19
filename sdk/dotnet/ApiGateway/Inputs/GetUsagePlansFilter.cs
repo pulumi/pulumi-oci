@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GetUsagePlansFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetUsagePlansFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// An entitlement name, unique within a usage plan.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GetUsagePlansFilterArgs()
         {
         }
+        public static new GetUsagePlansFilterArgs Empty => new GetUsagePlansFilterArgs();
     }
 }

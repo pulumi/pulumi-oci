@@ -23,21 +23,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRemotePeeringConnections = Oci.Core.GetRemotePeeringConnections.Invoke(new()
         ///     {
-        ///         var testRemotePeeringConnections = Output.Create(Oci.Core.GetRemotePeeringConnections.InvokeAsync(new Oci.Core.GetRemotePeeringConnectionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DrgId = oci_core_drg.Test_drg.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRemotePeeringConnections = Oci.Core.GetRemotePeeringConnections.Invoke(new()
         ///     {
-        ///         var testRemotePeeringConnections = Output.Create(Oci.Core.GetRemotePeeringConnections.InvokeAsync(new Oci.Core.GetRemotePeeringConnectionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DrgId = oci_core_drg.Test_drg.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetRemotePeeringConnectionsArgs : Pulumi.InvokeArgs
+    public sealed class GetRemotePeeringConnectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Core
         public GetRemotePeeringConnectionsArgs()
         {
         }
+        public static new GetRemotePeeringConnectionsArgs Empty => new GetRemotePeeringConnectionsArgs();
     }
 
-    public sealed class GetRemotePeeringConnectionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRemotePeeringConnectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -133,6 +130,7 @@ namespace Pulumi.Oci.Core
         public GetRemotePeeringConnectionsInvokeArgs()
         {
         }
+        public static new GetRemotePeeringConnectionsInvokeArgs Empty => new GetRemotePeeringConnectionsInvokeArgs();
     }
 
 

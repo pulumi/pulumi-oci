@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VisualBuilder.Inputs
 {
 
-    public sealed class VbInstanceAlternateCustomEndpointGetArgs : Pulumi.ResourceArgs
+    public sealed class VbInstanceAlternateCustomEndpointGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.VisualBuilder.Inputs
         public VbInstanceAlternateCustomEndpointGetArgs()
         {
         }
+        public static new VbInstanceAlternateCustomEndpointGetArgs Empty => new VbInstanceAlternateCustomEndpointGetArgs();
     }
 }

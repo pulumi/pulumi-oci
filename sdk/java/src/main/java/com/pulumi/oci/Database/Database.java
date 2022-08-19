@@ -29,6 +29,68 @@ import javax.annotation.Nullable;
  * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.Database;
+ * import com.pulumi.oci.Database.DatabaseArgs;
+ * import com.pulumi.oci.Database.inputs.DatabaseDatabaseArgs;
+ * import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabase = new Database(&#34;testDatabase&#34;, DatabaseArgs.builder()        
+ *             .database(DatabaseDatabaseArgs.builder()
+ *                 .adminPassword(var_.database_database_admin_password())
+ *                 .dbName(var_.database_database_db_name())
+ *                 .backupId(oci_database_backup.test_backup().id())
+ *                 .backupTdePassword(var_.database_database_backup_tde_password())
+ *                 .characterSet(var_.database_database_character_set())
+ *                 .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+ *                 .dbBackupConfig(DatabaseDatabaseDbBackupConfigArgs.builder()
+ *                     .autoBackupEnabled(var_.database_database_db_backup_config_auto_backup_enabled())
+ *                     .autoBackupWindow(var_.database_database_db_backup_config_auto_backup_window())
+ *                     .backupDestinationDetails(DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs.builder()
+ *                         .id(var_.database_database_db_backup_config_backup_destination_details_id())
+ *                         .type(var_.database_database_db_backup_config_backup_destination_details_type())
+ *                         .build())
+ *                     .recoveryWindowInDays(var_.database_database_db_backup_config_recovery_window_in_days())
+ *                     .build())
+ *                 .dbUniqueName(var_.database_database_db_unique_name())
+ *                 .dbWorkload(var_.database_database_db_workload())
+ *                 .definedTags(var_.database_database_defined_tags())
+ *                 .freeformTags(var_.database_database_freeform_tags())
+ *                 .kmsKeyId(oci_kms_key.test_key().id())
+ *                 .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+ *                 .ncharacterSet(var_.database_database_ncharacter_set())
+ *                 .pdbName(var_.database_database_pdb_name())
+ *                 .sidPrefix(var_.database_database_sid_prefix())
+ *                 .tdeWalletPassword(var_.database_database_tde_wallet_password())
+ *                 .vaultId(oci_kms_vault.test_vault().id())
+ *                 .build())
+ *             .dbHomeId(oci_database_db_home.test_db_home().id())
+ *             .source(var_.database_source())
+ *             .dbVersion(var_.database_db_version())
+ *             .kmsKeyId(oci_kms_key.test_key().id())
+ *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

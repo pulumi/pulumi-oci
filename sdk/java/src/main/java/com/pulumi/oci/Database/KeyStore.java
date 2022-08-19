@@ -24,6 +24,45 @@ import javax.annotation.Nullable;
  * Creates a Key Store.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.KeyStore;
+ * import com.pulumi.oci.Database.KeyStoreArgs;
+ * import com.pulumi.oci.Database.inputs.KeyStoreTypeDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testKeyStore = new KeyStore(&#34;testKeyStore&#34;, KeyStoreArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.key_store_display_name())
+ *             .typeDetails(KeyStoreTypeDetailsArgs.builder()
+ *                 .adminUsername(var_.key_store_type_details_admin_username())
+ *                 .connectionIps(var_.key_store_type_details_connection_ips())
+ *                 .secretId(oci_vault_secret.test_secret().id())
+ *                 .type(var_.key_store_type_details_type())
+ *                 .vaultId(oci_kms_vault.test_vault().id())
+ *                 .build())
+ *             .definedTags(var_.key_store_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

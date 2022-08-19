@@ -18,33 +18,31 @@ namespace Pulumi.Oci.Opsi
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOperationsInsightsWarehouseUser = new Oci.Opsi.OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser", new()
     ///     {
-    ///         var testOperationsInsightsWarehouseUser = new Oci.Opsi.OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser", new Oci.Opsi.OperationsInsightsWarehouseUserArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ConnectionPassword = @var.Operations_insights_warehouse_user_connection_password,
+    ///         IsAwrDataAccess = @var.Operations_insights_warehouse_user_is_awr_data_access,
+    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ConnectionPassword = @var.Operations_insights_warehouse_user_connection_password,
-    ///             IsAwrDataAccess = @var.Operations_insights_warehouse_user_is_awr_data_access,
-    ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsEmDataAccess = @var.Operations_insights_warehouse_user_is_em_data_access,
-    ///             IsOpsiDataAccess = @var.Operations_insights_warehouse_user_is_opsi_data_access,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsEmDataAccess = @var.Operations_insights_warehouse_user_is_em_data_access,
+    ///         IsOpsiDataAccess = @var.Operations_insights_warehouse_user_is_opsi_data_access,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser")]
-    public partial class OperationsInsightsWarehouseUser : Pulumi.CustomResource
+    public partial class OperationsInsightsWarehouseUser : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -186,7 +184,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class OperationsInsightsWarehouseUserArgs : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsWarehouseUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -257,9 +255,10 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsWarehouseUserArgs()
         {
         }
+        public static new OperationsInsightsWarehouseUserArgs Empty => new OperationsInsightsWarehouseUserArgs();
     }
 
-    public sealed class OperationsInsightsWarehouseUserState : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsWarehouseUserState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -366,5 +365,6 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsWarehouseUserState()
         {
         }
+        public static new OperationsInsightsWarehouseUserState Empty => new OperationsInsightsWarehouseUserState();
     }
 }

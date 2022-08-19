@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class LoadBalancerIpAddressDetailArgs : Pulumi.ResourceArgs
+    public sealed class LoadBalancerIpAddressDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// An IP address.  Example: `192.168.0.3`
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public LoadBalancerIpAddressDetailArgs()
         {
         }
+        public static new LoadBalancerIpAddressDetailArgs Empty => new LoadBalancerIpAddressDetailArgs();
     }
 }

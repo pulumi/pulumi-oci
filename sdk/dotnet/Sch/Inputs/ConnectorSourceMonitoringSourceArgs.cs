@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorSourceMonitoringSourceArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorSourceMonitoringSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorSourceMonitoringSourceArgs()
         {
         }
+        public static new ConnectorSourceMonitoringSourceArgs Empty => new ConnectorSourceMonitoringSourceArgs();
     }
 }

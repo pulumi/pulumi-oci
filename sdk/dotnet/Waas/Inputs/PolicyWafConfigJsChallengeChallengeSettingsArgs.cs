@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigJsChallengeChallengeSettingsArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigJsChallengeChallengeSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigJsChallengeChallengeSettingsArgs()
         {
         }
+        public static new PolicyWafConfigJsChallengeChallengeSettingsArgs Empty => new PolicyWafConfigJsChallengeChallengeSettingsArgs();
     }
 }

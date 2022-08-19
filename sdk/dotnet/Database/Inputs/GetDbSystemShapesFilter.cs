@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetDbSystemShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the shape used for the DB system.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetDbSystemShapesFilterArgs()
         {
         }
+        public static new GetDbSystemShapesFilterArgs Empty => new GetDbSystemShapesFilterArgs();
     }
 }

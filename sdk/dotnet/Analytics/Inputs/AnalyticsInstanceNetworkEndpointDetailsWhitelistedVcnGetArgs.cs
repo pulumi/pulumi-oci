@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Analytics.Inputs
 {
 
-    public sealed class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnGetArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Virtual Cloud Network OCID.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Analytics.Inputs
         public AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnGetArgs()
         {
         }
+        public static new AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnGetArgs Empty => new AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnGetArgs();
     }
 }

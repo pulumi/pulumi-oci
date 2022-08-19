@@ -23,6 +23,34 @@ public final class SchFunctions {
      * Gets the specified service connector&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
+     *             .serviceConnectorId(oci_sch_service_connector.test_service_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceConnectorResult> getServiceConnector(GetServiceConnectorArgs args) {
@@ -34,6 +62,34 @@ public final class SchFunctions {
      * Gets the specified service connector&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
+     *             .serviceConnectorId(oci_sch_service_connector.test_service_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceConnectorResult> getServiceConnectorPlain(GetServiceConnectorPlainArgs args) {
@@ -45,6 +101,34 @@ public final class SchFunctions {
      * Gets the specified service connector&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
+     *             .serviceConnectorId(oci_sch_service_connector.test_service_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceConnectorResult> getServiceConnector(GetServiceConnectorArgs args, InvokeOptions options) {
@@ -56,6 +140,34 @@ public final class SchFunctions {
      * Gets the specified service connector&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetServiceConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
+     *             .serviceConnectorId(oci_sch_service_connector.test_service_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceConnectorResult> getServiceConnectorPlain(GetServiceConnectorPlainArgs args, InvokeOptions options) {
@@ -67,6 +179,36 @@ public final class SchFunctions {
      * Lists service connectors in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceConnectors = SchFunctions.getServiceConnectors(GetServiceConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_connector_display_name())
+     *             .state(var_.service_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceConnectorsResult> getServiceConnectors(GetServiceConnectorsArgs args) {
@@ -78,6 +220,36 @@ public final class SchFunctions {
      * Lists service connectors in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceConnectors = SchFunctions.getServiceConnectors(GetServiceConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_connector_display_name())
+     *             .state(var_.service_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceConnectorsResult> getServiceConnectorsPlain(GetServiceConnectorsPlainArgs args) {
@@ -89,6 +261,36 @@ public final class SchFunctions {
      * Lists service connectors in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceConnectors = SchFunctions.getServiceConnectors(GetServiceConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_connector_display_name())
+     *             .state(var_.service_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceConnectorsResult> getServiceConnectors(GetServiceConnectorsArgs args, InvokeOptions options) {
@@ -100,6 +302,36 @@ public final class SchFunctions {
      * Lists service connectors in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Sch.SchFunctions;
+     * import com.pulumi.oci.Sch.inputs.GetServiceConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceConnectors = SchFunctions.getServiceConnectors(GetServiceConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_connector_display_name())
+     *             .state(var_.service_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceConnectorsResult> getServiceConnectorsPlain(GetServiceConnectorsPlainArgs args, InvokeOptions options) {

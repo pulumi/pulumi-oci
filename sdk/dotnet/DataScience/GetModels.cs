@@ -21,25 +21,23 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModels = Oci.DataScience.GetModels.Invoke(new()
         ///     {
-        ///         var testModels = Output.Create(Oci.DataScience.GetModels.InvokeAsync(new Oci.DataScience.GetModelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Model_created_by,
-        ///             DisplayName = @var.Model_display_name,
-        ///             Id = @var.Model_id,
-        ///             ProjectId = oci_datascience_project.Test_project.Id,
-        ///             State = @var.Model_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Model_created_by,
+        ///         DisplayName = @var.Model_display_name,
+        ///         Id = @var.Model_id,
+        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///         State = @var.Model_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModels = Oci.DataScience.GetModels.Invoke(new()
         ///     {
-        ///         var testModels = Output.Create(Oci.DataScience.GetModels.InvokeAsync(new Oci.DataScience.GetModelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Model_created_by,
-        ///             DisplayName = @var.Model_display_name,
-        ///             Id = @var.Model_id,
-        ///             ProjectId = oci_datascience_project.Test_project.Id,
-        ///             State = @var.Model_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Model_created_by,
+        ///         DisplayName = @var.Model_display_name,
+        ///         Id = @var.Model_id,
+        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///         State = @var.Model_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetModelsArgs : Pulumi.InvokeArgs
+    public sealed class GetModelsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.DataScience
         public GetModelsArgs()
         {
         }
+        public static new GetModelsArgs Empty => new GetModelsArgs();
     }
 
-    public sealed class GetModelsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetModelsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.DataScience
         public GetModelsInvokeArgs()
         {
         }
+        public static new GetModelsInvokeArgs Empty => new GetModelsInvokeArgs();
     }
 
 

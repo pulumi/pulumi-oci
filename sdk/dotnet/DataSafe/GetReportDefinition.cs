@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReportDefinition = Oci.DataSafe.GetReportDefinition.Invoke(new()
         ///     {
-        ///         var testReportDefinition = Output.Create(Oci.DataSafe.GetReportDefinition.InvokeAsync(new Oci.DataSafe.GetReportDefinitionArgs
-        ///         {
-        ///             ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
-        ///         }));
-        ///     }
+        ///         ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReportDefinition = Oci.DataSafe.GetReportDefinition.Invoke(new()
         ///     {
-        ///         var testReportDefinition = Output.Create(Oci.DataSafe.GetReportDefinition.InvokeAsync(new Oci.DataSafe.GetReportDefinitionArgs
-        ///         {
-        ///             ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
-        ///         }));
-        ///     }
+        ///         ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetReportDefinitionArgs : Pulumi.InvokeArgs
+    public sealed class GetReportDefinitionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique report definition identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetReportDefinitionArgs()
         {
         }
+        public static new GetReportDefinitionArgs Empty => new GetReportDefinitionArgs();
     }
 
-    public sealed class GetReportDefinitionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetReportDefinitionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique report definition identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetReportDefinitionInvokeArgs()
         {
         }
+        public static new GetReportDefinitionInvokeArgs Empty => new GetReportDefinitionInvokeArgs();
     }
 
 

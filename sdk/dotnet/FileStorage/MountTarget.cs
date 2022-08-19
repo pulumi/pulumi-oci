@@ -48,34 +48,32 @@ namespace Pulumi.Oci.FileStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMountTarget = new Oci.FileStorage.MountTarget("testMountTarget", new()
     ///     {
-    ///         var testMountTarget = new Oci.FileStorage.MountTarget("testMountTarget", new Oci.FileStorage.MountTargetArgs
+    ///         AvailabilityDomain = @var.Mount_target_availability_domain,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             AvailabilityDomain = @var.Mount_target_availability_domain,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Mount_target_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             HostnameLabel = @var.Mount_target_hostname_label,
-    ///             IpAddress = @var.Mount_target_ip_address,
-    ///             NsgIds = @var.Mount_target_nsg_ids,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Mount_target_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         HostnameLabel = @var.Mount_target_hostname_label,
+    ///         IpAddress = @var.Mount_target_ip_address,
+    ///         NsgIds = @var.Mount_target_nsg_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -87,7 +85,7 @@ namespace Pulumi.Oci.FileStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/mountTarget:MountTarget")]
-    public partial class MountTarget : Pulumi.CustomResource
+    public partial class MountTarget : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
@@ -217,7 +215,7 @@ namespace Pulumi.Oci.FileStorage
         }
     }
 
-    public sealed class MountTargetArgs : Pulumi.ResourceArgs
+    public sealed class MountTargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
@@ -294,9 +292,10 @@ namespace Pulumi.Oci.FileStorage
         public MountTargetArgs()
         {
         }
+        public static new MountTargetArgs Empty => new MountTargetArgs();
     }
 
-    public sealed class MountTargetState : Pulumi.ResourceArgs
+    public sealed class MountTargetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
@@ -409,5 +408,6 @@ namespace Pulumi.Oci.FileStorage
         public MountTargetState()
         {
         }
+        public static new MountTargetState Empty => new MountTargetState();
     }
 }

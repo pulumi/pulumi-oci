@@ -22,21 +22,19 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptionReward = Oci.UsageProxy.GetSubscriptionReward.Invoke(new()
         ///     {
-        ///         var testSubscriptionReward = Output.Create(Oci.UsageProxy.GetSubscriptionReward.InvokeAsync(new Oci.UsageProxy.GetSubscriptionRewardArgs
-        ///         {
-        ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///         }));
-        ///     }
+        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptionReward = Oci.UsageProxy.GetSubscriptionReward.Invoke(new()
         ///     {
-        ///         var testSubscriptionReward = Output.Create(Oci.UsageProxy.GetSubscriptionReward.InvokeAsync(new Oci.UsageProxy.GetSubscriptionRewardArgs
-        ///         {
-        ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///         }));
-        ///     }
+        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.UsageProxy
     }
 
 
-    public sealed class GetSubscriptionRewardArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionRewardArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The subscription ID for which rewards information is requested for.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.UsageProxy
         public GetSubscriptionRewardArgs()
         {
         }
+        public static new GetSubscriptionRewardArgs Empty => new GetSubscriptionRewardArgs();
     }
 
-    public sealed class GetSubscriptionRewardInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionRewardInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The subscription ID for which rewards information is requested for.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.UsageProxy
         public GetSubscriptionRewardInvokeArgs()
         {
         }
+        public static new GetSubscriptionRewardInvokeArgs Empty => new GetSubscriptionRewardInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobShapes = Oci.DataScience.GetJobShapes.Invoke(new()
         ///     {
-        ///         var testJobShapes = Output.Create(Oci.DataScience.GetJobShapes.InvokeAsync(new Oci.DataScience.GetJobShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobShapes = Oci.DataScience.GetJobShapes.Invoke(new()
         ///     {
-        ///         var testJobShapes = Output.Create(Oci.DataScience.GetJobShapes.InvokeAsync(new Oci.DataScience.GetJobShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetJobShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetJobShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataScience
         public GetJobShapesArgs()
         {
         }
+        public static new GetJobShapesArgs Empty => new GetJobShapesArgs();
     }
 
-    public sealed class GetJobShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJobShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.DataScience
         public GetJobShapesInvokeArgs()
         {
         }
+        public static new GetJobShapesInvokeArgs Empty => new GetJobShapesInvokeArgs();
     }
 
 

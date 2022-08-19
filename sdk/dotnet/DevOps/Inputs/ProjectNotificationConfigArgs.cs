@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class ProjectNotificationConfigArgs : Pulumi.ResourceArgs
+    public sealed class ProjectNotificationConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The topic ID for notifications.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public ProjectNotificationConfigArgs()
         {
         }
+        public static new ProjectNotificationConfigArgs Empty => new ProjectNotificationConfigArgs();
     }
 }

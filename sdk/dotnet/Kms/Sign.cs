@@ -19,25 +19,23 @@ namespace Pulumi.Oci.Kms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSign = new Oci.Kms.Sign("testSign", new()
     ///     {
-    ///         var testSign = new Oci.Kms.Sign("testSign", new Oci.Kms.SignArgs
-    ///         {
-    ///             CryptoEndpoint = @var.Sign_message_crypto_endpoint,
-    ///             KeyId = oci_kms_key.Test_key.Id,
-    ///             Message = @var.Sign_message,
-    ///             SigningAlgorithm = @var.Sign_signing_algorithm,
-    ///             KeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///             MessageType = @var.Sign_message_type,
-    ///         });
-    ///     }
+    ///         CryptoEndpoint = @var.Sign_message_crypto_endpoint,
+    ///         KeyId = oci_kms_key.Test_key.Id,
+    ///         Message = @var.Sign_message,
+    ///         SigningAlgorithm = @var.Sign_signing_algorithm,
+    ///         KeyVersionId = oci_kms_key_version.Test_key_version.Id,
+    ///         MessageType = @var.Sign_message_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.Kms
     /// ```
     /// </summary>
     [OciResourceType("oci:Kms/sign:Sign")]
-    public partial class Sign : Pulumi.CustomResource
+    public partial class Sign : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -137,7 +135,7 @@ namespace Pulumi.Oci.Kms
         }
     }
 
-    public sealed class SignArgs : Pulumi.ResourceArgs
+    public sealed class SignArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -178,9 +176,10 @@ namespace Pulumi.Oci.Kms
         public SignArgs()
         {
         }
+        public static new SignArgs Empty => new SignArgs();
     }
 
-    public sealed class SignState : Pulumi.ResourceArgs
+    public sealed class SignState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -227,5 +226,6 @@ namespace Pulumi.Oci.Kms
         public SignState()
         {
         }
+        public static new SignState Empty => new SignState();
     }
 }

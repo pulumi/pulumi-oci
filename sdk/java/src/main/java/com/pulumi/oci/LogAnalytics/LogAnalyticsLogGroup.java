@@ -21,6 +21,39 @@ import javax.annotation.Nullable;
  * Creates a new log group in the specified compartment with the input display name. You may also specify optional information such as description, defined tags, and free-form tags.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsLogGroup;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsLogGroupArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLogAnalyticsLogGroup = new LogAnalyticsLogGroup(&#34;testLogAnalyticsLogGroup&#34;, LogAnalyticsLogGroupArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.log_analytics_log_group_display_name())
+ *             .namespace(var_.log_analytics_log_group_namespace())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.log_analytics_log_group_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

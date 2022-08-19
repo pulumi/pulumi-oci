@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyOriginGroupOriginGroupGetArgs : Pulumi.ResourceArgs
+    public sealed class PolicyOriginGroupOriginGroupGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
@@ -24,5 +24,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyOriginGroupOriginGroupGetArgs()
         {
         }
+        public static new PolicyOriginGroupOriginGroupGetArgs Empty => new PolicyOriginGroupOriginGroupGetArgs();
     }
 }

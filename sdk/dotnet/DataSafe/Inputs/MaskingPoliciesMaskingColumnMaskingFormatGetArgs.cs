@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class MaskingPoliciesMaskingColumnMaskingFormatGetArgs : Pulumi.ResourceArgs
+    public sealed class MaskingPoliciesMaskingColumnMaskingFormatGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  &lt;a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html"&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public MaskingPoliciesMaskingColumnMaskingFormatGetArgs()
         {
         }
+        public static new MaskingPoliciesMaskingColumnMaskingFormatGetArgs Empty => new MaskingPoliciesMaskingColumnMaskingFormatGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class ConnectionSshDetailsArgs : Pulumi.ResourceArgs
+    public sealed class ConnectionSshDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the host the SSH key is valid for.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public ConnectionSshDetailsArgs()
         {
         }
+        public static new ConnectionSshDetailsArgs Empty => new ConnectionSshDetailsArgs();
     }
 }

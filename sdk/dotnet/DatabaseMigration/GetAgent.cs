@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAgent = Oci.DatabaseMigration.GetAgent.Invoke(new()
         ///     {
-        ///         var testAgent = Output.Create(Oci.DatabaseMigration.GetAgent.InvokeAsync(new Oci.DatabaseMigration.GetAgentArgs
-        ///         {
-        ///             AgentId = oci_database_migration_agent.Test_agent.Id,
-        ///         }));
-        ///     }
+        ///         AgentId = oci_database_migration_agent.Test_agent.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAgent = Oci.DatabaseMigration.GetAgent.Invoke(new()
         ///     {
-        ///         var testAgent = Output.Create(Oci.DatabaseMigration.GetAgent.InvokeAsync(new Oci.DatabaseMigration.GetAgentArgs
-        ///         {
-        ///             AgentId = oci_database_migration_agent.Test_agent.Id,
-        ///         }));
-        ///     }
+        ///         AgentId = oci_database_migration_agent.Test_agent.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetAgentArgs : Pulumi.InvokeArgs
+    public sealed class GetAgentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the agent
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetAgentArgs()
         {
         }
+        public static new GetAgentArgs Empty => new GetAgentArgs();
     }
 
-    public sealed class GetAgentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAgentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the agent
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetAgentInvokeArgs()
         {
         }
+        public static new GetAgentInvokeArgs Empty => new GetAgentInvokeArgs();
     }
 
 

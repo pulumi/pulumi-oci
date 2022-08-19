@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class GetManagedDatabaseAlertLogCountsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAlertLogCountsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public GetManagedDatabaseAlertLogCountsFilterArgs()
         {
         }
+        public static new GetManagedDatabaseAlertLogCountsFilterArgs Empty => new GetManagedDatabaseAlertLogCountsFilterArgs();
     }
 }

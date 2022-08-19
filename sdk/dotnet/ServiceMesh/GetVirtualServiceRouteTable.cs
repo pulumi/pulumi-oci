@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualServiceRouteTable = Oci.ServiceMesh.GetVirtualServiceRouteTable.Invoke(new()
         ///     {
-        ///         var testVirtualServiceRouteTable = Output.Create(Oci.ServiceMesh.GetVirtualServiceRouteTable.InvokeAsync(new Oci.ServiceMesh.GetVirtualServiceRouteTableArgs
-        ///         {
-        ///             VirtualServiceRouteTableId = oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
-        ///         }));
-        ///     }
+        ///         VirtualServiceRouteTableId = oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualServiceRouteTable = Oci.ServiceMesh.GetVirtualServiceRouteTable.Invoke(new()
         ///     {
-        ///         var testVirtualServiceRouteTable = Output.Create(Oci.ServiceMesh.GetVirtualServiceRouteTable.InvokeAsync(new Oci.ServiceMesh.GetVirtualServiceRouteTableArgs
-        ///         {
-        ///             VirtualServiceRouteTableId = oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
-        ///         }));
-        ///     }
+        ///         VirtualServiceRouteTableId = oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetVirtualServiceRouteTableArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualServiceRouteTableArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique VirtualServiceRouteTable identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualServiceRouteTableArgs()
         {
         }
+        public static new GetVirtualServiceRouteTableArgs Empty => new GetVirtualServiceRouteTableArgs();
     }
 
-    public sealed class GetVirtualServiceRouteTableInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualServiceRouteTableInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique VirtualServiceRouteTable identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualServiceRouteTableInvokeArgs()
         {
         }
+        public static new GetVirtualServiceRouteTableInvokeArgs Empty => new GetVirtualServiceRouteTableInvokeArgs();
     }
 
 

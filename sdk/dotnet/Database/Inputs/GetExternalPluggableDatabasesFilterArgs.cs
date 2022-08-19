@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetExternalPluggableDatabasesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetExternalPluggableDatabasesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetExternalPluggableDatabasesFilterInputArgs()
         {
         }
+        public static new GetExternalPluggableDatabasesFilterInputArgs Empty => new GetExternalPluggableDatabasesFilterInputArgs();
     }
 }

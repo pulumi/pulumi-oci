@@ -17,33 +17,31 @@ namespace Pulumi.Oci.Waf
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testWebAppFirewall = new Oci.Waf.AppFirewall("testWebAppFirewall", new()
     ///     {
-    ///         var testWebAppFirewall = new Oci.Waf.AppFirewall("testWebAppFirewall", new Oci.Waf.AppFirewallArgs
+    ///         BackendType = @var.Web_app_firewall_backend_type,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             BackendType = @var.Web_app_firewall_backend_type,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///             WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Web_app_firewall_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             SystemTags = @var.Web_app_firewall_system_tags,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Web_app_firewall_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         SystemTags = @var.Web_app_firewall_system_tags,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Waf
     /// ```
     /// </summary>
     [OciResourceType("oci:Waf/appFirewall:AppFirewall")]
-    public partial class AppFirewall : Pulumi.CustomResource
+    public partial class AppFirewall : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -173,7 +171,7 @@ namespace Pulumi.Oci.Waf
         }
     }
 
-    public sealed class AppFirewallArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -244,9 +242,10 @@ namespace Pulumi.Oci.Waf
         public AppFirewallArgs()
         {
         }
+        public static new AppFirewallArgs Empty => new AppFirewallArgs();
     }
 
-    public sealed class AppFirewallState : Pulumi.ResourceArgs
+    public sealed class AppFirewallState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -341,5 +340,6 @@ namespace Pulumi.Oci.Waf
         public AppFirewallState()
         {
         }
+        public static new AppFirewallState Empty => new AppFirewallState();
     }
 }

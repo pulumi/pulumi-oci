@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageTestLoadBalancerConfigArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageTestLoadBalancerConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Listen port for the backend server.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageTestLoadBalancerConfigArgs()
         {
         }
+        public static new DeployStageTestLoadBalancerConfigArgs Empty => new DeployStageTestLoadBalancerConfigArgs();
     }
 }

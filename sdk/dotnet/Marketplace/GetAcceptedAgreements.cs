@@ -23,24 +23,22 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAcceptedAgreements = Oci.Marketplace.GetAcceptedAgreements.Invoke(new()
         ///     {
-        ///         var testAcceptedAgreements = Output.Create(Oci.Marketplace.GetAcceptedAgreements.InvokeAsync(new Oci.Marketplace.GetAcceptedAgreementsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
-        ///             DisplayName = @var.Accepted_agreement_display_name,
-        ///             ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///             PackageVersion = @var.Accepted_agreement_package_version,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
+        ///         DisplayName = @var.Accepted_agreement_display_name,
+        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
+        ///         PackageVersion = @var.Accepted_agreement_package_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,24 +58,22 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAcceptedAgreements = Oci.Marketplace.GetAcceptedAgreements.Invoke(new()
         ///     {
-        ///         var testAcceptedAgreements = Output.Create(Oci.Marketplace.GetAcceptedAgreements.InvokeAsync(new Oci.Marketplace.GetAcceptedAgreementsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
-        ///             DisplayName = @var.Accepted_agreement_display_name,
-        ///             ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///             PackageVersion = @var.Accepted_agreement_package_version,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
+        ///         DisplayName = @var.Accepted_agreement_display_name,
+        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
+        ///         PackageVersion = @var.Accepted_agreement_package_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Marketplace
     }
 
 
-    public sealed class GetAcceptedAgreementsArgs : Pulumi.InvokeArgs
+    public sealed class GetAcceptedAgreementsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the accepted terms of use agreement.
@@ -130,9 +126,10 @@ namespace Pulumi.Oci.Marketplace
         public GetAcceptedAgreementsArgs()
         {
         }
+        public static new GetAcceptedAgreementsArgs Empty => new GetAcceptedAgreementsArgs();
     }
 
-    public sealed class GetAcceptedAgreementsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAcceptedAgreementsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the accepted terms of use agreement.
@@ -175,6 +172,7 @@ namespace Pulumi.Oci.Marketplace
         public GetAcceptedAgreementsInvokeArgs()
         {
         }
+        public static new GetAcceptedAgreementsInvokeArgs Empty => new GetAcceptedAgreementsInvokeArgs();
     }
 
 

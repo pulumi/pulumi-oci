@@ -17,28 +17,26 @@ namespace Pulumi.Oci.Artifacts
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testContainerRepository = new Oci.Artifacts.ContainerRepository("testContainerRepository", new()
     ///     {
-    ///         var testContainerRepository = new Oci.Artifacts.ContainerRepository("testContainerRepository", new Oci.Artifacts.ContainerRepositoryArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Container_repository_display_name,
+    ///         IsImmutable = @var.Container_repository_is_immutable,
+    ///         IsPublic = @var.Container_repository_is_public,
+    ///         Readme = new Oci.Artifacts.Inputs.ContainerRepositoryReadmeArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Container_repository_display_name,
-    ///             IsImmutable = @var.Container_repository_is_immutable,
-    ///             IsPublic = @var.Container_repository_is_public,
-    ///             Readme = new Oci.Artifacts.Inputs.ContainerRepositoryReadmeArgs
-    ///             {
-    ///                 Content = @var.Container_repository_readme_content,
-    ///                 Format = @var.Container_repository_readme_format,
-    ///             },
-    ///         });
-    ///     }
+    ///             Content = @var.Container_repository_readme_content,
+    ///             Format = @var.Container_repository_readme_format,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -50,7 +48,7 @@ namespace Pulumi.Oci.Artifacts
     /// ```
     /// </summary>
     [OciResourceType("oci:Artifacts/containerRepository:ContainerRepository")]
-    public partial class ContainerRepository : Pulumi.CustomResource
+    public partial class ContainerRepository : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Total storage size in GBs that will be charged.
@@ -174,7 +172,7 @@ namespace Pulumi.Oci.Artifacts
         }
     }
 
-    public sealed class ContainerRepositoryArgs : Pulumi.ResourceArgs
+    public sealed class ContainerRepositoryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
@@ -209,9 +207,10 @@ namespace Pulumi.Oci.Artifacts
         public ContainerRepositoryArgs()
         {
         }
+        public static new ContainerRepositoryArgs Empty => new ContainerRepositoryArgs();
     }
 
-    public sealed class ContainerRepositoryState : Pulumi.ResourceArgs
+    public sealed class ContainerRepositoryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Total storage size in GBs that will be charged.
@@ -294,5 +293,6 @@ namespace Pulumi.Oci.Artifacts
         public ContainerRepositoryState()
         {
         }
+        public static new ContainerRepositoryState Empty => new ContainerRepositoryState();
     }
 }

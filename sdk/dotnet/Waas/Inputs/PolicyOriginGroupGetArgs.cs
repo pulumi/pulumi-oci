@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyOriginGroupGetArgs : Pulumi.ResourceArgs
+    public sealed class PolicyOriginGroupGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("label", required: true)]
         public Input<string> Label { get; set; } = null!;
@@ -26,5 +26,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyOriginGroupGetArgs()
         {
         }
+        public static new PolicyOriginGroupGetArgs Empty => new PolicyOriginGroupGetArgs();
     }
 }

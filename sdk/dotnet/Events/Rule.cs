@@ -17,47 +17,45 @@ namespace Pulumi.Oci.Events
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRule = new Oci.Events.Rule("testRule", new()
     ///     {
-    ///         var testRule = new Oci.Events.Rule("testRule", new Oci.Events.RuleArgs
+    ///         Actions = new Oci.Events.Inputs.RuleActionsArgs
     ///         {
-    ///             Actions = new Oci.Events.Inputs.RuleActionsArgs
+    ///             Actions = new[]
     ///             {
-    ///                 Actions = 
+    ///                 new Oci.Events.Inputs.RuleActionsActionArgs
     ///                 {
-    ///                     new Oci.Events.Inputs.RuleActionsActionArgs
-    ///                     {
-    ///                         ActionType = @var.Rule_actions_actions_action_type,
-    ///                         IsEnabled = @var.Rule_actions_actions_is_enabled,
-    ///                         Description = @var.Rule_actions_actions_description,
-    ///                         FunctionId = oci_functions_function.Test_function.Id,
-    ///                         StreamId = oci_streaming_stream.Test_stream.Id,
-    ///                         TopicId = oci_ons_notification_topic.Test_topic.Id,
-    ///                     },
+    ///                     ActionType = @var.Rule_actions_actions_action_type,
+    ///                     IsEnabled = @var.Rule_actions_actions_is_enabled,
+    ///                     Description = @var.Rule_actions_actions_description,
+    ///                     FunctionId = oci_functions_function.Test_function.Id,
+    ///                     StreamId = oci_streaming_stream.Test_stream.Id,
+    ///                     TopicId = oci_ons_notification_topic.Test_topic.Id,
     ///                 },
     ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Condition = @var.Rule_condition,
-    ///             DisplayName = @var.Rule_display_name,
-    ///             IsEnabled = @var.Rule_is_enabled,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Rule_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Condition = @var.Rule_condition,
+    ///         DisplayName = @var.Rule_display_name,
+    ///         IsEnabled = @var.Rule_is_enabled,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Rule_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -69,7 +67,7 @@ namespace Pulumi.Oci.Events
     /// ```
     /// </summary>
     [OciResourceType("oci:Events/rule:Rule")]
-    public partial class Rule : Pulumi.CustomResource
+    public partial class Rule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) A list of one or more ActionDetails objects.
@@ -182,7 +180,7 @@ namespace Pulumi.Oci.Events
         }
     }
 
-    public sealed class RuleArgs : Pulumi.ResourceArgs
+    public sealed class RuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A list of one or more ActionDetails objects.
@@ -248,9 +246,10 @@ namespace Pulumi.Oci.Events
         public RuleArgs()
         {
         }
+        public static new RuleArgs Empty => new RuleArgs();
     }
 
-    public sealed class RuleState : Pulumi.ResourceArgs
+    public sealed class RuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A list of one or more ActionDetails objects.
@@ -334,5 +333,6 @@ namespace Pulumi.Oci.Events
         public RuleState()
         {
         }
+        public static new RuleState Empty => new RuleState();
     }
 }

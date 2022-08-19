@@ -17,32 +17,30 @@ namespace Pulumi.Oci.Mysql
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMysqlBackup = new Oci.Mysql.MysqlBackup("testMysqlBackup", new()
     ///     {
-    ///         var testMysqlBackup = new Oci.Mysql.MysqlBackup("testMysqlBackup", new Oci.Mysql.MysqlBackupArgs
+    ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+    ///         BackupType = @var.Mysql_backup_backup_type,
+    ///         DefinedTags = 
     ///         {
-    ///             DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-    ///             BackupType = @var.Mysql_backup_backup_type,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Mysql_backup_description,
-    ///             DisplayName = @var.Mysql_backup_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             RetentionInDays = @var.Mysql_backup_retention_in_days,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Mysql_backup_description,
+    ///         DisplayName = @var.Mysql_backup_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         RetentionInDays = @var.Mysql_backup_retention_in_days,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Mysql
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/mysqlBackup:MysqlBackup")]
-    public partial class MysqlBackup : Pulumi.CustomResource
+    public partial class MysqlBackup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The size of the backup in base-2 (IEC) gibibytes. (GiB).
@@ -208,7 +206,7 @@ namespace Pulumi.Oci.Mysql
         }
     }
 
-    public sealed class MysqlBackupArgs : Pulumi.ResourceArgs
+    public sealed class MysqlBackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of backup.
@@ -273,9 +271,10 @@ namespace Pulumi.Oci.Mysql
         public MysqlBackupArgs()
         {
         }
+        public static new MysqlBackupArgs Empty => new MysqlBackupArgs();
     }
 
-    public sealed class MysqlBackupState : Pulumi.ResourceArgs
+    public sealed class MysqlBackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The size of the backup in base-2 (IEC) gibibytes. (GiB).
@@ -406,5 +405,6 @@ namespace Pulumi.Oci.Mysql
         public MysqlBackupState()
         {
         }
+        public static new MysqlBackupState Empty => new MysqlBackupState();
     }
 }

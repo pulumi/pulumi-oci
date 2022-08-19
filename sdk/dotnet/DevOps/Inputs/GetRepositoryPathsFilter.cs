@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class GetRepositoryPathsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryPathsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Name of file or directory.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public GetRepositoryPathsFilterArgs()
         {
         }
+        public static new GetRepositoryPathsFilterArgs Empty => new GetRepositoryPathsFilterArgs();
     }
 }

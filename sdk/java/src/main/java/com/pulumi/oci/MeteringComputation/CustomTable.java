@@ -20,6 +20,48 @@ import javax.annotation.Nullable;
  * Returns the created custom table.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.MeteringComputation.CustomTable;
+ * import com.pulumi.oci.MeteringComputation.CustomTableArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.CustomTableSavedCustomTableArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCustomTable = new CustomTable(&#34;testCustomTable&#34;, CustomTableArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .savedCustomTable(CustomTableSavedCustomTableArgs.builder()
+ *                 .displayName(var_.custom_table_saved_custom_table_display_name())
+ *                 .columnGroupBies(var_.custom_table_saved_custom_table_column_group_by())
+ *                 .compartmentDepth(var_.custom_table_saved_custom_table_compartment_depth())
+ *                 .groupByTags(CustomTableSavedCustomTableGroupByTagArgs.builder()
+ *                     .key(var_.custom_table_saved_custom_table_group_by_tag_key())
+ *                     .namespace(var_.custom_table_saved_custom_table_group_by_tag_namespace())
+ *                     .value(var_.custom_table_saved_custom_table_group_by_tag_value())
+ *                     .build())
+ *                 .rowGroupBies(var_.custom_table_saved_custom_table_row_group_by())
+ *                 .version(var_.custom_table_saved_custom_table_version())
+ *                 .build())
+ *             .savedReportId(oci_metering_computation_saved_report.test_saved_report().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

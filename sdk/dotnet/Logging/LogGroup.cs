@@ -18,30 +18,28 @@ namespace Pulumi.Oci.Logging
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogGroup = new Oci.Logging.LogGroup("testLogGroup", new()
     ///     {
-    ///         var testLogGroup = new Oci.Logging.LogGroup("testLogGroup", new Oci.Logging.LogGroupArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Log_group_display_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Log_group_display_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Log_group_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Log_group_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.Logging
     /// ```
     /// </summary>
     [OciResourceType("oci:Logging/logGroup:LogGroup")]
-    public partial class LogGroup : Pulumi.CustomResource
+    public partial class LogGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -147,7 +145,7 @@ namespace Pulumi.Oci.Logging
         }
     }
 
-    public sealed class LogGroupArgs : Pulumi.ResourceArgs
+    public sealed class LogGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -194,9 +192,10 @@ namespace Pulumi.Oci.Logging
         public LogGroupArgs()
         {
         }
+        public static new LogGroupArgs Empty => new LogGroupArgs();
     }
 
-    public sealed class LogGroupState : Pulumi.ResourceArgs
+    public sealed class LogGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -261,5 +260,6 @@ namespace Pulumi.Oci.Logging
         public LogGroupState()
         {
         }
+        public static new LogGroupState Empty => new LogGroupState();
     }
 }

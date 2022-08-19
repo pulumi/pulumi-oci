@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudVmClusterIormConfig = Oci.Database.GetCloudVmClusterIormConfig.Invoke(new()
         ///     {
-        ///         var testCloudVmClusterIormConfig = Output.Create(Oci.Database.GetCloudVmClusterIormConfig.InvokeAsync(new Oci.Database.GetCloudVmClusterIormConfigArgs
-        ///         {
-        ///             CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudVmClusterIormConfig = Oci.Database.GetCloudVmClusterIormConfig.Invoke(new()
         ///     {
-        ///         var testCloudVmClusterIormConfig = Output.Create(Oci.Database.GetCloudVmClusterIormConfig.InvokeAsync(new Oci.Database.GetCloudVmClusterIormConfigArgs
-        ///         {
-        ///             CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetCloudVmClusterIormConfigArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudVmClusterIormConfigArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Database
         public GetCloudVmClusterIormConfigArgs()
         {
         }
+        public static new GetCloudVmClusterIormConfigArgs Empty => new GetCloudVmClusterIormConfigArgs();
     }
 
-    public sealed class GetCloudVmClusterIormConfigInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudVmClusterIormConfigInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -107,6 +104,7 @@ namespace Pulumi.Oci.Database
         public GetCloudVmClusterIormConfigInvokeArgs()
         {
         }
+        public static new GetCloudVmClusterIormConfigInvokeArgs Empty => new GetCloudVmClusterIormConfigInvokeArgs();
     }
 
 

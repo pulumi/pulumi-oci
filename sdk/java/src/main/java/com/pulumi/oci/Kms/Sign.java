@@ -21,6 +21,39 @@ import javax.annotation.Nullable;
  * operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Kms.Sign;
+ * import com.pulumi.oci.Kms.SignArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSign = new Sign(&#34;testSign&#34;, SignArgs.builder()        
+ *             .cryptoEndpoint(var_.sign_message_crypto_endpoint())
+ *             .keyId(oci_kms_key.test_key().id())
+ *             .message(var_.sign_message())
+ *             .signingAlgorithm(var_.sign_signing_algorithm())
+ *             .keyVersionId(oci_kms_key_version.test_key_version().id())
+ *             .messageType(var_.sign_message_type())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -17,61 +17,59 @@ namespace Pulumi.Oci.ApiGateway
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testGateway = new Oci.ApiGateway.Gateway("testGateway", new()
     ///     {
-    ///         var testGateway = new Oci.ApiGateway.Gateway("testGateway", new Oci.ApiGateway.GatewayArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EndpointType = @var.Gateway_endpoint_type,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+    ///         CaBundles = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             EndpointType = @var.Gateway_endpoint_type,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             CertificateId = oci_apigateway_certificate.Test_certificate.Id,
-    ///             CaBundles = 
+    ///             new Oci.ApiGateway.Inputs.GatewayCaBundleArgs
     ///             {
-    ///                 new Oci.ApiGateway.Inputs.GatewayCaBundleArgs
+    ///                 Type = @var.Gateway_ca_bundles_type,
+    ///                 CaBundleId = oci_apigateway_ca_bundle.Test_ca_bundle.Id,
+    ///                 CertificateAuthorityId = oci_apigateway_certificate_authority.Test_certificate_authority.Id,
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Gateway_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         NetworkSecurityGroupIds = @var.Gateway_network_security_group_ids,
+    ///         ResponseCacheDetails = new Oci.ApiGateway.Inputs.GatewayResponseCacheDetailsArgs
+    ///         {
+    ///             Type = @var.Gateway_response_cache_details_type,
+    ///             AuthenticationSecretId = oci_vault_secret.Test_secret.Id,
+    ///             AuthenticationSecretVersionNumber = @var.Gateway_response_cache_details_authentication_secret_version_number,
+    ///             ConnectTimeoutInMs = @var.Gateway_response_cache_details_connect_timeout_in_ms,
+    ///             IsSslEnabled = @var.Gateway_response_cache_details_is_ssl_enabled,
+    ///             IsSslVerifyDisabled = @var.Gateway_response_cache_details_is_ssl_verify_disabled,
+    ///             ReadTimeoutInMs = @var.Gateway_response_cache_details_read_timeout_in_ms,
+    ///             SendTimeoutInMs = @var.Gateway_response_cache_details_send_timeout_in_ms,
+    ///             Servers = new[]
+    ///             {
+    ///                 new Oci.ApiGateway.Inputs.GatewayResponseCacheDetailsServerArgs
     ///                 {
-    ///                     Type = @var.Gateway_ca_bundles_type,
-    ///                     CaBundleId = oci_apigateway_ca_bundle.Test_ca_bundle.Id,
-    ///                     CertificateAuthorityId = oci_apigateway_certificate_authority.Test_certificate_authority.Id,
+    ///                     Host = @var.Gateway_response_cache_details_servers_host,
+    ///                     Port = @var.Gateway_response_cache_details_servers_port,
     ///                 },
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Gateway_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             NetworkSecurityGroupIds = @var.Gateway_network_security_group_ids,
-    ///             ResponseCacheDetails = new Oci.ApiGateway.Inputs.GatewayResponseCacheDetailsArgs
-    ///             {
-    ///                 Type = @var.Gateway_response_cache_details_type,
-    ///                 AuthenticationSecretId = oci_vault_secret.Test_secret.Id,
-    ///                 AuthenticationSecretVersionNumber = @var.Gateway_response_cache_details_authentication_secret_version_number,
-    ///                 ConnectTimeoutInMs = @var.Gateway_response_cache_details_connect_timeout_in_ms,
-    ///                 IsSslEnabled = @var.Gateway_response_cache_details_is_ssl_enabled,
-    ///                 IsSslVerifyDisabled = @var.Gateway_response_cache_details_is_ssl_verify_disabled,
-    ///                 ReadTimeoutInMs = @var.Gateway_response_cache_details_read_timeout_in_ms,
-    ///                 SendTimeoutInMs = @var.Gateway_response_cache_details_send_timeout_in_ms,
-    ///                 Servers = 
-    ///                 {
-    ///                     new Oci.ApiGateway.Inputs.GatewayResponseCacheDetailsServerArgs
-    ///                     {
-    ///                         Host = @var.Gateway_response_cache_details_servers_host,
-    ///                         Port = @var.Gateway_response_cache_details_servers_port,
-    ///                     },
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -83,7 +81,7 @@ namespace Pulumi.Oci.ApiGateway
     /// ```
     /// </summary>
     [OciResourceType("oci:ApiGateway/gateway:Gateway")]
-    public partial class Gateway : Pulumi.CustomResource
+    public partial class Gateway : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
@@ -225,7 +223,7 @@ namespace Pulumi.Oci.ApiGateway
         }
     }
 
-    public sealed class GatewayArgs : Pulumi.ResourceArgs
+    public sealed class GatewayArgs : global::Pulumi.ResourceArgs
     {
         [Input("caBundles")]
         private InputList<Inputs.GatewayCaBundleArgs>? _caBundles;
@@ -314,9 +312,10 @@ namespace Pulumi.Oci.ApiGateway
         public GatewayArgs()
         {
         }
+        public static new GatewayArgs Empty => new GatewayArgs();
     }
 
-    public sealed class GatewayState : Pulumi.ResourceArgs
+    public sealed class GatewayState : global::Pulumi.ResourceArgs
     {
         [Input("caBundles")]
         private InputList<Inputs.GatewayCaBundleGetArgs>? _caBundles;
@@ -447,5 +446,6 @@ namespace Pulumi.Oci.ApiGateway
         public GatewayState()
         {
         }
+        public static new GatewayState Empty => new GatewayState();
     }
 }

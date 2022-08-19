@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryDataAssetNativeTypeSystemGetArgs : Pulumi.ResourceArgs
+    public sealed class RegistryDataAssetNativeTypeSystemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A user defined description for the object.
@@ -105,5 +105,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryDataAssetNativeTypeSystemGetArgs()
         {
         }
+        public static new RegistryDataAssetNativeTypeSystemGetArgs Empty => new RegistryDataAssetNativeTypeSystemGetArgs();
     }
 }

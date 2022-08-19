@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
 {
 
-    public sealed class GetNetworkLoadBalancersProtocolsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetNetworkLoadBalancersProtocolsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public GetNetworkLoadBalancersProtocolsFilterInputArgs()
         {
         }
+        public static new GetNetworkLoadBalancersProtocolsFilterInputArgs Empty => new GetNetworkLoadBalancersProtocolsFilterInputArgs();
     }
 }

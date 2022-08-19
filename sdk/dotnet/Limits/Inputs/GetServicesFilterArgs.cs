@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Limits.Inputs
 {
 
-    public sealed class GetServicesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetServicesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The service name. Use this when calling other APIs.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Limits.Inputs
         public GetServicesFilterInputArgs()
         {
         }
+        public static new GetServicesFilterInputArgs Empty => new GetServicesFilterInputArgs();
     }
 }

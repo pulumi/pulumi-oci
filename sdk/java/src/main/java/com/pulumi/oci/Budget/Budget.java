@@ -24,6 +24,45 @@ import javax.annotation.Nullable;
  * Creates a new budget.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Budget.Budget;
+ * import com.pulumi.oci.Budget.BudgetArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBudget = new Budget(&#34;testBudget&#34;, BudgetArgs.builder()        
+ *             .amount(var_.budget_amount())
+ *             .compartmentId(var_.tenancy_ocid())
+ *             .resetPeriod(var_.budget_reset_period())
+ *             .budgetProcessingPeriodStartOffset(var_.budget_budget_processing_period_start_offset())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.budget_description())
+ *             .displayName(var_.budget_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .processingPeriodType(var_.budget_processing_period_type())
+ *             .targetCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .targetType(var_.budget_target_type())
+ *             .targets(var_.budget_targets())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

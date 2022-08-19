@@ -23,6 +23,50 @@ import javax.annotation.Nullable;
  * Creates an Operator Control Assignment resource. In effect, this brings the target resource under the governance of the Operator Control for specified time duration.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.OperatorAccessControl.OperatorControlAssignment;
+ * import com.pulumi.oci.OperatorAccessControl.OperatorControlAssignmentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOperatorControlAssignment = new OperatorControlAssignment(&#34;testOperatorControlAssignment&#34;, OperatorControlAssignmentArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .isEnforcedAlways(var_.operator_control_assignment_is_enforced_always())
+ *             .operatorControlId(oci_operator_access_control_operator_control.test_operator_control().id())
+ *             .resourceCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .resourceId(oci_operator_access_control_resource.test_resource().id())
+ *             .resourceName(var_.operator_control_assignment_resource_name())
+ *             .resourceType(var_.operator_control_assignment_resource_type())
+ *             .comment(var_.operator_control_assignment_comment())
+ *             .definedTags(var_.operator_control_assignment_defined_tags())
+ *             .freeformTags(var_.operator_control_assignment_freeform_tags())
+ *             .isAutoApproveDuringMaintenance(var_.operator_control_assignment_is_auto_approve_during_maintenance())
+ *             .isLogForwarded(var_.operator_control_assignment_is_log_forwarded())
+ *             .remoteSyslogServerAddress(var_.operator_control_assignment_remote_syslog_server_address())
+ *             .remoteSyslogServerCaCert(var_.operator_control_assignment_remote_syslog_server_ca_cert())
+ *             .remoteSyslogServerPort(var_.operator_control_assignment_remote_syslog_server_port())
+ *             .timeAssignmentFrom(var_.operator_control_assignment_time_assignment_from())
+ *             .timeAssignmentTo(var_.operator_control_assignment_time_assignment_to())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

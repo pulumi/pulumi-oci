@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Apm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApmDomains = Oci.Apm.GetApmDomains.Invoke(new()
         ///     {
-        ///         var testApmDomains = Output.Create(Oci.Apm.GetApmDomains.InvokeAsync(new Oci.Apm.GetApmDomainsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Apm_domain_display_name,
-        ///             State = @var.Apm_domain_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Apm_domain_display_name,
+        ///         State = @var.Apm_domain_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Apm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApmDomains = Oci.Apm.GetApmDomains.Invoke(new()
         ///     {
-        ///         var testApmDomains = Output.Create(Oci.Apm.GetApmDomains.InvokeAsync(new Oci.Apm.GetApmDomainsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Apm_domain_display_name,
-        ///             State = @var.Apm_domain_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Apm_domain_display_name,
+        ///         State = @var.Apm_domain_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Apm
     }
 
 
-    public sealed class GetApmDomainsArgs : Pulumi.InvokeArgs
+    public sealed class GetApmDomainsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Apm
         public GetApmDomainsArgs()
         {
         }
+        public static new GetApmDomainsArgs Empty => new GetApmDomainsArgs();
     }
 
-    public sealed class GetApmDomainsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetApmDomainsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Apm
         public GetApmDomainsInvokeArgs()
         {
         }
+        public static new GetApmDomainsInvokeArgs Empty => new GetApmDomainsInvokeArgs();
     }
 
 

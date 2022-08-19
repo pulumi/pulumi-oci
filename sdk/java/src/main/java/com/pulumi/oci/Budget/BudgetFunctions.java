@@ -29,6 +29,35 @@ public final class BudgetFunctions {
      * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
+     *             .alertRuleId(oci_budget_alert_rule.test_alert_rule().id())
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertRuleResult> getAlertRule(GetAlertRuleArgs args) {
@@ -40,6 +69,35 @@ public final class BudgetFunctions {
      * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
+     *             .alertRuleId(oci_budget_alert_rule.test_alert_rule().id())
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertRuleResult> getAlertRulePlain(GetAlertRulePlainArgs args) {
@@ -51,6 +109,35 @@ public final class BudgetFunctions {
      * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
+     *             .alertRuleId(oci_budget_alert_rule.test_alert_rule().id())
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertRuleResult> getAlertRule(GetAlertRuleArgs args, InvokeOptions options) {
@@ -62,6 +149,35 @@ public final class BudgetFunctions {
      * Gets an Alert Rule for a specified budget.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
+     *             .alertRuleId(oci_budget_alert_rule.test_alert_rule().id())
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertRuleResult> getAlertRulePlain(GetAlertRulePlainArgs args, InvokeOptions options) {
@@ -73,6 +189,36 @@ public final class BudgetFunctions {
      * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .displayName(var_.alert_rule_display_name())
+     *             .state(var_.alert_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertRulesResult> getAlertRules(GetAlertRulesArgs args) {
@@ -84,6 +230,36 @@ public final class BudgetFunctions {
      * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .displayName(var_.alert_rule_display_name())
+     *             .state(var_.alert_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertRulesResult> getAlertRulesPlain(GetAlertRulesPlainArgs args) {
@@ -95,6 +271,36 @@ public final class BudgetFunctions {
      * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .displayName(var_.alert_rule_display_name())
+     *             .state(var_.alert_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertRulesResult> getAlertRules(GetAlertRulesArgs args, InvokeOptions options) {
@@ -106,6 +312,36 @@ public final class BudgetFunctions {
      * Returns a list of Alert Rules for a specified budget.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetAlertRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .displayName(var_.alert_rule_display_name())
+     *             .state(var_.alert_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertRulesResult> getAlertRulesPlain(GetAlertRulesPlainArgs args, InvokeOptions options) {
@@ -117,6 +353,34 @@ public final class BudgetFunctions {
      * Gets a budget by the identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBudgetResult> getBudget(GetBudgetArgs args) {
@@ -128,6 +392,34 @@ public final class BudgetFunctions {
      * Gets a budget by the identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBudgetResult> getBudgetPlain(GetBudgetPlainArgs args) {
@@ -139,6 +431,34 @@ public final class BudgetFunctions {
      * Gets a budget by the identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBudgetResult> getBudget(GetBudgetArgs args, InvokeOptions options) {
@@ -150,6 +470,34 @@ public final class BudgetFunctions {
      * Gets a budget by the identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
+     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBudgetResult> getBudgetPlain(GetBudgetPlainArgs args, InvokeOptions options) {
@@ -168,6 +516,37 @@ public final class BudgetFunctions {
      * or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.budget_display_name())
+     *             .state(var_.budget_state())
+     *             .targetType(var_.budget_target_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBudgetsResult> getBudgets(GetBudgetsArgs args) {
@@ -186,6 +565,37 @@ public final class BudgetFunctions {
      * or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.budget_display_name())
+     *             .state(var_.budget_state())
+     *             .targetType(var_.budget_target_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBudgetsResult> getBudgetsPlain(GetBudgetsPlainArgs args) {
@@ -204,6 +614,37 @@ public final class BudgetFunctions {
      * or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.budget_display_name())
+     *             .state(var_.budget_state())
+     *             .targetType(var_.budget_target_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBudgetsResult> getBudgets(GetBudgetsArgs args, InvokeOptions options) {
@@ -222,6 +663,37 @@ public final class BudgetFunctions {
      * or upgrade to the latest version of the client SDK to handle new targetTypes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.budget_display_name())
+     *             .state(var_.budget_state())
+     *             .targetType(var_.budget_target_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBudgetsResult> getBudgetsPlain(GetBudgetsPlainArgs args, InvokeOptions options) {

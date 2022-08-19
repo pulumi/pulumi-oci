@@ -21,24 +21,22 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorControlAssignments = Oci.OperatorAccessControl.GetControlAssignments.Invoke(new()
         ///     {
-        ///         var testOperatorControlAssignments = Output.Create(Oci.OperatorAccessControl.GetControlAssignments.InvokeAsync(new Oci.OperatorAccessControl.GetControlAssignmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             OperatorControlName = oci_operator_access_control_operator_control.Test_operator_control.Name,
-        ///             ResourceName = @var.Operator_control_assignment_resource_name,
-        ///             ResourceType = @var.Operator_control_assignment_resource_type,
-        ///             State = @var.Operator_control_assignment_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         OperatorControlName = oci_operator_access_control_operator_control.Test_operator_control.Name,
+        ///         ResourceName = @var.Operator_control_assignment_resource_name,
+        ///         ResourceType = @var.Operator_control_assignment_resource_type,
+        ///         State = @var.Operator_control_assignment_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,24 +54,22 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorControlAssignments = Oci.OperatorAccessControl.GetControlAssignments.Invoke(new()
         ///     {
-        ///         var testOperatorControlAssignments = Output.Create(Oci.OperatorAccessControl.GetControlAssignments.InvokeAsync(new Oci.OperatorAccessControl.GetControlAssignmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             OperatorControlName = oci_operator_access_control_operator_control.Test_operator_control.Name,
-        ///             ResourceName = @var.Operator_control_assignment_resource_name,
-        ///             ResourceType = @var.Operator_control_assignment_resource_type,
-        ///             State = @var.Operator_control_assignment_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         OperatorControlName = oci_operator_access_control_operator_control.Test_operator_control.Name,
+        ///         ResourceName = @var.Operator_control_assignment_resource_name,
+        ///         ResourceType = @var.Operator_control_assignment_resource_type,
+        ///         State = @var.Operator_control_assignment_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     }
 
 
-    public sealed class GetControlAssignmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetControlAssignmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetControlAssignmentsArgs()
         {
         }
+        public static new GetControlAssignmentsArgs Empty => new GetControlAssignmentsArgs();
     }
 
-    public sealed class GetControlAssignmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetControlAssignmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetControlAssignmentsInvokeArgs()
         {
         }
+        public static new GetControlAssignmentsInvokeArgs Empty => new GetControlAssignmentsInvokeArgs();
     }
 
 

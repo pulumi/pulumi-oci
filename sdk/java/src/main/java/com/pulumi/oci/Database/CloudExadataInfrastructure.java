@@ -25,6 +25,61 @@ import javax.annotation.Nullable;
  * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.CloudExadataInfrastructure;
+ * import com.pulumi.oci.Database.CloudExadataInfrastructureArgs;
+ * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureCustomerContactArgs;
+ * import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCloudExadataInfrastructure = new CloudExadataInfrastructure(&#34;testCloudExadataInfrastructure&#34;, CloudExadataInfrastructureArgs.builder()        
+ *             .availabilityDomain(var_.cloud_exadata_infrastructure_availability_domain())
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.cloud_exadata_infrastructure_display_name())
+ *             .shape(var_.cloud_exadata_infrastructure_shape())
+ *             .computeCount(var_.cloud_exadata_infrastructure_compute_count())
+ *             .customerContacts(CloudExadataInfrastructureCustomerContactArgs.builder()
+ *                 .email(var_.cloud_exadata_infrastructure_customer_contacts_email())
+ *                 .build())
+ *             .definedTags(var_.cloud_exadata_infrastructure_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .maintenanceWindow(CloudExadataInfrastructureMaintenanceWindowArgs.builder()
+ *                 .preference(var_.cloud_exadata_infrastructure_maintenance_window_preference())
+ *                 .customActionTimeoutInMins(var_.cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins())
+ *                 .daysOfWeeks(CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.builder()
+ *                     .name(var_.cloud_exadata_infrastructure_maintenance_window_days_of_week_name())
+ *                     .build())
+ *                 .hoursOfDays(var_.cloud_exadata_infrastructure_maintenance_window_hours_of_day())
+ *                 .isCustomActionTimeoutEnabled(var_.cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled())
+ *                 .leadTimeInWeeks(var_.cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks())
+ *                 .months(CloudExadataInfrastructureMaintenanceWindowMonthArgs.builder()
+ *                     .name(var_.cloud_exadata_infrastructure_maintenance_window_months_name())
+ *                     .build())
+ *                 .patchingMode(var_.cloud_exadata_infrastructure_maintenance_window_patching_mode())
+ *                 .weeksOfMonths(var_.cloud_exadata_infrastructure_maintenance_window_weeks_of_month())
+ *                 .build())
+ *             .storageCount(var_.cloud_exadata_infrastructure_storage_count())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

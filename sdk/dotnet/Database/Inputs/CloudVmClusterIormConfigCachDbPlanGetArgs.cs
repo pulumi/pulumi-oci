@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class CloudVmClusterIormConfigCachDbPlanGetArgs : Pulumi.ResourceArgs
+    public sealed class CloudVmClusterIormConfigCachDbPlanGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database name. For the default `DbPlan`, the `dbName` is `default`.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Database.Inputs
         public CloudVmClusterIormConfigCachDbPlanGetArgs()
         {
         }
+        public static new CloudVmClusterIormConfigCachDbPlanGetArgs Empty => new CloudVmClusterIormConfigCachDbPlanGetArgs();
     }
 }

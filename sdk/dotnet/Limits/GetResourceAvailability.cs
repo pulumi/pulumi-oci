@@ -25,23 +25,21 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResourceAvailability = Oci.Limits.GetResourceAvailability.Invoke(new()
         ///     {
-        ///         var testResourceAvailability = Output.Create(Oci.Limits.GetResourceAvailability.InvokeAsync(new Oci.Limits.GetResourceAvailabilityArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             LimitName = @var.Resource_availability_limit_name,
-        ///             ServiceName = oci_limits_service.Test_service.Name,
-        ///             AvailabilityDomain = @var.Resource_availability_availability_domain,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         LimitName = @var.Resource_availability_limit_name,
+        ///         ServiceName = oci_limits_service.Test_service.Name,
+        ///         AvailabilityDomain = @var.Resource_availability_availability_domain,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,23 +61,21 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResourceAvailability = Oci.Limits.GetResourceAvailability.Invoke(new()
         ///     {
-        ///         var testResourceAvailability = Output.Create(Oci.Limits.GetResourceAvailability.InvokeAsync(new Oci.Limits.GetResourceAvailabilityArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             LimitName = @var.Resource_availability_limit_name,
-        ///             ServiceName = oci_limits_service.Test_service.Name,
-        ///             AvailabilityDomain = @var.Resource_availability_availability_domain,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         LimitName = @var.Resource_availability_limit_name,
+        ///         ServiceName = oci_limits_service.Test_service.Name,
+        ///         AvailabilityDomain = @var.Resource_availability_availability_domain,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Limits
     }
 
 
-    public sealed class GetResourceAvailabilityArgs : Pulumi.InvokeArgs
+    public sealed class GetResourceAvailabilityArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Limits
         public GetResourceAvailabilityArgs()
         {
         }
+        public static new GetResourceAvailabilityArgs Empty => new GetResourceAvailabilityArgs();
     }
 
-    public sealed class GetResourceAvailabilityInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetResourceAvailabilityInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.
@@ -149,6 +146,7 @@ namespace Pulumi.Oci.Limits
         public GetResourceAvailabilityInvokeArgs()
         {
         }
+        public static new GetResourceAvailabilityInvokeArgs Empty => new GetResourceAvailabilityInvokeArgs();
     }
 
 

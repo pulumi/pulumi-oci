@@ -21,23 +21,21 @@ namespace Pulumi.Oci.Vault
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecrets = Oci.Vault.GetSecrets.Invoke(new()
         ///     {
-        ///         var testSecrets = Output.Create(Oci.Vault.GetSecrets.InvokeAsync(new Oci.Vault.GetSecretsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Secret_name,
-        ///             State = @var.Secret_state,
-        ///             VaultId = oci_kms_vault.Test_vault.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Secret_name,
+        ///         State = @var.Secret_state,
+        ///         VaultId = oci_kms_vault.Test_vault.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.Vault
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecrets = Oci.Vault.GetSecrets.Invoke(new()
         ///     {
-        ///         var testSecrets = Output.Create(Oci.Vault.GetSecrets.InvokeAsync(new Oci.Vault.GetSecretsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Secret_name,
-        ///             State = @var.Secret_state,
-        ///             VaultId = oci_kms_vault.Test_vault.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Secret_name,
+        ///         State = @var.Secret_state,
+        ///         VaultId = oci_kms_vault.Test_vault.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Vault
     }
 
 
-    public sealed class GetSecretsArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Vault
         public GetSecretsArgs()
         {
         }
+        public static new GetSecretsArgs Empty => new GetSecretsArgs();
     }
 
-    public sealed class GetSecretsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.Vault
         public GetSecretsInvokeArgs()
         {
         }
+        public static new GetSecretsInvokeArgs Empty => new GetSecretsInvokeArgs();
     }
 
 

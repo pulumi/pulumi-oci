@@ -17,41 +17,39 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testComputeImageCapabilitySchema = new Oci.Core.ComputeImageCapabilitySchema("testComputeImageCapabilitySchema", new()
     ///     {
-    ///         var testComputeImageCapabilitySchema = new Oci.Core.ComputeImageCapabilitySchema("testComputeImageCapabilitySchema", new Oci.Core.ComputeImageCapabilitySchemaArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ComputeGlobalImageCapabilitySchemaVersionName = @var.Compute_image_capability_schema_compute_global_image_capability_schema_version_name,
+    ///         ImageId = oci_core_image.Test_image.Id,
+    ///         SchemaData = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ComputeGlobalImageCapabilitySchemaVersionName = @var.Compute_image_capability_schema_compute_global_image_capability_schema_version_name,
-    ///             ImageId = oci_core_image.Test_image.Id,
-    ///             SchemaData = 
+    ///             
     ///             {
-    ///                 
-    ///                 {
-    ///                     { "descriptorType", @var.Compute_image_capability_schema_schema_data_descriptor_type },
-    ///                     { "source", @var.Compute_image_capability_schema_schema_data_source },
-    ///                     { "defaultValue", @var.Compute_image_capability_schema_schema_data_default_value },
-    ///                     { "values", @var.Compute_image_capability_schema_schema_data_values },
-    ///                 },
+    ///                 { "descriptorType", @var.Compute_image_capability_schema_schema_data_descriptor_type },
+    ///                 { "source", @var.Compute_image_capability_schema_schema_data_source },
+    ///                 { "defaultValue", @var.Compute_image_capability_schema_schema_data_default_value },
+    ///                 { "values", @var.Compute_image_capability_schema_schema_data_values },
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Compute_image_capability_schema_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Compute_image_capability_schema_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -63,7 +61,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema")]
-    public partial class ComputeImageCapabilitySchema : Pulumi.CustomResource
+    public partial class ComputeImageCapabilitySchema : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the resource.
@@ -163,7 +161,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class ComputeImageCapabilitySchemaArgs : Pulumi.ResourceArgs
+    public sealed class ComputeImageCapabilitySchemaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the resource.
@@ -228,9 +226,10 @@ namespace Pulumi.Oci.Core
         public ComputeImageCapabilitySchemaArgs()
         {
         }
+        public static new ComputeImageCapabilitySchemaArgs Empty => new ComputeImageCapabilitySchemaArgs();
     }
 
-    public sealed class ComputeImageCapabilitySchemaState : Pulumi.ResourceArgs
+    public sealed class ComputeImageCapabilitySchemaState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the resource.
@@ -307,5 +306,6 @@ namespace Pulumi.Oci.Core
         public ComputeImageCapabilitySchemaState()
         {
         }
+        public static new ComputeImageCapabilitySchemaState Empty => new ComputeImageCapabilitySchemaState();
     }
 }

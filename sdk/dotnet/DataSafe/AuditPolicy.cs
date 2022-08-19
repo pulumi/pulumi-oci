@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/auditPolicy:AuditPolicy")]
-    public partial class AuditPolicy : Pulumi.CustomResource
+    public partial class AuditPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Lists the audit policy provisioning conditions for the target database.
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class AuditPolicyArgs : Pulumi.ResourceArgs
+    public sealed class AuditPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique audit policy identifier.
@@ -248,9 +248,10 @@ namespace Pulumi.Oci.DataSafe
         public AuditPolicyArgs()
         {
         }
+        public static new AuditPolicyArgs Empty => new AuditPolicyArgs();
     }
 
-    public sealed class AuditPolicyState : Pulumi.ResourceArgs
+    public sealed class AuditPolicyState : global::Pulumi.ResourceArgs
     {
         [Input("auditConditions")]
         private InputList<Inputs.AuditPolicyAuditConditionGetArgs>? _auditConditions;
@@ -399,5 +400,6 @@ namespace Pulumi.Oci.DataSafe
         public AuditPolicyState()
         {
         }
+        public static new AuditPolicyState Empty => new AuditPolicyState();
     }
 }

@@ -31,6 +31,49 @@ import javax.annotation.Nullable;
  * Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Jms.Fleet;
+ * import com.pulumi.oci.Jms.FleetArgs;
+ * import com.pulumi.oci.Jms.inputs.FleetInventoryLogArgs;
+ * import com.pulumi.oci.Jms.inputs.FleetOperationLogArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testFleet = new Fleet(&#34;testFleet&#34;, FleetArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.fleet_display_name())
+ *             .inventoryLog(FleetInventoryLogArgs.builder()
+ *                 .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                 .logId(oci_logging_log.test_log().id())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.fleet_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .isAdvancedFeaturesEnabled(var_.fleet_is_advanced_features_enabled())
+ *             .operationLog(FleetOperationLogArgs.builder()
+ *                 .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                 .logId(oci_logging_log.test_log().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

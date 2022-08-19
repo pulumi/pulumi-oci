@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waa.Inputs
 {
 
-    public sealed class AppAccelerationPolicyResponseCachingPolicyGetArgs : Pulumi.ResourceArgs
+    public sealed class AppAccelerationPolicyResponseCachingPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) When false, responses will not be cached by the backend based on response headers.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Waa.Inputs
         public AppAccelerationPolicyResponseCachingPolicyGetArgs()
         {
         }
+        public static new AppAccelerationPolicyResponseCachingPolicyGetArgs Empty => new AppAccelerationPolicyResponseCachingPolicyGetArgs();
     }
 }

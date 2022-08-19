@@ -21,21 +21,19 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitor = Oci.ApmSynthetics.GetMonitor.Invoke(new()
         ///     {
-        ///         var testMonitor = Output.Create(Oci.ApmSynthetics.GetMonitor.InvokeAsync(new Oci.ApmSynthetics.GetMonitorArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///             MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitor = Oci.ApmSynthetics.GetMonitor.Invoke(new()
         ///     {
-        ///         var testMonitor = Output.Create(Oci.ApmSynthetics.GetMonitor.InvokeAsync(new Oci.ApmSynthetics.GetMonitorArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///             MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.ApmSynthetics
     }
 
 
-    public sealed class GetMonitorArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetMonitorArgs()
         {
         }
+        public static new GetMonitorArgs Empty => new GetMonitorArgs();
     }
 
-    public sealed class GetMonitorInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetMonitorInvokeArgs()
         {
         }
+        public static new GetMonitorInvokeArgs Empty => new GetMonitorInvokeArgs();
     }
 
 

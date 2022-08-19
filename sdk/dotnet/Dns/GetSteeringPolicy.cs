@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSteeringPolicy = Oci.Dns.GetSteeringPolicy.Invoke(new()
         ///     {
-        ///         var testSteeringPolicy = Output.Create(Oci.Dns.GetSteeringPolicy.InvokeAsync(new Oci.Dns.GetSteeringPolicyArgs
-        ///         {
-        ///             SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
-        ///         }));
-        ///     }
+        ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSteeringPolicy = Oci.Dns.GetSteeringPolicy.Invoke(new()
         ///     {
-        ///         var testSteeringPolicy = Output.Create(Oci.Dns.GetSteeringPolicy.InvokeAsync(new Oci.Dns.GetSteeringPolicyArgs
-        ///         {
-        ///             SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
-        ///         }));
-        ///     }
+        ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetSteeringPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetSteeringPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the target steering policy.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Dns
         public GetSteeringPolicyArgs()
         {
         }
+        public static new GetSteeringPolicyArgs Empty => new GetSteeringPolicyArgs();
     }
 
-    public sealed class GetSteeringPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSteeringPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the target steering policy.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Dns
         public GetSteeringPolicyInvokeArgs()
         {
         }
+        public static new GetSteeringPolicyInvokeArgs Empty => new GetSteeringPolicyInvokeArgs();
     }
 
 

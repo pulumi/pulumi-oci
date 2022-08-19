@@ -20,6 +20,36 @@ import javax.annotation.Nullable;
  * Enable Stack Monitoring for the external non-container database.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.ExternalNonContainerDatabasesStackMonitoring;
+ * import com.pulumi.oci.Database.ExternalNonContainerDatabasesStackMonitoringArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExternalnoncontainerdatabasesStackMonitoring = new ExternalNonContainerDatabasesStackMonitoring(&#34;testExternalnoncontainerdatabasesStackMonitoring&#34;, ExternalNonContainerDatabasesStackMonitoringArgs.builder()        
+ *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+ *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+ *             .enableStackMonitoring(true)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class GetNotebookSessionShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetNotebookSessionShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the notebook session shape.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public GetNotebookSessionShapesFilterArgs()
         {
         }
+        public static new GetNotebookSessionShapesFilterArgs Empty => new GetNotebookSessionShapesFilterArgs();
     }
 }

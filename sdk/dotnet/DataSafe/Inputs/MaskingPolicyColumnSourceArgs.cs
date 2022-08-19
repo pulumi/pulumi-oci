@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class MaskingPolicyColumnSourceArgs : Pulumi.ResourceArgs
+    public sealed class MaskingPolicyColumnSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The source of masking columns.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public MaskingPolicyColumnSourceArgs()
         {
         }
+        public static new MaskingPolicyColumnSourceArgs Empty => new MaskingPolicyColumnSourceArgs();
     }
 }

@@ -19,28 +19,26 @@ namespace Pulumi.Oci.AnnouncementsService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAnnouncementSubscriptionsFilterGroup = new Oci.AnnouncementsService.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup", new()
     ///     {
-    ///         var testAnnouncementSubscriptionsFilterGroup = new Oci.AnnouncementsService.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup", new Oci.AnnouncementsService.AnnouncementSubscriptionsFilterGroupArgs
+    ///         AnnouncementSubscriptionId = oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
+    ///         Filters = new[]
     ///         {
-    ///             AnnouncementSubscriptionId = oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
-    ///             Filters = 
+    ///             new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionsFilterGroupFilterArgs
     ///             {
-    ///                 new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionsFilterGroupFilterArgs
-    ///                 {
-    ///                     Type = @var.Announcement_subscriptions_filter_group_filters_type,
-    ///                     Value = @var.Announcement_subscriptions_filter_group_filters_value,
-    ///                 },
+    ///                 Type = @var.Announcement_subscriptions_filter_group_filters_type,
+    ///                 Value = @var.Announcement_subscriptions_filter_group_filters_value,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.AnnouncementsService
     /// ```
     /// </summary>
     [OciResourceType("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup")]
-    public partial class AnnouncementSubscriptionsFilterGroup : Pulumi.CustomResource
+    public partial class AnnouncementSubscriptionsFilterGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the announcement subscription.
@@ -116,7 +114,7 @@ namespace Pulumi.Oci.AnnouncementsService
         }
     }
 
-    public sealed class AnnouncementSubscriptionsFilterGroupArgs : Pulumi.ResourceArgs
+    public sealed class AnnouncementSubscriptionsFilterGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the announcement subscription.
@@ -145,9 +143,10 @@ namespace Pulumi.Oci.AnnouncementsService
         public AnnouncementSubscriptionsFilterGroupArgs()
         {
         }
+        public static new AnnouncementSubscriptionsFilterGroupArgs Empty => new AnnouncementSubscriptionsFilterGroupArgs();
     }
 
-    public sealed class AnnouncementSubscriptionsFilterGroupState : Pulumi.ResourceArgs
+    public sealed class AnnouncementSubscriptionsFilterGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the announcement subscription.
@@ -176,5 +175,6 @@ namespace Pulumi.Oci.AnnouncementsService
         public AnnouncementSubscriptionsFilterGroupState()
         {
         }
+        public static new AnnouncementSubscriptionsFilterGroupState Empty => new AnnouncementSubscriptionsFilterGroupState();
     }
 }

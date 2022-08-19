@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsGetArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("allowedHttpMethods")]
         private InputList<string>? _allowedHttpMethods;
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsGetArgs()
         {
         }
+        public static new AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsGetArgs Empty => new AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsGetArgs();
     }
 }

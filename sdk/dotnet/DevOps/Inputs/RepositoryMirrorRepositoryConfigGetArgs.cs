@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class RepositoryMirrorRepositoryConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class RepositoryMirrorRepositoryConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Upstream git repository connection identifer.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public RepositoryMirrorRepositoryConfigGetArgs()
         {
         }
+        public static new RepositoryMirrorRepositoryConfigGetArgs Empty => new RepositoryMirrorRepositoryConfigGetArgs();
     }
 }

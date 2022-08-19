@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousVmClusters = Oci.Database.GetAutonomousVmClusters.Invoke(new()
         ///     {
-        ///         var testAutonomousVmClusters = Output.Create(Oci.Database.GetAutonomousVmClusters.InvokeAsync(new Oci.Database.GetAutonomousVmClustersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Autonomous_vm_cluster_display_name,
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///             State = @var.Autonomous_vm_cluster_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Autonomous_vm_cluster_display_name,
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         State = @var.Autonomous_vm_cluster_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousVmClusters = Oci.Database.GetAutonomousVmClusters.Invoke(new()
         ///     {
-        ///         var testAutonomousVmClusters = Output.Create(Oci.Database.GetAutonomousVmClusters.InvokeAsync(new Oci.Database.GetAutonomousVmClustersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Autonomous_vm_cluster_display_name,
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///             State = @var.Autonomous_vm_cluster_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Autonomous_vm_cluster_display_name,
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         State = @var.Autonomous_vm_cluster_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousVmClustersArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousVmClustersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousVmClustersArgs()
         {
         }
+        public static new GetAutonomousVmClustersArgs Empty => new GetAutonomousVmClustersArgs();
     }
 
-    public sealed class GetAutonomousVmClustersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousVmClustersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousVmClustersInvokeArgs()
         {
         }
+        public static new GetAutonomousVmClustersInvokeArgs Empty => new GetAutonomousVmClustersInvokeArgs();
     }
 
 

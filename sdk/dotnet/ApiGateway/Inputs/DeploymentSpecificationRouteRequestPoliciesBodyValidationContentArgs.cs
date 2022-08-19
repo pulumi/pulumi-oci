@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs Empty => new DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs();
     }
 }

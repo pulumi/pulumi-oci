@@ -17,34 +17,32 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testKeyStore = new Oci.Database.KeyStore("testKeyStore", new()
     ///     {
-    ///         var testKeyStore = new Oci.Database.KeyStore("testKeyStore", new Oci.Database.KeyStoreArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Key_store_display_name,
+    ///         TypeDetails = new Oci.Database.Inputs.KeyStoreTypeDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Key_store_display_name,
-    ///             TypeDetails = new Oci.Database.Inputs.KeyStoreTypeDetailsArgs
-    ///             {
-    ///                 AdminUsername = @var.Key_store_type_details_admin_username,
-    ///                 ConnectionIps = @var.Key_store_type_details_connection_ips,
-    ///                 SecretId = oci_vault_secret.Test_secret.Id,
-    ///                 Type = @var.Key_store_type_details_type,
-    ///                 VaultId = oci_kms_vault.Test_vault.Id,
-    ///             },
-    ///             DefinedTags = @var.Key_store_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             AdminUsername = @var.Key_store_type_details_admin_username,
+    ///             ConnectionIps = @var.Key_store_type_details_connection_ips,
+    ///             SecretId = oci_vault_secret.Test_secret.Id,
+    ///             Type = @var.Key_store_type_details_type,
+    ///             VaultId = oci_kms_vault.Test_vault.Id,
+    ///         },
+    ///         DefinedTags = @var.Key_store_defined_tags,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/keyStore:KeyStore")]
-    public partial class KeyStore : Pulumi.CustomResource
+    public partial class KeyStore : global::Pulumi.CustomResource
     {
         /// <summary>
         /// List of databases associated with the key store.
@@ -156,7 +154,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class KeyStoreArgs : Pulumi.ResourceArgs
+    public sealed class KeyStoreArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -203,9 +201,10 @@ namespace Pulumi.Oci.Database
         public KeyStoreArgs()
         {
         }
+        public static new KeyStoreArgs Empty => new KeyStoreArgs();
     }
 
-    public sealed class KeyStoreState : Pulumi.ResourceArgs
+    public sealed class KeyStoreState : global::Pulumi.ResourceArgs
     {
         [Input("associatedDatabases")]
         private InputList<Inputs.KeyStoreAssociatedDatabaseGetArgs>? _associatedDatabases;
@@ -282,5 +281,6 @@ namespace Pulumi.Oci.Database
         public KeyStoreState()
         {
         }
+        public static new KeyStoreState Empty => new KeyStoreState();
     }
 }

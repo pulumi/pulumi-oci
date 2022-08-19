@@ -21,25 +21,23 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNotebookSessions = Oci.DataScience.GetNotebookSessions.Invoke(new()
         ///     {
-        ///         var testNotebookSessions = Output.Create(Oci.DataScience.GetNotebookSessions.InvokeAsync(new Oci.DataScience.GetNotebookSessionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Notebook_session_created_by,
-        ///             DisplayName = @var.Notebook_session_display_name,
-        ///             Id = @var.Notebook_session_id,
-        ///             ProjectId = oci_datascience_project.Test_project.Id,
-        ///             State = @var.Notebook_session_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Notebook_session_created_by,
+        ///         DisplayName = @var.Notebook_session_display_name,
+        ///         Id = @var.Notebook_session_id,
+        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///         State = @var.Notebook_session_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNotebookSessions = Oci.DataScience.GetNotebookSessions.Invoke(new()
         ///     {
-        ///         var testNotebookSessions = Output.Create(Oci.DataScience.GetNotebookSessions.InvokeAsync(new Oci.DataScience.GetNotebookSessionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Notebook_session_created_by,
-        ///             DisplayName = @var.Notebook_session_display_name,
-        ///             Id = @var.Notebook_session_id,
-        ///             ProjectId = oci_datascience_project.Test_project.Id,
-        ///             State = @var.Notebook_session_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Notebook_session_created_by,
+        ///         DisplayName = @var.Notebook_session_display_name,
+        ///         Id = @var.Notebook_session_id,
+        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///         State = @var.Notebook_session_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetNotebookSessionsArgs : Pulumi.InvokeArgs
+    public sealed class GetNotebookSessionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.DataScience
         public GetNotebookSessionsArgs()
         {
         }
+        public static new GetNotebookSessionsArgs Empty => new GetNotebookSessionsArgs();
     }
 
-    public sealed class GetNotebookSessionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNotebookSessionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.DataScience
         public GetNotebookSessionsInvokeArgs()
         {
         }
+        public static new GetNotebookSessionsInvokeArgs Empty => new GetNotebookSessionsInvokeArgs();
     }
 
 

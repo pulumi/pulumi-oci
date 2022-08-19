@@ -19,32 +19,30 @@ namespace Pulumi.Oci.Waas
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCertificate = new Oci.Waas.Certificate("testCertificate", new()
     ///     {
-    ///         var testCertificate = new Oci.Waas.Certificate("testCertificate", new Oci.Waas.CertificateArgs
+    ///         CertificateData = @var.Certificate_certificate_data,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         PrivateKeyData = @var.Certificate_private_key_data,
+    ///         DefinedTags = 
     ///         {
-    ///             CertificateData = @var.Certificate_certificate_data,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             PrivateKeyData = @var.Certificate_private_key_data,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Certificate_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsTrustVerificationDisabled = @var.Certificate_is_trust_verification_disabled,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Certificate_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsTrustVerificationDisabled = @var.Certificate_is_trust_verification_disabled,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Waas
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Waas/certificate:Certificate")]
-    public partial class Certificate : Pulumi.CustomResource
+    public partial class Certificate : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The data of the SSL certificate.
@@ -209,7 +207,7 @@ namespace Pulumi.Oci.Waas
         }
     }
 
-    public sealed class CertificateArgs : Pulumi.ResourceArgs
+    public sealed class CertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The data of the SSL certificate.
@@ -268,9 +266,10 @@ namespace Pulumi.Oci.Waas
         public CertificateArgs()
         {
         }
+        public static new CertificateArgs Empty => new CertificateArgs();
     }
 
-    public sealed class CertificateState : Pulumi.ResourceArgs
+    public sealed class CertificateState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The data of the SSL certificate.
@@ -422,5 +421,6 @@ namespace Pulumi.Oci.Waas
         public CertificateState()
         {
         }
+        public static new CertificateState Empty => new CertificateState();
     }
 }

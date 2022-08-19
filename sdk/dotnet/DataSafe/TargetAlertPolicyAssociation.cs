@@ -17,33 +17,31 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTargetAlertPolicyAssociation = new Oci.DataSafe.TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation", new()
     ///     {
-    ///         var testTargetAlertPolicyAssociation = new Oci.DataSafe.TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation", new Oci.DataSafe.TargetAlertPolicyAssociationArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IsEnabled = @var.Target_alert_policy_association_is_enabled,
+    ///         PolicyId = oci_identity_policy.Test_policy.Id,
+    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IsEnabled = @var.Target_alert_policy_association_is_enabled,
-    ///             PolicyId = oci_identity_policy.Test_policy.Id,
-    ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Target_alert_policy_association_description,
-    ///             DisplayName = @var.Target_alert_policy_association_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Target_alert_policy_association_description,
+    ///         DisplayName = @var.Target_alert_policy_association_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation")]
-    public partial class TargetAlertPolicyAssociation : Pulumi.CustomResource
+    public partial class TargetAlertPolicyAssociation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the target-alert policy association is created.
@@ -173,7 +171,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class TargetAlertPolicyAssociationArgs : Pulumi.ResourceArgs
+    public sealed class TargetAlertPolicyAssociationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the target-alert policy association is created.
@@ -238,9 +236,10 @@ namespace Pulumi.Oci.DataSafe
         public TargetAlertPolicyAssociationArgs()
         {
         }
+        public static new TargetAlertPolicyAssociationArgs Empty => new TargetAlertPolicyAssociationArgs();
     }
 
-    public sealed class TargetAlertPolicyAssociationState : Pulumi.ResourceArgs
+    public sealed class TargetAlertPolicyAssociationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the target-alert policy association is created.
@@ -335,5 +334,6 @@ namespace Pulumi.Oci.DataSafe
         public TargetAlertPolicyAssociationState()
         {
         }
+        public static new TargetAlertPolicyAssociationState Empty => new TargetAlertPolicyAssociationState();
     }
 }

@@ -92,6 +92,11 @@ public final class GetBdsInstanceResult {
      */
     private final Boolean isSecure;
     private final String kerberosRealmName;
+    /**
+     * @return The OCID of the Key Management master encryption key.
+     * 
+     */
+    private final String kmsKeyId;
     private final List<GetBdsInstanceMasterNode> masterNodes;
     /**
      * @return Additional configuration of the user&#39;s network.
@@ -146,6 +151,7 @@ public final class GetBdsInstanceResult {
         @CustomType.Parameter("isHighAvailability") Boolean isHighAvailability,
         @CustomType.Parameter("isSecure") Boolean isSecure,
         @CustomType.Parameter("kerberosRealmName") String kerberosRealmName,
+        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
         @CustomType.Parameter("masterNodes") List<GetBdsInstanceMasterNode> masterNodes,
         @CustomType.Parameter("networkConfigs") List<GetBdsInstanceNetworkConfig> networkConfigs,
         @CustomType.Parameter("nodes") List<GetBdsInstanceNode> nodes,
@@ -173,6 +179,7 @@ public final class GetBdsInstanceResult {
         this.isHighAvailability = isHighAvailability;
         this.isSecure = isSecure;
         this.kerberosRealmName = kerberosRealmName;
+        this.kmsKeyId = kmsKeyId;
         this.masterNodes = masterNodes;
         this.networkConfigs = networkConfigs;
         this.nodes = nodes;
@@ -290,6 +297,13 @@ public final class GetBdsInstanceResult {
     public String kerberosRealmName() {
         return this.kerberosRealmName;
     }
+    /**
+     * @return The OCID of the Key Management master encryption key.
+     * 
+     */
+    public String kmsKeyId() {
+        return this.kmsKeyId;
+    }
     public List<GetBdsInstanceMasterNode> masterNodes() {
         return this.masterNodes;
     }
@@ -369,6 +383,7 @@ public final class GetBdsInstanceResult {
         private Boolean isHighAvailability;
         private Boolean isSecure;
         private String kerberosRealmName;
+        private String kmsKeyId;
         private List<GetBdsInstanceMasterNode> masterNodes;
         private List<GetBdsInstanceNetworkConfig> networkConfigs;
         private List<GetBdsInstanceNode> nodes;
@@ -403,6 +418,7 @@ public final class GetBdsInstanceResult {
     	      this.isHighAvailability = defaults.isHighAvailability;
     	      this.isSecure = defaults.isSecure;
     	      this.kerberosRealmName = defaults.kerberosRealmName;
+    	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.masterNodes = defaults.masterNodes;
     	      this.networkConfigs = defaults.networkConfigs;
     	      this.nodes = defaults.nodes;
@@ -495,6 +511,10 @@ public final class GetBdsInstanceResult {
             this.kerberosRealmName = Objects.requireNonNull(kerberosRealmName);
             return this;
         }
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            return this;
+        }
         public Builder masterNodes(List<GetBdsInstanceMasterNode> masterNodes) {
             this.masterNodes = Objects.requireNonNull(masterNodes);
             return this;
@@ -546,7 +566,7 @@ public final class GetBdsInstanceResult {
         public Builder workerNodes(GetBdsInstanceWorkerNode... workerNodes) {
             return workerNodes(List.of(workerNodes));
         }        public GetBdsInstanceResult build() {
-            return new GetBdsInstanceResult(bdsInstanceId, bootstrapScriptUrl, cloudSqlDetails, clusterAdminPassword, clusterDetails, clusterPublicKey, clusterVersion, compartmentId, computeOnlyWorkerNodes, createdBy, definedTags, displayName, freeformTags, id, isCloudSqlConfigured, isHighAvailability, isSecure, kerberosRealmName, masterNodes, networkConfigs, nodes, numberOfNodes, state, timeCreated, timeUpdated, utilNodes, workerNodes);
+            return new GetBdsInstanceResult(bdsInstanceId, bootstrapScriptUrl, cloudSqlDetails, clusterAdminPassword, clusterDetails, clusterPublicKey, clusterVersion, compartmentId, computeOnlyWorkerNodes, createdBy, definedTags, displayName, freeformTags, id, isCloudSqlConfigured, isHighAvailability, isSecure, kerberosRealmName, kmsKeyId, masterNodes, networkConfigs, nodes, numberOfNodes, state, timeCreated, timeUpdated, utilNodes, workerNodes);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Dns
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/resolver:Resolver")]
-    public partial class Resolver : Pulumi.CustomResource
+    public partial class Resolver : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the attached VCN.
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class ResolverArgs : Pulumi.ResourceArgs
+    public sealed class ResolverArgs : global::Pulumi.ResourceArgs
     {
         [Input("attachedViews")]
         private InputList<Inputs.ResolverAttachedViewArgs>? _attachedViews;
@@ -251,9 +251,10 @@ namespace Pulumi.Oci.Dns
         public ResolverArgs()
         {
         }
+        public static new ResolverArgs Empty => new ResolverArgs();
     }
 
-    public sealed class ResolverState : Pulumi.ResourceArgs
+    public sealed class ResolverState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the attached VCN.
@@ -384,5 +385,6 @@ namespace Pulumi.Oci.Dns
         public ResolverState()
         {
         }
+        public static new ResolverState Empty => new ResolverState();
     }
 }

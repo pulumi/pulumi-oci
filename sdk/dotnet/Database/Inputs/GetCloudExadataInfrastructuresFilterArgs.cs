@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetCloudExadataInfrastructuresFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCloudExadataInfrastructuresFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the month of the year.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetCloudExadataInfrastructuresFilterInputArgs()
         {
         }
+        public static new GetCloudExadataInfrastructuresFilterInputArgs Empty => new GetCloudExadataInfrastructuresFilterInputArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetIdpGroupMappingsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetIdpGroupMappingsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetIdpGroupMappingsFilterInputArgs()
         {
         }
+        public static new GetIdpGroupMappingsFilterInputArgs Empty => new GetIdpGroupMappingsFilterInputArgs();
     }
 }

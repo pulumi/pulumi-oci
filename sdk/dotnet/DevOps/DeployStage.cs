@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/deployStage:DeployStage")]
-    public partial class DeployStage : Pulumi.CustomResource
+    public partial class DeployStage : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Specifies the approval policy.
@@ -387,7 +387,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class DeployStageArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies the approval policy.
@@ -704,9 +704,10 @@ namespace Pulumi.Oci.DevOps
         public DeployStageArgs()
         {
         }
+        public static new DeployStageArgs Empty => new DeployStageArgs();
     }
 
-    public sealed class DeployStageState : Pulumi.ResourceArgs
+    public sealed class DeployStageState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies the approval policy.
@@ -1071,5 +1072,6 @@ namespace Pulumi.Oci.DevOps
         public DeployStageState()
         {
         }
+        public static new DeployStageState Empty => new DeployStageState();
     }
 }

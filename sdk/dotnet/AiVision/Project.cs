@@ -17,30 +17,28 @@ namespace Pulumi.Oci.AiVision
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testProject = new Oci.AiVision.Project("testProject", new()
     ///     {
-    ///         var testProject = new Oci.AiVision.Project("testProject", new Oci.AiVision.ProjectArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Project_description,
-    ///             DisplayName = @var.Project_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Project_description,
+    ///         DisplayName = @var.Project_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.AiVision
     /// ```
     /// </summary>
     [OciResourceType("oci:AiVision/project:Project")]
-    public partial class Project : Pulumi.CustomResource
+    public partial class Project : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -158,7 +156,7 @@ namespace Pulumi.Oci.AiVision
         }
     }
 
-    public sealed class ProjectArgs : Pulumi.ResourceArgs
+    public sealed class ProjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -205,9 +203,10 @@ namespace Pulumi.Oci.AiVision
         public ProjectArgs()
         {
         }
+        public static new ProjectArgs Empty => new ProjectArgs();
     }
 
-    public sealed class ProjectState : Pulumi.ResourceArgs
+    public sealed class ProjectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -290,5 +289,6 @@ namespace Pulumi.Oci.AiVision
         public ProjectState()
         {
         }
+        public static new ProjectState Empty => new ProjectState();
     }
 }

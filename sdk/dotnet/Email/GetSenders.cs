@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSenders = Oci.Email.GetSenders.Invoke(new()
         ///     {
-        ///         var testSenders = Output.Create(Oci.Email.GetSenders.InvokeAsync(new Oci.Email.GetSendersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Domain = @var.Sender_domain,
-        ///             EmailAddress = @var.Sender_email_address,
-        ///             State = @var.Sender_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Domain = @var.Sender_domain,
+        ///         EmailAddress = @var.Sender_email_address,
+        ///         State = @var.Sender_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSenders = Oci.Email.GetSenders.Invoke(new()
         ///     {
-        ///         var testSenders = Output.Create(Oci.Email.GetSenders.InvokeAsync(new Oci.Email.GetSendersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Domain = @var.Sender_domain,
-        ///             EmailAddress = @var.Sender_email_address,
-        ///             State = @var.Sender_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Domain = @var.Sender_domain,
+        ///         EmailAddress = @var.Sender_email_address,
+        ///         State = @var.Sender_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Email
     }
 
 
-    public sealed class GetSendersArgs : Pulumi.InvokeArgs
+    public sealed class GetSendersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID for the compartment.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Email
         public GetSendersArgs()
         {
         }
+        public static new GetSendersArgs Empty => new GetSendersArgs();
     }
 
-    public sealed class GetSendersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSendersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID for the compartment.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Email
         public GetSendersInvokeArgs()
         {
         }
+        public static new GetSendersInvokeArgs Empty => new GetSendersInvokeArgs();
     }
 
 

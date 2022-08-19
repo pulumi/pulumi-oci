@@ -17,29 +17,27 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPublicIpPool = new Oci.Core.PublicIpPool("testPublicIpPool", new()
     ///     {
-    ///         var testPublicIpPool = new Oci.Core.PublicIpPool("testPublicIpPool", new Oci.Core.PublicIpPoolArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Public_ip_pool_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Public_ip_pool_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/publicIpPool:PublicIpPool")]
-    public partial class PublicIpPool : Pulumi.CustomResource
+    public partial class PublicIpPool : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class PublicIpPoolArgs : Pulumi.ResourceArgs
+    public sealed class PublicIpPoolArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP pool.
@@ -180,9 +178,10 @@ namespace Pulumi.Oci.Core
         public PublicIpPoolArgs()
         {
         }
+        public static new PublicIpPoolArgs Empty => new PublicIpPoolArgs();
     }
 
-    public sealed class PublicIpPoolState : Pulumi.ResourceArgs
+    public sealed class PublicIpPoolState : global::Pulumi.ResourceArgs
     {
         [Input("cidrBlocks")]
         private InputList<string>? _cidrBlocks;
@@ -247,5 +246,6 @@ namespace Pulumi.Oci.Core
         public PublicIpPoolState()
         {
         }
+        public static new PublicIpPoolState Empty => new PublicIpPoolState();
     }
 }

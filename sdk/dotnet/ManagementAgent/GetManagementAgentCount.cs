@@ -23,23 +23,21 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentCount = Oci.ManagementAgent.GetManagementAgentCount.Invoke(new()
         ///     {
-        ///         var testManagementAgentCount = Output.Create(Oci.ManagementAgent.GetManagementAgentCount.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentCountArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             GroupBies = @var.Management_agent_count_group_by,
-        ///             HasPlugins = @var.Management_agent_count_has_plugins,
-        ///             InstallType = @var.Management_agent_count_install_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         GroupBies = @var.Management_agent_count_group_by,
+        ///         HasPlugins = @var.Management_agent_count_has_plugins,
+        ///         InstallType = @var.Management_agent_count_install_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentCount = Oci.ManagementAgent.GetManagementAgentCount.Invoke(new()
         ///     {
-        ///         var testManagementAgentCount = Output.Create(Oci.ManagementAgent.GetManagementAgentCount.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentCountArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             GroupBies = @var.Management_agent_count_group_by,
-        ///             HasPlugins = @var.Management_agent_count_has_plugins,
-        ///             InstallType = @var.Management_agent_count_install_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         GroupBies = @var.Management_agent_count_group_by,
+        ///         HasPlugins = @var.Management_agent_count_has_plugins,
+        ///         InstallType = @var.Management_agent_count_install_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentCountArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentCountArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentCountArgs()
         {
         }
+        public static new GetManagementAgentCountArgs Empty => new GetManagementAgentCountArgs();
     }
 
-    public sealed class GetManagementAgentCountInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentCountInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentCountInvokeArgs()
         {
         }
+        public static new GetManagementAgentCountInvokeArgs Empty => new GetManagementAgentCountInvokeArgs();
     }
 
 

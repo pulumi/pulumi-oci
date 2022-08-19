@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetVmClusterRecommendedNetworkArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterRecommendedNetworkArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -124,9 +124,10 @@ namespace Pulumi.Oci.Database
         public GetVmClusterRecommendedNetworkArgs()
         {
         }
+        public static new GetVmClusterRecommendedNetworkArgs Empty => new GetVmClusterRecommendedNetworkArgs();
     }
 
-    public sealed class GetVmClusterRecommendedNetworkInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterRecommendedNetworkInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -221,6 +222,7 @@ namespace Pulumi.Oci.Database
         public GetVmClusterRecommendedNetworkInvokeArgs()
         {
         }
+        public static new GetVmClusterRecommendedNetworkInvokeArgs Empty => new GetVmClusterRecommendedNetworkInvokeArgs();
     }
 
 

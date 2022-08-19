@@ -31,6 +31,51 @@ import javax.annotation.Nullable;
  * It does not have to be unique, and you can change it.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Vtap;
+ * import com.pulumi.oci.Core.VtapArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVtap = new Vtap(&#34;testVtap&#34;, VtapArgs.builder()        
+ *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+ *             .compartmentId(var_.compartment_id())
+ *             .sourceId(oci_core_source.test_source().id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.vtap_display_name())
+ *             .encapsulationProtocol(var_.vtap_encapsulation_protocol())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
+ *             .maxPacketSize(var_.vtap_max_packet_size())
+ *             .sourcePrivateEndpointIp(var_.vtap_source_private_endpoint_ip())
+ *             .sourcePrivateEndpointSubnetId(oci_core_subnet.test_subnet().id())
+ *             .sourceType(var_.vtap_source_type())
+ *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .targetIp(var_.vtap_target_ip())
+ *             .targetType(var_.vtap_target_type())
+ *             .trafficMode(var_.vtap_traffic_mode())
+ *             .vxlanNetworkIdentifier(var_.vtap_vxlan_network_identifier())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

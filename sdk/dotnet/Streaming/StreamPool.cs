@@ -19,42 +19,40 @@ namespace Pulumi.Oci.Streaming
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testStreamPool = new Oci.Streaming.StreamPool("testStreamPool", new()
     ///     {
-    ///         var testStreamPool = new Oci.Streaming.StreamPool("testStreamPool", new Oci.Streaming.StreamPoolArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         CustomEncryptionKey = new Oci.Streaming.Inputs.StreamPoolCustomEncryptionKeyArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             CustomEncryptionKey = new Oci.Streaming.Inputs.StreamPoolCustomEncryptionKeyArgs
-    ///             {
-    ///                 KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             },
-    ///             DefinedTags = @var.Stream_pool_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             KafkaSettings = new Oci.Streaming.Inputs.StreamPoolKafkaSettingsArgs
-    ///             {
-    ///                 AutoCreateTopicsEnable = @var.Stream_pool_kafka_settings_auto_create_topics_enable,
-    ///                 BootstrapServers = @var.Stream_pool_kafka_settings_bootstrap_servers,
-    ///                 LogRetentionHours = @var.Stream_pool_kafka_settings_log_retention_hours,
-    ///                 NumPartitions = @var.Stream_pool_kafka_settings_num_partitions,
-    ///             },
-    ///             PrivateEndpointSettings = new Oci.Streaming.Inputs.StreamPoolPrivateEndpointSettingsArgs
-    ///             {
-    ///                 NsgIds = @var.Stream_pool_private_endpoint_settings_nsg_ids,
-    ///                 PrivateEndpointIp = @var.Stream_pool_private_endpoint_settings_private_endpoint_ip,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             },
-    ///         });
-    ///     }
+    ///             KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         },
+    ///         DefinedTags = @var.Stream_pool_defined_tags,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         KafkaSettings = new Oci.Streaming.Inputs.StreamPoolKafkaSettingsArgs
+    ///         {
+    ///             AutoCreateTopicsEnable = @var.Stream_pool_kafka_settings_auto_create_topics_enable,
+    ///             BootstrapServers = @var.Stream_pool_kafka_settings_bootstrap_servers,
+    ///             LogRetentionHours = @var.Stream_pool_kafka_settings_log_retention_hours,
+    ///             NumPartitions = @var.Stream_pool_kafka_settings_num_partitions,
+    ///         },
+    ///         PrivateEndpointSettings = new Oci.Streaming.Inputs.StreamPoolPrivateEndpointSettingsArgs
+    ///         {
+    ///             NsgIds = @var.Stream_pool_private_endpoint_settings_nsg_ids,
+    ///             PrivateEndpointIp = @var.Stream_pool_private_endpoint_settings_private_endpoint_ip,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -66,7 +64,7 @@ namespace Pulumi.Oci.Streaming
     /// ```
     /// </summary>
     [OciResourceType("oci:Streaming/streamPool:StreamPool")]
-    public partial class StreamPool : Pulumi.CustomResource
+    public partial class StreamPool : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the stream.
@@ -184,7 +182,7 @@ namespace Pulumi.Oci.Streaming
         }
     }
 
-    public sealed class StreamPoolArgs : Pulumi.ResourceArgs
+    public sealed class StreamPoolArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the stream.
@@ -243,9 +241,10 @@ namespace Pulumi.Oci.Streaming
         public StreamPoolArgs()
         {
         }
+        public static new StreamPoolArgs Empty => new StreamPoolArgs();
     }
 
-    public sealed class StreamPoolState : Pulumi.ResourceArgs
+    public sealed class StreamPoolState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the stream.
@@ -334,5 +333,6 @@ namespace Pulumi.Oci.Streaming
         public StreamPoolState()
         {
         }
+        public static new StreamPoolState Empty => new StreamPoolState();
     }
 }

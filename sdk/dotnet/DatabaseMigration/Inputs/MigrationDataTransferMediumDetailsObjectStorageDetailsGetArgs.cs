@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationDataTransferMediumDetailsObjectStorageDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class MigrationDataTransferMediumDetailsObjectStorageDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Bucket name.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationDataTransferMediumDetailsObjectStorageDetailsGetArgs()
         {
         }
+        public static new MigrationDataTransferMediumDetailsObjectStorageDetailsGetArgs Empty => new MigrationDataTransferMediumDetailsObjectStorageDetailsGetArgs();
     }
 }

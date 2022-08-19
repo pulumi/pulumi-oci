@@ -74,6 +74,36 @@ public final class LoadBalancerFunctions {
      * Gets the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(oci_load_balancer_backend.test_backend().name())
+     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args) {
@@ -85,6 +115,36 @@ public final class LoadBalancerFunctions {
      * Gets the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(oci_load_balancer_backend.test_backend().name())
+     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args) {
@@ -96,6 +156,36 @@ public final class LoadBalancerFunctions {
      * Gets the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(oci_load_balancer_backend.test_backend().name())
+     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args, InvokeOptions options) {
@@ -107,6 +197,36 @@ public final class LoadBalancerFunctions {
      * Gets the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(oci_load_balancer_backend.test_backend().name())
+     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args, InvokeOptions options) {
@@ -118,6 +238,35 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
+     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendSetHealthResult> getBackendSetHealth(GetBackendSetHealthArgs args) {
@@ -129,6 +278,35 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
+     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendSetHealthResult> getBackendSetHealthPlain(GetBackendSetHealthPlainArgs args) {
@@ -140,6 +318,35 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
+     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendSetHealthResult> getBackendSetHealth(GetBackendSetHealthArgs args, InvokeOptions options) {
@@ -151,6 +358,35 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
+     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendSetHealthResult> getBackendSetHealthPlain(GetBackendSetHealthPlainArgs args, InvokeOptions options) {
@@ -166,6 +402,34 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancer_backendsets`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args) {
@@ -181,6 +445,34 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancer_backendsets`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args) {
@@ -196,6 +488,34 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancer_backendsets`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args, InvokeOptions options) {
@@ -211,6 +531,34 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancer_backendsets`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args, InvokeOptions options) {
@@ -222,6 +570,35 @@ public final class LoadBalancerFunctions {
      * Lists the backend servers for a given load balancer and backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendsetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args) {
@@ -233,6 +610,35 @@ public final class LoadBalancerFunctions {
      * Lists the backend servers for a given load balancer and backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendsetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendsResult> getBackendsPlain(GetBackendsPlainArgs args) {
@@ -244,6 +650,35 @@ public final class LoadBalancerFunctions {
      * Lists the backend servers for a given load balancer and backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendsetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args, InvokeOptions options) {
@@ -255,6 +690,35 @@ public final class LoadBalancerFunctions {
      * Lists the backend servers for a given load balancer and backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendsetName(oci_load_balancer_backend_set.test_backend_set().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendsResult> getBackendsPlain(GetBackendsPlainArgs args, InvokeOptions options) {
@@ -266,6 +730,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL certificates bundles associated with a given load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args) {
@@ -277,6 +769,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL certificates bundles associated with a given load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args) {
@@ -288,6 +808,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL certificates bundles associated with a given load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
@@ -299,6 +847,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL certificates bundles associated with a given load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {
@@ -310,6 +886,34 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHealthResult> getHealth(GetHealthArgs args) {
@@ -321,6 +925,34 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHealthResult> getHealthPlain(GetHealthPlainArgs args) {
@@ -332,6 +964,34 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHealthResult> getHealth(GetHealthArgs args, InvokeOptions options) {
@@ -343,6 +1003,34 @@ public final class LoadBalancerFunctions {
      * Gets the health status for the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHealthResult> getHealthPlain(GetHealthPlainArgs args, InvokeOptions options) {
@@ -354,6 +1042,34 @@ public final class LoadBalancerFunctions {
      * Lists all hostname resources associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHostnamesResult> getHostnames(GetHostnamesArgs args) {
@@ -365,6 +1081,34 @@ public final class LoadBalancerFunctions {
      * Lists all hostname resources associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHostnamesResult> getHostnamesPlain(GetHostnamesPlainArgs args) {
@@ -376,6 +1120,34 @@ public final class LoadBalancerFunctions {
      * Lists all hostname resources associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHostnamesResult> getHostnames(GetHostnamesArgs args, InvokeOptions options) {
@@ -387,6 +1159,34 @@ public final class LoadBalancerFunctions {
      * Lists all hostname resources associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetHostnamesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHostnamesResult> getHostnamesPlain(GetHostnamesPlainArgs args, InvokeOptions options) {
@@ -404,6 +1204,35 @@ public final class LoadBalancerFunctions {
      * *  Response header rules
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
+     *             .listenerName(oci_load_balancer_listener.test_listener().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListenerRulesResult> getListenerRules(GetListenerRulesArgs args) {
@@ -421,6 +1250,35 @@ public final class LoadBalancerFunctions {
      * *  Response header rules
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
+     *             .listenerName(oci_load_balancer_listener.test_listener().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListenerRulesResult> getListenerRulesPlain(GetListenerRulesPlainArgs args) {
@@ -438,6 +1296,35 @@ public final class LoadBalancerFunctions {
      * *  Response header rules
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
+     *             .listenerName(oci_load_balancer_listener.test_listener().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListenerRulesResult> getListenerRules(GetListenerRulesArgs args, InvokeOptions options) {
@@ -455,6 +1342,35 @@ public final class LoadBalancerFunctions {
      * *  Response header rules
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
+     *             .listenerName(oci_load_balancer_listener.test_listener().name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListenerRulesResult> getListenerRulesPlain(GetListenerRulesPlainArgs args, InvokeOptions options) {
@@ -466,6 +1382,34 @@ public final class LoadBalancerFunctions {
      * Lists all routing policies associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs args) {
@@ -477,6 +1421,34 @@ public final class LoadBalancerFunctions {
      * Lists all routing policies associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPoliciesPlain(GetLoadBalancerRoutingPoliciesPlainArgs args) {
@@ -488,6 +1460,34 @@ public final class LoadBalancerFunctions {
      * Lists all routing policies associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs args, InvokeOptions options) {
@@ -499,6 +1499,34 @@ public final class LoadBalancerFunctions {
      * Lists all routing policies associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLoadBalancerRoutingPoliciesResult> getLoadBalancerRoutingPoliciesPlain(GetLoadBalancerRoutingPoliciesPlainArgs args, InvokeOptions options) {
@@ -510,6 +1538,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified routing policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .routingPolicyName(oci_load_balancer_routing_policy.test_routing_policy().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs args) {
@@ -521,6 +1578,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified routing policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .routingPolicyName(oci_load_balancer_routing_policy.test_routing_policy().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicyPlain(GetLoadBalancerRoutingPolicyPlainArgs args) {
@@ -532,6 +1618,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified routing policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .routingPolicyName(oci_load_balancer_routing_policy.test_routing_policy().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs args, InvokeOptions options) {
@@ -543,6 +1658,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified routing policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancerRoutingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .routingPolicyName(oci_load_balancer_routing_policy.test_routing_policy().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLoadBalancerRoutingPolicyResult> getLoadBalancerRoutingPolicyPlain(GetLoadBalancerRoutingPolicyPlainArgs args, InvokeOptions options) {
@@ -558,6 +1702,37 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancers`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .detail(var_.load_balancer_detail())
+     *             .displayName(var_.load_balancer_display_name())
+     *             .state(var_.load_balancer_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLoadBalancersResult> getLoadBalancers(GetLoadBalancersArgs args) {
@@ -573,6 +1748,37 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancers`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .detail(var_.load_balancer_detail())
+     *             .displayName(var_.load_balancer_display_name())
+     *             .state(var_.load_balancer_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain(GetLoadBalancersPlainArgs args) {
@@ -588,6 +1794,37 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancers`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .detail(var_.load_balancer_detail())
+     *             .displayName(var_.load_balancer_display_name())
+     *             .state(var_.load_balancer_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLoadBalancersResult> getLoadBalancers(GetLoadBalancersArgs args, InvokeOptions options) {
@@ -603,6 +1840,37 @@ public final class LoadBalancerFunctions {
      * * `oci_load_balancers`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .detail(var_.load_balancer_detail())
+     *             .displayName(var_.load_balancer_display_name())
+     *             .state(var_.load_balancer_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain(GetLoadBalancersPlainArgs args, InvokeOptions options) {
@@ -614,6 +1882,34 @@ public final class LoadBalancerFunctions {
      * Lists all path route sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPathRouteSetsResult> getPathRouteSets(GetPathRouteSetsArgs args) {
@@ -625,6 +1921,34 @@ public final class LoadBalancerFunctions {
      * Lists all path route sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPathRouteSetsResult> getPathRouteSetsPlain(GetPathRouteSetsPlainArgs args) {
@@ -636,6 +1960,34 @@ public final class LoadBalancerFunctions {
      * Lists all path route sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPathRouteSetsResult> getPathRouteSets(GetPathRouteSetsArgs args, InvokeOptions options) {
@@ -647,6 +1999,34 @@ public final class LoadBalancerFunctions {
      * Lists all path route sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetPathRouteSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPathRouteSetsResult> getPathRouteSetsPlain(GetPathRouteSetsPlainArgs args, InvokeOptions options) {
@@ -658,6 +2038,34 @@ public final class LoadBalancerFunctions {
      * Lists the available load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args) {
@@ -669,6 +2077,34 @@ public final class LoadBalancerFunctions {
      * Lists the available load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args) {
@@ -680,6 +2116,34 @@ public final class LoadBalancerFunctions {
      * Lists the available load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args, InvokeOptions options) {
@@ -691,6 +2155,34 @@ public final class LoadBalancerFunctions {
      * Lists the available load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args, InvokeOptions options) {
@@ -702,6 +2194,34 @@ public final class LoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtocolsResult> getProtocols(GetProtocolsArgs args) {
@@ -713,6 +2233,34 @@ public final class LoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtocolsResult> getProtocolsPlain(GetProtocolsPlainArgs args) {
@@ -724,6 +2272,34 @@ public final class LoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProtocolsResult> getProtocols(GetProtocolsArgs args, InvokeOptions options) {
@@ -735,6 +2311,34 @@ public final class LoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProtocolsResult> getProtocolsPlain(GetProtocolsPlainArgs args, InvokeOptions options) {
@@ -746,6 +2350,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified set of rules.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .name(var_.rule_set_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRuleSetResult> getRuleSet(GetRuleSetArgs args) {
@@ -757,6 +2390,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified set of rules.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .name(var_.rule_set_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRuleSetResult> getRuleSetPlain(GetRuleSetPlainArgs args) {
@@ -768,6 +2430,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified set of rules.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .name(var_.rule_set_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRuleSetResult> getRuleSet(GetRuleSetArgs args, InvokeOptions options) {
@@ -779,6 +2470,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified set of rules.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .name(var_.rule_set_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRuleSetResult> getRuleSetPlain(GetRuleSetPlainArgs args, InvokeOptions options) {
@@ -790,6 +2510,34 @@ public final class LoadBalancerFunctions {
      * Lists all rule sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRuleSetsResult> getRuleSets(GetRuleSetsArgs args) {
@@ -801,6 +2549,34 @@ public final class LoadBalancerFunctions {
      * Lists all rule sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRuleSetsResult> getRuleSetsPlain(GetRuleSetsPlainArgs args) {
@@ -812,6 +2588,34 @@ public final class LoadBalancerFunctions {
      * Lists all rule sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRuleSetsResult> getRuleSets(GetRuleSetsArgs args, InvokeOptions options) {
@@ -823,6 +2627,34 @@ public final class LoadBalancerFunctions {
      * Lists all rule sets associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetRuleSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRuleSetsResult> getRuleSetsPlain(GetRuleSetsPlainArgs args, InvokeOptions options) {
@@ -834,6 +2666,34 @@ public final class LoadBalancerFunctions {
      * Lists the valid load balancer shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args) {
@@ -845,6 +2705,34 @@ public final class LoadBalancerFunctions {
      * Lists the valid load balancer shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args) {
@@ -856,6 +2744,34 @@ public final class LoadBalancerFunctions {
      * Lists the valid load balancer shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
@@ -867,6 +2783,34 @@ public final class LoadBalancerFunctions {
      * Lists the valid load balancer shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args, InvokeOptions options) {
@@ -878,6 +2822,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified SSL cipher suite&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
+     *             .name(var_.ssl_cipher_suite_name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSslCipherSuiteResult> getSslCipherSuite(GetSslCipherSuiteArgs args) {
@@ -889,6 +2862,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified SSL cipher suite&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
+     *             .name(var_.ssl_cipher_suite_name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSslCipherSuiteResult> getSslCipherSuitePlain(GetSslCipherSuitePlainArgs args) {
@@ -900,6 +2902,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified SSL cipher suite&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
+     *             .name(var_.ssl_cipher_suite_name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSslCipherSuiteResult> getSslCipherSuite(GetSslCipherSuiteArgs args, InvokeOptions options) {
@@ -911,6 +2942,35 @@ public final class LoadBalancerFunctions {
      * Gets the specified SSL cipher suite&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
+     *             .name(var_.ssl_cipher_suite_name())
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSslCipherSuiteResult> getSslCipherSuitePlain(GetSslCipherSuitePlainArgs args, InvokeOptions options) {
@@ -922,6 +2982,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSslCipherSuitesResult> getSslCipherSuites() {
@@ -933,6 +3021,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSslCipherSuitesResult> getSslCipherSuitesPlain() {
@@ -944,6 +3060,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSslCipherSuitesResult> getSslCipherSuites(GetSslCipherSuitesArgs args) {
@@ -955,6 +3099,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSslCipherSuitesResult> getSslCipherSuitesPlain(GetSslCipherSuitesPlainArgs args) {
@@ -966,6 +3138,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSslCipherSuitesResult> getSslCipherSuites(GetSslCipherSuitesArgs args, InvokeOptions options) {
@@ -977,6 +3177,34 @@ public final class LoadBalancerFunctions {
      * Lists all SSL cipher suites associated with the specified load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LoadBalancer.LoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
+     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSslCipherSuitesResult> getSslCipherSuitesPlain(GetSslCipherSuitesPlainArgs args, InvokeOptions options) {

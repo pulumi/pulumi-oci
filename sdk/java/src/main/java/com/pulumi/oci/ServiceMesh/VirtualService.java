@@ -24,6 +24,48 @@ import javax.annotation.Nullable;
  * Creates a new VirtualService.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ServiceMesh.VirtualService;
+ * import com.pulumi.oci.ServiceMesh.VirtualServiceArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.VirtualServiceDefaultRoutingPolicyArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.VirtualServiceMtlsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVirtualService = new VirtualService(&#34;testVirtualService&#34;, VirtualServiceArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+ *             .defaultRoutingPolicy(VirtualServiceDefaultRoutingPolicyArgs.builder()
+ *                 .type(var_.virtual_service_default_routing_policy_type())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.virtual_service_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .hosts(var_.virtual_service_hosts())
+ *             .mtls(VirtualServiceMtlsArgs.builder()
+ *                 .mode(var_.virtual_service_mtls_mode())
+ *                 .maximumValidity(var_.virtual_service_mtls_maximum_validity())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

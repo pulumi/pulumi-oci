@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayHostListenerTlsClientValidationGetArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayHostListenerTlsClientValidationGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("subjectAlternateNames")]
         private InputList<string>? _subjectAlternateNames;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayHostListenerTlsClientValidationGetArgs()
         {
         }
+        public static new IngressGatewayHostListenerTlsClientValidationGetArgs Empty => new IngressGatewayHostListenerTlsClientValidationGetArgs();
     }
 }

@@ -62,6 +62,34 @@ public final class ApiGatewayFunctions {
      * Gets an API by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiResult> getApi(GetApiArgs args) {
@@ -73,6 +101,34 @@ public final class ApiGatewayFunctions {
      * Gets an API by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiResult> getApiPlain(GetApiPlainArgs args) {
@@ -84,6 +140,34 @@ public final class ApiGatewayFunctions {
      * Gets an API by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiResult> getApi(GetApiArgs args, InvokeOptions options) {
@@ -95,6 +179,34 @@ public final class ApiGatewayFunctions {
      * Gets an API by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiResult> getApiPlain(GetApiPlainArgs args, InvokeOptions options) {
@@ -106,6 +218,34 @@ public final class ApiGatewayFunctions {
      * Get the raw API content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiContentResult> getApiContent(GetApiContentArgs args) {
@@ -117,6 +257,34 @@ public final class ApiGatewayFunctions {
      * Get the raw API content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiContentResult> getApiContentPlain(GetApiContentPlainArgs args) {
@@ -128,6 +296,34 @@ public final class ApiGatewayFunctions {
      * Get the raw API content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiContentResult> getApiContent(GetApiContentArgs args, InvokeOptions options) {
@@ -139,6 +335,34 @@ public final class ApiGatewayFunctions {
      * Get the raw API content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiContentResult> getApiContentPlain(GetApiContentPlainArgs args, InvokeOptions options) {
@@ -150,6 +374,34 @@ public final class ApiGatewayFunctions {
      * Gets an API Deployment specification by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiDeploymentSpecificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiDeploymentSpecificationResult> getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs args) {
@@ -161,6 +413,34 @@ public final class ApiGatewayFunctions {
      * Gets an API Deployment specification by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiDeploymentSpecificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiDeploymentSpecificationResult> getApiDeploymentSpecificationPlain(GetApiDeploymentSpecificationPlainArgs args) {
@@ -172,6 +452,34 @@ public final class ApiGatewayFunctions {
      * Gets an API Deployment specification by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiDeploymentSpecificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiDeploymentSpecificationResult> getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs args, InvokeOptions options) {
@@ -183,6 +491,34 @@ public final class ApiGatewayFunctions {
      * Gets an API Deployment specification by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiDeploymentSpecificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiDeploymentSpecificationResult> getApiDeploymentSpecificationPlain(GetApiDeploymentSpecificationPlainArgs args, InvokeOptions options) {
@@ -194,6 +530,34 @@ public final class ApiGatewayFunctions {
      * Gets the API validation results.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiValidationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiValidationInvokeResult> getApiValidation(GetApiValidationArgs args) {
@@ -205,6 +569,34 @@ public final class ApiGatewayFunctions {
      * Gets the API validation results.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiValidationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiValidationInvokeResult> getApiValidationPlain(GetApiValidationPlainArgs args) {
@@ -216,6 +608,34 @@ public final class ApiGatewayFunctions {
      * Gets the API validation results.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiValidationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiValidationInvokeResult> getApiValidation(GetApiValidationArgs args, InvokeOptions options) {
@@ -227,6 +647,34 @@ public final class ApiGatewayFunctions {
      * Gets the API validation results.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApiValidationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
+     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiValidationInvokeResult> getApiValidationPlain(GetApiValidationPlainArgs args, InvokeOptions options) {
@@ -238,6 +686,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of APIs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.api_display_name())
+     *             .state(var_.api_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApisResult> getApis(GetApisArgs args) {
@@ -249,6 +727,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of APIs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.api_display_name())
+     *             .state(var_.api_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApisResult> getApisPlain(GetApisPlainArgs args) {
@@ -260,6 +768,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of APIs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.api_display_name())
+     *             .state(var_.api_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApisResult> getApis(GetApisArgs args, InvokeOptions options) {
@@ -271,6 +809,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of APIs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetApisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.api_display_name())
+     *             .state(var_.api_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApisResult> getApisPlain(GetApisPlainArgs args, InvokeOptions options) {
@@ -282,6 +850,34 @@ public final class ApiGatewayFunctions {
      * Gets a certificate by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args) {
@@ -293,6 +889,34 @@ public final class ApiGatewayFunctions {
      * Gets a certificate by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args) {
@@ -304,6 +928,34 @@ public final class ApiGatewayFunctions {
      * Gets a certificate by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
@@ -315,6 +967,34 @@ public final class ApiGatewayFunctions {
      * Gets a certificate by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args, InvokeOptions options) {
@@ -326,6 +1006,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of certificates.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.certificate_display_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args) {
@@ -337,6 +1047,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of certificates.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.certificate_display_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args) {
@@ -348,6 +1088,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of certificates.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.certificate_display_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
@@ -359,6 +1129,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of certificates.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.certificate_display_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {
@@ -370,6 +1170,34 @@ public final class ApiGatewayFunctions {
      * Gets a deployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_apigateway_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args) {
@@ -381,6 +1209,34 @@ public final class ApiGatewayFunctions {
      * Gets a deployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_apigateway_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args) {
@@ -392,6 +1248,34 @@ public final class ApiGatewayFunctions {
      * Gets a deployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_apigateway_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOptions options) {
@@ -403,6 +1287,34 @@ public final class ApiGatewayFunctions {
      * Gets a deployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_apigateway_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args, InvokeOptions options) {
@@ -414,6 +1326,37 @@ public final class ApiGatewayFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deployment_display_name())
+     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .state(var_.deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args) {
@@ -425,6 +1368,37 @@ public final class ApiGatewayFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deployment_display_name())
+     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .state(var_.deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args) {
@@ -436,6 +1410,37 @@ public final class ApiGatewayFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deployment_display_name())
+     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .state(var_.deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOptions options) {
@@ -447,6 +1452,37 @@ public final class ApiGatewayFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deployment_display_name())
+     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .state(var_.deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {
@@ -458,6 +1494,34 @@ public final class ApiGatewayFunctions {
      * Gets a gateway by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
+     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGatewayResult> getGateway(GetGatewayArgs args) {
@@ -469,6 +1533,34 @@ public final class ApiGatewayFunctions {
      * Gets a gateway by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
+     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGatewayResult> getGatewayPlain(GetGatewayPlainArgs args) {
@@ -480,6 +1572,34 @@ public final class ApiGatewayFunctions {
      * Gets a gateway by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
+     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGatewayResult> getGateway(GetGatewayArgs args, InvokeOptions options) {
@@ -491,6 +1611,34 @@ public final class ApiGatewayFunctions {
      * Gets a gateway by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
+     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGatewayResult> getGatewayPlain(GetGatewayPlainArgs args, InvokeOptions options) {
@@ -502,6 +1650,37 @@ public final class ApiGatewayFunctions {
      * Returns a list of gateways.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .certificateId(var_.oci_apigateway_certificate().test_certificate().id())
+     *             .displayName(var_.gateway_display_name())
+     *             .state(var_.gateway_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGatewaysResult> getGateways(GetGatewaysArgs args) {
@@ -513,6 +1692,37 @@ public final class ApiGatewayFunctions {
      * Returns a list of gateways.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .certificateId(var_.oci_apigateway_certificate().test_certificate().id())
+     *             .displayName(var_.gateway_display_name())
+     *             .state(var_.gateway_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGatewaysResult> getGatewaysPlain(GetGatewaysPlainArgs args) {
@@ -524,6 +1734,37 @@ public final class ApiGatewayFunctions {
      * Returns a list of gateways.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .certificateId(var_.oci_apigateway_certificate().test_certificate().id())
+     *             .displayName(var_.gateway_display_name())
+     *             .state(var_.gateway_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGatewaysResult> getGateways(GetGatewaysArgs args, InvokeOptions options) {
@@ -535,6 +1776,37 @@ public final class ApiGatewayFunctions {
      * Returns a list of gateways.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .certificateId(var_.oci_apigateway_certificate().test_certificate().id())
+     *             .displayName(var_.gateway_display_name())
+     *             .state(var_.gateway_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGatewaysResult> getGatewaysPlain(GetGatewaysPlainArgs args, InvokeOptions options) {
@@ -546,6 +1818,34 @@ public final class ApiGatewayFunctions {
      * Gets a subscriber by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscriberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
+     *             .subscriberId(oci_apigateway_subscriber.test_subscriber().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriberResult> getSubscriber(GetSubscriberArgs args) {
@@ -557,6 +1857,34 @@ public final class ApiGatewayFunctions {
      * Gets a subscriber by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscriberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
+     *             .subscriberId(oci_apigateway_subscriber.test_subscriber().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriberResult> getSubscriberPlain(GetSubscriberPlainArgs args) {
@@ -568,6 +1896,34 @@ public final class ApiGatewayFunctions {
      * Gets a subscriber by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscriberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
+     *             .subscriberId(oci_apigateway_subscriber.test_subscriber().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriberResult> getSubscriber(GetSubscriberArgs args, InvokeOptions options) {
@@ -579,6 +1935,34 @@ public final class ApiGatewayFunctions {
      * Gets a subscriber by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscriberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
+     *             .subscriberId(oci_apigateway_subscriber.test_subscriber().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriberResult> getSubscriberPlain(GetSubscriberPlainArgs args, InvokeOptions options) {
@@ -590,6 +1974,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of subscribers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscribersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.subscriber_display_name())
+     *             .state(var_.subscriber_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscribersResult> getSubscribers(GetSubscribersArgs args) {
@@ -601,6 +2015,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of subscribers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscribersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.subscriber_display_name())
+     *             .state(var_.subscriber_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscribersResult> getSubscribersPlain(GetSubscribersPlainArgs args) {
@@ -612,6 +2056,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of subscribers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscribersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.subscriber_display_name())
+     *             .state(var_.subscriber_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscribersResult> getSubscribers(GetSubscribersArgs args, InvokeOptions options) {
@@ -623,6 +2097,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of subscribers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetSubscribersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.subscriber_display_name())
+     *             .state(var_.subscriber_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscribersResult> getSubscribersPlain(GetSubscribersPlainArgs args, InvokeOptions options) {
@@ -634,6 +2138,34 @@ public final class ApiGatewayFunctions {
      * Gets a usage plan by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
+     *             .usagePlanId(oci_apigateway_usage_plan.test_usage_plan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsagePlanResult> getUsagePlan(GetUsagePlanArgs args) {
@@ -645,6 +2177,34 @@ public final class ApiGatewayFunctions {
      * Gets a usage plan by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
+     *             .usagePlanId(oci_apigateway_usage_plan.test_usage_plan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsagePlanResult> getUsagePlanPlain(GetUsagePlanPlainArgs args) {
@@ -656,6 +2216,34 @@ public final class ApiGatewayFunctions {
      * Gets a usage plan by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
+     *             .usagePlanId(oci_apigateway_usage_plan.test_usage_plan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsagePlanResult> getUsagePlan(GetUsagePlanArgs args, InvokeOptions options) {
@@ -667,6 +2255,34 @@ public final class ApiGatewayFunctions {
      * Gets a usage plan by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
+     *             .usagePlanId(oci_apigateway_usage_plan.test_usage_plan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsagePlanResult> getUsagePlanPlain(GetUsagePlanPlainArgs args, InvokeOptions options) {
@@ -678,6 +2294,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of usage plans.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.usage_plan_display_name())
+     *             .state(var_.usage_plan_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsagePlansResult> getUsagePlans(GetUsagePlansArgs args) {
@@ -689,6 +2335,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of usage plans.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.usage_plan_display_name())
+     *             .state(var_.usage_plan_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsagePlansResult> getUsagePlansPlain(GetUsagePlansPlainArgs args) {
@@ -700,6 +2376,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of usage plans.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.usage_plan_display_name())
+     *             .state(var_.usage_plan_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsagePlansResult> getUsagePlans(GetUsagePlansArgs args, InvokeOptions options) {
@@ -711,6 +2417,36 @@ public final class ApiGatewayFunctions {
      * Returns a list of usage plans.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApiGateway.ApiGatewayFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetUsagePlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.usage_plan_display_name())
+     *             .state(var_.usage_plan_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsagePlansResult> getUsagePlansPlain(GetUsagePlansPlainArgs args, InvokeOptions options) {

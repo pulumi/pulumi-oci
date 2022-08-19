@@ -22,23 +22,21 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeploymentBackups = Oci.GoldenGate.GetDeploymentBackups.Invoke(new()
         ///     {
-        ///         var testDeploymentBackups = Output.Create(Oci.GoldenGate.GetDeploymentBackups.InvokeAsync(new Oci.GoldenGate.GetDeploymentBackupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///             DisplayName = @var.Deployment_backup_display_name,
-        ///             State = @var.Deployment_backup_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
+        ///         DisplayName = @var.Deployment_backup_display_name,
+        ///         State = @var.Deployment_backup_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeploymentBackups = Oci.GoldenGate.GetDeploymentBackups.Invoke(new()
         ///     {
-        ///         var testDeploymentBackups = Output.Create(Oci.GoldenGate.GetDeploymentBackups.InvokeAsync(new Oci.GoldenGate.GetDeploymentBackupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///             DisplayName = @var.Deployment_backup_display_name,
-        ///             State = @var.Deployment_backup_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
+        ///         DisplayName = @var.Deployment_backup_display_name,
+        ///         State = @var.Deployment_backup_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.GoldenGate
     }
 
 
-    public sealed class GetDeploymentBackupsArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentBackupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.GoldenGate
         public GetDeploymentBackupsArgs()
         {
         }
+        public static new GetDeploymentBackupsArgs Empty => new GetDeploymentBackupsArgs();
     }
 
-    public sealed class GetDeploymentBackupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentBackupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.GoldenGate
         public GetDeploymentBackupsInvokeArgs()
         {
         }
+        public static new GetDeploymentBackupsInvokeArgs Empty => new GetDeploymentBackupsInvokeArgs();
     }
 
 

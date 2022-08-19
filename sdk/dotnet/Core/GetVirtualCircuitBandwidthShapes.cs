@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualCircuitBandwidthShapes = Oci.Core.GetVirtualCircuitBandwidthShapes.Invoke(new()
         ///     {
-        ///         var testVirtualCircuitBandwidthShapes = Output.Create(Oci.Core.GetVirtualCircuitBandwidthShapes.InvokeAsync(new Oci.Core.GetVirtualCircuitBandwidthShapesArgs
-        ///         {
-        ///             ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-        ///         }));
-        ///     }
+        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualCircuitBandwidthShapes = Oci.Core.GetVirtualCircuitBandwidthShapes.Invoke(new()
         ///     {
-        ///         var testVirtualCircuitBandwidthShapes = Output.Create(Oci.Core.GetVirtualCircuitBandwidthShapes.InvokeAsync(new Oci.Core.GetVirtualCircuitBandwidthShapesArgs
-        ///         {
-        ///             ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-        ///         }));
-        ///     }
+        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVirtualCircuitBandwidthShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitBandwidthShapesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetVirtualCircuitBandwidthShapesFilterArgs>? _filters;
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Core
         public GetVirtualCircuitBandwidthShapesArgs()
         {
         }
+        public static new GetVirtualCircuitBandwidthShapesArgs Empty => new GetVirtualCircuitBandwidthShapesArgs();
     }
 
-    public sealed class GetVirtualCircuitBandwidthShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitBandwidthShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetVirtualCircuitBandwidthShapesFilterInputArgs>? _filters;
@@ -123,6 +120,7 @@ namespace Pulumi.Oci.Core
         public GetVirtualCircuitBandwidthShapesInvokeArgs()
         {
         }
+        public static new GetVirtualCircuitBandwidthShapesInvokeArgs Empty => new GetVirtualCircuitBandwidthShapesInvokeArgs();
     }
 
 

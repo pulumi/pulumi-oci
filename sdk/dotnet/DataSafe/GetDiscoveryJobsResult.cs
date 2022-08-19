@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDiscoveryJobsResult = Oci.DataSafe.GetDiscoveryJobsResult.Invoke(new()
         ///     {
-        ///         var testDiscoveryJobsResult = Output.Create(Oci.DataSafe.GetDiscoveryJobsResult.InvokeAsync(new Oci.DataSafe.GetDiscoveryJobsResultArgs
-        ///         {
-        ///             DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
-        ///             ResultKey = @var.Discovery_jobs_result_result_key,
-        ///         }));
-        ///     }
+        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
+        ///         ResultKey = @var.Discovery_jobs_result_result_key,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDiscoveryJobsResult = Oci.DataSafe.GetDiscoveryJobsResult.Invoke(new()
         ///     {
-        ///         var testDiscoveryJobsResult = Output.Create(Oci.DataSafe.GetDiscoveryJobsResult.InvokeAsync(new Oci.DataSafe.GetDiscoveryJobsResultArgs
-        ///         {
-        ///             DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
-        ///             ResultKey = @var.Discovery_jobs_result_result_key,
-        ///         }));
-        ///     }
+        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
+        ///         ResultKey = @var.Discovery_jobs_result_result_key,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetDiscoveryJobsResultArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryJobsResultArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the discovery job.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataSafe
         public GetDiscoveryJobsResultArgs()
         {
         }
+        public static new GetDiscoveryJobsResultArgs Empty => new GetDiscoveryJobsResultArgs();
     }
 
-    public sealed class GetDiscoveryJobsResultInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryJobsResultInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the discovery job.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DataSafe
         public GetDiscoveryJobsResultInvokeArgs()
         {
         }
+        public static new GetDiscoveryJobsResultInvokeArgs Empty => new GetDiscoveryJobsResultInvokeArgs();
     }
 
 

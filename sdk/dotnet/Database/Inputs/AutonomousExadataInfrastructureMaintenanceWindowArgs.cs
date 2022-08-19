@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousExadataInfrastructureMaintenanceWindowArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousExadataInfrastructureMaintenanceWindowArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -94,5 +94,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousExadataInfrastructureMaintenanceWindowArgs()
         {
         }
+        public static new AutonomousExadataInfrastructureMaintenanceWindowArgs Empty => new AutonomousExadataInfrastructureMaintenanceWindowArgs();
     }
 }

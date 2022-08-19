@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class GetSensitiveDataModelsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSensitiveDataModelsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public GetSensitiveDataModelsFilterInputArgs()
         {
         }
+        public static new GetSensitiveDataModelsFilterInputArgs Empty => new GetSensitiveDataModelsFilterInputArgs();
     }
 }

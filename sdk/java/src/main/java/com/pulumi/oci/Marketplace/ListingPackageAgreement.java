@@ -20,6 +20,37 @@ import javax.annotation.Nullable;
  * accept the agreement.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Marketplace.ListingPackageAgreement;
+ * import com.pulumi.oci.Marketplace.ListingPackageAgreementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testListingPackageAgreement = new ListingPackageAgreement(&#34;testListingPackageAgreement&#34;, ListingPackageAgreementArgs.builder()        
+ *             .agreementId(oci_marketplace_agreement.test_agreement().id())
+ *             .listingId(oci_marketplace_listing.test_listing().id())
+ *             .packageVersion(var_.listing_package_agreement_package_version())
+ *             .compartmentId(var_.compartment_id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

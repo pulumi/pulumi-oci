@@ -31,6 +31,35 @@ import javax.annotation.Nullable;
  * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainReplicationToRegion;
+ * import com.pulumi.oci.Identity.DomainReplicationToRegionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDomainReplicationToRegion = new DomainReplicationToRegion(&#34;testDomainReplicationToRegion&#34;, DomainReplicationToRegionArgs.builder()        
+ *             .domainId(oci_identity_domain.test_domain().id())
+ *             .replicaRegion(var_.domain_replication_to_region_replica_region())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

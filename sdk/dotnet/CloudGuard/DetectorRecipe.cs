@@ -23,7 +23,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/detectorRecipe:DetectorRecipe")]
-    public partial class DetectorRecipe : Pulumi.CustomResource
+    public partial class DetectorRecipe : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.CloudGuard
         }
     }
 
-    public sealed class DetectorRecipeArgs : Pulumi.ResourceArgs
+    public sealed class DetectorRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -218,9 +218,10 @@ namespace Pulumi.Oci.CloudGuard
         public DetectorRecipeArgs()
         {
         }
+        public static new DetectorRecipeArgs Empty => new DetectorRecipeArgs();
     }
 
-    public sealed class DetectorRecipeState : Pulumi.ResourceArgs
+    public sealed class DetectorRecipeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -339,5 +340,6 @@ namespace Pulumi.Oci.CloudGuard
         public DetectorRecipeState()
         {
         }
+        public static new DetectorRecipeState Empty => new DetectorRecipeState();
     }
 }

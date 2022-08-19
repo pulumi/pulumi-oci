@@ -38,36 +38,34 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTag = new Oci.Identity.Tag("testTag", new()
     ///     {
-    ///         var testTag = new Oci.Identity.Tag("testTag", new Oci.Identity.TagArgs
+    ///         Description = @var.Tag_description,
+    ///         TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             Description = @var.Tag_description,
-    ///             TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsCostTracking = @var.Tag_is_cost_tracking,
-    ///             Validator = new Oci.Identity.Inputs.TagValidatorArgs
-    ///             {
-    ///                 ValidatorType = @var.Tag_validator_validator_type,
-    ///                 Values = @var.Tag_validator_values,
-    ///             },
-    ///             IsRetired = false,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsCostTracking = @var.Tag_is_cost_tracking,
+    ///         Validator = new Oci.Identity.Inputs.TagValidatorArgs
+    ///         {
+    ///             ValidatorType = @var.Tag_validator_validator_type,
+    ///             Values = @var.Tag_validator_values,
+    ///         },
+    ///         IsRetired = false,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -79,7 +77,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/tag:Tag")]
-    public partial class Tag : Pulumi.CustomResource
+    public partial class Tag : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -185,7 +183,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class TagArgs : Pulumi.ResourceArgs
+    public sealed class TagArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -250,9 +248,10 @@ namespace Pulumi.Oci.Identity
         public TagArgs()
         {
         }
+        public static new TagArgs Empty => new TagArgs();
     }
 
-    public sealed class TagState : Pulumi.ResourceArgs
+    public sealed class TagState : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -329,5 +328,6 @@ namespace Pulumi.Oci.Identity
         public TagState()
         {
         }
+        public static new TagState Empty => new TagState();
     }
 }

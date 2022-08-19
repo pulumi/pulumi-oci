@@ -17,46 +17,44 @@ namespace Pulumi.Oci.VisualBuilder
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVbInstance = new Oci.VisualBuilder.VbInstance("testVbInstance", new()
     ///     {
-    ///         var testVbInstance = new Oci.VisualBuilder.VbInstance("testVbInstance", new Oci.VisualBuilder.VbInstanceArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Vb_instance_display_name,
+    ///         NodeCount = @var.Vb_instance_node_count,
+    ///         AlternateCustomEndpoints = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Vb_instance_display_name,
-    ///             NodeCount = @var.Vb_instance_node_count,
-    ///             AlternateCustomEndpoints = 
+    ///             new Oci.VisualBuilder.Inputs.VbInstanceAlternateCustomEndpointArgs
     ///             {
-    ///                 new Oci.VisualBuilder.Inputs.VbInstanceAlternateCustomEndpointArgs
-    ///                 {
-    ///                     Hostname = @var.Vb_instance_alternate_custom_endpoints_hostname,
-    ///                     CertificateSecretId = oci_vault_secret.Test_secret.Id,
-    ///                 },
-    ///             },
-    ///             ConsumptionModel = @var.Vb_instance_consumption_model,
-    ///             CustomEndpoint = new Oci.VisualBuilder.Inputs.VbInstanceCustomEndpointArgs
-    ///             {
-    ///                 Hostname = @var.Vb_instance_custom_endpoint_hostname,
+    ///                 Hostname = @var.Vb_instance_alternate_custom_endpoints_hostname,
     ///                 CertificateSecretId = oci_vault_secret.Test_secret.Id,
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IdcsOpenId = oci_visual_builder_idcs_open.Test_idcs_open.Id,
-    ///             IsVisualBuilderEnabled = @var.Vb_instance_is_visual_builder_enabled,
-    ///         });
-    ///     }
+    ///         },
+    ///         ConsumptionModel = @var.Vb_instance_consumption_model,
+    ///         CustomEndpoint = new Oci.VisualBuilder.Inputs.VbInstanceCustomEndpointArgs
+    ///         {
+    ///             Hostname = @var.Vb_instance_custom_endpoint_hostname,
+    ///             CertificateSecretId = oci_vault_secret.Test_secret.Id,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IdcsOpenId = oci_visual_builder_idcs_open.Test_idcs_open.Id,
+    ///         IsVisualBuilderEnabled = @var.Vb_instance_is_visual_builder_enabled,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -68,7 +66,7 @@ namespace Pulumi.Oci.VisualBuilder
     /// ```
     /// </summary>
     [OciResourceType("oci:VisualBuilder/vbInstance:VbInstance")]
-    public partial class VbInstance : Pulumi.CustomResource
+    public partial class VbInstance : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -210,7 +208,7 @@ namespace Pulumi.Oci.VisualBuilder
         }
     }
 
-    public sealed class VbInstanceArgs : Pulumi.ResourceArgs
+    public sealed class VbInstanceArgs : global::Pulumi.ResourceArgs
     {
         [Input("alternateCustomEndpoints")]
         private InputList<Inputs.VbInstanceAlternateCustomEndpointArgs>? _alternateCustomEndpoints;
@@ -293,9 +291,10 @@ namespace Pulumi.Oci.VisualBuilder
         public VbInstanceArgs()
         {
         }
+        public static new VbInstanceArgs Empty => new VbInstanceArgs();
     }
 
-    public sealed class VbInstanceState : Pulumi.ResourceArgs
+    public sealed class VbInstanceState : global::Pulumi.ResourceArgs
     {
         [Input("alternateCustomEndpoints")]
         private InputList<Inputs.VbInstanceAlternateCustomEndpointGetArgs>? _alternateCustomEndpoints;
@@ -420,5 +419,6 @@ namespace Pulumi.Oci.VisualBuilder
         public VbInstanceState()
         {
         }
+        public static new VbInstanceState Empty => new VbInstanceState();
     }
 }

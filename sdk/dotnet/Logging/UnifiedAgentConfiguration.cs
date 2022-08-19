@@ -17,91 +17,89 @@ namespace Pulumi.Oci.Logging
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUnifiedAgentConfiguration = new Oci.Logging.UnifiedAgentConfiguration("testUnifiedAgentConfiguration", new()
     ///     {
-    ///         var testUnifiedAgentConfiguration = new Oci.Logging.UnifiedAgentConfiguration("testUnifiedAgentConfiguration", new Oci.Logging.UnifiedAgentConfigurationArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IsEnabled = @var.Unified_agent_configuration_is_enabled,
+    ///         Description = @var.Unified_agent_configuration_description,
+    ///         DisplayName = @var.Unified_agent_configuration_display_name,
+    ///         ServiceConfiguration = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IsEnabled = @var.Unified_agent_configuration_is_enabled,
-    ///             Description = @var.Unified_agent_configuration_description,
-    ///             DisplayName = @var.Unified_agent_configuration_display_name,
-    ///             ServiceConfiguration = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationArgs
+    ///             ConfigurationType = @var.Unified_agent_configuration_service_configuration_configuration_type,
+    ///             Destination = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs
     ///             {
-    ///                 ConfigurationType = @var.Unified_agent_configuration_service_configuration_configuration_type,
-    ///                 Destination = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs
+    ///                 LogObjectId = oci_objectstorage_object.Test_object.Id,
+    ///             },
+    ///             Sources = new[]
+    ///             {
+    ///                 new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationSourceArgs
     ///                 {
-    ///                     LogObjectId = oci_objectstorage_object.Test_object.Id,
-    ///                 },
-    ///                 Sources = 
-    ///                 {
-    ///                     new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationSourceArgs
+    ///                     SourceType = @var.Unified_agent_configuration_service_configuration_sources_source_type,
+    ///                     Channels = @var.Unified_agent_configuration_service_configuration_sources_channels,
+    ///                     Name = @var.Unified_agent_configuration_service_configuration_sources_name,
+    ///                     Parser = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     ///                     {
-    ///                         SourceType = @var.Unified_agent_configuration_service_configuration_sources_source_type,
-    ///                         Channels = @var.Unified_agent_configuration_service_configuration_sources_channels,
-    ///                         Name = @var.Unified_agent_configuration_service_configuration_sources_name,
-    ///                         Parser = new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
+    ///                         ParserType = @var.Unified_agent_configuration_service_configuration_sources_parser_parser_type,
+    ///                         Delimiter = @var.Unified_agent_configuration_service_configuration_sources_parser_delimiter,
+    ///                         Expression = @var.Unified_agent_configuration_service_configuration_sources_parser_expression,
+    ///                         FieldTimeKey = @var.Unified_agent_configuration_service_configuration_sources_parser_field_time_key,
+    ///                         Formats = @var.Unified_agent_configuration_service_configuration_sources_parser_format,
+    ///                         FormatFirstline = @var.Unified_agent_configuration_service_configuration_sources_parser_format_firstline,
+    ///                         GrokFailureKey = @var.Unified_agent_configuration_service_configuration_sources_parser_grok_failure_key,
+    ///                         GrokNameKey = @var.Unified_agent_configuration_service_configuration_sources_parser_grok_name_key,
+    ///                         IsEstimateCurrentEvent = @var.Unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event,
+    ///                         IsKeepTimeKey = @var.Unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key,
+    ///                         IsNullEmptyString = @var.Unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string,
+    ///                         IsSupportColonlessIdent = @var.Unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident,
+    ///                         IsWithPriority = @var.Unified_agent_configuration_service_configuration_sources_parser_is_with_priority,
+    ///                         Keys = @var.Unified_agent_configuration_service_configuration_sources_parser_keys,
+    ///                         MessageFormat = @var.Unified_agent_configuration_service_configuration_sources_parser_message_format,
+    ///                         MessageKey = @var.Unified_agent_configuration_service_configuration_sources_parser_message_key,
+    ///                         MultiLineStartRegexp = @var.Unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp,
+    ///                         NullValuePattern = @var.Unified_agent_configuration_service_configuration_sources_parser_null_value_pattern,
+    ///                         Patterns = new[]
     ///                         {
-    ///                             ParserType = @var.Unified_agent_configuration_service_configuration_sources_parser_parser_type,
-    ///                             Delimiter = @var.Unified_agent_configuration_service_configuration_sources_parser_delimiter,
-    ///                             Expression = @var.Unified_agent_configuration_service_configuration_sources_parser_expression,
-    ///                             FieldTimeKey = @var.Unified_agent_configuration_service_configuration_sources_parser_field_time_key,
-    ///                             Formats = @var.Unified_agent_configuration_service_configuration_sources_parser_format,
-    ///                             FormatFirstline = @var.Unified_agent_configuration_service_configuration_sources_parser_format_firstline,
-    ///                             GrokFailureKey = @var.Unified_agent_configuration_service_configuration_sources_parser_grok_failure_key,
-    ///                             GrokNameKey = @var.Unified_agent_configuration_service_configuration_sources_parser_grok_name_key,
-    ///                             IsEstimateCurrentEvent = @var.Unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event,
-    ///                             IsKeepTimeKey = @var.Unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key,
-    ///                             IsNullEmptyString = @var.Unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string,
-    ///                             IsSupportColonlessIdent = @var.Unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident,
-    ///                             IsWithPriority = @var.Unified_agent_configuration_service_configuration_sources_parser_is_with_priority,
-    ///                             Keys = @var.Unified_agent_configuration_service_configuration_sources_parser_keys,
-    ///                             MessageFormat = @var.Unified_agent_configuration_service_configuration_sources_parser_message_format,
-    ///                             MessageKey = @var.Unified_agent_configuration_service_configuration_sources_parser_message_key,
-    ///                             MultiLineStartRegexp = @var.Unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp,
-    ///                             NullValuePattern = @var.Unified_agent_configuration_service_configuration_sources_parser_null_value_pattern,
-    ///                             Patterns = 
+    ///                             new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs
     ///                             {
-    ///                                 new Oci.Logging.Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs
-    ///                                 {
-    ///                                     FieldTimeFormat = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format,
-    ///                                     FieldTimeKey = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key,
-    ///                                     FieldTimeZone = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone,
-    ///                                     Name = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_name,
-    ///                                     Pattern = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_pattern,
-    ///                                 },
+    ///                                 FieldTimeFormat = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format,
+    ///                                 FieldTimeKey = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key,
+    ///                                 FieldTimeZone = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone,
+    ///                                 Name = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_name,
+    ///                                 Pattern = @var.Unified_agent_configuration_service_configuration_sources_parser_patterns_pattern,
     ///                             },
-    ///                             Rfc5424timeFormat = @var.Unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format,
-    ///                             SyslogParserType = @var.Unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type,
-    ///                             TimeFormat = @var.Unified_agent_configuration_service_configuration_sources_parser_time_format,
-    ///                             TimeType = @var.Unified_agent_configuration_service_configuration_sources_parser_time_type,
-    ///                             TimeoutInMilliseconds = @var.Unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds,
-    ///                             Types = @var.Unified_agent_configuration_service_configuration_sources_parser_types,
     ///                         },
-    ///                         Paths = @var.Unified_agent_configuration_service_configuration_sources_paths,
+    ///                         Rfc5424timeFormat = @var.Unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format,
+    ///                         SyslogParserType = @var.Unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type,
+    ///                         TimeFormat = @var.Unified_agent_configuration_service_configuration_sources_parser_time_format,
+    ///                         TimeType = @var.Unified_agent_configuration_service_configuration_sources_parser_time_type,
+    ///                         TimeoutInMilliseconds = @var.Unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds,
+    ///                         Types = @var.Unified_agent_configuration_service_configuration_sources_parser_types,
     ///                     },
+    ///                     Paths = @var.Unified_agent_configuration_service_configuration_sources_paths,
     ///                 },
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             GroupAssociation = new Oci.Logging.Inputs.UnifiedAgentConfigurationGroupAssociationArgs
-    ///             {
-    ///                 GroupLists = @var.Unified_agent_configuration_group_association_group_list,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         GroupAssociation = new Oci.Logging.Inputs.UnifiedAgentConfigurationGroupAssociationArgs
+    ///         {
+    ///             GroupLists = @var.Unified_agent_configuration_group_association_group_list,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -113,7 +111,7 @@ namespace Pulumi.Oci.Logging
     /// ```
     /// </summary>
     [OciResourceType("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration")]
-    public partial class UnifiedAgentConfiguration : Pulumi.CustomResource
+    public partial class UnifiedAgentConfiguration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -231,7 +229,7 @@ namespace Pulumi.Oci.Logging
         }
     }
 
-    public sealed class UnifiedAgentConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class UnifiedAgentConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -296,9 +294,10 @@ namespace Pulumi.Oci.Logging
         public UnifiedAgentConfigurationArgs()
         {
         }
+        public static new UnifiedAgentConfigurationArgs Empty => new UnifiedAgentConfigurationArgs();
     }
 
-    public sealed class UnifiedAgentConfigurationState : Pulumi.ResourceArgs
+    public sealed class UnifiedAgentConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that the resource belongs to.
@@ -387,5 +386,6 @@ namespace Pulumi.Oci.Logging
         public UnifiedAgentConfigurationState()
         {
         }
+        public static new UnifiedAgentConfigurationState Empty => new UnifiedAgentConfigurationState();
     }
 }

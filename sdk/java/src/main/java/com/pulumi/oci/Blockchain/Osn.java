@@ -20,6 +20,39 @@ import javax.annotation.Nullable;
  * Create Blockchain Platform Osn
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Blockchain.Osn;
+ * import com.pulumi.oci.Blockchain.OsnArgs;
+ * import com.pulumi.oci.Blockchain.inputs.OsnOcpuAllocationParamArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOsn = new Osn(&#34;testOsn&#34;, OsnArgs.builder()        
+ *             .ad(var_.osn_ad())
+ *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+ *             .ocpuAllocationParam(OsnOcpuAllocationParamArgs.builder()
+ *                 .ocpuAllocationNumber(var_.osn_ocpu_allocation_param_ocpu_allocation_number())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

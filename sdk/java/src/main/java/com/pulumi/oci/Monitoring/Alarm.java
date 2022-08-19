@@ -29,6 +29,56 @@ import javax.annotation.Nullable;
  * or transactions, per second (TPS) for a given tenancy.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Monitoring.Alarm;
+ * import com.pulumi.oci.Monitoring.AlarmArgs;
+ * import com.pulumi.oci.Monitoring.inputs.AlarmSuppressionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAlarm = new Alarm(&#34;testAlarm&#34;, AlarmArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .destinations(oci_ons_notification_topic.test_notification_topic().id())
+ *             .displayName(var_.alarm_display_name())
+ *             .isEnabled(var_.alarm_is_enabled())
+ *             .metricCompartmentId(var_.alarm_metric_compartment_id())
+ *             .namespace(var_.alarm_namespace())
+ *             .query(var_.alarm_query())
+ *             .severity(var_.alarm_severity())
+ *             .body(var_.alarm_body())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .messageFormat(var_.alarm_message_format())
+ *             .metricCompartmentIdInSubtree(var_.alarm_metric_compartment_id_in_subtree())
+ *             .pendingDuration(var_.alarm_pending_duration())
+ *             .repeatNotificationDuration(var_.alarm_repeat_notification_duration())
+ *             .resolution(var_.alarm_resolution())
+ *             .resourceGroup(var_.alarm_resource_group())
+ *             .suppression(AlarmSuppressionArgs.builder()
+ *                 .timeSuppressFrom(var_.alarm_suppression_time_suppress_from())
+ *                 .timeSuppressUntil(var_.alarm_suppression_time_suppress_until())
+ *                 .description(var_.alarm_suppression_description())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

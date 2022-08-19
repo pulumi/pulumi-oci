@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class CrossConnectMacsecPropertiesPrimaryKeyGetArgs : Pulumi.ResourceArgs
+    public sealed class CrossConnectMacsecPropertiesPrimaryKeyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Core.Inputs
         public CrossConnectMacsecPropertiesPrimaryKeyGetArgs()
         {
         }
+        public static new CrossConnectMacsecPropertiesPrimaryKeyGetArgs Empty => new CrossConnectMacsecPropertiesPrimaryKeyGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class GetDeploymentsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetDeploymentsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the step.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public GetDeploymentsFilterInputArgs()
         {
         }
+        public static new GetDeploymentsFilterInputArgs Empty => new GetDeploymentsFilterInputArgs();
     }
 }

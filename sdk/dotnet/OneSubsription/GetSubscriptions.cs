@@ -25,24 +25,22 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptions = Oci.OneSubsription.GetSubscriptions.Invoke(new()
         ///     {
-        ///         var testSubscriptions = Output.Create(Oci.OneSubsription.GetSubscriptions.InvokeAsync(new Oci.OneSubsription.GetSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             BuyerEmail = @var.Subscription_buyer_email,
-        ///             IsCommitInfoRequired = @var.Subscription_is_commit_info_required,
-        ///             PlanNumber = @var.Subscription_plan_number,
-        ///             SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         BuyerEmail = @var.Subscription_buyer_email,
+        ///         IsCommitInfoRequired = @var.Subscription_is_commit_info_required,
+        ///         PlanNumber = @var.Subscription_plan_number,
+        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,24 +62,22 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptions = Oci.OneSubsription.GetSubscriptions.Invoke(new()
         ///     {
-        ///         var testSubscriptions = Output.Create(Oci.OneSubsription.GetSubscriptions.InvokeAsync(new Oci.OneSubsription.GetSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             BuyerEmail = @var.Subscription_buyer_email,
-        ///             IsCommitInfoRequired = @var.Subscription_is_commit_info_required,
-        ///             PlanNumber = @var.Subscription_plan_number,
-        ///             SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         BuyerEmail = @var.Subscription_buyer_email,
+        ///         IsCommitInfoRequired = @var.Subscription_is_commit_info_required,
+        ///         PlanNumber = @var.Subscription_plan_number,
+        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.OneSubsription
     }
 
 
-    public sealed class GetSubscriptionsArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Buyer Email Id
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.OneSubsription
         public GetSubscriptionsArgs()
         {
         }
+        public static new GetSubscriptionsArgs Empty => new GetSubscriptionsArgs();
     }
 
-    public sealed class GetSubscriptionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Buyer Email Id
@@ -179,6 +176,7 @@ namespace Pulumi.Oci.OneSubsription
         public GetSubscriptionsInvokeArgs()
         {
         }
+        public static new GetSubscriptionsInvokeArgs Empty => new GetSubscriptionsInvokeArgs();
     }
 
 

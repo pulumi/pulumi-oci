@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DbSystemsUpgradeDbSystemOptionArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemsUpgradeDbSystemOptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DbSystemsUpgradeDbSystemOptionArgs()
         {
         }
+        public static new DbSystemsUpgradeDbSystemOptionArgs Empty => new DbSystemsUpgradeDbSystemOptionArgs();
     }
 }

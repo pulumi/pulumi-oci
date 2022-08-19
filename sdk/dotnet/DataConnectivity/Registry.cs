@@ -17,30 +17,28 @@ namespace Pulumi.Oci.DataConnectivity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRegistry = new Oci.DataConnectivity.Registry("testRegistry", new()
     ///     {
-    ///         var testRegistry = new Oci.DataConnectivity.Registry("testRegistry", new Oci.DataConnectivity.RegistryArgs
+    ///         DisplayName = @var.Registry_display_name,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             DisplayName = @var.Registry_display_name,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Registry_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Registry_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.DataConnectivity
     /// ```
     /// </summary>
     [OciResourceType("oci:DataConnectivity/registry:Registry")]
-    public partial class Registry : Pulumi.CustomResource
+    public partial class Registry : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -158,7 +156,7 @@ namespace Pulumi.Oci.DataConnectivity
         }
     }
 
-    public sealed class RegistryArgs : Pulumi.ResourceArgs
+    public sealed class RegistryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -205,9 +203,10 @@ namespace Pulumi.Oci.DataConnectivity
         public RegistryArgs()
         {
         }
+        public static new RegistryArgs Empty => new RegistryArgs();
     }
 
-    public sealed class RegistryState : Pulumi.ResourceArgs
+    public sealed class RegistryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -284,5 +283,6 @@ namespace Pulumi.Oci.DataConnectivity
         public RegistryState()
         {
         }
+        public static new RegistryState Empty => new RegistryState();
     }
 }

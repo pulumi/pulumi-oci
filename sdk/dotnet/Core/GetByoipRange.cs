@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testByoipRange = Oci.Core.GetByoipRange.Invoke(new()
         ///     {
-        ///         var testByoipRange = Output.Create(Oci.Core.GetByoipRange.InvokeAsync(new Oci.Core.GetByoipRangeArgs
-        ///         {
-        ///             ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
-        ///         }));
-        ///     }
+        ///         ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testByoipRange = Oci.Core.GetByoipRange.Invoke(new()
         ///     {
-        ///         var testByoipRange = Output.Create(Oci.Core.GetByoipRange.InvokeAsync(new Oci.Core.GetByoipRangeArgs
-        ///         {
-        ///             ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
-        ///         }));
-        ///     }
+        ///         ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetByoipRangeArgs : Pulumi.InvokeArgs
+    public sealed class GetByoipRangeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Core
         public GetByoipRangeArgs()
         {
         }
+        public static new GetByoipRangeArgs Empty => new GetByoipRangeArgs();
     }
 
-    public sealed class GetByoipRangeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetByoipRangeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Core
         public GetByoipRangeInvokeArgs()
         {
         }
+        public static new GetByoipRangeInvokeArgs Empty => new GetByoipRangeInvokeArgs();
     }
 
 

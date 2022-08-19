@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class GetEdgeSubnetsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetEdgeSubnetsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public GetEdgeSubnetsFilterInputArgs()
         {
         }
+        public static new GetEdgeSubnetsFilterInputArgs Empty => new GetEdgeSubnetsFilterInputArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunCommitInfoGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunCommitInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Commit hash pertinent to the repository URL and the specified branch.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunCommitInfoGetArgs()
         {
         }
+        public static new BuildRunCommitInfoGetArgs Empty => new BuildRunCommitInfoGetArgs();
     }
 }

@@ -22,21 +22,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsLogGroup = Oci.LogAnalytics.GetLogAnalyticsLogGroup.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsLogGroup = Output.Create(Oci.LogAnalytics.GetLogAnalyticsLogGroup.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsLogGroupArgs
-        ///         {
-        ///             LogAnalyticsLogGroupId = oci_log_analytics_log_analytics_log_group.Test_log_analytics_log_group.Id,
-        ///             Namespace = @var.Log_analytics_log_group_namespace,
-        ///         }));
-        ///     }
+        ///         LogAnalyticsLogGroupId = oci_log_analytics_log_analytics_log_group.Test_log_analytics_log_group.Id,
+        ///         Namespace = @var.Log_analytics_log_group_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsLogGroup = Oci.LogAnalytics.GetLogAnalyticsLogGroup.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsLogGroup = Output.Create(Oci.LogAnalytics.GetLogAnalyticsLogGroup.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsLogGroupArgs
-        ///         {
-        ///             LogAnalyticsLogGroupId = oci_log_analytics_log_analytics_log_group.Test_log_analytics_log_group.Id,
-        ///             Namespace = @var.Log_analytics_log_group_namespace,
-        ///         }));
-        ///     }
+        ///         LogAnalyticsLogGroupId = oci_log_analytics_log_analytics_log_group.Test_log_analytics_log_group.Id,
+        ///         Namespace = @var.Log_analytics_log_group_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsLogGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsLogGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique logAnalytics log group identifier
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsLogGroupArgs()
         {
         }
+        public static new GetLogAnalyticsLogGroupArgs Empty => new GetLogAnalyticsLogGroupArgs();
     }
 
-    public sealed class GetLogAnalyticsLogGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsLogGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique logAnalytics log group identifier
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsLogGroupInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsLogGroupInvokeArgs Empty => new GetLogAnalyticsLogGroupInvokeArgs();
     }
 
 

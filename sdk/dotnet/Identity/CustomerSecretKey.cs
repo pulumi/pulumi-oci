@@ -27,21 +27,19 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCustomerSecretKey = new Oci.Identity.CustomerSecretKey("testCustomerSecretKey", new()
     ///     {
-    ///         var testCustomerSecretKey = new Oci.Identity.CustomerSecretKey("testCustomerSecretKey", new Oci.Identity.CustomerSecretKeyArgs
-    ///         {
-    ///             DisplayName = @var.Customer_secret_key_display_name,
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         DisplayName = @var.Customer_secret_key_display_name,
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/customerSecretKey:CustomerSecretKey")]
-    public partial class CustomerSecretKey : Pulumi.CustomResource
+    public partial class CustomerSecretKey : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
@@ -141,7 +139,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class CustomerSecretKeyArgs : Pulumi.ResourceArgs
+    public sealed class CustomerSecretKeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
@@ -158,9 +156,10 @@ namespace Pulumi.Oci.Identity
         public CustomerSecretKeyArgs()
         {
         }
+        public static new CustomerSecretKeyArgs Empty => new CustomerSecretKeyArgs();
     }
 
-    public sealed class CustomerSecretKeyState : Pulumi.ResourceArgs
+    public sealed class CustomerSecretKeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
@@ -207,5 +206,6 @@ namespace Pulumi.Oci.Identity
         public CustomerSecretKeyState()
         {
         }
+        public static new CustomerSecretKeyState Empty => new CustomerSecretKeyState();
     }
 }

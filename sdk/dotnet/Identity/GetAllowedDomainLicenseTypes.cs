@@ -27,20 +27,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAllowedDomainLicenseTypes = Oci.Identity.GetAllowedDomainLicenseTypes.Invoke(new()
         ///     {
-        ///         var testAllowedDomainLicenseTypes = Output.Create(Oci.Identity.GetAllowedDomainLicenseTypes.InvokeAsync(new Oci.Identity.GetAllowedDomainLicenseTypesArgs
-        ///         {
-        ///             CurrentLicenseTypeName = @var.Allowed_domain_license_type_current_license_type_name,
-        ///         }));
-        ///     }
+        ///         CurrentLicenseTypeName = @var.Allowed_domain_license_type_current_license_type_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,20 +62,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAllowedDomainLicenseTypes = Oci.Identity.GetAllowedDomainLicenseTypes.Invoke(new()
         ///     {
-        ///         var testAllowedDomainLicenseTypes = Output.Create(Oci.Identity.GetAllowedDomainLicenseTypes.InvokeAsync(new Oci.Identity.GetAllowedDomainLicenseTypesArgs
-        ///         {
-        ///             CurrentLicenseTypeName = @var.Allowed_domain_license_type_current_license_type_name,
-        ///         }));
-        ///     }
+        ///         CurrentLicenseTypeName = @var.Allowed_domain_license_type_current_license_type_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetAllowedDomainLicenseTypesArgs : Pulumi.InvokeArgs
+    public sealed class GetAllowedDomainLicenseTypesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The domain license type
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Identity
         public GetAllowedDomainLicenseTypesArgs()
         {
         }
+        public static new GetAllowedDomainLicenseTypesArgs Empty => new GetAllowedDomainLicenseTypesArgs();
     }
 
-    public sealed class GetAllowedDomainLicenseTypesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAllowedDomainLicenseTypesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The domain license type
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.Identity
         public GetAllowedDomainLicenseTypesInvokeArgs()
         {
         }
+        public static new GetAllowedDomainLicenseTypesInvokeArgs Empty => new GetAllowedDomainLicenseTypesInvokeArgs();
     }
 
 

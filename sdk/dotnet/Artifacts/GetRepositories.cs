@@ -21,24 +21,22 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositories = Oci.Artifacts.GetRepositories.Invoke(new()
         ///     {
-        ///         var testRepositories = Output.Create(Oci.Artifacts.GetRepositories.InvokeAsync(new Oci.Artifacts.GetRepositoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Repository_display_name,
-        ///             Id = @var.Repository_id,
-        ///             IsImmutable = @var.Repository_is_immutable,
-        ///             State = @var.Repository_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Repository_display_name,
+        ///         Id = @var.Repository_id,
+        ///         IsImmutable = @var.Repository_is_immutable,
+        ///         State = @var.Repository_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,24 +54,22 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositories = Oci.Artifacts.GetRepositories.Invoke(new()
         ///     {
-        ///         var testRepositories = Output.Create(Oci.Artifacts.GetRepositories.InvokeAsync(new Oci.Artifacts.GetRepositoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Repository_display_name,
-        ///             Id = @var.Repository_id,
-        ///             IsImmutable = @var.Repository_is_immutable,
-        ///             State = @var.Repository_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Repository_display_name,
+        ///         Id = @var.Repository_id,
+        ///         IsImmutable = @var.Repository_is_immutable,
+        ///         State = @var.Repository_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Artifacts
     }
 
 
-    public sealed class GetRepositoriesArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Artifacts
         public GetRepositoriesArgs()
         {
         }
+        public static new GetRepositoriesArgs Empty => new GetRepositoriesArgs();
     }
 
-    public sealed class GetRepositoriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.Artifacts
         public GetRepositoriesInvokeArgs()
         {
         }
+        public static new GetRepositoriesInvokeArgs Empty => new GetRepositoriesInvokeArgs();
     }
 
 

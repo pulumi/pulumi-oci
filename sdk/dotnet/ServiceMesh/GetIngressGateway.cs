@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIngressGateway = Oci.ServiceMesh.GetIngressGateway.Invoke(new()
         ///     {
-        ///         var testIngressGateway = Output.Create(Oci.ServiceMesh.GetIngressGateway.InvokeAsync(new Oci.ServiceMesh.GetIngressGatewayArgs
-        ///         {
-        ///             IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-        ///         }));
-        ///     }
+        ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIngressGateway = Oci.ServiceMesh.GetIngressGateway.Invoke(new()
         ///     {
-        ///         var testIngressGateway = Output.Create(Oci.ServiceMesh.GetIngressGateway.InvokeAsync(new Oci.ServiceMesh.GetIngressGatewayArgs
-        ///         {
-        ///             IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-        ///         }));
-        ///     }
+        ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetIngressGatewayArgs : Pulumi.InvokeArgs
+    public sealed class GetIngressGatewayArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique IngressGateway identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetIngressGatewayArgs()
         {
         }
+        public static new GetIngressGatewayArgs Empty => new GetIngressGatewayArgs();
     }
 
-    public sealed class GetIngressGatewayInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIngressGatewayInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique IngressGateway identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetIngressGatewayInvokeArgs()
         {
         }
+        public static new GetIngressGatewayInvokeArgs Empty => new GetIngressGatewayInvokeArgs();
     }
 
 

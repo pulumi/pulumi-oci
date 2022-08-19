@@ -17,30 +17,28 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVolumeAttachment = new Oci.Core.VolumeAttachment("testVolumeAttachment", new()
     ///     {
-    ///         var testVolumeAttachment = new Oci.Core.VolumeAttachment("testVolumeAttachment", new Oci.Core.VolumeAttachmentArgs
-    ///         {
-    ///             AttachmentType = @var.Volume_attachment_attachment_type,
-    ///             InstanceId = oci_core_instance.Test_instance.Id,
-    ///             VolumeId = oci_core_volume.Test_volume.Id,
-    ///             Device = @var.Volume_attachment_device,
-    ///             DisplayName = @var.Volume_attachment_display_name,
-    ///             EncryptionInTransitType = @var.Volume_attachment_encryption_in_transit_type,
-    ///             IsAgentAutoIscsiLoginEnabled = @var.Volume_attachment_is_agent_auto_iscsi_login_enabled,
-    ///             IsPvEncryptionInTransitEnabled = @var.Volume_attachment_is_pv_encryption_in_transit_enabled,
-    ///             IsReadOnly = @var.Volume_attachment_is_read_only,
-    ///             IsShareable = @var.Volume_attachment_is_shareable,
-    ///             UseChap = @var.Volume_attachment_use_chap,
-    ///         });
-    ///     }
+    ///         AttachmentType = @var.Volume_attachment_attachment_type,
+    ///         InstanceId = oci_core_instance.Test_instance.Id,
+    ///         VolumeId = oci_core_volume.Test_volume.Id,
+    ///         Device = @var.Volume_attachment_device,
+    ///         DisplayName = @var.Volume_attachment_display_name,
+    ///         EncryptionInTransitType = @var.Volume_attachment_encryption_in_transit_type,
+    ///         IsAgentAutoIscsiLoginEnabled = @var.Volume_attachment_is_agent_auto_iscsi_login_enabled,
+    ///         IsPvEncryptionInTransitEnabled = @var.Volume_attachment_is_pv_encryption_in_transit_enabled,
+    ///         IsReadOnly = @var.Volume_attachment_is_read_only,
+    ///         IsShareable = @var.Volume_attachment_is_shareable,
+    ///         UseChap = @var.Volume_attachment_use_chap,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeAttachment:VolumeAttachment")]
-    public partial class VolumeAttachment : Pulumi.CustomResource
+    public partial class VolumeAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
@@ -236,7 +234,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VolumeAttachmentArgs : Pulumi.ResourceArgs
+    public sealed class VolumeAttachmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
@@ -313,9 +311,10 @@ namespace Pulumi.Oci.Core
         public VolumeAttachmentArgs()
         {
         }
+        public static new VolumeAttachmentArgs Empty => new VolumeAttachmentArgs();
     }
 
-    public sealed class VolumeAttachmentState : Pulumi.ResourceArgs
+    public sealed class VolumeAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
@@ -464,5 +463,6 @@ namespace Pulumi.Oci.Core
         public VolumeAttachmentState()
         {
         }
+        public static new VolumeAttachmentState Empty => new VolumeAttachmentState();
     }
 }

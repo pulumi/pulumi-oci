@@ -26,6 +26,103 @@ import javax.annotation.Nullable;
  * Creates a new monitor.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ApmSynthetics.Config;
+ * import com.pulumi.oci.ApmSynthetics.ConfigArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDnsConfigurationArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationNetworkConfigurationArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationReqAuthenticationDetailsArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigScriptParameterArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMonitor = new Config(&#34;testMonitor&#34;, ConfigArgs.builder()        
+ *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+ *             .displayName(var_.monitor_display_name())
+ *             .monitorType(var_.monitor_monitor_type())
+ *             .repeatIntervalInSeconds(var_.monitor_repeat_interval_in_seconds())
+ *             .vantagePoints()
+ *             .batchIntervalInSeconds(var_.monitor_batch_interval_in_seconds())
+ *             .configuration(ConfigConfigurationArgs.builder()
+ *                 .configType(var_.monitor_configuration_config_type())
+ *                 .dnsConfiguration(ConfigConfigurationDnsConfigurationArgs.builder()
+ *                     .isOverrideDns(var_.monitor_configuration_dns_configuration_is_override_dns())
+ *                     .overrideDnsIp(var_.monitor_configuration_dns_configuration_override_dns_ip())
+ *                     .build())
+ *                 .isCertificateValidationEnabled(var_.monitor_configuration_is_certificate_validation_enabled())
+ *                 .isFailureRetried(var_.monitor_configuration_is_failure_retried())
+ *                 .isRedirectionEnabled(var_.monitor_configuration_is_redirection_enabled())
+ *                 .networkConfiguration(ConfigConfigurationNetworkConfigurationArgs.builder()
+ *                     .numberOfHops(var_.monitor_configuration_network_configuration_number_of_hops())
+ *                     .probeMode(var_.monitor_configuration_network_configuration_probe_mode())
+ *                     .probePerHop(var_.monitor_configuration_network_configuration_probe_per_hop())
+ *                     .protocol(var_.monitor_configuration_network_configuration_protocol())
+ *                     .transmissionRate(var_.monitor_configuration_network_configuration_transmission_rate())
+ *                     .build())
+ *                 .reqAuthenticationDetails(ConfigConfigurationReqAuthenticationDetailsArgs.builder()
+ *                     .authHeaders(ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs.builder()
+ *                         .headerName(var_.monitor_configuration_req_authentication_details_auth_headers_header_name())
+ *                         .headerValue(var_.monitor_configuration_req_authentication_details_auth_headers_header_value())
+ *                         .build())
+ *                     .authRequestMethod(var_.monitor_configuration_req_authentication_details_auth_request_method())
+ *                     .authRequestPostBody(var_.monitor_configuration_req_authentication_details_auth_request_post_body())
+ *                     .authToken(var_.monitor_configuration_req_authentication_details_auth_token())
+ *                     .authUrl(var_.monitor_configuration_req_authentication_details_auth_url())
+ *                     .authUserName(oci_identity_user.test_user().name())
+ *                     .authUserPassword(var_.monitor_configuration_req_authentication_details_auth_user_password())
+ *                     .oauthScheme(var_.monitor_configuration_req_authentication_details_oauth_scheme())
+ *                     .build())
+ *                 .reqAuthenticationScheme(var_.monitor_configuration_req_authentication_scheme())
+ *                 .requestHeaders(ConfigConfigurationRequestHeaderArgs.builder()
+ *                     .headerName(var_.monitor_configuration_request_headers_header_name())
+ *                     .headerValue(var_.monitor_configuration_request_headers_header_value())
+ *                     .build())
+ *                 .requestMethod(var_.monitor_configuration_request_method())
+ *                 .requestPostBody(var_.monitor_configuration_request_post_body())
+ *                 .requestQueryParams(ConfigConfigurationRequestQueryParamArgs.builder()
+ *                     .paramName(var_.monitor_configuration_request_query_params_param_name())
+ *                     .paramValue(var_.monitor_configuration_request_query_params_param_value())
+ *                     .build())
+ *                 .verifyResponseCodes(var_.monitor_configuration_verify_response_codes())
+ *                 .verifyResponseContent(var_.monitor_configuration_verify_response_content())
+ *                 .verifyTexts(ConfigConfigurationVerifyTextArgs.builder()
+ *                     .text(var_.monitor_configuration_verify_texts_text())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .isRunNow(var_.monitor_is_run_now())
+ *             .isRunOnce(var_.monitor_is_run_once())
+ *             .schedulingPolicy(var_.monitor_scheduling_policy())
+ *             .scriptId(oci_apm_synthetics_script.test_script().id())
+ *             .scriptParameters(ConfigScriptParameterArgs.builder()
+ *                 .paramName(var_.monitor_script_parameters_param_name())
+ *                 .paramValue(var_.monitor_script_parameters_param_value())
+ *                 .build())
+ *             .status(var_.monitor_status())
+ *             .target(var_.monitor_target())
+ *             .timeoutInSeconds(var_.monitor_timeout_in_seconds())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

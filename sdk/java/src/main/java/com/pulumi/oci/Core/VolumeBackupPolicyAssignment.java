@@ -21,6 +21,35 @@ import javax.annotation.Nullable;
  * has a different backup policy assigned, the prior backup policy will be silently unassigned.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.VolumeBackupPolicyAssignment;
+ * import com.pulumi.oci.Core.VolumeBackupPolicyAssignmentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVolumeBackupPolicyAssignment = new VolumeBackupPolicyAssignment(&#34;testVolumeBackupPolicyAssignment&#34;, VolumeBackupPolicyAssignmentArgs.builder()        
+ *             .assetId(oci_core_volume.test_volume().id())
+ *             .policyId(oci_core_volume_backup_policy.test_volume_backup_policy().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

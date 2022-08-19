@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryCommit = Oci.DevOps.GetRepositoryCommit.Invoke(new()
         ///     {
-        ///         var testRepositoryCommit = Output.Create(Oci.DevOps.GetRepositoryCommit.InvokeAsync(new Oci.DevOps.GetRepositoryCommitArgs
-        ///         {
-        ///             CommitId = oci_devops_commit.Test_commit.Id,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         }));
-        ///     }
+        ///         CommitId = oci_devops_commit.Test_commit.Id,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryCommit = Oci.DevOps.GetRepositoryCommit.Invoke(new()
         ///     {
-        ///         var testRepositoryCommit = Output.Create(Oci.DevOps.GetRepositoryCommit.InvokeAsync(new Oci.DevOps.GetRepositoryCommitArgs
-        ///         {
-        ///             CommitId = oci_devops_commit.Test_commit.Id,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         }));
-        ///     }
+        ///         CommitId = oci_devops_commit.Test_commit.Id,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryCommitArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryCommitArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given commit ID.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryCommitArgs()
         {
         }
+        public static new GetRepositoryCommitArgs Empty => new GetRepositoryCommitArgs();
     }
 
-    public sealed class GetRepositoryCommitInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryCommitInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given commit ID.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryCommitInvokeArgs()
         {
         }
+        public static new GetRepositoryCommitInvokeArgs Empty => new GetRepositoryCommitInvokeArgs();
     }
 
 

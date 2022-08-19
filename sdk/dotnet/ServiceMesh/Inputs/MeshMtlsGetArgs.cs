@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class MeshMtlsGetArgs : Pulumi.ResourceArgs
+    public sealed class MeshMtlsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public MeshMtlsGetArgs()
         {
         }
+        public static new MeshMtlsGetArgs Empty => new MeshMtlsGetArgs();
     }
 }

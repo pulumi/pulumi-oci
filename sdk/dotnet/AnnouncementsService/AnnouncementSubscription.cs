@@ -19,42 +19,40 @@ namespace Pulumi.Oci.AnnouncementsService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAnnouncementSubscription = new Oci.AnnouncementsService.AnnouncementSubscription("testAnnouncementSubscription", new()
     ///     {
-    ///         var testAnnouncementSubscription = new Oci.AnnouncementsService.AnnouncementSubscription("testAnnouncementSubscription", new Oci.AnnouncementsService.AnnouncementSubscriptionArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Announcement_subscription_display_name,
+    ///         OnsTopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Announcement_subscription_display_name,
-    ///             OnsTopicId = oci_ons_notification_topic.Test_notification_topic.Id,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Announcement_subscription_description,
+    ///         FilterGroups = new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionFilterGroupsArgs
+    ///         {
+    ///             Filters = new[]
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Announcement_subscription_description,
-    ///             FilterGroups = new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionFilterGroupsArgs
-    ///             {
-    ///                 Filters = 
+    ///                 new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionFilterGroupsFilterArgs
     ///                 {
-    ///                     new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionFilterGroupsFilterArgs
-    ///                     {
-    ///                         Type = @var.Announcement_subscription_filter_groups_filters_type,
-    ///                         Value = @var.Announcement_subscription_filter_groups_filters_value,
-    ///                     },
+    ///                     Type = @var.Announcement_subscription_filter_groups_filters_type,
+    ///                     Value = @var.Announcement_subscription_filter_groups_filters_value,
     ///                 },
     ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -66,7 +64,7 @@ namespace Pulumi.Oci.AnnouncementsService
     /// ```
     /// </summary>
     [OciResourceType("oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription")]
-    public partial class AnnouncementSubscription : Pulumi.CustomResource
+    public partial class AnnouncementSubscription : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
@@ -184,7 +182,7 @@ namespace Pulumi.Oci.AnnouncementsService
         }
     }
 
-    public sealed class AnnouncementSubscriptionArgs : Pulumi.ResourceArgs
+    public sealed class AnnouncementSubscriptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
@@ -243,9 +241,10 @@ namespace Pulumi.Oci.AnnouncementsService
         public AnnouncementSubscriptionArgs()
         {
         }
+        public static new AnnouncementSubscriptionArgs Empty => new AnnouncementSubscriptionArgs();
     }
 
-    public sealed class AnnouncementSubscriptionState : Pulumi.ResourceArgs
+    public sealed class AnnouncementSubscriptionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
@@ -340,5 +339,6 @@ namespace Pulumi.Oci.AnnouncementsService
         public AnnouncementSubscriptionState()
         {
         }
+        public static new AnnouncementSubscriptionState Empty => new AnnouncementSubscriptionState();
     }
 }

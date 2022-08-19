@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VolumeAttachmentMultipathDeviceArgs : Pulumi.ResourceArgs
+    public sealed class VolumeAttachmentMultipathDeviceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The volume's iSCSI IP address.  Example: `169.254.2.2`
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VolumeAttachmentMultipathDeviceArgs()
         {
         }
+        public static new VolumeAttachmentMultipathDeviceArgs Empty => new VolumeAttachmentMultipathDeviceArgs();
     }
 }

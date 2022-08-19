@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class UserAssessmentIgnoredTargetArgs : Pulumi.ResourceArgs
+    public sealed class UserAssessmentIgnoredTargetArgs : global::Pulumi.ResourceArgs
     {
         [Input("lifecycleState")]
         public Input<string>? LifecycleState { get; set; }
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public UserAssessmentIgnoredTargetArgs()
         {
         }
+        public static new UserAssessmentIgnoredTargetArgs Empty => new UserAssessmentIgnoredTargetArgs();
     }
 }

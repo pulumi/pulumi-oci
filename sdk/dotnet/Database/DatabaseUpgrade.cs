@@ -24,40 +24,12 @@ namespace Pulumi.Oci.Database
     /// 	}
     /// 	```
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testDatabaseUpgrade = new Oci.Database.DatabaseUpgrade("testDatabaseUpgrade", new Oci.Database.DatabaseUpgradeArgs
-    ///         {
-    ///             Action = @var.Database_upgrade_action,
-    ///             DatabaseId = oci_database_database.Test_database.Id,
-    ///             DatabaseUpgradeSourceDetails = new Oci.Database.Inputs.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs
-    ///             {
-    ///                 DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
-    ///                 DbHomeId = oci_database_db_home.Test_db_home.Id,
-    ///                 DbVersion = @var.Database_upgrade_database_upgrade_source_details_db_version,
-    ///                 Options = @var.Database_upgrade_database_upgrade_source_details_options,
-    ///                 Source = @var.Database_upgrade_database_upgrade_source_details_source,
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/databaseUpgrade:DatabaseUpgrade")]
-    public partial class DatabaseUpgrade : Pulumi.CustomResource
+    public partial class DatabaseUpgrade : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The database upgrade action.
@@ -271,7 +243,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class DatabaseUpgradeArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseUpgradeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database upgrade action.
@@ -294,9 +266,10 @@ namespace Pulumi.Oci.Database
         public DatabaseUpgradeArgs()
         {
         }
+        public static new DatabaseUpgradeArgs Empty => new DatabaseUpgradeArgs();
     }
 
-    public sealed class DatabaseUpgradeState : Pulumi.ResourceArgs
+    public sealed class DatabaseUpgradeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database upgrade action.
@@ -493,5 +466,6 @@ namespace Pulumi.Oci.Database
         public DatabaseUpgradeState()
         {
         }
+        public static new DatabaseUpgradeState Empty => new DatabaseUpgradeState();
     }
 }

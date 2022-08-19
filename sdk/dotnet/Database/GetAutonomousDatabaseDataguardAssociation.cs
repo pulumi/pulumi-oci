@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseDataguardAssociation = Oci.Database.GetAutonomousDatabaseDataguardAssociation.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseDataguardAssociation = Output.Create(Oci.Database.GetAutonomousDatabaseDataguardAssociation.InvokeAsync(new Oci.Database.GetAutonomousDatabaseDataguardAssociationArgs
-        ///         {
-        ///             AutonomousDatabaseDataguardAssociationId = oci_database_autonomous_database_dataguard_association.Test_autonomous_database_dataguard_association.Id,
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseDataguardAssociationId = oci_database_autonomous_database_dataguard_association.Test_autonomous_database_dataguard_association.Id,
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseDataguardAssociation = Oci.Database.GetAutonomousDatabaseDataguardAssociation.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseDataguardAssociation = Output.Create(Oci.Database.GetAutonomousDatabaseDataguardAssociation.InvokeAsync(new Oci.Database.GetAutonomousDatabaseDataguardAssociationArgs
-        ///         {
-        ///             AutonomousDatabaseDataguardAssociationId = oci_database_autonomous_database_dataguard_association.Test_autonomous_database_dataguard_association.Id,
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseDataguardAssociationId = oci_database_autonomous_database_dataguard_association.Test_autonomous_database_dataguard_association.Id,
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousDatabaseDataguardAssociationArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabaseDataguardAssociationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabaseDataguardAssociationArgs()
         {
         }
+        public static new GetAutonomousDatabaseDataguardAssociationArgs Empty => new GetAutonomousDatabaseDataguardAssociationArgs();
     }
 
-    public sealed class GetAutonomousDatabaseDataguardAssociationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabaseDataguardAssociationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabaseDataguardAssociationInvokeArgs()
         {
         }
+        public static new GetAutonomousDatabaseDataguardAssociationInvokeArgs Empty => new GetAutonomousDatabaseDataguardAssociationInvokeArgs();
     }
 
 

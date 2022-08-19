@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunBuildRunArgumentsItemGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunBuildRunArgumentsItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunBuildRunArgumentsItemGetArgs()
         {
         }
+        public static new BuildRunBuildRunArgumentsItemGetArgs Empty => new BuildRunBuildRunArgumentsItemGetArgs();
     }
 }

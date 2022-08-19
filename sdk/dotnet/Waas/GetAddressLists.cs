@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAddressLists = Oci.Waas.GetAddressLists.Invoke(new()
         ///     {
-        ///         var testAddressLists = Output.Create(Oci.Waas.GetAddressLists.InvokeAsync(new Oci.Waas.GetAddressListsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Ids = @var.Address_list_ids,
-        ///             Names = @var.Address_list_names,
-        ///             States = @var.Address_list_states,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Address_list_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Address_list_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Ids = @var.Address_list_ids,
+        ///         Names = @var.Address_list_names,
+        ///         States = @var.Address_list_states,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Address_list_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Address_list_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAddressLists = Oci.Waas.GetAddressLists.Invoke(new()
         ///     {
-        ///         var testAddressLists = Output.Create(Oci.Waas.GetAddressLists.InvokeAsync(new Oci.Waas.GetAddressListsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Ids = @var.Address_list_ids,
-        ///             Names = @var.Address_list_names,
-        ///             States = @var.Address_list_states,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Address_list_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Address_list_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Ids = @var.Address_list_ids,
+        ///         Names = @var.Address_list_names,
+        ///         States = @var.Address_list_states,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Address_list_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Address_list_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetAddressListsArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressListsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.Waas
         public GetAddressListsArgs()
         {
         }
+        public static new GetAddressListsArgs Empty => new GetAddressListsArgs();
     }
 
-    public sealed class GetAddressListsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressListsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -221,6 +218,7 @@ namespace Pulumi.Oci.Waas
         public GetAddressListsInvokeArgs()
         {
         }
+        public static new GetAddressListsInvokeArgs Empty => new GetAddressListsInvokeArgs();
     }
 
 

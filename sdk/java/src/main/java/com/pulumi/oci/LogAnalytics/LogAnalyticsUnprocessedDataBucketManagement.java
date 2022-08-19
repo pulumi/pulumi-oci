@@ -22,6 +22,35 @@ import javax.annotation.Nullable;
  * if configured the payload would be uploaded to the bucket for verification.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsUnprocessedDataBucketManagement;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsUnprocessedDataBucketManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLogAnalyticsUnprocessedDataBucketManagement = new LogAnalyticsUnprocessedDataBucketManagement(&#34;testLogAnalyticsUnprocessedDataBucketManagement&#34;, LogAnalyticsUnprocessedDataBucketManagementArgs.builder()        
+ *             .bucket(var_.log_analytics_unprocessed_data_bucket_management_bucket())
+ *             .namespace(var_.log_analytics_unprocessed_data_bucket_management_namespace())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

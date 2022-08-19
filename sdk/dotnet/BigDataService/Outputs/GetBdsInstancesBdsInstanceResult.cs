@@ -69,6 +69,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly bool IsSecure;
         public readonly string KerberosRealmName;
+        /// <summary>
+        /// The OCID of the Key Management master encryption key.
+        /// </summary>
+        public readonly string KmsKeyId;
         public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceMasterNodeResult> MasterNodes;
         /// <summary>
         /// Additional configuration of the user's network.
@@ -133,6 +137,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string kerberosRealmName,
 
+            string kmsKeyId,
+
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceMasterNodeResult> masterNodes,
 
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceNetworkConfigResult> networkConfigs,
@@ -168,6 +174,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             IsHighAvailability = isHighAvailability;
             IsSecure = isSecure;
             KerberosRealmName = kerberosRealmName;
+            KmsKeyId = kmsKeyId;
             MasterNodes = masterNodes;
             NetworkConfigs = networkConfigs;
             Nodes = nodes;

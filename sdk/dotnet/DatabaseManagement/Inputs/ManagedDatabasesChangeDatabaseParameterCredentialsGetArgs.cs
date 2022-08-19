@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class ManagedDatabasesChangeDatabaseParameterCredentialsGetArgs : Pulumi.ResourceArgs
+    public sealed class ManagedDatabasesChangeDatabaseParameterCredentialsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The password for the database user name.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public ManagedDatabasesChangeDatabaseParameterCredentialsGetArgs()
         {
         }
+        public static new ManagedDatabasesChangeDatabaseParameterCredentialsGetArgs Empty => new ManagedDatabasesChangeDatabaseParameterCredentialsGetArgs();
     }
 }

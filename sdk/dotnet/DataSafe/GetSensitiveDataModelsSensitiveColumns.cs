@@ -22,35 +22,33 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveDataModelsSensitiveColumns = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumns.Invoke(new()
         ///     {
-        ///         var testSensitiveDataModelsSensitiveColumns = Output.Create(Oci.DataSafe.GetSensitiveDataModelsSensitiveColumns.InvokeAsync(new Oci.DataSafe.GetSensitiveDataModelsSensitiveColumnsArgs
-        ///         {
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///             ColumnGroup = @var.Sensitive_data_models_sensitive_column_column_group,
-        ///             ColumnNames = @var.Sensitive_data_models_sensitive_column_column_name,
-        ///             DataTypes = @var.Sensitive_data_models_sensitive_column_data_type,
-        ///             Objects = @var.Sensitive_data_models_sensitive_column_object,
-        ///             ObjectTypes = @var.Sensitive_data_models_sensitive_column_object_type,
-        ///             ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_key,
-        ///             RelationTypes = @var.Sensitive_data_models_sensitive_column_relation_type,
-        ///             SchemaNames = @var.Sensitive_data_models_sensitive_column_schema_name,
-        ///             SensitiveColumnLifecycleState = @var.Sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state,
-        ///             SensitiveTypeIds = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///             Statuses = @var.Sensitive_data_models_sensitive_column_status,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Sensitive_data_models_sensitive_column_time_created_less_than,
-        ///             TimeUpdatedGreaterThanOrEqualTo = @var.Sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to,
-        ///             TimeUpdatedLessThan = @var.Sensitive_data_models_sensitive_column_time_updated_less_than,
-        ///         }));
-        ///     }
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         ColumnGroup = @var.Sensitive_data_models_sensitive_column_column_group,
+        ///         ColumnNames = @var.Sensitive_data_models_sensitive_column_column_name,
+        ///         DataTypes = @var.Sensitive_data_models_sensitive_column_data_type,
+        ///         Objects = @var.Sensitive_data_models_sensitive_column_object,
+        ///         ObjectTypes = @var.Sensitive_data_models_sensitive_column_object_type,
+        ///         ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_key,
+        ///         RelationTypes = @var.Sensitive_data_models_sensitive_column_relation_type,
+        ///         SchemaNames = @var.Sensitive_data_models_sensitive_column_schema_name,
+        ///         SensitiveColumnLifecycleState = @var.Sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state,
+        ///         SensitiveTypeIds = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///         Statuses = @var.Sensitive_data_models_sensitive_column_status,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Sensitive_data_models_sensitive_column_time_created_less_than,
+        ///         TimeUpdatedGreaterThanOrEqualTo = @var.Sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to,
+        ///         TimeUpdatedLessThan = @var.Sensitive_data_models_sensitive_column_time_updated_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -69,35 +67,33 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveDataModelsSensitiveColumns = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumns.Invoke(new()
         ///     {
-        ///         var testSensitiveDataModelsSensitiveColumns = Output.Create(Oci.DataSafe.GetSensitiveDataModelsSensitiveColumns.InvokeAsync(new Oci.DataSafe.GetSensitiveDataModelsSensitiveColumnsArgs
-        ///         {
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///             ColumnGroup = @var.Sensitive_data_models_sensitive_column_column_group,
-        ///             ColumnNames = @var.Sensitive_data_models_sensitive_column_column_name,
-        ///             DataTypes = @var.Sensitive_data_models_sensitive_column_data_type,
-        ///             Objects = @var.Sensitive_data_models_sensitive_column_object,
-        ///             ObjectTypes = @var.Sensitive_data_models_sensitive_column_object_type,
-        ///             ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_key,
-        ///             RelationTypes = @var.Sensitive_data_models_sensitive_column_relation_type,
-        ///             SchemaNames = @var.Sensitive_data_models_sensitive_column_schema_name,
-        ///             SensitiveColumnLifecycleState = @var.Sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state,
-        ///             SensitiveTypeIds = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///             Statuses = @var.Sensitive_data_models_sensitive_column_status,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Sensitive_data_models_sensitive_column_time_created_less_than,
-        ///             TimeUpdatedGreaterThanOrEqualTo = @var.Sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to,
-        ///             TimeUpdatedLessThan = @var.Sensitive_data_models_sensitive_column_time_updated_less_than,
-        ///         }));
-        ///     }
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         ColumnGroup = @var.Sensitive_data_models_sensitive_column_column_group,
+        ///         ColumnNames = @var.Sensitive_data_models_sensitive_column_column_name,
+        ///         DataTypes = @var.Sensitive_data_models_sensitive_column_data_type,
+        ///         Objects = @var.Sensitive_data_models_sensitive_column_object,
+        ///         ObjectTypes = @var.Sensitive_data_models_sensitive_column_object_type,
+        ///         ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_key,
+        ///         RelationTypes = @var.Sensitive_data_models_sensitive_column_relation_type,
+        ///         SchemaNames = @var.Sensitive_data_models_sensitive_column_schema_name,
+        ///         SensitiveColumnLifecycleState = @var.Sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state,
+        ///         SensitiveTypeIds = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///         Statuses = @var.Sensitive_data_models_sensitive_column_status,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Sensitive_data_models_sensitive_column_time_created_less_than,
+        ///         TimeUpdatedGreaterThanOrEqualTo = @var.Sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to,
+        ///         TimeUpdatedLessThan = @var.Sensitive_data_models_sensitive_column_time_updated_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -107,7 +103,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSensitiveDataModelsSensitiveColumnsArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveDataModelsSensitiveColumnsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only the sensitive columns that belong to the specified column group.
@@ -270,9 +266,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveDataModelsSensitiveColumnsArgs()
         {
         }
+        public static new GetSensitiveDataModelsSensitiveColumnsArgs Empty => new GetSensitiveDataModelsSensitiveColumnsArgs();
     }
 
-    public sealed class GetSensitiveDataModelsSensitiveColumnsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveDataModelsSensitiveColumnsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only the sensitive columns that belong to the specified column group.
@@ -435,6 +432,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveDataModelsSensitiveColumnsInvokeArgs()
         {
         }
+        public static new GetSensitiveDataModelsSensitiveColumnsInvokeArgs Empty => new GetSensitiveDataModelsSensitiveColumnsInvokeArgs();
     }
 
 

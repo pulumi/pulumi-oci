@@ -23,6 +23,57 @@ import javax.annotation.Nullable;
  * Creates a new OpensearchCluster.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Opensearch.Cluster;
+ * import com.pulumi.oci.Opensearch.ClusterArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOpensearchCluster = new Cluster(&#34;testOpensearchCluster&#34;, ClusterArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .dataNodeCount(var_.opensearch_cluster_data_node_count())
+ *             .dataNodeHostMemoryGb(var_.opensearch_cluster_data_node_host_memory_gb())
+ *             .dataNodeHostOcpuCount(var_.opensearch_cluster_data_node_host_ocpu_count())
+ *             .dataNodeHostType(var_.opensearch_cluster_data_node_host_type())
+ *             .dataNodeStorageGb(var_.opensearch_cluster_data_node_storage_gb())
+ *             .displayName(var_.opensearch_cluster_display_name())
+ *             .masterNodeCount(var_.opensearch_cluster_master_node_count())
+ *             .masterNodeHostMemoryGb(var_.opensearch_cluster_master_node_host_memory_gb())
+ *             .masterNodeHostOcpuCount(var_.opensearch_cluster_master_node_host_ocpu_count())
+ *             .masterNodeHostType(var_.opensearch_cluster_master_node_host_type())
+ *             .opendashboardNodeCount(var_.opensearch_cluster_opendashboard_node_count())
+ *             .opendashboardNodeHostMemoryGb(var_.opensearch_cluster_opendashboard_node_host_memory_gb())
+ *             .opendashboardNodeHostOcpuCount(var_.opensearch_cluster_opendashboard_node_host_ocpu_count())
+ *             .softwareVersion(var_.opensearch_cluster_software_version())
+ *             .subnetCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .vcnCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .dataNodeHostBareMetalShape(var_.opensearch_cluster_data_node_host_bare_metal_shape())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .masterNodeHostBareMetalShape(var_.opensearch_cluster_master_node_host_bare_metal_shape())
+ *             .systemTags(var_.opensearch_cluster_system_tags())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

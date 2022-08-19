@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DbSystemDbHomeDatabaseConnectionStringArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemDbHomeDatabaseConnectionStringArgs : global::Pulumi.ResourceArgs
     {
         [Input("allConnectionStrings")]
         private InputMap<object>? _allConnectionStrings;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DbSystemDbHomeDatabaseConnectionStringArgs()
         {
         }
+        public static new DbSystemDbHomeDatabaseConnectionStringArgs Empty => new DbSystemDbHomeDatabaseConnectionStringArgs();
     }
 }

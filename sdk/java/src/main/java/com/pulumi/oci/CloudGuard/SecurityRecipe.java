@@ -22,6 +22,39 @@ import javax.annotation.Nullable;
  * Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.CloudGuard.SecurityRecipe;
+ * import com.pulumi.oci.CloudGuard.SecurityRecipeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSecurityRecipe = new SecurityRecipe(&#34;testSecurityRecipe&#34;, SecurityRecipeArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.security_recipe_display_name())
+ *             .securityPolicies(var_.security_recipe_security_policies())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.security_recipe_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -17,24 +17,22 @@ namespace Pulumi.Oci.Functions
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testInvokeFunction = new Oci.Functions.InvokeFunction("testInvokeFunction", new()
     ///     {
-    ///         var testInvokeFunction = new Oci.Functions.InvokeFunction("testInvokeFunction", new Oci.Functions.InvokeFunctionArgs
-    ///         {
-    ///             FunctionId = oci_functions_function.Test_function.Id,
-    ///             InvokeFunctionBody = @var.Invoke_function_invoke_function_body,
-    ///             FnIntent = @var.Invoke_function_fn_intent,
-    ///             FnInvokeType = @var.Invoke_function_fn_invoke_type,
-    ///             Base64EncodeContent = false,
-    ///         });
-    ///     }
+    ///         FunctionId = oci_functions_function.Test_function.Id,
+    ///         InvokeFunctionBody = @var.Invoke_function_invoke_function_body,
+    ///         FnIntent = @var.Invoke_function_fn_intent,
+    ///         FnInvokeType = @var.Invoke_function_fn_invoke_type,
+    ///         Base64EncodeContent = false,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -42,7 +40,7 @@ namespace Pulumi.Oci.Functions
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Functions/invokeFunction:InvokeFunction")]
-    public partial class InvokeFunction : Pulumi.CustomResource
+    public partial class InvokeFunction : global::Pulumi.CustomResource
     {
         [Output("base64EncodeContent")]
         public Output<bool?> Base64EncodeContent { get; private set; } = null!;
@@ -133,7 +131,7 @@ namespace Pulumi.Oci.Functions
         }
     }
 
-    public sealed class InvokeFunctionArgs : Pulumi.ResourceArgs
+    public sealed class InvokeFunctionArgs : global::Pulumi.ResourceArgs
     {
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
@@ -174,9 +172,10 @@ namespace Pulumi.Oci.Functions
         public InvokeFunctionArgs()
         {
         }
+        public static new InvokeFunctionArgs Empty => new InvokeFunctionArgs();
     }
 
-    public sealed class InvokeFunctionState : Pulumi.ResourceArgs
+    public sealed class InvokeFunctionState : global::Pulumi.ResourceArgs
     {
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
@@ -226,5 +225,6 @@ namespace Pulumi.Oci.Functions
         public InvokeFunctionState()
         {
         }
+        public static new InvokeFunctionState Empty => new InvokeFunctionState();
     }
 }

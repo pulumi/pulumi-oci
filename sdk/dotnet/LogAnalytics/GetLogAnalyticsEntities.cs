@@ -21,31 +21,29 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsEntities = Oci.LogAnalytics.GetLogAnalyticsEntities.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsEntities = Output.Create(Oci.LogAnalytics.GetLogAnalyticsEntities.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsEntitiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Namespace = @var.Log_analytics_entity_namespace,
-        ///             CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
-        ///             EntityTypeNames = @var.Log_analytics_entity_entity_type_name,
-        ///             Hostname = @var.Log_analytics_entity_hostname,
-        ///             HostnameContains = @var.Log_analytics_entity_hostname_contains,
-        ///             IsManagementAgentIdNull = @var.Log_analytics_entity_is_management_agent_id_null,
-        ///             LifecycleDetailsContains = @var.Log_analytics_entity_lifecycle_details_contains,
-        ///             Name = @var.Log_analytics_entity_name,
-        ///             NameContains = @var.Log_analytics_entity_name_contains,
-        ///             SourceId = oci_log_analytics_source.Test_source.Id,
-        ///             State = @var.Log_analytics_entity_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Namespace = @var.Log_analytics_entity_namespace,
+        ///         CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
+        ///         EntityTypeNames = @var.Log_analytics_entity_entity_type_name,
+        ///         Hostname = @var.Log_analytics_entity_hostname,
+        ///         HostnameContains = @var.Log_analytics_entity_hostname_contains,
+        ///         IsManagementAgentIdNull = @var.Log_analytics_entity_is_management_agent_id_null,
+        ///         LifecycleDetailsContains = @var.Log_analytics_entity_lifecycle_details_contains,
+        ///         Name = @var.Log_analytics_entity_name,
+        ///         NameContains = @var.Log_analytics_entity_name_contains,
+        ///         SourceId = oci_log_analytics_source.Test_source.Id,
+        ///         State = @var.Log_analytics_entity_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,31 +61,29 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsEntities = Oci.LogAnalytics.GetLogAnalyticsEntities.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsEntities = Output.Create(Oci.LogAnalytics.GetLogAnalyticsEntities.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsEntitiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Namespace = @var.Log_analytics_entity_namespace,
-        ///             CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
-        ///             EntityTypeNames = @var.Log_analytics_entity_entity_type_name,
-        ///             Hostname = @var.Log_analytics_entity_hostname,
-        ///             HostnameContains = @var.Log_analytics_entity_hostname_contains,
-        ///             IsManagementAgentIdNull = @var.Log_analytics_entity_is_management_agent_id_null,
-        ///             LifecycleDetailsContains = @var.Log_analytics_entity_lifecycle_details_contains,
-        ///             Name = @var.Log_analytics_entity_name,
-        ///             NameContains = @var.Log_analytics_entity_name_contains,
-        ///             SourceId = oci_log_analytics_source.Test_source.Id,
-        ///             State = @var.Log_analytics_entity_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Namespace = @var.Log_analytics_entity_namespace,
+        ///         CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
+        ///         EntityTypeNames = @var.Log_analytics_entity_entity_type_name,
+        ///         Hostname = @var.Log_analytics_entity_hostname,
+        ///         HostnameContains = @var.Log_analytics_entity_hostname_contains,
+        ///         IsManagementAgentIdNull = @var.Log_analytics_entity_is_management_agent_id_null,
+        ///         LifecycleDetailsContains = @var.Log_analytics_entity_lifecycle_details_contains,
+        ///         Name = @var.Log_analytics_entity_name,
+        ///         NameContains = @var.Log_analytics_entity_name_contains,
+        ///         SourceId = oci_log_analytics_source.Test_source.Id,
+        ///         State = @var.Log_analytics_entity_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -97,7 +93,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsEntitiesArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsEntitiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
@@ -188,9 +184,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsEntitiesArgs()
         {
         }
+        public static new GetLogAnalyticsEntitiesArgs Empty => new GetLogAnalyticsEntitiesArgs();
     }
 
-    public sealed class GetLogAnalyticsEntitiesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsEntitiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
@@ -281,6 +278,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsEntitiesInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsEntitiesInvokeArgs Empty => new GetLogAnalyticsEntitiesInvokeArgs();
     }
 
 

@@ -35,6 +35,34 @@ public final class DatabaseToolsFunctions {
      * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
+     *             .databaseToolsConnectionId(oci_database_tools_database_tools_connection.test_database_tools_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsConnectionResult> getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs args) {
@@ -46,6 +74,34 @@ public final class DatabaseToolsFunctions {
      * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
+     *             .databaseToolsConnectionId(oci_database_tools_database_tools_connection.test_database_tools_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsConnectionResult> getDatabaseToolsConnectionPlain(GetDatabaseToolsConnectionPlainArgs args) {
@@ -57,6 +113,34 @@ public final class DatabaseToolsFunctions {
      * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
+     *             .databaseToolsConnectionId(oci_database_tools_database_tools_connection.test_database_tools_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsConnectionResult> getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs args, InvokeOptions options) {
@@ -68,6 +152,34 @@ public final class DatabaseToolsFunctions {
      * Gets details of the specified Database Tools connection.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
+     *             .databaseToolsConnectionId(oci_database_tools_database_tools_connection.test_database_tools_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsConnectionResult> getDatabaseToolsConnectionPlain(GetDatabaseToolsConnectionPlainArgs args, InvokeOptions options) {
@@ -79,6 +191,37 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_connection_display_name())
+     *             .state(var_.database_tools_connection_state())
+     *             .types(var_.database_tools_connection_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs args) {
@@ -90,6 +233,37 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_connection_display_name())
+     *             .state(var_.database_tools_connection_state())
+     *             .types(var_.database_tools_connection_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnectionsPlain(GetDatabaseToolsConnectionsPlainArgs args) {
@@ -101,6 +275,37 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_connection_display_name())
+     *             .state(var_.database_tools_connection_state())
+     *             .types(var_.database_tools_connection_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs args, InvokeOptions options) {
@@ -112,6 +317,37 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_connection_display_name())
+     *             .state(var_.database_tools_connection_state())
+     *             .types(var_.database_tools_connection_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsConnectionsResult> getDatabaseToolsConnectionsPlain(GetDatabaseToolsConnectionsPlainArgs args, InvokeOptions options) {
@@ -123,6 +359,34 @@ public final class DatabaseToolsFunctions {
      * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
+     *             .databaseToolsEndpointServiceId(oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs args) {
@@ -134,6 +398,34 @@ public final class DatabaseToolsFunctions {
      * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
+     *             .databaseToolsEndpointServiceId(oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointServicePlain(GetDatabaseToolsEndpointServicePlainArgs args) {
@@ -145,6 +437,34 @@ public final class DatabaseToolsFunctions {
      * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
+     *             .databaseToolsEndpointServiceId(oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs args, InvokeOptions options) {
@@ -156,6 +476,34 @@ public final class DatabaseToolsFunctions {
      * Gets details for the specified Database Tools endpoint service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
+     *             .databaseToolsEndpointServiceId(oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServiceResult> getDatabaseToolsEndpointServicePlain(GetDatabaseToolsEndpointServicePlainArgs args, InvokeOptions options) {
@@ -167,6 +515,37 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_endpoint_service_display_name())
+     *             .name(var_.database_tools_endpoint_service_name())
+     *             .state(var_.database_tools_endpoint_service_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs args) {
@@ -178,6 +557,37 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_endpoint_service_display_name())
+     *             .name(var_.database_tools_endpoint_service_name())
+     *             .state(var_.database_tools_endpoint_service_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServicesPlain(GetDatabaseToolsEndpointServicesPlainArgs args) {
@@ -189,6 +599,37 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_endpoint_service_display_name())
+     *             .name(var_.database_tools_endpoint_service_name())
+     *             .state(var_.database_tools_endpoint_service_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs args, InvokeOptions options) {
@@ -200,6 +641,37 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools endpoint services.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_endpoint_service_display_name())
+     *             .name(var_.database_tools_endpoint_service_name())
+     *             .state(var_.database_tools_endpoint_service_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServicesPlain(GetDatabaseToolsEndpointServicesPlainArgs args, InvokeOptions options) {
@@ -211,6 +683,34 @@ public final class DatabaseToolsFunctions {
      * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
+     *             .databaseToolsPrivateEndpointId(oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs args) {
@@ -222,6 +722,34 @@ public final class DatabaseToolsFunctions {
      * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
+     *             .databaseToolsPrivateEndpointId(oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpointPlain(GetDatabaseToolsPrivateEndpointPlainArgs args) {
@@ -233,6 +761,34 @@ public final class DatabaseToolsFunctions {
      * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
+     *             .databaseToolsPrivateEndpointId(oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs args, InvokeOptions options) {
@@ -244,6 +800,34 @@ public final class DatabaseToolsFunctions {
      * Gets details of a specified Database Tools private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
+     *             .databaseToolsPrivateEndpointId(oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointResult> getDatabaseToolsPrivateEndpointPlain(GetDatabaseToolsPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -255,6 +839,38 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_private_endpoint_display_name())
+     *             .endpointServiceId(oci_core_service.test_service().id())
+     *             .state(var_.database_tools_private_endpoint_state())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs args) {
@@ -266,6 +882,38 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_private_endpoint_display_name())
+     *             .endpointServiceId(oci_core_service.test_service().id())
+     *             .state(var_.database_tools_private_endpoint_state())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpointsPlain(GetDatabaseToolsPrivateEndpointsPlainArgs args) {
@@ -277,6 +925,38 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_private_endpoint_display_name())
+     *             .endpointServiceId(oci_core_service.test_service().id())
+     *             .state(var_.database_tools_private_endpoint_state())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs args, InvokeOptions options) {
@@ -288,6 +968,38 @@ public final class DatabaseToolsFunctions {
      * Returns a list of Database Tools private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_tools_private_endpoint_display_name())
+     *             .endpointServiceId(oci_core_service.test_service().id())
+     *             .state(var_.database_tools_private_endpoint_state())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseToolsPrivateEndpointsResult> getDatabaseToolsPrivateEndpointsPlain(GetDatabaseToolsPrivateEndpointsPlainArgs args, InvokeOptions options) {

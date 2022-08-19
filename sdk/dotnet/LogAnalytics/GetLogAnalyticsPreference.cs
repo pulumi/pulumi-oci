@@ -22,20 +22,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsPreference = Oci.LogAnalytics.GetLogAnalyticsPreference.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsPreference = Output.Create(Oci.LogAnalytics.GetLogAnalyticsPreference.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsPreferenceArgs
-        ///         {
-        ///             Namespace = @var.Log_analytics_preference_namespace,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_analytics_preference_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsPreference = Oci.LogAnalytics.GetLogAnalyticsPreference.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsPreference = Output.Create(Oci.LogAnalytics.GetLogAnalyticsPreference.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsPreferenceArgs
-        ///         {
-        ///             Namespace = @var.Log_analytics_preference_namespace,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_analytics_preference_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsPreferenceArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsPreferenceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsPreferenceArgs()
         {
         }
+        public static new GetLogAnalyticsPreferenceArgs Empty => new GetLogAnalyticsPreferenceArgs();
     }
 
-    public sealed class GetLogAnalyticsPreferenceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsPreferenceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsPreferenceInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsPreferenceInvokeArgs Empty => new GetLogAnalyticsPreferenceInvokeArgs();
     }
 
 

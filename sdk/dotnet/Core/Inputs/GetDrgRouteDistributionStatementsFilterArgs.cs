@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetDrgRouteDistributionStatementsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetDrgRouteDistributionStatementsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetDrgRouteDistributionStatementsFilterInputArgs()
         {
         }
+        public static new GetDrgRouteDistributionStatementsFilterInputArgs Empty => new GetDrgRouteDistributionStatementsFilterInputArgs();
     }
 }

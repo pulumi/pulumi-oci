@@ -20,6 +20,35 @@ import javax.annotation.Nullable;
  * Creates a custom SSL cipher suite.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LoadBalancer.SslCipherSuite;
+ * import com.pulumi.oci.LoadBalancer.SslCipherSuiteArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSslCipherSuite = new SslCipherSuite(&#34;testSslCipherSuite&#34;, SslCipherSuiteArgs.builder()        
+ *             .ciphers(var_.ssl_cipher_suite_ciphers())
+ *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

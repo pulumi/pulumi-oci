@@ -17,20 +17,18 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStackTfState = Oci.ResourceManager.GetStackTfState.Invoke(new()
         ///     {
-        ///         var testStackTfState = Output.Create(Oci.ResourceManager.GetStackTfState.InvokeAsync(new Oci.ResourceManager.GetStackTfStateArgs
-        ///         {
-        ///             StackId = oci_resourcemanager_stack.Test_stack.Id,
-        ///         }));
-        ///     }
+        ///         StackId = oci_resourcemanager_stack.Test_stack.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -44,20 +42,18 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStackTfState = Oci.ResourceManager.GetStackTfState.Invoke(new()
         ///     {
-        ///         var testStackTfState = Output.Create(Oci.ResourceManager.GetStackTfState.InvokeAsync(new Oci.ResourceManager.GetStackTfStateArgs
-        ///         {
-        ///             StackId = oci_resourcemanager_stack.Test_stack.Id,
-        ///         }));
-        ///     }
+        ///         StackId = oci_resourcemanager_stack.Test_stack.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -67,7 +63,7 @@ namespace Pulumi.Oci.ResourceManager
     }
 
 
-    public sealed class GetStackTfStateArgs : Pulumi.InvokeArgs
+    public sealed class GetStackTfStateArgs : global::Pulumi.InvokeArgs
     {
         [Input("localPath", required: true)]
         public string LocalPath { get; set; } = null!;
@@ -81,9 +77,10 @@ namespace Pulumi.Oci.ResourceManager
         public GetStackTfStateArgs()
         {
         }
+        public static new GetStackTfStateArgs Empty => new GetStackTfStateArgs();
     }
 
-    public sealed class GetStackTfStateInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetStackTfStateInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("localPath", required: true)]
         public Input<string> LocalPath { get; set; } = null!;
@@ -97,6 +94,7 @@ namespace Pulumi.Oci.ResourceManager
         public GetStackTfStateInvokeArgs()
         {
         }
+        public static new GetStackTfStateInvokeArgs Empty => new GetStackTfStateInvokeArgs();
     }
 
 

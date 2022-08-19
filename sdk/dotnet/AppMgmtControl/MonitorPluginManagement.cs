@@ -19,20 +19,18 @@ namespace Pulumi.Oci.AppMgmtControl
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMonitorPluginManagement = new Oci.AppMgmtControl.MonitorPluginManagement("testMonitorPluginManagement", new()
     ///     {
-    ///         var testMonitorPluginManagement = new Oci.AppMgmtControl.MonitorPluginManagement("testMonitorPluginManagement", new Oci.AppMgmtControl.MonitorPluginManagementArgs
-    ///         {
-    ///             MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
-    ///         });
-    ///     }
+    ///         MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.AppMgmtControl
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement")]
-    public partial class MonitorPluginManagement : Pulumi.CustomResource
+    public partial class MonitorPluginManagement : global::Pulumi.CustomResource
     {
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -107,7 +105,7 @@ namespace Pulumi.Oci.AppMgmtControl
         }
     }
 
-    public sealed class MonitorPluginManagementArgs : Pulumi.ResourceArgs
+    public sealed class MonitorPluginManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// OCID of monitored instance.
@@ -118,9 +116,10 @@ namespace Pulumi.Oci.AppMgmtControl
         public MonitorPluginManagementArgs()
         {
         }
+        public static new MonitorPluginManagementArgs Empty => new MonitorPluginManagementArgs();
     }
 
-    public sealed class MonitorPluginManagementState : Pulumi.ResourceArgs
+    public sealed class MonitorPluginManagementState : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -146,5 +145,6 @@ namespace Pulumi.Oci.AppMgmtControl
         public MonitorPluginManagementState()
         {
         }
+        public static new MonitorPluginManagementState Empty => new MonitorPluginManagementState();
     }
 }

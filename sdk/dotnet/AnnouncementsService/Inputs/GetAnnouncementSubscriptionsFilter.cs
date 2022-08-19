@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AnnouncementsService.Inputs
 {
 
-    public sealed class GetAnnouncementSubscriptionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAnnouncementSubscriptionsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.AnnouncementsService.Inputs
         public GetAnnouncementSubscriptionsFilterArgs()
         {
         }
+        public static new GetAnnouncementSubscriptionsFilterArgs Empty => new GetAnnouncementSubscriptionsFilterArgs();
     }
 }

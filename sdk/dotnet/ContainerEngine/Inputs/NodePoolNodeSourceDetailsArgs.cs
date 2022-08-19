@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolNodeSourceDetailsArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolNodeSourceDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolNodeSourceDetailsArgs()
         {
         }
+        public static new NodePoolNodeSourceDetailsArgs Empty => new NodePoolNodeSourceDetailsArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigWhitelistArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigWhitelistArgs : global::Pulumi.ResourceArgs
     {
         [Input("addressLists")]
         private InputList<string>? _addressLists;
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigWhitelistArgs()
         {
         }
+        public static new PolicyWafConfigWhitelistArgs Empty => new PolicyWafConfigWhitelistArgs();
     }
 }

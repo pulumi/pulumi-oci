@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateSubjectGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateSubjectGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Common name or fully-qualified domain name (RDN CN).
@@ -117,5 +117,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateSubjectGetArgs()
         {
         }
+        public static new CertificateSubjectGetArgs Empty => new CertificateSubjectGetArgs();
     }
 }

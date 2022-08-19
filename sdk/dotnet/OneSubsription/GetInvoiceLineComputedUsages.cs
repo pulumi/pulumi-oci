@@ -22,22 +22,20 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvoiceLineComputedUsages = Oci.OneSubsription.GetInvoiceLineComputedUsages.Invoke(new()
         ///     {
-        ///         var testInvoiceLineComputedUsages = Output.Create(Oci.OneSubsription.GetInvoiceLineComputedUsages.InvokeAsync(new Oci.OneSubsription.GetInvoiceLineComputedUsagesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             InvoiceLineId = oci_onesubscription_invoice_line.Test_invoice_line.Id,
-        ///             Fields = @var.Invoice_line_computed_usage_fields,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         InvoiceLineId = oci_onesubscription_invoice_line.Test_invoice_line.Id,
+        ///         Fields = @var.Invoice_line_computed_usage_fields,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvoiceLineComputedUsages = Oci.OneSubsription.GetInvoiceLineComputedUsages.Invoke(new()
         ///     {
-        ///         var testInvoiceLineComputedUsages = Output.Create(Oci.OneSubsription.GetInvoiceLineComputedUsages.InvokeAsync(new Oci.OneSubsription.GetInvoiceLineComputedUsagesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             InvoiceLineId = oci_onesubscription_invoice_line.Test_invoice_line.Id,
-        ///             Fields = @var.Invoice_line_computed_usage_fields,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         InvoiceLineId = oci_onesubscription_invoice_line.Test_invoice_line.Id,
+        ///         Fields = @var.Invoice_line_computed_usage_fields,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.OneSubsription
     }
 
 
-    public sealed class GetInvoiceLineComputedUsagesArgs : Pulumi.InvokeArgs
+    public sealed class GetInvoiceLineComputedUsagesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.OneSubsription
         public GetInvoiceLineComputedUsagesArgs()
         {
         }
+        public static new GetInvoiceLineComputedUsagesArgs Empty => new GetInvoiceLineComputedUsagesArgs();
     }
 
-    public sealed class GetInvoiceLineComputedUsagesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInvoiceLineComputedUsagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.OneSubsription
         public GetInvoiceLineComputedUsagesInvokeArgs()
         {
         }
+        public static new GetInvoiceLineComputedUsagesInvokeArgs Empty => new GetInvoiceLineComputedUsagesInvokeArgs();
     }
 
 

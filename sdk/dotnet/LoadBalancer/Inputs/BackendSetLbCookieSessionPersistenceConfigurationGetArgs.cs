@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class BackendSetLbCookieSessionPersistenceConfigurationGetArgs : Pulumi.ResourceArgs
+    public sealed class BackendSetLbCookieSessionPersistenceConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public BackendSetLbCookieSessionPersistenceConfigurationGetArgs()
         {
         }
+        public static new BackendSetLbCookieSessionPersistenceConfigurationGetArgs Empty => new BackendSetLbCookieSessionPersistenceConfigurationGetArgs();
     }
 }

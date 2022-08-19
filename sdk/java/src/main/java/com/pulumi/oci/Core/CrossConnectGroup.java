@@ -36,6 +36,38 @@ import javax.annotation.Nullable;
  * It does not have to be unique, and you can change it. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.CrossConnectGroup;
+ * import com.pulumi.oci.Core.CrossConnectGroupArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCrossConnectGroup = new CrossConnectGroup(&#34;testCrossConnectGroup&#34;, CrossConnectGroupArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .customerReferenceName(var_.cross_connect_group_customer_reference_name())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.cross_connect_group_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

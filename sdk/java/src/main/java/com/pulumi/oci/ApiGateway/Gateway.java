@@ -25,6 +25,62 @@ import javax.annotation.Nullable;
  * Creates a new gateway.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ApiGateway.Gateway;
+ * import com.pulumi.oci.ApiGateway.GatewayArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.GatewayCaBundleArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.GatewayResponseCacheDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testGateway = new Gateway(&#34;testGateway&#34;, GatewayArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .endpointType(var_.gateway_endpoint_type())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+ *             .caBundles(GatewayCaBundleArgs.builder()
+ *                 .type(var_.gateway_ca_bundles_type())
+ *                 .caBundleId(oci_apigateway_ca_bundle.test_ca_bundle().id())
+ *                 .certificateAuthorityId(oci_apigateway_certificate_authority.test_certificate_authority().id())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.gateway_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .networkSecurityGroupIds(var_.gateway_network_security_group_ids())
+ *             .responseCacheDetails(GatewayResponseCacheDetailsArgs.builder()
+ *                 .type(var_.gateway_response_cache_details_type())
+ *                 .authenticationSecretId(oci_vault_secret.test_secret().id())
+ *                 .authenticationSecretVersionNumber(var_.gateway_response_cache_details_authentication_secret_version_number())
+ *                 .connectTimeoutInMs(var_.gateway_response_cache_details_connect_timeout_in_ms())
+ *                 .isSslEnabled(var_.gateway_response_cache_details_is_ssl_enabled())
+ *                 .isSslVerifyDisabled(var_.gateway_response_cache_details_is_ssl_verify_disabled())
+ *                 .readTimeoutInMs(var_.gateway_response_cache_details_read_timeout_in_ms())
+ *                 .sendTimeoutInMs(var_.gateway_response_cache_details_send_timeout_in_ms())
+ *                 .servers(GatewayResponseCacheDetailsServerArgs.builder()
+ *                     .host(var_.gateway_response_cache_details_servers_host())
+ *                     .port(var_.gateway_response_cache_details_servers_port())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

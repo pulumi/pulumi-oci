@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Bastion
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSession = Oci.Bastion.GetSession.Invoke(new()
         ///     {
-        ///         var testSession = Output.Create(Oci.Bastion.GetSession.InvokeAsync(new Oci.Bastion.GetSessionArgs
-        ///         {
-        ///             SessionId = oci_bastion_session.Test_session.Id,
-        ///         }));
-        ///     }
+        ///         SessionId = oci_bastion_session.Test_session.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Bastion
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSession = Oci.Bastion.GetSession.Invoke(new()
         ///     {
-        ///         var testSession = Output.Create(Oci.Bastion.GetSession.InvokeAsync(new Oci.Bastion.GetSessionArgs
-        ///         {
-        ///             SessionId = oci_bastion_session.Test_session.Id,
-        ///         }));
-        ///     }
+        ///         SessionId = oci_bastion_session.Test_session.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Bastion
     }
 
 
-    public sealed class GetSessionArgs : Pulumi.InvokeArgs
+    public sealed class GetSessionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier (OCID) of the session.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Bastion
         public GetSessionArgs()
         {
         }
+        public static new GetSessionArgs Empty => new GetSessionArgs();
     }
 
-    public sealed class GetSessionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSessionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier (OCID) of the session.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Bastion
         public GetSessionInvokeArgs()
         {
         }
+        public static new GetSessionInvokeArgs Empty => new GetSessionInvokeArgs();
     }
 
 

@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbNodes = Oci.Database.GetDbNodes.Invoke(new()
         ///     {
-        ///         var testDbNodes = Output.Create(Oci.Database.GetDbNodes.InvokeAsync(new Oci.Database.GetDbNodesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DbServerId = oci_database_db_server.Test_db_server.Id,
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///             State = @var.Db_node_state,
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DbServerId = oci_database_db_server.Test_db_server.Id,
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         State = @var.Db_node_state,
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbNodes = Oci.Database.GetDbNodes.Invoke(new()
         ///     {
-        ///         var testDbNodes = Output.Create(Oci.Database.GetDbNodes.InvokeAsync(new Oci.Database.GetDbNodesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DbServerId = oci_database_db_server.Test_db_server.Id,
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///             State = @var.Db_node_state,
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DbServerId = oci_database_db_server.Test_db_server.Id,
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         State = @var.Db_node_state,
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbNodesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbNodesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Database
         public GetDbNodesArgs()
         {
         }
+        public static new GetDbNodesArgs Empty => new GetDbNodesArgs();
     }
 
-    public sealed class GetDbNodesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbNodesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Database
         public GetDbNodesInvokeArgs()
         {
         }
+        public static new GetDbNodesInvokeArgs Empty => new GetDbNodesInvokeArgs();
     }
 
 

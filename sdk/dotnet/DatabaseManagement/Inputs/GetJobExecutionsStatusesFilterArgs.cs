@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class GetJobExecutionsStatusesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetJobExecutionsStatusesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public GetJobExecutionsStatusesFilterInputArgs()
         {
         }
+        public static new GetJobExecutionsStatusesFilterInputArgs Empty => new GetJobExecutionsStatusesFilterInputArgs();
     }
 }

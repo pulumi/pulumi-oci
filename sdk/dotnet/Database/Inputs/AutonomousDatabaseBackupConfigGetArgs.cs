@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseBackupConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseBackupConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) bucket to use for storing manual backups.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseBackupConfigGetArgs()
         {
         }
+        public static new AutonomousDatabaseBackupConfigGetArgs Empty => new AutonomousDatabaseBackupConfigGetArgs();
     }
 }

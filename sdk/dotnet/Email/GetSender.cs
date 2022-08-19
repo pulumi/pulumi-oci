@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSender = Oci.Email.GetSender.Invoke(new()
         ///     {
-        ///         var testSender = Output.Create(Oci.Email.GetSender.InvokeAsync(new Oci.Email.GetSenderArgs
-        ///         {
-        ///             SenderId = oci_email_sender.Test_sender.Id,
-        ///         }));
-        ///     }
+        ///         SenderId = oci_email_sender.Test_sender.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSender = Oci.Email.GetSender.Invoke(new()
         ///     {
-        ///         var testSender = Output.Create(Oci.Email.GetSender.InvokeAsync(new Oci.Email.GetSenderArgs
-        ///         {
-        ///             SenderId = oci_email_sender.Test_sender.Id,
-        ///         }));
-        ///     }
+        ///         SenderId = oci_email_sender.Test_sender.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Email
     }
 
 
-    public sealed class GetSenderArgs : Pulumi.InvokeArgs
+    public sealed class GetSenderArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID of the sender.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Email
         public GetSenderArgs()
         {
         }
+        public static new GetSenderArgs Empty => new GetSenderArgs();
     }
 
-    public sealed class GetSenderInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSenderInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID of the sender.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Email
         public GetSenderInvokeArgs()
         {
         }
+        public static new GetSenderInvokeArgs Empty => new GetSenderInvokeArgs();
     }
 
 

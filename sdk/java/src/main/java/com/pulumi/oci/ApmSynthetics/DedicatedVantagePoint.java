@@ -24,6 +24,46 @@ import javax.annotation.Nullable;
  * Registers a new dedicated vantage point.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ApmSynthetics.DedicatedVantagePoint;
+ * import com.pulumi.oci.ApmSynthetics.DedicatedVantagePointArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.DedicatedVantagePointDvpStackDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDedicatedVantagePoint = new DedicatedVantagePoint(&#34;testDedicatedVantagePoint&#34;, DedicatedVantagePointArgs.builder()        
+ *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+ *             .displayName(var_.dedicated_vantage_point_display_name())
+ *             .dvpStackDetails(DedicatedVantagePointDvpStackDetailsArgs.builder()
+ *                 .dvpStackId(oci_resourcemanager_stack.test_stack().id())
+ *                 .dvpStackType(var_.dedicated_vantage_point_dvp_stack_details_dvp_stack_type())
+ *                 .dvpStreamId(oci_streaming_stream.test_stream().id())
+ *                 .dvpVersion(var_.dedicated_vantage_point_dvp_stack_details_dvp_version())
+ *                 .build())
+ *             .region(var_.dedicated_vantage_point_region())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .status(var_.dedicated_vantage_point_status())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

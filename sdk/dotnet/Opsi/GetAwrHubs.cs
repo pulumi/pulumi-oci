@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAwrHubs = Oci.Opsi.GetAwrHubs.Invoke(new()
         ///     {
-        ///         var testAwrHubs = Output.Create(Oci.Opsi.GetAwrHubs.InvokeAsync(new Oci.Opsi.GetAwrHubsArgs
-        ///         {
-        ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Awr_hub_display_name,
-        ///             Id = @var.Awr_hub_id,
-        ///             States = @var.Awr_hub_state,
-        ///         }));
-        ///     }
+        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Awr_hub_display_name,
+        ///         Id = @var.Awr_hub_id,
+        ///         States = @var.Awr_hub_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAwrHubs = Oci.Opsi.GetAwrHubs.Invoke(new()
         ///     {
-        ///         var testAwrHubs = Output.Create(Oci.Opsi.GetAwrHubs.InvokeAsync(new Oci.Opsi.GetAwrHubsArgs
-        ///         {
-        ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Awr_hub_display_name,
-        ///             Id = @var.Awr_hub_id,
-        ///             States = @var.Awr_hub_state,
-        ///         }));
-        ///     }
+        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Awr_hub_display_name,
+        ///         Id = @var.Awr_hub_id,
+        ///         States = @var.Awr_hub_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetAwrHubsArgs : Pulumi.InvokeArgs
+    public sealed class GetAwrHubsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Opsi
         public GetAwrHubsArgs()
         {
         }
+        public static new GetAwrHubsArgs Empty => new GetAwrHubsArgs();
     }
 
-    public sealed class GetAwrHubsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAwrHubsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.Opsi
         public GetAwrHubsInvokeArgs()
         {
         }
+        public static new GetAwrHubsInvokeArgs Empty => new GetAwrHubsInvokeArgs();
     }
 
 

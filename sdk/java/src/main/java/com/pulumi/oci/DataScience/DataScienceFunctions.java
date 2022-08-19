@@ -68,6 +68,34 @@ public final class DataScienceFunctions {
      * List fast launch capable job configs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs args) {
@@ -79,6 +107,34 @@ public final class DataScienceFunctions {
      * List fast launch capable job configs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigsPlain(GetFastLaunchJobConfigsPlainArgs args) {
@@ -90,6 +146,34 @@ public final class DataScienceFunctions {
      * List fast launch capable job configs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs args, InvokeOptions options) {
@@ -101,6 +185,34 @@ public final class DataScienceFunctions {
      * List fast launch capable job configs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFastLaunchJobConfigsResult> getFastLaunchJobConfigsPlain(GetFastLaunchJobConfigsPlainArgs args, InvokeOptions options) {
@@ -112,6 +224,34 @@ public final class DataScienceFunctions {
      * Gets a job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(oci_datascience_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobResult> getJob(GetJobArgs args) {
@@ -123,6 +263,34 @@ public final class DataScienceFunctions {
      * Gets a job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(oci_datascience_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobResult> getJobPlain(GetJobPlainArgs args) {
@@ -134,6 +302,34 @@ public final class DataScienceFunctions {
      * Gets a job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(oci_datascience_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobResult> getJob(GetJobArgs args, InvokeOptions options) {
@@ -145,6 +341,34 @@ public final class DataScienceFunctions {
      * Gets a job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(oci_datascience_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobResult> getJobPlain(GetJobPlainArgs args, InvokeOptions options) {
@@ -156,6 +380,34 @@ public final class DataScienceFunctions {
      * Gets a job run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
+     *             .jobRunId(oci_datascience_job_run.test_job_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobRunResult> getJobRun(GetJobRunArgs args) {
@@ -167,6 +419,34 @@ public final class DataScienceFunctions {
      * Gets a job run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
+     *             .jobRunId(oci_datascience_job_run.test_job_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobRunResult> getJobRunPlain(GetJobRunPlainArgs args) {
@@ -178,6 +458,34 @@ public final class DataScienceFunctions {
      * Gets a job run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
+     *             .jobRunId(oci_datascience_job_run.test_job_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobRunResult> getJobRun(GetJobRunArgs args, InvokeOptions options) {
@@ -189,6 +497,34 @@ public final class DataScienceFunctions {
      * Gets a job run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
+     *             .jobRunId(oci_datascience_job_run.test_job_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobRunResult> getJobRunPlain(GetJobRunPlainArgs args, InvokeOptions options) {
@@ -200,6 +536,39 @@ public final class DataScienceFunctions {
      * List out job runs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.job_run_created_by())
+     *             .displayName(var_.job_run_display_name())
+     *             .id(var_.job_run_id())
+     *             .jobId(oci_datascience_job.test_job().id())
+     *             .state(var_.job_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobRunsResult> getJobRuns(GetJobRunsArgs args) {
@@ -211,6 +580,39 @@ public final class DataScienceFunctions {
      * List out job runs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.job_run_created_by())
+     *             .displayName(var_.job_run_display_name())
+     *             .id(var_.job_run_id())
+     *             .jobId(oci_datascience_job.test_job().id())
+     *             .state(var_.job_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobRunsResult> getJobRunsPlain(GetJobRunsPlainArgs args) {
@@ -222,6 +624,39 @@ public final class DataScienceFunctions {
      * List out job runs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.job_run_created_by())
+     *             .displayName(var_.job_run_display_name())
+     *             .id(var_.job_run_id())
+     *             .jobId(oci_datascience_job.test_job().id())
+     *             .state(var_.job_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobRunsResult> getJobRuns(GetJobRunsArgs args, InvokeOptions options) {
@@ -233,6 +668,39 @@ public final class DataScienceFunctions {
      * List out job runs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.job_run_created_by())
+     *             .displayName(var_.job_run_display_name())
+     *             .id(var_.job_run_id())
+     *             .jobId(oci_datascience_job.test_job().id())
+     *             .state(var_.job_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobRunsResult> getJobRunsPlain(GetJobRunsPlainArgs args, InvokeOptions options) {
@@ -244,6 +712,34 @@ public final class DataScienceFunctions {
      * List job shapes available in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobShapesResult> getJobShapes(GetJobShapesArgs args) {
@@ -255,6 +751,34 @@ public final class DataScienceFunctions {
      * List job shapes available in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobShapesResult> getJobShapesPlain(GetJobShapesPlainArgs args) {
@@ -266,6 +790,34 @@ public final class DataScienceFunctions {
      * List job shapes available in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobShapesResult> getJobShapes(GetJobShapesArgs args, InvokeOptions options) {
@@ -277,6 +829,34 @@ public final class DataScienceFunctions {
      * List job shapes available in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobShapesResult> getJobShapesPlain(GetJobShapesPlainArgs args, InvokeOptions options) {
@@ -288,6 +868,39 @@ public final class DataScienceFunctions {
      * List jobs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.job_created_by())
+     *             .displayName(var_.job_display_name())
+     *             .id(var_.job_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.job_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobsResult> getJobs(GetJobsArgs args) {
@@ -299,6 +912,39 @@ public final class DataScienceFunctions {
      * List jobs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.job_created_by())
+     *             .displayName(var_.job_display_name())
+     *             .id(var_.job_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.job_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobsResult> getJobsPlain(GetJobsPlainArgs args) {
@@ -310,6 +956,39 @@ public final class DataScienceFunctions {
      * List jobs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.job_created_by())
+     *             .displayName(var_.job_display_name())
+     *             .id(var_.job_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.job_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobsResult> getJobs(GetJobsArgs args, InvokeOptions options) {
@@ -321,6 +1000,39 @@ public final class DataScienceFunctions {
      * List jobs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.job_created_by())
+     *             .displayName(var_.job_display_name())
+     *             .id(var_.job_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.job_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobsResult> getJobsPlain(GetJobsPlainArgs args, InvokeOptions options) {
@@ -332,6 +1044,34 @@ public final class DataScienceFunctions {
      * Gets the specified model&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(oci_datascience_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args) {
@@ -343,6 +1083,34 @@ public final class DataScienceFunctions {
      * Gets the specified model&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(oci_datascience_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args) {
@@ -354,6 +1122,34 @@ public final class DataScienceFunctions {
      * Gets the specified model&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(oci_datascience_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
@@ -365,6 +1161,34 @@ public final class DataScienceFunctions {
      * Gets the specified model&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(oci_datascience_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args, InvokeOptions options) {
@@ -376,6 +1200,34 @@ public final class DataScienceFunctions {
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
+     *             .modelDeploymentId(oci_datascience_model_deployment.test_model_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelDeploymentResult> getModelDeployment(GetModelDeploymentArgs args) {
@@ -387,6 +1239,34 @@ public final class DataScienceFunctions {
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
+     *             .modelDeploymentId(oci_datascience_model_deployment.test_model_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelDeploymentResult> getModelDeploymentPlain(GetModelDeploymentPlainArgs args) {
@@ -398,6 +1278,34 @@ public final class DataScienceFunctions {
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
+     *             .modelDeploymentId(oci_datascience_model_deployment.test_model_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelDeploymentResult> getModelDeployment(GetModelDeploymentArgs args, InvokeOptions options) {
@@ -409,6 +1317,34 @@ public final class DataScienceFunctions {
      * Retrieves the model deployment for the specified `modelDeploymentId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
+     *             .modelDeploymentId(oci_datascience_model_deployment.test_model_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelDeploymentResult> getModelDeploymentPlain(GetModelDeploymentPlainArgs args, InvokeOptions options) {
@@ -420,6 +1356,34 @@ public final class DataScienceFunctions {
      * Lists the valid model deployment shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelDeploymentShapesResult> getModelDeploymentShapes(GetModelDeploymentShapesArgs args) {
@@ -431,6 +1395,34 @@ public final class DataScienceFunctions {
      * Lists the valid model deployment shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelDeploymentShapesResult> getModelDeploymentShapesPlain(GetModelDeploymentShapesPlainArgs args) {
@@ -442,6 +1434,34 @@ public final class DataScienceFunctions {
      * Lists the valid model deployment shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelDeploymentShapesResult> getModelDeploymentShapes(GetModelDeploymentShapesArgs args, InvokeOptions options) {
@@ -453,6 +1473,34 @@ public final class DataScienceFunctions {
      * Lists the valid model deployment shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelDeploymentShapesResult> getModelDeploymentShapesPlain(GetModelDeploymentShapesPlainArgs args, InvokeOptions options) {
@@ -464,6 +1512,39 @@ public final class DataScienceFunctions {
      * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_deployment_created_by())
+     *             .displayName(var_.model_deployment_display_name())
+     *             .id(var_.model_deployment_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelDeploymentsResult> getModelDeployments(GetModelDeploymentsArgs args) {
@@ -475,6 +1556,39 @@ public final class DataScienceFunctions {
      * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_deployment_created_by())
+     *             .displayName(var_.model_deployment_display_name())
+     *             .id(var_.model_deployment_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelDeploymentsResult> getModelDeploymentsPlain(GetModelDeploymentsPlainArgs args) {
@@ -486,6 +1600,39 @@ public final class DataScienceFunctions {
      * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_deployment_created_by())
+     *             .displayName(var_.model_deployment_display_name())
+     *             .id(var_.model_deployment_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelDeploymentsResult> getModelDeployments(GetModelDeploymentsArgs args, InvokeOptions options) {
@@ -497,6 +1644,39 @@ public final class DataScienceFunctions {
      * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_deployment_created_by())
+     *             .displayName(var_.model_deployment_display_name())
+     *             .id(var_.model_deployment_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelDeploymentsResult> getModelDeploymentsPlain(GetModelDeploymentsPlainArgs args, InvokeOptions options) {
@@ -508,6 +1688,34 @@ public final class DataScienceFunctions {
      * Gets provenance information for specified model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
+     *             .modelId(oci_datascience_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelProvenanceResult> getModelProvenance(GetModelProvenanceArgs args) {
@@ -519,6 +1727,34 @@ public final class DataScienceFunctions {
      * Gets provenance information for specified model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
+     *             .modelId(oci_datascience_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelProvenanceResult> getModelProvenancePlain(GetModelProvenancePlainArgs args) {
@@ -530,6 +1766,34 @@ public final class DataScienceFunctions {
      * Gets provenance information for specified model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
+     *             .modelId(oci_datascience_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelProvenanceResult> getModelProvenance(GetModelProvenanceArgs args, InvokeOptions options) {
@@ -541,6 +1805,34 @@ public final class DataScienceFunctions {
      * Gets provenance information for specified model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
+     *             .modelId(oci_datascience_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelProvenanceResult> getModelProvenancePlain(GetModelProvenancePlainArgs args, InvokeOptions options) {
@@ -552,6 +1844,39 @@ public final class DataScienceFunctions {
      * Lists models in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_created_by())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args) {
@@ -563,6 +1888,39 @@ public final class DataScienceFunctions {
      * Lists models in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_created_by())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args) {
@@ -574,6 +1932,39 @@ public final class DataScienceFunctions {
      * Lists models in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_created_by())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOptions options) {
@@ -585,6 +1976,39 @@ public final class DataScienceFunctions {
      * Lists models in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.model_created_by())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
@@ -596,6 +2020,34 @@ public final class DataScienceFunctions {
      * Gets the specified notebook session&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
+     *             .notebookSessionId(oci_datascience_notebook_session.test_notebook_session().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotebookSessionResult> getNotebookSession(GetNotebookSessionArgs args) {
@@ -607,6 +2059,34 @@ public final class DataScienceFunctions {
      * Gets the specified notebook session&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
+     *             .notebookSessionId(oci_datascience_notebook_session.test_notebook_session().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotebookSessionResult> getNotebookSessionPlain(GetNotebookSessionPlainArgs args) {
@@ -618,6 +2098,34 @@ public final class DataScienceFunctions {
      * Gets the specified notebook session&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
+     *             .notebookSessionId(oci_datascience_notebook_session.test_notebook_session().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotebookSessionResult> getNotebookSession(GetNotebookSessionArgs args, InvokeOptions options) {
@@ -629,6 +2137,34 @@ public final class DataScienceFunctions {
      * Gets the specified notebook session&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
+     *             .notebookSessionId(oci_datascience_notebook_session.test_notebook_session().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotebookSessionResult> getNotebookSessionPlain(GetNotebookSessionPlainArgs args, InvokeOptions options) {
@@ -640,6 +2176,34 @@ public final class DataScienceFunctions {
      * Lists the valid notebook session shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotebookSessionShapesResult> getNotebookSessionShapes(GetNotebookSessionShapesArgs args) {
@@ -651,6 +2215,34 @@ public final class DataScienceFunctions {
      * Lists the valid notebook session shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotebookSessionShapesResult> getNotebookSessionShapesPlain(GetNotebookSessionShapesPlainArgs args) {
@@ -662,6 +2254,34 @@ public final class DataScienceFunctions {
      * Lists the valid notebook session shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotebookSessionShapesResult> getNotebookSessionShapes(GetNotebookSessionShapesArgs args, InvokeOptions options) {
@@ -673,6 +2293,34 @@ public final class DataScienceFunctions {
      * Lists the valid notebook session shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotebookSessionShapesResult> getNotebookSessionShapesPlain(GetNotebookSessionShapesPlainArgs args, InvokeOptions options) {
@@ -684,6 +2332,39 @@ public final class DataScienceFunctions {
      * Lists the notebook sessions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.notebook_session_created_by())
+     *             .displayName(var_.notebook_session_display_name())
+     *             .id(var_.notebook_session_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.notebook_session_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotebookSessionsResult> getNotebookSessions(GetNotebookSessionsArgs args) {
@@ -695,6 +2376,39 @@ public final class DataScienceFunctions {
      * Lists the notebook sessions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.notebook_session_created_by())
+     *             .displayName(var_.notebook_session_display_name())
+     *             .id(var_.notebook_session_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.notebook_session_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotebookSessionsResult> getNotebookSessionsPlain(GetNotebookSessionsPlainArgs args) {
@@ -706,6 +2420,39 @@ public final class DataScienceFunctions {
      * Lists the notebook sessions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.notebook_session_created_by())
+     *             .displayName(var_.notebook_session_display_name())
+     *             .id(var_.notebook_session_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.notebook_session_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotebookSessionsResult> getNotebookSessions(GetNotebookSessionsArgs args, InvokeOptions options) {
@@ -717,6 +2464,39 @@ public final class DataScienceFunctions {
      * Lists the notebook sessions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.notebook_session_created_by())
+     *             .displayName(var_.notebook_session_display_name())
+     *             .id(var_.notebook_session_id())
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .state(var_.notebook_session_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotebookSessionsResult> getNotebookSessionsPlain(GetNotebookSessionsPlainArgs args, InvokeOptions options) {
@@ -728,6 +2508,34 @@ public final class DataScienceFunctions {
      * Gets the specified project&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args) {
@@ -739,6 +2547,34 @@ public final class DataScienceFunctions {
      * Gets the specified project&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
@@ -750,6 +2586,34 @@ public final class DataScienceFunctions {
      * Gets the specified project&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
@@ -761,6 +2625,34 @@ public final class DataScienceFunctions {
      * Gets the specified project&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_datascience_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
@@ -772,6 +2664,38 @@ public final class DataScienceFunctions {
      * Lists projects in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.project_created_by())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args) {
@@ -783,6 +2707,38 @@ public final class DataScienceFunctions {
      * Lists projects in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.project_created_by())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args) {
@@ -794,6 +2750,38 @@ public final class DataScienceFunctions {
      * Lists projects in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.project_created_by())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
@@ -805,6 +2793,38 @@ public final class DataScienceFunctions {
      * Lists projects in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.project_created_by())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {

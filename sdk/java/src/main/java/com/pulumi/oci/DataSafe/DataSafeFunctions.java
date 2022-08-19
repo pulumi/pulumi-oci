@@ -253,6 +253,34 @@ public final class DataSafeFunctions {
      * Gets the details of alert by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
+     *             .alertId(oci_data_safe_alert.test_alert().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertResult> getAlert(GetAlertArgs args) {
@@ -264,6 +292,34 @@ public final class DataSafeFunctions {
      * Gets the details of alert by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
+     *             .alertId(oci_data_safe_alert.test_alert().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertResult> getAlertPlain(GetAlertPlainArgs args) {
@@ -275,6 +331,34 @@ public final class DataSafeFunctions {
      * Gets the details of alert by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
+     *             .alertId(oci_data_safe_alert.test_alert().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertResult> getAlert(GetAlertArgs args, InvokeOptions options) {
@@ -286,6 +370,34 @@ public final class DataSafeFunctions {
      * Gets the details of alert by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
+     *             .alertId(oci_data_safe_alert.test_alert().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertResult> getAlertPlain(GetAlertPlainArgs args, InvokeOptions options) {
@@ -297,6 +409,42 @@ public final class DataSafeFunctions {
      * Returns aggregation details of alerts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertAnalytic = DataSafeFunctions.getAlertAnalytic(GetAlertAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.alert_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.alert_analytic_group_by())
+     *             .queryTimeZone(var_.alert_analytic_query_time_zone())
+     *             .scimQuery(var_.alert_analytic_scim_query())
+     *             .summaryFields(var_.alert_analytic_summary_field())
+     *             .timeEnded(var_.alert_analytic_time_ended())
+     *             .timeStarted(var_.alert_analytic_time_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertAnalyticResult> getAlertAnalytic(GetAlertAnalyticArgs args) {
@@ -308,6 +456,42 @@ public final class DataSafeFunctions {
      * Returns aggregation details of alerts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertAnalytic = DataSafeFunctions.getAlertAnalytic(GetAlertAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.alert_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.alert_analytic_group_by())
+     *             .queryTimeZone(var_.alert_analytic_query_time_zone())
+     *             .scimQuery(var_.alert_analytic_scim_query())
+     *             .summaryFields(var_.alert_analytic_summary_field())
+     *             .timeEnded(var_.alert_analytic_time_ended())
+     *             .timeStarted(var_.alert_analytic_time_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertAnalyticResult> getAlertAnalyticPlain(GetAlertAnalyticPlainArgs args) {
@@ -319,6 +503,42 @@ public final class DataSafeFunctions {
      * Returns aggregation details of alerts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertAnalytic = DataSafeFunctions.getAlertAnalytic(GetAlertAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.alert_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.alert_analytic_group_by())
+     *             .queryTimeZone(var_.alert_analytic_query_time_zone())
+     *             .scimQuery(var_.alert_analytic_scim_query())
+     *             .summaryFields(var_.alert_analytic_summary_field())
+     *             .timeEnded(var_.alert_analytic_time_ended())
+     *             .timeStarted(var_.alert_analytic_time_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertAnalyticResult> getAlertAnalytic(GetAlertAnalyticArgs args, InvokeOptions options) {
@@ -330,6 +550,42 @@ public final class DataSafeFunctions {
      * Returns aggregation details of alerts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertAnalytic = DataSafeFunctions.getAlertAnalytic(GetAlertAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.alert_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.alert_analytic_group_by())
+     *             .queryTimeZone(var_.alert_analytic_query_time_zone())
+     *             .scimQuery(var_.alert_analytic_scim_query())
+     *             .summaryFields(var_.alert_analytic_summary_field())
+     *             .timeEnded(var_.alert_analytic_time_ended())
+     *             .timeStarted(var_.alert_analytic_time_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertAnalyticResult> getAlertAnalyticPlain(GetAlertAnalyticPlainArgs args, InvokeOptions options) {
@@ -341,6 +597,43 @@ public final class DataSafeFunctions {
      * Gets a list of all alert policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_policy_access_level())
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .compartmentIdInSubtree(var_.alert_policy_compartment_id_in_subtree())
+     *             .displayName(var_.alert_policy_display_name())
+     *             .isUserDefined(var_.alert_policy_is_user_defined())
+     *             .state(var_.alert_policy_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.alert_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.alert_policy_time_created_less_than())
+     *             .type(var_.alert_policy_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertPoliciesResult> getAlertPolicies(GetAlertPoliciesArgs args) {
@@ -352,6 +645,43 @@ public final class DataSafeFunctions {
      * Gets a list of all alert policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_policy_access_level())
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .compartmentIdInSubtree(var_.alert_policy_compartment_id_in_subtree())
+     *             .displayName(var_.alert_policy_display_name())
+     *             .isUserDefined(var_.alert_policy_is_user_defined())
+     *             .state(var_.alert_policy_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.alert_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.alert_policy_time_created_less_than())
+     *             .type(var_.alert_policy_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertPoliciesResult> getAlertPoliciesPlain(GetAlertPoliciesPlainArgs args) {
@@ -363,6 +693,43 @@ public final class DataSafeFunctions {
      * Gets a list of all alert policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_policy_access_level())
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .compartmentIdInSubtree(var_.alert_policy_compartment_id_in_subtree())
+     *             .displayName(var_.alert_policy_display_name())
+     *             .isUserDefined(var_.alert_policy_is_user_defined())
+     *             .state(var_.alert_policy_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.alert_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.alert_policy_time_created_less_than())
+     *             .type(var_.alert_policy_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertPoliciesResult> getAlertPolicies(GetAlertPoliciesArgs args, InvokeOptions options) {
@@ -374,6 +741,43 @@ public final class DataSafeFunctions {
      * Gets a list of all alert policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_policy_access_level())
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .compartmentIdInSubtree(var_.alert_policy_compartment_id_in_subtree())
+     *             .displayName(var_.alert_policy_display_name())
+     *             .isUserDefined(var_.alert_policy_is_user_defined())
+     *             .state(var_.alert_policy_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.alert_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.alert_policy_time_created_less_than())
+     *             .type(var_.alert_policy_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertPoliciesResult> getAlertPoliciesPlain(GetAlertPoliciesPlainArgs args, InvokeOptions options) {
@@ -385,6 +789,34 @@ public final class DataSafeFunctions {
      * Gets the details of alert policy by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertPolicyResult> getAlertPolicy(GetAlertPolicyArgs args) {
@@ -396,6 +828,34 @@ public final class DataSafeFunctions {
      * Gets the details of alert policy by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertPolicyResult> getAlertPolicyPlain(GetAlertPolicyPlainArgs args) {
@@ -407,6 +867,34 @@ public final class DataSafeFunctions {
      * Gets the details of alert policy by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertPolicyResult> getAlertPolicy(GetAlertPolicyArgs args, InvokeOptions options) {
@@ -418,6 +906,34 @@ public final class DataSafeFunctions {
      * Gets the details of alert policy by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertPolicyResult> getAlertPolicyPlain(GetAlertPolicyPlainArgs args, InvokeOptions options) {
@@ -430,6 +946,34 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertPolicyRuleResult> getAlertPolicyRule(GetAlertPolicyRuleArgs args) {
@@ -442,6 +986,34 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertPolicyRuleResult> getAlertPolicyRulePlain(GetAlertPolicyRulePlainArgs args) {
@@ -454,6 +1026,34 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertPolicyRuleResult> getAlertPolicyRule(GetAlertPolicyRuleArgs args, InvokeOptions options) {
@@ -466,6 +1066,34 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertPolicyRuleResult> getAlertPolicyRulePlain(GetAlertPolicyRulePlainArgs args, InvokeOptions options) {
@@ -478,6 +1106,34 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertPolicyRulesResult> getAlertPolicyRules(GetAlertPolicyRulesArgs args) {
@@ -490,6 +1146,34 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertPolicyRulesResult> getAlertPolicyRulesPlain(GetAlertPolicyRulesPlainArgs args) {
@@ -502,6 +1186,34 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertPolicyRulesResult> getAlertPolicyRules(GetAlertPolicyRulesArgs args, InvokeOptions options) {
@@ -514,6 +1226,34 @@ public final class DataSafeFunctions {
      * If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertPolicyRulesResult> getAlertPolicyRulesPlain(GetAlertPolicyRulesPlainArgs args, InvokeOptions options) {
@@ -525,6 +1265,39 @@ public final class DataSafeFunctions {
      * Gets a list of all alerts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlerts = DataSafeFunctions.getAlerts(GetAlertsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_access_level())
+     *             .compartmentIdInSubtree(var_.alert_compartment_id_in_subtree())
+     *             .fields(var_.alert_field())
+     *             .id(var_.alert_id())
+     *             .scimQuery(var_.alert_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertsResult> getAlerts(GetAlertsArgs args) {
@@ -536,6 +1309,39 @@ public final class DataSafeFunctions {
      * Gets a list of all alerts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlerts = DataSafeFunctions.getAlerts(GetAlertsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_access_level())
+     *             .compartmentIdInSubtree(var_.alert_compartment_id_in_subtree())
+     *             .fields(var_.alert_field())
+     *             .id(var_.alert_id())
+     *             .scimQuery(var_.alert_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertsResult> getAlertsPlain(GetAlertsPlainArgs args) {
@@ -547,6 +1353,39 @@ public final class DataSafeFunctions {
      * Gets a list of all alerts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlerts = DataSafeFunctions.getAlerts(GetAlertsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_access_level())
+     *             .compartmentIdInSubtree(var_.alert_compartment_id_in_subtree())
+     *             .fields(var_.alert_field())
+     *             .id(var_.alert_id())
+     *             .scimQuery(var_.alert_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAlertsResult> getAlerts(GetAlertsArgs args, InvokeOptions options) {
@@ -558,6 +1397,39 @@ public final class DataSafeFunctions {
      * Gets a list of all alerts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAlerts = DataSafeFunctions.getAlerts(GetAlertsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.alert_access_level())
+     *             .compartmentIdInSubtree(var_.alert_compartment_id_in_subtree())
+     *             .fields(var_.alert_field())
+     *             .id(var_.alert_id())
+     *             .scimQuery(var_.alert_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAlertsResult> getAlertsPlain(GetAlertsPlainArgs args, InvokeOptions options) {
@@ -569,6 +1441,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified archive retreival.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
+     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditArchiveRetrievalResult> getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs args) {
@@ -580,6 +1480,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified archive retreival.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
+     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditArchiveRetrievalResult> getAuditArchiveRetrievalPlain(GetAuditArchiveRetrievalPlainArgs args) {
@@ -591,6 +1519,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified archive retreival.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
+     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditArchiveRetrievalResult> getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs args, InvokeOptions options) {
@@ -602,6 +1558,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified archive retreival.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
+     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditArchiveRetrievalResult> getAuditArchiveRetrievalPlain(GetAuditArchiveRetrievalPlainArgs args, InvokeOptions options) {
@@ -613,6 +1597,41 @@ public final class DataSafeFunctions {
      * Returns the list of audit archive retrieval.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_archive_retrieval_access_level())
+     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .compartmentIdInSubtree(var_.audit_archive_retrieval_compartment_id_in_subtree())
+     *             .displayName(var_.audit_archive_retrieval_display_name())
+     *             .state(var_.audit_archive_retrieval_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeOfExpiry(var_.audit_archive_retrieval_time_of_expiry())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditArchiveRetrievalsResult> getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs args) {
@@ -624,6 +1643,41 @@ public final class DataSafeFunctions {
      * Returns the list of audit archive retrieval.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_archive_retrieval_access_level())
+     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .compartmentIdInSubtree(var_.audit_archive_retrieval_compartment_id_in_subtree())
+     *             .displayName(var_.audit_archive_retrieval_display_name())
+     *             .state(var_.audit_archive_retrieval_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeOfExpiry(var_.audit_archive_retrieval_time_of_expiry())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditArchiveRetrievalsResult> getAuditArchiveRetrievalsPlain(GetAuditArchiveRetrievalsPlainArgs args) {
@@ -635,6 +1689,41 @@ public final class DataSafeFunctions {
      * Returns the list of audit archive retrieval.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_archive_retrieval_access_level())
+     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .compartmentIdInSubtree(var_.audit_archive_retrieval_compartment_id_in_subtree())
+     *             .displayName(var_.audit_archive_retrieval_display_name())
+     *             .state(var_.audit_archive_retrieval_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeOfExpiry(var_.audit_archive_retrieval_time_of_expiry())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditArchiveRetrievalsResult> getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs args, InvokeOptions options) {
@@ -646,6 +1735,41 @@ public final class DataSafeFunctions {
      * Returns the list of audit archive retrieval.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_archive_retrieval_access_level())
+     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .compartmentIdInSubtree(var_.audit_archive_retrieval_compartment_id_in_subtree())
+     *             .displayName(var_.audit_archive_retrieval_display_name())
+     *             .state(var_.audit_archive_retrieval_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeOfExpiry(var_.audit_archive_retrieval_time_of_expiry())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditArchiveRetrievalsResult> getAuditArchiveRetrievalsPlain(GetAuditArchiveRetrievalsPlainArgs args, InvokeOptions options) {
@@ -669,6 +1793,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvent = DataSafeFunctions.getAuditEvent(GetAuditEventArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
+     *             .scimQuery(var_.audit_event_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditEventResult> getAuditEvent(GetAuditEventArgs args) {
@@ -692,6 +1847,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvent = DataSafeFunctions.getAuditEvent(GetAuditEventArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
+     *             .scimQuery(var_.audit_event_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditEventResult> getAuditEventPlain(GetAuditEventPlainArgs args) {
@@ -715,6 +1901,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvent = DataSafeFunctions.getAuditEvent(GetAuditEventArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
+     *             .scimQuery(var_.audit_event_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditEventResult> getAuditEvent(GetAuditEventArgs args, InvokeOptions options) {
@@ -738,6 +1955,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvent = DataSafeFunctions.getAuditEvent(GetAuditEventArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
+     *             .scimQuery(var_.audit_event_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditEventResult> getAuditEventPlain(GetAuditEventPlainArgs args, InvokeOptions options) {
@@ -754,6 +2002,42 @@ public final class DataSafeFunctions {
      *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEventAnalytic = DataSafeFunctions.getAuditEventAnalytic(GetAuditEventAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_event_analytic_group_by())
+     *             .queryTimeZone(var_.audit_event_analytic_query_time_zone())
+     *             .scimQuery(var_.audit_event_analytic_scim_query())
+     *             .summaryFields(var_.audit_event_analytic_summary_field())
+     *             .timeEnded(var_.audit_event_analytic_time_ended())
+     *             .timeStarted(var_.audit_event_analytic_time_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditEventAnalyticResult> getAuditEventAnalytic(GetAuditEventAnalyticArgs args) {
@@ -770,6 +2054,42 @@ public final class DataSafeFunctions {
      *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEventAnalytic = DataSafeFunctions.getAuditEventAnalytic(GetAuditEventAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_event_analytic_group_by())
+     *             .queryTimeZone(var_.audit_event_analytic_query_time_zone())
+     *             .scimQuery(var_.audit_event_analytic_scim_query())
+     *             .summaryFields(var_.audit_event_analytic_summary_field())
+     *             .timeEnded(var_.audit_event_analytic_time_ended())
+     *             .timeStarted(var_.audit_event_analytic_time_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditEventAnalyticResult> getAuditEventAnalyticPlain(GetAuditEventAnalyticPlainArgs args) {
@@ -786,6 +2106,42 @@ public final class DataSafeFunctions {
      *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEventAnalytic = DataSafeFunctions.getAuditEventAnalytic(GetAuditEventAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_event_analytic_group_by())
+     *             .queryTimeZone(var_.audit_event_analytic_query_time_zone())
+     *             .scimQuery(var_.audit_event_analytic_scim_query())
+     *             .summaryFields(var_.audit_event_analytic_summary_field())
+     *             .timeEnded(var_.audit_event_analytic_time_ended())
+     *             .timeStarted(var_.audit_event_analytic_time_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditEventAnalyticResult> getAuditEventAnalytic(GetAuditEventAnalyticArgs args, InvokeOptions options) {
@@ -802,6 +2158,42 @@ public final class DataSafeFunctions {
      *              &amp;summaryField=eventcount&amp;q=(operationTime ge &#39;2021-06-13T23:49:14&#39;)&amp;groupBy=targetName
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEventAnalytic = DataSafeFunctions.getAuditEventAnalytic(GetAuditEventAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_event_analytic_group_by())
+     *             .queryTimeZone(var_.audit_event_analytic_query_time_zone())
+     *             .scimQuery(var_.audit_event_analytic_scim_query())
+     *             .summaryFields(var_.audit_event_analytic_summary_field())
+     *             .timeEnded(var_.audit_event_analytic_time_ended())
+     *             .timeStarted(var_.audit_event_analytic_time_started())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditEventAnalyticResult> getAuditEventAnalyticPlain(GetAuditEventAnalyticPlainArgs args, InvokeOptions options) {
@@ -825,6 +2217,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvents = DataSafeFunctions.getAuditEvents(GetAuditEventsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
+     *             .scimQuery(var_.audit_event_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditEventsResult> getAuditEvents(GetAuditEventsArgs args) {
@@ -848,6 +2271,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvents = DataSafeFunctions.getAuditEvents(GetAuditEventsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
+     *             .scimQuery(var_.audit_event_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditEventsResult> getAuditEventsPlain(GetAuditEventsPlainArgs args) {
@@ -871,6 +2325,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvents = DataSafeFunctions.getAuditEvents(GetAuditEventsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
+     *             .scimQuery(var_.audit_event_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditEventsResult> getAuditEvents(GetAuditEventsArgs args, InvokeOptions options) {
@@ -894,6 +2379,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditEvents = DataSafeFunctions.getAuditEvents(GetAuditEventsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_event_access_level())
+     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
+     *             .scimQuery(var_.audit_event_scim_query())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditEventsResult> getAuditEventsPlain(GetAuditEventsPlainArgs args, InvokeOptions options) {
@@ -919,6 +2435,40 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_policy_access_level())
+     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .compartmentIdInSubtree(var_.audit_policy_compartment_id_in_subtree())
+     *             .displayName(var_.audit_policy_display_name())
+     *             .state(var_.audit_policy_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditPoliciesResult> getAuditPolicies(GetAuditPoliciesArgs args) {
@@ -944,6 +2494,40 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_policy_access_level())
+     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .compartmentIdInSubtree(var_.audit_policy_compartment_id_in_subtree())
+     *             .displayName(var_.audit_policy_display_name())
+     *             .state(var_.audit_policy_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditPoliciesResult> getAuditPoliciesPlain(GetAuditPoliciesPlainArgs args) {
@@ -969,6 +2553,40 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_policy_access_level())
+     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .compartmentIdInSubtree(var_.audit_policy_compartment_id_in_subtree())
+     *             .displayName(var_.audit_policy_display_name())
+     *             .state(var_.audit_policy_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditPoliciesResult> getAuditPolicies(GetAuditPoliciesArgs args, InvokeOptions options) {
@@ -994,6 +2612,40 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_policy_access_level())
+     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .compartmentIdInSubtree(var_.audit_policy_compartment_id_in_subtree())
+     *             .displayName(var_.audit_policy_display_name())
+     *             .state(var_.audit_policy_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditPoliciesResult> getAuditPoliciesPlain(GetAuditPoliciesPlainArgs args, InvokeOptions options) {
@@ -1005,6 +2657,34 @@ public final class DataSafeFunctions {
      * Gets a audit policy by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
+     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditPolicyResult> getAuditPolicy(GetAuditPolicyArgs args) {
@@ -1016,6 +2696,34 @@ public final class DataSafeFunctions {
      * Gets a audit policy by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
+     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditPolicyResult> getAuditPolicyPlain(GetAuditPolicyPlainArgs args) {
@@ -1027,6 +2735,34 @@ public final class DataSafeFunctions {
      * Gets a audit policy by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
+     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditPolicyResult> getAuditPolicy(GetAuditPolicyArgs args, InvokeOptions options) {
@@ -1038,6 +2774,34 @@ public final class DataSafeFunctions {
      * Gets a audit policy by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
+     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditPolicyResult> getAuditPolicyPlain(GetAuditPolicyPlainArgs args, InvokeOptions options) {
@@ -1049,6 +2813,34 @@ public final class DataSafeFunctions {
      * Gets the details of audit profile resource and associated audit trails of the audit profile.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileResult> getAuditProfile(GetAuditProfileArgs args) {
@@ -1060,6 +2852,34 @@ public final class DataSafeFunctions {
      * Gets the details of audit profile resource and associated audit trails of the audit profile.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileResult> getAuditProfilePlain(GetAuditProfilePlainArgs args) {
@@ -1071,6 +2891,34 @@ public final class DataSafeFunctions {
      * Gets the details of audit profile resource and associated audit trails of the audit profile.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileResult> getAuditProfile(GetAuditProfileArgs args, InvokeOptions options) {
@@ -1082,6 +2930,34 @@ public final class DataSafeFunctions {
      * Gets the details of audit profile resource and associated audit trails of the audit profile.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileResult> getAuditProfilePlain(GetAuditProfilePlainArgs args, InvokeOptions options) {
@@ -1105,6 +2981,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAnalytic = DataSafeFunctions.getAuditProfileAnalytic(GetAuditProfileAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_profile_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_profile_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_profile_analytic_group_by())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileAnalyticResult> getAuditProfileAnalytic(GetAuditProfileAnalyticArgs args) {
@@ -1128,6 +3035,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAnalytic = DataSafeFunctions.getAuditProfileAnalytic(GetAuditProfileAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_profile_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_profile_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_profile_analytic_group_by())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileAnalyticResult> getAuditProfileAnalyticPlain(GetAuditProfileAnalyticPlainArgs args) {
@@ -1151,6 +3089,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAnalytic = DataSafeFunctions.getAuditProfileAnalytic(GetAuditProfileAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_profile_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_profile_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_profile_analytic_group_by())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileAnalyticResult> getAuditProfileAnalytic(GetAuditProfileAnalyticArgs args, InvokeOptions options) {
@@ -1174,6 +3143,37 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAnalytic = DataSafeFunctions.getAuditProfileAnalytic(GetAuditProfileAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_profile_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_profile_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_profile_analytic_group_by())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileAnalyticResult> getAuditProfileAnalyticPlain(GetAuditProfileAnalyticPlainArgs args, InvokeOptions options) {
@@ -1185,6 +3185,38 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
+     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileAvailableAuditVolumeResult> getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs args) {
@@ -1196,6 +3228,38 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
+     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileAvailableAuditVolumeResult> getAuditProfileAvailableAuditVolumePlain(GetAuditProfileAvailableAuditVolumePlainArgs args) {
@@ -1207,6 +3271,38 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
+     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileAvailableAuditVolumeResult> getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs args, InvokeOptions options) {
@@ -1218,6 +3314,38 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
+     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileAvailableAuditVolumeResult> getAuditProfileAvailableAuditVolumePlain(GetAuditProfileAvailableAuditVolumePlainArgs args, InvokeOptions options) {
@@ -1229,6 +3357,38 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
+     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileAvailableAuditVolumesResult> getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs args) {
@@ -1240,6 +3400,38 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
+     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileAvailableAuditVolumesResult> getAuditProfileAvailableAuditVolumesPlain(GetAuditProfileAvailableAuditVolumesPlainArgs args) {
@@ -1251,6 +3443,38 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
+     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileAvailableAuditVolumesResult> getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs args, InvokeOptions options) {
@@ -1262,6 +3486,38 @@ public final class DataSafeFunctions {
      * Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileAvailableAuditVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
+     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileAvailableAuditVolumesResult> getAuditProfileAvailableAuditVolumesPlain(GetAuditProfileAvailableAuditVolumesPlainArgs args, InvokeOptions options) {
@@ -1273,6 +3529,37 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileCollectedAuditVolumeResult> getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs args) {
@@ -1284,6 +3571,37 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileCollectedAuditVolumeResult> getAuditProfileCollectedAuditVolumePlain(GetAuditProfileCollectedAuditVolumePlainArgs args) {
@@ -1295,6 +3613,37 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileCollectedAuditVolumeResult> getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs args, InvokeOptions options) {
@@ -1306,6 +3655,37 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileCollectedAuditVolumeResult> getAuditProfileCollectedAuditVolumePlain(GetAuditProfileCollectedAuditVolumePlainArgs args, InvokeOptions options) {
@@ -1317,6 +3697,37 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileCollectedAuditVolumesResult> getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs args) {
@@ -1328,6 +3739,37 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileCollectedAuditVolumesResult> getAuditProfileCollectedAuditVolumesPlain(GetAuditProfileCollectedAuditVolumesPlainArgs args) {
@@ -1339,6 +3781,37 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfileCollectedAuditVolumesResult> getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs args, InvokeOptions options) {
@@ -1350,6 +3823,37 @@ public final class DataSafeFunctions {
      * Gets a list of all collected audit volume data points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
+     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfileCollectedAuditVolumesResult> getAuditProfileCollectedAuditVolumesPlain(GetAuditProfileCollectedAuditVolumesPlainArgs args, InvokeOptions options) {
@@ -1375,6 +3879,43 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfiles = DataSafeFunctions.getAuditProfiles(GetAuditProfilesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_profile_access_level())
+     *             .auditCollectedVolumeGreaterThanOrEqualTo(var_.audit_profile_audit_collected_volume_greater_than_or_equal_to())
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .compartmentIdInSubtree(var_.audit_profile_compartment_id_in_subtree())
+     *             .displayName(var_.audit_profile_display_name())
+     *             .isOverrideGlobalRetentionSetting(var_.audit_profile_is_override_global_retention_setting())
+     *             .isPaidUsageEnabled(var_.audit_profile_is_paid_usage_enabled())
+     *             .state(var_.audit_profile_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfilesResult> getAuditProfiles(GetAuditProfilesArgs args) {
@@ -1400,6 +3941,43 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfiles = DataSafeFunctions.getAuditProfiles(GetAuditProfilesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_profile_access_level())
+     *             .auditCollectedVolumeGreaterThanOrEqualTo(var_.audit_profile_audit_collected_volume_greater_than_or_equal_to())
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .compartmentIdInSubtree(var_.audit_profile_compartment_id_in_subtree())
+     *             .displayName(var_.audit_profile_display_name())
+     *             .isOverrideGlobalRetentionSetting(var_.audit_profile_is_override_global_retention_setting())
+     *             .isPaidUsageEnabled(var_.audit_profile_is_paid_usage_enabled())
+     *             .state(var_.audit_profile_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfilesResult> getAuditProfilesPlain(GetAuditProfilesPlainArgs args) {
@@ -1425,6 +4003,43 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfiles = DataSafeFunctions.getAuditProfiles(GetAuditProfilesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_profile_access_level())
+     *             .auditCollectedVolumeGreaterThanOrEqualTo(var_.audit_profile_audit_collected_volume_greater_than_or_equal_to())
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .compartmentIdInSubtree(var_.audit_profile_compartment_id_in_subtree())
+     *             .displayName(var_.audit_profile_display_name())
+     *             .isOverrideGlobalRetentionSetting(var_.audit_profile_is_override_global_retention_setting())
+     *             .isPaidUsageEnabled(var_.audit_profile_is_paid_usage_enabled())
+     *             .state(var_.audit_profile_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditProfilesResult> getAuditProfiles(GetAuditProfilesArgs args, InvokeOptions options) {
@@ -1450,6 +4065,43 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfiles = DataSafeFunctions.getAuditProfiles(GetAuditProfilesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_profile_access_level())
+     *             .auditCollectedVolumeGreaterThanOrEqualTo(var_.audit_profile_audit_collected_volume_greater_than_or_equal_to())
+     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .compartmentIdInSubtree(var_.audit_profile_compartment_id_in_subtree())
+     *             .displayName(var_.audit_profile_display_name())
+     *             .isOverrideGlobalRetentionSetting(var_.audit_profile_is_override_global_retention_setting())
+     *             .isPaidUsageEnabled(var_.audit_profile_is_paid_usage_enabled())
+     *             .state(var_.audit_profile_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditProfilesResult> getAuditProfilesPlain(GetAuditProfilesPlainArgs args, InvokeOptions options) {
@@ -1461,6 +4113,34 @@ public final class DataSafeFunctions {
      * Gets the details of audit trail.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
+     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditTrailResult> getAuditTrail(GetAuditTrailArgs args) {
@@ -1472,6 +4152,34 @@ public final class DataSafeFunctions {
      * Gets the details of audit trail.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
+     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditTrailResult> getAuditTrailPlain(GetAuditTrailPlainArgs args) {
@@ -1483,6 +4191,34 @@ public final class DataSafeFunctions {
      * Gets the details of audit trail.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
+     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditTrailResult> getAuditTrail(GetAuditTrailArgs args, InvokeOptions options) {
@@ -1494,6 +4230,34 @@ public final class DataSafeFunctions {
      * Gets the details of audit trail.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
+     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditTrailResult> getAuditTrailPlain(GetAuditTrailPlainArgs args, InvokeOptions options) {
@@ -1517,6 +4281,38 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrailAnalytic = DataSafeFunctions.getAuditTrailAnalytic(GetAuditTrailAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_trail_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_trail_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_trail_analytic_group_by())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditTrailAnalyticResult> getAuditTrailAnalytic(GetAuditTrailAnalyticArgs args) {
@@ -1540,6 +4336,38 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrailAnalytic = DataSafeFunctions.getAuditTrailAnalytic(GetAuditTrailAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_trail_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_trail_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_trail_analytic_group_by())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditTrailAnalyticResult> getAuditTrailAnalyticPlain(GetAuditTrailAnalyticPlainArgs args) {
@@ -1563,6 +4391,38 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrailAnalytic = DataSafeFunctions.getAuditTrailAnalytic(GetAuditTrailAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_trail_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_trail_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_trail_analytic_group_by())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditTrailAnalyticResult> getAuditTrailAnalytic(GetAuditTrailAnalyticArgs args, InvokeOptions options) {
@@ -1586,6 +4446,38 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrailAnalytic = DataSafeFunctions.getAuditTrailAnalytic(GetAuditTrailAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_trail_analytic_access_level())
+     *             .compartmentIdInSubtree(var_.audit_trail_analytic_compartment_id_in_subtree())
+     *             .groupBies(var_.audit_trail_analytic_group_by())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditTrailAnalyticResult> getAuditTrailAnalyticPlain(GetAuditTrailAnalyticPlainArgs args, InvokeOptions options) {
@@ -1610,6 +4502,41 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_trail_access_level())
+     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .compartmentIdInSubtree(var_.audit_trail_compartment_id_in_subtree())
+     *             .displayName(var_.audit_trail_display_name())
+     *             .state(var_.audit_trail_state())
+     *             .status(var_.audit_trail_status())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditTrailsResult> getAuditTrails(GetAuditTrailsArgs args) {
@@ -1634,6 +4561,41 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_trail_access_level())
+     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .compartmentIdInSubtree(var_.audit_trail_compartment_id_in_subtree())
+     *             .displayName(var_.audit_trail_display_name())
+     *             .state(var_.audit_trail_state())
+     *             .status(var_.audit_trail_status())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditTrailsResult> getAuditTrailsPlain(GetAuditTrailsPlainArgs args) {
@@ -1658,6 +4620,41 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_trail_access_level())
+     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .compartmentIdInSubtree(var_.audit_trail_compartment_id_in_subtree())
+     *             .displayName(var_.audit_trail_display_name())
+     *             .state(var_.audit_trail_state())
+     *             .status(var_.audit_trail_status())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuditTrailsResult> getAuditTrails(GetAuditTrailsArgs args, InvokeOptions options) {
@@ -1682,6 +4679,41 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditTrailsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.audit_trail_access_level())
+     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .compartmentIdInSubtree(var_.audit_trail_compartment_id_in_subtree())
+     *             .displayName(var_.audit_trail_display_name())
+     *             .state(var_.audit_trail_state())
+     *             .status(var_.audit_trail_status())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuditTrailsResult> getAuditTrailsPlain(GetAuditTrailsPlainArgs args, InvokeOptions options) {
@@ -1699,6 +4731,31 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForDataType = DataSafeFunctions.getCompatibleFormatsForDataType();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataType() {
@@ -1716,6 +4773,31 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForDataType = DataSafeFunctions.getCompatibleFormatsForDataType();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataTypePlain() {
@@ -1733,6 +4815,31 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForDataType = DataSafeFunctions.getCompatibleFormatsForDataType();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataType(InvokeArgs args) {
@@ -1750,6 +4857,31 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForDataType = DataSafeFunctions.getCompatibleFormatsForDataType();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataTypePlain(InvokeArgs args) {
@@ -1767,6 +4899,31 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForDataType = DataSafeFunctions.getCompatibleFormatsForDataType();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataType(InvokeArgs args, InvokeOptions options) {
@@ -1784,6 +4941,31 @@ public final class DataSafeFunctions {
      * All - Includes all the supported data types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForDataType = DataSafeFunctions.getCompatibleFormatsForDataType();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForDataTypeResult> getCompatibleFormatsForDataTypePlain(InvokeArgs args, InvokeOptions options) {
@@ -1798,6 +4980,36 @@ public final class DataSafeFunctions {
      * the OCID of the sensitive type.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForSensitiveType = DataSafeFunctions.getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.compatible_formats_for_sensitive_type_access_level())
+     *             .compartmentIdInSubtree(var_.compatible_formats_for_sensitive_type_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs args) {
@@ -1812,6 +5024,36 @@ public final class DataSafeFunctions {
      * the OCID of the sensitive type.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForSensitiveType = DataSafeFunctions.getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.compatible_formats_for_sensitive_type_access_level())
+     *             .compartmentIdInSubtree(var_.compatible_formats_for_sensitive_type_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveTypePlain(GetCompatibleFormatsForSensitiveTypePlainArgs args) {
@@ -1826,6 +5068,36 @@ public final class DataSafeFunctions {
      * the OCID of the sensitive type.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForSensitiveType = DataSafeFunctions.getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.compatible_formats_for_sensitive_type_access_level())
+     *             .compartmentIdInSubtree(var_.compatible_formats_for_sensitive_type_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs args, InvokeOptions options) {
@@ -1840,6 +5112,36 @@ public final class DataSafeFunctions {
      * the OCID of the sensitive type.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetCompatibleFormatsForSensitiveTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompatibleFormatsForSensitiveType = DataSafeFunctions.getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.compatible_formats_for_sensitive_type_access_level())
+     *             .compartmentIdInSubtree(var_.compatible_formats_for_sensitive_type_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompatibleFormatsForSensitiveTypeResult> getCompatibleFormatsForSensitiveTypePlain(GetCompatibleFormatsForSensitiveTypePlainArgs args, InvokeOptions options) {
@@ -1851,6 +5153,34 @@ public final class DataSafeFunctions {
      * Gets the details of the Data Safe configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafeConfiguration = DataSafeFunctions.getDataSafeConfiguration(GetDataSafeConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataSafeConfigurationResult> getDataSafeConfiguration(GetDataSafeConfigurationArgs args) {
@@ -1862,6 +5192,34 @@ public final class DataSafeFunctions {
      * Gets the details of the Data Safe configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafeConfiguration = DataSafeFunctions.getDataSafeConfiguration(GetDataSafeConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataSafeConfigurationResult> getDataSafeConfigurationPlain(GetDataSafeConfigurationPlainArgs args) {
@@ -1873,6 +5231,34 @@ public final class DataSafeFunctions {
      * Gets the details of the Data Safe configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafeConfiguration = DataSafeFunctions.getDataSafeConfiguration(GetDataSafeConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataSafeConfigurationResult> getDataSafeConfiguration(GetDataSafeConfigurationArgs args, InvokeOptions options) {
@@ -1884,6 +5270,34 @@ public final class DataSafeFunctions {
      * Gets the details of the Data Safe configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafeConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafeConfiguration = DataSafeFunctions.getDataSafeConfiguration(GetDataSafeConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataSafeConfigurationResult> getDataSafeConfigurationPlain(GetDataSafeConfigurationPlainArgs args, InvokeOptions options) {
@@ -1895,6 +5309,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified Data Safe private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
+     *             .dataSafePrivateEndpointId(oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataSafePrivateEndpointResult> getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs args) {
@@ -1906,6 +5348,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified Data Safe private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
+     *             .dataSafePrivateEndpointId(oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataSafePrivateEndpointResult> getDataSafePrivateEndpointPlain(GetDataSafePrivateEndpointPlainArgs args) {
@@ -1917,6 +5387,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified Data Safe private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
+     *             .dataSafePrivateEndpointId(oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataSafePrivateEndpointResult> getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs args, InvokeOptions options) {
@@ -1928,6 +5426,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified Data Safe private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
+     *             .dataSafePrivateEndpointId(oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataSafePrivateEndpointResult> getDataSafePrivateEndpointPlain(GetDataSafePrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -1939,6 +5465,39 @@ public final class DataSafeFunctions {
      * Gets a list of Data Safe private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafePrivateEndpoints = DataSafeFunctions.getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_safe_private_endpoint_access_level())
+     *             .compartmentIdInSubtree(var_.data_safe_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.data_safe_private_endpoint_display_name())
+     *             .state(var_.data_safe_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs args) {
@@ -1950,6 +5509,39 @@ public final class DataSafeFunctions {
      * Gets a list of Data Safe private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafePrivateEndpoints = DataSafeFunctions.getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_safe_private_endpoint_access_level())
+     *             .compartmentIdInSubtree(var_.data_safe_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.data_safe_private_endpoint_display_name())
+     *             .state(var_.data_safe_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpointsPlain(GetDataSafePrivateEndpointsPlainArgs args) {
@@ -1961,6 +5553,39 @@ public final class DataSafeFunctions {
      * Gets a list of Data Safe private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafePrivateEndpoints = DataSafeFunctions.getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_safe_private_endpoint_access_level())
+     *             .compartmentIdInSubtree(var_.data_safe_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.data_safe_private_endpoint_display_name())
+     *             .state(var_.data_safe_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs args, InvokeOptions options) {
@@ -1972,6 +5597,39 @@ public final class DataSafeFunctions {
      * Gets a list of Data Safe private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDataSafePrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSafePrivateEndpoints = DataSafeFunctions.getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_safe_private_endpoint_access_level())
+     *             .compartmentIdInSubtree(var_.data_safe_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.data_safe_private_endpoint_display_name())
+     *             .state(var_.data_safe_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataSafePrivateEndpointsResult> getDataSafePrivateEndpointsPlain(GetDataSafePrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -1983,6 +5641,38 @@ public final class DataSafeFunctions {
      * Gets consolidated discovery analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryAnalytic = DataSafeFunctions.getDiscoveryAnalytic(GetDiscoveryAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.discovery_analytic_group_by())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryAnalyticResult> getDiscoveryAnalytic(GetDiscoveryAnalyticArgs args) {
@@ -1994,6 +5684,38 @@ public final class DataSafeFunctions {
      * Gets consolidated discovery analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryAnalytic = DataSafeFunctions.getDiscoveryAnalytic(GetDiscoveryAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.discovery_analytic_group_by())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryAnalyticResult> getDiscoveryAnalyticPlain(GetDiscoveryAnalyticPlainArgs args) {
@@ -2005,6 +5727,38 @@ public final class DataSafeFunctions {
      * Gets consolidated discovery analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryAnalytic = DataSafeFunctions.getDiscoveryAnalytic(GetDiscoveryAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.discovery_analytic_group_by())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryAnalyticResult> getDiscoveryAnalytic(GetDiscoveryAnalyticArgs args, InvokeOptions options) {
@@ -2016,6 +5770,38 @@ public final class DataSafeFunctions {
      * Gets consolidated discovery analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryAnalytic = DataSafeFunctions.getDiscoveryAnalytic(GetDiscoveryAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.discovery_analytic_group_by())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryAnalyticResult> getDiscoveryAnalyticPlain(GetDiscoveryAnalyticPlainArgs args, InvokeOptions options) {
@@ -2027,6 +5813,38 @@ public final class DataSafeFunctions {
      * Gets consolidated discovery analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryAnalytics = DataSafeFunctions.getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.discovery_analytic_group_by())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryAnalyticsResult> getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs args) {
@@ -2038,6 +5856,38 @@ public final class DataSafeFunctions {
      * Gets consolidated discovery analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryAnalytics = DataSafeFunctions.getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.discovery_analytic_group_by())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryAnalyticsResult> getDiscoveryAnalyticsPlain(GetDiscoveryAnalyticsPlainArgs args) {
@@ -2049,6 +5899,38 @@ public final class DataSafeFunctions {
      * Gets consolidated discovery analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryAnalytics = DataSafeFunctions.getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.discovery_analytic_group_by())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryAnalyticsResult> getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs args, InvokeOptions options) {
@@ -2060,6 +5942,38 @@ public final class DataSafeFunctions {
      * Gets consolidated discovery analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryAnalytics = DataSafeFunctions.getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.discovery_analytic_group_by())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryAnalyticsResult> getDiscoveryAnalyticsPlain(GetDiscoveryAnalyticsPlainArgs args, InvokeOptions options) {
@@ -2071,6 +5985,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args) {
@@ -2082,6 +6024,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args) {
@@ -2093,6 +6063,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args, InvokeOptions options) {
@@ -2104,6 +6102,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args, InvokeOptions options) {
@@ -2115,6 +6141,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery result.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .resultKey(var_.discovery_jobs_result_result_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobsResultResult> getDiscoveryJobsResult(GetDiscoveryJobsResultArgs args) {
@@ -2126,6 +6181,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery result.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .resultKey(var_.discovery_jobs_result_result_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResultResult> getDiscoveryJobsResultPlain(GetDiscoveryJobsResultPlainArgs args) {
@@ -2137,6 +6221,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery result.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .resultKey(var_.discovery_jobs_result_result_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobsResultResult> getDiscoveryJobsResult(GetDiscoveryJobsResultArgs args, InvokeOptions options) {
@@ -2148,6 +6261,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified discovery result.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .resultKey(var_.discovery_jobs_result_result_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResultResult> getDiscoveryJobsResultPlain(GetDiscoveryJobsResultPlainArgs args, InvokeOptions options) {
@@ -2159,6 +6301,40 @@ public final class DataSafeFunctions {
      * Gets a list of discovery results based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .columnNames(var_.discovery_jobs_result_column_name())
+     *             .discoveryType(var_.discovery_jobs_result_discovery_type())
+     *             .isResultApplied(var_.discovery_jobs_result_is_result_applied())
+     *             .objects(var_.discovery_jobs_result_object())
+     *             .plannedAction(var_.discovery_jobs_result_planned_action())
+     *             .schemaNames(var_.discovery_jobs_result_schema_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobsResultsResult> getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs args) {
@@ -2170,6 +6346,40 @@ public final class DataSafeFunctions {
      * Gets a list of discovery results based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .columnNames(var_.discovery_jobs_result_column_name())
+     *             .discoveryType(var_.discovery_jobs_result_discovery_type())
+     *             .isResultApplied(var_.discovery_jobs_result_is_result_applied())
+     *             .objects(var_.discovery_jobs_result_object())
+     *             .plannedAction(var_.discovery_jobs_result_planned_action())
+     *             .schemaNames(var_.discovery_jobs_result_schema_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResultsResult> getDiscoveryJobsResultsPlain(GetDiscoveryJobsResultsPlainArgs args) {
@@ -2181,6 +6391,40 @@ public final class DataSafeFunctions {
      * Gets a list of discovery results based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .columnNames(var_.discovery_jobs_result_column_name())
+     *             .discoveryType(var_.discovery_jobs_result_discovery_type())
+     *             .isResultApplied(var_.discovery_jobs_result_is_result_applied())
+     *             .objects(var_.discovery_jobs_result_object())
+     *             .plannedAction(var_.discovery_jobs_result_planned_action())
+     *             .schemaNames(var_.discovery_jobs_result_schema_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobsResultsResult> getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs args, InvokeOptions options) {
@@ -2192,6 +6436,40 @@ public final class DataSafeFunctions {
      * Gets a list of discovery results based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobsResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
+     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .columnNames(var_.discovery_jobs_result_column_name())
+     *             .discoveryType(var_.discovery_jobs_result_discovery_type())
+     *             .isResultApplied(var_.discovery_jobs_result_is_result_applied())
+     *             .objects(var_.discovery_jobs_result_object())
+     *             .plannedAction(var_.discovery_jobs_result_planned_action())
+     *             .schemaNames(var_.discovery_jobs_result_schema_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResultsResult> getDiscoveryJobsResultsPlain(GetDiscoveryJobsResultsPlainArgs args, InvokeOptions options) {
@@ -2203,6 +6481,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified library masking format.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
+     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLibraryMaskingFormatResult> getLibraryMaskingFormat(GetLibraryMaskingFormatArgs args) {
@@ -2214,6 +6520,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified library masking format.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
+     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLibraryMaskingFormatResult> getLibraryMaskingFormatPlain(GetLibraryMaskingFormatPlainArgs args) {
@@ -2225,6 +6559,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified library masking format.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
+     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLibraryMaskingFormatResult> getLibraryMaskingFormat(GetLibraryMaskingFormatArgs args, InvokeOptions options) {
@@ -2236,6 +6598,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified library masking format.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
+     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLibraryMaskingFormatResult> getLibraryMaskingFormatPlain(GetLibraryMaskingFormatPlainArgs args, InvokeOptions options) {
@@ -2247,6 +6637,42 @@ public final class DataSafeFunctions {
      * Gets a list of library masking formats based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLibraryMaskingFormats = DataSafeFunctions.getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.library_masking_format_access_level())
+     *             .compartmentIdInSubtree(var_.library_masking_format_compartment_id_in_subtree())
+     *             .displayName(var_.library_masking_format_display_name())
+     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .libraryMaskingFormatSource(var_.library_masking_format_library_masking_format_source())
+     *             .state(var_.library_masking_format_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.library_masking_format_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.library_masking_format_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLibraryMaskingFormatsResult> getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs args) {
@@ -2258,6 +6684,42 @@ public final class DataSafeFunctions {
      * Gets a list of library masking formats based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLibraryMaskingFormats = DataSafeFunctions.getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.library_masking_format_access_level())
+     *             .compartmentIdInSubtree(var_.library_masking_format_compartment_id_in_subtree())
+     *             .displayName(var_.library_masking_format_display_name())
+     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .libraryMaskingFormatSource(var_.library_masking_format_library_masking_format_source())
+     *             .state(var_.library_masking_format_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.library_masking_format_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.library_masking_format_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLibraryMaskingFormatsResult> getLibraryMaskingFormatsPlain(GetLibraryMaskingFormatsPlainArgs args) {
@@ -2269,6 +6731,42 @@ public final class DataSafeFunctions {
      * Gets a list of library masking formats based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLibraryMaskingFormats = DataSafeFunctions.getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.library_masking_format_access_level())
+     *             .compartmentIdInSubtree(var_.library_masking_format_compartment_id_in_subtree())
+     *             .displayName(var_.library_masking_format_display_name())
+     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .libraryMaskingFormatSource(var_.library_masking_format_library_masking_format_source())
+     *             .state(var_.library_masking_format_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.library_masking_format_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.library_masking_format_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLibraryMaskingFormatsResult> getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs args, InvokeOptions options) {
@@ -2280,6 +6778,42 @@ public final class DataSafeFunctions {
      * Gets a list of library masking formats based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLibraryMaskingFormats = DataSafeFunctions.getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.library_masking_format_access_level())
+     *             .compartmentIdInSubtree(var_.library_masking_format_compartment_id_in_subtree())
+     *             .displayName(var_.library_masking_format_display_name())
+     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .libraryMaskingFormatSource(var_.library_masking_format_library_masking_format_source())
+     *             .state(var_.library_masking_format_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.library_masking_format_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.library_masking_format_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLibraryMaskingFormatsResult> getLibraryMaskingFormatsPlain(GetLibraryMaskingFormatsPlainArgs args, InvokeOptions options) {
@@ -2294,6 +6828,42 @@ public final class DataSafeFunctions {
      * to get the userKey for a particular user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userKey(var_.list_user_grant_user_key())
+     *             .depthLevel(var_.list_user_grant_depth_level())
+     *             .depthLevelGreaterThanOrEqualTo(var_.list_user_grant_depth_level_greater_than_or_equal_to())
+     *             .depthLevelLessThan(var_.list_user_grant_depth_level_less_than())
+     *             .grantKey(var_.list_user_grant_grant_key())
+     *             .grantName(var_.list_user_grant_grant_name())
+     *             .privilegeCategory(var_.list_user_grant_privilege_category())
+     *             .privilegeType(var_.list_user_grant_privilege_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListUserGrantsResult> getListUserGrants(GetListUserGrantsArgs args) {
@@ -2308,6 +6878,42 @@ public final class DataSafeFunctions {
      * to get the userKey for a particular user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userKey(var_.list_user_grant_user_key())
+     *             .depthLevel(var_.list_user_grant_depth_level())
+     *             .depthLevelGreaterThanOrEqualTo(var_.list_user_grant_depth_level_greater_than_or_equal_to())
+     *             .depthLevelLessThan(var_.list_user_grant_depth_level_less_than())
+     *             .grantKey(var_.list_user_grant_grant_key())
+     *             .grantName(var_.list_user_grant_grant_name())
+     *             .privilegeCategory(var_.list_user_grant_privilege_category())
+     *             .privilegeType(var_.list_user_grant_privilege_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListUserGrantsResult> getListUserGrantsPlain(GetListUserGrantsPlainArgs args) {
@@ -2322,6 +6928,42 @@ public final class DataSafeFunctions {
      * to get the userKey for a particular user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userKey(var_.list_user_grant_user_key())
+     *             .depthLevel(var_.list_user_grant_depth_level())
+     *             .depthLevelGreaterThanOrEqualTo(var_.list_user_grant_depth_level_greater_than_or_equal_to())
+     *             .depthLevelLessThan(var_.list_user_grant_depth_level_less_than())
+     *             .grantKey(var_.list_user_grant_grant_key())
+     *             .grantName(var_.list_user_grant_grant_name())
+     *             .privilegeCategory(var_.list_user_grant_privilege_category())
+     *             .privilegeType(var_.list_user_grant_privilege_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListUserGrantsResult> getListUserGrants(GetListUserGrantsArgs args, InvokeOptions options) {
@@ -2336,6 +6978,42 @@ public final class DataSafeFunctions {
      * to get the userKey for a particular user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetListUserGrantsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userKey(var_.list_user_grant_user_key())
+     *             .depthLevel(var_.list_user_grant_depth_level())
+     *             .depthLevelGreaterThanOrEqualTo(var_.list_user_grant_depth_level_greater_than_or_equal_to())
+     *             .depthLevelLessThan(var_.list_user_grant_depth_level_less_than())
+     *             .grantKey(var_.list_user_grant_grant_key())
+     *             .grantName(var_.list_user_grant_grant_name())
+     *             .privilegeCategory(var_.list_user_grant_privilege_category())
+     *             .privilegeType(var_.list_user_grant_privilege_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListUserGrantsResult> getListUserGrantsPlain(GetListUserGrantsPlainArgs args, InvokeOptions options) {
@@ -2347,6 +7025,38 @@ public final class DataSafeFunctions {
      * Gets consolidated masking analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingAnalytic = DataSafeFunctions.getMaskingAnalytic(GetMaskingAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.masking_analytic_group_by())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingAnalyticResult> getMaskingAnalytic(GetMaskingAnalyticArgs args) {
@@ -2358,6 +7068,38 @@ public final class DataSafeFunctions {
      * Gets consolidated masking analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingAnalytic = DataSafeFunctions.getMaskingAnalytic(GetMaskingAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.masking_analytic_group_by())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingAnalyticResult> getMaskingAnalyticPlain(GetMaskingAnalyticPlainArgs args) {
@@ -2369,6 +7111,38 @@ public final class DataSafeFunctions {
      * Gets consolidated masking analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingAnalytic = DataSafeFunctions.getMaskingAnalytic(GetMaskingAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.masking_analytic_group_by())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingAnalyticResult> getMaskingAnalytic(GetMaskingAnalyticArgs args, InvokeOptions options) {
@@ -2380,6 +7154,38 @@ public final class DataSafeFunctions {
      * Gets consolidated masking analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingAnalytic = DataSafeFunctions.getMaskingAnalytic(GetMaskingAnalyticArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.masking_analytic_group_by())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingAnalyticResult> getMaskingAnalyticPlain(GetMaskingAnalyticPlainArgs args, InvokeOptions options) {
@@ -2391,6 +7197,38 @@ public final class DataSafeFunctions {
      * Gets consolidated masking analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingAnalytics = DataSafeFunctions.getMaskingAnalytics(GetMaskingAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.masking_analytic_group_by())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingAnalyticsResult> getMaskingAnalytics(GetMaskingAnalyticsArgs args) {
@@ -2402,6 +7240,38 @@ public final class DataSafeFunctions {
      * Gets consolidated masking analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingAnalytics = DataSafeFunctions.getMaskingAnalytics(GetMaskingAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.masking_analytic_group_by())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingAnalyticsResult> getMaskingAnalyticsPlain(GetMaskingAnalyticsPlainArgs args) {
@@ -2413,6 +7283,38 @@ public final class DataSafeFunctions {
      * Gets consolidated masking analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingAnalytics = DataSafeFunctions.getMaskingAnalytics(GetMaskingAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.masking_analytic_group_by())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingAnalyticsResult> getMaskingAnalytics(GetMaskingAnalyticsArgs args, InvokeOptions options) {
@@ -2424,6 +7326,38 @@ public final class DataSafeFunctions {
      * Gets consolidated masking analytics data based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingAnalytics = DataSafeFunctions.getMaskingAnalytics(GetMaskingAnalyticsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
+     *             .groupBy(var_.masking_analytic_group_by())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingAnalyticsResult> getMaskingAnalyticsPlain(GetMaskingAnalyticsPlainArgs args, InvokeOptions options) {
@@ -2435,6 +7369,43 @@ public final class DataSafeFunctions {
      * Gets a list of masking policies based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicies = DataSafeFunctions.getMaskingPolicies(GetMaskingPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.masking_policy_access_level())
+     *             .compartmentIdInSubtree(var_.masking_policy_compartment_id_in_subtree())
+     *             .displayName(var_.masking_policy_display_name())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .state(var_.masking_policy_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.masking_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingPoliciesResult> getMaskingPolicies(GetMaskingPoliciesArgs args) {
@@ -2446,6 +7417,43 @@ public final class DataSafeFunctions {
      * Gets a list of masking policies based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicies = DataSafeFunctions.getMaskingPolicies(GetMaskingPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.masking_policy_access_level())
+     *             .compartmentIdInSubtree(var_.masking_policy_compartment_id_in_subtree())
+     *             .displayName(var_.masking_policy_display_name())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .state(var_.masking_policy_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.masking_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesResult> getMaskingPoliciesPlain(GetMaskingPoliciesPlainArgs args) {
@@ -2457,6 +7465,43 @@ public final class DataSafeFunctions {
      * Gets a list of masking policies based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicies = DataSafeFunctions.getMaskingPolicies(GetMaskingPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.masking_policy_access_level())
+     *             .compartmentIdInSubtree(var_.masking_policy_compartment_id_in_subtree())
+     *             .displayName(var_.masking_policy_display_name())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .state(var_.masking_policy_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.masking_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingPoliciesResult> getMaskingPolicies(GetMaskingPoliciesArgs args, InvokeOptions options) {
@@ -2468,6 +7513,43 @@ public final class DataSafeFunctions {
      * Gets a list of masking policies based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicies = DataSafeFunctions.getMaskingPolicies(GetMaskingPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.masking_policy_access_level())
+     *             .compartmentIdInSubtree(var_.masking_policy_compartment_id_in_subtree())
+     *             .displayName(var_.masking_policy_display_name())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .state(var_.masking_policy_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.masking_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesResult> getMaskingPoliciesPlain(GetMaskingPoliciesPlainArgs args, InvokeOptions options) {
@@ -2479,6 +7561,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking column.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
+     *             .maskingColumnKey(var_.masking_policies_masking_column_masking_column_key())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingPoliciesMaskingColumnResult> getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs args) {
@@ -2490,6 +7601,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking column.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
+     *             .maskingColumnKey(var_.masking_policies_masking_column_masking_column_key())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesMaskingColumnResult> getMaskingPoliciesMaskingColumnPlain(GetMaskingPoliciesMaskingColumnPlainArgs args) {
@@ -2501,6 +7641,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking column.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
+     *             .maskingColumnKey(var_.masking_policies_masking_column_masking_column_key())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingPoliciesMaskingColumnResult> getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs args, InvokeOptions options) {
@@ -2512,6 +7681,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking column.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
+     *             .maskingColumnKey(var_.masking_policies_masking_column_masking_column_key())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesMaskingColumnResult> getMaskingPoliciesMaskingColumnPlain(GetMaskingPoliciesMaskingColumnPlainArgs args, InvokeOptions options) {
@@ -2523,6 +7721,48 @@ public final class DataSafeFunctions {
      * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .columnNames(var_.masking_policies_masking_column_column_name())
+     *             .dataTypes(var_.masking_policies_masking_column_data_type())
+     *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
+     *             .isSeedRequired(var_.masking_policies_masking_column_is_seed_required())
+     *             .maskingColumnGroups(var_.masking_policies_masking_column_masking_column_group())
+     *             .maskingColumnLifecycleState(var_.masking_policies_masking_column_masking_column_lifecycle_state())
+     *             .objects(var_.masking_policies_masking_column_object())
+     *             .objectTypes(var_.masking_policies_masking_column_object_type())
+     *             .schemaNames(var_.masking_policies_masking_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.masking_policies_masking_column_time_created_less_than())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.masking_policies_masking_column_time_updated_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingPoliciesMaskingColumnsResult> getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs args) {
@@ -2534,6 +7774,48 @@ public final class DataSafeFunctions {
      * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .columnNames(var_.masking_policies_masking_column_column_name())
+     *             .dataTypes(var_.masking_policies_masking_column_data_type())
+     *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
+     *             .isSeedRequired(var_.masking_policies_masking_column_is_seed_required())
+     *             .maskingColumnGroups(var_.masking_policies_masking_column_masking_column_group())
+     *             .maskingColumnLifecycleState(var_.masking_policies_masking_column_masking_column_lifecycle_state())
+     *             .objects(var_.masking_policies_masking_column_object())
+     *             .objectTypes(var_.masking_policies_masking_column_object_type())
+     *             .schemaNames(var_.masking_policies_masking_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.masking_policies_masking_column_time_created_less_than())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.masking_policies_masking_column_time_updated_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesMaskingColumnsResult> getMaskingPoliciesMaskingColumnsPlain(GetMaskingPoliciesMaskingColumnsPlainArgs args) {
@@ -2545,6 +7827,48 @@ public final class DataSafeFunctions {
      * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .columnNames(var_.masking_policies_masking_column_column_name())
+     *             .dataTypes(var_.masking_policies_masking_column_data_type())
+     *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
+     *             .isSeedRequired(var_.masking_policies_masking_column_is_seed_required())
+     *             .maskingColumnGroups(var_.masking_policies_masking_column_masking_column_group())
+     *             .maskingColumnLifecycleState(var_.masking_policies_masking_column_masking_column_lifecycle_state())
+     *             .objects(var_.masking_policies_masking_column_object())
+     *             .objectTypes(var_.masking_policies_masking_column_object_type())
+     *             .schemaNames(var_.masking_policies_masking_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.masking_policies_masking_column_time_created_less_than())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.masking_policies_masking_column_time_updated_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingPoliciesMaskingColumnsResult> getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs args, InvokeOptions options) {
@@ -2556,6 +7880,48 @@ public final class DataSafeFunctions {
      * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .columnNames(var_.masking_policies_masking_column_column_name())
+     *             .dataTypes(var_.masking_policies_masking_column_data_type())
+     *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
+     *             .isSeedRequired(var_.masking_policies_masking_column_is_seed_required())
+     *             .maskingColumnGroups(var_.masking_policies_masking_column_masking_column_group())
+     *             .maskingColumnLifecycleState(var_.masking_policies_masking_column_masking_column_lifecycle_state())
+     *             .objects(var_.masking_policies_masking_column_object())
+     *             .objectTypes(var_.masking_policies_masking_column_object_type())
+     *             .schemaNames(var_.masking_policies_masking_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.masking_policies_masking_column_time_created_less_than())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.masking_policies_masking_column_time_updated_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingPoliciesMaskingColumnsResult> getMaskingPoliciesMaskingColumnsPlain(GetMaskingPoliciesMaskingColumnsPlainArgs args, InvokeOptions options) {
@@ -2567,6 +7933,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingPolicyResult> getMaskingPolicy(GetMaskingPolicyArgs args) {
@@ -2578,6 +7972,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingPolicyResult> getMaskingPolicyPlain(GetMaskingPolicyPlainArgs args) {
@@ -2589,6 +8011,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingPolicyResult> getMaskingPolicy(GetMaskingPolicyArgs args, InvokeOptions options) {
@@ -2600,6 +8050,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingPolicyResult> getMaskingPolicyPlain(GetMaskingPolicyPlainArgs args, InvokeOptions options) {
@@ -2611,6 +8089,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking report.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingReportResult> getMaskingReport(GetMaskingReportArgs args) {
@@ -2622,6 +8128,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking report.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingReportResult> getMaskingReportPlain(GetMaskingReportPlainArgs args) {
@@ -2633,6 +8167,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking report.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingReportResult> getMaskingReport(GetMaskingReportArgs args, InvokeOptions options) {
@@ -2644,6 +8206,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified masking report.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingReportResult> getMaskingReportPlain(GetMaskingReportPlainArgs args, InvokeOptions options) {
@@ -2655,6 +8245,40 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .columnNames(var_.masking_reports_masked_column_column_name())
+     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
+     *             .objects(var_.masking_reports_masked_column_object())
+     *             .objectTypes(var_.masking_reports_masked_column_object_type())
+     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingReportMaskedColumnsResult> getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs args) {
@@ -2666,6 +8290,40 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .columnNames(var_.masking_reports_masked_column_column_name())
+     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
+     *             .objects(var_.masking_reports_masked_column_object())
+     *             .objectTypes(var_.masking_reports_masked_column_object_type())
+     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingReportMaskedColumnsResult> getMaskingReportMaskedColumnsPlain(GetMaskingReportMaskedColumnsPlainArgs args) {
@@ -2677,6 +8335,40 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .columnNames(var_.masking_reports_masked_column_column_name())
+     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
+     *             .objects(var_.masking_reports_masked_column_object())
+     *             .objectTypes(var_.masking_reports_masked_column_object_type())
+     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingReportMaskedColumnsResult> getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs args, InvokeOptions options) {
@@ -2688,6 +8380,40 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .columnNames(var_.masking_reports_masked_column_column_name())
+     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
+     *             .objects(var_.masking_reports_masked_column_object())
+     *             .objectTypes(var_.masking_reports_masked_column_object_type())
+     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingReportMaskedColumnsResult> getMaskingReportMaskedColumnsPlain(GetMaskingReportMaskedColumnsPlainArgs args, InvokeOptions options) {
@@ -2699,6 +8425,38 @@ public final class DataSafeFunctions {
      * Gets a list of masking reports based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReports = DataSafeFunctions.getMaskingReports(GetMaskingReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.masking_report_access_level())
+     *             .compartmentIdInSubtree(var_.masking_report_compartment_id_in_subtree())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingReportsResult> getMaskingReports(GetMaskingReportsArgs args) {
@@ -2710,6 +8468,38 @@ public final class DataSafeFunctions {
      * Gets a list of masking reports based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReports = DataSafeFunctions.getMaskingReports(GetMaskingReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.masking_report_access_level())
+     *             .compartmentIdInSubtree(var_.masking_report_compartment_id_in_subtree())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingReportsResult> getMaskingReportsPlain(GetMaskingReportsPlainArgs args) {
@@ -2721,6 +8511,38 @@ public final class DataSafeFunctions {
      * Gets a list of masking reports based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReports = DataSafeFunctions.getMaskingReports(GetMaskingReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.masking_report_access_level())
+     *             .compartmentIdInSubtree(var_.masking_report_compartment_id_in_subtree())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingReportsResult> getMaskingReports(GetMaskingReportsArgs args, InvokeOptions options) {
@@ -2732,6 +8554,38 @@ public final class DataSafeFunctions {
      * Gets a list of masking reports based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReports = DataSafeFunctions.getMaskingReports(GetMaskingReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.masking_report_access_level())
+     *             .compartmentIdInSubtree(var_.masking_report_compartment_id_in_subtree())
+     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingReportsResult> getMaskingReportsPlain(GetMaskingReportsPlainArgs args, InvokeOptions options) {
@@ -2743,6 +8597,40 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .columnNames(var_.masking_reports_masked_column_column_name())
+     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
+     *             .objects(var_.masking_reports_masked_column_object())
+     *             .objectTypes(var_.masking_reports_masked_column_object_type())
+     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingReportsMaskedColumnResult> getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs args) {
@@ -2754,6 +8642,40 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .columnNames(var_.masking_reports_masked_column_column_name())
+     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
+     *             .objects(var_.masking_reports_masked_column_object())
+     *             .objectTypes(var_.masking_reports_masked_column_object_type())
+     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingReportsMaskedColumnResult> getMaskingReportsMaskedColumnPlain(GetMaskingReportsMaskedColumnPlainArgs args) {
@@ -2765,6 +8687,40 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .columnNames(var_.masking_reports_masked_column_column_name())
+     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
+     *             .objects(var_.masking_reports_masked_column_object())
+     *             .objectTypes(var_.masking_reports_masked_column_object_type())
+     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaskingReportsMaskedColumnResult> getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs args, InvokeOptions options) {
@@ -2776,6 +8732,40 @@ public final class DataSafeFunctions {
      * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingReportsMaskedColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
+     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .columnNames(var_.masking_reports_masked_column_column_name())
+     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
+     *             .objects(var_.masking_reports_masked_column_object())
+     *             .objectTypes(var_.masking_reports_masked_column_object_type())
+     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaskingReportsMaskedColumnResult> getMaskingReportsMaskedColumnPlain(GetMaskingReportsMaskedColumnPlainArgs args, InvokeOptions options) {
@@ -2787,6 +8777,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified on-premises connector.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
+     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOnpremConnectorResult> getOnpremConnector(GetOnpremConnectorArgs args) {
@@ -2798,6 +8816,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified on-premises connector.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
+     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOnpremConnectorResult> getOnpremConnectorPlain(GetOnpremConnectorPlainArgs args) {
@@ -2809,6 +8855,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified on-premises connector.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
+     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOnpremConnectorResult> getOnpremConnector(GetOnpremConnectorArgs args, InvokeOptions options) {
@@ -2820,6 +8894,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified on-premises connector.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
+     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOnpremConnectorResult> getOnpremConnectorPlain(GetOnpremConnectorPlainArgs args, InvokeOptions options) {
@@ -2831,6 +8933,39 @@ public final class DataSafeFunctions {
      * Gets a list of on-premises connectors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremConnectors = DataSafeFunctions.getOnpremConnectors(GetOnpremConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.on_prem_connector_access_level())
+     *             .compartmentIdInSubtree(var_.on_prem_connector_compartment_id_in_subtree())
+     *             .displayName(var_.on_prem_connector_display_name())
+     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .onPremConnectorLifecycleState(var_.on_prem_connector_on_prem_connector_lifecycle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOnpremConnectorsResult> getOnpremConnectors(GetOnpremConnectorsArgs args) {
@@ -2842,6 +8977,39 @@ public final class DataSafeFunctions {
      * Gets a list of on-premises connectors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremConnectors = DataSafeFunctions.getOnpremConnectors(GetOnpremConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.on_prem_connector_access_level())
+     *             .compartmentIdInSubtree(var_.on_prem_connector_compartment_id_in_subtree())
+     *             .displayName(var_.on_prem_connector_display_name())
+     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .onPremConnectorLifecycleState(var_.on_prem_connector_on_prem_connector_lifecycle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOnpremConnectorsResult> getOnpremConnectorsPlain(GetOnpremConnectorsPlainArgs args) {
@@ -2853,6 +9021,39 @@ public final class DataSafeFunctions {
      * Gets a list of on-premises connectors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremConnectors = DataSafeFunctions.getOnpremConnectors(GetOnpremConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.on_prem_connector_access_level())
+     *             .compartmentIdInSubtree(var_.on_prem_connector_compartment_id_in_subtree())
+     *             .displayName(var_.on_prem_connector_display_name())
+     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .onPremConnectorLifecycleState(var_.on_prem_connector_on_prem_connector_lifecycle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOnpremConnectorsResult> getOnpremConnectors(GetOnpremConnectorsArgs args, InvokeOptions options) {
@@ -2864,6 +9065,39 @@ public final class DataSafeFunctions {
      * Gets a list of on-premises connectors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetOnpremConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOnPremConnectors = DataSafeFunctions.getOnpremConnectors(GetOnpremConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.on_prem_connector_access_level())
+     *             .compartmentIdInSubtree(var_.on_prem_connector_compartment_id_in_subtree())
+     *             .displayName(var_.on_prem_connector_display_name())
+     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .onPremConnectorLifecycleState(var_.on_prem_connector_on_prem_connector_lifecycle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOnpremConnectorsResult> getOnpremConnectorsPlain(GetOnpremConnectorsPlainArgs args, InvokeOptions options) {
@@ -2875,6 +9109,34 @@ public final class DataSafeFunctions {
      * Gets a report by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
+     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportResult> getReport(GetReportArgs args) {
@@ -2886,6 +9148,34 @@ public final class DataSafeFunctions {
      * Gets a report by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
+     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportResult> getReportPlain(GetReportPlainArgs args) {
@@ -2897,6 +9187,34 @@ public final class DataSafeFunctions {
      * Gets a report by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
+     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportResult> getReport(GetReportArgs args, InvokeOptions options) {
@@ -2908,6 +9226,34 @@ public final class DataSafeFunctions {
      * Gets a report by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
+     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportResult> getReportPlain(GetReportPlainArgs args, InvokeOptions options) {
@@ -2919,6 +9265,34 @@ public final class DataSafeFunctions {
      * Downloads the specified report in the form of PDF or XLXS.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
+     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportContentResult> getReportContent(GetReportContentArgs args) {
@@ -2930,6 +9304,34 @@ public final class DataSafeFunctions {
      * Downloads the specified report in the form of PDF or XLXS.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
+     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportContentResult> getReportContentPlain(GetReportContentPlainArgs args) {
@@ -2941,6 +9343,34 @@ public final class DataSafeFunctions {
      * Downloads the specified report in the form of PDF or XLXS.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
+     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportContentResult> getReportContent(GetReportContentArgs args, InvokeOptions options) {
@@ -2952,6 +9382,34 @@ public final class DataSafeFunctions {
      * Downloads the specified report in the form of PDF or XLXS.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
+     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportContentResult> getReportContentPlain(GetReportContentPlainArgs args, InvokeOptions options) {
@@ -2963,6 +9421,34 @@ public final class DataSafeFunctions {
      * Gets the details of report definition specified by the identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
+     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportDefinitionResult> getReportDefinition(GetReportDefinitionArgs args) {
@@ -2974,6 +9460,34 @@ public final class DataSafeFunctions {
      * Gets the details of report definition specified by the identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
+     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportDefinitionResult> getReportDefinitionPlain(GetReportDefinitionPlainArgs args) {
@@ -2985,6 +9499,34 @@ public final class DataSafeFunctions {
      * Gets the details of report definition specified by the identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
+     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportDefinitionResult> getReportDefinition(GetReportDefinitionArgs args, InvokeOptions options) {
@@ -2996,6 +9538,34 @@ public final class DataSafeFunctions {
      * Gets the details of report definition specified by the identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
+     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportDefinitionResult> getReportDefinitionPlain(GetReportDefinitionPlainArgs args, InvokeOptions options) {
@@ -3009,6 +9579,41 @@ public final class DataSafeFunctions {
      * It also returns the seeded report definitions which are available to all the compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportDefinitions = DataSafeFunctions.getReportDefinitions(GetReportDefinitionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.report_definition_access_level())
+     *             .category(var_.report_definition_category())
+     *             .compartmentIdInSubtree(var_.report_definition_compartment_id_in_subtree())
+     *             .dataSource(var_.report_definition_data_source())
+     *             .displayName(var_.report_definition_display_name())
+     *             .isSeeded(var_.report_definition_is_seeded())
+     *             .state(var_.report_definition_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportDefinitionsResult> getReportDefinitions(GetReportDefinitionsArgs args) {
@@ -3022,6 +9627,41 @@ public final class DataSafeFunctions {
      * It also returns the seeded report definitions which are available to all the compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportDefinitions = DataSafeFunctions.getReportDefinitions(GetReportDefinitionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.report_definition_access_level())
+     *             .category(var_.report_definition_category())
+     *             .compartmentIdInSubtree(var_.report_definition_compartment_id_in_subtree())
+     *             .dataSource(var_.report_definition_data_source())
+     *             .displayName(var_.report_definition_display_name())
+     *             .isSeeded(var_.report_definition_is_seeded())
+     *             .state(var_.report_definition_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportDefinitionsResult> getReportDefinitionsPlain(GetReportDefinitionsPlainArgs args) {
@@ -3035,6 +9675,41 @@ public final class DataSafeFunctions {
      * It also returns the seeded report definitions which are available to all the compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportDefinitions = DataSafeFunctions.getReportDefinitions(GetReportDefinitionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.report_definition_access_level())
+     *             .category(var_.report_definition_category())
+     *             .compartmentIdInSubtree(var_.report_definition_compartment_id_in_subtree())
+     *             .dataSource(var_.report_definition_data_source())
+     *             .displayName(var_.report_definition_display_name())
+     *             .isSeeded(var_.report_definition_is_seeded())
+     *             .state(var_.report_definition_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportDefinitionsResult> getReportDefinitions(GetReportDefinitionsArgs args, InvokeOptions options) {
@@ -3048,6 +9723,41 @@ public final class DataSafeFunctions {
      * It also returns the seeded report definitions which are available to all the compartments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReportDefinitions = DataSafeFunctions.getReportDefinitions(GetReportDefinitionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.report_definition_access_level())
+     *             .category(var_.report_definition_category())
+     *             .compartmentIdInSubtree(var_.report_definition_compartment_id_in_subtree())
+     *             .dataSource(var_.report_definition_data_source())
+     *             .displayName(var_.report_definition_display_name())
+     *             .isSeeded(var_.report_definition_is_seeded())
+     *             .state(var_.report_definition_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportDefinitionsResult> getReportDefinitionsPlain(GetReportDefinitionsPlainArgs args, InvokeOptions options) {
@@ -3059,6 +9769,39 @@ public final class DataSafeFunctions {
      * Gets a list of all the reports in the compartment. It contains information such as report generation time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReports = DataSafeFunctions.getReports(GetReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.report_access_level())
+     *             .compartmentIdInSubtree(var_.report_compartment_id_in_subtree())
+     *             .displayName(var_.report_display_name())
+     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .state(var_.report_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportsResult> getReports(GetReportsArgs args) {
@@ -3070,6 +9813,39 @@ public final class DataSafeFunctions {
      * Gets a list of all the reports in the compartment. It contains information such as report generation time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReports = DataSafeFunctions.getReports(GetReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.report_access_level())
+     *             .compartmentIdInSubtree(var_.report_compartment_id_in_subtree())
+     *             .displayName(var_.report_display_name())
+     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .state(var_.report_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportsResult> getReportsPlain(GetReportsPlainArgs args) {
@@ -3081,6 +9857,39 @@ public final class DataSafeFunctions {
      * Gets a list of all the reports in the compartment. It contains information such as report generation time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReports = DataSafeFunctions.getReports(GetReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.report_access_level())
+     *             .compartmentIdInSubtree(var_.report_compartment_id_in_subtree())
+     *             .displayName(var_.report_display_name())
+     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .state(var_.report_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReportsResult> getReports(GetReportsArgs args, InvokeOptions options) {
@@ -3092,6 +9901,39 @@ public final class DataSafeFunctions {
      * Gets a list of all the reports in the compartment. It contains information such as report generation time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReports = DataSafeFunctions.getReports(GetReportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.report_access_level())
+     *             .compartmentIdInSubtree(var_.report_compartment_id_in_subtree())
+     *             .displayName(var_.report_display_name())
+     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .state(var_.report_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReportsResult> getReportsPlain(GetReportsPlainArgs args, InvokeOptions options) {
@@ -3103,6 +9945,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified security assessment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityAssessmentResult> getSecurityAssessment(GetSecurityAssessmentArgs args) {
@@ -3114,6 +9984,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified security assessment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentResult> getSecurityAssessmentPlain(GetSecurityAssessmentPlainArgs args) {
@@ -3125,6 +10023,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified security assessment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityAssessmentResult> getSecurityAssessment(GetSecurityAssessmentArgs args, InvokeOptions options) {
@@ -3136,6 +10062,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified security assessment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentResult> getSecurityAssessmentPlain(GetSecurityAssessmentPlainArgs args, InvokeOptions options) {
@@ -3147,6 +10101,35 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report on the security assessments submitted for comparison.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityAssessmentComparisonResult> getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs args) {
@@ -3158,6 +10141,35 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report on the security assessments submitted for comparison.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentComparisonResult> getSecurityAssessmentComparisonPlain(GetSecurityAssessmentComparisonPlainArgs args) {
@@ -3169,6 +10181,35 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report on the security assessments submitted for comparison.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityAssessmentComparisonResult> getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs args, InvokeOptions options) {
@@ -3180,6 +10221,35 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report on the security assessments submitted for comparison.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentComparisonResult> getSecurityAssessmentComparisonPlain(GetSecurityAssessmentComparisonPlainArgs args, InvokeOptions options) {
@@ -3203,6 +10273,38 @@ public final class DataSafeFunctions {
      * List all the findings from all the targets in the specified assessment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindings = DataSafeFunctions.getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .accessLevel(var_.security_assessment_finding_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_finding_compartment_id_in_subtree())
+     *             .findingKey(var_.security_assessment_finding_finding_key())
+     *             .severity(var_.security_assessment_finding_severity())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs args) {
@@ -3214,6 +10316,38 @@ public final class DataSafeFunctions {
      * List all the findings from all the targets in the specified assessment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindings = DataSafeFunctions.getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .accessLevel(var_.security_assessment_finding_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_finding_compartment_id_in_subtree())
+     *             .findingKey(var_.security_assessment_finding_finding_key())
+     *             .severity(var_.security_assessment_finding_severity())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindingsPlain(GetSecurityAssessmentFindingsPlainArgs args) {
@@ -3225,6 +10359,38 @@ public final class DataSafeFunctions {
      * List all the findings from all the targets in the specified assessment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindings = DataSafeFunctions.getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .accessLevel(var_.security_assessment_finding_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_finding_compartment_id_in_subtree())
+     *             .findingKey(var_.security_assessment_finding_finding_key())
+     *             .severity(var_.security_assessment_finding_severity())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs args, InvokeOptions options) {
@@ -3236,6 +10402,38 @@ public final class DataSafeFunctions {
      * List all the findings from all the targets in the specified assessment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentFindings = DataSafeFunctions.getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs.builder()
+     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .accessLevel(var_.security_assessment_finding_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_finding_compartment_id_in_subtree())
+     *             .findingKey(var_.security_assessment_finding_finding_key())
+     *             .severity(var_.security_assessment_finding_severity())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindingsPlain(GetSecurityAssessmentFindingsPlainArgs args, InvokeOptions options) {
@@ -3261,6 +10459,46 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessments = DataSafeFunctions.getSecurityAssessments(GetSecurityAssessmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_compartment_id_in_subtree())
+     *             .displayName(var_.security_assessment_display_name())
+     *             .isBaseline(var_.security_assessment_is_baseline())
+     *             .isScheduleAssessment(var_.security_assessment_is_schedule_assessment())
+     *             .scheduleAssessmentId(oci_data_safe_schedule_assessment.test_schedule_assessment().id())
+     *             .state(var_.security_assessment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.security_assessment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.security_assessment_time_created_less_than())
+     *             .triggeredBy(var_.security_assessment_triggered_by())
+     *             .type(var_.security_assessment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityAssessmentsResult> getSecurityAssessments(GetSecurityAssessmentsArgs args) {
@@ -3286,6 +10524,46 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessments = DataSafeFunctions.getSecurityAssessments(GetSecurityAssessmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_compartment_id_in_subtree())
+     *             .displayName(var_.security_assessment_display_name())
+     *             .isBaseline(var_.security_assessment_is_baseline())
+     *             .isScheduleAssessment(var_.security_assessment_is_schedule_assessment())
+     *             .scheduleAssessmentId(oci_data_safe_schedule_assessment.test_schedule_assessment().id())
+     *             .state(var_.security_assessment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.security_assessment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.security_assessment_time_created_less_than())
+     *             .triggeredBy(var_.security_assessment_triggered_by())
+     *             .type(var_.security_assessment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentsResult> getSecurityAssessmentsPlain(GetSecurityAssessmentsPlainArgs args) {
@@ -3311,6 +10589,46 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessments = DataSafeFunctions.getSecurityAssessments(GetSecurityAssessmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_compartment_id_in_subtree())
+     *             .displayName(var_.security_assessment_display_name())
+     *             .isBaseline(var_.security_assessment_is_baseline())
+     *             .isScheduleAssessment(var_.security_assessment_is_schedule_assessment())
+     *             .scheduleAssessmentId(oci_data_safe_schedule_assessment.test_schedule_assessment().id())
+     *             .state(var_.security_assessment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.security_assessment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.security_assessment_time_created_less_than())
+     *             .triggeredBy(var_.security_assessment_triggered_by())
+     *             .type(var_.security_assessment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityAssessmentsResult> getSecurityAssessments(GetSecurityAssessmentsArgs args, InvokeOptions options) {
@@ -3336,6 +10654,46 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessments = DataSafeFunctions.getSecurityAssessments(GetSecurityAssessmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.security_assessment_access_level())
+     *             .compartmentIdInSubtree(var_.security_assessment_compartment_id_in_subtree())
+     *             .displayName(var_.security_assessment_display_name())
+     *             .isBaseline(var_.security_assessment_is_baseline())
+     *             .isScheduleAssessment(var_.security_assessment_is_schedule_assessment())
+     *             .scheduleAssessmentId(oci_data_safe_schedule_assessment.test_schedule_assessment().id())
+     *             .state(var_.security_assessment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.security_assessment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.security_assessment_time_created_less_than())
+     *             .triggeredBy(var_.security_assessment_triggered_by())
+     *             .type(var_.security_assessment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentsResult> getSecurityAssessmentsPlain(GetSecurityAssessmentsPlainArgs args, InvokeOptions options) {
@@ -3347,6 +10705,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive data model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveDataModelResult> getSensitiveDataModel(GetSensitiveDataModelArgs args) {
@@ -3358,6 +10744,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive data model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelResult> getSensitiveDataModelPlain(GetSensitiveDataModelPlainArgs args) {
@@ -3369,6 +10783,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive data model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveDataModelResult> getSensitiveDataModel(GetSensitiveDataModelArgs args, InvokeOptions options) {
@@ -3380,6 +10822,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive data model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelResult> getSensitiveDataModelPlain(GetSensitiveDataModelPlainArgs args, InvokeOptions options) {
@@ -3391,6 +10861,42 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive data models based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModels = DataSafeFunctions.getSensitiveDataModels(GetSensitiveDataModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.sensitive_data_model_access_level())
+     *             .compartmentIdInSubtree(var_.sensitive_data_model_compartment_id_in_subtree())
+     *             .displayName(var_.sensitive_data_model_display_name())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .state(var_.sensitive_data_model_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_model_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_data_model_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveDataModelsResult> getSensitiveDataModels(GetSensitiveDataModelsArgs args) {
@@ -3402,6 +10908,42 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive data models based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModels = DataSafeFunctions.getSensitiveDataModels(GetSensitiveDataModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.sensitive_data_model_access_level())
+     *             .compartmentIdInSubtree(var_.sensitive_data_model_compartment_id_in_subtree())
+     *             .displayName(var_.sensitive_data_model_display_name())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .state(var_.sensitive_data_model_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_model_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_data_model_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsResult> getSensitiveDataModelsPlain(GetSensitiveDataModelsPlainArgs args) {
@@ -3413,6 +10955,42 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive data models based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModels = DataSafeFunctions.getSensitiveDataModels(GetSensitiveDataModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.sensitive_data_model_access_level())
+     *             .compartmentIdInSubtree(var_.sensitive_data_model_compartment_id_in_subtree())
+     *             .displayName(var_.sensitive_data_model_display_name())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .state(var_.sensitive_data_model_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_model_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_data_model_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveDataModelsResult> getSensitiveDataModels(GetSensitiveDataModelsArgs args, InvokeOptions options) {
@@ -3424,6 +11002,42 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive data models based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModels = DataSafeFunctions.getSensitiveDataModels(GetSensitiveDataModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.sensitive_data_model_access_level())
+     *             .compartmentIdInSubtree(var_.sensitive_data_model_compartment_id_in_subtree())
+     *             .displayName(var_.sensitive_data_model_display_name())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .state(var_.sensitive_data_model_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_model_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_data_model_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsResult> getSensitiveDataModelsPlain(GetSensitiveDataModelsPlainArgs args, InvokeOptions options) {
@@ -3435,6 +11049,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive column.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
+     *             .sensitiveColumnKey(var_.sensitive_data_models_sensitive_column_sensitive_column_key())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveDataModelsSensitiveColumnResult> getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs args) {
@@ -3446,6 +11089,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive column.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
+     *             .sensitiveColumnKey(var_.sensitive_data_models_sensitive_column_sensitive_column_key())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsSensitiveColumnResult> getSensitiveDataModelsSensitiveColumnPlain(GetSensitiveDataModelsSensitiveColumnPlainArgs args) {
@@ -3457,6 +11129,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive column.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
+     *             .sensitiveColumnKey(var_.sensitive_data_models_sensitive_column_sensitive_column_key())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveDataModelsSensitiveColumnResult> getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs args, InvokeOptions options) {
@@ -3468,6 +11169,35 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive column.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
+     *             .sensitiveColumnKey(var_.sensitive_data_models_sensitive_column_sensitive_column_key())
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsSensitiveColumnResult> getSensitiveDataModelsSensitiveColumnPlain(GetSensitiveDataModelsSensitiveColumnPlainArgs args, InvokeOptions options) {
@@ -3479,6 +11209,49 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .columnGroup(var_.sensitive_data_models_sensitive_column_column_group())
+     *             .columnNames(var_.sensitive_data_models_sensitive_column_column_name())
+     *             .dataTypes(var_.sensitive_data_models_sensitive_column_data_type())
+     *             .objects(var_.sensitive_data_models_sensitive_column_object())
+     *             .objectTypes(var_.sensitive_data_models_sensitive_column_object_type())
+     *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_key())
+     *             .relationTypes(var_.sensitive_data_models_sensitive_column_relation_type())
+     *             .schemaNames(var_.sensitive_data_models_sensitive_column_schema_name())
+     *             .sensitiveColumnLifecycleState(var_.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state())
+     *             .sensitiveTypeIds(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .statuses(var_.sensitive_data_models_sensitive_column_status())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_data_models_sensitive_column_time_created_less_than())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.sensitive_data_models_sensitive_column_time_updated_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveDataModelsSensitiveColumnsResult> getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs args) {
@@ -3490,6 +11263,49 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .columnGroup(var_.sensitive_data_models_sensitive_column_column_group())
+     *             .columnNames(var_.sensitive_data_models_sensitive_column_column_name())
+     *             .dataTypes(var_.sensitive_data_models_sensitive_column_data_type())
+     *             .objects(var_.sensitive_data_models_sensitive_column_object())
+     *             .objectTypes(var_.sensitive_data_models_sensitive_column_object_type())
+     *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_key())
+     *             .relationTypes(var_.sensitive_data_models_sensitive_column_relation_type())
+     *             .schemaNames(var_.sensitive_data_models_sensitive_column_schema_name())
+     *             .sensitiveColumnLifecycleState(var_.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state())
+     *             .sensitiveTypeIds(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .statuses(var_.sensitive_data_models_sensitive_column_status())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_data_models_sensitive_column_time_created_less_than())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.sensitive_data_models_sensitive_column_time_updated_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsSensitiveColumnsResult> getSensitiveDataModelsSensitiveColumnsPlain(GetSensitiveDataModelsSensitiveColumnsPlainArgs args) {
@@ -3501,6 +11317,49 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .columnGroup(var_.sensitive_data_models_sensitive_column_column_group())
+     *             .columnNames(var_.sensitive_data_models_sensitive_column_column_name())
+     *             .dataTypes(var_.sensitive_data_models_sensitive_column_data_type())
+     *             .objects(var_.sensitive_data_models_sensitive_column_object())
+     *             .objectTypes(var_.sensitive_data_models_sensitive_column_object_type())
+     *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_key())
+     *             .relationTypes(var_.sensitive_data_models_sensitive_column_relation_type())
+     *             .schemaNames(var_.sensitive_data_models_sensitive_column_schema_name())
+     *             .sensitiveColumnLifecycleState(var_.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state())
+     *             .sensitiveTypeIds(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .statuses(var_.sensitive_data_models_sensitive_column_status())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_data_models_sensitive_column_time_created_less_than())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.sensitive_data_models_sensitive_column_time_updated_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveDataModelsSensitiveColumnsResult> getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs args, InvokeOptions options) {
@@ -3512,6 +11371,49 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
+     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .columnGroup(var_.sensitive_data_models_sensitive_column_column_group())
+     *             .columnNames(var_.sensitive_data_models_sensitive_column_column_name())
+     *             .dataTypes(var_.sensitive_data_models_sensitive_column_data_type())
+     *             .objects(var_.sensitive_data_models_sensitive_column_object())
+     *             .objectTypes(var_.sensitive_data_models_sensitive_column_object_type())
+     *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_key())
+     *             .relationTypes(var_.sensitive_data_models_sensitive_column_relation_type())
+     *             .schemaNames(var_.sensitive_data_models_sensitive_column_schema_name())
+     *             .sensitiveColumnLifecycleState(var_.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state())
+     *             .sensitiveTypeIds(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .statuses(var_.sensitive_data_models_sensitive_column_status())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_data_models_sensitive_column_time_created_less_than())
+     *             .timeUpdatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to())
+     *             .timeUpdatedLessThan(var_.sensitive_data_models_sensitive_column_time_updated_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelsSensitiveColumnsResult> getSensitiveDataModelsSensitiveColumnsPlain(GetSensitiveDataModelsSensitiveColumnsPlainArgs args, InvokeOptions options) {
@@ -3523,6 +11425,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive type.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveTypeResult> getSensitiveType(GetSensitiveTypeArgs args) {
@@ -3534,6 +11464,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive type.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveTypeResult> getSensitiveTypePlain(GetSensitiveTypePlainArgs args) {
@@ -3545,6 +11503,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive type.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveTypeResult> getSensitiveType(GetSensitiveTypeArgs args, InvokeOptions options) {
@@ -3556,6 +11542,34 @@ public final class DataSafeFunctions {
      * Gets the details of the specified sensitive type.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveTypeResult> getSensitiveTypePlain(GetSensitiveTypePlainArgs args, InvokeOptions options) {
@@ -3567,6 +11581,45 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive types based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypes = DataSafeFunctions.getSensitiveTypes(GetSensitiveTypesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.sensitive_type_access_level())
+     *             .compartmentIdInSubtree(var_.sensitive_type_compartment_id_in_subtree())
+     *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
+     *             .displayName(var_.sensitive_type_display_name())
+     *             .entityType(var_.sensitive_type_entity_type())
+     *             .parentCategoryId(oci_marketplace_category.test_category().id())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
+     *             .state(var_.sensitive_type_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_type_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_type_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveTypesResult> getSensitiveTypes(GetSensitiveTypesArgs args) {
@@ -3578,6 +11631,45 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive types based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypes = DataSafeFunctions.getSensitiveTypes(GetSensitiveTypesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.sensitive_type_access_level())
+     *             .compartmentIdInSubtree(var_.sensitive_type_compartment_id_in_subtree())
+     *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
+     *             .displayName(var_.sensitive_type_display_name())
+     *             .entityType(var_.sensitive_type_entity_type())
+     *             .parentCategoryId(oci_marketplace_category.test_category().id())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
+     *             .state(var_.sensitive_type_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_type_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_type_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveTypesResult> getSensitiveTypesPlain(GetSensitiveTypesPlainArgs args) {
@@ -3589,6 +11681,45 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive types based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypes = DataSafeFunctions.getSensitiveTypes(GetSensitiveTypesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.sensitive_type_access_level())
+     *             .compartmentIdInSubtree(var_.sensitive_type_compartment_id_in_subtree())
+     *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
+     *             .displayName(var_.sensitive_type_display_name())
+     *             .entityType(var_.sensitive_type_entity_type())
+     *             .parentCategoryId(oci_marketplace_category.test_category().id())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
+     *             .state(var_.sensitive_type_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_type_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_type_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSensitiveTypesResult> getSensitiveTypes(GetSensitiveTypesArgs args, InvokeOptions options) {
@@ -3600,6 +11731,45 @@ public final class DataSafeFunctions {
      * Gets a list of sensitive types based on the specified query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveTypes = DataSafeFunctions.getSensitiveTypes(GetSensitiveTypesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.sensitive_type_access_level())
+     *             .compartmentIdInSubtree(var_.sensitive_type_compartment_id_in_subtree())
+     *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
+     *             .displayName(var_.sensitive_type_display_name())
+     *             .entityType(var_.sensitive_type_entity_type())
+     *             .parentCategoryId(oci_marketplace_category.test_category().id())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
+     *             .state(var_.sensitive_type_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_type_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.sensitive_type_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSensitiveTypesResult> getSensitiveTypesPlain(GetSensitiveTypesPlainArgs args, InvokeOptions options) {
@@ -3611,6 +11781,34 @@ public final class DataSafeFunctions {
      * Gets the details of target-alert policy association by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
+     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationResult> getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs args) {
@@ -3622,6 +11820,34 @@ public final class DataSafeFunctions {
      * Gets the details of target-alert policy association by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
+     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationResult> getTargetAlertPolicyAssociationPlain(GetTargetAlertPolicyAssociationPlainArgs args) {
@@ -3633,6 +11859,34 @@ public final class DataSafeFunctions {
      * Gets the details of target-alert policy association by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
+     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationResult> getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs args, InvokeOptions options) {
@@ -3644,6 +11898,34 @@ public final class DataSafeFunctions {
      * Gets the details of target-alert policy association by its ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
+     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationResult> getTargetAlertPolicyAssociationPlain(GetTargetAlertPolicyAssociationPlainArgs args, InvokeOptions options) {
@@ -3655,6 +11937,42 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_alert_policy_association_access_level())
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .compartmentIdInSubtree(var_.target_alert_policy_association_compartment_id_in_subtree())
+     *             .state(var_.target_alert_policy_association_state())
+     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.target_alert_policy_association_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.target_alert_policy_association_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args) {
@@ -3666,6 +11984,42 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_alert_policy_association_access_level())
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .compartmentIdInSubtree(var_.target_alert_policy_association_compartment_id_in_subtree())
+     *             .state(var_.target_alert_policy_association_state())
+     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.target_alert_policy_association_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.target_alert_policy_association_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociationsPlain(GetTargetAlertPolicyAssociationsPlainArgs args) {
@@ -3677,6 +12031,42 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_alert_policy_association_access_level())
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .compartmentIdInSubtree(var_.target_alert_policy_association_compartment_id_in_subtree())
+     *             .state(var_.target_alert_policy_association_state())
+     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.target_alert_policy_association_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.target_alert_policy_association_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args, InvokeOptions options) {
@@ -3688,6 +12078,42 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_alert_policy_association_access_level())
+     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .compartmentIdInSubtree(var_.target_alert_policy_association_compartment_id_in_subtree())
+     *             .state(var_.target_alert_policy_association_state())
+     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.target_alert_policy_association_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.target_alert_policy_association_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociationsPlain(GetTargetAlertPolicyAssociationsPlainArgs args, InvokeOptions options) {
@@ -3699,6 +12125,34 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe target database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabaseResult> getTargetDatabase(GetTargetDatabaseArgs args) {
@@ -3710,6 +12164,34 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe target database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabaseResult> getTargetDatabasePlain(GetTargetDatabasePlainArgs args) {
@@ -3721,6 +12203,34 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe target database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabaseResult> getTargetDatabase(GetTargetDatabaseArgs args, InvokeOptions options) {
@@ -3732,6 +12242,34 @@ public final class DataSafeFunctions {
      * Returns the details of the specified Data Safe target database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabaseResult> getTargetDatabasePlain(GetTargetDatabasePlainArgs args, InvokeOptions options) {
@@ -3755,6 +12293,38 @@ public final class DataSafeFunctions {
      * Returns a list of role metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .authenticationType(var_.target_database_role_authentication_type())
+     *             .isOracleMaintained(var_.target_database_role_is_oracle_maintained())
+     *             .roleNames(var_.target_database_role_role_name())
+     *             .roleNameContains(var_.target_database_role_role_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabaseRolesResult> getTargetDatabaseRoles(GetTargetDatabaseRolesArgs args) {
@@ -3766,6 +12336,38 @@ public final class DataSafeFunctions {
      * Returns a list of role metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .authenticationType(var_.target_database_role_authentication_type())
+     *             .isOracleMaintained(var_.target_database_role_is_oracle_maintained())
+     *             .roleNames(var_.target_database_role_role_name())
+     *             .roleNameContains(var_.target_database_role_role_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabaseRolesResult> getTargetDatabaseRolesPlain(GetTargetDatabaseRolesPlainArgs args) {
@@ -3777,6 +12379,38 @@ public final class DataSafeFunctions {
      * Returns a list of role metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .authenticationType(var_.target_database_role_authentication_type())
+     *             .isOracleMaintained(var_.target_database_role_is_oracle_maintained())
+     *             .roleNames(var_.target_database_role_role_name())
+     *             .roleNameContains(var_.target_database_role_role_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabaseRolesResult> getTargetDatabaseRoles(GetTargetDatabaseRolesArgs args, InvokeOptions options) {
@@ -3788,6 +12422,38 @@ public final class DataSafeFunctions {
      * Returns a list of role metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .authenticationType(var_.target_database_role_authentication_type())
+     *             .isOracleMaintained(var_.target_database_role_is_oracle_maintained())
+     *             .roleNames(var_.target_database_role_role_name())
+     *             .roleNameContains(var_.target_database_role_role_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabaseRolesResult> getTargetDatabaseRolesPlain(GetTargetDatabaseRolesPlainArgs args, InvokeOptions options) {
@@ -3799,6 +12465,42 @@ public final class DataSafeFunctions {
      * Returns the list of registered target databases in Data Safe.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_database_access_level())
+     *             .associatedResourceId(oci_data_safe_associated_resource.test_associated_resource().id())
+     *             .compartmentIdInSubtree(var_.target_database_compartment_id_in_subtree())
+     *             .databaseType(var_.target_database_database_type())
+     *             .displayName(var_.target_database_display_name())
+     *             .infrastructureType(var_.target_database_infrastructure_type())
+     *             .state(var_.target_database_state())
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabasesResult> getTargetDatabases(GetTargetDatabasesArgs args) {
@@ -3810,6 +12512,42 @@ public final class DataSafeFunctions {
      * Returns the list of registered target databases in Data Safe.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_database_access_level())
+     *             .associatedResourceId(oci_data_safe_associated_resource.test_associated_resource().id())
+     *             .compartmentIdInSubtree(var_.target_database_compartment_id_in_subtree())
+     *             .databaseType(var_.target_database_database_type())
+     *             .displayName(var_.target_database_display_name())
+     *             .infrastructureType(var_.target_database_infrastructure_type())
+     *             .state(var_.target_database_state())
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabasesResult> getTargetDatabasesPlain(GetTargetDatabasesPlainArgs args) {
@@ -3821,6 +12559,42 @@ public final class DataSafeFunctions {
      * Returns the list of registered target databases in Data Safe.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_database_access_level())
+     *             .associatedResourceId(oci_data_safe_associated_resource.test_associated_resource().id())
+     *             .compartmentIdInSubtree(var_.target_database_compartment_id_in_subtree())
+     *             .databaseType(var_.target_database_database_type())
+     *             .displayName(var_.target_database_display_name())
+     *             .infrastructureType(var_.target_database_infrastructure_type())
+     *             .state(var_.target_database_state())
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabasesResult> getTargetDatabases(GetTargetDatabasesArgs args, InvokeOptions options) {
@@ -3832,6 +12606,42 @@ public final class DataSafeFunctions {
      * Returns the list of registered target databases in Data Safe.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_database_access_level())
+     *             .associatedResourceId(oci_data_safe_associated_resource.test_associated_resource().id())
+     *             .compartmentIdInSubtree(var_.target_database_compartment_id_in_subtree())
+     *             .databaseType(var_.target_database_database_type())
+     *             .displayName(var_.target_database_display_name())
+     *             .infrastructureType(var_.target_database_infrastructure_type())
+     *             .state(var_.target_database_state())
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabasesResult> getTargetDatabasesPlain(GetTargetDatabasesPlainArgs args, InvokeOptions options) {
@@ -3843,6 +12653,41 @@ public final class DataSafeFunctions {
      * Returns a list of column metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .columnNames(var_.target_databases_column_column_name())
+     *             .columnNameContains(var_.target_databases_column_column_name_contains())
+     *             .datatypes(var_.target_databases_column_datatype())
+     *             .schemaNames(var_.target_databases_column_schema_name())
+     *             .schemaNameContains(var_.target_databases_column_schema_name_contains())
+     *             .tableNames(oci_nosql_table.test_table().name())
+     *             .tableNameContains(var_.target_databases_column_table_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabasesColumnsResult> getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs args) {
@@ -3854,6 +12699,41 @@ public final class DataSafeFunctions {
      * Returns a list of column metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .columnNames(var_.target_databases_column_column_name())
+     *             .columnNameContains(var_.target_databases_column_column_name_contains())
+     *             .datatypes(var_.target_databases_column_datatype())
+     *             .schemaNames(var_.target_databases_column_schema_name())
+     *             .schemaNameContains(var_.target_databases_column_schema_name_contains())
+     *             .tableNames(oci_nosql_table.test_table().name())
+     *             .tableNameContains(var_.target_databases_column_table_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabasesColumnsResult> getTargetDatabasesColumnsPlain(GetTargetDatabasesColumnsPlainArgs args) {
@@ -3865,6 +12745,41 @@ public final class DataSafeFunctions {
      * Returns a list of column metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .columnNames(var_.target_databases_column_column_name())
+     *             .columnNameContains(var_.target_databases_column_column_name_contains())
+     *             .datatypes(var_.target_databases_column_datatype())
+     *             .schemaNames(var_.target_databases_column_schema_name())
+     *             .schemaNameContains(var_.target_databases_column_schema_name_contains())
+     *             .tableNames(oci_nosql_table.test_table().name())
+     *             .tableNameContains(var_.target_databases_column_table_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabasesColumnsResult> getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs args, InvokeOptions options) {
@@ -3876,6 +12791,41 @@ public final class DataSafeFunctions {
      * Returns a list of column metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .columnNames(var_.target_databases_column_column_name())
+     *             .columnNameContains(var_.target_databases_column_column_name_contains())
+     *             .datatypes(var_.target_databases_column_datatype())
+     *             .schemaNames(var_.target_databases_column_schema_name())
+     *             .schemaNameContains(var_.target_databases_column_schema_name_contains())
+     *             .tableNames(oci_nosql_table.test_table().name())
+     *             .tableNameContains(var_.target_databases_column_table_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabasesColumnsResult> getTargetDatabasesColumnsPlain(GetTargetDatabasesColumnsPlainArgs args, InvokeOptions options) {
@@ -3887,6 +12837,37 @@ public final class DataSafeFunctions {
      * Returns list of schema.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .isOracleMaintained(var_.target_databases_schema_is_oracle_maintained())
+     *             .schemaNames(var_.target_databases_schema_schema_name())
+     *             .schemaNameContains(var_.target_databases_schema_schema_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabasesSchemasResult> getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs args) {
@@ -3898,6 +12879,37 @@ public final class DataSafeFunctions {
      * Returns list of schema.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .isOracleMaintained(var_.target_databases_schema_is_oracle_maintained())
+     *             .schemaNames(var_.target_databases_schema_schema_name())
+     *             .schemaNameContains(var_.target_databases_schema_schema_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabasesSchemasResult> getTargetDatabasesSchemasPlain(GetTargetDatabasesSchemasPlainArgs args) {
@@ -3909,6 +12921,37 @@ public final class DataSafeFunctions {
      * Returns list of schema.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .isOracleMaintained(var_.target_databases_schema_is_oracle_maintained())
+     *             .schemaNames(var_.target_databases_schema_schema_name())
+     *             .schemaNameContains(var_.target_databases_schema_schema_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabasesSchemasResult> getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs args, InvokeOptions options) {
@@ -3920,6 +12963,37 @@ public final class DataSafeFunctions {
      * Returns list of schema.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .isOracleMaintained(var_.target_databases_schema_is_oracle_maintained())
+     *             .schemaNames(var_.target_databases_schema_schema_name())
+     *             .schemaNameContains(var_.target_databases_schema_schema_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabasesSchemasResult> getTargetDatabasesSchemasPlain(GetTargetDatabasesSchemasPlainArgs args, InvokeOptions options) {
@@ -3931,6 +13005,38 @@ public final class DataSafeFunctions {
      * Returns a list of table metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .schemaNames(var_.target_databases_table_schema_name())
+     *             .schemaNameContains(var_.target_databases_table_schema_name_contains())
+     *             .tableNames(oci_nosql_table.test_table().name())
+     *             .tableNameContains(var_.target_databases_table_table_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabasesTablesResult> getTargetDatabasesTables(GetTargetDatabasesTablesArgs args) {
@@ -3942,6 +13048,38 @@ public final class DataSafeFunctions {
      * Returns a list of table metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .schemaNames(var_.target_databases_table_schema_name())
+     *             .schemaNameContains(var_.target_databases_table_schema_name_contains())
+     *             .tableNames(oci_nosql_table.test_table().name())
+     *             .tableNameContains(var_.target_databases_table_table_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabasesTablesResult> getTargetDatabasesTablesPlain(GetTargetDatabasesTablesPlainArgs args) {
@@ -3953,6 +13091,38 @@ public final class DataSafeFunctions {
      * Returns a list of table metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .schemaNames(var_.target_databases_table_schema_name())
+     *             .schemaNameContains(var_.target_databases_table_schema_name_contains())
+     *             .tableNames(oci_nosql_table.test_table().name())
+     *             .tableNameContains(var_.target_databases_table_table_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTargetDatabasesTablesResult> getTargetDatabasesTables(GetTargetDatabasesTablesArgs args, InvokeOptions options) {
@@ -3964,6 +13134,38 @@ public final class DataSafeFunctions {
      * Returns a list of table metadata objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
+     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .schemaNames(var_.target_databases_table_schema_name())
+     *             .schemaNameContains(var_.target_databases_table_schema_name_contains())
+     *             .tableNames(oci_nosql_table.test_table().name())
+     *             .tableNameContains(var_.target_databases_table_table_name_contains())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTargetDatabasesTablesResult> getTargetDatabasesTablesPlain(GetTargetDatabasesTablesPlainArgs args, InvokeOptions options) {
@@ -3975,6 +13177,34 @@ public final class DataSafeFunctions {
      * Gets a user assessment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentResult> getUserAssessment(GetUserAssessmentArgs args) {
@@ -3986,6 +13216,34 @@ public final class DataSafeFunctions {
      * Gets a user assessment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentResult> getUserAssessmentPlain(GetUserAssessmentPlainArgs args) {
@@ -3997,6 +13255,34 @@ public final class DataSafeFunctions {
      * Gets a user assessment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentResult> getUserAssessment(GetUserAssessmentArgs args, InvokeOptions options) {
@@ -4008,6 +13294,34 @@ public final class DataSafeFunctions {
      * Gets a user assessment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentResult> getUserAssessmentPlain(GetUserAssessmentPlainArgs args, InvokeOptions options) {
@@ -4019,6 +13333,35 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the user assessments provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
+     *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentComparisonResult> getUserAssessmentComparison(GetUserAssessmentComparisonArgs args) {
@@ -4030,6 +13373,35 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the user assessments provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
+     *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentComparisonResult> getUserAssessmentComparisonPlain(GetUserAssessmentComparisonPlainArgs args) {
@@ -4041,6 +13413,35 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the user assessments provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
+     *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentComparisonResult> getUserAssessmentComparison(GetUserAssessmentComparisonArgs args, InvokeOptions options) {
@@ -4052,6 +13453,35 @@ public final class DataSafeFunctions {
      * Gets the details of the comparison report for the user assessments provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
+     *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentComparisonResult> getUserAssessmentComparisonPlain(GetUserAssessmentComparisonPlainArgs args, InvokeOptions options) {
@@ -4077,6 +13507,48 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .accessLevel(var_.user_assessment_user_analytic_access_level())
+     *             .accountStatus(var_.user_assessment_user_analytic_account_status())
+     *             .authenticationType(var_.user_assessment_user_analytic_authentication_type())
+     *             .compartmentIdInSubtree(var_.user_assessment_user_analytic_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to())
+     *             .timeLastLoginLessThan(var_.user_assessment_user_analytic_time_last_login_less_than())
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to())
+     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_analytic_time_password_last_changed_less_than())
+     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to())
+     *             .timeUserCreatedLessThan(var_.user_assessment_user_analytic_time_user_created_less_than())
+     *             .userCategory(var_.user_assessment_user_analytic_user_category())
+     *             .userKey(var_.user_assessment_user_analytic_user_key())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentUserAnalyticsResult> getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs args) {
@@ -4102,6 +13574,48 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .accessLevel(var_.user_assessment_user_analytic_access_level())
+     *             .accountStatus(var_.user_assessment_user_analytic_account_status())
+     *             .authenticationType(var_.user_assessment_user_analytic_authentication_type())
+     *             .compartmentIdInSubtree(var_.user_assessment_user_analytic_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to())
+     *             .timeLastLoginLessThan(var_.user_assessment_user_analytic_time_last_login_less_than())
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to())
+     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_analytic_time_password_last_changed_less_than())
+     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to())
+     *             .timeUserCreatedLessThan(var_.user_assessment_user_analytic_time_user_created_less_than())
+     *             .userCategory(var_.user_assessment_user_analytic_user_category())
+     *             .userKey(var_.user_assessment_user_analytic_user_key())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentUserAnalyticsResult> getUserAssessmentUserAnalyticsPlain(GetUserAssessmentUserAnalyticsPlainArgs args) {
@@ -4127,6 +13641,48 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .accessLevel(var_.user_assessment_user_analytic_access_level())
+     *             .accountStatus(var_.user_assessment_user_analytic_account_status())
+     *             .authenticationType(var_.user_assessment_user_analytic_authentication_type())
+     *             .compartmentIdInSubtree(var_.user_assessment_user_analytic_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to())
+     *             .timeLastLoginLessThan(var_.user_assessment_user_analytic_time_last_login_less_than())
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to())
+     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_analytic_time_password_last_changed_less_than())
+     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to())
+     *             .timeUserCreatedLessThan(var_.user_assessment_user_analytic_time_user_created_less_than())
+     *             .userCategory(var_.user_assessment_user_analytic_user_category())
+     *             .userKey(var_.user_assessment_user_analytic_user_key())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentUserAnalyticsResult> getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs args, InvokeOptions options) {
@@ -4152,6 +13708,48 @@ public final class DataSafeFunctions {
      * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUserAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .accessLevel(var_.user_assessment_user_analytic_access_level())
+     *             .accountStatus(var_.user_assessment_user_analytic_account_status())
+     *             .authenticationType(var_.user_assessment_user_analytic_authentication_type())
+     *             .compartmentIdInSubtree(var_.user_assessment_user_analytic_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to())
+     *             .timeLastLoginLessThan(var_.user_assessment_user_analytic_time_last_login_less_than())
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to())
+     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_analytic_time_password_last_changed_less_than())
+     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to())
+     *             .timeUserCreatedLessThan(var_.user_assessment_user_analytic_time_user_created_less_than())
+     *             .userCategory(var_.user_assessment_user_analytic_user_category())
+     *             .userKey(var_.user_assessment_user_analytic_user_key())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentUserAnalyticsResult> getUserAssessmentUserAnalyticsPlain(GetUserAssessmentUserAnalyticsPlainArgs args, InvokeOptions options) {
@@ -4166,6 +13764,48 @@ public final class DataSafeFunctions {
      * granted to each user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .accessLevel(var_.user_assessment_user_access_level())
+     *             .accountStatus(var_.user_assessment_user_account_status())
+     *             .authenticationType(var_.user_assessment_user_authentication_type())
+     *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
+     *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_time_password_last_changed_greater_than_or_equal_to())
+     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_time_password_last_changed_less_than())
+     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_time_user_created_greater_than_or_equal_to())
+     *             .timeUserCreatedLessThan(var_.user_assessment_user_time_user_created_less_than())
+     *             .userCategory(var_.user_assessment_user_user_category())
+     *             .userKey(var_.user_assessment_user_user_key())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentUsersResult> getUserAssessmentUsers(GetUserAssessmentUsersArgs args) {
@@ -4180,6 +13820,48 @@ public final class DataSafeFunctions {
      * granted to each user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .accessLevel(var_.user_assessment_user_access_level())
+     *             .accountStatus(var_.user_assessment_user_account_status())
+     *             .authenticationType(var_.user_assessment_user_authentication_type())
+     *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
+     *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_time_password_last_changed_greater_than_or_equal_to())
+     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_time_password_last_changed_less_than())
+     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_time_user_created_greater_than_or_equal_to())
+     *             .timeUserCreatedLessThan(var_.user_assessment_user_time_user_created_less_than())
+     *             .userCategory(var_.user_assessment_user_user_category())
+     *             .userKey(var_.user_assessment_user_user_key())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentUsersResult> getUserAssessmentUsersPlain(GetUserAssessmentUsersPlainArgs args) {
@@ -4194,6 +13876,48 @@ public final class DataSafeFunctions {
      * granted to each user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .accessLevel(var_.user_assessment_user_access_level())
+     *             .accountStatus(var_.user_assessment_user_account_status())
+     *             .authenticationType(var_.user_assessment_user_authentication_type())
+     *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
+     *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_time_password_last_changed_greater_than_or_equal_to())
+     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_time_password_last_changed_less_than())
+     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_time_user_created_greater_than_or_equal_to())
+     *             .timeUserCreatedLessThan(var_.user_assessment_user_time_user_created_less_than())
+     *             .userCategory(var_.user_assessment_user_user_category())
+     *             .userKey(var_.user_assessment_user_user_key())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentUsersResult> getUserAssessmentUsers(GetUserAssessmentUsersArgs args, InvokeOptions options) {
@@ -4208,6 +13932,48 @@ public final class DataSafeFunctions {
      * granted to each user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
+     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .accessLevel(var_.user_assessment_user_access_level())
+     *             .accountStatus(var_.user_assessment_user_account_status())
+     *             .authenticationType(var_.user_assessment_user_authentication_type())
+     *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
+     *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_time_password_last_changed_greater_than_or_equal_to())
+     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_time_password_last_changed_less_than())
+     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_time_user_created_greater_than_or_equal_to())
+     *             .timeUserCreatedLessThan(var_.user_assessment_user_time_user_created_less_than())
+     *             .userCategory(var_.user_assessment_user_user_category())
+     *             .userKey(var_.user_assessment_user_user_key())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentUsersResult> getUserAssessmentUsersPlain(GetUserAssessmentUsersPlainArgs args, InvokeOptions options) {
@@ -4233,6 +13999,46 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessments = DataSafeFunctions.getUserAssessments(GetUserAssessmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.user_assessment_access_level())
+     *             .compartmentIdInSubtree(var_.user_assessment_compartment_id_in_subtree())
+     *             .displayName(var_.user_assessment_display_name())
+     *             .isBaseline(var_.user_assessment_is_baseline())
+     *             .isScheduleAssessment(var_.user_assessment_is_schedule_assessment())
+     *             .scheduleUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .state(var_.user_assessment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.user_assessment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.user_assessment_time_created_less_than())
+     *             .triggeredBy(var_.user_assessment_triggered_by())
+     *             .type(var_.user_assessment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentsResult> getUserAssessments(GetUserAssessmentsArgs args) {
@@ -4258,6 +14064,46 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessments = DataSafeFunctions.getUserAssessments(GetUserAssessmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.user_assessment_access_level())
+     *             .compartmentIdInSubtree(var_.user_assessment_compartment_id_in_subtree())
+     *             .displayName(var_.user_assessment_display_name())
+     *             .isBaseline(var_.user_assessment_is_baseline())
+     *             .isScheduleAssessment(var_.user_assessment_is_schedule_assessment())
+     *             .scheduleUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .state(var_.user_assessment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.user_assessment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.user_assessment_time_created_less_than())
+     *             .triggeredBy(var_.user_assessment_triggered_by())
+     *             .type(var_.user_assessment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentsResult> getUserAssessmentsPlain(GetUserAssessmentsPlainArgs args) {
@@ -4283,6 +14129,46 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessments = DataSafeFunctions.getUserAssessments(GetUserAssessmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.user_assessment_access_level())
+     *             .compartmentIdInSubtree(var_.user_assessment_compartment_id_in_subtree())
+     *             .displayName(var_.user_assessment_display_name())
+     *             .isBaseline(var_.user_assessment_is_baseline())
+     *             .isScheduleAssessment(var_.user_assessment_is_schedule_assessment())
+     *             .scheduleUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .state(var_.user_assessment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.user_assessment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.user_assessment_time_created_less_than())
+     *             .triggeredBy(var_.user_assessment_triggered_by())
+     *             .type(var_.user_assessment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserAssessmentsResult> getUserAssessments(GetUserAssessmentsArgs args, InvokeOptions options) {
@@ -4308,6 +14194,46 @@ public final class DataSafeFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAssessments = DataSafeFunctions.getUserAssessments(GetUserAssessmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.user_assessment_access_level())
+     *             .compartmentIdInSubtree(var_.user_assessment_compartment_id_in_subtree())
+     *             .displayName(var_.user_assessment_display_name())
+     *             .isBaseline(var_.user_assessment_is_baseline())
+     *             .isScheduleAssessment(var_.user_assessment_is_schedule_assessment())
+     *             .scheduleUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .state(var_.user_assessment_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.user_assessment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.user_assessment_time_created_less_than())
+     *             .triggeredBy(var_.user_assessment_triggered_by())
+     *             .type(var_.user_assessment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserAssessmentsResult> getUserAssessmentsPlain(GetUserAssessmentsPlainArgs args, InvokeOptions options) {

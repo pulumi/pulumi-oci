@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJavaFamily = Oci.Jms.GetJavaFamily.Invoke(new()
         ///     {
-        ///         var testJavaFamily = Output.Create(Oci.Jms.GetJavaFamily.InvokeAsync(new Oci.Jms.GetJavaFamilyArgs
-        ///         {
-        ///             FamilyVersion = @var.Java_family_family_version,
-        ///         }));
-        ///     }
+        ///         FamilyVersion = @var.Java_family_family_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJavaFamily = Oci.Jms.GetJavaFamily.Invoke(new()
         ///     {
-        ///         var testJavaFamily = Output.Create(Oci.Jms.GetJavaFamily.InvokeAsync(new Oci.Jms.GetJavaFamilyArgs
-        ///         {
-        ///             FamilyVersion = @var.Java_family_family_version,
-        ///         }));
-        ///     }
+        ///         FamilyVersion = @var.Java_family_family_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetJavaFamilyArgs : Pulumi.InvokeArgs
+    public sealed class GetJavaFamilyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Java family version identifier.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Jms
         public GetJavaFamilyArgs()
         {
         }
+        public static new GetJavaFamilyArgs Empty => new GetJavaFamilyArgs();
     }
 
-    public sealed class GetJavaFamilyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJavaFamilyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Java family version identifier.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Jms
         public GetJavaFamilyInvokeArgs()
         {
         }
+        public static new GetJavaFamilyInvokeArgs Empty => new GetJavaFamilyInvokeArgs();
     }
 
 

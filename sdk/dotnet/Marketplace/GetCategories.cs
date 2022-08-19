@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCategories = Oci.Marketplace.GetCategories.Invoke(new()
         ///     {
-        ///         var testCategories = Output.Create(Oci.Marketplace.GetCategories.InvokeAsync(new Oci.Marketplace.GetCategoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCategories = Oci.Marketplace.GetCategories.Invoke(new()
         ///     {
-        ///         var testCategories = Output.Create(Oci.Marketplace.GetCategories.InvokeAsync(new Oci.Marketplace.GetCategoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Marketplace
     }
 
 
-    public sealed class GetCategoriesArgs : Pulumi.InvokeArgs
+    public sealed class GetCategoriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the compartment.
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Marketplace
         public GetCategoriesArgs()
         {
         }
+        public static new GetCategoriesArgs Empty => new GetCategoriesArgs();
     }
 
-    public sealed class GetCategoriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCategoriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the compartment.
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Marketplace
         public GetCategoriesInvokeArgs()
         {
         }
+        public static new GetCategoriesInvokeArgs Empty => new GetCategoriesInvokeArgs();
     }
 
 

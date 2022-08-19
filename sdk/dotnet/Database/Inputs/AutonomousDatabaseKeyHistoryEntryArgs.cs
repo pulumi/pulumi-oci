@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseKeyHistoryEntryArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseKeyHistoryEntryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseKeyHistoryEntryArgs()
         {
         }
+        public static new AutonomousDatabaseKeyHistoryEntryArgs Empty => new AutonomousDatabaseKeyHistoryEntryArgs();
     }
 }

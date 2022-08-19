@@ -22,6 +22,43 @@ import javax.annotation.Nullable;
  * [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LoadBalancer.PathRouteSet;
+ * import com.pulumi.oci.LoadBalancer.PathRouteSetArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.PathRouteSetPathRouteArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.PathRouteSetPathRoutePathMatchTypeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPathRouteSet = new PathRouteSet(&#34;testPathRouteSet&#34;, PathRouteSetArgs.builder()        
+ *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .pathRoutes(PathRouteSetPathRouteArgs.builder()
+ *                 .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+ *                 .path(var_.path_route_set_path_routes_path())
+ *                 .pathMatchType(PathRouteSetPathRoutePathMatchTypeArgs.builder()
+ *                     .matchType(var_.path_route_set_path_routes_path_match_type_match_type())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -30,6 +30,34 @@ public final class ApmTracesFunctions {
      * to choose a query to run.  There is no sorting applied on the results.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQueryQuickPicksResult> getQueryQuickPicks(GetQueryQuickPicksArgs args) {
@@ -42,6 +70,34 @@ public final class ApmTracesFunctions {
      * to choose a query to run.  There is no sorting applied on the results.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQueryQuickPicksResult> getQueryQuickPicksPlain(GetQueryQuickPicksPlainArgs args) {
@@ -54,6 +110,34 @@ public final class ApmTracesFunctions {
      * to choose a query to run.  There is no sorting applied on the results.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQueryQuickPicksResult> getQueryQuickPicks(GetQueryQuickPicksArgs args, InvokeOptions options) {
@@ -66,6 +150,34 @@ public final class ApmTracesFunctions {
      * to choose a query to run.  There is no sorting applied on the results.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQueryQuickPicksResult> getQueryQuickPicksPlain(GetQueryQuickPicksPlainArgs args, InvokeOptions options) {
@@ -77,6 +189,35 @@ public final class ApmTracesFunctions {
      * Gets the trace details identified by traceId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_trace_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTraceResult> getTrace(GetTraceArgs args) {
@@ -88,6 +229,35 @@ public final class ApmTracesFunctions {
      * Gets the trace details identified by traceId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_trace_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTraceResult> getTracePlain(GetTracePlainArgs args) {
@@ -99,6 +269,35 @@ public final class ApmTracesFunctions {
      * Gets the trace details identified by traceId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_trace_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTraceResult> getTrace(GetTraceArgs args, InvokeOptions options) {
@@ -110,6 +309,35 @@ public final class ApmTracesFunctions {
      * Gets the trace details identified by traceId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_trace_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTraceResult> getTracePlain(GetTracePlainArgs args, InvokeOptions options) {
@@ -121,6 +349,35 @@ public final class ApmTracesFunctions {
      * Gets the aggregated snapshot identified by trace ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs args) {
@@ -132,6 +389,35 @@ public final class ApmTracesFunctions {
      * Gets the aggregated snapshot identified by trace ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotDataPlain(GetTraceAggregatedSnapshotDataPlainArgs args) {
@@ -143,6 +429,35 @@ public final class ApmTracesFunctions {
      * Gets the aggregated snapshot identified by trace ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs args, InvokeOptions options) {
@@ -154,6 +469,35 @@ public final class ApmTracesFunctions {
      * Gets the aggregated snapshot identified by trace ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTraceAggregatedSnapshotDataResult> getTraceAggregatedSnapshotDataPlain(GetTraceAggregatedSnapshotDataPlainArgs args, InvokeOptions options) {
@@ -165,6 +509,38 @@ public final class ApmTracesFunctions {
      * Gets the trace snapshots data identified by trace ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_snapshot_data_trace_key())
+     *             .isSummarized(var_.trace_snapshot_data_is_summarized())
+     *             .snapshotTime(var_.trace_snapshot_data_snapshot_time())
+     *             .threadId(oci_apm_traces_thread.test_thread().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTraceSnapshotDataResult> getTraceSnapshotData(GetTraceSnapshotDataArgs args) {
@@ -176,6 +552,38 @@ public final class ApmTracesFunctions {
      * Gets the trace snapshots data identified by trace ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_snapshot_data_trace_key())
+     *             .isSummarized(var_.trace_snapshot_data_is_summarized())
+     *             .snapshotTime(var_.trace_snapshot_data_snapshot_time())
+     *             .threadId(oci_apm_traces_thread.test_thread().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTraceSnapshotDataResult> getTraceSnapshotDataPlain(GetTraceSnapshotDataPlainArgs args) {
@@ -187,6 +595,38 @@ public final class ApmTracesFunctions {
      * Gets the trace snapshots data identified by trace ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_snapshot_data_trace_key())
+     *             .isSummarized(var_.trace_snapshot_data_is_summarized())
+     *             .snapshotTime(var_.trace_snapshot_data_snapshot_time())
+     *             .threadId(oci_apm_traces_thread.test_thread().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTraceSnapshotDataResult> getTraceSnapshotData(GetTraceSnapshotDataArgs args, InvokeOptions options) {
@@ -198,6 +638,38 @@ public final class ApmTracesFunctions {
      * Gets the trace snapshots data identified by trace ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .traceKey(var_.trace_snapshot_data_trace_key())
+     *             .isSummarized(var_.trace_snapshot_data_is_summarized())
+     *             .snapshotTime(var_.trace_snapshot_data_snapshot_time())
+     *             .threadId(oci_apm_traces_thread.test_thread().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTraceSnapshotDataResult> getTraceSnapshotDataPlain(GetTraceSnapshotDataPlainArgs args, InvokeOptions options) {

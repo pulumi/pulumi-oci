@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAddressList = Oci.Waas.GetAddressList.Invoke(new()
         ///     {
-        ///         var testAddressList = Output.Create(Oci.Waas.GetAddressList.InvokeAsync(new Oci.Waas.GetAddressListArgs
-        ///         {
-        ///             AddressListId = oci_waas_address_list.Test_address_list.Id,
-        ///         }));
-        ///     }
+        ///         AddressListId = oci_waas_address_list.Test_address_list.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAddressList = Oci.Waas.GetAddressList.Invoke(new()
         ///     {
-        ///         var testAddressList = Output.Create(Oci.Waas.GetAddressList.InvokeAsync(new Oci.Waas.GetAddressListArgs
-        ///         {
-        ///             AddressListId = oci_waas_address_list.Test_address_list.Id,
-        ///         }));
-        ///     }
+        ///         AddressListId = oci_waas_address_list.Test_address_list.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetAddressListArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressListArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Waas
         public GetAddressListArgs()
         {
         }
+        public static new GetAddressListArgs Empty => new GetAddressListArgs();
     }
 
-    public sealed class GetAddressListInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressListInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Waas
         public GetAddressListInvokeArgs()
         {
         }
+        public static new GetAddressListInvokeArgs Empty => new GetAddressListInvokeArgs();
     }
 
 

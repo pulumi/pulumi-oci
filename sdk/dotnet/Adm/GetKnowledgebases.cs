@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Adm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKnowledgeBases = Oci.Adm.GetKnowledgebases.Invoke(new()
         ///     {
-        ///         var testKnowledgeBases = Output.Create(Oci.Adm.GetKnowledgebases.InvokeAsync(new Oci.Adm.GetKnowledgebasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Knowledge_base_display_name,
-        ///             Id = @var.Knowledge_base_id,
-        ///             State = @var.Knowledge_base_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Knowledge_base_display_name,
+        ///         Id = @var.Knowledge_base_id,
+        ///         State = @var.Knowledge_base_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Adm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKnowledgeBases = Oci.Adm.GetKnowledgebases.Invoke(new()
         ///     {
-        ///         var testKnowledgeBases = Output.Create(Oci.Adm.GetKnowledgebases.InvokeAsync(new Oci.Adm.GetKnowledgebasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Knowledge_base_display_name,
-        ///             Id = @var.Knowledge_base_id,
-        ///             State = @var.Knowledge_base_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Knowledge_base_display_name,
+        ///         Id = @var.Knowledge_base_id,
+        ///         State = @var.Knowledge_base_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Adm
     }
 
 
-    public sealed class GetKnowledgebasesArgs : Pulumi.InvokeArgs
+    public sealed class GetKnowledgebasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that belong to the specified compartment identifier.
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Adm
         public GetKnowledgebasesArgs()
         {
         }
+        public static new GetKnowledgebasesArgs Empty => new GetKnowledgebasesArgs();
     }
 
-    public sealed class GetKnowledgebasesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKnowledgebasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that belong to the specified compartment identifier.
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.Adm
         public GetKnowledgebasesInvokeArgs()
         {
         }
+        public static new GetKnowledgebasesInvokeArgs Empty => new GetKnowledgebasesInvokeArgs();
     }
 
 

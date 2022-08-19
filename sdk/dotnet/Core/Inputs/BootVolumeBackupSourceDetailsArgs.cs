@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class BootVolumeBackupSourceDetailsArgs : Pulumi.ResourceArgs
+    public sealed class BootVolumeBackupSourceDetailsArgs : global::Pulumi.ResourceArgs
     {
         [Input("bootVolumeBackupId", required: true)]
         public Input<string> BootVolumeBackupId { get; set; } = null!;
@@ -30,5 +30,6 @@ namespace Pulumi.Oci.Core.Inputs
         public BootVolumeBackupSourceDetailsArgs()
         {
         }
+        public static new BootVolumeBackupSourceDetailsArgs Empty => new BootVolumeBackupSourceDetailsArgs();
     }
 }

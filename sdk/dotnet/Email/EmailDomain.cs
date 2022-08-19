@@ -17,29 +17,27 @@ namespace Pulumi.Oci.Email
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testEmailDomain = new Oci.Email.EmailDomain("testEmailDomain", new()
     ///     {
-    ///         var testEmailDomain = new Oci.Email.EmailDomain("testEmailDomain", new Oci.Email.EmailDomainArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Email_domain_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Email_domain_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.Email
     /// ```
     /// </summary>
     [OciResourceType("oci:Email/emailDomain:EmailDomain")]
-    public partial class EmailDomain : Pulumi.CustomResource
+    public partial class EmailDomain : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
@@ -157,7 +155,7 @@ namespace Pulumi.Oci.Email
         }
     }
 
-    public sealed class EmailDomainArgs : Pulumi.ResourceArgs
+    public sealed class EmailDomainArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
@@ -204,9 +202,10 @@ namespace Pulumi.Oci.Email
         public EmailDomainArgs()
         {
         }
+        public static new EmailDomainArgs Empty => new EmailDomainArgs();
     }
 
-    public sealed class EmailDomainState : Pulumi.ResourceArgs
+    public sealed class EmailDomainState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
@@ -289,5 +288,6 @@ namespace Pulumi.Oci.Email
         public EmailDomainState()
         {
         }
+        public static new EmailDomainState Empty => new EmailDomainState();
     }
 }

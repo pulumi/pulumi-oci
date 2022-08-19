@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi.Inputs
 {
 
-    public sealed class DatabaseInsightCredentialDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseInsightCredentialDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Opsi.Inputs
         public DatabaseInsightCredentialDetailsGetArgs()
         {
         }
+        public static new DatabaseInsightCredentialDetailsGetArgs Empty => new DatabaseInsightCredentialDetailsGetArgs();
     }
 }

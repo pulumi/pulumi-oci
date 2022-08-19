@@ -19,32 +19,30 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPrivateIp = new Oci.Core.PrivateIp("testPrivateIp", new()
     ///     {
-    ///         var testPrivateIp = new Oci.Core.PrivateIp("testPrivateIp", new Oci.Core.PrivateIpArgs
+    ///         DefinedTags = 
     ///         {
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Private_ip_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             HostnameLabel = @var.Private_ip_hostname_label,
-    ///             IpAddress = @var.Private_ip_ip_address,
-    ///             VlanId = oci_core_vlan.Test_vlan.Id,
-    ///             VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Private_ip_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         HostnameLabel = @var.Private_ip_hostname_label,
+    ///         IpAddress = @var.Private_ip_ip_address,
+    ///         VlanId = oci_core_vlan.Test_vlan.Id,
+    ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/privateIp:PrivateIp")]
-    public partial class PrivateIp : Pulumi.CustomResource
+    public partial class PrivateIp : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
@@ -180,7 +178,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class PrivateIpArgs : Pulumi.ResourceArgs
+    public sealed class PrivateIpArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -239,9 +237,10 @@ namespace Pulumi.Oci.Core
         public PrivateIpArgs()
         {
         }
+        public static new PrivateIpArgs Empty => new PrivateIpArgs();
     }
 
-    public sealed class PrivateIpState : Pulumi.ResourceArgs
+    public sealed class PrivateIpState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
@@ -336,5 +335,6 @@ namespace Pulumi.Oci.Core
         public PrivateIpState()
         {
         }
+        public static new PrivateIpState Empty => new PrivateIpState();
     }
 }

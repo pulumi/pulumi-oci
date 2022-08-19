@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProfile = Oci.Optimizer.GetProfile.Invoke(new()
         ///     {
-        ///         var testProfile = Output.Create(Oci.Optimizer.GetProfile.InvokeAsync(new Oci.Optimizer.GetProfileArgs
-        ///         {
-        ///             ProfileId = oci_optimizer_profile.Test_profile.Id,
-        ///         }));
-        ///     }
+        ///         ProfileId = oci_optimizer_profile.Test_profile.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProfile = Oci.Optimizer.GetProfile.Invoke(new()
         ///     {
-        ///         var testProfile = Output.Create(Oci.Optimizer.GetProfile.InvokeAsync(new Oci.Optimizer.GetProfileArgs
-        ///         {
-        ///             ProfileId = oci_optimizer_profile.Test_profile.Id,
-        ///         }));
-        ///     }
+        ///         ProfileId = oci_optimizer_profile.Test_profile.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetProfileArgs : Pulumi.InvokeArgs
+    public sealed class GetProfileArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID of the profile.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Optimizer
         public GetProfileArgs()
         {
         }
+        public static new GetProfileArgs Empty => new GetProfileArgs();
     }
 
-    public sealed class GetProfileInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProfileInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID of the profile.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Optimizer
         public GetProfileInvokeArgs()
         {
         }
+        public static new GetProfileInvokeArgs Empty => new GetProfileInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The optional query parameter to filter the SQL Tuning Advisor task list by name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public GetManagedDatabaseSqlTuningAdvisorTasksFilterInputArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksFilterInputArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksFilterInputArgs();
     }
 }

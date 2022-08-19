@@ -17,49 +17,47 @@ namespace Pulumi.Oci.Opensearch
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOpensearchCluster = new Oci.Opensearch.Cluster("testOpensearchCluster", new()
     ///     {
-    ///         var testOpensearchCluster = new Oci.Opensearch.Cluster("testOpensearchCluster", new Oci.Opensearch.ClusterArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DataNodeCount = @var.Opensearch_cluster_data_node_count,
+    ///         DataNodeHostMemoryGb = @var.Opensearch_cluster_data_node_host_memory_gb,
+    ///         DataNodeHostOcpuCount = @var.Opensearch_cluster_data_node_host_ocpu_count,
+    ///         DataNodeHostType = @var.Opensearch_cluster_data_node_host_type,
+    ///         DataNodeStorageGb = @var.Opensearch_cluster_data_node_storage_gb,
+    ///         DisplayName = @var.Opensearch_cluster_display_name,
+    ///         MasterNodeCount = @var.Opensearch_cluster_master_node_count,
+    ///         MasterNodeHostMemoryGb = @var.Opensearch_cluster_master_node_host_memory_gb,
+    ///         MasterNodeHostOcpuCount = @var.Opensearch_cluster_master_node_host_ocpu_count,
+    ///         MasterNodeHostType = @var.Opensearch_cluster_master_node_host_type,
+    ///         OpendashboardNodeCount = @var.Opensearch_cluster_opendashboard_node_count,
+    ///         OpendashboardNodeHostMemoryGb = @var.Opensearch_cluster_opendashboard_node_host_memory_gb,
+    ///         OpendashboardNodeHostOcpuCount = @var.Opensearch_cluster_opendashboard_node_host_ocpu_count,
+    ///         SoftwareVersion = @var.Opensearch_cluster_software_version,
+    ///         SubnetCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         VcnCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         DataNodeHostBareMetalShape = @var.Opensearch_cluster_data_node_host_bare_metal_shape,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DataNodeCount = @var.Opensearch_cluster_data_node_count,
-    ///             DataNodeHostMemoryGb = @var.Opensearch_cluster_data_node_host_memory_gb,
-    ///             DataNodeHostOcpuCount = @var.Opensearch_cluster_data_node_host_ocpu_count,
-    ///             DataNodeHostType = @var.Opensearch_cluster_data_node_host_type,
-    ///             DataNodeStorageGb = @var.Opensearch_cluster_data_node_storage_gb,
-    ///             DisplayName = @var.Opensearch_cluster_display_name,
-    ///             MasterNodeCount = @var.Opensearch_cluster_master_node_count,
-    ///             MasterNodeHostMemoryGb = @var.Opensearch_cluster_master_node_host_memory_gb,
-    ///             MasterNodeHostOcpuCount = @var.Opensearch_cluster_master_node_host_ocpu_count,
-    ///             MasterNodeHostType = @var.Opensearch_cluster_master_node_host_type,
-    ///             OpendashboardNodeCount = @var.Opensearch_cluster_opendashboard_node_count,
-    ///             OpendashboardNodeHostMemoryGb = @var.Opensearch_cluster_opendashboard_node_host_memory_gb,
-    ///             OpendashboardNodeHostOcpuCount = @var.Opensearch_cluster_opendashboard_node_host_ocpu_count,
-    ///             SoftwareVersion = @var.Opensearch_cluster_software_version,
-    ///             SubnetCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VcnCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             DataNodeHostBareMetalShape = @var.Opensearch_cluster_data_node_host_bare_metal_shape,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             MasterNodeHostBareMetalShape = @var.Opensearch_cluster_master_node_host_bare_metal_shape,
-    ///             SystemTags = @var.Opensearch_cluster_system_tags,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         MasterNodeHostBareMetalShape = @var.Opensearch_cluster_master_node_host_bare_metal_shape,
+    ///         SystemTags = @var.Opensearch_cluster_system_tags,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -71,7 +69,7 @@ namespace Pulumi.Oci.Opensearch
     /// ```
     /// </summary>
     [OciResourceType("oci:Opensearch/cluster:Cluster")]
-    public partial class Cluster : Pulumi.CustomResource
+    public partial class Cluster : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domains to distribute the cluser nodes across.
@@ -333,7 +331,7 @@ namespace Pulumi.Oci.Opensearch
         }
     }
 
-    public sealed class ClusterArgs : Pulumi.ResourceArgs
+    public sealed class ClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment to create the cluster in.
@@ -500,9 +498,10 @@ namespace Pulumi.Oci.Opensearch
         public ClusterArgs()
         {
         }
+        public static new ClusterArgs Empty => new ClusterArgs();
     }
 
-    public sealed class ClusterState : Pulumi.ResourceArgs
+    public sealed class ClusterState : global::Pulumi.ResourceArgs
     {
         [Input("availabilityDomains")]
         private InputList<string>? _availabilityDomains;
@@ -747,5 +746,6 @@ namespace Pulumi.Oci.Opensearch
         public ClusterState()
         {
         }
+        public static new ClusterState Empty => new ClusterState();
     }
 }

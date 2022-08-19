@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the CA Bundle resource.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs()
         {
         }
+        public static new IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs Empty => new IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs();
     }
 }

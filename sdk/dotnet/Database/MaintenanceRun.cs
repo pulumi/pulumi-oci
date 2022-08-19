@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/maintenanceRun:MaintenanceRun")]
-    public partial class MaintenanceRun : Pulumi.CustomResource
+    public partial class MaintenanceRun : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -255,7 +255,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class MaintenanceRunArgs : Pulumi.ResourceArgs
+    public sealed class MaintenanceRunArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
@@ -320,9 +320,10 @@ namespace Pulumi.Oci.Database
         public MaintenanceRunArgs()
         {
         }
+        public static new MaintenanceRunArgs Empty => new MaintenanceRunArgs();
     }
 
-    public sealed class MaintenanceRunState : Pulumi.ResourceArgs
+    public sealed class MaintenanceRunState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -519,5 +520,6 @@ namespace Pulumi.Oci.Database
         public MaintenanceRunState()
         {
         }
+        public static new MaintenanceRunState Empty => new MaintenanceRunState();
     }
 }

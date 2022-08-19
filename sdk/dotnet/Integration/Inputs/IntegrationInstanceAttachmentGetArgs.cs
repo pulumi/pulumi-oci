@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Integration.Inputs
 {
 
-    public sealed class IntegrationInstanceAttachmentGetArgs : Pulumi.ResourceArgs
+    public sealed class IntegrationInstanceAttachmentGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// * If role == `PARENT`, the attached instance was created by this service instance
@@ -46,5 +46,6 @@ namespace Pulumi.Oci.Integration.Inputs
         public IntegrationInstanceAttachmentGetArgs()
         {
         }
+        public static new IntegrationInstanceAttachmentGetArgs Empty => new IntegrationInstanceAttachmentGetArgs();
     }
 }

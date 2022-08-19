@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetServicesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetServicesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetServicesFilterArgs()
         {
         }
+        public static new GetServicesFilterArgs Empty => new GetServicesFilterArgs();
     }
 }

@@ -22,27 +22,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseAttentionLogCounts = Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCounts.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseAttentionLogCounts = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCounts.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCountsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             GroupBy = @var.Managed_database_attention_log_count_group_by,
-        ///             IsRegularExpression = @var.Managed_database_attention_log_count_is_regular_expression,
-        ///             LogSearchText = @var.Managed_database_attention_log_count_log_search_text,
-        ///             TimeGreaterThanOrEqualTo = @var.Managed_database_attention_log_count_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Managed_database_attention_log_count_time_less_than_or_equal_to,
-        ///             TypeFilter = @var.Managed_database_attention_log_count_type_filter,
-        ///             UrgencyFilter = @var.Managed_database_attention_log_count_urgency_filter,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         GroupBy = @var.Managed_database_attention_log_count_group_by,
+        ///         IsRegularExpression = @var.Managed_database_attention_log_count_is_regular_expression,
+        ///         LogSearchText = @var.Managed_database_attention_log_count_log_search_text,
+        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_attention_log_count_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Managed_database_attention_log_count_time_less_than_or_equal_to,
+        ///         TypeFilter = @var.Managed_database_attention_log_count_type_filter,
+        ///         UrgencyFilter = @var.Managed_database_attention_log_count_urgency_filter,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,27 +59,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseAttentionLogCounts = Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCounts.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseAttentionLogCounts = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCounts.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCountsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             GroupBy = @var.Managed_database_attention_log_count_group_by,
-        ///             IsRegularExpression = @var.Managed_database_attention_log_count_is_regular_expression,
-        ///             LogSearchText = @var.Managed_database_attention_log_count_log_search_text,
-        ///             TimeGreaterThanOrEqualTo = @var.Managed_database_attention_log_count_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Managed_database_attention_log_count_time_less_than_or_equal_to,
-        ///             TypeFilter = @var.Managed_database_attention_log_count_type_filter,
-        ///             UrgencyFilter = @var.Managed_database_attention_log_count_urgency_filter,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         GroupBy = @var.Managed_database_attention_log_count_group_by,
+        ///         IsRegularExpression = @var.Managed_database_attention_log_count_is_regular_expression,
+        ///         LogSearchText = @var.Managed_database_attention_log_count_log_search_text,
+        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_attention_log_count_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Managed_database_attention_log_count_time_less_than_or_equal_to,
+        ///         TypeFilter = @var.Managed_database_attention_log_count_type_filter,
+        ///         UrgencyFilter = @var.Managed_database_attention_log_count_urgency_filter,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseAttentionLogCountsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAttentionLogCountsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseAttentionLogCountsFilterArgs>? _filters;
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseAttentionLogCountsArgs()
         {
         }
+        public static new GetManagedDatabaseAttentionLogCountsArgs Empty => new GetManagedDatabaseAttentionLogCountsArgs();
     }
 
-    public sealed class GetManagedDatabaseAttentionLogCountsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAttentionLogCountsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseAttentionLogCountsFilterInputArgs>? _filters;
@@ -215,6 +212,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseAttentionLogCountsInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseAttentionLogCountsInvokeArgs Empty => new GetManagedDatabaseAttentionLogCountsInvokeArgs();
     }
 
 

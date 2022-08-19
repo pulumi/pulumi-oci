@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DbSystemDbHomeArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemDbHomeArgs : global::Pulumi.ResourceArgs
     {
         [Input("createAsync")]
         public Input<bool>? CreateAsync { get; set; }
@@ -99,5 +99,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DbSystemDbHomeArgs()
         {
         }
+        public static new DbSystemDbHomeArgs Empty => new DbSystemDbHomeArgs();
     }
 }

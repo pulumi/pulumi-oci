@@ -10,66 +10,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new Network Firewall Policy.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testNetworkFirewallPolicy = new oci.networkfirewall.NetworkFirewallPolicy("testNetworkFirewallPolicy", {
- *     compartmentId: _var.compartment_id,
- *     applicationLists: _var.network_firewall_policy_application_lists,
- *     decryptionProfiles: [{
- *         isOutOfCapacityBlocked: _var.network_firewall_policy_decryption_profiles_is_out_of_capacity_blocked,
- *         isUnsupportedCipherBlocked: _var.network_firewall_policy_decryption_profiles_is_unsupported_cipher_blocked,
- *         isUnsupportedVersionBlocked: _var.network_firewall_policy_decryption_profiles_is_unsupported_version_blocked,
- *         type: _var.network_firewall_policy_decryption_profiles_type,
- *         areCertificateExtensionsRestricted: _var.network_firewall_policy_decryption_profiles_are_certificate_extensions_restricted,
- *         isAutoIncludeAltName: _var.network_firewall_policy_decryption_profiles_is_auto_include_alt_name,
- *         isExpiredCertificateBlocked: _var.network_firewall_policy_decryption_profiles_is_expired_certificate_blocked,
- *         isRevocationStatusTimeoutBlocked: _var.network_firewall_policy_decryption_profiles_is_revocation_status_timeout_blocked,
- *         isUnknownRevocationStatusBlocked: _var.network_firewall_policy_decryption_profiles_is_unknown_revocation_status_blocked,
- *         isUntrustedIssuerBlocked: _var.network_firewall_policy_decryption_profiles_is_untrusted_issuer_blocked,
- *     }],
- *     decryptionRules: [{
- *         action: _var.network_firewall_policy_decryption_rules_action,
- *         condition: {
- *             destinations: _var.network_firewall_policy_decryption_rules_condition_destinations,
- *             sources: _var.network_firewall_policy_decryption_rules_condition_sources,
- *         },
- *         name: _var.network_firewall_policy_decryption_rules_name,
- *         decryptionProfile: _var.network_firewall_policy_decryption_rules_decryption_profile,
- *         secret: _var.network_firewall_policy_decryption_rules_secret,
- *     }],
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     displayName: _var.network_firewall_policy_display_name,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     ipAddressLists: _var.network_firewall_policy_ip_address_lists,
- *     mappedSecrets: [{
- *         source: _var.network_firewall_policy_mapped_secrets_source,
- *         type: _var.network_firewall_policy_mapped_secrets_type,
- *         vaultSecretId: oci_vault_secret.test_secret.id,
- *         versionNumber: _var.network_firewall_policy_mapped_secrets_version_number,
- *     }],
- *     securityRules: [{
- *         action: _var.network_firewall_policy_security_rules_action,
- *         condition: {
- *             applications: _var.network_firewall_policy_security_rules_condition_applications,
- *             destinations: _var.network_firewall_policy_security_rules_condition_destinations,
- *             sources: _var.network_firewall_policy_security_rules_condition_sources,
- *             urls: _var.network_firewall_policy_security_rules_condition_urls,
- *         },
- *         name: _var.network_firewall_policy_security_rules_name,
- *         inspection: _var.network_firewall_policy_security_rules_inspection,
- *     }],
- *     urlLists: _var.network_firewall_policy_url_lists,
- * });
- * ```
- *
  * ## Import
  *
  * NetworkFirewallPolicies can be imported using the `id`, e.g.

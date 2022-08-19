@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVlans = Oci.Core.GetVlans.Invoke(new()
         ///     {
-        ///         var testVlans = Output.Create(Oci.Core.GetVlans.InvokeAsync(new Oci.Core.GetVlansArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Vlan_display_name,
-        ///             State = @var.Vlan_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Vlan_display_name,
+        ///         State = @var.Vlan_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVlans = Oci.Core.GetVlans.Invoke(new()
         ///     {
-        ///         var testVlans = Output.Create(Oci.Core.GetVlans.InvokeAsync(new Oci.Core.GetVlansArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Vlan_display_name,
-        ///             State = @var.Vlan_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Vlan_display_name,
+        ///         State = @var.Vlan_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVlansArgs : Pulumi.InvokeArgs
+    public sealed class GetVlansArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Core
         public GetVlansArgs()
         {
         }
+        public static new GetVlansArgs Empty => new GetVlansArgs();
     }
 
-    public sealed class GetVlansInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVlansInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Core
         public GetVlansInvokeArgs()
         {
         }
+        public static new GetVlansInvokeArgs Empty => new GetVlansInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class ResolverRuleArgs : Pulumi.ResourceArgs
+    public sealed class ResolverRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public ResolverRuleArgs()
         {
         }
+        public static new ResolverRuleArgs Empty => new ResolverRuleArgs();
     }
 }

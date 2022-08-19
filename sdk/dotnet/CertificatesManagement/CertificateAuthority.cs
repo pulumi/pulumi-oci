@@ -23,7 +23,7 @@ namespace Pulumi.Oci.CertificatesManagement
     /// ```
     /// </summary>
     [OciResourceType("oci:CertificatesManagement/certificateAuthority:CertificateAuthority")]
-    public partial class CertificateAuthority : Pulumi.CustomResource
+    public partial class CertificateAuthority : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The configuration details for creating a certificate authority (CA).
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.CertificatesManagement
         }
     }
 
-    public sealed class CertificateAuthorityArgs : Pulumi.ResourceArgs
+    public sealed class CertificateAuthorityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The configuration details for creating a certificate authority (CA).
@@ -254,9 +254,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public CertificateAuthorityArgs()
         {
         }
+        public static new CertificateAuthorityArgs Empty => new CertificateAuthorityArgs();
     }
 
-    public sealed class CertificateAuthorityState : Pulumi.ResourceArgs
+    public sealed class CertificateAuthorityState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The configuration details for creating a certificate authority (CA).
@@ -399,5 +400,6 @@ namespace Pulumi.Oci.CertificatesManagement
         public CertificateAuthorityState()
         {
         }
+        public static new CertificateAuthorityState Empty => new CertificateAuthorityState();
     }
 }

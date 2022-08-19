@@ -25,6 +25,58 @@ import javax.annotation.Nullable;
  * Creates a new profile.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Optimizer.Profile;
+ * import com.pulumi.oci.Optimizer.ProfileArgs;
+ * import com.pulumi.oci.Optimizer.inputs.ProfileLevelsConfigurationArgs;
+ * import com.pulumi.oci.Optimizer.inputs.ProfileTargetCompartmentsArgs;
+ * import com.pulumi.oci.Optimizer.inputs.ProfileTargetTagsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testProfile = new Profile(&#34;testProfile&#34;, ProfileArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .description(var_.profile_description())
+ *             .levelsConfiguration(ProfileLevelsConfigurationArgs.builder()
+ *                 .items(ProfileLevelsConfigurationItemArgs.builder()
+ *                     .level(var_.profile_levels_configuration_items_level())
+ *                     .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+ *                     .build())
+ *                 .build())
+ *             .aggregationIntervalInDays(var_.profile_aggregation_interval_in_days())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .targetCompartments(ProfileTargetCompartmentsArgs.builder()
+ *                 .items(var_.profile_target_compartments_items())
+ *                 .build())
+ *             .targetTags(ProfileTargetTagsArgs.builder()
+ *                 .items(ProfileTargetTagsItemArgs.builder()
+ *                     .tagDefinitionName(var_.profile_target_tags_items_tag_definition_name())
+ *                     .tagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+ *                     .tagValueType(var_.profile_target_tags_items_tag_value_type())
+ *                     .tagValues(var_.profile_target_tags_items_tag_values())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

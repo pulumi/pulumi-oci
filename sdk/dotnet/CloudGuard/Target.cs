@@ -17,86 +17,84 @@ namespace Pulumi.Oci.CloudGuard
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTarget = new Oci.CloudGuard.Target("testTarget", new()
     ///     {
-    ///         var testTarget = new Oci.CloudGuard.Target("testTarget", new Oci.CloudGuard.TargetArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Target_display_name,
+    ///         TargetResourceId = oci_cloud_guard_target_resource.Test_target_resource.Id,
+    ///         TargetResourceType = @var.Target_target_resource_type,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Target_display_name,
-    ///             TargetResourceId = oci_cloud_guard_target_resource.Test_target_resource.Id,
-    ///             TargetResourceType = @var.Target_target_resource_type,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Target_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         State = @var.Target_state,
+    ///         TargetDetectorRecipes = new[]
+    ///         {
+    ///             new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Target_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             State = @var.Target_state,
-    ///             TargetDetectorRecipes = 
-    ///             {
-    ///                 new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeArgs
+    ///                 DetectorRecipeId = oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
+    ///                 DetectorRules = new[]
     ///                 {
-    ///                     DetectorRecipeId = oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
-    ///                     DetectorRules = 
+    ///                     new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeDetectorRuleArgs
     ///                     {
-    ///                         new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeDetectorRuleArgs
+    ///                         Details = new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsArgs
     ///                         {
-    ///                             Details = new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsArgs
+    ///                             ConditionGroups = new[]
     ///                             {
-    ///                                 ConditionGroups = 
+    ///                                 new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs
     ///                                 {
-    ///                                     new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs
-    ///                                     {
-    ///                                         CompartmentId = @var.Compartment_id,
-    ///                                         Condition = @var.Target_target_detector_recipes_detector_rules_details_condition_groups_condition,
-    ///                                     },
+    ///                                     CompartmentId = @var.Compartment_id,
+    ///                                     Condition = @var.Target_target_detector_recipes_detector_rules_details_condition_groups_condition,
     ///                                 },
     ///                             },
-    ///                             DetectorRuleId = oci_events_rule.Test_rule.Id,
     ///                         },
+    ///                         DetectorRuleId = oci_events_rule.Test_rule.Id,
     ///                     },
     ///                 },
     ///             },
-    ///             TargetResponderRecipes = 
+    ///         },
+    ///         TargetResponderRecipes = new[]
+    ///         {
+    ///             new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeArgs
     ///             {
-    ///                 new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeArgs
+    ///                 ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
+    ///                 ResponderRules = new[]
     ///                 {
-    ///                     ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
-    ///                     ResponderRules = 
+    ///                     new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleArgs
     ///                     {
-    ///                         new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleArgs
+    ///                         Details = new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleDetailsArgs
     ///                         {
-    ///                             Details = new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleDetailsArgs
+    ///                             Condition = @var.Target_target_responder_recipes_responder_rules_details_condition,
+    ///                             Configurations = new[]
     ///                             {
-    ///                                 Condition = @var.Target_target_responder_recipes_responder_rules_details_condition,
-    ///                                 Configurations = 
+    ///                                 new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs
     ///                                 {
-    ///                                     new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs
-    ///                                     {
-    ///                                         ConfigKey = @var.Target_target_responder_recipes_responder_rules_details_configurations_config_key,
-    ///                                         Name = @var.Target_target_responder_recipes_responder_rules_details_configurations_name,
-    ///                                         Value = @var.Target_target_responder_recipes_responder_rules_details_configurations_value,
-    ///                                     },
+    ///                                     ConfigKey = @var.Target_target_responder_recipes_responder_rules_details_configurations_config_key,
+    ///                                     Name = @var.Target_target_responder_recipes_responder_rules_details_configurations_name,
+    ///                                     Value = @var.Target_target_responder_recipes_responder_rules_details_configurations_value,
     ///                                 },
-    ///                                 Mode = @var.Target_target_responder_recipes_responder_rules_details_mode,
     ///                             },
-    ///                             ResponderRuleId = oci_events_rule.Test_rule.Id,
+    ///                             Mode = @var.Target_target_responder_recipes_responder_rules_details_mode,
     ///                         },
+    ///                         ResponderRuleId = oci_events_rule.Test_rule.Id,
     ///                     },
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -108,7 +106,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/target:Target")]
-    public partial class Target : Pulumi.CustomResource
+    public partial class Target : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) compartment associated with condition
@@ -256,7 +254,7 @@ namespace Pulumi.Oci.CloudGuard
         }
     }
 
-    public sealed class TargetArgs : Pulumi.ResourceArgs
+    public sealed class TargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) compartment associated with condition
@@ -345,9 +343,10 @@ namespace Pulumi.Oci.CloudGuard
         public TargetArgs()
         {
         }
+        public static new TargetArgs Empty => new TargetArgs();
     }
 
-    public sealed class TargetState : Pulumi.ResourceArgs
+    public sealed class TargetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) compartment associated with condition
@@ -496,5 +495,6 @@ namespace Pulumi.Oci.CloudGuard
         public TargetState()
         {
         }
+        public static new TargetState Empty => new TargetState();
     }
 }

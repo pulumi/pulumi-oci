@@ -23,6 +23,50 @@ import javax.annotation.Nullable;
  * Adds a backend set to a network load balancer.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkLoadBalancer.BackendSet;
+ * import com.pulumi.oci.NetworkLoadBalancer.BackendSetArgs;
+ * import com.pulumi.oci.NetworkLoadBalancer.inputs.BackendSetHealthCheckerArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBackendSet = new BackendSet(&#34;testBackendSet&#34;, BackendSetArgs.builder()        
+ *             .healthChecker(BackendSetHealthCheckerArgs.builder()
+ *                 .protocol(var_.backend_set_health_checker_protocol())
+ *                 .intervalInMillis(var_.backend_set_health_checker_interval_in_millis())
+ *                 .port(var_.backend_set_health_checker_port())
+ *                 .requestData(var_.backend_set_health_checker_request_data())
+ *                 .responseBodyRegex(var_.backend_set_health_checker_response_body_regex())
+ *                 .responseData(var_.backend_set_health_checker_response_data())
+ *                 .retries(var_.backend_set_health_checker_retries())
+ *                 .returnCode(var_.backend_set_health_checker_return_code())
+ *                 .timeoutInMillis(var_.backend_set_health_checker_timeout_in_millis())
+ *                 .urlPath(var_.backend_set_health_checker_url_path())
+ *                 .build())
+ *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+ *             .policy(var_.backend_set_policy())
+ *             .ipVersion(var_.backend_set_ip_version())
+ *             .isPreserveSource(var_.backend_set_is_preserve_source())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetNetworkSecurityGroupVnicsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetNetworkSecurityGroupVnicsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetNetworkSecurityGroupVnicsFilterInputArgs()
         {
         }
+        public static new GetNetworkSecurityGroupVnicsFilterInputArgs Empty => new GetNetworkSecurityGroupVnicsFilterInputArgs();
     }
 }

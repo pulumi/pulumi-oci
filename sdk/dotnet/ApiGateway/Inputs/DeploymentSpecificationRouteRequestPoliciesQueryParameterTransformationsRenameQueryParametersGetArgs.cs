@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("items", required: true)]
         private InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemGetArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersGetArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersGetArgs Empty => new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersGetArgs();
     }
 }

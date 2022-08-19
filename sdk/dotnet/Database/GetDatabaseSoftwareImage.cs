@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseSoftwareImage = Oci.Database.GetDatabaseSoftwareImage.Invoke(new()
         ///     {
-        ///         var testDatabaseSoftwareImage = Output.Create(Oci.Database.GetDatabaseSoftwareImage.InvokeAsync(new Oci.Database.GetDatabaseSoftwareImageArgs
-        ///         {
-        ///             DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseSoftwareImage = Oci.Database.GetDatabaseSoftwareImage.Invoke(new()
         ///     {
-        ///         var testDatabaseSoftwareImage = Output.Create(Oci.Database.GetDatabaseSoftwareImage.InvokeAsync(new Oci.Database.GetDatabaseSoftwareImageArgs
-        ///         {
-        ///             DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDatabaseSoftwareImageArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseSoftwareImageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetDatabaseSoftwareImageArgs()
         {
         }
+        public static new GetDatabaseSoftwareImageArgs Empty => new GetDatabaseSoftwareImageArgs();
     }
 
-    public sealed class GetDatabaseSoftwareImageInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseSoftwareImageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetDatabaseSoftwareImageInvokeArgs()
         {
         }
+        public static new GetDatabaseSoftwareImageInvokeArgs Empty => new GetDatabaseSoftwareImageInvokeArgs();
     }
 
 

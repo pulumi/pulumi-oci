@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUnifiedAgentConfiguration = Oci.Logging.GetUnifiedAgentConfiguration.Invoke(new()
         ///     {
-        ///         var testUnifiedAgentConfiguration = Output.Create(Oci.Logging.GetUnifiedAgentConfiguration.InvokeAsync(new Oci.Logging.GetUnifiedAgentConfigurationArgs
-        ///         {
-        ///             UnifiedAgentConfigurationId = oci_logging_unified_agent_configuration.Test_unified_agent_configuration.Id,
-        ///         }));
-        ///     }
+        ///         UnifiedAgentConfigurationId = oci_logging_unified_agent_configuration.Test_unified_agent_configuration.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUnifiedAgentConfiguration = Oci.Logging.GetUnifiedAgentConfiguration.Invoke(new()
         ///     {
-        ///         var testUnifiedAgentConfiguration = Output.Create(Oci.Logging.GetUnifiedAgentConfiguration.InvokeAsync(new Oci.Logging.GetUnifiedAgentConfigurationArgs
-        ///         {
-        ///             UnifiedAgentConfigurationId = oci_logging_unified_agent_configuration.Test_unified_agent_configuration.Id,
-        ///         }));
-        ///     }
+        ///         UnifiedAgentConfigurationId = oci_logging_unified_agent_configuration.Test_unified_agent_configuration.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Logging
     }
 
 
-    public sealed class GetUnifiedAgentConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetUnifiedAgentConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Unified Agent configuration.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Logging
         public GetUnifiedAgentConfigurationArgs()
         {
         }
+        public static new GetUnifiedAgentConfigurationArgs Empty => new GetUnifiedAgentConfigurationArgs();
     }
 
-    public sealed class GetUnifiedAgentConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUnifiedAgentConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Unified Agent configuration.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Logging
         public GetUnifiedAgentConfigurationInvokeArgs()
         {
         }
+        public static new GetUnifiedAgentConfigurationInvokeArgs Empty => new GetUnifiedAgentConfigurationInvokeArgs();
     }
 
 

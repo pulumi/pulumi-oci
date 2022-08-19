@@ -21,6 +21,38 @@ import javax.annotation.Nullable;
  * Creates a new LogSavedSearch.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Logging.LogSavedSearch;
+ * import com.pulumi.oci.Logging.LogSavedSearchArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLogSavedSearch = new LogSavedSearch(&#34;testLogSavedSearch&#34;, LogSavedSearchArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .query(var_.log_saved_search_query())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.log_saved_search_description())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

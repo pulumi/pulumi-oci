@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityLists = Oci.Core.GetSecurityLists.Invoke(new()
         ///     {
-        ///         var testSecurityLists = Output.Create(Oci.Core.GetSecurityLists.InvokeAsync(new Oci.Core.GetSecurityListsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Security_list_display_name,
-        ///             State = @var.Security_list_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Security_list_display_name,
+        ///         State = @var.Security_list_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityLists = Oci.Core.GetSecurityLists.Invoke(new()
         ///     {
-        ///         var testSecurityLists = Output.Create(Oci.Core.GetSecurityLists.InvokeAsync(new Oci.Core.GetSecurityListsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Security_list_display_name,
-        ///             State = @var.Security_list_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Security_list_display_name,
+        ///         State = @var.Security_list_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetSecurityListsArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityListsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Core
         public GetSecurityListsArgs()
         {
         }
+        public static new GetSecurityListsArgs Empty => new GetSecurityListsArgs();
     }
 
-    public sealed class GetSecurityListsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityListsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.Core
         public GetSecurityListsInvokeArgs()
         {
         }
+        public static new GetSecurityListsInvokeArgs Empty => new GetSecurityListsInvokeArgs();
     }
 
 

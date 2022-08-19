@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsGetArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("args")]
         private InputList<string>? _args;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsGetArgs()
         {
         }
+        public static new AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsGetArgs Empty => new AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsGetArgs();
     }
 }

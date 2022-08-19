@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedList = Oci.CloudGuard.GetManagedList.Invoke(new()
         ///     {
-        ///         var testManagedList = Output.Create(Oci.CloudGuard.GetManagedList.InvokeAsync(new Oci.CloudGuard.GetManagedListArgs
-        ///         {
-        ///             ManagedListId = oci_cloud_guard_managed_list.Test_managed_list.Id,
-        ///         }));
-        ///     }
+        ///         ManagedListId = oci_cloud_guard_managed_list.Test_managed_list.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedList = Oci.CloudGuard.GetManagedList.Invoke(new()
         ///     {
-        ///         var testManagedList = Output.Create(Oci.CloudGuard.GetManagedList.InvokeAsync(new Oci.CloudGuard.GetManagedListArgs
-        ///         {
-        ///             ManagedListId = oci_cloud_guard_managed_list.Test_managed_list.Id,
-        ///         }));
-        ///     }
+        ///         ManagedListId = oci_cloud_guard_managed_list.Test_managed_list.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetManagedListArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedListArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The cloudguard list OCID to be passed in the request.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetManagedListArgs()
         {
         }
+        public static new GetManagedListArgs Empty => new GetManagedListArgs();
     }
 
-    public sealed class GetManagedListInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedListInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The cloudguard list OCID to be passed in the request.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetManagedListInvokeArgs()
         {
         }
+        public static new GetManagedListInvokeArgs Empty => new GetManagedListInvokeArgs();
     }
 
 

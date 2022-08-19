@@ -26,6 +26,70 @@ import javax.annotation.Nullable;
  * Creates a new Target
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.CloudGuard.Target;
+ * import com.pulumi.oci.CloudGuard.TargetArgs;
+ * import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetectorRecipeArgs;
+ * import com.pulumi.oci.CloudGuard.inputs.TargetTargetResponderRecipeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTarget = new Target(&#34;testTarget&#34;, TargetArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.target_display_name())
+ *             .targetResourceId(oci_cloud_guard_target_resource.test_target_resource().id())
+ *             .targetResourceType(var_.target_target_resource_type())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.target_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .state(var_.target_state())
+ *             .targetDetectorRecipes(TargetTargetDetectorRecipeArgs.builder()
+ *                 .detectorRecipeId(oci_cloud_guard_detector_recipe.test_detector_recipe().id())
+ *                 .detectorRules(TargetTargetDetectorRecipeDetectorRuleArgs.builder()
+ *                     .details(TargetTargetDetectorRecipeDetectorRuleDetailsArgs.builder()
+ *                         .conditionGroups(TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs.builder()
+ *                             .compartmentId(var_.compartment_id())
+ *                             .condition(var_.target_target_detector_recipes_detector_rules_details_condition_groups_condition())
+ *                             .build())
+ *                         .build())
+ *                     .detectorRuleId(oci_events_rule.test_rule().id())
+ *                     .build())
+ *                 .build())
+ *             .targetResponderRecipes(TargetTargetResponderRecipeArgs.builder()
+ *                 .responderRecipeId(oci_cloud_guard_responder_recipe.test_responder_recipe().id())
+ *                 .responderRules(TargetTargetResponderRecipeResponderRuleArgs.builder()
+ *                     .details(TargetTargetResponderRecipeResponderRuleDetailsArgs.builder()
+ *                         .condition(var_.target_target_responder_recipes_responder_rules_details_condition())
+ *                         .configurations(TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs.builder()
+ *                             .configKey(var_.target_target_responder_recipes_responder_rules_details_configurations_config_key())
+ *                             .name(var_.target_target_responder_recipes_responder_rules_details_configurations_name())
+ *                             .value(var_.target_target_responder_recipes_responder_rules_details_configurations_value())
+ *                             .build())
+ *                         .mode(var_.target_target_responder_recipes_responder_rules_details_mode())
+ *                         .build())
+ *                     .responderRuleId(oci_events_rule.test_rule().id())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testObjectLifecyclePolicy = Oci.ObjectStorage.GetObjectLifecyclePolicy.Invoke(new()
         ///     {
-        ///         var testObjectLifecyclePolicy = Output.Create(Oci.ObjectStorage.GetObjectLifecyclePolicy.InvokeAsync(new Oci.ObjectStorage.GetObjectLifecyclePolicyArgs
-        ///         {
-        ///             Bucket = @var.Object_lifecycle_policy_bucket,
-        ///             Namespace = @var.Object_lifecycle_policy_namespace,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Object_lifecycle_policy_bucket,
+        ///         Namespace = @var.Object_lifecycle_policy_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testObjectLifecyclePolicy = Oci.ObjectStorage.GetObjectLifecyclePolicy.Invoke(new()
         ///     {
-        ///         var testObjectLifecyclePolicy = Output.Create(Oci.ObjectStorage.GetObjectLifecyclePolicy.InvokeAsync(new Oci.ObjectStorage.GetObjectLifecyclePolicyArgs
-        ///         {
-        ///             Bucket = @var.Object_lifecycle_policy_bucket,
-        ///             Namespace = @var.Object_lifecycle_policy_namespace,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Object_lifecycle_policy_bucket,
+        ///         Namespace = @var.Object_lifecycle_policy_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetObjectLifecyclePolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectLifecyclePolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectLifecyclePolicyArgs()
         {
         }
+        public static new GetObjectLifecyclePolicyArgs Empty => new GetObjectLifecyclePolicyArgs();
     }
 
-    public sealed class GetObjectLifecyclePolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectLifecyclePolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectLifecyclePolicyInvokeArgs()
         {
         }
+        public static new GetObjectLifecyclePolicyInvokeArgs Empty => new GetObjectLifecyclePolicyInvokeArgs();
     }
 
 

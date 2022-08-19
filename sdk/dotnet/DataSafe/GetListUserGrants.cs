@@ -25,28 +25,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListUserGrants = Oci.DataSafe.GetListUserGrants.Invoke(new()
         ///     {
-        ///         var testListUserGrants = Output.Create(Oci.DataSafe.GetListUserGrants.InvokeAsync(new Oci.DataSafe.GetListUserGrantsArgs
-        ///         {
-        ///             UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///             UserKey = @var.List_user_grant_user_key,
-        ///             DepthLevel = @var.List_user_grant_depth_level,
-        ///             DepthLevelGreaterThanOrEqualTo = @var.List_user_grant_depth_level_greater_than_or_equal_to,
-        ///             DepthLevelLessThan = @var.List_user_grant_depth_level_less_than,
-        ///             GrantKey = @var.List_user_grant_grant_key,
-        ///             GrantName = @var.List_user_grant_grant_name,
-        ///             PrivilegeCategory = @var.List_user_grant_privilege_category,
-        ///             PrivilegeType = @var.List_user_grant_privilege_type,
-        ///         }));
-        ///     }
+        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+        ///         UserKey = @var.List_user_grant_user_key,
+        ///         DepthLevel = @var.List_user_grant_depth_level,
+        ///         DepthLevelGreaterThanOrEqualTo = @var.List_user_grant_depth_level_greater_than_or_equal_to,
+        ///         DepthLevelLessThan = @var.List_user_grant_depth_level_less_than,
+        ///         GrantKey = @var.List_user_grant_grant_key,
+        ///         GrantName = @var.List_user_grant_grant_name,
+        ///         PrivilegeCategory = @var.List_user_grant_privilege_category,
+        ///         PrivilegeType = @var.List_user_grant_privilege_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -68,28 +66,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListUserGrants = Oci.DataSafe.GetListUserGrants.Invoke(new()
         ///     {
-        ///         var testListUserGrants = Output.Create(Oci.DataSafe.GetListUserGrants.InvokeAsync(new Oci.DataSafe.GetListUserGrantsArgs
-        ///         {
-        ///             UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///             UserKey = @var.List_user_grant_user_key,
-        ///             DepthLevel = @var.List_user_grant_depth_level,
-        ///             DepthLevelGreaterThanOrEqualTo = @var.List_user_grant_depth_level_greater_than_or_equal_to,
-        ///             DepthLevelLessThan = @var.List_user_grant_depth_level_less_than,
-        ///             GrantKey = @var.List_user_grant_grant_key,
-        ///             GrantName = @var.List_user_grant_grant_name,
-        ///             PrivilegeCategory = @var.List_user_grant_privilege_category,
-        ///             PrivilegeType = @var.List_user_grant_privilege_type,
-        ///         }));
-        ///     }
+        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+        ///         UserKey = @var.List_user_grant_user_key,
+        ///         DepthLevel = @var.List_user_grant_depth_level,
+        ///         DepthLevelGreaterThanOrEqualTo = @var.List_user_grant_depth_level_greater_than_or_equal_to,
+        ///         DepthLevelLessThan = @var.List_user_grant_depth_level_less_than,
+        ///         GrantKey = @var.List_user_grant_grant_key,
+        ///         GrantName = @var.List_user_grant_grant_name,
+        ///         PrivilegeCategory = @var.List_user_grant_privilege_category,
+        ///         PrivilegeType = @var.List_user_grant_privilege_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -99,7 +95,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetListUserGrantsArgs : Pulumi.InvokeArgs
+    public sealed class GetListUserGrantsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only items that match the specified user grant depth level.
@@ -166,9 +162,10 @@ namespace Pulumi.Oci.DataSafe
         public GetListUserGrantsArgs()
         {
         }
+        public static new GetListUserGrantsArgs Empty => new GetListUserGrantsArgs();
     }
 
-    public sealed class GetListUserGrantsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetListUserGrantsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only items that match the specified user grant depth level.
@@ -235,6 +232,7 @@ namespace Pulumi.Oci.DataSafe
         public GetListUserGrantsInvokeArgs()
         {
         }
+        public static new GetListUserGrantsInvokeArgs Empty => new GetListUserGrantsInvokeArgs();
     }
 
 

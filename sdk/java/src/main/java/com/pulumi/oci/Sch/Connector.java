@@ -44,6 +44,98 @@ import javax.annotation.Nullable;
  * [To activate or deactivate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Sch.Connector;
+ * import com.pulumi.oci.Sch.ConnectorArgs;
+ * import com.pulumi.oci.Sch.inputs.ConnectorSourceArgs;
+ * import com.pulumi.oci.Sch.inputs.ConnectorSourceCursorArgs;
+ * import com.pulumi.oci.Sch.inputs.ConnectorTargetArgs;
+ * import com.pulumi.oci.Sch.inputs.ConnectorTaskArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testServiceConnector = new Connector(&#34;testServiceConnector&#34;, ConnectorArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.service_connector_display_name())
+ *             .source(ConnectorSourceArgs.builder()
+ *                 .kind(var_.service_connector_source_kind())
+ *                 .cursor(ConnectorSourceCursorArgs.builder()
+ *                     .kind(var_.service_connector_source_cursor_kind())
+ *                     .build())
+ *                 .logSources(ConnectorSourceLogSourceArgs.builder()
+ *                     .compartmentId(var_.compartment_id())
+ *                     .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                     .logId(oci_logging_log.test_log().id())
+ *                     .build())
+ *                 .monitoringSources(ConnectorSourceMonitoringSourceArgs.builder()
+ *                     .compartmentId(var_.compartment_id())
+ *                     .namespaceDetails(ConnectorSourceMonitoringSourceNamespaceDetailsArgs.builder()
+ *                         .kind(var_.service_connector_source_monitoring_sources_namespace_details_kind())
+ *                         .namespaces(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs.builder()
+ *                             .metrics(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs.builder()
+ *                                 .kind(var_.service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind())
+ *                                 .build())
+ *                             .namespace(var_.service_connector_source_monitoring_sources_namespace_details_namespaces_namespace())
+ *                             .build())
+ *                         .build())
+ *                     .build())
+ *                 .streamId(oci_streaming_stream.test_stream().id())
+ *                 .build())
+ *             .target(ConnectorTargetArgs.builder()
+ *                 .kind(var_.service_connector_target_kind())
+ *                 .batchRolloverSizeInMbs(var_.service_connector_target_batch_rollover_size_in_mbs())
+ *                 .batchRolloverTimeInMs(var_.service_connector_target_batch_rollover_time_in_ms())
+ *                 .bucket(var_.service_connector_target_bucket())
+ *                 .compartmentId(var_.compartment_id())
+ *                 .dimensions(ConnectorTargetDimensionArgs.builder()
+ *                     .dimensionValue(ConnectorTargetDimensionDimensionValueArgs.builder()
+ *                         .kind(var_.service_connector_target_dimensions_dimension_value_kind())
+ *                         .path(var_.service_connector_target_dimensions_dimension_value_path())
+ *                         .value(var_.service_connector_target_dimensions_dimension_value_value())
+ *                         .build())
+ *                     .name(var_.service_connector_target_dimensions_name())
+ *                     .build())
+ *                 .enableFormattedMessaging(var_.service_connector_target_enable_formatted_messaging())
+ *                 .functionId(oci_functions_function.test_function().id())
+ *                 .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                 .logSourceIdentifier(var_.service_connector_target_log_source_identifier())
+ *                 .metric(var_.service_connector_target_metric())
+ *                 .metricNamespace(var_.service_connector_target_metric_namespace())
+ *                 .namespace(var_.service_connector_target_namespace())
+ *                 .objectNamePrefix(var_.service_connector_target_object_name_prefix())
+ *                 .streamId(oci_streaming_stream.test_stream().id())
+ *                 .topicId(oci_ons_notification_topic.test_notification_topic().id())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.service_connector_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .tasks(ConnectorTaskArgs.builder()
+ *                 .kind(var_.service_connector_tasks_kind())
+ *                 .batchSizeInKbs(var_.service_connector_tasks_batch_size_in_kbs())
+ *                 .batchTimeInSec(var_.service_connector_tasks_batch_time_in_sec())
+ *                 .condition(var_.service_connector_tasks_condition())
+ *                 .functionId(oci_functions_function.test_function().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

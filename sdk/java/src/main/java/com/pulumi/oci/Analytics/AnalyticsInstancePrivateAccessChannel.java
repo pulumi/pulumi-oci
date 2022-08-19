@@ -22,6 +22,42 @@ import javax.annotation.Nullable;
  * and creates a new WorkRequest.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Analytics.AnalyticsInstancePrivateAccessChannel;
+ * import com.pulumi.oci.Analytics.AnalyticsInstancePrivateAccessChannelArgs;
+ * import com.pulumi.oci.Analytics.inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAnalyticsInstancePrivateAccessChannel = new AnalyticsInstancePrivateAccessChannel(&#34;testAnalyticsInstancePrivateAccessChannel&#34;, AnalyticsInstancePrivateAccessChannelArgs.builder()        
+ *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+ *             .displayName(var_.analytics_instance_private_access_channel_display_name())
+ *             .privateSourceDnsZones(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs.builder()
+ *                 .dnsZone(var_.analytics_instance_private_access_channel_private_source_dns_zones_dns_zone())
+ *                 .description(var_.analytics_instance_private_access_channel_private_source_dns_zones_description())
+ *                 .build())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

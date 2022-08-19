@@ -19,38 +19,36 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSensitiveType = new Oci.DataSafe.SensitiveType("testSensitiveType", new()
     ///     {
-    ///         var testSensitiveType = new Oci.DataSafe.SensitiveType("testSensitiveType", new Oci.DataSafe.SensitiveTypeArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EntityType = @var.Sensitive_type_entity_type,
+    ///         CommentPattern = @var.Sensitive_type_comment_pattern,
+    ///         DataPattern = @var.Sensitive_type_data_pattern,
+    ///         DefaultMaskingFormatId = oci_data_safe_default_masking_format.Test_default_masking_format.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             EntityType = @var.Sensitive_type_entity_type,
-    ///             CommentPattern = @var.Sensitive_type_comment_pattern,
-    ///             DataPattern = @var.Sensitive_type_data_pattern,
-    ///             DefaultMaskingFormatId = oci_data_safe_default_masking_format.Test_default_masking_format.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Sensitive_type_description,
-    ///             DisplayName = @var.Sensitive_type_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             NamePattern = @var.Sensitive_type_name_pattern,
-    ///             ParentCategoryId = oci_marketplace_category.Test_category.Id,
-    ///             SearchType = @var.Sensitive_type_search_type,
-    ///             ShortName = @var.Sensitive_type_short_name,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Sensitive_type_description,
+    ///         DisplayName = @var.Sensitive_type_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         NamePattern = @var.Sensitive_type_name_pattern,
+    ///         ParentCategoryId = oci_marketplace_category.Test_category.Id,
+    ///         SearchType = @var.Sensitive_type_search_type,
+    ///         ShortName = @var.Sensitive_type_short_name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -62,7 +60,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/sensitiveType:SensitiveType")]
-    public partial class SensitiveType : Pulumi.CustomResource
+    public partial class SensitiveType : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) A regular expression to be used by data discovery for matching column comments.
@@ -216,7 +214,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class SensitiveTypeArgs : Pulumi.ResourceArgs
+    public sealed class SensitiveTypeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A regular expression to be used by data discovery for matching column comments.
@@ -311,9 +309,10 @@ namespace Pulumi.Oci.DataSafe
         public SensitiveTypeArgs()
         {
         }
+        public static new SensitiveTypeArgs Empty => new SensitiveTypeArgs();
     }
 
-    public sealed class SensitiveTypeState : Pulumi.ResourceArgs
+    public sealed class SensitiveTypeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A regular expression to be used by data discovery for matching column comments.
@@ -444,5 +443,6 @@ namespace Pulumi.Oci.DataSafe
         public SensitiveTypeState()
         {
         }
+        public static new SensitiveTypeState Empty => new SensitiveTypeState();
     }
 }

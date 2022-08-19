@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStack = Oci.ResourceManager.GetStack.Invoke(new()
         ///     {
-        ///         var testStack = Output.Create(Oci.ResourceManager.GetStack.InvokeAsync(new Oci.ResourceManager.GetStackArgs
-        ///         {
-        ///             StackId = oci_resourcemanager_stack.Test_stack.Id,
-        ///         }));
-        ///     }
+        ///         StackId = oci_resourcemanager_stack.Test_stack.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStack = Oci.ResourceManager.GetStack.Invoke(new()
         ///     {
-        ///         var testStack = Output.Create(Oci.ResourceManager.GetStack.InvokeAsync(new Oci.ResourceManager.GetStackArgs
-        ///         {
-        ///             StackId = oci_resourcemanager_stack.Test_stack.Id,
-        ///         }));
-        ///     }
+        ///         StackId = oci_resourcemanager_stack.Test_stack.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ResourceManager
     }
 
 
-    public sealed class GetStackArgs : Pulumi.InvokeArgs
+    public sealed class GetStackArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ResourceManager
         public GetStackArgs()
         {
         }
+        public static new GetStackArgs Empty => new GetStackArgs();
     }
 
-    public sealed class GetStackInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetStackInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ResourceManager
         public GetStackInvokeArgs()
         {
         }
+        public static new GetStackInvokeArgs Empty => new GetStackInvokeArgs();
     }
 
 

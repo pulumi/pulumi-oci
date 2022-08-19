@@ -29,6 +29,76 @@ import javax.annotation.Nullable;
  * To create an Exadata Cloud Service infrastructure resource, use the  [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) operation.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.ExadataInfrastructure;
+ * import com.pulumi.oci.Database.ExadataInfrastructureArgs;
+ * import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
+ * import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExadataInfrastructure = new ExadataInfrastructure(&#34;testExadataInfrastructure&#34;, ExadataInfrastructureArgs.builder()        
+ *             .adminNetworkCidr(var_.exadata_infrastructure_admin_network_cidr())
+ *             .cloudControlPlaneServer1(var_.exadata_infrastructure_cloud_control_plane_server1())
+ *             .cloudControlPlaneServer2(var_.exadata_infrastructure_cloud_control_plane_server2())
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.exadata_infrastructure_display_name())
+ *             .dnsServers(var_.exadata_infrastructure_dns_server())
+ *             .gateway(var_.exadata_infrastructure_gateway())
+ *             .infiniBandNetworkCidr(var_.exadata_infrastructure_infini_band_network_cidr())
+ *             .netmask(var_.exadata_infrastructure_netmask())
+ *             .ntpServers(var_.exadata_infrastructure_ntp_server())
+ *             .shape(var_.exadata_infrastructure_shape())
+ *             .timeZone(var_.exadata_infrastructure_time_zone())
+ *             .activationFile(var_.exadata_infrastructure_activation_file())
+ *             .computeCount(var_.exadata_infrastructure_compute_count())
+ *             .contacts(ExadataInfrastructureContactArgs.builder()
+ *                 .email(var_.exadata_infrastructure_contacts_email())
+ *                 .isPrimary(var_.exadata_infrastructure_contacts_is_primary())
+ *                 .name(var_.exadata_infrastructure_contacts_name())
+ *                 .isContactMosValidated(var_.exadata_infrastructure_contacts_is_contact_mos_validated())
+ *                 .phoneNumber(var_.exadata_infrastructure_contacts_phone_number())
+ *                 .build())
+ *             .corporateProxy(var_.exadata_infrastructure_corporate_proxy())
+ *             .definedTags(var_.exadata_infrastructure_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isCpsOfflineReportEnabled(var_.exadata_infrastructure_is_cps_offline_report_enabled())
+ *             .maintenanceWindow(ExadataInfrastructureMaintenanceWindowArgs.builder()
+ *                 .preference(var_.exadata_infrastructure_maintenance_window_preference())
+ *                 .customActionTimeoutInMins(var_.exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins())
+ *                 .daysOfWeeks(ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.builder()
+ *                     .name(var_.exadata_infrastructure_maintenance_window_days_of_week_name())
+ *                     .build())
+ *                 .hoursOfDays(var_.exadata_infrastructure_maintenance_window_hours_of_day())
+ *                 .isCustomActionTimeoutEnabled(var_.exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled())
+ *                 .leadTimeInWeeks(var_.exadata_infrastructure_maintenance_window_lead_time_in_weeks())
+ *                 .months(ExadataInfrastructureMaintenanceWindowMonthArgs.builder()
+ *                     .name(var_.exadata_infrastructure_maintenance_window_months_name())
+ *                     .build())
+ *                 .patchingMode(var_.exadata_infrastructure_maintenance_window_patching_mode())
+ *                 .weeksOfMonths(var_.exadata_infrastructure_maintenance_window_weeks_of_month())
+ *                 .build())
+ *             .storageCount(var_.exadata_infrastructure_storage_count())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

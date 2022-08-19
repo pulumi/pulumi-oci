@@ -24,6 +24,49 @@ import javax.annotation.Nullable;
  * Create a configuration to collect logs from object storage bucket.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsObjectCollectionRule;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsObjectCollectionRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLogAnalyticsObjectCollectionRule = new LogAnalyticsObjectCollectionRule(&#34;testLogAnalyticsObjectCollectionRule&#34;, LogAnalyticsObjectCollectionRuleArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .logGroupId(oci_logging_log_group.test_log_group().id())
+ *             .logSourceName(var_.log_analytics_object_collection_rule_log_source_name())
+ *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+ *             .osBucketName(oci_objectstorage_bucket.test_bucket().name())
+ *             .osNamespace(var_.log_analytics_object_collection_rule_os_namespace())
+ *             .charEncoding(var_.log_analytics_object_collection_rule_char_encoding())
+ *             .collectionType(var_.log_analytics_object_collection_rule_collection_type())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.log_analytics_object_collection_rule_description())
+ *             .entityId(oci_log_analytics_entity.test_entity().id())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .objectNameFilters(var_.log_analytics_object_collection_rule_object_name_filters())
+ *             .overrides(var_.log_analytics_object_collection_rule_overrides())
+ *             .pollSince(var_.log_analytics_object_collection_rule_poll_since())
+ *             .pollTill(var_.log_analytics_object_collection_rule_poll_till())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

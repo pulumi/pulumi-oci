@@ -22,25 +22,23 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResult = Oci.ApmSynthetics.GetResult.Invoke(new()
         ///     {
-        ///         var testResult = Output.Create(Oci.ApmSynthetics.GetResult.InvokeAsync(new Oci.ApmSynthetics.GetResultArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///             ExecutionTime = @var.Result_execution_time,
-        ///             MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///             ResultContentType = @var.Result_result_content_type,
-        ///             ResultType = @var.Result_result_type,
-        ///             VantagePoint = @var.Result_vantage_point,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+        ///         ExecutionTime = @var.Result_execution_time,
+        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///         ResultContentType = @var.Result_result_content_type,
+        ///         ResultType = @var.Result_result_type,
+        ///         VantagePoint = @var.Result_vantage_point,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResult = Oci.ApmSynthetics.GetResult.Invoke(new()
         ///     {
-        ///         var testResult = Output.Create(Oci.ApmSynthetics.GetResult.InvokeAsync(new Oci.ApmSynthetics.GetResultArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///             ExecutionTime = @var.Result_execution_time,
-        ///             MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///             ResultContentType = @var.Result_result_content_type,
-        ///             ResultType = @var.Result_result_type,
-        ///             VantagePoint = @var.Result_vantage_point,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+        ///         ExecutionTime = @var.Result_execution_time,
+        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///         ResultContentType = @var.Result_result_content_type,
+        ///         ResultType = @var.Result_result_type,
+        ///         VantagePoint = @var.Result_vantage_point,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.ApmSynthetics
     }
 
 
-    public sealed class GetResultArgs : Pulumi.InvokeArgs
+    public sealed class GetResultArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetResultArgs()
         {
         }
+        public static new GetResultArgs Empty => new GetResultArgs();
     }
 
-    public sealed class GetResultInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetResultInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetResultInvokeArgs()
         {
         }
+        public static new GetResultInvokeArgs Empty => new GetResultInvokeArgs();
     }
 
 

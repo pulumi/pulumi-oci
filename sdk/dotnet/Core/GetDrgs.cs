@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgs = Oci.Core.GetDrgs.Invoke(new()
         ///     {
-        ///         var testDrgs = Output.Create(Oci.Core.GetDrgs.InvokeAsync(new Oci.Core.GetDrgsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgs = Oci.Core.GetDrgs.Invoke(new()
         ///     {
-        ///         var testDrgs = Output.Create(Oci.Core.GetDrgs.InvokeAsync(new Oci.Core.GetDrgsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDrgsArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Core
         public GetDrgsArgs()
         {
         }
+        public static new GetDrgsArgs Empty => new GetDrgsArgs();
     }
 
-    public sealed class GetDrgsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Core
         public GetDrgsInvokeArgs()
         {
         }
+        public static new GetDrgsInvokeArgs Empty => new GetDrgsInvokeArgs();
     }
 
 

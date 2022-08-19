@@ -17,64 +17,62 @@ namespace Pulumi.Oci.Integration
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIntegrationInstance = new Oci.Integration.IntegrationInstance("testIntegrationInstance", new()
     ///     {
-    ///         var testIntegrationInstance = new Oci.Integration.IntegrationInstance("testIntegrationInstance", new Oci.Integration.IntegrationInstanceArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Integration_instance_display_name,
+    ///         IntegrationInstanceType = @var.Integration_instance_integration_instance_type,
+    ///         IsByol = @var.Integration_instance_is_byol,
+    ///         MessagePacks = @var.Integration_instance_message_packs,
+    ///         AlternateCustomEndpoints = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Integration_instance_display_name,
-    ///             IntegrationInstanceType = @var.Integration_instance_integration_instance_type,
-    ///             IsByol = @var.Integration_instance_is_byol,
-    ///             MessagePacks = @var.Integration_instance_message_packs,
-    ///             AlternateCustomEndpoints = 
+    ///             new Oci.Integration.Inputs.IntegrationInstanceAlternateCustomEndpointArgs
     ///             {
-    ///                 new Oci.Integration.Inputs.IntegrationInstanceAlternateCustomEndpointArgs
-    ///                 {
-    ///                     Hostname = @var.Integration_instance_alternate_custom_endpoints_hostname,
-    ///                     CertificateSecretId = oci_vault_secret.Test_secret.Id,
-    ///                 },
-    ///             },
-    ///             ConsumptionModel = @var.Integration_instance_consumption_model,
-    ///             CustomEndpoint = new Oci.Integration.Inputs.IntegrationInstanceCustomEndpointArgs
-    ///             {
-    ///                 Hostname = @var.Integration_instance_custom_endpoint_hostname,
+    ///                 Hostname = @var.Integration_instance_alternate_custom_endpoints_hostname,
     ///                 CertificateSecretId = oci_vault_secret.Test_secret.Id,
     ///             },
-    ///             DefinedTags = 
+    ///         },
+    ///         ConsumptionModel = @var.Integration_instance_consumption_model,
+    ///         CustomEndpoint = new Oci.Integration.Inputs.IntegrationInstanceCustomEndpointArgs
+    ///         {
+    ///             Hostname = @var.Integration_instance_custom_endpoint_hostname,
+    ///             CertificateSecretId = oci_vault_secret.Test_secret.Id,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IdcsAt = @var.Integration_instance_idcs_at,
+    ///         IsFileServerEnabled = @var.Integration_instance_is_file_server_enabled,
+    ///         IsVisualBuilderEnabled = @var.Integration_instance_is_visual_builder_enabled,
+    ///         NetworkEndpointDetails = new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsArgs
+    ///         {
+    ///             NetworkEndpointType = @var.Integration_instance_network_endpoint_details_network_endpoint_type,
+    ///             AllowlistedHttpIps = @var.Integration_instance_network_endpoint_details_allowlisted_http_ips,
+    ///             AllowlistedHttpVcns = new[]
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IdcsAt = @var.Integration_instance_idcs_at,
-    ///             IsFileServerEnabled = @var.Integration_instance_is_file_server_enabled,
-    ///             IsVisualBuilderEnabled = @var.Integration_instance_is_visual_builder_enabled,
-    ///             NetworkEndpointDetails = new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsArgs
-    ///             {
-    ///                 NetworkEndpointType = @var.Integration_instance_network_endpoint_details_network_endpoint_type,
-    ///                 AllowlistedHttpIps = @var.Integration_instance_network_endpoint_details_allowlisted_http_ips,
-    ///                 AllowlistedHttpVcns = 
+    ///                 new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs
     ///                 {
-    ///                     new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs
-    ///                     {
-    ///                         Id = @var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
-    ///                         AllowlistedIps = @var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
-    ///                     },
+    ///                     Id = @var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
+    ///                     AllowlistedIps = @var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
     ///                 },
-    ///                 IsIntegrationVcnAllowlisted = @var.Integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
     ///             },
-    ///             State = @var.Integration_instance_target_state,
-    ///         });
-    ///     }
+    ///             IsIntegrationVcnAllowlisted = @var.Integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+    ///         },
+    ///         State = @var.Integration_instance_target_state,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -86,7 +84,7 @@ namespace Pulumi.Oci.Integration
     /// ```
     /// </summary>
     [OciResourceType("oci:Integration/integrationInstance:IntegrationInstance")]
-    public partial class IntegrationInstance : Pulumi.CustomResource
+    public partial class IntegrationInstance : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -258,7 +256,7 @@ namespace Pulumi.Oci.Integration
         }
     }
 
-    public sealed class IntegrationInstanceArgs : Pulumi.ResourceArgs
+    public sealed class IntegrationInstanceArgs : global::Pulumi.ResourceArgs
     {
         [Input("alternateCustomEndpoints")]
         private InputList<Inputs.IntegrationInstanceAlternateCustomEndpointArgs>? _alternateCustomEndpoints;
@@ -371,9 +369,10 @@ namespace Pulumi.Oci.Integration
         public IntegrationInstanceArgs()
         {
         }
+        public static new IntegrationInstanceArgs Empty => new IntegrationInstanceArgs();
     }
 
-    public sealed class IntegrationInstanceState : Pulumi.ResourceArgs
+    public sealed class IntegrationInstanceState : global::Pulumi.ResourceArgs
     {
         [Input("alternateCustomEndpoints")]
         private InputList<Inputs.IntegrationInstanceAlternateCustomEndpointGetArgs>? _alternateCustomEndpoints;
@@ -534,5 +533,6 @@ namespace Pulumi.Oci.Integration
         public IntegrationInstanceState()
         {
         }
+        public static new IntegrationInstanceState Empty => new IntegrationInstanceState();
     }
 }

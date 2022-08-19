@@ -18,6 +18,39 @@ import javax.annotation.Nullable;
 
 /**
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.Record;
+ * import com.pulumi.oci.Dns.RecordArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRecord = new Record(&#34;testRecord&#34;, RecordArgs.builder()        
+ *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
+ *             .domain(var_.record_items_domain())
+ *             .rtype(var_.record_items_rtype())
+ *             .compartmentId(var_.compartment_id())
+ *             .rdata(var_.record_items_rdata())
+ *             .ttl(var_.record_items_ttl())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class ResourceActionActionGetArgs : Pulumi.ResourceArgs
+    public sealed class ResourceActionActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Text describing the recommended action.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public ResourceActionActionGetArgs()
         {
         }
+        public static new ResourceActionActionGetArgs Empty => new ResourceActionActionGetArgs();
     }
 }

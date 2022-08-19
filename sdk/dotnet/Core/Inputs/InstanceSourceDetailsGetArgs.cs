@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceSourceDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceSourceDetailsGetArgs()
         {
         }
+        public static new InstanceSourceDetailsGetArgs Empty => new InstanceSourceDetailsGetArgs();
     }
 }

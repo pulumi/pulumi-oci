@@ -20,6 +20,35 @@ import javax.annotation.Nullable;
  * Updates the configuration for the compartment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LicenseManager.Configuration;
+ * import com.pulumi.oci.LicenseManager.ConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testConfiguration = new Configuration(&#34;testConfiguration&#34;, ConfigurationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .emailIds(var_.configuration_email_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

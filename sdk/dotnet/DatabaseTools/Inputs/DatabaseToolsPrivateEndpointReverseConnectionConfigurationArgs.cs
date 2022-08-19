@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools.Inputs
 {
 
-    public sealed class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs : global::Pulumi.ResourceArgs
     {
         [Input("reverseConnectionsSourceIps")]
         private InputList<Inputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs>? _reverseConnectionsSourceIps;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         public DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs()
         {
         }
+        public static new DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs Empty => new DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs();
     }
 }

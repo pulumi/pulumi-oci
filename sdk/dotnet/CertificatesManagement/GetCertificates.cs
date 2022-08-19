@@ -23,24 +23,22 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificates = Oci.CertificatesManagement.GetCertificates.Invoke(new()
         ///     {
-        ///         var testCertificates = Output.Create(Oci.CertificatesManagement.GetCertificates.InvokeAsync(new Oci.CertificatesManagement.GetCertificatesArgs
-        ///         {
-        ///             CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///             Name = @var.Certificate_name,
-        ///             State = @var.Certificate_state,
-        ///         }));
-        ///     }
+        ///         CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+        ///         Name = @var.Certificate_name,
+        ///         State = @var.Certificate_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,24 +58,22 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificates = Oci.CertificatesManagement.GetCertificates.Invoke(new()
         ///     {
-        ///         var testCertificates = Output.Create(Oci.CertificatesManagement.GetCertificates.InvokeAsync(new Oci.CertificatesManagement.GetCertificatesArgs
-        ///         {
-        ///             CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///             Name = @var.Certificate_name,
-        ///             State = @var.Certificate_state,
-        ///         }));
-        ///     }
+        ///         CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+        ///         Name = @var.Certificate_name,
+        ///         State = @var.Certificate_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.CertificatesManagement
     }
 
 
-    public sealed class GetCertificatesArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificatesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
@@ -130,9 +126,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificatesArgs()
         {
         }
+        public static new GetCertificatesArgs Empty => new GetCertificatesArgs();
     }
 
-    public sealed class GetCertificatesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificatesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
@@ -175,6 +172,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificatesInvokeArgs()
         {
         }
+        public static new GetCertificatesInvokeArgs Empty => new GetCertificatesInvokeArgs();
     }
 
 

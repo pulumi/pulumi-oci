@@ -30,20 +30,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExadataIormConfig = Oci.Database.GetExadataIormConfig.Invoke(new()
         ///     {
-        ///         var testExadataIormConfig = Output.Create(Oci.Database.GetExadataIormConfig.InvokeAsync(new Oci.Database.GetExadataIormConfigArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -70,20 +68,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExadataIormConfig = Oci.Database.GetExadataIormConfig.Invoke(new()
         ///     {
-        ///         var testExadataIormConfig = Output.Create(Oci.Database.GetExadataIormConfig.InvokeAsync(new Oci.Database.GetExadataIormConfigArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetExadataIormConfigArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataIormConfigArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Database
         public GetExadataIormConfigArgs()
         {
         }
+        public static new GetExadataIormConfigArgs Empty => new GetExadataIormConfigArgs();
     }
 
-    public sealed class GetExadataIormConfigInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataIormConfigInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetExadataIormConfigInvokeArgs()
         {
         }
+        public static new GetExadataIormConfigInvokeArgs Empty => new GetExadataIormConfigInvokeArgs();
     }
 
 

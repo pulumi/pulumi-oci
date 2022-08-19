@@ -22,23 +22,21 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsCategoriesList = Oci.LogAnalytics.GetLogAnalyticsCategoriesList.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsCategoriesList = Output.Create(Oci.LogAnalytics.GetLogAnalyticsCategoriesList.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsCategoriesListArgs
-        ///         {
-        ///             Namespace = @var.Log_analytics_categories_list_namespace,
-        ///             CategoryDisplayText = @var.Log_analytics_categories_list_category_display_text,
-        ///             CategoryType = @var.Log_analytics_categories_list_category_type,
-        ///             Name = @var.Log_analytics_categories_list_name,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_analytics_categories_list_namespace,
+        ///         CategoryDisplayText = @var.Log_analytics_categories_list_category_display_text,
+        ///         CategoryType = @var.Log_analytics_categories_list_category_type,
+        ///         Name = @var.Log_analytics_categories_list_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsCategoriesList = Oci.LogAnalytics.GetLogAnalyticsCategoriesList.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsCategoriesList = Output.Create(Oci.LogAnalytics.GetLogAnalyticsCategoriesList.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsCategoriesListArgs
-        ///         {
-        ///             Namespace = @var.Log_analytics_categories_list_namespace,
-        ///             CategoryDisplayText = @var.Log_analytics_categories_list_category_display_text,
-        ///             CategoryType = @var.Log_analytics_categories_list_category_type,
-        ///             Name = @var.Log_analytics_categories_list_name,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_analytics_categories_list_namespace,
+        ///         CategoryDisplayText = @var.Log_analytics_categories_list_category_display_text,
+        ///         CategoryType = @var.Log_analytics_categories_list_category_type,
+        ///         Name = @var.Log_analytics_categories_list_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsCategoriesListArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsCategoriesListArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The category display text used for filtering. Only categories matching the specified display name or description will be returned.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsCategoriesListArgs()
         {
         }
+        public static new GetLogAnalyticsCategoriesListArgs Empty => new GetLogAnalyticsCategoriesListArgs();
     }
 
-    public sealed class GetLogAnalyticsCategoriesListInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsCategoriesListInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The category display text used for filtering. Only categories matching the specified display name or description will be returned.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsCategoriesListInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsCategoriesListInvokeArgs Empty => new GetLogAnalyticsCategoriesListInvokeArgs();
     }
 
 

@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSummarizeResourceInventory = Oci.Jms.GetSummarizeResourceInventory.Invoke(new()
         ///     {
-        ///         var testSummarizeResourceInventory = Output.Create(Oci.Jms.GetSummarizeResourceInventory.InvokeAsync(new Oci.Jms.GetSummarizeResourceInventoryArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             TimeEnd = @var.Summarize_resource_inventory_time_end,
-        ///             TimeStart = @var.Summarize_resource_inventory_time_start,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         TimeEnd = @var.Summarize_resource_inventory_time_end,
+        ///         TimeStart = @var.Summarize_resource_inventory_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSummarizeResourceInventory = Oci.Jms.GetSummarizeResourceInventory.Invoke(new()
         ///     {
-        ///         var testSummarizeResourceInventory = Output.Create(Oci.Jms.GetSummarizeResourceInventory.InvokeAsync(new Oci.Jms.GetSummarizeResourceInventoryArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             TimeEnd = @var.Summarize_resource_inventory_time_end,
-        ///             TimeStart = @var.Summarize_resource_inventory_time_start,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         TimeEnd = @var.Summarize_resource_inventory_time_end,
+        ///         TimeStart = @var.Summarize_resource_inventory_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetSummarizeResourceInventoryArgs : Pulumi.InvokeArgs
+    public sealed class GetSummarizeResourceInventoryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Jms
         public GetSummarizeResourceInventoryArgs()
         {
         }
+        public static new GetSummarizeResourceInventoryArgs Empty => new GetSummarizeResourceInventoryArgs();
     }
 
-    public sealed class GetSummarizeResourceInventoryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSummarizeResourceInventoryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Jms
         public GetSummarizeResourceInventoryInvokeArgs()
         {
         }
+        public static new GetSummarizeResourceInventoryInvokeArgs Empty => new GetSummarizeResourceInventoryInvokeArgs();
     }
 
 

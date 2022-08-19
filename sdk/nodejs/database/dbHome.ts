@@ -10,58 +10,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDbHome = new oci.database.DbHome("testDbHome", {
- *     database: {
- *         adminPassword: _var.db_home_database_admin_password,
- *         backupId: oci_database_backup.test_backup.id,
- *         backupTdePassword: _var.db_home_database_backup_tde_password,
- *         characterSet: _var.db_home_database_character_set,
- *         databaseId: oci_database_database.test_database.id,
- *         databaseSoftwareImageId: oci_database_database_software_image.test_database_software_image.id,
- *         dbBackupConfig: {
- *             autoBackupEnabled: _var.db_home_database_db_backup_config_auto_backup_enabled,
- *             autoBackupWindow: _var.db_home_database_db_backup_config_auto_backup_window,
- *             backupDestinationDetails: [{
- *                 id: _var.db_home_database_db_backup_config_backup_destination_details_id,
- *                 type: _var.db_home_database_db_backup_config_backup_destination_details_type,
- *             }],
- *             recoveryWindowInDays: _var.db_home_database_db_backup_config_recovery_window_in_days,
- *         },
- *         dbName: _var.db_home_database_db_name,
- *         dbWorkload: _var.db_home_database_db_workload,
- *         definedTags: _var.db_home_database_defined_tags,
- *         freeformTags: _var.db_home_database_freeform_tags,
- *         kmsKeyId: oci_kms_key.test_key.id,
- *         kmsKeyVersionId: oci_kms_key_version.test_key_version.id,
- *         ncharacterSet: _var.db_home_database_ncharacter_set,
- *         pdbName: _var.db_home_database_pdb_name,
- *         sidPrefix: _var.db_home_database_sid_prefix,
- *         tdeWalletPassword: _var.db_home_database_tde_wallet_password,
- *         timeStampForPointInTimeRecovery: _var.db_home_database_time_stamp_for_point_in_time_recovery,
- *         vaultId: oci_kms_vault.test_vault.id,
- *     },
- *     databaseSoftwareImageId: oci_database_database_software_image.test_database_software_image.id,
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     dbVersion: [{}],
- *     definedTags: _var.db_home_defined_tags,
- *     displayName: _var.db_home_display_name,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     isDesupportedVersion: _var.db_home_is_desupported_version,
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     kmsKeyVersionId: oci_kms_key_version.test_key_version.id,
- *     source: _var.db_home_source,
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
- * });
- * ```
- *
  * ## Import
  *
  * DbHomes can be imported using the `id`, e.g.

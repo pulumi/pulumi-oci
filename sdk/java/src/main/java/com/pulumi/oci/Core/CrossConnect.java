@@ -42,6 +42,43 @@ import javax.annotation.Nullable;
  * It does not have to be unique, and you can change it. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.CrossConnect;
+ * import com.pulumi.oci.Core.CrossConnectArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCrossConnect = new CrossConnect(&#34;testCrossConnect&#34;, CrossConnectArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .locationName(var_.cross_connect_location_name())
+ *             .portSpeedShapeName(var_.cross_connect_port_speed_shape_name())
+ *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+ *             .customerReferenceName(var_.cross_connect_customer_reference_name())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.cross_connect_display_name())
+ *             .farCrossConnectOrCrossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .nearCrossConnectOrCrossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

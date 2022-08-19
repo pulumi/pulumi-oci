@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Events.Inputs
 {
 
-    public sealed class RuleActionsActionGetArgs : Pulumi.ResourceArgs
+    public sealed class RuleActionsActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The action to perform if the condition in the rule matches an event.
@@ -72,5 +72,6 @@ namespace Pulumi.Oci.Events.Inputs
         public RuleActionsActionGetArgs()
         {
         }
+        public static new RuleActionsActionGetArgs Empty => new RuleActionsActionGetArgs();
     }
 }

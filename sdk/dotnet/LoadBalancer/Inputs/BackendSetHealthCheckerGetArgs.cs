@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class BackendSetHealthCheckerGetArgs : Pulumi.ResourceArgs
+    public sealed class BackendSetHealthCheckerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public BackendSetHealthCheckerGetArgs()
         {
         }
+        public static new BackendSetHealthCheckerGetArgs Empty => new BackendSetHealthCheckerGetArgs();
     }
 }

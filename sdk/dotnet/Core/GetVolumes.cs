@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolumes = Oci.Core.GetVolumes.Invoke(new()
         ///     {
-        ///         var testVolumes = Output.Create(Oci.Core.GetVolumes.InvokeAsync(new Oci.Core.GetVolumesArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Volume_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Volume_display_name,
-        ///             State = @var.Volume_state,
-        ///             VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Volume_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Volume_display_name,
+        ///         State = @var.Volume_state,
+        ///         VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolumes = Oci.Core.GetVolumes.Invoke(new()
         ///     {
-        ///         var testVolumes = Output.Create(Oci.Core.GetVolumes.InvokeAsync(new Oci.Core.GetVolumesArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Volume_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Volume_display_name,
-        ///             State = @var.Volume_state,
-        ///             VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Volume_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Volume_display_name,
+        ///         State = @var.Volume_state,
+        ///         VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVolumesArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Core
         public GetVolumesArgs()
         {
         }
+        public static new GetVolumesArgs Empty => new GetVolumesArgs();
     }
 
-    public sealed class GetVolumesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Core
         public GetVolumesInvokeArgs()
         {
         }
+        public static new GetVolumesInvokeArgs Empty => new GetVolumesInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs : Pulumi.ResourceArgs
+    public sealed class BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline's OCID.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs()
         {
         }
+        public static new BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs Empty => new BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs();
     }
 }

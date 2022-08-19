@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class GetLogSavedSearchesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetLogSavedSearchesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Resource name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public GetLogSavedSearchesFilterInputArgs()
         {
         }
+        public static new GetLogSavedSearchesFilterInputArgs Empty => new GetLogSavedSearchesFilterInputArgs();
     }
 }

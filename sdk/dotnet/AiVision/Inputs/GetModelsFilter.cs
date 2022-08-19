@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiVision.Inputs
 {
 
-    public sealed class GetModelsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetModelsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.AiVision.Inputs
         public GetModelsFilterArgs()
         {
         }
+        public static new GetModelsFilterArgs Empty => new GetModelsFilterArgs();
     }
 }

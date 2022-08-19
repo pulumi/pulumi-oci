@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolumeBackupPolicies = Oci.Core.GetVolumeBackupPolicies.Invoke(new()
         ///     {
-        ///         var testVolumeBackupPolicies = Output.Create(Oci.Core.GetVolumeBackupPolicies.InvokeAsync(new Oci.Core.GetVolumeBackupPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolumeBackupPolicies = Oci.Core.GetVolumeBackupPolicies.Invoke(new()
         ///     {
-        ///         var testVolumeBackupPolicies = Output.Create(Oci.Core.GetVolumeBackupPolicies.InvokeAsync(new Oci.Core.GetVolumeBackupPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVolumeBackupPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumeBackupPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Core
         public GetVolumeBackupPoliciesArgs()
         {
         }
+        public static new GetVolumeBackupPoliciesArgs Empty => new GetVolumeBackupPoliciesArgs();
     }
 
-    public sealed class GetVolumeBackupPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumeBackupPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
@@ -123,6 +120,7 @@ namespace Pulumi.Oci.Core
         public GetVolumeBackupPoliciesInvokeArgs()
         {
         }
+        public static new GetVolumeBackupPoliciesInvokeArgs Empty => new GetVolumeBackupPoliciesInvokeArgs();
     }
 
 

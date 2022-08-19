@@ -17,83 +17,82 @@ namespace Pulumi.Oci.BigDataService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBdsInstance = new Oci.BigDataService.BdsInstance("testBdsInstance", new()
     ///     {
-    ///         var testBdsInstance = new Oci.BigDataService.BdsInstance("testBdsInstance", new Oci.BigDataService.BdsInstanceArgs
+    ///         ClusterAdminPassword = @var.Bds_instance_cluster_admin_password,
+    ///         ClusterPublicKey = @var.Bds_instance_cluster_public_key,
+    ///         ClusterVersion = @var.Bds_instance_cluster_version,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Bds_instance_display_name,
+    ///         IsHighAvailability = @var.Bds_instance_is_high_availability,
+    ///         IsSecure = @var.Bds_instance_is_secure,
+    ///         MasterNode = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeArgs
     ///         {
-    ///             ClusterAdminPassword = @var.Bds_instance_cluster_admin_password,
-    ///             ClusterPublicKey = @var.Bds_instance_cluster_public_key,
-    ///             ClusterVersion = @var.Bds_instance_cluster_version,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Bds_instance_display_name,
-    ///             IsHighAvailability = @var.Bds_instance_is_high_availability,
-    ///             IsSecure = @var.Bds_instance_is_secure,
-    ///             MasterNode = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeArgs
+    ///             Shape = @var.Bds_instance_nodes_shape,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
+    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeShapeConfigArgs
     ///             {
-    ///                 Shape = @var.Bds_instance_nodes_shape,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///                 NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///                 ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeShapeConfigArgs
-    ///                 {
-    ///                     MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                     Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///                 },
+    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
     ///             },
-    ///             UtilNode = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeArgs
+    ///         },
+    ///         UtilNode = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeArgs
+    ///         {
+    ///             Shape = @var.Bds_instance_nodes_shape,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
+    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeShapeConfigArgs
     ///             {
-    ///                 Shape = @var.Bds_instance_nodes_shape,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///                 NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///                 ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeShapeConfigArgs
-    ///                 {
-    ///                     MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                     Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///                 },
+    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
     ///             },
-    ///             WorkerNode = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeArgs
+    ///         },
+    ///         WorkerNode = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeArgs
+    ///         {
+    ///             Shape = @var.Bds_instance_nodes_shape,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
+    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeShapeConfigArgs
     ///             {
-    ///                 Shape = @var.Bds_instance_nodes_shape,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///                 NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///                 ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeShapeConfigArgs
-    ///                 {
-    ///                     MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                     Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///                 },
+    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
     ///             },
-    ///             ComputeOnlyWorkerNode = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeArgs
+    ///         },
+    ///         ComputeOnlyWorkerNode = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeArgs
+    ///         {
+    ///             Shape = @var.Bds_instance_nodes_shape,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
+    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs
     ///             {
-    ///                 Shape = @var.Bds_instance_nodes_shape,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
-    ///                 NumberOfNodes = @var.Bds_instance_number_of_nodes,
-    ///                 ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs
-    ///                 {
-    ///                     MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
-    ///                     Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
-    ///                 },
+    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
     ///             },
-    ///             BootstrapScriptUrl = @var.Bds_instance_bootstrap_script_url,
-    ///             DefinedTags = @var.Bds_instance_defined_tags,
-    ///             FreeformTags = @var.Bds_instance_freeform_tags,
-    ///             KerberosRealmName = @var.Bds_instance_kerberos_realm_name,
-    ///             NetworkConfig = new Oci.BigDataService.Inputs.BdsInstanceNetworkConfigArgs
-    ///             {
-    ///                 CidrBlock = @var.Bds_instance_network_config_cidr_block,
-    ///                 IsNatGatewayRequired = @var.Bds_instance_network_config_is_nat_gateway_required,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         BootstrapScriptUrl = @var.Bds_instance_bootstrap_script_url,
+    ///         DefinedTags = @var.Bds_instance_defined_tags,
+    ///         FreeformTags = @var.Bds_instance_freeform_tags,
+    ///         KerberosRealmName = @var.Bds_instance_kerberos_realm_name,
+    ///         KmsKeyId = @var.Bds_instance_kms_key_id,
+    ///         NetworkConfig = new Oci.BigDataService.Inputs.BdsInstanceNetworkConfigArgs
+    ///         {
+    ///             CidrBlock = @var.Bds_instance_network_config_cidr_block,
+    ///             IsNatGatewayRequired = @var.Bds_instance_network_config_is_nat_gateway_required,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -105,7 +104,7 @@ namespace Pulumi.Oci.BigDataService
     /// ```
     /// </summary>
     [OciResourceType("oci:BigDataService/bdsInstance:BdsInstance")]
-    public partial class BdsInstance : Pulumi.CustomResource
+    public partial class BdsInstance : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
@@ -199,6 +198,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("kerberosRealmName")]
         public Output<string> KerberosRealmName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The OCID of the Key Management master encryption key.
+        /// </summary>
+        [Output("kmsKeyId")]
+        public Output<string> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The master node in the BDS instance
@@ -295,7 +300,7 @@ namespace Pulumi.Oci.BigDataService
         }
     }
 
-    public sealed class BdsInstanceArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
@@ -397,6 +402,12 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? KerberosRealmName { get; set; }
 
         /// <summary>
+        /// (Updatable) The OCID of the Key Management master encryption key.
+        /// </summary>
+        [Input("kmsKeyId")]
+        public Input<string>? KmsKeyId { get; set; }
+
+        /// <summary>
         /// The master node in the BDS instance
         /// </summary>
         [Input("masterNode", required: true)]
@@ -420,9 +431,10 @@ namespace Pulumi.Oci.BigDataService
         public BdsInstanceArgs()
         {
         }
+        public static new BdsInstanceArgs Empty => new BdsInstanceArgs();
     }
 
-    public sealed class BdsInstanceState : Pulumi.ResourceArgs
+    public sealed class BdsInstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
@@ -542,6 +554,12 @@ namespace Pulumi.Oci.BigDataService
         public Input<string>? KerberosRealmName { get; set; }
 
         /// <summary>
+        /// (Updatable) The OCID of the Key Management master encryption key.
+        /// </summary>
+        [Input("kmsKeyId")]
+        public Input<string>? KmsKeyId { get; set; }
+
+        /// <summary>
         /// The master node in the BDS instance
         /// </summary>
         [Input("masterNode")]
@@ -601,5 +619,6 @@ namespace Pulumi.Oci.BigDataService
         public BdsInstanceState()
         {
         }
+        public static new BdsInstanceState Empty => new BdsInstanceState();
     }
 }

@@ -44,6 +44,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .dedicatedVantagePointId(oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVantagePointResult> getDedicatedVantagePoint(GetDedicatedVantagePointArgs args) {
@@ -55,6 +84,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .dedicatedVantagePointId(oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVantagePointResult> getDedicatedVantagePointPlain(GetDedicatedVantagePointPlainArgs args) {
@@ -66,6 +124,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .dedicatedVantagePointId(oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVantagePointResult> getDedicatedVantagePoint(GetDedicatedVantagePointArgs args, InvokeOptions options) {
@@ -77,6 +164,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the details of the dedicated vantage point identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .dedicatedVantagePointId(oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVantagePointResult> getDedicatedVantagePointPlain(GetDedicatedVantagePointPlainArgs args, InvokeOptions options) {
@@ -88,6 +204,37 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of dedicated vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.dedicated_vantage_point_display_name())
+     *             .name(var_.dedicated_vantage_point_name())
+     *             .status(var_.dedicated_vantage_point_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVantagePointsResult> getDedicatedVantagePoints(GetDedicatedVantagePointsArgs args) {
@@ -99,6 +246,37 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of dedicated vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.dedicated_vantage_point_display_name())
+     *             .name(var_.dedicated_vantage_point_name())
+     *             .status(var_.dedicated_vantage_point_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVantagePointsResult> getDedicatedVantagePointsPlain(GetDedicatedVantagePointsPlainArgs args) {
@@ -110,6 +288,37 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of dedicated vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.dedicated_vantage_point_display_name())
+     *             .name(var_.dedicated_vantage_point_name())
+     *             .status(var_.dedicated_vantage_point_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVantagePointsResult> getDedicatedVantagePoints(GetDedicatedVantagePointsArgs args, InvokeOptions options) {
@@ -121,6 +330,37 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of dedicated vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetDedicatedVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.dedicated_vantage_point_display_name())
+     *             .name(var_.dedicated_vantage_point_name())
+     *             .status(var_.dedicated_vantage_point_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVantagePointsResult> getDedicatedVantagePointsPlain(GetDedicatedVantagePointsPlainArgs args, InvokeOptions options) {
@@ -132,6 +372,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the monitor identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitorResult> getMonitor(GetMonitorArgs args) {
@@ -143,6 +412,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the monitor identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitorResult> getMonitorPlain(GetMonitorPlainArgs args) {
@@ -154,6 +452,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the monitor identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitorResult> getMonitor(GetMonitorArgs args, InvokeOptions options) {
@@ -165,6 +492,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the monitor identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitorResult> getMonitorPlain(GetMonitorPlainArgs args, InvokeOptions options) {
@@ -176,6 +532,39 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of monitors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.monitor_display_name())
+     *             .monitorType(var_.monitor_monitor_type())
+     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .status(var_.monitor_status())
+     *             .vantagePoint(var_.monitor_vantage_point())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitorsResult> getMonitors(GetMonitorsArgs args) {
@@ -187,6 +576,39 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of monitors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.monitor_display_name())
+     *             .monitorType(var_.monitor_monitor_type())
+     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .status(var_.monitor_status())
+     *             .vantagePoint(var_.monitor_vantage_point())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitorsResult> getMonitorsPlain(GetMonitorsPlainArgs args) {
@@ -198,6 +620,39 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of monitors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.monitor_display_name())
+     *             .monitorType(var_.monitor_monitor_type())
+     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .status(var_.monitor_status())
+     *             .vantagePoint(var_.monitor_vantage_point())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitorsResult> getMonitors(GetMonitorsArgs args, InvokeOptions options) {
@@ -209,6 +664,39 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of monitors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.monitor_display_name())
+     *             .monitorType(var_.monitor_monitor_type())
+     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .status(var_.monitor_status())
+     *             .vantagePoint(var_.monitor_vantage_point())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitorsResult> getMonitorsPlain(GetMonitorsPlainArgs args, InvokeOptions options) {
@@ -220,6 +708,39 @@ public final class ApmSyntheticsFunctions {
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .executionTime(var_.result_execution_time())
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .resultContentType(var_.result_result_content_type())
+     *             .resultType(var_.result_result_type())
+     *             .vantagePoint(var_.result_vantage_point())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResultResult> getResult(GetResultArgs args) {
@@ -231,6 +752,39 @@ public final class ApmSyntheticsFunctions {
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .executionTime(var_.result_execution_time())
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .resultContentType(var_.result_result_content_type())
+     *             .resultType(var_.result_result_type())
+     *             .vantagePoint(var_.result_vantage_point())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResultResult> getResultPlain(GetResultPlainArgs args) {
@@ -242,6 +796,39 @@ public final class ApmSyntheticsFunctions {
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .executionTime(var_.result_execution_time())
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .resultContentType(var_.result_result_content_type())
+     *             .resultType(var_.result_result_type())
+     *             .vantagePoint(var_.result_vantage_point())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResultResult> getResult(GetResultArgs args, InvokeOptions options) {
@@ -253,6 +840,39 @@ public final class ApmSyntheticsFunctions {
      * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetResultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .executionTime(var_.result_execution_time())
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .resultContentType(var_.result_result_content_type())
+     *             .resultType(var_.result_result_type())
+     *             .vantagePoint(var_.result_vantage_point())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResultResult> getResultPlain(GetResultPlainArgs args, InvokeOptions options) {
@@ -264,6 +884,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the script identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScriptResult> getScript(GetScriptArgs args) {
@@ -275,6 +924,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the script identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScriptResult> getScriptPlain(GetScriptPlainArgs args) {
@@ -286,6 +964,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the script identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScriptResult> getScript(GetScriptArgs args, InvokeOptions options) {
@@ -297,6 +1004,35 @@ public final class ApmSyntheticsFunctions {
      * Gets the configuration of the script identified by the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScriptResult> getScriptPlain(GetScriptPlainArgs args, InvokeOptions options) {
@@ -308,6 +1044,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of scripts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .contentType(var_.script_content_type())
+     *             .displayName(var_.script_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScriptsResult> getScripts(GetScriptsArgs args) {
@@ -319,6 +1085,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of scripts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .contentType(var_.script_content_type())
+     *             .displayName(var_.script_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScriptsResult> getScriptsPlain(GetScriptsPlainArgs args) {
@@ -330,6 +1126,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of scripts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .contentType(var_.script_content_type())
+     *             .displayName(var_.script_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetScriptsResult> getScripts(GetScriptsArgs args, InvokeOptions options) {
@@ -341,6 +1167,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of scripts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetScriptsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .contentType(var_.script_content_type())
+     *             .displayName(var_.script_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetScriptsResult> getScriptsPlain(GetScriptsPlainArgs args, InvokeOptions options) {
@@ -352,6 +1208,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.public_vantage_point_display_name())
+     *             .name(var_.public_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVantagePointResult> getVantagePoint(GetVantagePointArgs args) {
@@ -363,6 +1249,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.public_vantage_point_display_name())
+     *             .name(var_.public_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVantagePointResult> getVantagePointPlain(GetVantagePointPlainArgs args) {
@@ -374,6 +1290,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.public_vantage_point_display_name())
+     *             .name(var_.public_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVantagePointResult> getVantagePoint(GetVantagePointArgs args, InvokeOptions options) {
@@ -385,6 +1331,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.public_vantage_point_display_name())
+     *             .name(var_.public_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVantagePointResult> getVantagePointPlain(GetVantagePointPlainArgs args, InvokeOptions options) {
@@ -396,6 +1372,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.public_vantage_point_display_name())
+     *             .name(var_.public_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args) {
@@ -407,6 +1413,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.public_vantage_point_display_name())
+     *             .name(var_.public_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain(GetVantagePointsPlainArgs args) {
@@ -418,6 +1454,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.public_vantage_point_display_name())
+     *             .name(var_.public_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args, InvokeOptions options) {
@@ -429,6 +1495,36 @@ public final class ApmSyntheticsFunctions {
      * Returns a list of public vantage points.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmSynthetics.ApmSyntheticsFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+     *             .displayName(var_.public_vantage_point_display_name())
+     *             .name(var_.public_vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain(GetVantagePointsPlainArgs args, InvokeOptions options) {

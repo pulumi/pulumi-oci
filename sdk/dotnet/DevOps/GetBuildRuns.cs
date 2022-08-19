@@ -22,25 +22,23 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuildRuns = Oci.DevOps.GetBuildRuns.Invoke(new()
         ///     {
-        ///         var testBuildRuns = Output.Create(Oci.DevOps.GetBuildRuns.InvokeAsync(new Oci.DevOps.GetBuildRunsArgs
-        ///         {
-        ///             BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Build_run_display_name,
-        ///             Id = @var.Build_run_id,
-        ///             ProjectId = oci_devops_project.Test_project.Id,
-        ///             State = @var.Build_run_state,
-        ///         }));
-        ///     }
+        ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Build_run_display_name,
+        ///         Id = @var.Build_run_id,
+        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///         State = @var.Build_run_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuildRuns = Oci.DevOps.GetBuildRuns.Invoke(new()
         ///     {
-        ///         var testBuildRuns = Output.Create(Oci.DevOps.GetBuildRuns.InvokeAsync(new Oci.DevOps.GetBuildRunsArgs
-        ///         {
-        ///             BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Build_run_display_name,
-        ///             Id = @var.Build_run_id,
-        ///             ProjectId = oci_devops_project.Test_project.Id,
-        ///             State = @var.Build_run_state,
-        ///         }));
-        ///     }
+        ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Build_run_display_name,
+        ///         Id = @var.Build_run_id,
+        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///         State = @var.Build_run_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetBuildRunsArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildRunsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique build pipeline identifier.
@@ -140,9 +136,10 @@ namespace Pulumi.Oci.DevOps
         public GetBuildRunsArgs()
         {
         }
+        public static new GetBuildRunsArgs Empty => new GetBuildRunsArgs();
     }
 
-    public sealed class GetBuildRunsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildRunsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique build pipeline identifier.
@@ -195,6 +192,7 @@ namespace Pulumi.Oci.DevOps
         public GetBuildRunsInvokeArgs()
         {
         }
+        public static new GetBuildRunsInvokeArgs Empty => new GetBuildRunsInvokeArgs();
     }
 
 

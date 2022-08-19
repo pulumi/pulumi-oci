@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAppCatalogListing = Oci.Core.GetAppCatalogListing.Invoke(new()
         ///     {
-        ///         var testAppCatalogListing = Output.Create(Oci.Core.GetAppCatalogListing.InvokeAsync(new Oci.Core.GetAppCatalogListingArgs
-        ///         {
-        ///             ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-        ///         }));
-        ///     }
+        ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAppCatalogListing = Oci.Core.GetAppCatalogListing.Invoke(new()
         ///     {
-        ///         var testAppCatalogListing = Output.Create(Oci.Core.GetAppCatalogListing.InvokeAsync(new Oci.Core.GetAppCatalogListingArgs
-        ///         {
-        ///             ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-        ///         }));
-        ///     }
+        ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetAppCatalogListingArgs : Pulumi.InvokeArgs
+    public sealed class GetAppCatalogListingArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the listing.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetAppCatalogListingArgs()
         {
         }
+        public static new GetAppCatalogListingArgs Empty => new GetAppCatalogListingArgs();
     }
 
-    public sealed class GetAppCatalogListingInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppCatalogListingInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the listing.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetAppCatalogListingInvokeArgs()
         {
         }
+        public static new GetAppCatalogListingInvokeArgs Empty => new GetAppCatalogListingInvokeArgs();
     }
 
 

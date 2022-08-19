@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTags = Oci.Identity.GetTags.Invoke(new()
         ///     {
-        ///         var testTags = Output.Create(Oci.Identity.GetTags.InvokeAsync(new Oci.Identity.GetTagsArgs
-        ///         {
-        ///             TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
-        ///             State = @var.Tag_state,
-        ///         }));
-        ///     }
+        ///         TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
+        ///         State = @var.Tag_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTags = Oci.Identity.GetTags.Invoke(new()
         ///     {
-        ///         var testTags = Output.Create(Oci.Identity.GetTags.InvokeAsync(new Oci.Identity.GetTagsArgs
-        ///         {
-        ///             TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
-        ///             State = @var.Tag_state,
-        ///         }));
-        ///     }
+        ///         TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
+        ///         State = @var.Tag_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetTagsArgs : Pulumi.InvokeArgs
+    public sealed class GetTagsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetTagsFilterArgs>? _filters;
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Identity
         public GetTagsArgs()
         {
         }
+        public static new GetTagsArgs Empty => new GetTagsArgs();
     }
 
-    public sealed class GetTagsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTagsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetTagsFilterInputArgs>? _filters;
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.Identity
         public GetTagsInvokeArgs()
         {
         }
+        public static new GetTagsInvokeArgs Empty => new GetTagsInvokeArgs();
     }
 
 

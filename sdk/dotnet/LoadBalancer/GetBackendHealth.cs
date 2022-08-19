@@ -21,22 +21,20 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackendHealth = Oci.LoadBalancer.GetBackendHealth.Invoke(new()
         ///     {
-        ///         var testBackendHealth = Output.Create(Oci.LoadBalancer.GetBackendHealth.InvokeAsync(new Oci.LoadBalancer.GetBackendHealthArgs
-        ///         {
-        ///             BackendName = oci_load_balancer_backend.Test_backend.Name,
-        ///             BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         BackendName = oci_load_balancer_backend.Test_backend.Name,
+        ///         BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackendHealth = Oci.LoadBalancer.GetBackendHealth.Invoke(new()
         ///     {
-        ///         var testBackendHealth = Output.Create(Oci.LoadBalancer.GetBackendHealth.InvokeAsync(new Oci.LoadBalancer.GetBackendHealthArgs
-        ///         {
-        ///             BackendName = oci_load_balancer_backend.Test_backend.Name,
-        ///             BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         BackendName = oci_load_balancer_backend.Test_backend.Name,
+        ///         BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetBackendHealthArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendHealthArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The IP address and port of the backend server to retrieve the health status for.  Example: `10.0.0.3:8080`
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetBackendHealthArgs()
         {
         }
+        public static new GetBackendHealthArgs Empty => new GetBackendHealthArgs();
     }
 
-    public sealed class GetBackendHealthInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendHealthInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The IP address and port of the backend server to retrieve the health status for.  Example: `10.0.0.3:8080`
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetBackendHealthInvokeArgs()
         {
         }
+        public static new GetBackendHealthInvokeArgs Empty => new GetBackendHealthInvokeArgs();
     }
 
 

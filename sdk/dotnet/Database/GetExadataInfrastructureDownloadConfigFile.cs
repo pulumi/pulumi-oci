@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExadataInfrastructureDownloadConfigFile = Oci.Database.GetExadataInfrastructureDownloadConfigFile.Invoke(new()
         ///     {
-        ///         var testExadataInfrastructureDownloadConfigFile = Output.Create(Oci.Database.GetExadataInfrastructureDownloadConfigFile.InvokeAsync(new Oci.Database.GetExadataInfrastructureDownloadConfigFileArgs
-        ///         {
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///             Base64EncodeContent = false,
-        ///         }));
-        ///     }
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         Base64EncodeContent = false,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExadataInfrastructureDownloadConfigFile = Oci.Database.GetExadataInfrastructureDownloadConfigFile.Invoke(new()
         ///     {
-        ///         var testExadataInfrastructureDownloadConfigFile = Output.Create(Oci.Database.GetExadataInfrastructureDownloadConfigFile.InvokeAsync(new Oci.Database.GetExadataInfrastructureDownloadConfigFileArgs
-        ///         {
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///             Base64EncodeContent = false,
-        ///         }));
-        ///     }
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         Base64EncodeContent = false,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetExadataInfrastructureDownloadConfigFileArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataInfrastructureDownloadConfigFileArgs : global::Pulumi.InvokeArgs
     {
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
@@ -93,9 +89,10 @@ namespace Pulumi.Oci.Database
         public GetExadataInfrastructureDownloadConfigFileArgs()
         {
         }
+        public static new GetExadataInfrastructureDownloadConfigFileArgs Empty => new GetExadataInfrastructureDownloadConfigFileArgs();
     }
 
-    public sealed class GetExadataInfrastructureDownloadConfigFileInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataInfrastructureDownloadConfigFileInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
@@ -109,6 +106,7 @@ namespace Pulumi.Oci.Database
         public GetExadataInfrastructureDownloadConfigFileInvokeArgs()
         {
         }
+        public static new GetExadataInfrastructureDownloadConfigFileInvokeArgs Empty => new GetExadataInfrastructureDownloadConfigFileInvokeArgs();
     }
 
 

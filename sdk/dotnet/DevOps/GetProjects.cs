@@ -21,23 +21,21 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProjects = Oci.DevOps.GetProjects.Invoke(new()
         ///     {
-        ///         var testProjects = Output.Create(Oci.DevOps.GetProjects.InvokeAsync(new Oci.DevOps.GetProjectsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Project_id,
-        ///             Name = @var.Project_name,
-        ///             State = @var.Project_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Project_id,
+        ///         Name = @var.Project_name,
+        ///         State = @var.Project_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProjects = Oci.DevOps.GetProjects.Invoke(new()
         ///     {
-        ///         var testProjects = Output.Create(Oci.DevOps.GetProjects.InvokeAsync(new Oci.DevOps.GetProjectsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Project_id,
-        ///             Name = @var.Project_name,
-        ///             State = @var.Project_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Project_id,
+        ///         Name = @var.Project_name,
+        ///         State = @var.Project_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetProjectsArgs : Pulumi.InvokeArgs
+    public sealed class GetProjectsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment in which to list resources.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.DevOps
         public GetProjectsArgs()
         {
         }
+        public static new GetProjectsArgs Empty => new GetProjectsArgs();
     }
 
-    public sealed class GetProjectsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProjectsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment in which to list resources.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.DevOps
         public GetProjectsInvokeArgs()
         {
         }
+        public static new GetProjectsInvokeArgs Empty => new GetProjectsInvokeArgs();
     }
 
 

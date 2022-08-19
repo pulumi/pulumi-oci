@@ -22,25 +22,23 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataSafePrivateEndpoints = Oci.DataSafe.GetDataSafePrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testDataSafePrivateEndpoints = Output.Create(Oci.DataSafe.GetDataSafePrivateEndpoints.InvokeAsync(new Oci.DataSafe.GetDataSafePrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Data_safe_private_endpoint_access_level,
-        ///             CompartmentIdInSubtree = @var.Data_safe_private_endpoint_compartment_id_in_subtree,
-        ///             DisplayName = @var.Data_safe_private_endpoint_display_name,
-        ///             State = @var.Data_safe_private_endpoint_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Data_safe_private_endpoint_access_level,
+        ///         CompartmentIdInSubtree = @var.Data_safe_private_endpoint_compartment_id_in_subtree,
+        ///         DisplayName = @var.Data_safe_private_endpoint_display_name,
+        ///         State = @var.Data_safe_private_endpoint_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataSafePrivateEndpoints = Oci.DataSafe.GetDataSafePrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testDataSafePrivateEndpoints = Output.Create(Oci.DataSafe.GetDataSafePrivateEndpoints.InvokeAsync(new Oci.DataSafe.GetDataSafePrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Data_safe_private_endpoint_access_level,
-        ///             CompartmentIdInSubtree = @var.Data_safe_private_endpoint_compartment_id_in_subtree,
-        ///             DisplayName = @var.Data_safe_private_endpoint_display_name,
-        ///             State = @var.Data_safe_private_endpoint_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Data_safe_private_endpoint_access_level,
+        ///         CompartmentIdInSubtree = @var.Data_safe_private_endpoint_compartment_id_in_subtree,
+        ///         DisplayName = @var.Data_safe_private_endpoint_display_name,
+        ///         State = @var.Data_safe_private_endpoint_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetDataSafePrivateEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetDataSafePrivateEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.DataSafe
         public GetDataSafePrivateEndpointsArgs()
         {
         }
+        public static new GetDataSafePrivateEndpointsArgs Empty => new GetDataSafePrivateEndpointsArgs();
     }
 
-    public sealed class GetDataSafePrivateEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataSafePrivateEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.DataSafe
         public GetDataSafePrivateEndpointsInvokeArgs()
         {
         }
+        public static new GetDataSafePrivateEndpointsInvokeArgs Empty => new GetDataSafePrivateEndpointsInvokeArgs();
     }
 
 

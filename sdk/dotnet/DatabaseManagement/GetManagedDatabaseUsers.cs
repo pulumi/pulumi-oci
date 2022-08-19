@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUsers = Oci.DatabaseManagement.GetManagedDatabaseUsers.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUsers = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUsers.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUsersArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             Name = @var.Managed_database_user_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         Name = @var.Managed_database_user_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUsers = Oci.DatabaseManagement.GetManagedDatabaseUsers.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUsers = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUsers.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUsersArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             Name = @var.Managed_database_user_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         Name = @var.Managed_database_user_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseUsersArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUsersArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseUsersFilterArgs>? _filters;
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUsersArgs()
         {
         }
+        public static new GetManagedDatabaseUsersArgs Empty => new GetManagedDatabaseUsersArgs();
     }
 
-    public sealed class GetManagedDatabaseUsersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUsersInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseUsersFilterInputArgs>? _filters;
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUsersInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseUsersInvokeArgs Empty => new GetManagedDatabaseUsersInvokeArgs();
     }
 
 

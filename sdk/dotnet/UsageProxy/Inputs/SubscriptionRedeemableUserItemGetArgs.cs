@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.UsageProxy.Inputs
 {
 
-    public sealed class SubscriptionRedeemableUserItemGetArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionRedeemableUserItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The email ID for a user that can redeem rewards.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.UsageProxy.Inputs
         public SubscriptionRedeemableUserItemGetArgs()
         {
         }
+        public static new SubscriptionRedeemableUserItemGetArgs Empty => new SubscriptionRedeemableUserItemGetArgs();
     }
 }

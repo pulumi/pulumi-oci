@@ -17,21 +17,19 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRouteTableAttachment = new Oci.Core.RouteTableAttachment("testRouteTableAttachment", new()
     ///     {
-    ///         var testRouteTableAttachment = new Oci.Core.RouteTableAttachment("testRouteTableAttachment", new Oci.Core.RouteTableAttachmentArgs
-    ///         {
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///         });
-    ///     }
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/routeTableAttachment:RouteTableAttachment")]
-    public partial class RouteTableAttachment : Pulumi.CustomResource
+    public partial class RouteTableAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
@@ -101,7 +99,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class RouteTableAttachmentArgs : Pulumi.ResourceArgs
+    public sealed class RouteTableAttachmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
@@ -118,9 +116,10 @@ namespace Pulumi.Oci.Core
         public RouteTableAttachmentArgs()
         {
         }
+        public static new RouteTableAttachmentArgs Empty => new RouteTableAttachmentArgs();
     }
 
-    public sealed class RouteTableAttachmentState : Pulumi.ResourceArgs
+    public sealed class RouteTableAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
@@ -137,5 +136,6 @@ namespace Pulumi.Oci.Core
         public RouteTableAttachmentState()
         {
         }
+        public static new RouteTableAttachmentState Empty => new RouteTableAttachmentState();
     }
 }

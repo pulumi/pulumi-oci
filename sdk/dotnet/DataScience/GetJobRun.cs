@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobRun = Oci.DataScience.GetJobRun.Invoke(new()
         ///     {
-        ///         var testJobRun = Output.Create(Oci.DataScience.GetJobRun.InvokeAsync(new Oci.DataScience.GetJobRunArgs
-        ///         {
-        ///             JobRunId = oci_datascience_job_run.Test_job_run.Id,
-        ///         }));
-        ///     }
+        ///         JobRunId = oci_datascience_job_run.Test_job_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobRun = Oci.DataScience.GetJobRun.Invoke(new()
         ///     {
-        ///         var testJobRun = Output.Create(Oci.DataScience.GetJobRun.InvokeAsync(new Oci.DataScience.GetJobRunArgs
-        ///         {
-        ///             JobRunId = oci_datascience_job_run.Test_job_run.Id,
-        ///         }));
-        ///     }
+        ///         JobRunId = oci_datascience_job_run.Test_job_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetJobRunArgs : Pulumi.InvokeArgs
+    public sealed class GetJobRunArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataScience
         public GetJobRunArgs()
         {
         }
+        public static new GetJobRunArgs Empty => new GetJobRunArgs();
     }
 
-    public sealed class GetJobRunInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJobRunInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataScience
         public GetJobRunInvokeArgs()
         {
         }
+        public static new GetJobRunInvokeArgs Empty => new GetJobRunInvokeArgs();
     }
 
 

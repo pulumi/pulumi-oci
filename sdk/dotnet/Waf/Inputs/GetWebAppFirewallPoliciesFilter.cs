@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class GetWebAppFirewallPoliciesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetWebAppFirewallPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Rule name. Must be unique within the module.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public GetWebAppFirewallPoliciesFilterArgs()
         {
         }
+        public static new GetWebAppFirewallPoliciesFilterArgs Empty => new GetWebAppFirewallPoliciesFilterArgs();
     }
 }

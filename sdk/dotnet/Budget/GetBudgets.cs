@@ -29,23 +29,21 @@ namespace Pulumi.Oci.Budget
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBudgets = Oci.Budget.GetBudgets.Invoke(new()
         ///     {
-        ///         var testBudgets = Output.Create(Oci.Budget.GetBudgets.InvokeAsync(new Oci.Budget.GetBudgetsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             DisplayName = @var.Budget_display_name,
-        ///             State = @var.Budget_state,
-        ///             TargetType = @var.Budget_target_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         DisplayName = @var.Budget_display_name,
+        ///         State = @var.Budget_state,
+        ///         TargetType = @var.Budget_target_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,23 +69,21 @@ namespace Pulumi.Oci.Budget
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBudgets = Oci.Budget.GetBudgets.Invoke(new()
         ///     {
-        ///         var testBudgets = Output.Create(Oci.Budget.GetBudgets.InvokeAsync(new Oci.Budget.GetBudgetsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             DisplayName = @var.Budget_display_name,
-        ///             State = @var.Budget_state,
-        ///             TargetType = @var.Budget_target_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         DisplayName = @var.Budget_display_name,
+        ///         State = @var.Budget_state,
+        ///         TargetType = @var.Budget_target_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -97,7 +93,7 @@ namespace Pulumi.Oci.Budget
     }
 
 
-    public sealed class GetBudgetsArgs : Pulumi.InvokeArgs
+    public sealed class GetBudgetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -137,9 +133,10 @@ namespace Pulumi.Oci.Budget
         public GetBudgetsArgs()
         {
         }
+        public static new GetBudgetsArgs Empty => new GetBudgetsArgs();
     }
 
-    public sealed class GetBudgetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBudgetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -179,6 +176,7 @@ namespace Pulumi.Oci.Budget
         public GetBudgetsInvokeArgs()
         {
         }
+        public static new GetBudgetsInvokeArgs Empty => new GetBudgetsInvokeArgs();
     }
 
 

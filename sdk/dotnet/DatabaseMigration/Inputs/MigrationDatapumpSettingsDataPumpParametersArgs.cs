@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationDatapumpSettingsDataPumpParametersArgs : Pulumi.ResourceArgs
+    public sealed class MigrationDatapumpSettingsDataPumpParametersArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Estimate size of dumps that will be generated.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationDatapumpSettingsDataPumpParametersArgs()
         {
         }
+        public static new MigrationDatapumpSettingsDataPumpParametersArgs Empty => new MigrationDatapumpSettingsDataPumpParametersArgs();
     }
 }

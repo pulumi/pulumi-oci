@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class AccessPolicyRuleSourceArgs : Pulumi.ResourceArgs
+    public sealed class AccessPolicyRuleSourceArgs : global::Pulumi.ResourceArgs
     {
         [Input("hostnames")]
         private InputList<string>? _hostnames;
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public AccessPolicyRuleSourceArgs()
         {
         }
+        public static new AccessPolicyRuleSourceArgs Empty => new AccessPolicyRuleSourceArgs();
     }
 }

@@ -13,23 +13,21 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAutonomousDatabaseWallet = new Oci.Database.AutonomousDatabaseWallet("testAutonomousDatabaseWallet", new()
     ///     {
-    ///         var testAutonomousDatabaseWallet = new Oci.Database.AutonomousDatabaseWallet("testAutonomousDatabaseWallet", new Oci.Database.AutonomousDatabaseWalletArgs
-    ///         {
-    ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-    ///             Password = @var.Autonomous_database_wallet_password,
-    ///             Base64EncodeContent = false,
-    ///             GenerateType = @var.Autonomous_database_wallet_generate_type,
-    ///         });
-    ///     }
+    ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+    ///         Password = @var.Autonomous_database_wallet_password,
+    ///         Base64EncodeContent = false,
+    ///         GenerateType = @var.Autonomous_database_wallet_generate_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -37,7 +35,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet")]
-    public partial class AutonomousDatabaseWallet : Pulumi.CustomResource
+    public partial class AutonomousDatabaseWallet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -110,7 +108,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousDatabaseWalletArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseWalletArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -136,9 +134,10 @@ namespace Pulumi.Oci.Database
         public AutonomousDatabaseWalletArgs()
         {
         }
+        public static new AutonomousDatabaseWalletArgs Empty => new AutonomousDatabaseWalletArgs();
     }
 
-    public sealed class AutonomousDatabaseWalletState : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseWalletState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -170,5 +169,6 @@ namespace Pulumi.Oci.Database
         public AutonomousDatabaseWalletState()
         {
         }
+        public static new AutonomousDatabaseWalletState Empty => new AutonomousDatabaseWalletState();
     }
 }

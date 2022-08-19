@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTrace = Oci.ApmTraces.GetTrace.Invoke(new()
         ///     {
-        ///         var testTrace = Output.Create(Oci.ApmTraces.GetTrace.InvokeAsync(new Oci.ApmTraces.GetTraceArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             TraceKey = @var.Trace_trace_key,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         TraceKey = @var.Trace_trace_key,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTrace = Oci.ApmTraces.GetTrace.Invoke(new()
         ///     {
-        ///         var testTrace = Output.Create(Oci.ApmTraces.GetTrace.InvokeAsync(new Oci.ApmTraces.GetTraceArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             TraceKey = @var.Trace_trace_key,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         TraceKey = @var.Trace_trace_key,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ApmTraces
     }
 
 
-    public sealed class GetTraceArgs : Pulumi.InvokeArgs
+    public sealed class GetTraceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.ApmTraces
         public GetTraceArgs()
         {
         }
+        public static new GetTraceArgs Empty => new GetTraceArgs();
     }
 
-    public sealed class GetTraceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTraceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.ApmTraces
         public GetTraceInvokeArgs()
         {
         }
+        public static new GetTraceInvokeArgs Empty => new GetTraceInvokeArgs();
     }
 
 

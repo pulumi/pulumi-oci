@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VolumeBlockVolumeReplicaGetArgs : Pulumi.ResourceArgs
+    public sealed class VolumeBlockVolumeReplicaGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VolumeBlockVolumeReplicaGetArgs()
         {
         }
+        public static new VolumeBlockVolumeReplicaGetArgs Empty => new VolumeBlockVolumeReplicaGetArgs();
     }
 }

@@ -35,6 +35,38 @@ import javax.annotation.Nullable;
  * write operations exceeds 10 requests per second for a given tenancy.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Kms.Vault;
+ * import com.pulumi.oci.Kms.VaultArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVault = new Vault(&#34;testVault&#34;, VaultArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.vault_display_name())
+ *             .vaultType(var_.vault_vault_type())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

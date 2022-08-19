@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class MeshCertificateAuthorityGetArgs : Pulumi.ResourceArgs
+    public sealed class MeshCertificateAuthorityGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the certificate authority resource.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public MeshCertificateAuthorityGetArgs()
         {
         }
+        public static new MeshCertificateAuthorityGetArgs Empty => new MeshCertificateAuthorityGetArgs();
     }
 }

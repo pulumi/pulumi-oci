@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms.Inputs
 {
 
-    public sealed class KeyVersionReplicaDetailArgs : Pulumi.ResourceArgs
+    public sealed class KeyVersionReplicaDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// ReplicationId associated with a key version operation
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Kms.Inputs
         public KeyVersionReplicaDetailArgs()
         {
         }
+        public static new KeyVersionReplicaDetailArgs Empty => new KeyVersionReplicaDetailArgs();
     }
 }

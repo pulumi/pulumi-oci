@@ -37,6 +37,44 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.DatabaseUpgrade;
+ * import com.pulumi.oci.Database.DatabaseUpgradeArgs;
+ * import com.pulumi.oci.Database.inputs.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseUpgrade = new DatabaseUpgrade(&#34;testDatabaseUpgrade&#34;, DatabaseUpgradeArgs.builder()        
+ *             .action(var_.database_upgrade_action())
+ *             .databaseId(oci_database_database.test_database().id())
+ *             .databaseUpgradeSourceDetails(DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs.builder()
+ *                 .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+ *                 .dbHomeId(oci_database_db_home.test_db_home().id())
+ *                 .dbVersion(var_.database_upgrade_database_upgrade_source_details_db_version())
+ *                 .options(var_.database_upgrade_database_upgrade_source_details_options())
+ *                 .source(var_.database_upgrade_database_upgrade_source_details_source())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * Import is not supported for this resource.

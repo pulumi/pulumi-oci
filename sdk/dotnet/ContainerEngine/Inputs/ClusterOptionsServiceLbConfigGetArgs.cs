@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterOptionsServiceLbConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class ClusterOptionsServiceLbConfigGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterOptionsServiceLbConfigGetArgs()
         {
         }
+        public static new ClusterOptionsServiceLbConfigGetArgs Empty => new ClusterOptionsServiceLbConfigGetArgs();
     }
 }

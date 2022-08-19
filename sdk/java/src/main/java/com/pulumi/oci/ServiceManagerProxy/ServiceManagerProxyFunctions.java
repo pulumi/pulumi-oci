@@ -23,6 +23,35 @@ public final class ServiceManagerProxyFunctions {
      * Get the detailed information for a specific service environment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceEnvironmentResult> getServiceEnvironment(GetServiceEnvironmentArgs args) {
@@ -34,6 +63,35 @@ public final class ServiceManagerProxyFunctions {
      * Get the detailed information for a specific service environment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceEnvironmentResult> getServiceEnvironmentPlain(GetServiceEnvironmentPlainArgs args) {
@@ -45,6 +103,35 @@ public final class ServiceManagerProxyFunctions {
      * Get the detailed information for a specific service environment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceEnvironmentResult> getServiceEnvironment(GetServiceEnvironmentArgs args, InvokeOptions options) {
@@ -56,6 +143,35 @@ public final class ServiceManagerProxyFunctions {
      * Get the detailed information for a specific service environment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceEnvironmentResult> getServiceEnvironmentPlain(GetServiceEnvironmentPlainArgs args, InvokeOptions options) {
@@ -68,6 +184,37 @@ public final class ServiceManagerProxyFunctions {
      * Information includes the service instance endpoints and service definition details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_environment_display_name())
+     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .serviceEnvironmentType(var_.service_environment_service_environment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceEnvironmentsResult> getServiceEnvironments(GetServiceEnvironmentsArgs args) {
@@ -80,6 +227,37 @@ public final class ServiceManagerProxyFunctions {
      * Information includes the service instance endpoints and service definition details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_environment_display_name())
+     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .serviceEnvironmentType(var_.service_environment_service_environment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceEnvironmentsResult> getServiceEnvironmentsPlain(GetServiceEnvironmentsPlainArgs args) {
@@ -92,6 +270,37 @@ public final class ServiceManagerProxyFunctions {
      * Information includes the service instance endpoints and service definition details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_environment_display_name())
+     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .serviceEnvironmentType(var_.service_environment_service_environment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceEnvironmentsResult> getServiceEnvironments(GetServiceEnvironmentsArgs args, InvokeOptions options) {
@@ -104,6 +313,37 @@ public final class ServiceManagerProxyFunctions {
      * Information includes the service instance endpoints and service definition details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceManagerProxy.ServiceManagerProxyFunctions;
+     * import com.pulumi.oci.ServiceManagerProxy.inputs.GetServiceEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_environment_display_name())
+     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .serviceEnvironmentType(var_.service_environment_service_environment_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceEnvironmentsResult> getServiceEnvironmentsPlain(GetServiceEnvironmentsPlainArgs args, InvokeOptions options) {

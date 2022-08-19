@@ -34,6 +34,39 @@ import javax.annotation.Nullable;
  * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.DrgAttachmentManagement;
+ * import com.pulumi.oci.Core.DrgAttachmentManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDrgRpcAttachment = new DrgAttachmentManagement(&#34;testDrgRpcAttachment&#34;, DrgAttachmentManagementArgs.builder()        
+ *             .attachmentType(&#34;REMOTE_PEERING_CONNECTION&#34;)
+ *             .compartmentId(var_.compartment_ocid())
+ *             .networkId(oci_core_remote_peering_connection.test_rpc().id())
+ *             .drgId(oci_core_drg.test_drg().id())
+ *             .displayName(&#34;MyTestDrgAttachmentForRpc&#34;)
+ *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  */
 @ResourceType(type="oci:Core/drgAttachmentManagement:DrgAttachmentManagement")

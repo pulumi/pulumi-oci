@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorSourceCursorArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorSourceCursorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type descriminator.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorSourceCursorArgs()
         {
         }
+        public static new ConnectorSourceCursorArgs Empty => new ConnectorSourceCursorArgs();
     }
 }

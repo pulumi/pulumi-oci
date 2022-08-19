@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Integration.Inputs
 {
 
-    public sealed class GetIntegrationInstancesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetIntegrationInstancesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Integration.Inputs
         public GetIntegrationInstancesFilterInputArgs()
         {
         }
+        public static new GetIntegrationInstancesFilterInputArgs Empty => new GetIntegrationInstancesFilterInputArgs();
     }
 }

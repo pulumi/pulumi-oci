@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs : global::Pulumi.ResourceArgs
     {
         [Input("allowedScopes")]
         private InputList<string>? _allowedScopes;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs Empty => new DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs();
     }
 }

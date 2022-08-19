@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp.Inputs
 {
 
-    public sealed class SddcHcxOnPremLicenseArgs : Pulumi.ResourceArgs
+    public sealed class SddcHcxOnPremLicenseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// HCX on-premise license key value.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Ocvp.Inputs
         public SddcHcxOnPremLicenseArgs()
         {
         }
+        public static new SddcHcxOnPremLicenseArgs Empty => new SddcHcxOnPremLicenseArgs();
     }
 }

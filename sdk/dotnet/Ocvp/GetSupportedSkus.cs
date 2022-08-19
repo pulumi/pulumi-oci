@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSupportedSkus = Oci.Ocvp.GetSupportedSkus.Invoke(new()
         ///     {
-        ///         var testSupportedSkus = Output.Create(Oci.Ocvp.GetSupportedSkus.InvokeAsync(new Oci.Ocvp.GetSupportedSkusArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSupportedSkus = Oci.Ocvp.GetSupportedSkus.Invoke(new()
         ///     {
-        ///         var testSupportedSkus = Output.Create(Oci.Ocvp.GetSupportedSkus.InvokeAsync(new Oci.Ocvp.GetSupportedSkusArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Ocvp
     }
 
 
-    public sealed class GetSupportedSkusArgs : Pulumi.InvokeArgs
+    public sealed class GetSupportedSkusArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Ocvp
         public GetSupportedSkusArgs()
         {
         }
+        public static new GetSupportedSkusArgs Empty => new GetSupportedSkusArgs();
     }
 
-    public sealed class GetSupportedSkusInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSupportedSkusInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Ocvp
         public GetSupportedSkusInvokeArgs()
         {
         }
+        public static new GetSupportedSkusInvokeArgs Empty => new GetSupportedSkusInvokeArgs();
     }
 
 

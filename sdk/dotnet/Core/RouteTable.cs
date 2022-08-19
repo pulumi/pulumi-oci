@@ -33,41 +33,39 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRouteTable = new Oci.Core.RouteTable("testRouteTable", new()
     ///     {
-    ///         var testRouteTable = new Oci.Core.RouteTable("testRouteTable", new Oci.Core.RouteTableArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Route_table_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         RouteRules = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.RouteTableRouteRuleArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 NetworkEntityId = oci_core_internet_gateway.Test_internet_gateway.Id,
+    ///                 CidrBlock = @var.Route_table_route_rules_cidr_block,
+    ///                 Description = @var.Route_table_route_rules_description,
+    ///                 Destination = @var.Route_table_route_rules_destination,
+    ///                 DestinationType = @var.Route_table_route_rules_destination_type,
     ///             },
-    ///             DisplayName = @var.Route_table_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             RouteRules = 
-    ///             {
-    ///                 new Oci.Core.Inputs.RouteTableRouteRuleArgs
-    ///                 {
-    ///                     NetworkEntityId = oci_core_internet_gateway.Test_internet_gateway.Id,
-    ///                     CidrBlock = @var.Route_table_route_rules_cidr_block,
-    ///                     Description = @var.Route_table_route_rules_description,
-    ///                     Destination = @var.Route_table_route_rules_destination,
-    ///                     DestinationType = @var.Route_table_route_rules_destination_type,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -79,7 +77,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/routeTable:RouteTable")]
-    public partial class RouteTable : Pulumi.CustomResource
+    public partial class RouteTable : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the route table.
@@ -173,7 +171,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class RouteTableArgs : Pulumi.ResourceArgs
+    public sealed class RouteTableArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the route table.
@@ -232,9 +230,10 @@ namespace Pulumi.Oci.Core
         public RouteTableArgs()
         {
         }
+        public static new RouteTableArgs Empty => new RouteTableArgs();
     }
 
-    public sealed class RouteTableState : Pulumi.ResourceArgs
+    public sealed class RouteTableState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the route table.
@@ -305,5 +304,6 @@ namespace Pulumi.Oci.Core
         public RouteTableState()
         {
         }
+        public static new RouteTableState Empty => new RouteTableState();
     }
 }

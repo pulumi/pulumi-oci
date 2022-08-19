@@ -22,25 +22,23 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlBackups = Oci.Mysql.GetMysqlBackups.Invoke(new()
         ///     {
-        ///         var testMysqlBackups = Output.Create(Oci.Mysql.GetMysqlBackups.InvokeAsync(new Oci.Mysql.GetMysqlBackupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             BackupId = oci_mysql_mysql_backup.Test_backup.Id,
-        ///             CreationType = @var.Mysql_backup_creation_type,
-        ///             DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///             DisplayName = @var.Mysql_backup_display_name,
-        ///             State = @var.Mysql_backup_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+        ///         CreationType = @var.Mysql_backup_creation_type,
+        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+        ///         DisplayName = @var.Mysql_backup_display_name,
+        ///         State = @var.Mysql_backup_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlBackups = Oci.Mysql.GetMysqlBackups.Invoke(new()
         ///     {
-        ///         var testMysqlBackups = Output.Create(Oci.Mysql.GetMysqlBackups.InvokeAsync(new Oci.Mysql.GetMysqlBackupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             BackupId = oci_mysql_mysql_backup.Test_backup.Id,
-        ///             CreationType = @var.Mysql_backup_creation_type,
-        ///             DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///             DisplayName = @var.Mysql_backup_display_name,
-        ///             State = @var.Mysql_backup_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+        ///         CreationType = @var.Mysql_backup_creation_type,
+        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+        ///         DisplayName = @var.Mysql_backup_display_name,
+        ///         State = @var.Mysql_backup_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetMysqlBackupsArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlBackupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Backup OCID
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlBackupsArgs()
         {
         }
+        public static new GetMysqlBackupsArgs Empty => new GetMysqlBackupsArgs();
     }
 
-    public sealed class GetMysqlBackupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlBackupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Backup OCID
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlBackupsInvokeArgs()
         {
         }
+        public static new GetMysqlBackupsInvokeArgs Empty => new GetMysqlBackupsInvokeArgs();
     }
 
 

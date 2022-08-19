@@ -21,6 +21,42 @@ import javax.annotation.Nullable;
  * Adds a backend server to a backend set.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkLoadBalancer.Backend;
+ * import com.pulumi.oci.NetworkLoadBalancer.BackendArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBackend = new Backend(&#34;testBackend&#34;, BackendArgs.builder()        
+ *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+ *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+ *             .port(var_.backend_port())
+ *             .ipAddress(var_.backend_ip_address())
+ *             .isBackup(var_.backend_is_backup())
+ *             .isDrain(var_.backend_is_drain())
+ *             .isOffline(var_.backend_is_offline())
+ *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .weight(var_.backend_weight())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

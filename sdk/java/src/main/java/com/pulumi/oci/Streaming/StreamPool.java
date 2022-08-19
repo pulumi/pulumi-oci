@@ -27,6 +27,53 @@ import javax.annotation.Nullable;
  * In the response, the `lifecycleState` parameter of the object tells you its current state.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Streaming.StreamPool;
+ * import com.pulumi.oci.Streaming.StreamPoolArgs;
+ * import com.pulumi.oci.Streaming.inputs.StreamPoolCustomEncryptionKeyArgs;
+ * import com.pulumi.oci.Streaming.inputs.StreamPoolKafkaSettingsArgs;
+ * import com.pulumi.oci.Streaming.inputs.StreamPoolPrivateEndpointSettingsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testStreamPool = new StreamPool(&#34;testStreamPool&#34;, StreamPoolArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .customEncryptionKey(StreamPoolCustomEncryptionKeyArgs.builder()
+ *                 .kmsKeyId(oci_kms_key.test_key().id())
+ *                 .build())
+ *             .definedTags(var_.stream_pool_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .kafkaSettings(StreamPoolKafkaSettingsArgs.builder()
+ *                 .autoCreateTopicsEnable(var_.stream_pool_kafka_settings_auto_create_topics_enable())
+ *                 .bootstrapServers(var_.stream_pool_kafka_settings_bootstrap_servers())
+ *                 .logRetentionHours(var_.stream_pool_kafka_settings_log_retention_hours())
+ *                 .numPartitions(var_.stream_pool_kafka_settings_num_partitions())
+ *                 .build())
+ *             .privateEndpointSettings(StreamPoolPrivateEndpointSettingsArgs.builder()
+ *                 .nsgIds(var_.stream_pool_private_endpoint_settings_nsg_ids())
+ *                 .privateEndpointIp(var_.stream_pool_private_endpoint_settings_private_endpoint_ip())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

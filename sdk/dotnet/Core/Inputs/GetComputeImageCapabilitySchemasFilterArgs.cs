@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetComputeImageCapabilitySchemasFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetComputeImageCapabilitySchemasFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetComputeImageCapabilitySchemasFilterInputArgs()
         {
         }
+        public static new GetComputeImageCapabilitySchemasFilterInputArgs Empty => new GetComputeImageCapabilitySchemasFilterInputArgs();
     }
 }

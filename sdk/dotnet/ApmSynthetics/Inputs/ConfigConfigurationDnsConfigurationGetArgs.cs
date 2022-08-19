@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigConfigurationDnsConfigurationGetArgs : Pulumi.ResourceArgs
+    public sealed class ConfigConfigurationDnsConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) If isOverrideDns is true, then dns will be overridden.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigConfigurationDnsConfigurationGetArgs()
         {
         }
+        public static new ConfigConfigurationDnsConfigurationGetArgs Empty => new ConfigConfigurationDnsConfigurationGetArgs();
     }
 }

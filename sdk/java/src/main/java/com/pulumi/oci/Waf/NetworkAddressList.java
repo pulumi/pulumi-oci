@@ -24,6 +24,45 @@ import javax.annotation.Nullable;
  * Creates a new NetworkAddressList.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Waf.NetworkAddressList;
+ * import com.pulumi.oci.Waf.NetworkAddressListArgs;
+ * import com.pulumi.oci.Waf.inputs.NetworkAddressListVcnAddressArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkAddressList = new NetworkAddressList(&#34;testNetworkAddressList&#34;, NetworkAddressListArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .type(var_.network_address_list_type())
+ *             .addresses(var_.network_address_list_addresses())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.network_address_list_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .systemTags(var_.network_address_list_system_tags())
+ *             .vcnAddresses(NetworkAddressListVcnAddressArgs.builder()
+ *                 .addresses(var_.network_address_list_vcn_addresses_addresses())
+ *                 .vcnId(oci_core_vcn.test_vcn().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

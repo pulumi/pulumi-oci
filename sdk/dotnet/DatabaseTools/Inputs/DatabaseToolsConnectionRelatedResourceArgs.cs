@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools.Inputs
 {
 
-    public sealed class DatabaseToolsConnectionRelatedResourceArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsConnectionRelatedResourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The resource entity type.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         public DatabaseToolsConnectionRelatedResourceArgs()
         {
         }
+        public static new DatabaseToolsConnectionRelatedResourceArgs Empty => new DatabaseToolsConnectionRelatedResourceArgs();
     }
 }

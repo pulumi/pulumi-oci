@@ -21,31 +21,29 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFleetInstallationSite = Oci.Jms.GetInstallationSite.Invoke(new()
         ///     {
-        ///         var testFleetInstallationSite = Output.Create(Oci.Jms.GetInstallationSite.InvokeAsync(new Oci.Jms.GetInstallationSiteArgs
-        ///         {
-        ///             FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///             InstallationPath = @var.Fleet_installation_site_installation_path,
-        ///             JreDistribution = @var.Fleet_installation_site_jre_distribution,
-        ///             JreSecurityStatus = @var.Fleet_installation_site_jre_security_status,
-        ///             JreVendor = @var.Fleet_installation_site_jre_vendor,
-        ///             JreVersion = @var.Fleet_installation_site_jre_version,
-        ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///             OsFamilies = @var.Fleet_installation_site_os_family,
-        ///             PathContains = @var.Fleet_installation_site_path_contains,
-        ///             TimeEnd = @var.Fleet_installation_site_time_end,
-        ///             TimeStart = @var.Fleet_installation_site_time_start,
-        ///         }));
-        ///     }
+        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///         InstallationPath = @var.Fleet_installation_site_installation_path,
+        ///         JreDistribution = @var.Fleet_installation_site_jre_distribution,
+        ///         JreSecurityStatus = @var.Fleet_installation_site_jre_security_status,
+        ///         JreVendor = @var.Fleet_installation_site_jre_vendor,
+        ///         JreVersion = @var.Fleet_installation_site_jre_version,
+        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
+        ///         OsFamilies = @var.Fleet_installation_site_os_family,
+        ///         PathContains = @var.Fleet_installation_site_path_contains,
+        ///         TimeEnd = @var.Fleet_installation_site_time_end,
+        ///         TimeStart = @var.Fleet_installation_site_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,31 +61,29 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFleetInstallationSite = Oci.Jms.GetInstallationSite.Invoke(new()
         ///     {
-        ///         var testFleetInstallationSite = Output.Create(Oci.Jms.GetInstallationSite.InvokeAsync(new Oci.Jms.GetInstallationSiteArgs
-        ///         {
-        ///             FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///             InstallationPath = @var.Fleet_installation_site_installation_path,
-        ///             JreDistribution = @var.Fleet_installation_site_jre_distribution,
-        ///             JreSecurityStatus = @var.Fleet_installation_site_jre_security_status,
-        ///             JreVendor = @var.Fleet_installation_site_jre_vendor,
-        ///             JreVersion = @var.Fleet_installation_site_jre_version,
-        ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///             OsFamilies = @var.Fleet_installation_site_os_family,
-        ///             PathContains = @var.Fleet_installation_site_path_contains,
-        ///             TimeEnd = @var.Fleet_installation_site_time_end,
-        ///             TimeStart = @var.Fleet_installation_site_time_start,
-        ///         }));
-        ///     }
+        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///         InstallationPath = @var.Fleet_installation_site_installation_path,
+        ///         JreDistribution = @var.Fleet_installation_site_jre_distribution,
+        ///         JreSecurityStatus = @var.Fleet_installation_site_jre_security_status,
+        ///         JreVendor = @var.Fleet_installation_site_jre_vendor,
+        ///         JreVersion = @var.Fleet_installation_site_jre_version,
+        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
+        ///         OsFamilies = @var.Fleet_installation_site_os_family,
+        ///         PathContains = @var.Fleet_installation_site_path_contains,
+        ///         TimeEnd = @var.Fleet_installation_site_time_end,
+        ///         TimeStart = @var.Fleet_installation_site_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -97,7 +93,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetInstallationSiteArgs : Pulumi.InvokeArgs
+    public sealed class GetInstallationSiteArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Fleet-unique identifier of the related application.
@@ -180,9 +176,10 @@ namespace Pulumi.Oci.Jms
         public GetInstallationSiteArgs()
         {
         }
+        public static new GetInstallationSiteArgs Empty => new GetInstallationSiteArgs();
     }
 
-    public sealed class GetInstallationSiteInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstallationSiteInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Fleet-unique identifier of the related application.
@@ -265,6 +262,7 @@ namespace Pulumi.Oci.Jms
         public GetInstallationSiteInvokeArgs()
         {
         }
+        public static new GetInstallationSiteInvokeArgs Empty => new GetInstallationSiteInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProject = Oci.DataScience.GetProject.Invoke(new()
         ///     {
-        ///         var testProject = Output.Create(Oci.DataScience.GetProject.InvokeAsync(new Oci.DataScience.GetProjectArgs
-        ///         {
-        ///             ProjectId = oci_datascience_project.Test_project.Id,
-        ///         }));
-        ///     }
+        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProject = Oci.DataScience.GetProject.Invoke(new()
         ///     {
-        ///         var testProject = Output.Create(Oci.DataScience.GetProject.InvokeAsync(new Oci.DataScience.GetProjectArgs
-        ///         {
-        ///             ProjectId = oci_datascience_project.Test_project.Id,
-        ///         }));
-        ///     }
+        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetProjectArgs : Pulumi.InvokeArgs
+    public sealed class GetProjectArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataScience
         public GetProjectArgs()
         {
         }
+        public static new GetProjectArgs Empty => new GetProjectArgs();
     }
 
-    public sealed class GetProjectInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProjectInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataScience
         public GetProjectInvokeArgs()
         {
         }
+        public static new GetProjectInvokeArgs Empty => new GetProjectInvokeArgs();
     }
 
 

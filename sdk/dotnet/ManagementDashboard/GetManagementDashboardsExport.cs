@@ -24,20 +24,18 @@ namespace Pulumi.Oci.ManagementDashboard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementDashboardsExport = Oci.ManagementDashboard.GetManagementDashboardsExport.Invoke(new()
         ///     {
-        ///         var testManagementDashboardsExport = Output.Create(Oci.ManagementDashboard.GetManagementDashboardsExport.InvokeAsync(new Oci.ManagementDashboard.GetManagementDashboardsExportArgs
-        ///         {
-        ///             ExportDashboardId = oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
-        ///         }));
-        ///     }
+        ///         ExportDashboardId = oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,20 +56,18 @@ namespace Pulumi.Oci.ManagementDashboard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementDashboardsExport = Oci.ManagementDashboard.GetManagementDashboardsExport.Invoke(new()
         ///     {
-        ///         var testManagementDashboardsExport = Output.Create(Oci.ManagementDashboard.GetManagementDashboardsExport.InvokeAsync(new Oci.ManagementDashboard.GetManagementDashboardsExportArgs
-        ///         {
-        ///             ExportDashboardId = oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
-        ///         }));
-        ///     }
+        ///         ExportDashboardId = oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.ManagementDashboard
     }
 
 
-    public sealed class GetManagementDashboardsExportArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementDashboardsExportArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}" .
@@ -92,9 +88,10 @@ namespace Pulumi.Oci.ManagementDashboard
         public GetManagementDashboardsExportArgs()
         {
         }
+        public static new GetManagementDashboardsExportArgs Empty => new GetManagementDashboardsExportArgs();
     }
 
-    public sealed class GetManagementDashboardsExportInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementDashboardsExportInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, "{\"dashboardIds\":[\"ocid1.managementdashboard.oc1..dashboardId1\"]}" .
@@ -105,6 +102,7 @@ namespace Pulumi.Oci.ManagementDashboard
         public GetManagementDashboardsExportInvokeArgs()
         {
         }
+        public static new GetManagementDashboardsExportInvokeArgs Empty => new GetManagementDashboardsExportInvokeArgs();
     }
 
 

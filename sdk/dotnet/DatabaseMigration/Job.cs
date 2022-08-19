@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DatabaseMigration
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseMigration/job:Job")]
-    public partial class Job : Pulumi.CustomResource
+    public partial class Job : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.DatabaseMigration
         }
     }
 
-    public sealed class JobArgs : Pulumi.ResourceArgs
+    public sealed class JobArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -188,9 +188,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public JobArgs()
         {
         }
+        public static new JobArgs Empty => new JobArgs();
     }
 
-    public sealed class JobState : Pulumi.ResourceArgs
+    public sealed class JobState : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -303,5 +304,6 @@ namespace Pulumi.Oci.DatabaseMigration
         public JobState()
         {
         }
+        public static new JobState Empty => new JobState();
     }
 }

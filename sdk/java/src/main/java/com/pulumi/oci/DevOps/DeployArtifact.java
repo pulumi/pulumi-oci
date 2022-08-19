@@ -22,6 +22,51 @@ import javax.annotation.Nullable;
  * Creates a new deployment artifact.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.DeployArtifact;
+ * import com.pulumi.oci.DevOps.DeployArtifactArgs;
+ * import com.pulumi.oci.DevOps.inputs.DeployArtifactDeployArtifactSourceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDeployArtifact = new DeployArtifact(&#34;testDeployArtifact&#34;, DeployArtifactArgs.builder()        
+ *             .argumentSubstitutionMode(var_.deploy_artifact_argument_substitution_mode())
+ *             .deployArtifactSource(DeployArtifactDeployArtifactSourceArgs.builder()
+ *                 .deployArtifactSourceType(var_.deploy_artifact_deploy_artifact_source_deploy_artifact_source_type())
+ *                 .base64encodedContent(var_.deploy_artifact_deploy_artifact_source_base64encoded_content())
+ *                 .chartUrl(var_.deploy_artifact_deploy_artifact_source_chart_url())
+ *                 .deployArtifactPath(var_.deploy_artifact_deploy_artifact_source_deploy_artifact_path())
+ *                 .deployArtifactVersion(var_.deploy_artifact_deploy_artifact_source_deploy_artifact_version())
+ *                 .imageDigest(var_.deploy_artifact_deploy_artifact_source_image_digest())
+ *                 .imageUri(var_.deploy_artifact_deploy_artifact_source_image_uri())
+ *                 .repositoryId(oci_devops_repository.test_repository().id())
+ *                 .build())
+ *             .deployArtifactType(var_.deploy_artifact_deploy_artifact_type())
+ *             .projectId(oci_devops_project.test_project().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.deploy_artifact_description())
+ *             .displayName(var_.deploy_artifact_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

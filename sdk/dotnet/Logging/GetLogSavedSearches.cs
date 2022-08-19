@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogSavedSearches = Oci.Logging.GetLogSavedSearches.Invoke(new()
         ///     {
-        ///         var testLogSavedSearches = Output.Create(Oci.Logging.GetLogSavedSearches.InvokeAsync(new Oci.Logging.GetLogSavedSearchesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
-        ///             Name = @var.Log_saved_search_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
+        ///         Name = @var.Log_saved_search_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogSavedSearches = Oci.Logging.GetLogSavedSearches.Invoke(new()
         ///     {
-        ///         var testLogSavedSearches = Output.Create(Oci.Logging.GetLogSavedSearches.InvokeAsync(new Oci.Logging.GetLogSavedSearchesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
-        ///             Name = @var.Log_saved_search_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
+        ///         Name = @var.Log_saved_search_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Logging
     }
 
 
-    public sealed class GetLogSavedSearchesArgs : Pulumi.InvokeArgs
+    public sealed class GetLogSavedSearchesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Logging
         public GetLogSavedSearchesArgs()
         {
         }
+        public static new GetLogSavedSearchesArgs Empty => new GetLogSavedSearchesArgs();
     }
 
-    public sealed class GetLogSavedSearchesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogSavedSearchesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Logging
         public GetLogSavedSearchesInvokeArgs()
         {
         }
+        public static new GetLogSavedSearchesInvokeArgs Empty => new GetLogSavedSearchesInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterMetadataGetArgs : Pulumi.ResourceArgs
+    public sealed class ClusterMetadataGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The user who created the cluster.
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterMetadataGetArgs()
         {
         }
+        public static new ClusterMetadataGetArgs Empty => new ClusterMetadataGetArgs();
     }
 }

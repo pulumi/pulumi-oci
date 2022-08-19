@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class ModelDeploymentModelDeploymentConfigurationDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelDeploymentModelDeploymentConfigurationDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type of the model deployment.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public ModelDeploymentModelDeploymentConfigurationDetailsGetArgs()
         {
         }
+        public static new ModelDeploymentModelDeploymentConfigurationDetailsGetArgs Empty => new ModelDeploymentModelDeploymentConfigurationDetailsGetArgs();
     }
 }

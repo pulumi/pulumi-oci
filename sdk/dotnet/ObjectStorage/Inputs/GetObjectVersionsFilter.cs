@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class GetObjectVersionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectVersionsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the object. Avoid entering confidential information. Example: test/object1.log
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public GetObjectVersionsFilterArgs()
         {
         }
+        public static new GetObjectVersionsFilterArgs Empty => new GetObjectVersionsFilterArgs();
     }
 }

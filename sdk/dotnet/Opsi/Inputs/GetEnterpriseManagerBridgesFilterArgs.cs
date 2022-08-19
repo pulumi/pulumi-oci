@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi.Inputs
 {
 
-    public sealed class GetEnterpriseManagerBridgesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetEnterpriseManagerBridgesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Opsi.Inputs
         public GetEnterpriseManagerBridgesFilterInputArgs()
         {
         }
+        public static new GetEnterpriseManagerBridgesFilterInputArgs Empty => new GetEnterpriseManagerBridgesFilterInputArgs();
     }
 }

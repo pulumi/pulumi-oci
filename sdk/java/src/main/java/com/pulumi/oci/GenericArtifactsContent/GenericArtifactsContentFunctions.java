@@ -23,6 +23,36 @@ public final class GenericArtifactsContentFunctions {
      * Get generic artifact content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
+     *             .artifactPath(var_.artifact_by_path_artifact_path())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .version(var_.artifact_by_path_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetArtifactByPathResult> getArtifactByPath(GetArtifactByPathArgs args) {
@@ -34,6 +64,36 @@ public final class GenericArtifactsContentFunctions {
      * Get generic artifact content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
+     *             .artifactPath(var_.artifact_by_path_artifact_path())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .version(var_.artifact_by_path_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetArtifactByPathResult> getArtifactByPathPlain(GetArtifactByPathPlainArgs args) {
@@ -45,6 +105,36 @@ public final class GenericArtifactsContentFunctions {
      * Get generic artifact content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
+     *             .artifactPath(var_.artifact_by_path_artifact_path())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .version(var_.artifact_by_path_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetArtifactByPathResult> getArtifactByPath(GetArtifactByPathArgs args, InvokeOptions options) {
@@ -56,6 +146,36 @@ public final class GenericArtifactsContentFunctions {
      * Get generic artifact content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetArtifactByPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
+     *             .artifactPath(var_.artifact_by_path_artifact_path())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .version(var_.artifact_by_path_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetArtifactByPathResult> getArtifactByPathPlain(GetArtifactByPathPlainArgs args, InvokeOptions options) {
@@ -67,6 +187,34 @@ public final class GenericArtifactsContentFunctions {
      * Gets the specified artifact&#39;s content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
+     *             .artifactId(oci_generic_artifacts_content_artifact.test_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGenericArtifactsContentResult> getGenericArtifactsContent(GetGenericArtifactsContentArgs args) {
@@ -78,6 +226,34 @@ public final class GenericArtifactsContentFunctions {
      * Gets the specified artifact&#39;s content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
+     *             .artifactId(oci_generic_artifacts_content_artifact.test_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGenericArtifactsContentResult> getGenericArtifactsContentPlain(GetGenericArtifactsContentPlainArgs args) {
@@ -89,6 +265,34 @@ public final class GenericArtifactsContentFunctions {
      * Gets the specified artifact&#39;s content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
+     *             .artifactId(oci_generic_artifacts_content_artifact.test_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGenericArtifactsContentResult> getGenericArtifactsContent(GetGenericArtifactsContentArgs args, InvokeOptions options) {
@@ -100,6 +304,34 @@ public final class GenericArtifactsContentFunctions {
      * Gets the specified artifact&#39;s content.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenericArtifactsContent.GenericArtifactsContentFunctions;
+     * import com.pulumi.oci.GenericArtifactsContent.inputs.GetGenericArtifactsContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
+     *             .artifactId(oci_generic_artifacts_content_artifact.test_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGenericArtifactsContentResult> getGenericArtifactsContentPlain(GetGenericArtifactsContentPlainArgs args, InvokeOptions options) {

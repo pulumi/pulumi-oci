@@ -24,21 +24,19 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testView = Oci.Dns.GetView.Invoke(new()
         ///     {
-        ///         var testView = Output.Create(Oci.Dns.GetView.InvokeAsync(new Oci.Dns.GetViewArgs
-        ///         {
-        ///             ViewId = oci_dns_view.Test_view.Id,
-        ///             Scope = "PRIVATE",
-        ///         }));
-        ///     }
+        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///         Scope = "PRIVATE",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,21 +57,19 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testView = Oci.Dns.GetView.Invoke(new()
         ///     {
-        ///         var testView = Output.Create(Oci.Dns.GetView.InvokeAsync(new Oci.Dns.GetViewArgs
-        ///         {
-        ///             ViewId = oci_dns_view.Test_view.Id,
-        ///             Scope = "PRIVATE",
-        ///         }));
-        ///     }
+        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///         Scope = "PRIVATE",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetViewArgs : Pulumi.InvokeArgs
+    public sealed class GetViewArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Value must be `PRIVATE` when listing views for private zones.
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Dns
         public GetViewArgs()
         {
         }
+        public static new GetViewArgs Empty => new GetViewArgs();
     }
 
-    public sealed class GetViewInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetViewInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Value must be `PRIVATE` when listing views for private zones.
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Dns
         public GetViewInvokeArgs()
         {
         }
+        public static new GetViewInvokeArgs Empty => new GetViewInvokeArgs();
     }
 
 

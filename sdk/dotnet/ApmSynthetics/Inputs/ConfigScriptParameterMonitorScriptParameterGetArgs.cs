@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigScriptParameterMonitorScriptParameterGetArgs : Pulumi.ResourceArgs
+    public sealed class ConfigScriptParameterMonitorScriptParameterGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the parameter.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigScriptParameterMonitorScriptParameterGetArgs()
         {
         }
+        public static new ConfigScriptParameterMonitorScriptParameterGetArgs Empty => new ConfigScriptParameterMonitorScriptParameterGetArgs();
     }
 }

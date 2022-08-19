@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class GetMigrationObjectTypesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrationObjectTypesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Object type name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public GetMigrationObjectTypesFilterArgs()
         {
         }
+        public static new GetMigrationObjectTypesFilterArgs Empty => new GetMigrationObjectTypesFilterArgs();
     }
 }

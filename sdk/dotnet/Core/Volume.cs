@@ -30,50 +30,48 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVolume = new Oci.Core.Volume("testVolume", new()
     ///     {
-    ///         var testVolume = new Oci.Core.Volume("testVolume", new Oci.Core.VolumeArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         AvailabilityDomain = @var.Volume_availability_domain,
+    ///         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
+    ///         BlockVolumeReplicas = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             AvailabilityDomain = @var.Volume_availability_domain,
-    ///             BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
-    ///             BlockVolumeReplicas = 
+    ///             new Oci.Core.Inputs.VolumeBlockVolumeReplicaArgs
     ///             {
-    ///                 new Oci.Core.Inputs.VolumeBlockVolumeReplicaArgs
-    ///                 {
-    ///                     AvailabilityDomain = @var.Volume_block_volume_replicas_availability_domain,
-    ///                     DisplayName = @var.Volume_block_volume_replicas_display_name,
-    ///                 },
+    ///                 AvailabilityDomain = @var.Volume_block_volume_replicas_availability_domain,
+    ///                 DisplayName = @var.Volume_block_volume_replicas_display_name,
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Volume_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsAutoTuneEnabled = @var.Volume_is_auto_tune_enabled,
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             SizeInGbs = @var.Volume_size_in_gbs,
-    ///             SizeInMbs = @var.Volume_size_in_mbs,
-    ///             SourceDetails = new Oci.Core.Inputs.VolumeSourceDetailsArgs
-    ///             {
-    ///                 Id = @var.Volume_source_details_id,
-    ///                 Type = @var.Volume_source_details_type,
-    ///             },
-    ///             VpusPerGb = @var.Volume_vpus_per_gb,
-    ///             BlockVolumeReplicasDeletion = true,
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Volume_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsAutoTuneEnabled = @var.Volume_is_auto_tune_enabled,
+    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         SizeInGbs = @var.Volume_size_in_gbs,
+    ///         SizeInMbs = @var.Volume_size_in_mbs,
+    ///         SourceDetails = new Oci.Core.Inputs.VolumeSourceDetailsArgs
+    ///         {
+    ///             Id = @var.Volume_source_details_id,
+    ///             Type = @var.Volume_source_details_type,
+    ///         },
+    ///         VpusPerGb = @var.Volume_vpus_per_gb,
+    ///         BlockVolumeReplicasDeletion = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -85,7 +83,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volume:Volume")]
-    public partial class Volume : Pulumi.CustomResource
+    public partial class Volume : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
@@ -251,7 +249,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VolumeArgs : Pulumi.ResourceArgs
+    public sealed class VolumeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
@@ -358,9 +356,10 @@ namespace Pulumi.Oci.Core
         public VolumeArgs()
         {
         }
+        public static new VolumeArgs Empty => new VolumeArgs();
     }
 
-    public sealed class VolumeState : Pulumi.ResourceArgs
+    public sealed class VolumeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
@@ -509,5 +508,6 @@ namespace Pulumi.Oci.Core
         public VolumeState()
         {
         }
+        public static new VolumeState Empty => new VolumeState();
     }
 }

@@ -20,6 +20,37 @@ import javax.annotation.Nullable;
  * Enable/Disable Cloud Guard. The reporting region cannot be updated once created.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.CloudGuard.CloudGuardConfiguration;
+ * import com.pulumi.oci.CloudGuard.CloudGuardConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCloudGuardConfiguration = new CloudGuardConfiguration(&#34;testCloudGuardConfiguration&#34;, CloudGuardConfigurationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .reportingRegion(var_.cloud_guard_configuration_reporting_region())
+ *             .status(var_.cloud_guard_configuration_status())
+ *             .selfManageResources(var_.cloud_guard_configuration_self_manage_resources())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

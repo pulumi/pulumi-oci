@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway.Inputs
 {
 
-    public sealed class SubscriptionTaxInfoGetArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionTaxInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Tax exemption reason code.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public SubscriptionTaxInfoGetArgs()
         {
         }
+        public static new SubscriptionTaxInfoGetArgs Empty => new SubscriptionTaxInfoGetArgs();
     }
 }

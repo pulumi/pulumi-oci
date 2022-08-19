@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStreamPool = Oci.Streaming.GetStreamPool.Invoke(new()
         ///     {
-        ///         var testStreamPool = Output.Create(Oci.Streaming.GetStreamPool.InvokeAsync(new Oci.Streaming.GetStreamPoolArgs
-        ///         {
-        ///             StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
-        ///         }));
-        ///     }
+        ///         StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStreamPool = Oci.Streaming.GetStreamPool.Invoke(new()
         ///     {
-        ///         var testStreamPool = Output.Create(Oci.Streaming.GetStreamPool.InvokeAsync(new Oci.Streaming.GetStreamPoolArgs
-        ///         {
-        ///             StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
-        ///         }));
-        ///     }
+        ///         StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Streaming
     }
 
 
-    public sealed class GetStreamPoolArgs : Pulumi.InvokeArgs
+    public sealed class GetStreamPoolArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the stream pool.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Streaming
         public GetStreamPoolArgs()
         {
         }
+        public static new GetStreamPoolArgs Empty => new GetStreamPoolArgs();
     }
 
-    public sealed class GetStreamPoolInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetStreamPoolInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the stream pool.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Streaming
         public GetStreamPoolInvokeArgs()
         {
         }
+        public static new GetStreamPoolInvokeArgs Empty => new GetStreamPoolInvokeArgs();
     }
 
 

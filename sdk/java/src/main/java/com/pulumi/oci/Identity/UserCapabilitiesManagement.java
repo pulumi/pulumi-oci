@@ -22,6 +22,39 @@ import javax.annotation.Nullable;
  * **Important:** Deleting the User Capabilities Management leaves the User resource in its existing state (rather than returning to its defaults)
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.UserCapabilitiesManagement;
+ * import com.pulumi.oci.Identity.UserCapabilitiesManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testUserCapabilitiesManagement = new UserCapabilitiesManagement(&#34;testUserCapabilitiesManagement&#34;, UserCapabilitiesManagementArgs.builder()        
+ *             .userId(oci_identity_user.user1().id())
+ *             .canUseApiKeys(&#34;true&#34;)
+ *             .canUseAuthTokens(&#34;true&#34;)
+ *             .canUseConsolePassword(&#34;false&#34;)
+ *             .canUseCustomerSecretKeys(&#34;true&#34;)
+ *             .canUseSmtpCredentials(&#34;true&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

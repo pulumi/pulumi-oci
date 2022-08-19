@@ -22,25 +22,23 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAccessRequests = Oci.OperatorAccessControl.GetAccessRequests.Invoke(new()
         ///     {
-        ///         var testAccessRequests = Output.Create(Oci.OperatorAccessControl.GetAccessRequests.InvokeAsync(new Oci.OperatorAccessControl.GetAccessRequestsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ResourceName = @var.Access_request_resource_name,
-        ///             ResourceType = @var.Access_request_resource_type,
-        ///             State = @var.Access_request_state,
-        ///             TimeEnd = @var.Access_request_time_end,
-        ///             TimeStart = @var.Access_request_time_start,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ResourceName = @var.Access_request_resource_name,
+        ///         ResourceType = @var.Access_request_resource_type,
+        ///         State = @var.Access_request_state,
+        ///         TimeEnd = @var.Access_request_time_end,
+        ///         TimeStart = @var.Access_request_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAccessRequests = Oci.OperatorAccessControl.GetAccessRequests.Invoke(new()
         ///     {
-        ///         var testAccessRequests = Output.Create(Oci.OperatorAccessControl.GetAccessRequests.InvokeAsync(new Oci.OperatorAccessControl.GetAccessRequestsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ResourceName = @var.Access_request_resource_name,
-        ///             ResourceType = @var.Access_request_resource_type,
-        ///             State = @var.Access_request_state,
-        ///             TimeEnd = @var.Access_request_time_end,
-        ///             TimeStart = @var.Access_request_time_start,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ResourceName = @var.Access_request_resource_name,
+        ///         ResourceType = @var.Access_request_resource_type,
+        ///         State = @var.Access_request_state,
+        ///         TimeEnd = @var.Access_request_time_end,
+        ///         TimeStart = @var.Access_request_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     }
 
 
-    public sealed class GetAccessRequestsArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessRequestsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetAccessRequestsArgs()
         {
         }
+        public static new GetAccessRequestsArgs Empty => new GetAccessRequestsArgs();
     }
 
-    public sealed class GetAccessRequestsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessRequestsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetAccessRequestsInvokeArgs()
         {
         }
+        public static new GetAccessRequestsInvokeArgs Empty => new GetAccessRequestsInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GatewayIpAddressArgs : Pulumi.ResourceArgs
+    public sealed class GatewayIpAddressArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// An IP address.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GatewayIpAddressArgs()
         {
         }
+        public static new GatewayIpAddressArgs Empty => new GatewayIpAddressArgs();
     }
 }

@@ -23,6 +23,34 @@ public final class IntegrationFunctions {
      * Gets a IntegrationInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Integration.IntegrationFunctions;
+     * import com.pulumi.oci.Integration.inputs.GetIntegrationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIntegrationInstance = IntegrationFunctions.getIntegrationInstance(GetIntegrationInstanceArgs.builder()
+     *             .integrationInstanceId(oci_integration_integration_instance.test_integration_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIntegrationInstanceResult> getIntegrationInstance(GetIntegrationInstanceArgs args) {
@@ -34,6 +62,34 @@ public final class IntegrationFunctions {
      * Gets a IntegrationInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Integration.IntegrationFunctions;
+     * import com.pulumi.oci.Integration.inputs.GetIntegrationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIntegrationInstance = IntegrationFunctions.getIntegrationInstance(GetIntegrationInstanceArgs.builder()
+     *             .integrationInstanceId(oci_integration_integration_instance.test_integration_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIntegrationInstanceResult> getIntegrationInstancePlain(GetIntegrationInstancePlainArgs args) {
@@ -45,6 +101,34 @@ public final class IntegrationFunctions {
      * Gets a IntegrationInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Integration.IntegrationFunctions;
+     * import com.pulumi.oci.Integration.inputs.GetIntegrationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIntegrationInstance = IntegrationFunctions.getIntegrationInstance(GetIntegrationInstanceArgs.builder()
+     *             .integrationInstanceId(oci_integration_integration_instance.test_integration_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIntegrationInstanceResult> getIntegrationInstance(GetIntegrationInstanceArgs args, InvokeOptions options) {
@@ -56,6 +140,34 @@ public final class IntegrationFunctions {
      * Gets a IntegrationInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Integration.IntegrationFunctions;
+     * import com.pulumi.oci.Integration.inputs.GetIntegrationInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIntegrationInstance = IntegrationFunctions.getIntegrationInstance(GetIntegrationInstanceArgs.builder()
+     *             .integrationInstanceId(oci_integration_integration_instance.test_integration_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIntegrationInstanceResult> getIntegrationInstancePlain(GetIntegrationInstancePlainArgs args, InvokeOptions options) {
@@ -67,6 +179,36 @@ public final class IntegrationFunctions {
      * Returns a list of Integration Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Integration.IntegrationFunctions;
+     * import com.pulumi.oci.Integration.inputs.GetIntegrationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIntegrationInstances = IntegrationFunctions.getIntegrationInstances(GetIntegrationInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.integration_instance_display_name())
+     *             .state(var_.integration_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIntegrationInstancesResult> getIntegrationInstances(GetIntegrationInstancesArgs args) {
@@ -78,6 +220,36 @@ public final class IntegrationFunctions {
      * Returns a list of Integration Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Integration.IntegrationFunctions;
+     * import com.pulumi.oci.Integration.inputs.GetIntegrationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIntegrationInstances = IntegrationFunctions.getIntegrationInstances(GetIntegrationInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.integration_instance_display_name())
+     *             .state(var_.integration_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIntegrationInstancesResult> getIntegrationInstancesPlain(GetIntegrationInstancesPlainArgs args) {
@@ -89,6 +261,36 @@ public final class IntegrationFunctions {
      * Returns a list of Integration Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Integration.IntegrationFunctions;
+     * import com.pulumi.oci.Integration.inputs.GetIntegrationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIntegrationInstances = IntegrationFunctions.getIntegrationInstances(GetIntegrationInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.integration_instance_display_name())
+     *             .state(var_.integration_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIntegrationInstancesResult> getIntegrationInstances(GetIntegrationInstancesArgs args, InvokeOptions options) {
@@ -100,6 +302,36 @@ public final class IntegrationFunctions {
      * Returns a list of Integration Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Integration.IntegrationFunctions;
+     * import com.pulumi.oci.Integration.inputs.GetIntegrationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIntegrationInstances = IntegrationFunctions.getIntegrationInstances(GetIntegrationInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.integration_instance_display_name())
+     *             .state(var_.integration_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIntegrationInstancesResult> getIntegrationInstancesPlain(GetIntegrationInstancesPlainArgs args, InvokeOptions options) {

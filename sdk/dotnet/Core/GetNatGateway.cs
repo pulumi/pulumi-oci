@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNatGateway = Oci.Core.GetNatGateway.Invoke(new()
         ///     {
-        ///         var testNatGateway = Output.Create(Oci.Core.GetNatGateway.InvokeAsync(new Oci.Core.GetNatGatewayArgs
-        ///         {
-        ///             NatGatewayId = oci_core_nat_gateway.Test_nat_gateway.Id,
-        ///         }));
-        ///     }
+        ///         NatGatewayId = oci_core_nat_gateway.Test_nat_gateway.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNatGateway = Oci.Core.GetNatGateway.Invoke(new()
         ///     {
-        ///         var testNatGateway = Output.Create(Oci.Core.GetNatGateway.InvokeAsync(new Oci.Core.GetNatGatewayArgs
-        ///         {
-        ///             NatGatewayId = oci_core_nat_gateway.Test_nat_gateway.Id,
-        ///         }));
-        ///     }
+        ///         NatGatewayId = oci_core_nat_gateway.Test_nat_gateway.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetNatGatewayArgs : Pulumi.InvokeArgs
+    public sealed class GetNatGatewayArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetNatGatewayArgs()
         {
         }
+        public static new GetNatGatewayArgs Empty => new GetNatGatewayArgs();
     }
 
-    public sealed class GetNatGatewayInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNatGatewayInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetNatGatewayInvokeArgs()
         {
         }
+        public static new GetNatGatewayInvokeArgs Empty => new GetNatGatewayInvokeArgs();
     }
 
 

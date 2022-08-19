@@ -25,6 +25,51 @@ import javax.annotation.Nullable;
  * with the same displayName or (service, resource, category) triplet.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Logging.Log;
+ * import com.pulumi.oci.Logging.LogArgs;
+ * import com.pulumi.oci.Logging.inputs.LogConfigurationArgs;
+ * import com.pulumi.oci.Logging.inputs.LogConfigurationSourceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLog = new Log(&#34;testLog&#34;, LogArgs.builder()        
+ *             .displayName(var_.log_display_name())
+ *             .logGroupId(oci_logging_log_group.test_log_group().id())
+ *             .logType(var_.log_log_type())
+ *             .configuration(LogConfigurationArgs.builder()
+ *                 .source(LogConfigurationSourceArgs.builder()
+ *                     .category(var_.log_configuration_source_category())
+ *                     .resource(var_.log_configuration_source_resource())
+ *                     .service(var_.log_configuration_source_service())
+ *                     .sourceType(var_.log_configuration_source_source_type())
+ *                     .build())
+ *                 .compartmentId(var_.compartment_id())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isEnabled(var_.log_is_enabled())
+ *             .retentionDuration(var_.log_retention_duration())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

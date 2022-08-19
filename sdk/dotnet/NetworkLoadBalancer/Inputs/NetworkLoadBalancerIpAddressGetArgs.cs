@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
 {
 
-    public sealed class NetworkLoadBalancerIpAddressGetArgs : Pulumi.ResourceArgs
+    public sealed class NetworkLoadBalancerIpAddressGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// An IP address.  Example: `192.168.0.3`
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public NetworkLoadBalancerIpAddressGetArgs()
         {
         }
+        public static new NetworkLoadBalancerIpAddressGetArgs Empty => new NetworkLoadBalancerIpAddressGetArgs();
     }
 }

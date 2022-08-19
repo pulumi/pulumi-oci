@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemsUpgradeHistoryEntries = Oci.Database.GetDbSystemsUpgradeHistoryEntries.Invoke(new()
         ///     {
-        ///         var testDbSystemsUpgradeHistoryEntries = Output.Create(Oci.Database.GetDbSystemsUpgradeHistoryEntries.InvokeAsync(new Oci.Database.GetDbSystemsUpgradeHistoryEntriesArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///             State = @var.Db_systems_upgrade_history_entry_state,
-        ///             UpgradeAction = @var.Db_systems_upgrade_history_entry_upgrade_action,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         State = @var.Db_systems_upgrade_history_entry_state,
+        ///         UpgradeAction = @var.Db_systems_upgrade_history_entry_upgrade_action,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemsUpgradeHistoryEntries = Oci.Database.GetDbSystemsUpgradeHistoryEntries.Invoke(new()
         ///     {
-        ///         var testDbSystemsUpgradeHistoryEntries = Output.Create(Oci.Database.GetDbSystemsUpgradeHistoryEntries.InvokeAsync(new Oci.Database.GetDbSystemsUpgradeHistoryEntriesArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///             State = @var.Db_systems_upgrade_history_entry_state,
-        ///             UpgradeAction = @var.Db_systems_upgrade_history_entry_upgrade_action,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         State = @var.Db_systems_upgrade_history_entry_state,
+        ///         UpgradeAction = @var.Db_systems_upgrade_history_entry_upgrade_action,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbSystemsUpgradeHistoryEntriesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemsUpgradeHistoryEntriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Database
         public GetDbSystemsUpgradeHistoryEntriesArgs()
         {
         }
+        public static new GetDbSystemsUpgradeHistoryEntriesArgs Empty => new GetDbSystemsUpgradeHistoryEntriesArgs();
     }
 
-    public sealed class GetDbSystemsUpgradeHistoryEntriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemsUpgradeHistoryEntriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Database
         public GetDbSystemsUpgradeHistoryEntriesInvokeArgs()
         {
         }
+        public static new GetDbSystemsUpgradeHistoryEntriesInvokeArgs Empty => new GetDbSystemsUpgradeHistoryEntriesInvokeArgs();
     }
 
 

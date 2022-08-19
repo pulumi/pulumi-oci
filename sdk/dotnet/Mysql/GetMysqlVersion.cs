@@ -24,20 +24,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlVersions = Oci.Mysql.GetMysqlVersion.Invoke(new()
         ///     {
-        ///         var testMysqlVersions = Output.Create(Oci.Mysql.GetMysqlVersion.InvokeAsync(new Oci.Mysql.GetMysqlVersionArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,20 +56,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlVersions = Oci.Mysql.GetMysqlVersion.Invoke(new()
         ///     {
-        ///         var testMysqlVersions = Output.Create(Oci.Mysql.GetMysqlVersion.InvokeAsync(new Oci.Mysql.GetMysqlVersionArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetMysqlVersionArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlVersionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlVersionArgs()
         {
         }
+        public static new GetMysqlVersionArgs Empty => new GetMysqlVersionArgs();
     }
 
-    public sealed class GetMysqlVersionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlVersionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -121,6 +118,7 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlVersionInvokeArgs()
         {
         }
+        public static new GetMysqlVersionInvokeArgs Empty => new GetMysqlVersionInvokeArgs();
     }
 
 

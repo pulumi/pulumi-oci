@@ -28,29 +28,27 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDrg = new Oci.Core.Drg("testDrg", new()
     ///     {
-    ///         var testDrg = new Oci.Core.Drg("testDrg", new Oci.Core.DrgArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Drg_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Drg_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -62,7 +60,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drg:Drg")]
-    public partial class Drg : Pulumi.CustomResource
+    public partial class Drg : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the DRG.
@@ -162,7 +160,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DrgArgs : Pulumi.ResourceArgs
+    public sealed class DrgArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the DRG.
@@ -203,9 +201,10 @@ namespace Pulumi.Oci.Core
         public DrgArgs()
         {
         }
+        public static new DrgArgs Empty => new DrgArgs();
     }
 
-    public sealed class DrgState : Pulumi.ResourceArgs
+    public sealed class DrgState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the DRG.
@@ -282,5 +281,6 @@ namespace Pulumi.Oci.Core
         public DrgState()
         {
         }
+        public static new DrgState Empty => new DrgState();
     }
 }

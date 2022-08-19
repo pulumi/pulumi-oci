@@ -22,20 +22,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogSetsCount = Oci.LogAnalytics.GetLogSetsCount.Invoke(new()
         ///     {
-        ///         var testLogSetsCount = Output.Create(Oci.LogAnalytics.GetLogSetsCount.InvokeAsync(new Oci.LogAnalytics.GetLogSetsCountArgs
-        ///         {
-        ///             Namespace = @var.Log_sets_count_namespace,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_sets_count_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogSetsCount = Oci.LogAnalytics.GetLogSetsCount.Invoke(new()
         ///     {
-        ///         var testLogSetsCount = Output.Create(Oci.LogAnalytics.GetLogSetsCount.InvokeAsync(new Oci.LogAnalytics.GetLogSetsCountArgs
-        ///         {
-        ///             Namespace = @var.Log_sets_count_namespace,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_sets_count_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogSetsCountArgs : Pulumi.InvokeArgs
+    public sealed class GetLogSetsCountArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogSetsCountArgs()
         {
         }
+        public static new GetLogSetsCountArgs Empty => new GetLogSetsCountArgs();
     }
 
-    public sealed class GetLogSetsCountInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogSetsCountInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogSetsCountInvokeArgs()
         {
         }
+        public static new GetLogSetsCountInvokeArgs Empty => new GetLogSetsCountInvokeArgs();
     }
 
 

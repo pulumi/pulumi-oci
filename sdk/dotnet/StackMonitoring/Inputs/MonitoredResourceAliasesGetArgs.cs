@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class MonitoredResourceAliasesGetArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourceAliasesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Monitored Resource Alias Reference Source Credential
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public MonitoredResourceAliasesGetArgs()
         {
         }
+        public static new MonitoredResourceAliasesGetArgs Empty => new MonitoredResourceAliasesGetArgs();
     }
 }

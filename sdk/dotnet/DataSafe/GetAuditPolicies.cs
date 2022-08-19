@@ -36,26 +36,24 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditPolicies = Oci.DataSafe.GetAuditPolicies.Invoke(new()
         ///     {
-        ///         var testAuditPolicies = Output.Create(Oci.DataSafe.GetAuditPolicies.InvokeAsync(new Oci.DataSafe.GetAuditPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_policy_access_level,
-        ///             AuditPolicyId = oci_data_safe_audit_policy.Test_audit_policy.Id,
-        ///             CompartmentIdInSubtree = @var.Audit_policy_compartment_id_in_subtree,
-        ///             DisplayName = @var.Audit_policy_display_name,
-        ///             State = @var.Audit_policy_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_policy_access_level,
+        ///         AuditPolicyId = oci_data_safe_audit_policy.Test_audit_policy.Id,
+        ///         CompartmentIdInSubtree = @var.Audit_policy_compartment_id_in_subtree,
+        ///         DisplayName = @var.Audit_policy_display_name,
+        ///         State = @var.Audit_policy_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -88,26 +86,24 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditPolicies = Oci.DataSafe.GetAuditPolicies.Invoke(new()
         ///     {
-        ///         var testAuditPolicies = Output.Create(Oci.DataSafe.GetAuditPolicies.InvokeAsync(new Oci.DataSafe.GetAuditPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_policy_access_level,
-        ///             AuditPolicyId = oci_data_safe_audit_policy.Test_audit_policy.Id,
-        ///             CompartmentIdInSubtree = @var.Audit_policy_compartment_id_in_subtree,
-        ///             DisplayName = @var.Audit_policy_display_name,
-        ///             State = @var.Audit_policy_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_policy_access_level,
+        ///         AuditPolicyId = oci_data_safe_audit_policy.Test_audit_policy.Id,
+        ///         CompartmentIdInSubtree = @var.Audit_policy_compartment_id_in_subtree,
+        ///         DisplayName = @var.Audit_policy_display_name,
+        ///         State = @var.Audit_policy_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -117,7 +113,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -172,9 +168,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditPoliciesArgs()
         {
         }
+        public static new GetAuditPoliciesArgs Empty => new GetAuditPoliciesArgs();
     }
 
-    public sealed class GetAuditPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -229,6 +226,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditPoliciesInvokeArgs()
         {
         }
+        public static new GetAuditPoliciesInvokeArgs Empty => new GetAuditPoliciesInvokeArgs();
     }
 
 

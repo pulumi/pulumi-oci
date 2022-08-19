@@ -25,23 +25,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeCapacityReservations = Oci.Core.GetComputeCapacityReservations.Invoke(new()
         ///     {
-        ///         var testComputeCapacityReservations = Output.Create(Oci.Core.GetComputeCapacityReservations.InvokeAsync(new Oci.Core.GetComputeCapacityReservationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
-        ///             DisplayName = @var.Compute_capacity_reservation_display_name,
-        ///             State = @var.Compute_capacity_reservation_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
+        ///         DisplayName = @var.Compute_capacity_reservation_display_name,
+        ///         State = @var.Compute_capacity_reservation_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,23 +61,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeCapacityReservations = Oci.Core.GetComputeCapacityReservations.Invoke(new()
         ///     {
-        ///         var testComputeCapacityReservations = Output.Create(Oci.Core.GetComputeCapacityReservations.InvokeAsync(new Oci.Core.GetComputeCapacityReservationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
-        ///             DisplayName = @var.Compute_capacity_reservation_display_name,
-        ///             State = @var.Compute_capacity_reservation_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
+        ///         DisplayName = @var.Compute_capacity_reservation_display_name,
+        ///         State = @var.Compute_capacity_reservation_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetComputeCapacityReservationsArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeCapacityReservationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Core
         public GetComputeCapacityReservationsArgs()
         {
         }
+        public static new GetComputeCapacityReservationsArgs Empty => new GetComputeCapacityReservationsArgs();
     }
 
-    public sealed class GetComputeCapacityReservationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeCapacityReservationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -165,6 +162,7 @@ namespace Pulumi.Oci.Core
         public GetComputeCapacityReservationsInvokeArgs()
         {
         }
+        public static new GetComputeCapacityReservationsInvokeArgs Empty => new GetComputeCapacityReservationsInvokeArgs();
     }
 
 

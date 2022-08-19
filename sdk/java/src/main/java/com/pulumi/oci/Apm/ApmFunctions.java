@@ -26,6 +26,34 @@ public final class ApmFunctions {
      * Gets the details of the APM domain specified by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApmDomainResult> getApmDomain(GetApmDomainArgs args) {
@@ -37,6 +65,34 @@ public final class ApmFunctions {
      * Gets the details of the APM domain specified by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApmDomainResult> getApmDomainPlain(GetApmDomainPlainArgs args) {
@@ -48,6 +104,34 @@ public final class ApmFunctions {
      * Gets the details of the APM domain specified by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApmDomainResult> getApmDomain(GetApmDomainArgs args, InvokeOptions options) {
@@ -59,6 +143,34 @@ public final class ApmFunctions {
      * Gets the details of the APM domain specified by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApmDomainResult> getApmDomainPlain(GetApmDomainPlainArgs args, InvokeOptions options) {
@@ -70,6 +182,36 @@ public final class ApmFunctions {
      * Lists all APM domains for the specified tenant compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.apm_domain_display_name())
+     *             .state(var_.apm_domain_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApmDomainsResult> getApmDomains(GetApmDomainsArgs args) {
@@ -81,6 +223,36 @@ public final class ApmFunctions {
      * Lists all APM domains for the specified tenant compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.apm_domain_display_name())
+     *             .state(var_.apm_domain_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApmDomainsResult> getApmDomainsPlain(GetApmDomainsPlainArgs args) {
@@ -92,6 +264,36 @@ public final class ApmFunctions {
      * Lists all APM domains for the specified tenant compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.apm_domain_display_name())
+     *             .state(var_.apm_domain_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApmDomainsResult> getApmDomains(GetApmDomainsArgs args, InvokeOptions options) {
@@ -103,6 +305,36 @@ public final class ApmFunctions {
      * Lists all APM domains for the specified tenant compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetApmDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.apm_domain_display_name())
+     *             .state(var_.apm_domain_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApmDomainsResult> getApmDomainsPlain(GetApmDomainsPlainArgs args, InvokeOptions options) {
@@ -115,6 +347,35 @@ public final class ApmFunctions {
      * query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .dataKeyType(var_.data_key_data_key_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataKeysResult> getDataKeys(GetDataKeysArgs args) {
@@ -127,6 +388,35 @@ public final class ApmFunctions {
      * query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .dataKeyType(var_.data_key_data_key_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataKeysResult> getDataKeysPlain(GetDataKeysPlainArgs args) {
@@ -139,6 +429,35 @@ public final class ApmFunctions {
      * query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .dataKeyType(var_.data_key_data_key_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataKeysResult> getDataKeys(GetDataKeysArgs args, InvokeOptions options) {
@@ -151,6 +470,35 @@ public final class ApmFunctions {
      * query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Apm.ApmFunctions;
+     * import com.pulumi.oci.Apm.inputs.GetDataKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
+     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .dataKeyType(var_.data_key_data_key_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataKeysResult> getDataKeysPlain(GetDataKeysPlainArgs args, InvokeOptions options) {

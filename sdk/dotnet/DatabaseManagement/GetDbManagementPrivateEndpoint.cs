@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbManagementPrivateEndpoint = Oci.DatabaseManagement.GetDbManagementPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testDbManagementPrivateEndpoint = Output.Create(Oci.DatabaseManagement.GetDbManagementPrivateEndpoint.InvokeAsync(new Oci.DatabaseManagement.GetDbManagementPrivateEndpointArgs
-        ///         {
-        ///             DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbManagementPrivateEndpoint = Oci.DatabaseManagement.GetDbManagementPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testDbManagementPrivateEndpoint = Output.Create(Oci.DatabaseManagement.GetDbManagementPrivateEndpoint.InvokeAsync(new Oci.DatabaseManagement.GetDbManagementPrivateEndpointArgs
-        ///         {
-        ///             DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetDbManagementPrivateEndpointArgs : Pulumi.InvokeArgs
+    public sealed class GetDbManagementPrivateEndpointArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetDbManagementPrivateEndpointArgs()
         {
         }
+        public static new GetDbManagementPrivateEndpointArgs Empty => new GetDbManagementPrivateEndpointArgs();
     }
 
-    public sealed class GetDbManagementPrivateEndpointInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbManagementPrivateEndpointInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetDbManagementPrivateEndpointInvokeArgs()
         {
         }
+        public static new GetDbManagementPrivateEndpointInvokeArgs Empty => new GetDbManagementPrivateEndpointInvokeArgs();
     }
 
 

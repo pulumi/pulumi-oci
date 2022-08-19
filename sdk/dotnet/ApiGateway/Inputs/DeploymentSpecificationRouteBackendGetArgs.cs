@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteBackendGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteBackendGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The body of the stock response from the mock backend.
@@ -81,5 +81,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteBackendGetArgs()
         {
         }
+        public static new DeploymentSpecificationRouteBackendGetArgs Empty => new DeploymentSpecificationRouteBackendGetArgs();
     }
 }

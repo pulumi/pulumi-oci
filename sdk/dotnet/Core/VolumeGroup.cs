@@ -13,47 +13,45 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVolumeGroup = new Oci.Core.VolumeGroup("testVolumeGroup", new()
     ///     {
-    ///         var testVolumeGroup = new Oci.Core.VolumeGroup("testVolumeGroup", new Oci.Core.VolumeGroupArgs
+    ///         AvailabilityDomain = @var.Volume_group_availability_domain,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         SourceDetails = new Oci.Core.Inputs.VolumeGroupSourceDetailsArgs
     ///         {
-    ///             AvailabilityDomain = @var.Volume_group_availability_domain,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             SourceDetails = new Oci.Core.Inputs.VolumeGroupSourceDetailsArgs
+    ///             Type = "volumeIds",
+    ///             VolumeIds = new[]
     ///             {
-    ///                 Type = "volumeIds",
-    ///                 VolumeIds = 
-    ///                 {
-    ///                     @var.Volume_group_source_id,
-    ///                 },
+    ///                 @var.Volume_group_source_id,
     ///             },
-    ///             BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
-    ///             DefinedTags = 
+    ///         },
+    ///         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Volume_group_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         VolumeGroupReplicas = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.VolumeGroupVolumeGroupReplicaArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 AvailabilityDomain = @var.Volume_group_volume_group_replicas_availability_domain,
+    ///                 DisplayName = @var.Volume_group_volume_group_replicas_display_name,
     ///             },
-    ///             DisplayName = @var.Volume_group_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             VolumeGroupReplicas = 
-    ///             {
-    ///                 new Oci.Core.Inputs.VolumeGroupVolumeGroupReplicaArgs
-    ///                 {
-    ///                     AvailabilityDomain = @var.Volume_group_volume_group_replicas_availability_domain,
-    ///                     DisplayName = @var.Volume_group_volume_group_replicas_display_name,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeGroup:VolumeGroup")]
-    public partial class VolumeGroup : Pulumi.CustomResource
+    public partial class VolumeGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
@@ -201,7 +199,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VolumeGroupArgs : Pulumi.ResourceArgs
+    public sealed class VolumeGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
@@ -278,9 +276,10 @@ namespace Pulumi.Oci.Core
         public VolumeGroupArgs()
         {
         }
+        public static new VolumeGroupArgs Empty => new VolumeGroupArgs();
     }
 
-    public sealed class VolumeGroupState : Pulumi.ResourceArgs
+    public sealed class VolumeGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
@@ -399,5 +398,6 @@ namespace Pulumi.Oci.Core
         public VolumeGroupState()
         {
         }
+        public static new VolumeGroupState Empty => new VolumeGroupState();
     }
 }

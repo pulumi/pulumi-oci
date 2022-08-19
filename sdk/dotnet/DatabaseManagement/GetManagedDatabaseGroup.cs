@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseGroup = Oci.DatabaseManagement.GetManagedDatabaseGroup.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseGroup = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseGroup.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseGroupArgs
-        ///         {
-        ///             ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseGroup = Oci.DatabaseManagement.GetManagedDatabaseGroup.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseGroup = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseGroup.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseGroupArgs
-        ///         {
-        ///             ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseGroupArgs()
         {
         }
+        public static new GetManagedDatabaseGroupArgs Empty => new GetManagedDatabaseGroupArgs();
     }
 
-    public sealed class GetManagedDatabaseGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseGroupInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseGroupInvokeArgs Empty => new GetManagedDatabaseGroupInvokeArgs();
     }
 
 

@@ -25,6 +25,46 @@ import javax.annotation.Nullable;
  * Creates a new script.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ApmSynthetics.Script;
+ * import com.pulumi.oci.ApmSynthetics.ScriptArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ScriptParameterArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testScript = new Script(&#34;testScript&#34;, ScriptArgs.builder()        
+ *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
+ *             .content(var_.script_content())
+ *             .contentType(var_.script_content_type())
+ *             .displayName(var_.script_display_name())
+ *             .contentFileName(var_.script_content_file_name())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .parameters(ScriptParameterArgs.builder()
+ *                 .paramName(var_.script_parameters_param_name())
+ *                 .isSecret(var_.script_parameters_is_secret())
+ *                 .paramValue(var_.script_parameters_param_value())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

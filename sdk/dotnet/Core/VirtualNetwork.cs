@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     [OciResourceType("oci:Core/virtualNetwork:VirtualNetwork")]
-    public partial class VirtualNetwork : Pulumi.CustomResource
+    public partial class VirtualNetwork : global::Pulumi.CustomResource
     {
         [Output("byoipv6cidrBlocks")]
         public Output<ImmutableArray<string>> Byoipv6cidrBlocks { get; private set; } = null!;
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VirtualNetworkArgs : Pulumi.ResourceArgs
+    public sealed class VirtualNetworkArgs : global::Pulumi.ResourceArgs
     {
         [Input("byoipv6cidrDetails")]
         private InputList<Inputs.VirtualNetworkByoipv6cidrDetailArgs>? _byoipv6cidrDetails;
@@ -176,9 +176,10 @@ namespace Pulumi.Oci.Core
         public VirtualNetworkArgs()
         {
         }
+        public static new VirtualNetworkArgs Empty => new VirtualNetworkArgs();
     }
 
-    public sealed class VirtualNetworkState : Pulumi.ResourceArgs
+    public sealed class VirtualNetworkState : global::Pulumi.ResourceArgs
     {
         [Input("byoipv6cidrBlocks")]
         private InputList<string>? _byoipv6cidrBlocks;
@@ -275,5 +276,6 @@ namespace Pulumi.Oci.Core
         public VirtualNetworkState()
         {
         }
+        public static new VirtualNetworkState Empty => new VirtualNetworkState();
     }
 }

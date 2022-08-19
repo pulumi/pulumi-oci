@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Vault.Inputs
 {
 
-    public sealed class GetSecretsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSecretsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The secret name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Vault.Inputs
         public GetSecretsFilterInputArgs()
         {
         }
+        public static new GetSecretsFilterInputArgs Empty => new GetSecretsFilterInputArgs();
     }
 }

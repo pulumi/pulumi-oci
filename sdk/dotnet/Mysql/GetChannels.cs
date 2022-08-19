@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testChannels = Oci.Mysql.GetChannels.Invoke(new()
         ///     {
-        ///         var testChannels = Output.Create(Oci.Mysql.GetChannels.InvokeAsync(new Oci.Mysql.GetChannelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ChannelId = oci_mysql_channel.Test_channel.Id,
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///             DisplayName = @var.Channel_display_name,
-        ///             IsEnabled = @var.Channel_is_enabled,
-        ///             State = @var.Channel_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ChannelId = oci_mysql_channel.Test_channel.Id,
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         DisplayName = @var.Channel_display_name,
+        ///         IsEnabled = @var.Channel_is_enabled,
+        ///         State = @var.Channel_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testChannels = Oci.Mysql.GetChannels.Invoke(new()
         ///     {
-        ///         var testChannels = Output.Create(Oci.Mysql.GetChannels.InvokeAsync(new Oci.Mysql.GetChannelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ChannelId = oci_mysql_channel.Test_channel.Id,
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///             DisplayName = @var.Channel_display_name,
-        ///             IsEnabled = @var.Channel_is_enabled,
-        ///             State = @var.Channel_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ChannelId = oci_mysql_channel.Test_channel.Id,
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         DisplayName = @var.Channel_display_name,
+        ///         IsEnabled = @var.Channel_is_enabled,
+        ///         State = @var.Channel_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetChannelsArgs : Pulumi.InvokeArgs
+    public sealed class GetChannelsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Channel.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Mysql
         public GetChannelsArgs()
         {
         }
+        public static new GetChannelsArgs Empty => new GetChannelsArgs();
     }
 
-    public sealed class GetChannelsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetChannelsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Channel.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.Mysql
         public GetChannelsInvokeArgs()
         {
         }
+        public static new GetChannelsInvokeArgs Empty => new GetChannelsInvokeArgs();
     }
 
 

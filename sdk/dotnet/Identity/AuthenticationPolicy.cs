@@ -17,33 +17,31 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAuthenticationPolicy = new Oci.Identity.AuthenticationPolicy("testAuthenticationPolicy", new()
     ///     {
-    ///         var testAuthenticationPolicy = new Oci.Identity.AuthenticationPolicy("testAuthenticationPolicy", new Oci.Identity.AuthenticationPolicyArgs
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         NetworkPolicy = new Oci.Identity.Inputs.AuthenticationPolicyNetworkPolicyArgs
     ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             NetworkPolicy = new Oci.Identity.Inputs.AuthenticationPolicyNetworkPolicyArgs
-    ///             {
-    ///                 NetworkSourceIds = @var.Authentication_policy_network_policy_network_source_ids,
-    ///             },
-    ///             PasswordPolicy = new Oci.Identity.Inputs.AuthenticationPolicyPasswordPolicyArgs
-    ///             {
-    ///                 IsLowercaseCharactersRequired = @var.Authentication_policy_password_policy_is_lowercase_characters_required,
-    ///                 IsNumericCharactersRequired = @var.Authentication_policy_password_policy_is_numeric_characters_required,
-    ///                 IsSpecialCharactersRequired = @var.Authentication_policy_password_policy_is_special_characters_required,
-    ///                 IsUppercaseCharactersRequired = @var.Authentication_policy_password_policy_is_uppercase_characters_required,
-    ///                 IsUsernameContainmentAllowed = @var.Authentication_policy_password_policy_is_username_containment_allowed,
-    ///                 MinimumPasswordLength = @var.Authentication_policy_password_policy_minimum_password_length,
-    ///             },
-    ///         });
-    ///     }
+    ///             NetworkSourceIds = @var.Authentication_policy_network_policy_network_source_ids,
+    ///         },
+    ///         PasswordPolicy = new Oci.Identity.Inputs.AuthenticationPolicyPasswordPolicyArgs
+    ///         {
+    ///             IsLowercaseCharactersRequired = @var.Authentication_policy_password_policy_is_lowercase_characters_required,
+    ///             IsNumericCharactersRequired = @var.Authentication_policy_password_policy_is_numeric_characters_required,
+    ///             IsSpecialCharactersRequired = @var.Authentication_policy_password_policy_is_special_characters_required,
+    ///             IsUppercaseCharactersRequired = @var.Authentication_policy_password_policy_is_uppercase_characters_required,
+    ///             IsUsernameContainmentAllowed = @var.Authentication_policy_password_policy_is_username_containment_allowed,
+    ///             MinimumPasswordLength = @var.Authentication_policy_password_policy_minimum_password_length,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/authenticationPolicy:AuthenticationPolicy")]
-    public partial class AuthenticationPolicy : Pulumi.CustomResource
+    public partial class AuthenticationPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -119,7 +117,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class AuthenticationPolicyArgs : Pulumi.ResourceArgs
+    public sealed class AuthenticationPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -142,9 +140,10 @@ namespace Pulumi.Oci.Identity
         public AuthenticationPolicyArgs()
         {
         }
+        public static new AuthenticationPolicyArgs Empty => new AuthenticationPolicyArgs();
     }
 
-    public sealed class AuthenticationPolicyState : Pulumi.ResourceArgs
+    public sealed class AuthenticationPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -167,5 +166,6 @@ namespace Pulumi.Oci.Identity
         public AuthenticationPolicyState()
         {
         }
+        public static new AuthenticationPolicyState Empty => new AuthenticationPolicyState();
     }
 }

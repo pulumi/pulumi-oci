@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class BdsInstanceNetworkConfigArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceNetworkConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The CIDR IP address block of the VCN.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public BdsInstanceNetworkConfigArgs()
         {
         }
+        public static new BdsInstanceNetworkConfigArgs Empty => new BdsInstanceNetworkConfigArgs();
     }
 }

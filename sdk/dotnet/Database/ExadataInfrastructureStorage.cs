@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     [OciResourceType("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage")]
-    public partial class ExadataInfrastructureStorage : Pulumi.CustomResource
+    public partial class ExadataInfrastructureStorage : global::Pulumi.CustomResource
     {
         [Output("activatedStorageCount")]
         public Output<int> ActivatedStorageCount { get; private set; } = null!;
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExadataInfrastructureStorageArgs : Pulumi.ResourceArgs
+    public sealed class ExadataInfrastructureStorageArgs : global::Pulumi.ResourceArgs
     {
         [Input("activationFile")]
         public Input<string>? ActivationFile { get; set; }
@@ -257,9 +257,10 @@ namespace Pulumi.Oci.Database
         public ExadataInfrastructureStorageArgs()
         {
         }
+        public static new ExadataInfrastructureStorageArgs Empty => new ExadataInfrastructureStorageArgs();
     }
 
-    public sealed class ExadataInfrastructureStorageState : Pulumi.ResourceArgs
+    public sealed class ExadataInfrastructureStorageState : global::Pulumi.ResourceArgs
     {
         [Input("activatedStorageCount")]
         public Input<int>? ActivatedStorageCount { get; set; }
@@ -397,5 +398,6 @@ namespace Pulumi.Oci.Database
         public ExadataInfrastructureStorageState()
         {
         }
+        public static new ExadataInfrastructureStorageState Empty => new ExadataInfrastructureStorageState();
     }
 }

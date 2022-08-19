@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi.Inputs
 {
 
-    public sealed class DatabaseInsightConnectionDetailsArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseInsightConnectionDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the listener host that will be used to create the connect string to the database.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.Opsi.Inputs
         public DatabaseInsightConnectionDetailsArgs()
         {
         }
+        public static new DatabaseInsightConnectionDetailsArgs Empty => new DatabaseInsightConnectionDetailsArgs();
     }
 }

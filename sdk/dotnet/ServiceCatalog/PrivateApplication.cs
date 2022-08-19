@@ -17,38 +17,36 @@ namespace Pulumi.Oci.ServiceCatalog
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPrivateApplication = new Oci.ServiceCatalog.PrivateApplication("testPrivateApplication", new()
     ///     {
-    ///         var testPrivateApplication = new Oci.ServiceCatalog.PrivateApplication("testPrivateApplication", new Oci.ServiceCatalog.PrivateApplicationArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Private_application_display_name,
+    ///         PackageDetails = new Oci.ServiceCatalog.Inputs.PrivateApplicationPackageDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Private_application_display_name,
-    ///             PackageDetails = new Oci.ServiceCatalog.Inputs.PrivateApplicationPackageDetailsArgs
-    ///             {
-    ///                 PackageType = @var.Private_application_package_details_package_type,
-    ///                 Version = @var.Private_application_package_details_version,
-    ///                 ZipFileBase64encoded = @var.Private_application_package_details_zip_file_base64encoded,
-    ///             },
-    ///             ShortDescription = @var.Private_application_short_description,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             LogoFileBase64encoded = @var.Private_application_logo_file_base64encoded,
-    ///             LongDescription = @var.Private_application_long_description,
-    ///         });
-    ///     }
+    ///             PackageType = @var.Private_application_package_details_package_type,
+    ///             Version = @var.Private_application_package_details_version,
+    ///             ZipFileBase64encoded = @var.Private_application_package_details_zip_file_base64encoded,
+    ///         },
+    ///         ShortDescription = @var.Private_application_short_description,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         LogoFileBase64encoded = @var.Private_application_logo_file_base64encoded,
+    ///         LongDescription = @var.Private_application_long_description,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.ServiceCatalog
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceCatalog/privateApplication:PrivateApplication")]
-    public partial class PrivateApplication : Pulumi.CustomResource
+    public partial class PrivateApplication : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
@@ -184,7 +182,7 @@ namespace Pulumi.Oci.ServiceCatalog
         }
     }
 
-    public sealed class PrivateApplicationArgs : Pulumi.ResourceArgs
+    public sealed class PrivateApplicationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
@@ -249,9 +247,10 @@ namespace Pulumi.Oci.ServiceCatalog
         public PrivateApplicationArgs()
         {
         }
+        public static new PrivateApplicationArgs Empty => new PrivateApplicationArgs();
     }
 
-    public sealed class PrivateApplicationState : Pulumi.ResourceArgs
+    public sealed class PrivateApplicationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
@@ -352,5 +351,6 @@ namespace Pulumi.Oci.ServiceCatalog
         public PrivateApplicationState()
         {
         }
+        public static new PrivateApplicationState Empty => new PrivateApplicationState();
     }
 }

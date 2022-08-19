@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class GetProfileLevelsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetProfileLevelsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public GetProfileLevelsFilterArgs()
         {
         }
+        public static new GetProfileLevelsFilterArgs Empty => new GetProfileLevelsFilterArgs();
     }
 }

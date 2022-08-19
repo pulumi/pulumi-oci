@@ -15,39 +15,6 @@ namespace Pulumi.Oci.DataCatalog
         /// This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
         /// 
         /// Returns a list of data assets within a data catalog.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testDataAssets = Output.Create(Oci.DataCatalog.GetDataAssets.InvokeAsync(new Oci.DataCatalog.GetDataAssetsArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             CreatedById = oci_datacatalog_created_by.Test_created_by.Id,
-        ///             DisplayName = @var.Data_asset_display_name,
-        ///             DisplayNameContains = @var.Data_asset_display_name_contains,
-        ///             ExternalKey = @var.Data_asset_external_key,
-        ///             Fields = @var.Data_asset_fields,
-        ///             State = @var.Data_asset_state,
-        ///             TimeCreated = @var.Data_asset_time_created,
-        ///             TimeUpdated = @var.Data_asset_time_updated,
-        ///             TypeKey = @var.Data_asset_type_key,
-        ///             UpdatedById = oci_datacatalog_updated_by.Test_updated_by.Id,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetDataAssetsResult> InvokeAsync(GetDataAssetsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsArgs(), options.WithDefaults());
@@ -56,46 +23,13 @@ namespace Pulumi.Oci.DataCatalog
         /// This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
         /// 
         /// Returns a list of data assets within a data catalog.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testDataAssets = Output.Create(Oci.DataCatalog.GetDataAssets.InvokeAsync(new Oci.DataCatalog.GetDataAssetsArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             CreatedById = oci_datacatalog_created_by.Test_created_by.Id,
-        ///             DisplayName = @var.Data_asset_display_name,
-        ///             DisplayNameContains = @var.Data_asset_display_name_contains,
-        ///             ExternalKey = @var.Data_asset_external_key,
-        ///             Fields = @var.Data_asset_fields,
-        ///             State = @var.Data_asset_state,
-        ///             TimeCreated = @var.Data_asset_time_created,
-        ///             TimeUpdated = @var.Data_asset_time_updated,
-        ///             TypeKey = @var.Data_asset_type_key,
-        ///             UpdatedById = oci_datacatalog_updated_by.Test_updated_by.Id,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetDataAssetsResult> Invoke(GetDataAssetsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetDataAssetsArgs : Pulumi.InvokeArgs
+    public sealed class GetDataAssetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -162,9 +96,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetDataAssetsArgs()
         {
         }
+        public static new GetDataAssetsArgs Empty => new GetDataAssetsArgs();
     }
 
-    public sealed class GetDataAssetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataAssetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -231,6 +166,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetDataAssetsInvokeArgs()
         {
         }
+        public static new GetDataAssetsInvokeArgs Empty => new GetDataAssetsInvokeArgs();
     }
 
 

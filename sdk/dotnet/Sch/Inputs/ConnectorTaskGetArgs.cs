@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorTaskGetArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorTaskGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorTaskGetArgs()
         {
         }
+        public static new ConnectorTaskGetArgs Empty => new ConnectorTaskGetArgs();
     }
 }

@@ -18,59 +18,57 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testClusterNetwork = new Oci.Core.ClusterNetwork("testClusterNetwork", new()
     ///     {
-    ///         var testClusterNetwork = new Oci.Core.ClusterNetwork("testClusterNetwork", new Oci.Core.ClusterNetworkArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         InstancePools = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             InstancePools = 
+    ///             new Oci.Core.Inputs.ClusterNetworkInstancePoolArgs
     ///             {
-    ///                 new Oci.Core.Inputs.ClusterNetworkInstancePoolArgs
+    ///                 InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
+    ///                 Size = @var.Cluster_network_instance_pools_size,
+    ///                 DefinedTags = 
     ///                 {
-    ///                     InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
-    ///                     Size = @var.Cluster_network_instance_pools_size,
-    ///                     DefinedTags = 
-    ///                     {
-    ///                         { "Operations.CostCenter", "42" },
-    ///                     },
-    ///                     DisplayName = @var.Cluster_network_instance_pools_display_name,
-    ///                     FreeformTags = 
-    ///                     {
-    ///                         { "Department", "Finance" },
-    ///                     },
+    ///                     { "Operations.CostCenter", "42" },
+    ///                 },
+    ///                 DisplayName = @var.Cluster_network_instance_pools_display_name,
+    ///                 FreeformTags = 
+    ///                 {
+    ///                     { "Department", "Finance" },
     ///                 },
     ///             },
-    ///             PlacementConfiguration = new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationArgs
+    ///         },
+    ///         PlacementConfiguration = new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationArgs
+    ///         {
+    ///             AvailabilityDomain = @var.Cluster_network_placement_configuration_availability_domain,
+    ///             PrimarySubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             SecondaryVnicSubnets = new[]
     ///             {
-    ///                 AvailabilityDomain = @var.Cluster_network_placement_configuration_availability_domain,
-    ///                 PrimarySubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 SecondaryVnicSubnets = 
+    ///                 new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs
     ///                 {
-    ///                     new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs
-    ///                     {
-    ///                         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                         DisplayName = @var.Cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
-    ///                     },
+    ///                     SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                     DisplayName = @var.Cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
     ///                 },
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Cluster_network_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Cluster_network_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -82,7 +80,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/clusterNetwork:ClusterNetwork")]
-    public partial class ClusterNetwork : Pulumi.CustomResource
+    public partial class ClusterNetwork : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -182,7 +180,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class ClusterNetworkArgs : Pulumi.ResourceArgs
+    public sealed class ClusterNetworkArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -241,9 +239,10 @@ namespace Pulumi.Oci.Core
         public ClusterNetworkArgs()
         {
         }
+        public static new ClusterNetworkArgs Empty => new ClusterNetworkArgs();
     }
 
-    public sealed class ClusterNetworkState : Pulumi.ResourceArgs
+    public sealed class ClusterNetworkState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -320,5 +319,6 @@ namespace Pulumi.Oci.Core
         public ClusterNetworkState()
         {
         }
+        public static new ClusterNetworkState Empty => new ClusterNetworkState();
     }
 }

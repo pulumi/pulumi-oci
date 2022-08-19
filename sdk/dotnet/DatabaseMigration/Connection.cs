@@ -18,65 +18,63 @@ namespace Pulumi.Oci.DatabaseMigration
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testConnection = new Oci.DatabaseMigration.Connection("testConnection", new()
     ///     {
-    ///         var testConnection = new Oci.DatabaseMigration.Connection("testConnection", new Oci.DatabaseMigration.ConnectionArgs
+    ///         AdminCredentials = new Oci.DatabaseMigration.Inputs.ConnectionAdminCredentialsArgs
     ///         {
-    ///             AdminCredentials = new Oci.DatabaseMigration.Inputs.ConnectionAdminCredentialsArgs
-    ///             {
-    ///                 Password = @var.Connection_admin_credentials_password,
-    ///                 Username = @var.Connection_admin_credentials_username,
-    ///             },
+    ///             Password = @var.Connection_admin_credentials_password,
+    ///             Username = @var.Connection_admin_credentials_username,
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DatabaseType = @var.Connection_database_type,
+    ///         VaultDetails = new Oci.DatabaseMigration.Inputs.ConnectionVaultDetailsArgs
+    ///         {
     ///             CompartmentId = @var.Compartment_id,
-    ///             DatabaseType = @var.Connection_database_type,
-    ///             VaultDetails = new Oci.DatabaseMigration.Inputs.ConnectionVaultDetailsArgs
-    ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 KeyId = oci_kms_key.Test_key.Id,
-    ///                 VaultId = oci_kms_vault.Test_vault.Id,
-    ///             },
-    ///             CertificateTdn = @var.Connection_certificate_tdn,
-    ///             ConnectDescriptor = new Oci.DatabaseMigration.Inputs.ConnectionConnectDescriptorArgs
-    ///             {
-    ///                 ConnectString = @var.Connection_connect_descriptor_connect_string,
-    ///                 DatabaseServiceName = oci_core_service.Test_service.Name,
-    ///                 Host = @var.Connection_connect_descriptor_host,
-    ///                 Port = @var.Connection_connect_descriptor_port,
-    ///             },
-    ///             DatabaseId = oci_database_database.Test_database.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Connection_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             PrivateEndpoint = new Oci.DatabaseMigration.Inputs.ConnectionPrivateEndpointArgs
-    ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             },
-    ///             SshDetails = new Oci.DatabaseMigration.Inputs.ConnectionSshDetailsArgs
-    ///             {
-    ///                 Host = @var.Connection_ssh_details_host,
-    ///                 Sshkey = @var.Connection_ssh_details_sshkey,
-    ///                 User = @var.Connection_ssh_details_user,
-    ///                 SudoLocation = @var.Connection_ssh_details_sudo_location,
-    ///             },
-    ///             TlsKeystore = @var.Connection_tls_keystore,
-    ///             TlsWallet = @var.Connection_tls_wallet,
-    ///         });
-    ///     }
+    ///             KeyId = oci_kms_key.Test_key.Id,
+    ///             VaultId = oci_kms_vault.Test_vault.Id,
+    ///         },
+    ///         CertificateTdn = @var.Connection_certificate_tdn,
+    ///         ConnectDescriptor = new Oci.DatabaseMigration.Inputs.ConnectionConnectDescriptorArgs
+    ///         {
+    ///             ConnectString = @var.Connection_connect_descriptor_connect_string,
+    ///             DatabaseServiceName = oci_core_service.Test_service.Name,
+    ///             Host = @var.Connection_connect_descriptor_host,
+    ///             Port = @var.Connection_connect_descriptor_port,
+    ///         },
+    ///         DatabaseId = oci_database_database.Test_database.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Connection_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         PrivateEndpoint = new Oci.DatabaseMigration.Inputs.ConnectionPrivateEndpointArgs
+    ///         {
+    ///             CompartmentId = @var.Compartment_id,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         },
+    ///         SshDetails = new Oci.DatabaseMigration.Inputs.ConnectionSshDetailsArgs
+    ///         {
+    ///             Host = @var.Connection_ssh_details_host,
+    ///             Sshkey = @var.Connection_ssh_details_sshkey,
+    ///             User = @var.Connection_ssh_details_user,
+    ///             SudoLocation = @var.Connection_ssh_details_sudo_location,
+    ///         },
+    ///         TlsKeystore = @var.Connection_tls_keystore,
+    ///         TlsWallet = @var.Connection_tls_wallet,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -88,7 +86,7 @@ namespace Pulumi.Oci.DatabaseMigration
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseMigration/connection:Connection")]
-    public partial class Connection : Pulumi.CustomResource
+    public partial class Connection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Database Administrator Credentials details.
@@ -254,7 +252,7 @@ namespace Pulumi.Oci.DatabaseMigration
         }
     }
 
-    public sealed class ConnectionArgs : Pulumi.ResourceArgs
+    public sealed class ConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Database Administrator Credentials details.
@@ -355,9 +353,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public ConnectionArgs()
         {
         }
+        public static new ConnectionArgs Empty => new ConnectionArgs();
     }
 
-    public sealed class ConnectionState : Pulumi.ResourceArgs
+    public sealed class ConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Database Administrator Credentials details.
@@ -500,5 +499,6 @@ namespace Pulumi.Oci.DatabaseMigration
         public ConnectionState()
         {
         }
+        public static new ConnectionState Empty => new ConnectionState();
     }
 }

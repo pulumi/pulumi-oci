@@ -13,25 +13,23 @@ namespace Pulumi.Oci.Dns
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRecord = new Oci.Dns.Record("testRecord", new()
     ///     {
-    ///         var testRecord = new Oci.Dns.Record("testRecord", new Oci.Dns.RecordArgs
-    ///         {
-    ///             ZoneNameOrId = oci_dns_zone_name_or.Test_zone_name_or.Id,
-    ///             Domain = @var.Record_items_domain,
-    ///             Rtype = @var.Record_items_rtype,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Rdata = @var.Record_items_rdata,
-    ///             Ttl = @var.Record_items_ttl,
-    ///         });
-    ///     }
+    ///         ZoneNameOrId = oci_dns_zone_name_or.Test_zone_name_or.Id,
+    ///         Domain = @var.Record_items_domain,
+    ///         Rtype = @var.Record_items_rtype,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Rdata = @var.Record_items_rdata,
+    ///         Ttl = @var.Record_items_ttl,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -39,7 +37,7 @@ namespace Pulumi.Oci.Dns
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Dns/record:Record")]
-    public partial class Record : Pulumi.CustomResource
+    public partial class Record : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class RecordArgs : Pulumi.ResourceArgs
+    public sealed class RecordArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
@@ -180,9 +178,10 @@ namespace Pulumi.Oci.Dns
         public RecordArgs()
         {
         }
+        public static new RecordArgs Empty => new RecordArgs();
     }
 
-    public sealed class RecordState : Pulumi.ResourceArgs
+    public sealed class RecordState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
@@ -241,5 +240,6 @@ namespace Pulumi.Oci.Dns
         public RecordState()
         {
         }
+        public static new RecordState Empty => new RecordState();
     }
 }

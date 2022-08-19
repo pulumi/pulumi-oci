@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetListingResourceVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetListingResourceVersionsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetListingResourceVersionsFilterArgs>? _filters;
@@ -35,9 +35,10 @@ namespace Pulumi.Oci.Core
         public GetListingResourceVersionsArgs()
         {
         }
+        public static new GetListingResourceVersionsArgs Empty => new GetListingResourceVersionsArgs();
     }
 
-    public sealed class GetListingResourceVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetListingResourceVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetListingResourceVersionsFilterInputArgs>? _filters;
@@ -53,6 +54,7 @@ namespace Pulumi.Oci.Core
         public GetListingResourceVersionsInvokeArgs()
         {
         }
+        public static new GetListingResourceVersionsInvokeArgs Empty => new GetListingResourceVersionsInvokeArgs();
     }
 
 

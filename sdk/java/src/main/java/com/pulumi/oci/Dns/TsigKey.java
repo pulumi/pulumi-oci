@@ -22,6 +22,38 @@ import javax.annotation.Nullable;
  * `opc-retry-token` header since TSIG key names must be globally unique.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.TsigKey;
+ * import com.pulumi.oci.Dns.TsigKeyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTsigKey = new TsigKey(&#34;testTsigKey&#34;, TsigKeyArgs.builder()        
+ *             .algorithm(var_.tsig_key_algorithm())
+ *             .compartmentId(var_.compartment_id())
+ *             .secret(var_.tsig_key_secret())
+ *             .definedTags(var_.tsig_key_defined_tags())
+ *             .freeformTags(var_.tsig_key_freeform_tags())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

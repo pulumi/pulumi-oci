@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class GetMeshesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetMeshesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public GetMeshesFilterArgs()
         {
         }
+        public static new GetMeshesFilterArgs Empty => new GetMeshesFilterArgs();
     }
 }

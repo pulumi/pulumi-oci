@@ -62,6 +62,37 @@ public final class OsubUsageFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computedUsageId(oci_osub_usage_computed_usage.test_computed_usage().id())
+     *             .fields(var_.computed_usage_fields())
+     *             .xOneOriginRegion(var_.computed_usage_x_one_origin_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args) {
@@ -73,6 +104,37 @@ public final class OsubUsageFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computedUsageId(oci_osub_usage_computed_usage.test_computed_usage().id())
+     *             .fields(var_.computed_usage_fields())
+     *             .xOneOriginRegion(var_.computed_usage_x_one_origin_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args) {
@@ -84,6 +146,37 @@ public final class OsubUsageFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computedUsageId(oci_osub_usage_computed_usage.test_computed_usage().id())
+     *             .fields(var_.computed_usage_fields())
+     *             .xOneOriginRegion(var_.computed_usage_x_one_origin_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputedUsageResult> getComputedUsage(GetComputedUsageArgs args, InvokeOptions options) {
@@ -95,6 +188,37 @@ public final class OsubUsageFunctions {
      * This is an API which returns Computed Usage corresponding to the id passed
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computedUsageId(oci_osub_usage_computed_usage.test_computed_usage().id())
+     *             .fields(var_.computed_usage_fields())
+     *             .xOneOriginRegion(var_.computed_usage_x_one_origin_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputedUsageResult> getComputedUsagePlain(GetComputedUsagePlainArgs args, InvokeOptions options) {

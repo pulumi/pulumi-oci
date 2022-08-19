@@ -21,23 +21,21 @@ namespace Pulumi.Oci.Functions
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApplications = Oci.Functions.GetApplications.Invoke(new()
         ///     {
-        ///         var testApplications = Output.Create(Oci.Functions.GetApplications.InvokeAsync(new Oci.Functions.GetApplicationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Application_display_name,
-        ///             Id = @var.Application_id,
-        ///             State = @var.Application_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Application_display_name,
+        ///         Id = @var.Application_id,
+        ///         State = @var.Application_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.Functions
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApplications = Oci.Functions.GetApplications.Invoke(new()
         ///     {
-        ///         var testApplications = Output.Create(Oci.Functions.GetApplications.InvokeAsync(new Oci.Functions.GetApplicationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Application_display_name,
-        ///             Id = @var.Application_id,
-        ///             State = @var.Application_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Application_display_name,
+        ///         Id = @var.Application_id,
+        ///         State = @var.Application_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Functions
     }
 
 
-    public sealed class GetApplicationsArgs : Pulumi.InvokeArgs
+    public sealed class GetApplicationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Functions
         public GetApplicationsArgs()
         {
         }
+        public static new GetApplicationsArgs Empty => new GetApplicationsArgs();
     }
 
-    public sealed class GetApplicationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetApplicationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.Functions
         public GetApplicationsInvokeArgs()
         {
         }
+        public static new GetApplicationsInvokeArgs Empty => new GetApplicationsInvokeArgs();
     }
 
 

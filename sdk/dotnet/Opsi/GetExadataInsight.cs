@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExadataInsight = Oci.Opsi.GetExadataInsight.Invoke(new()
         ///     {
-        ///         var testExadataInsight = Output.Create(Oci.Opsi.GetExadataInsight.InvokeAsync(new Oci.Opsi.GetExadataInsightArgs
-        ///         {
-        ///             ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///         }));
-        ///     }
+        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExadataInsight = Oci.Opsi.GetExadataInsight.Invoke(new()
         ///     {
-        ///         var testExadataInsight = Output.Create(Oci.Opsi.GetExadataInsight.InvokeAsync(new Oci.Opsi.GetExadataInsightArgs
-        ///         {
-        ///             ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///         }));
-        ///     }
+        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetExadataInsightArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataInsightArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Exadata insight identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Opsi
         public GetExadataInsightArgs()
         {
         }
+        public static new GetExadataInsightArgs Empty => new GetExadataInsightArgs();
     }
 
-    public sealed class GetExadataInsightInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExadataInsightInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Exadata insight identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Opsi
         public GetExadataInsightInvokeArgs()
         {
         }
+        public static new GetExadataInsightInvokeArgs Empty => new GetExadataInsightInvokeArgs();
     }
 
 

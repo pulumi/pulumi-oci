@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The target branch for pull requests; not applicable for push requests.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs()
         {
         }
+        public static new BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs Empty => new BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs();
     }
 }

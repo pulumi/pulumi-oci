@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryPath = Oci.DevOps.GetRepositoryPath.Invoke(new()
         ///     {
-        ///         var testRepositoryPath = Output.Create(Oci.DevOps.GetRepositoryPath.InvokeAsync(new Oci.DevOps.GetRepositoryPathArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             DisplayName = @var.Repository_path_display_name,
-        ///             FolderPath = @var.Repository_path_folder_path,
-        ///             PathsInSubtree = @var.Repository_path_paths_in_subtree,
-        ///             Ref = @var.Repository_path_ref,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         DisplayName = @var.Repository_path_display_name,
+        ///         FolderPath = @var.Repository_path_folder_path,
+        ///         PathsInSubtree = @var.Repository_path_paths_in_subtree,
+        ///         Ref = @var.Repository_path_ref,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryPath = Oci.DevOps.GetRepositoryPath.Invoke(new()
         ///     {
-        ///         var testRepositoryPath = Output.Create(Oci.DevOps.GetRepositoryPath.InvokeAsync(new Oci.DevOps.GetRepositoryPathArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             DisplayName = @var.Repository_path_display_name,
-        ///             FolderPath = @var.Repository_path_folder_path,
-        ///             PathsInSubtree = @var.Repository_path_paths_in_subtree,
-        ///             Ref = @var.Repository_path_ref,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         DisplayName = @var.Repository_path_display_name,
+        ///         FolderPath = @var.Repository_path_folder_path,
+        ///         PathsInSubtree = @var.Repository_path_paths_in_subtree,
+        ///         Ref = @var.Repository_path_ref,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryPathArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryPathArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryPathArgs()
         {
         }
+        public static new GetRepositoryPathArgs Empty => new GetRepositoryPathArgs();
     }
 
-    public sealed class GetRepositoryPathInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryPathInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryPathInvokeArgs()
         {
         }
+        public static new GetRepositoryPathInvokeArgs Empty => new GetRepositoryPathInvokeArgs();
     }
 
 

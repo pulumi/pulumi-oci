@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Vault.Inputs
 {
 
-    public sealed class SecretSecretContentGetArgs : Pulumi.ResourceArgs
+    public sealed class SecretSecretContentGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The base64-encoded content of the secret.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Vault.Inputs
         public SecretSecretContentGetArgs()
         {
         }
+        public static new SecretSecretContentGetArgs Empty => new SecretSecretContentGetArgs();
     }
 }

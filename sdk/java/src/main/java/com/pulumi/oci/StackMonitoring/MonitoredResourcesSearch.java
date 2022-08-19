@@ -24,6 +24,46 @@ import javax.annotation.Nullable;
  * Returns a list of monitored resources.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourcesSearch;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourcesSearchArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMonitoredResourcesSearch = new MonitoredResourcesSearch(&#34;testMonitoredResourcesSearch&#34;, MonitoredResourcesSearchArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .hostName(var_.monitored_resources_search_host_name())
+ *             .hostNameContains(var_.monitored_resources_search_host_name_contains())
+ *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+ *             .nameContains(var_.monitored_resources_search_name_contains())
+ *             .propertyEquals(var_.monitored_resources_search_property_equals())
+ *             .resourceTimeZone(var_.monitored_resources_search_resource_time_zone())
+ *             .state(var_.monitored_resources_search_state())
+ *             .timeCreatedGreaterThanOrEqualTo(var_.monitored_resources_search_time_created_greater_than_or_equal_to())
+ *             .timeCreatedLessThan(var_.monitored_resources_search_time_created_less_than())
+ *             .timeUpdatedGreaterThanOrEqualTo(var_.monitored_resources_search_time_updated_greater_than_or_equal_to())
+ *             .timeUpdatedLessThan(var_.monitored_resources_search_time_updated_less_than())
+ *             .type(var_.monitored_resources_search_type())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

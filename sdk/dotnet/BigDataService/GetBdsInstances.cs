@@ -22,22 +22,20 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstances = Oci.BigDataService.GetBdsInstances.Invoke(new()
         ///     {
-        ///         var testBdsInstances = Output.Create(Oci.BigDataService.GetBdsInstances.InvokeAsync(new Oci.BigDataService.GetBdsInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Bds_instance_display_name,
-        ///             State = @var.Bds_instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Bds_instance_display_name,
+        ///         State = @var.Bds_instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstances = Oci.BigDataService.GetBdsInstances.Invoke(new()
         ///     {
-        ///         var testBdsInstances = Output.Create(Oci.BigDataService.GetBdsInstances.InvokeAsync(new Oci.BigDataService.GetBdsInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Bds_instance_display_name,
-        ///             State = @var.Bds_instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Bds_instance_display_name,
+        ///         State = @var.Bds_instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.BigDataService
     }
 
 
-    public sealed class GetBdsInstancesArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstancesArgs()
         {
         }
+        public static new GetBdsInstancesArgs Empty => new GetBdsInstancesArgs();
     }
 
-    public sealed class GetBdsInstancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstancesInvokeArgs()
         {
         }
+        public static new GetBdsInstancesInvokeArgs Empty => new GetBdsInstancesInvokeArgs();
     }
 
 

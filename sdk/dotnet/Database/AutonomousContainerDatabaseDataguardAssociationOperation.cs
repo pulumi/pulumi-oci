@@ -17,22 +17,20 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var switchover = new Oci.Database.AutonomousContainerDatabaseDataguardAssociationOperation("switchover", new()
     ///     {
-    ///         var switchover = new Oci.Database.AutonomousContainerDatabaseDataguardAssociationOperation("switchover", new Oci.Database.AutonomousContainerDatabaseDataguardAssociationOperationArgs
-    ///         {
-    ///             Operation = "switchover",
-    ///             AutonomousContainerDatabaseId = data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Autonomous_container_database_id,
-    ///             AutonomousContainerDatabaseDataguardAssociationId = data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Id,
-    ///         });
-    ///     }
+    ///         Operation = "switchover",
+    ///         AutonomousContainerDatabaseId = data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Autonomous_container_database_id,
+    ///         AutonomousContainerDatabaseDataguardAssociationId = data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.Database
     /// AutonomousContainerDatabaseDataguardAssociationOperation does not support import.
     /// </summary>
     [OciResourceType("oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation")]
-    public partial class AutonomousContainerDatabaseDataguardAssociationOperation : Pulumi.CustomResource
+    public partial class AutonomousContainerDatabaseDataguardAssociationOperation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
@@ -104,7 +102,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousContainerDatabaseDataguardAssociationOperationArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabaseDataguardAssociationOperationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
@@ -127,9 +125,10 @@ namespace Pulumi.Oci.Database
         public AutonomousContainerDatabaseDataguardAssociationOperationArgs()
         {
         }
+        public static new AutonomousContainerDatabaseDataguardAssociationOperationArgs Empty => new AutonomousContainerDatabaseDataguardAssociationOperationArgs();
     }
 
-    public sealed class AutonomousContainerDatabaseDataguardAssociationOperationState : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabaseDataguardAssociationOperationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
@@ -152,5 +151,6 @@ namespace Pulumi.Oci.Database
         public AutonomousContainerDatabaseDataguardAssociationOperationState()
         {
         }
+        public static new AutonomousContainerDatabaseDataguardAssociationOperationState Empty => new AutonomousContainerDatabaseDataguardAssociationOperationState();
     }
 }

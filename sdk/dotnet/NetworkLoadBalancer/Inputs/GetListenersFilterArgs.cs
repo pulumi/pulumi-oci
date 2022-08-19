@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
 {
 
-    public sealed class GetListenersFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetListenersFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public GetListenersFilterInputArgs()
         {
         }
+        public static new GetListenersFilterInputArgs Empty => new GetListenersFilterInputArgs();
     }
 }

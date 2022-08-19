@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetSwiftPasswordsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSwiftPasswordsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetSwiftPasswordsFilterArgs()
         {
         }
+        public static new GetSwiftPasswordsFilterArgs Empty => new GetSwiftPasswordsFilterArgs();
     }
 }

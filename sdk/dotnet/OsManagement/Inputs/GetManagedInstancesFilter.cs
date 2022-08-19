@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagement.Inputs
 {
 
-    public sealed class GetManagedInstancesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstancesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// software source name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OsManagement.Inputs
         public GetManagedInstancesFilterArgs()
         {
         }
+        public static new GetManagedInstancesFilterArgs Empty => new GetManagedInstancesFilterArgs();
     }
 }

@@ -22,6 +22,41 @@ import javax.annotation.Nullable;
  * Creates a new target-alert policy association to track a alert policy applied on target.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.TargetAlertPolicyAssociation;
+ * import com.pulumi.oci.DataSafe.TargetAlertPolicyAssociationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTargetAlertPolicyAssociation = new TargetAlertPolicyAssociation(&#34;testTargetAlertPolicyAssociation&#34;, TargetAlertPolicyAssociationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .isEnabled(var_.target_alert_policy_association_is_enabled())
+ *             .policyId(oci_identity_policy.test_policy().id())
+ *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.target_alert_policy_association_description())
+ *             .displayName(var_.target_alert_policy_association_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

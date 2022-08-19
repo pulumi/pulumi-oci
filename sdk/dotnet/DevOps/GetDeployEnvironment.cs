@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployEnvironment = Oci.DevOps.GetDeployEnvironment.Invoke(new()
         ///     {
-        ///         var testDeployEnvironment = Output.Create(Oci.DevOps.GetDeployEnvironment.InvokeAsync(new Oci.DevOps.GetDeployEnvironmentArgs
-        ///         {
-        ///             DeployEnvironmentId = oci_devops_deploy_environment.Test_deploy_environment.Id,
-        ///         }));
-        ///     }
+        ///         DeployEnvironmentId = oci_devops_deploy_environment.Test_deploy_environment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployEnvironment = Oci.DevOps.GetDeployEnvironment.Invoke(new()
         ///     {
-        ///         var testDeployEnvironment = Output.Create(Oci.DevOps.GetDeployEnvironment.InvokeAsync(new Oci.DevOps.GetDeployEnvironmentArgs
-        ///         {
-        ///             DeployEnvironmentId = oci_devops_deploy_environment.Test_deploy_environment.Id,
-        ///         }));
-        ///     }
+        ///         DeployEnvironmentId = oci_devops_deploy_environment.Test_deploy_environment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetDeployEnvironmentArgs : Pulumi.InvokeArgs
+    public sealed class GetDeployEnvironmentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique environment identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DevOps
         public GetDeployEnvironmentArgs()
         {
         }
+        public static new GetDeployEnvironmentArgs Empty => new GetDeployEnvironmentArgs();
     }
 
-    public sealed class GetDeployEnvironmentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeployEnvironmentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique environment identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DevOps
         public GetDeployEnvironmentInvokeArgs()
         {
         }
+        public static new GetDeployEnvironmentInvokeArgs Empty => new GetDeployEnvironmentInvokeArgs();
     }
 
 

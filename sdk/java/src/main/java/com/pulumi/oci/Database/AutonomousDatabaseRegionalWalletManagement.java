@@ -22,6 +22,35 @@ import javax.annotation.Nullable;
  * Updates the Autonomous Database regional wallet.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousDatabaseRegionalWalletManagement;
+ * import com.pulumi.oci.Database.AutonomousDatabaseRegionalWalletManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousDatabaseRegionalWalletManagement = new AutonomousDatabaseRegionalWalletManagement(&#34;testAutonomousDatabaseRegionalWalletManagement&#34;, AutonomousDatabaseRegionalWalletManagementArgs.builder()        
+ *             .gracePeriod(var_.autonomous_database_regional_wallet_management_grace_period())
+ *             .shouldRotate(var_.autonomous_database_regional_wallet_management_should_rotate())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

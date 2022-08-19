@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class PublicationSupportContactArgs : Pulumi.ResourceArgs
+    public sealed class PublicationSupportContactArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The email of the contact.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public PublicationSupportContactArgs()
         {
         }
+        public static new PublicationSupportContactArgs Empty => new PublicationSupportContactArgs();
     }
 }

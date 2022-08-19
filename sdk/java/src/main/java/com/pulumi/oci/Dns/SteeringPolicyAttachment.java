@@ -25,6 +25,37 @@ import javax.annotation.Nullable;
  * into the same compartment as the domain&#39;s zone.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.SteeringPolicyAttachment;
+ * import com.pulumi.oci.Dns.SteeringPolicyAttachmentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSteeringPolicyAttachment = new SteeringPolicyAttachment(&#34;testSteeringPolicyAttachment&#34;, SteeringPolicyAttachmentArgs.builder()        
+ *             .domainName(var_.steering_policy_attachment_domain_name())
+ *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+ *             .zoneId(oci_dns_zone.test_zone().id())
+ *             .displayName(var_.steering_policy_attachment_display_name())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

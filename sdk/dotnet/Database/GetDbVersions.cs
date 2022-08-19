@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbVersions = Oci.Database.GetDbVersions.Invoke(new()
         ///     {
-        ///         var testDbVersions = Output.Create(Oci.Database.GetDbVersions.InvokeAsync(new Oci.Database.GetDbVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///             DbSystemShape = @var.Db_version_db_system_shape,
-        ///             IsDatabaseSoftwareImageSupported = @var.Db_version_is_database_software_image_supported,
-        ///             IsUpgradeSupported = @var.Db_version_is_upgrade_supported,
-        ///             StorageManagement = @var.Db_version_storage_management,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         DbSystemShape = @var.Db_version_db_system_shape,
+        ///         IsDatabaseSoftwareImageSupported = @var.Db_version_is_database_software_image_supported,
+        ///         IsUpgradeSupported = @var.Db_version_is_upgrade_supported,
+        ///         StorageManagement = @var.Db_version_storage_management,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbVersions = Oci.Database.GetDbVersions.Invoke(new()
         ///     {
-        ///         var testDbVersions = Output.Create(Oci.Database.GetDbVersions.InvokeAsync(new Oci.Database.GetDbVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///             DbSystemShape = @var.Db_version_db_system_shape,
-        ///             IsDatabaseSoftwareImageSupported = @var.Db_version_is_database_software_image_supported,
-        ///             IsUpgradeSupported = @var.Db_version_is_upgrade_supported,
-        ///             StorageManagement = @var.Db_version_storage_management,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         DbSystemShape = @var.Db_version_db_system_shape,
+        ///         IsDatabaseSoftwareImageSupported = @var.Db_version_is_database_software_image_supported,
+        ///         IsUpgradeSupported = @var.Db_version_is_upgrade_supported,
+        ///         StorageManagement = @var.Db_version_storage_management,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetDbVersionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.Database
         public GetDbVersionsArgs()
         {
         }
+        public static new GetDbVersionsArgs Empty => new GetDbVersionsArgs();
     }
 
-    public sealed class GetDbVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -189,6 +186,7 @@ namespace Pulumi.Oci.Database
         public GetDbVersionsInvokeArgs()
         {
         }
+        public static new GetDbVersionsInvokeArgs Empty => new GetDbVersionsInvokeArgs();
     }
 
 

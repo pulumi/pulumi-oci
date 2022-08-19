@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class VirtualDeploymentAccessLoggingGetArgs : Pulumi.ResourceArgs
+    public sealed class VirtualDeploymentAccessLoggingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Determines if the logging configuration is enabled.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public VirtualDeploymentAccessLoggingGetArgs()
         {
         }
+        public static new VirtualDeploymentAccessLoggingGetArgs Empty => new VirtualDeploymentAccessLoggingGetArgs();
     }
 }

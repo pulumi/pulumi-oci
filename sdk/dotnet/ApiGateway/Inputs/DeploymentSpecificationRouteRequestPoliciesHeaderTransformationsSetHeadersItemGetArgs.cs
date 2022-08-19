@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemGetArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemGetArgs Empty => new DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemGetArgs();
     }
 }

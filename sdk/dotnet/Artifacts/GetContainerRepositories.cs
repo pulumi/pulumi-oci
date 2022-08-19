@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerRepositories = Oci.Artifacts.GetContainerRepositories.Invoke(new()
         ///     {
-        ///         var testContainerRepositories = Output.Create(Oci.Artifacts.GetContainerRepositories.InvokeAsync(new Oci.Artifacts.GetContainerRepositoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Container_repository_compartment_id_in_subtree,
-        ///             DisplayName = @var.Container_repository_display_name,
-        ///             IsPublic = @var.Container_repository_is_public,
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///             State = @var.Container_repository_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Container_repository_compartment_id_in_subtree,
+        ///         DisplayName = @var.Container_repository_display_name,
+        ///         IsPublic = @var.Container_repository_is_public,
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///         State = @var.Container_repository_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerRepositories = Oci.Artifacts.GetContainerRepositories.Invoke(new()
         ///     {
-        ///         var testContainerRepositories = Output.Create(Oci.Artifacts.GetContainerRepositories.InvokeAsync(new Oci.Artifacts.GetContainerRepositoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Container_repository_compartment_id_in_subtree,
-        ///             DisplayName = @var.Container_repository_display_name,
-        ///             IsPublic = @var.Container_repository_is_public,
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///             State = @var.Container_repository_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Container_repository_compartment_id_in_subtree,
+        ///         DisplayName = @var.Container_repository_display_name,
+        ///         IsPublic = @var.Container_repository_is_public,
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///         State = @var.Container_repository_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Artifacts
     }
 
 
-    public sealed class GetContainerRepositoriesArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerRepositoriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerRepositoriesArgs()
         {
         }
+        public static new GetContainerRepositoriesArgs Empty => new GetContainerRepositoriesArgs();
     }
 
-    public sealed class GetContainerRepositoriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerRepositoriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerRepositoriesInvokeArgs()
         {
         }
+        public static new GetContainerRepositoriesInvokeArgs Empty => new GetContainerRepositoriesInvokeArgs();
     }
 
 

@@ -24,6 +24,51 @@ import javax.annotation.Nullable;
  * Creates a new function.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Functions.Function;
+ * import com.pulumi.oci.Functions.FunctionArgs;
+ * import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
+ * import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testFunction = new Function(&#34;testFunction&#34;, FunctionArgs.builder()        
+ *             .applicationId(oci_functions_application.test_application().id())
+ *             .displayName(var_.function_display_name())
+ *             .image(var_.function_image())
+ *             .memoryInMbs(var_.function_memory_in_mbs())
+ *             .config(var_.function_config())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .imageDigest(var_.function_image_digest())
+ *             .provisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfigArgs.builder()
+ *                 .strategy(var_.function_provisioned_concurrency_config_strategy())
+ *                 .count(var_.function_provisioned_concurrency_config_count())
+ *                 .build())
+ *             .timeoutInSeconds(var_.function_timeout_in_seconds())
+ *             .traceConfig(FunctionTraceConfigArgs.builder()
+ *                 .isEnabled(var_.function_trace_config_is_enabled())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

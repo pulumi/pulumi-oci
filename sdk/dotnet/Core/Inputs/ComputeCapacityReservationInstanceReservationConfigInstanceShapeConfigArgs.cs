@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs : Pulumi.ResourceArgs
+    public sealed class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The total amount of memory available to the instance, in gigabytes.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs()
         {
         }
+        public static new ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs Empty => new ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs();
     }
 }

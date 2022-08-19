@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgRouteDistribution = Oci.Core.GetDrgRouteDistribution.Invoke(new()
         ///     {
-        ///         var testDrgRouteDistribution = Output.Create(Oci.Core.GetDrgRouteDistribution.InvokeAsync(new Oci.Core.GetDrgRouteDistributionArgs
-        ///         {
-        ///             DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
-        ///         }));
-        ///     }
+        ///         DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgRouteDistribution = Oci.Core.GetDrgRouteDistribution.Invoke(new()
         ///     {
-        ///         var testDrgRouteDistribution = Output.Create(Oci.Core.GetDrgRouteDistribution.InvokeAsync(new Oci.Core.GetDrgRouteDistributionArgs
-        ///         {
-        ///             DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
-        ///         }));
-        ///     }
+        ///         DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDrgRouteDistributionArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgRouteDistributionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetDrgRouteDistributionArgs()
         {
         }
+        public static new GetDrgRouteDistributionArgs Empty => new GetDrgRouteDistributionArgs();
     }
 
-    public sealed class GetDrgRouteDistributionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgRouteDistributionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetDrgRouteDistributionInvokeArgs()
         {
         }
+        public static new GetDrgRouteDistributionInvokeArgs Empty => new GetDrgRouteDistributionInvokeArgs();
     }
 
 

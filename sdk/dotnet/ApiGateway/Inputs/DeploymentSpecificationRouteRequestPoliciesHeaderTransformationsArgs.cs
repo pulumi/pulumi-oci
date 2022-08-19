@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs Empty => new DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs();
     }
 }

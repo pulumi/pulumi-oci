@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class IpsecConnectionTunnelManagementBgpSessionInfoGetArgs : Pulumi.ResourceArgs
+    public sealed class IpsecConnectionTunnelManagementBgpSessionInfoGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("bgpIpv6state")]
         public Input<string>? BgpIpv6state { get; set; }
@@ -48,5 +48,6 @@ namespace Pulumi.Oci.Core.Inputs
         public IpsecConnectionTunnelManagementBgpSessionInfoGetArgs()
         {
         }
+        public static new IpsecConnectionTunnelManagementBgpSessionInfoGetArgs Empty => new IpsecConnectionTunnelManagementBgpSessionInfoGetArgs();
     }
 }

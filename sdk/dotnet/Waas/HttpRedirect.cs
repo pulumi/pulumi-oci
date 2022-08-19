@@ -17,39 +17,37 @@ namespace Pulumi.Oci.Waas
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testHttpRedirect = new Oci.Waas.HttpRedirect("testHttpRedirect", new()
     ///     {
-    ///         var testHttpRedirect = new Oci.Waas.HttpRedirect("testHttpRedirect", new Oci.Waas.HttpRedirectArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Domain = @var.Http_redirect_domain,
+    ///         Target = new Oci.Waas.Inputs.HttpRedirectTargetArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Domain = @var.Http_redirect_domain,
-    ///             Target = new Oci.Waas.Inputs.HttpRedirectTargetArgs
-    ///             {
-    ///                 Host = @var.Http_redirect_target_host,
-    ///                 Path = @var.Http_redirect_target_path,
-    ///                 Protocol = @var.Http_redirect_target_protocol,
-    ///                 Query = @var.Http_redirect_target_query,
-    ///                 Port = @var.Http_redirect_target_port,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Http_redirect_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             ResponseCode = @var.Http_redirect_response_code,
-    ///         });
-    ///     }
+    ///             Host = @var.Http_redirect_target_host,
+    ///             Path = @var.Http_redirect_target_path,
+    ///             Protocol = @var.Http_redirect_target_protocol,
+    ///             Query = @var.Http_redirect_target_query,
+    ///             Port = @var.Http_redirect_target_port,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Http_redirect_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         ResponseCode = @var.Http_redirect_response_code,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -61,7 +59,7 @@ namespace Pulumi.Oci.Waas
     /// ```
     /// </summary>
     [OciResourceType("oci:Waas/httpRedirect:HttpRedirect")]
-    public partial class HttpRedirect : Pulumi.CustomResource
+    public partial class HttpRedirect : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
@@ -161,7 +159,7 @@ namespace Pulumi.Oci.Waas
         }
     }
 
-    public sealed class HttpRedirectArgs : Pulumi.ResourceArgs
+    public sealed class HttpRedirectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
@@ -220,9 +218,10 @@ namespace Pulumi.Oci.Waas
         public HttpRedirectArgs()
         {
         }
+        public static new HttpRedirectArgs Empty => new HttpRedirectArgs();
     }
 
-    public sealed class HttpRedirectState : Pulumi.ResourceArgs
+    public sealed class HttpRedirectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
@@ -293,5 +292,6 @@ namespace Pulumi.Oci.Waas
         public HttpRedirectState()
         {
         }
+        public static new HttpRedirectState Empty => new HttpRedirectState();
     }
 }

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetBootVolumeAttachmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetBootVolumeAttachmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -56,9 +56,10 @@ namespace Pulumi.Oci.Core
         public GetBootVolumeAttachmentsArgs()
         {
         }
+        public static new GetBootVolumeAttachmentsArgs Empty => new GetBootVolumeAttachmentsArgs();
     }
 
-    public sealed class GetBootVolumeAttachmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBootVolumeAttachmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -95,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetBootVolumeAttachmentsInvokeArgs()
         {
         }
+        public static new GetBootVolumeAttachmentsInvokeArgs Empty => new GetBootVolumeAttachmentsInvokeArgs();
     }
 
 

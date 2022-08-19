@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class ProfileLevelsConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class ProfileLevelsConfigurationArgs : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.ProfileLevelsConfigurationItemArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public ProfileLevelsConfigurationArgs()
         {
         }
+        public static new ProfileLevelsConfigurationArgs Empty => new ProfileLevelsConfigurationArgs();
     }
 }

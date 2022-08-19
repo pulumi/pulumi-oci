@@ -21,6 +21,38 @@ import javax.annotation.Nullable;
  * Invokes a function
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Functions.InvokeFunction;
+ * import com.pulumi.oci.Functions.InvokeFunctionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testInvokeFunction = new InvokeFunction(&#34;testInvokeFunction&#34;, InvokeFunctionArgs.builder()        
+ *             .functionId(oci_functions_function.test_function().id())
+ *             .invokeFunctionBody(var_.invoke_function_invoke_function_body())
+ *             .fnIntent(var_.invoke_function_fn_intent())
+ *             .fnInvokeType(var_.invoke_function_fn_invoke_type())
+ *             .base64EncodeContent(false)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

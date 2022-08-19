@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class MonitoredResourceDatabaseConnectionDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourceDatabaseConnectionDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Database connector Identifier
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public MonitoredResourceDatabaseConnectionDetailsGetArgs()
         {
         }
+        public static new MonitoredResourceDatabaseConnectionDetailsGetArgs Empty => new MonitoredResourceDatabaseConnectionDetailsGetArgs();
     }
 }

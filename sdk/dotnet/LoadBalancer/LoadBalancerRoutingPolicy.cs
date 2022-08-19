@@ -18,37 +18,35 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLoadBalancerRoutingPolicy = new Oci.LoadBalancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", new()
     ///     {
-    ///         var testLoadBalancerRoutingPolicy = new Oci.LoadBalancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", new Oci.LoadBalancer.LoadBalancerRoutingPolicyArgs
+    ///         ConditionLanguageVersion = @var.Load_balancer_routing_policy_condition_language_version,
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         Rules = new[]
     ///         {
-    ///             ConditionLanguageVersion = @var.Load_balancer_routing_policy_condition_language_version,
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///             Rules = 
+    ///             new Oci.LoadBalancer.Inputs.LoadBalancerRoutingPolicyRuleArgs
     ///             {
-    ///                 new Oci.LoadBalancer.Inputs.LoadBalancerRoutingPolicyRuleArgs
+    ///                 Actions = new[]
     ///                 {
-    ///                     Actions = 
+    ///                     new Oci.LoadBalancer.Inputs.LoadBalancerRoutingPolicyRuleActionArgs
     ///                     {
-    ///                         new Oci.LoadBalancer.Inputs.LoadBalancerRoutingPolicyRuleActionArgs
-    ///                         {
-    ///                             Name = @var.Load_balancer_routing_policy_rules_actions_name,
-    ///                             BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///                         },
+    ///                         Name = @var.Load_balancer_routing_policy_rules_actions_name,
+    ///                         BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
     ///                     },
-    ///                     Condition = @var.Load_balancer_routing_policy_rules_condition,
-    ///                     Name = @var.Load_balancer_routing_policy_rules_name,
     ///                 },
+    ///                 Condition = @var.Load_balancer_routing_policy_rules_condition,
+    ///                 Name = @var.Load_balancer_routing_policy_rules_name,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy")]
-    public partial class LoadBalancerRoutingPolicy : Pulumi.CustomResource
+    public partial class LoadBalancerRoutingPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The version of the language in which `condition` of `rules` are composed.
@@ -133,7 +131,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class LoadBalancerRoutingPolicyArgs : Pulumi.ResourceArgs
+    public sealed class LoadBalancerRoutingPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The version of the language in which `condition` of `rules` are composed.
@@ -168,9 +166,10 @@ namespace Pulumi.Oci.LoadBalancer
         public LoadBalancerRoutingPolicyArgs()
         {
         }
+        public static new LoadBalancerRoutingPolicyArgs Empty => new LoadBalancerRoutingPolicyArgs();
     }
 
-    public sealed class LoadBalancerRoutingPolicyState : Pulumi.ResourceArgs
+    public sealed class LoadBalancerRoutingPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The version of the language in which `condition` of `rules` are composed.
@@ -208,5 +207,6 @@ namespace Pulumi.Oci.LoadBalancer
         public LoadBalancerRoutingPolicyState()
         {
         }
+        public static new LoadBalancerRoutingPolicyState Empty => new LoadBalancerRoutingPolicyState();
     }
 }

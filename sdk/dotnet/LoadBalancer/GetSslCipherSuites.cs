@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSslCipherSuites = Oci.LoadBalancer.GetSslCipherSuites.Invoke(new()
         ///     {
-        ///         var testSslCipherSuites = Output.Create(Oci.LoadBalancer.GetSslCipherSuites.InvokeAsync(new Oci.LoadBalancer.GetSslCipherSuitesArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSslCipherSuites = Oci.LoadBalancer.GetSslCipherSuites.Invoke(new()
         ///     {
-        ///         var testSslCipherSuites = Output.Create(Oci.LoadBalancer.GetSslCipherSuites.InvokeAsync(new Oci.LoadBalancer.GetSslCipherSuitesArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetSslCipherSuitesArgs : Pulumi.InvokeArgs
+    public sealed class GetSslCipherSuitesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetSslCipherSuitesFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetSslCipherSuitesArgs()
         {
         }
+        public static new GetSslCipherSuitesArgs Empty => new GetSslCipherSuitesArgs();
     }
 
-    public sealed class GetSslCipherSuitesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSslCipherSuitesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetSslCipherSuitesFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetSslCipherSuitesInvokeArgs()
         {
         }
+        public static new GetSslCipherSuitesInvokeArgs Empty => new GetSslCipherSuitesInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs : Pulumi.ResourceArgs
+    public sealed class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
@@ -105,5 +105,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs()
         {
         }
+        public static new RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs Empty => new RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs();
     }
 }

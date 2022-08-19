@@ -22,21 +22,19 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitoredInstances = Oci.AppMgmtControl.GetMonitoredInstances.Invoke(new()
         ///     {
-        ///         var testMonitoredInstances = Output.Create(Oci.AppMgmtControl.GetMonitoredInstances.InvokeAsync(new Oci.AppMgmtControl.GetMonitoredInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Monitored_instance_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Monitored_instance_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitoredInstances = Oci.AppMgmtControl.GetMonitoredInstances.Invoke(new()
         ///     {
-        ///         var testMonitoredInstances = Output.Create(Oci.AppMgmtControl.GetMonitoredInstances.InvokeAsync(new Oci.AppMgmtControl.GetMonitoredInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Monitored_instance_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Monitored_instance_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.AppMgmtControl
     }
 
 
-    public sealed class GetMonitoredInstancesArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitoredInstancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.AppMgmtControl
         public GetMonitoredInstancesArgs()
         {
         }
+        public static new GetMonitoredInstancesArgs Empty => new GetMonitoredInstancesArgs();
     }
 
-    public sealed class GetMonitoredInstancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitoredInstancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.AppMgmtControl
         public GetMonitoredInstancesInvokeArgs()
         {
         }
+        public static new GetMonitoredInstancesInvokeArgs Empty => new GetMonitoredInstancesInvokeArgs();
     }
 
 

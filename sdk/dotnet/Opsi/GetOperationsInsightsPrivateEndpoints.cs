@@ -21,26 +21,24 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsPrivateEndpoints = Oci.Opsi.GetOperationsInsightsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsPrivateEndpoints = Output.Create(Oci.Opsi.GetOperationsInsightsPrivateEndpoints.InvokeAsync(new Oci.Opsi.GetOperationsInsightsPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Operations_insights_private_endpoint_compartment_id_in_subtree,
-        ///             DisplayName = @var.Operations_insights_private_endpoint_display_name,
-        ///             IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
-        ///             OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///             States = @var.Operations_insights_private_endpoint_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Operations_insights_private_endpoint_compartment_id_in_subtree,
+        ///         DisplayName = @var.Operations_insights_private_endpoint_display_name,
+        ///         IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
+        ///         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+        ///         States = @var.Operations_insights_private_endpoint_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,26 +56,24 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsPrivateEndpoints = Oci.Opsi.GetOperationsInsightsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsPrivateEndpoints = Output.Create(Oci.Opsi.GetOperationsInsightsPrivateEndpoints.InvokeAsync(new Oci.Opsi.GetOperationsInsightsPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Operations_insights_private_endpoint_compartment_id_in_subtree,
-        ///             DisplayName = @var.Operations_insights_private_endpoint_display_name,
-        ///             IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
-        ///             OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///             States = @var.Operations_insights_private_endpoint_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Operations_insights_private_endpoint_compartment_id_in_subtree,
+        ///         DisplayName = @var.Operations_insights_private_endpoint_display_name,
+        ///         IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
+        ///         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+        ///         States = @var.Operations_insights_private_endpoint_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetOperationsInsightsPrivateEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsPrivateEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -148,9 +144,10 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsPrivateEndpointsArgs()
         {
         }
+        public static new GetOperationsInsightsPrivateEndpointsArgs Empty => new GetOperationsInsightsPrivateEndpointsArgs();
     }
 
-    public sealed class GetOperationsInsightsPrivateEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsPrivateEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -211,6 +208,7 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsPrivateEndpointsInvokeArgs()
         {
         }
+        public static new GetOperationsInsightsPrivateEndpointsInvokeArgs Empty => new GetOperationsInsightsPrivateEndpointsInvokeArgs();
     }
 
 

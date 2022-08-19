@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class BackendSetSslConfigurationGetArgs : Pulumi.ResourceArgs
+    public sealed class BackendSetSslConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("certificateIds")]
         private InputList<string>? _certificateIds;
@@ -81,5 +81,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public BackendSetSslConfigurationGetArgs()
         {
         }
+        public static new BackendSetSslConfigurationGetArgs Empty => new BackendSetSslConfigurationGetArgs();
     }
 }

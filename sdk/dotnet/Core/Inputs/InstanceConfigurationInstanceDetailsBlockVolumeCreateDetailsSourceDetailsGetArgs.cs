@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the volume backup.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsGetArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsGetArgs Empty => new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsGetArgs();
     }
 }

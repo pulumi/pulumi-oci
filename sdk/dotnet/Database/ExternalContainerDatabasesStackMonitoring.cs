@@ -17,22 +17,20 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExternalcontainerdatabasesStackMonitoring = new Oci.Database.ExternalContainerDatabasesStackMonitoring("testExternalcontainerdatabasesStackMonitoring", new()
     ///     {
-    ///         var testExternalcontainerdatabasesStackMonitoring = new Oci.Database.ExternalContainerDatabasesStackMonitoring("testExternalcontainerdatabasesStackMonitoring", new Oci.Database.ExternalContainerDatabasesStackMonitoringArgs
-    ///         {
-    ///             ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-    ///             ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
-    ///             EnableStackMonitoring = true,
-    ///         });
-    ///     }
+    ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
+    ///         ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
+    ///         EnableStackMonitoring = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/externalContainerDatabasesStackMonitoring:ExternalContainerDatabasesStackMonitoring")]
-    public partial class ExternalContainerDatabasesStackMonitoring : Pulumi.CustomResource
+    public partial class ExternalContainerDatabasesStackMonitoring : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
@@ -104,7 +102,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExternalContainerDatabasesStackMonitoringArgs : Pulumi.ResourceArgs
+    public sealed class ExternalContainerDatabasesStackMonitoringArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
@@ -127,9 +125,10 @@ namespace Pulumi.Oci.Database
         public ExternalContainerDatabasesStackMonitoringArgs()
         {
         }
+        public static new ExternalContainerDatabasesStackMonitoringArgs Empty => new ExternalContainerDatabasesStackMonitoringArgs();
     }
 
-    public sealed class ExternalContainerDatabasesStackMonitoringState : Pulumi.ResourceArgs
+    public sealed class ExternalContainerDatabasesStackMonitoringState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
@@ -152,5 +151,6 @@ namespace Pulumi.Oci.Database
         public ExternalContainerDatabasesStackMonitoringState()
         {
         }
+        public static new ExternalContainerDatabasesStackMonitoringState Empty => new ExternalContainerDatabasesStackMonitoringState();
     }
 }

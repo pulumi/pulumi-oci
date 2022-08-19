@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetVmClusterRecommendedNetworkNetworkInputArgs : Pulumi.ResourceArgs
+    public sealed class GetVmClusterRecommendedNetworkNetworkInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The cidr for the network.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetVmClusterRecommendedNetworkNetworkInputArgs()
         {
         }
+        public static new GetVmClusterRecommendedNetworkNetworkInputArgs Empty => new GetVmClusterRecommendedNetworkNetworkInputArgs();
     }
 }

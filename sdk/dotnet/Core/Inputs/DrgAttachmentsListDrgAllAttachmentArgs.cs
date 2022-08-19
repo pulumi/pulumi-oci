@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DrgAttachmentsListDrgAllAttachmentArgs : Pulumi.ResourceArgs
+    public sealed class DrgAttachmentsListDrgAllAttachmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Oracle-assigned ID of the DRG attachment
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DrgAttachmentsListDrgAllAttachmentArgs()
         {
         }
+        public static new DrgAttachmentsListDrgAllAttachmentArgs Empty => new DrgAttachmentsListDrgAllAttachmentArgs();
     }
 }

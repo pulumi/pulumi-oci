@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class GetAgentImagesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetAgentImagesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public GetAgentImagesFilterInputArgs()
         {
         }
+        public static new GetAgentImagesFilterInputArgs Empty => new GetAgentImagesFilterInputArgs();
     }
 }

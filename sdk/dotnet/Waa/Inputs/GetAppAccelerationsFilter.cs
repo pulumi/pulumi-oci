@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waa.Inputs
 {
 
-    public sealed class GetAppAccelerationsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAppAccelerationsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Waa.Inputs
         public GetAppAccelerationsFilterArgs()
         {
         }
+        public static new GetAppAccelerationsFilterArgs Empty => new GetAppAccelerationsFilterArgs();
     }
 }

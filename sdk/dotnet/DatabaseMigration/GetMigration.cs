@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMigration = Oci.DatabaseMigration.GetMigration.Invoke(new()
         ///     {
-        ///         var testMigration = Output.Create(Oci.DatabaseMigration.GetMigration.InvokeAsync(new Oci.DatabaseMigration.GetMigrationArgs
-        ///         {
-        ///             MigrationId = oci_database_migration_migration.Test_migration.Id,
-        ///         }));
-        ///     }
+        ///         MigrationId = oci_database_migration_migration.Test_migration.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMigration = Oci.DatabaseMigration.GetMigration.Invoke(new()
         ///     {
-        ///         var testMigration = Output.Create(Oci.DatabaseMigration.GetMigration.InvokeAsync(new Oci.DatabaseMigration.GetMigrationArgs
-        ///         {
-        ///             MigrationId = oci_database_migration_migration.Test_migration.Id,
-        ///         }));
-        ///     }
+        ///         MigrationId = oci_database_migration_migration.Test_migration.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetMigrationArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the migration
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetMigrationArgs()
         {
         }
+        public static new GetMigrationArgs Empty => new GetMigrationArgs();
     }
 
-    public sealed class GetMigrationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the migration
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetMigrationInvokeArgs()
         {
         }
+        public static new GetMigrationInvokeArgs Empty => new GetMigrationInvokeArgs();
     }
 
 

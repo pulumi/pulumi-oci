@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLimitValues = Oci.Limits.GetLimitValues.Invoke(new()
         ///     {
-        ///         var testLimitValues = Output.Create(Oci.Limits.GetLimitValues.InvokeAsync(new Oci.Limits.GetLimitValuesArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             ServiceName = oci_limits_service.Test_service.Name,
-        ///             AvailabilityDomain = @var.Limit_value_availability_domain,
-        ///             Name = @var.Limit_value_name,
-        ///             ScopeType = @var.Limit_value_scope_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         ServiceName = oci_limits_service.Test_service.Name,
+        ///         AvailabilityDomain = @var.Limit_value_availability_domain,
+        ///         Name = @var.Limit_value_name,
+        ///         ScopeType = @var.Limit_value_scope_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLimitValues = Oci.Limits.GetLimitValues.Invoke(new()
         ///     {
-        ///         var testLimitValues = Output.Create(Oci.Limits.GetLimitValues.InvokeAsync(new Oci.Limits.GetLimitValuesArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             ServiceName = oci_limits_service.Test_service.Name,
-        ///             AvailabilityDomain = @var.Limit_value_availability_domain,
-        ///             Name = @var.Limit_value_name,
-        ///             ScopeType = @var.Limit_value_scope_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         ServiceName = oci_limits_service.Test_service.Name,
+        ///         AvailabilityDomain = @var.Limit_value_availability_domain,
+        ///         Name = @var.Limit_value_name,
+        ///         ScopeType = @var.Limit_value_scope_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Limits
     }
 
 
-    public sealed class GetLimitValuesArgs : Pulumi.InvokeArgs
+    public sealed class GetLimitValuesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filter entries by availability domain. This implies that only AD-specific values are returned.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Limits
         public GetLimitValuesArgs()
         {
         }
+        public static new GetLimitValuesArgs Empty => new GetLimitValuesArgs();
     }
 
-    public sealed class GetLimitValuesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLimitValuesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filter entries by availability domain. This implies that only AD-specific values are returned.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Limits
         public GetLimitValuesInvokeArgs()
         {
         }
+        public static new GetLimitValuesInvokeArgs Empty => new GetLimitValuesInvokeArgs();
     }
 
 

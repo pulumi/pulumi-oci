@@ -10729,6 +10729,17 @@ export namespace DataConnectivity {
 }
 
 export namespace DataFlow {
+    export interface ApplicationApplicationLogConfig {
+        /**
+         * (Updatable) The log group id for where log objects will be for Data Flow Runs.
+         */
+        logGroupId: pulumi.Input<string>;
+        /**
+         * (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+         */
+        logId: pulumi.Input<string>;
+    }
+
     export interface ApplicationDriverShapeConfig {
         /**
          * (Updatable) The amount of memory used for the driver or executors.
@@ -10798,13 +10809,19 @@ export namespace DataFlow {
         values: string[];
     }
 
+    export interface GetPrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetPrivateEndpointsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetPrivateEndpointsFilterArgs {
+    export interface GetRunLogsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -10816,10 +10833,15 @@ export namespace DataFlow {
         values: string[];
     }
 
-    export interface GetRunLogsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
+    export interface InvokeRunApplicationLogConfig {
+        /**
+         * The log group id for where log objects will be for Data Flow Runs.
+         */
+        logGroupId: pulumi.Input<string>;
+        /**
+         * The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+         */
+        logId: pulumi.Input<string>;
     }
 
     export interface InvokeRunDriverShapeConfig {
@@ -12402,15 +12424,6 @@ export namespace DataScience {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetNotebookSessionShapesFilter {
-        /**
-         * The name of the notebook session shape.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetNotebookSessionShapesFilterArgs {
         /**
          * The name of the notebook session shape.
@@ -12418,6 +12431,15 @@ export namespace DataScience {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetNotebookSessionShapesFilter {
+        /**
+         * The name of the notebook session shape.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetNotebookSessionsFilter {
@@ -12473,6 +12495,10 @@ export namespace DataScience {
          */
         jobInfrastructureType: pulumi.Input<string>;
         /**
+         * (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+         */
+        jobShapeConfigDetails?: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails>;
+        /**
          * (Updatable) The shape used to launch the job run instances.
          */
         shapeName: pulumi.Input<string>;
@@ -12480,6 +12506,17 @@ export namespace DataScience {
          * (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
          */
         subnetId?: pulumi.Input<string>;
+    }
+
+    export interface JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
+        /**
+         * (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus?: pulumi.Input<number>;
     }
 
     export interface JobJobLogConfigurationDetails {
@@ -12530,6 +12567,10 @@ export namespace DataScience {
          */
         jobInfrastructureType?: pulumi.Input<string>;
         /**
+         * Details for the job run shape configuration. Specify only when a flex shape is selected.
+         */
+        jobShapeConfigDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail>[]>;
+        /**
          * The shape used to launch the job run instances.
          */
         shapeName?: pulumi.Input<string>;
@@ -12537,6 +12578,17 @@ export namespace DataScience {
          * The subnet to create a secondary vnic in to attach to the instance running the job
          */
         subnetId?: pulumi.Input<string>;
+    }
+
+    export interface JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs?: pulumi.Input<number>;
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus?: pulumi.Input<number>;
     }
 
     export interface JobRunJobLogConfigurationOverrideDetails {
@@ -25125,6 +25177,10 @@ export namespace Sch {
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
          */
         logGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         */
+        logSourceIdentifier?: pulumi.Input<string>;
         /**
          * (Updatable) The name of the metric.  Example: `CpuUtilization`
          */

@@ -21,23 +21,21 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testClusterKubeConfig = Oci.ContainerEngine.GetClusterKubeConfig.Invoke(new()
         ///     {
-        ///         var testClusterKubeConfig = Output.Create(Oci.ContainerEngine.GetClusterKubeConfig.InvokeAsync(new Oci.ContainerEngine.GetClusterKubeConfigArgs
-        ///         {
-        ///             ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-        ///             Endpoint = @var.Cluster_kube_config_endpoint,
-        ///             Expiration = @var.Cluster_kube_config_expiration,
-        ///             TokenVersion = @var.Cluster_kube_config_token_version,
-        ///         }));
-        ///     }
+        ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+        ///         Endpoint = @var.Cluster_kube_config_endpoint,
+        ///         Expiration = @var.Cluster_kube_config_expiration,
+        ///         TokenVersion = @var.Cluster_kube_config_token_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testClusterKubeConfig = Oci.ContainerEngine.GetClusterKubeConfig.Invoke(new()
         ///     {
-        ///         var testClusterKubeConfig = Output.Create(Oci.ContainerEngine.GetClusterKubeConfig.InvokeAsync(new Oci.ContainerEngine.GetClusterKubeConfigArgs
-        ///         {
-        ///             ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-        ///             Endpoint = @var.Cluster_kube_config_endpoint,
-        ///             Expiration = @var.Cluster_kube_config_expiration,
-        ///             TokenVersion = @var.Cluster_kube_config_token_version,
-        ///         }));
-        ///     }
+        ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+        ///         Endpoint = @var.Cluster_kube_config_endpoint,
+        ///         Expiration = @var.Cluster_kube_config_expiration,
+        ///         TokenVersion = @var.Cluster_kube_config_token_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.ContainerEngine
     }
 
 
-    public sealed class GetClusterKubeConfigArgs : Pulumi.InvokeArgs
+    public sealed class GetClusterKubeConfigArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.ContainerEngine
         public GetClusterKubeConfigArgs()
         {
         }
+        public static new GetClusterKubeConfigArgs Empty => new GetClusterKubeConfigArgs();
     }
 
-    public sealed class GetClusterKubeConfigInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetClusterKubeConfigInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -141,6 +138,7 @@ namespace Pulumi.Oci.ContainerEngine
         public GetClusterKubeConfigInvokeArgs()
         {
         }
+        public static new GetClusterKubeConfigInvokeArgs Empty => new GetClusterKubeConfigInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationGoldenGateDetailsSettingsExtractArgs : Pulumi.ResourceArgs
+    public sealed class MigrationGoldenGateDetailsSettingsExtractArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationGoldenGateDetailsSettingsExtractArgs()
         {
         }
+        public static new MigrationGoldenGateDetailsSettingsExtractArgs Empty => new MigrationGoldenGateDetailsSettingsExtractArgs();
     }
 }

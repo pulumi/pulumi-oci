@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class ModelDeploymentCategoryLogDetailsPredictGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelDeploymentCategoryLogDetailsPredictGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public ModelDeploymentCategoryLogDetailsPredictGetArgs()
         {
         }
+        public static new ModelDeploymentCategoryLogDetailsPredictGetArgs Empty => new ModelDeploymentCategoryLogDetailsPredictGetArgs();
     }
 }

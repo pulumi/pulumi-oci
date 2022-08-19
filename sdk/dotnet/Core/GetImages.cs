@@ -32,27 +32,25 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImages = Oci.Core.GetImages.Invoke(new()
         ///     {
-        ///         var testImages = Output.Create(Oci.Core.GetImages.InvokeAsync(new Oci.Core.GetImagesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Image_display_name,
-        ///             OperatingSystem = @var.Image_operating_system,
-        ///             OperatingSystemVersion = @var.Image_operating_system_version,
-        ///             Shape = @var.Image_shape,
-        ///             State = @var.Image_state,
-        ///             SortBy = @var.Image_sort_by,
-        ///             SortOrder = @var.Image_sort_order,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Image_display_name,
+        ///         OperatingSystem = @var.Image_operating_system,
+        ///         OperatingSystemVersion = @var.Image_operating_system_version,
+        ///         Shape = @var.Image_shape,
+        ///         State = @var.Image_state,
+        ///         SortBy = @var.Image_sort_by,
+        ///         SortOrder = @var.Image_sort_order,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,27 +79,25 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImages = Oci.Core.GetImages.Invoke(new()
         ///     {
-        ///         var testImages = Output.Create(Oci.Core.GetImages.InvokeAsync(new Oci.Core.GetImagesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Image_display_name,
-        ///             OperatingSystem = @var.Image_operating_system,
-        ///             OperatingSystemVersion = @var.Image_operating_system_version,
-        ///             Shape = @var.Image_shape,
-        ///             State = @var.Image_state,
-        ///             SortBy = @var.Image_sort_by,
-        ///             SortOrder = @var.Image_sort_order,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Image_display_name,
+        ///         OperatingSystem = @var.Image_operating_system,
+        ///         OperatingSystemVersion = @var.Image_operating_system_version,
+        ///         Shape = @var.Image_shape,
+        ///         State = @var.Image_state,
+        ///         SortBy = @var.Image_sort_by,
+        ///         SortOrder = @var.Image_sort_order,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -111,7 +107,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetImagesArgs : Pulumi.InvokeArgs
+    public sealed class GetImagesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -172,9 +168,10 @@ namespace Pulumi.Oci.Core
         public GetImagesArgs()
         {
         }
+        public static new GetImagesArgs Empty => new GetImagesArgs();
     }
 
-    public sealed class GetImagesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetImagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -235,6 +232,7 @@ namespace Pulumi.Oci.Core
         public GetImagesInvokeArgs()
         {
         }
+        public static new GetImagesInvokeArgs Empty => new GetImagesInvokeArgs();
     }
 
 

@@ -17,32 +17,30 @@ namespace Pulumi.Oci.StackMonitoring
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMonitoredResourcesSearch = new Oci.StackMonitoring.MonitoredResourcesSearch("testMonitoredResourcesSearch", new()
     ///     {
-    ///         var testMonitoredResourcesSearch = new Oci.StackMonitoring.MonitoredResourcesSearch("testMonitoredResourcesSearch", new Oci.StackMonitoring.MonitoredResourcesSearchArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             HostName = @var.Monitored_resources_search_host_name,
-    ///             HostNameContains = @var.Monitored_resources_search_host_name_contains,
-    ///             ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-    ///             NameContains = @var.Monitored_resources_search_name_contains,
-    ///             PropertyEquals = @var.Monitored_resources_search_property_equals,
-    ///             ResourceTimeZone = @var.Monitored_resources_search_resource_time_zone,
-    ///             State = @var.Monitored_resources_search_state,
-    ///             TimeCreatedGreaterThanOrEqualTo = @var.Monitored_resources_search_time_created_greater_than_or_equal_to,
-    ///             TimeCreatedLessThan = @var.Monitored_resources_search_time_created_less_than,
-    ///             TimeUpdatedGreaterThanOrEqualTo = @var.Monitored_resources_search_time_updated_greater_than_or_equal_to,
-    ///             TimeUpdatedLessThan = @var.Monitored_resources_search_time_updated_less_than,
-    ///             Type = @var.Monitored_resources_search_type,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         HostName = @var.Monitored_resources_search_host_name,
+    ///         HostNameContains = @var.Monitored_resources_search_host_name_contains,
+    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         NameContains = @var.Monitored_resources_search_name_contains,
+    ///         PropertyEquals = @var.Monitored_resources_search_property_equals,
+    ///         ResourceTimeZone = @var.Monitored_resources_search_resource_time_zone,
+    ///         State = @var.Monitored_resources_search_state,
+    ///         TimeCreatedGreaterThanOrEqualTo = @var.Monitored_resources_search_time_created_greater_than_or_equal_to,
+    ///         TimeCreatedLessThan = @var.Monitored_resources_search_time_created_less_than,
+    ///         TimeUpdatedGreaterThanOrEqualTo = @var.Monitored_resources_search_time_updated_greater_than_or_equal_to,
+    ///         TimeUpdatedLessThan = @var.Monitored_resources_search_time_updated_less_than,
+    ///         Type = @var.Monitored_resources_search_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch")]
-    public partial class MonitoredResourcesSearch : Pulumi.CustomResource
+    public partial class MonitoredResourcesSearch : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -190,7 +188,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
     }
 
-    public sealed class MonitoredResourcesSearchArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesSearchArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -285,9 +283,10 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourcesSearchArgs()
         {
         }
+        public static new MonitoredResourcesSearchArgs Empty => new MonitoredResourcesSearchArgs();
     }
 
-    public sealed class MonitoredResourcesSearchState : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesSearchState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -394,5 +393,6 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourcesSearchState()
         {
         }
+        public static new MonitoredResourcesSearchState Empty => new MonitoredResourcesSearchState();
     }
 }

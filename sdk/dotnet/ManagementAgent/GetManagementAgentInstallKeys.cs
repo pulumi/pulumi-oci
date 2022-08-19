@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentInstallKeys = Oci.ManagementAgent.GetManagementAgentInstallKeys.Invoke(new()
         ///     {
-        ///         var testManagementAgentInstallKeys = Output.Create(Oci.ManagementAgent.GetManagementAgentInstallKeys.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentInstallKeysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Management_agent_install_key_access_level,
-        ///             CompartmentIdInSubtree = @var.Management_agent_install_key_compartment_id_in_subtree,
-        ///             DisplayName = @var.Management_agent_install_key_display_name,
-        ///             State = @var.Management_agent_install_key_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Management_agent_install_key_access_level,
+        ///         CompartmentIdInSubtree = @var.Management_agent_install_key_compartment_id_in_subtree,
+        ///         DisplayName = @var.Management_agent_install_key_display_name,
+        ///         State = @var.Management_agent_install_key_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentInstallKeys = Oci.ManagementAgent.GetManagementAgentInstallKeys.Invoke(new()
         ///     {
-        ///         var testManagementAgentInstallKeys = Output.Create(Oci.ManagementAgent.GetManagementAgentInstallKeys.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentInstallKeysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Management_agent_install_key_access_level,
-        ///             CompartmentIdInSubtree = @var.Management_agent_install_key_compartment_id_in_subtree,
-        ///             DisplayName = @var.Management_agent_install_key_display_name,
-        ///             State = @var.Management_agent_install_key_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Management_agent_install_key_access_level,
+        ///         CompartmentIdInSubtree = @var.Management_agent_install_key_compartment_id_in_subtree,
+        ///         DisplayName = @var.Management_agent_install_key_display_name,
+        ///         State = @var.Management_agent_install_key_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentInstallKeysArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentInstallKeysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Value of this is always "ACCESSIBLE" and any other value is not supported.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentInstallKeysArgs()
         {
         }
+        public static new GetManagementAgentInstallKeysArgs Empty => new GetManagementAgentInstallKeysArgs();
     }
 
-    public sealed class GetManagementAgentInstallKeysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentInstallKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Value of this is always "ACCESSIBLE" and any other value is not supported.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentInstallKeysInvokeArgs()
         {
         }
+        public static new GetManagementAgentInstallKeysInvokeArgs Empty => new GetManagementAgentInstallKeysInvokeArgs();
     }
 
 

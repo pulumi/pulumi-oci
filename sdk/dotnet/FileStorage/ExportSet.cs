@@ -13,23 +13,21 @@ namespace Pulumi.Oci.FileStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExportSet = new Oci.FileStorage.ExportSet("testExportSet", new()
     ///     {
-    ///         var testExportSet = new Oci.FileStorage.ExportSet("testExportSet", new Oci.FileStorage.ExportSetArgs
-    ///         {
-    ///             MountTargetId = oci_file_storage_mount_target.Test_mount_target.Id,
-    ///             DisplayName = @var.Export_set_name,
-    ///             MaxFsStatBytes = "23843202333",
-    ///             MaxFsStatFiles = "223442",
-    ///         });
-    ///     }
+    ///         MountTargetId = oci_file_storage_mount_target.Test_mount_target.Id,
+    ///         DisplayName = @var.Export_set_name,
+    ///         MaxFsStatBytes = "23843202333",
+    ///         MaxFsStatFiles = "223442",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Oci.FileStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/exportSet:ExportSet")]
-    public partial class ExportSet : Pulumi.CustomResource
+    public partial class ExportSet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
@@ -141,7 +139,7 @@ namespace Pulumi.Oci.FileStorage
         }
     }
 
-    public sealed class ExportSetArgs : Pulumi.ResourceArgs
+    public sealed class ExportSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
@@ -170,9 +168,10 @@ namespace Pulumi.Oci.FileStorage
         public ExportSetArgs()
         {
         }
+        public static new ExportSetArgs Empty => new ExportSetArgs();
     }
 
-    public sealed class ExportSetState : Pulumi.ResourceArgs
+    public sealed class ExportSetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
@@ -231,5 +230,6 @@ namespace Pulumi.Oci.FileStorage
         public ExportSetState()
         {
         }
+        public static new ExportSetState Empty => new ExportSetState();
     }
 }

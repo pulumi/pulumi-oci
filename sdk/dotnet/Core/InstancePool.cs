@@ -17,58 +17,56 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testInstancePool = new Oci.Core.InstancePool("testInstancePool", new()
     ///     {
-    ///         var testInstancePool = new Oci.Core.InstancePool("testInstancePool", new Oci.Core.InstancePoolArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
+    ///         PlacementConfigurations = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
-    ///             PlacementConfigurations = 
+    ///             new Oci.Core.Inputs.InstancePoolPlacementConfigurationArgs
     ///             {
-    ///                 new Oci.Core.Inputs.InstancePoolPlacementConfigurationArgs
+    ///                 AvailabilityDomain = @var.Instance_pool_placement_configurations_availability_domain,
+    ///                 PrimarySubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                 FaultDomains = @var.Instance_pool_placement_configurations_fault_domains,
+    ///                 SecondaryVnicSubnets = new[]
     ///                 {
-    ///                     AvailabilityDomain = @var.Instance_pool_placement_configurations_availability_domain,
-    ///                     PrimarySubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                     FaultDomains = @var.Instance_pool_placement_configurations_fault_domains,
-    ///                     SecondaryVnicSubnets = 
+    ///                     new Oci.Core.Inputs.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs
     ///                     {
-    ///                         new Oci.Core.Inputs.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs
-    ///                         {
-    ///                             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                             DisplayName = @var.Instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
-    ///                         },
+    ///                         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                         DisplayName = @var.Instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
     ///                     },
     ///                 },
     ///             },
-    ///             Size = @var.Instance_pool_size,
-    ///             DefinedTags = 
+    ///         },
+    ///         Size = @var.Instance_pool_size,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Instance_pool_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LoadBalancers = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.InstancePoolLoadBalancerArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+    ///                 LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///                 Port = @var.Instance_pool_load_balancers_port,
+    ///                 VnicSelection = @var.Instance_pool_load_balancers_vnic_selection,
     ///             },
-    ///             DisplayName = @var.Instance_pool_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             LoadBalancers = 
-    ///             {
-    ///                 new Oci.Core.Inputs.InstancePoolLoadBalancerArgs
-    ///                 {
-    ///                     BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///                     LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///                     Port = @var.Instance_pool_load_balancers_port,
-    ///                     VnicSelection = @var.Instance_pool_load_balancers_vnic_selection,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -80,7 +78,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/instancePool:InstancePool")]
-    public partial class InstancePool : Pulumi.CustomResource
+    public partial class InstancePool : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
@@ -192,7 +190,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class InstancePoolArgs : Pulumi.ResourceArgs
+    public sealed class InstancePoolArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -275,9 +273,10 @@ namespace Pulumi.Oci.Core
         public InstancePoolArgs()
         {
         }
+        public static new InstancePoolArgs Empty => new InstancePoolArgs();
     }
 
-    public sealed class InstancePoolState : Pulumi.ResourceArgs
+    public sealed class InstancePoolState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
@@ -372,5 +371,6 @@ namespace Pulumi.Oci.Core
         public InstancePoolState()
         {
         }
+        public static new InstancePoolState Empty => new InstancePoolState();
     }
 }

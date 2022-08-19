@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class DiscoveryJobDiscoveryDetailsArgs : Pulumi.ResourceArgs
+    public sealed class DiscoveryJobDiscoveryDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of Management Agent
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public DiscoveryJobDiscoveryDetailsArgs()
         {
         }
+        public static new DiscoveryJobDiscoveryDetailsArgs Empty => new DiscoveryJobDiscoveryDetailsArgs();
     }
 }

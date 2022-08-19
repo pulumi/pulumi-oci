@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GetSubscribersFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscribersFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the client. Must be unique within a subscriber.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GetSubscribersFilterArgs()
         {
         }
+        public static new GetSubscribersFilterArgs Empty => new GetSubscribersFilterArgs();
     }
 }

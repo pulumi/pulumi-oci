@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageDeployStagePredecessorCollectionArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageDeployStagePredecessorCollectionArgs : global::Pulumi.ResourceArgs
     {
         [Input("items", required: true)]
         private InputList<Inputs.DeployStageDeployStagePredecessorCollectionItemArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageDeployStagePredecessorCollectionArgs()
         {
         }
+        public static new DeployStageDeployStagePredecessorCollectionArgs Empty => new DeployStageDeployStagePredecessorCollectionArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Events.Inputs
 {
 
-    public sealed class RuleActionsArgs : Pulumi.ResourceArgs
+    public sealed class RuleActionsArgs : global::Pulumi.ResourceArgs
     {
         [Input("actions", required: true)]
         private InputList<Inputs.RuleActionsActionArgs>? _actions;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Events.Inputs
         public RuleActionsArgs()
         {
         }
+        public static new RuleActionsArgs Empty => new RuleActionsArgs();
     }
 }

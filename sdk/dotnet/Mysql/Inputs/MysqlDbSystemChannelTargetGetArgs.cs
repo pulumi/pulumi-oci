@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemChannelTargetGetArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemChannelTargetGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The username for the replication applier of the target MySQL DB System.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemChannelTargetGetArgs()
         {
         }
+        public static new MysqlDbSystemChannelTargetGetArgs Empty => new MysqlDbSystemChannelTargetGetArgs();
     }
 }

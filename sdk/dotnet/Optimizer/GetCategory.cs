@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCategory = Oci.Optimizer.GetCategory.Invoke(new()
         ///     {
-        ///         var testCategory = Output.Create(Oci.Optimizer.GetCategory.InvokeAsync(new Oci.Optimizer.GetCategoryArgs
-        ///         {
-        ///             CategoryId = oci_optimizer_category.Test_category.Id,
-        ///         }));
-        ///     }
+        ///         CategoryId = oci_optimizer_category.Test_category.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCategory = Oci.Optimizer.GetCategory.Invoke(new()
         ///     {
-        ///         var testCategory = Output.Create(Oci.Optimizer.GetCategory.InvokeAsync(new Oci.Optimizer.GetCategoryArgs
-        ///         {
-        ///             CategoryId = oci_optimizer_category.Test_category.Id,
-        ///         }));
-        ///     }
+        ///         CategoryId = oci_optimizer_category.Test_category.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetCategoryArgs : Pulumi.InvokeArgs
+    public sealed class GetCategoryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the category.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Optimizer
         public GetCategoryArgs()
         {
         }
+        public static new GetCategoryArgs Empty => new GetCategoryArgs();
     }
 
-    public sealed class GetCategoryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCategoryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the category.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Optimizer
         public GetCategoryInvokeArgs()
         {
         }
+        public static new GetCategoryInvokeArgs Empty => new GetCategoryInvokeArgs();
     }
 
 

@@ -18,22 +18,20 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExternalPluggableDatabaseOperationsInsightsManagement = new Oci.Database.ExternalPluggableDatabaseOperationsInsightsManagement("testExternalPluggableDatabaseOperationsInsightsManagement", new()
     ///     {
-    ///         var testExternalPluggableDatabaseOperationsInsightsManagement = new Oci.Database.ExternalPluggableDatabaseOperationsInsightsManagement("testExternalPluggableDatabaseOperationsInsightsManagement", new Oci.Database.ExternalPluggableDatabaseOperationsInsightsManagementArgs
-    ///         {
-    ///             ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
-    ///             ExternalPluggableDatabaseId = oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
-    ///             EnableOperationsInsights = true,
-    ///         });
-    ///     }
+    ///         ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
+    ///         ExternalPluggableDatabaseId = oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
+    ///         EnableOperationsInsights = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement")]
-    public partial class ExternalPluggableDatabaseOperationsInsightsManagement : Pulumi.CustomResource
+    public partial class ExternalPluggableDatabaseOperationsInsightsManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
@@ -105,7 +103,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExternalPluggableDatabaseOperationsInsightsManagementArgs : Pulumi.ResourceArgs
+    public sealed class ExternalPluggableDatabaseOperationsInsightsManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
@@ -128,9 +126,10 @@ namespace Pulumi.Oci.Database
         public ExternalPluggableDatabaseOperationsInsightsManagementArgs()
         {
         }
+        public static new ExternalPluggableDatabaseOperationsInsightsManagementArgs Empty => new ExternalPluggableDatabaseOperationsInsightsManagementArgs();
     }
 
-    public sealed class ExternalPluggableDatabaseOperationsInsightsManagementState : Pulumi.ResourceArgs
+    public sealed class ExternalPluggableDatabaseOperationsInsightsManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
@@ -153,5 +152,6 @@ namespace Pulumi.Oci.Database
         public ExternalPluggableDatabaseOperationsInsightsManagementState()
         {
         }
+        public static new ExternalPluggableDatabaseOperationsInsightsManagementState Empty => new ExternalPluggableDatabaseOperationsInsightsManagementState();
     }
 }

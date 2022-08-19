@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetPeerRegionForRemotePeeringsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetPeerRegionForRemotePeeringsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The region's name.  Example: `us-phoenix-1`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetPeerRegionForRemotePeeringsFilterArgs()
         {
         }
+        public static new GetPeerRegionForRemotePeeringsFilterArgs Empty => new GetPeerRegionForRemotePeeringsFilterArgs();
     }
 }

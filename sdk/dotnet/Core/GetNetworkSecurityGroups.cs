@@ -23,24 +23,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSecurityGroups = Oci.Core.GetNetworkSecurityGroups.Invoke(new()
         ///     {
-        ///         var testNetworkSecurityGroups = Output.Create(Oci.Core.GetNetworkSecurityGroups.InvokeAsync(new Oci.Core.GetNetworkSecurityGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Network_security_group_display_name,
-        ///             State = @var.Network_security_group_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///             VlanId = oci_core_vlan.Test_vlan.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Network_security_group_display_name,
+        ///         State = @var.Network_security_group_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,24 +58,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSecurityGroups = Oci.Core.GetNetworkSecurityGroups.Invoke(new()
         ///     {
-        ///         var testNetworkSecurityGroups = Output.Create(Oci.Core.GetNetworkSecurityGroups.InvokeAsync(new Oci.Core.GetNetworkSecurityGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Network_security_group_display_name,
-        ///             State = @var.Network_security_group_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///             VlanId = oci_core_vlan.Test_vlan.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Network_security_group_display_name,
+        ///         State = @var.Network_security_group_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetNetworkSecurityGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -130,9 +126,10 @@ namespace Pulumi.Oci.Core
         public GetNetworkSecurityGroupsArgs()
         {
         }
+        public static new GetNetworkSecurityGroupsArgs Empty => new GetNetworkSecurityGroupsArgs();
     }
 
-    public sealed class GetNetworkSecurityGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -175,6 +172,7 @@ namespace Pulumi.Oci.Core
         public GetNetworkSecurityGroupsInvokeArgs()
         {
         }
+        public static new GetNetworkSecurityGroupsInvokeArgs Empty => new GetNetworkSecurityGroupsInvokeArgs();
     }
 
 

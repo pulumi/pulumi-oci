@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetDomainsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDomainsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to only return resources that match the given name exactly.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetDomainsFilterArgs()
         {
         }
+        public static new GetDomainsFilterArgs Empty => new GetDomainsFilterArgs();
     }
 }

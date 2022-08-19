@@ -17,29 +17,27 @@ namespace Pulumi.Oci.Email
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSender = new Oci.Email.Sender("testSender", new()
     ///     {
-    ///         var testSender = new Oci.Email.Sender("testSender", new Oci.Email.SenderArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EmailAddress = @var.Sender_email_address,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             EmailAddress = @var.Sender_email_address,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.Email
     /// ```
     /// </summary>
     [OciResourceType("oci:Email/sender:Sender")]
-    public partial class Sender : Pulumi.CustomResource
+    public partial class Sender : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the sender.
@@ -145,7 +143,7 @@ namespace Pulumi.Oci.Email
         }
     }
 
-    public sealed class SenderArgs : Pulumi.ResourceArgs
+    public sealed class SenderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the sender.
@@ -186,9 +184,10 @@ namespace Pulumi.Oci.Email
         public SenderArgs()
         {
         }
+        public static new SenderArgs Empty => new SenderArgs();
     }
 
-    public sealed class SenderState : Pulumi.ResourceArgs
+    public sealed class SenderState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the sender.
@@ -253,5 +252,6 @@ namespace Pulumi.Oci.Email
         public SenderState()
         {
         }
+        public static new SenderState Empty => new SenderState();
     }
 }

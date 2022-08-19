@@ -21,28 +21,26 @@ namespace Pulumi.Oci.Streaming
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testStream = new Oci.Streaming.Stream("testStream", new()
     ///     {
-    ///         var testStream = new Oci.Streaming.Stream("testStream", new Oci.Streaming.StreamArgs
+    ///         Partitions = @var.Stream_partitions,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = @var.Stream_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             Partitions = @var.Stream_partitions,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = @var.Stream_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             RetentionInHours = @var.Stream_retention_in_hours,
-    ///             StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
-    ///         });
-    ///     }
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         RetentionInHours = @var.Stream_retention_in_hours,
+    ///         StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Streaming
     /// ```
     /// </summary>
     [OciResourceType("oci:Streaming/stream:Stream")]
-    public partial class Stream : Pulumi.CustomResource
+    public partial class Stream : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the stream.
@@ -166,7 +164,7 @@ namespace Pulumi.Oci.Streaming
         }
     }
 
-    public sealed class StreamArgs : Pulumi.ResourceArgs
+    public sealed class StreamArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the stream.
@@ -225,9 +223,10 @@ namespace Pulumi.Oci.Streaming
         public StreamArgs()
         {
         }
+        public static new StreamArgs Empty => new StreamArgs();
     }
 
-    public sealed class StreamState : Pulumi.ResourceArgs
+    public sealed class StreamState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the stream.
@@ -310,5 +309,6 @@ namespace Pulumi.Oci.Streaming
         public StreamState()
         {
         }
+        public static new StreamState Empty => new StreamState();
     }
 }

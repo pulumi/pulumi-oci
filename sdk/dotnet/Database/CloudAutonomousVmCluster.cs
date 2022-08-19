@@ -17,32 +17,30 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCloudAutonomousVmCluster = new Oci.Database.CloudAutonomousVmCluster("testCloudAutonomousVmCluster", new()
     ///     {
-    ///         var testCloudAutonomousVmCluster = new Oci.Database.CloudAutonomousVmCluster("testCloudAutonomousVmCluster", new Oci.Database.CloudAutonomousVmClusterArgs
+    ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         ClusterTimeZone = @var.Cloud_autonomous_vm_cluster_cluster_time_zone,
+    ///         DefinedTags = @var.Cloud_autonomous_vm_cluster_defined_tags,
+    ///         Description = @var.Cloud_autonomous_vm_cluster_description,
+    ///         FreeformTags = 
     ///         {
-    ///             CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             ClusterTimeZone = @var.Cloud_autonomous_vm_cluster_cluster_time_zone,
-    ///             DefinedTags = @var.Cloud_autonomous_vm_cluster_defined_tags,
-    ///             Description = @var.Cloud_autonomous_vm_cluster_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             LicenseModel = @var.Cloud_autonomous_vm_cluster_license_model,
-    ///             NsgIds = @var.Cloud_autonomous_vm_cluster_nsg_ids,
-    ///         });
-    ///     }
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LicenseModel = @var.Cloud_autonomous_vm_cluster_license_model,
+    ///         NsgIds = @var.Cloud_autonomous_vm_cluster_nsg_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster")]
-    public partial class CloudAutonomousVmCluster : Pulumi.CustomResource
+    public partial class CloudAutonomousVmCluster : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The data disk group size allocated for Autonomous Databases, in TBs.
@@ -317,7 +315,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class CloudAutonomousVmClusterArgs : Pulumi.ResourceArgs
+    public sealed class CloudAutonomousVmClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
@@ -407,9 +405,10 @@ namespace Pulumi.Oci.Database
         public CloudAutonomousVmClusterArgs()
         {
         }
+        public static new CloudAutonomousVmClusterArgs Empty => new CloudAutonomousVmClusterArgs();
     }
 
-    public sealed class CloudAutonomousVmClusterState : Pulumi.ResourceArgs
+    public sealed class CloudAutonomousVmClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The data disk group size allocated for Autonomous Databases, in TBs.
@@ -649,5 +648,6 @@ namespace Pulumi.Oci.Database
         public CloudAutonomousVmClusterState()
         {
         }
+        public static new CloudAutonomousVmClusterState Empty => new CloudAutonomousVmClusterState();
     }
 }

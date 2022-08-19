@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryConnection = Oci.DataConnectivity.GetRegistryConnection.Invoke(new()
         ///     {
-        ///         var testRegistryConnection = Output.Create(Oci.DataConnectivity.GetRegistryConnection.InvokeAsync(new Oci.DataConnectivity.GetRegistryConnectionArgs
-        ///         {
-        ///             ConnectionKey = @var.Registry_connection_connection_key,
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///         }));
-        ///     }
+        ///         ConnectionKey = @var.Registry_connection_connection_key,
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryConnection = Oci.DataConnectivity.GetRegistryConnection.Invoke(new()
         ///     {
-        ///         var testRegistryConnection = Output.Create(Oci.DataConnectivity.GetRegistryConnection.InvokeAsync(new Oci.DataConnectivity.GetRegistryConnectionArgs
-        ///         {
-        ///             ConnectionKey = @var.Registry_connection_connection_key,
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///         }));
-        ///     }
+        ///         ConnectionKey = @var.Registry_connection_connection_key,
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistryConnectionArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryConnectionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The connection key.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryConnectionArgs()
         {
         }
+        public static new GetRegistryConnectionArgs Empty => new GetRegistryConnectionArgs();
     }
 
-    public sealed class GetRegistryConnectionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryConnectionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The connection key.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryConnectionInvokeArgs()
         {
         }
+        public static new GetRegistryConnectionInvokeArgs Empty => new GetRegistryConnectionInvokeArgs();
     }
 
 

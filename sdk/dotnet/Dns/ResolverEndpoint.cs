@@ -17,28 +17,26 @@ namespace Pulumi.Oci.Dns
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testResolverEndpoint = new Oci.Dns.ResolverEndpoint("testResolverEndpoint", new()
     ///     {
-    ///         var testResolverEndpoint = new Oci.Dns.ResolverEndpoint("testResolverEndpoint", new Oci.Dns.ResolverEndpointArgs
-    ///         {
-    ///             IsForwarding = @var.Resolver_endpoint_is_forwarding,
-    ///             IsListening = @var.Resolver_endpoint_is_listening,
-    ///             ResolverId = oci_dns_resolver.Test_resolver.Id,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             Scope = "PRIVATE",
-    ///             EndpointType = @var.Resolver_endpoint_endpoint_type,
-    ///             ForwardingAddress = @var.Resolver_endpoint_forwarding_address,
-    ///             ListeningAddress = @var.Resolver_endpoint_listening_address,
-    ///             NsgIds = @var.Resolver_endpoint_nsg_ids,
-    ///         });
-    ///     }
+    ///         IsForwarding = @var.Resolver_endpoint_is_forwarding,
+    ///         IsListening = @var.Resolver_endpoint_is_listening,
+    ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         Scope = "PRIVATE",
+    ///         EndpointType = @var.Resolver_endpoint_endpoint_type,
+    ///         ForwardingAddress = @var.Resolver_endpoint_forwarding_address,
+    ///         ListeningAddress = @var.Resolver_endpoint_listening_address,
+    ///         NsgIds = @var.Resolver_endpoint_nsg_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.Dns
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/resolverEndpoint:ResolverEndpoint")]
-    public partial class ResolverEndpoint : Pulumi.CustomResource
+    public partial class ResolverEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
@@ -192,7 +190,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class ResolverEndpointArgs : Pulumi.ResourceArgs
+    public sealed class ResolverEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
@@ -263,9 +261,10 @@ namespace Pulumi.Oci.Dns
         public ResolverEndpointArgs()
         {
         }
+        public static new ResolverEndpointArgs Empty => new ResolverEndpointArgs();
     }
 
-    public sealed class ResolverEndpointState : Pulumi.ResourceArgs
+    public sealed class ResolverEndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
@@ -366,5 +365,6 @@ namespace Pulumi.Oci.Dns
         public ResolverEndpointState()
         {
         }
+        public static new ResolverEndpointState Empty => new ResolverEndpointState();
     }
 }

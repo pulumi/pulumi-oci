@@ -17,29 +17,27 @@ namespace Pulumi.Oci.Adm
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testKnowledgeBase = new Oci.Adm.KnowledgeBase("testKnowledgeBase", new()
     ///     {
-    ///         var testKnowledgeBase = new Oci.Adm.KnowledgeBase("testKnowledgeBase", new Oci.Adm.KnowledgeBaseArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Knowledge_base_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Knowledge_base_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.Adm
     /// ```
     /// </summary>
     [OciResourceType("oci:Adm/knowledgeBase:KnowledgeBase")]
-    public partial class KnowledgeBase : Pulumi.CustomResource
+    public partial class KnowledgeBase : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
@@ -145,7 +143,7 @@ namespace Pulumi.Oci.Adm
         }
     }
 
-    public sealed class KnowledgeBaseArgs : Pulumi.ResourceArgs
+    public sealed class KnowledgeBaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
@@ -186,9 +184,10 @@ namespace Pulumi.Oci.Adm
         public KnowledgeBaseArgs()
         {
         }
+        public static new KnowledgeBaseArgs Empty => new KnowledgeBaseArgs();
     }
 
-    public sealed class KnowledgeBaseState : Pulumi.ResourceArgs
+    public sealed class KnowledgeBaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
@@ -259,5 +258,6 @@ namespace Pulumi.Oci.Adm
         public KnowledgeBaseState()
         {
         }
+        public static new KnowledgeBaseState Empty => new KnowledgeBaseState();
     }
 }

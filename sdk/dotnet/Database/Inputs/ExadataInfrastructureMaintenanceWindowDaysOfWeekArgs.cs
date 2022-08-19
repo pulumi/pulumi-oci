@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs : Pulumi.ResourceArgs
+    public sealed class ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the month of the year.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Database.Inputs
         public ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs()
         {
         }
+        public static new ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs Empty => new ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs();
     }
 }

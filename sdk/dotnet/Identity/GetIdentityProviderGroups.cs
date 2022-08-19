@@ -24,22 +24,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIdentityProviderGroups = Oci.Identity.GetIdentityProviderGroups.Invoke(new()
         ///     {
-        ///         var testIdentityProviderGroups = Output.Create(Oci.Identity.GetIdentityProviderGroups.InvokeAsync(new Oci.Identity.GetIdentityProviderGroupsArgs
-        ///         {
-        ///             IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-        ///             Name = @var.Identity_provider_group_name,
-        ///             State = @var.Identity_provider_group_state,
-        ///         }));
-        ///     }
+        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///         Name = @var.Identity_provider_group_name,
+        ///         State = @var.Identity_provider_group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,22 +58,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIdentityProviderGroups = Oci.Identity.GetIdentityProviderGroups.Invoke(new()
         ///     {
-        ///         var testIdentityProviderGroups = Output.Create(Oci.Identity.GetIdentityProviderGroups.InvokeAsync(new Oci.Identity.GetIdentityProviderGroupsArgs
-        ///         {
-        ///             IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-        ///             Name = @var.Identity_provider_group_name,
-        ///             State = @var.Identity_provider_group_state,
-        ///         }));
-        ///     }
+        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///         Name = @var.Identity_provider_group_name,
+        ///         State = @var.Identity_provider_group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetIdentityProviderGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetIdentityProviderGroupsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetIdentityProviderGroupsFilterArgs>? _filters;
@@ -116,9 +112,10 @@ namespace Pulumi.Oci.Identity
         public GetIdentityProviderGroupsArgs()
         {
         }
+        public static new GetIdentityProviderGroupsArgs Empty => new GetIdentityProviderGroupsArgs();
     }
 
-    public sealed class GetIdentityProviderGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIdentityProviderGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetIdentityProviderGroupsFilterInputArgs>? _filters;
@@ -149,6 +146,7 @@ namespace Pulumi.Oci.Identity
         public GetIdentityProviderGroupsInvokeArgs()
         {
         }
+        public static new GetIdentityProviderGroupsInvokeArgs Empty => new GetIdentityProviderGroupsInvokeArgs();
     }
 
 

@@ -23,22 +23,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDedicatedVmHostInstanceShapes = Oci.Core.GetDedicatedVmHostInstanceShapes.Invoke(new()
         ///     {
-        ///         var testDedicatedVmHostInstanceShapes = Output.Create(Oci.Core.GetDedicatedVmHostInstanceShapes.InvokeAsync(new Oci.Core.GetDedicatedVmHostInstanceShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Dedicated_vm_host_instance_shape_availability_domain,
-        ///             DedicatedVmHostShape = @var.Dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Dedicated_vm_host_instance_shape_availability_domain,
+        ///         DedicatedVmHostShape = @var.Dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDedicatedVmHostInstanceShapes = Oci.Core.GetDedicatedVmHostInstanceShapes.Invoke(new()
         ///     {
-        ///         var testDedicatedVmHostInstanceShapes = Output.Create(Oci.Core.GetDedicatedVmHostInstanceShapes.InvokeAsync(new Oci.Core.GetDedicatedVmHostInstanceShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Dedicated_vm_host_instance_shape_availability_domain,
-        ///             DedicatedVmHostShape = @var.Dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Dedicated_vm_host_instance_shape_availability_domain,
+        ///         DedicatedVmHostShape = @var.Dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDedicatedVmHostInstanceShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVmHostInstanceShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.Core
         public GetDedicatedVmHostInstanceShapesArgs()
         {
         }
+        public static new GetDedicatedVmHostInstanceShapesArgs Empty => new GetDedicatedVmHostInstanceShapesArgs();
     }
 
-    public sealed class GetDedicatedVmHostInstanceShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVmHostInstanceShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.Core
         public GetDedicatedVmHostInstanceShapesInvokeArgs()
         {
         }
+        public static new GetDedicatedVmHostInstanceShapesInvokeArgs Empty => new GetDedicatedVmHostInstanceShapesInvokeArgs();
     }
 
 

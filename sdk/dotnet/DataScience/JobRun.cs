@@ -17,46 +17,44 @@ namespace Pulumi.Oci.DataScience
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testJobRun = new Oci.DataScience.JobRun("testJobRun", new()
     ///     {
-    ///         var testJobRun = new Oci.DataScience.JobRun("testJobRun", new Oci.DataScience.JobRunArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         JobId = oci_datascience_job.Test_job.Id,
+    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         Asynchronous = @var.Asynchronous,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             JobId = oci_datascience_job.Test_job.Id,
-    ///             ProjectId = oci_datascience_project.Test_project.Id,
-    ///             Asynchronous = @var.Asynchronous,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Job_run_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             JobConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobConfigurationOverrideDetailsArgs
-    ///             {
-    ///                 JobType = @var.Job_run_job_configuration_override_details_job_type,
-    ///                 CommandLineArguments = @var.Job_run_job_configuration_override_details_command_line_arguments,
-    ///                 EnvironmentVariables = @var.Job_run_job_configuration_override_details_environment_variables,
-    ///                 MaximumRuntimeInMinutes = @var.Job_run_job_configuration_override_details_maximum_runtime_in_minutes,
-    ///             },
-    ///             JobLogConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobLogConfigurationOverrideDetailsArgs
-    ///             {
-    ///                 EnableAutoLogCreation = @var.Job_run_job_log_configuration_override_details_enable_auto_log_creation,
-    ///                 EnableLogging = @var.Job_run_job_log_configuration_override_details_enable_logging,
-    ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///                 LogId = oci_logging_log.Test_log.Id,
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Job_run_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         JobConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobConfigurationOverrideDetailsArgs
+    ///         {
+    ///             JobType = @var.Job_run_job_configuration_override_details_job_type,
+    ///             CommandLineArguments = @var.Job_run_job_configuration_override_details_command_line_arguments,
+    ///             EnvironmentVariables = @var.Job_run_job_configuration_override_details_environment_variables,
+    ///             MaximumRuntimeInMinutes = @var.Job_run_job_configuration_override_details_maximum_runtime_in_minutes,
+    ///         },
+    ///         JobLogConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobLogConfigurationOverrideDetailsArgs
+    ///         {
+    ///             EnableAutoLogCreation = @var.Job_run_job_log_configuration_override_details_enable_auto_log_creation,
+    ///             EnableLogging = @var.Job_run_job_log_configuration_override_details_enable_logging,
+    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///             LogId = oci_logging_log.Test_log.Id,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -68,7 +66,7 @@ namespace Pulumi.Oci.DataScience
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/jobRun:JobRun")]
-    public partial class JobRun : Pulumi.CustomResource
+    public partial class JobRun : global::Pulumi.CustomResource
     {
         /// <summary>
         /// If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
@@ -216,7 +214,7 @@ namespace Pulumi.Oci.DataScience
         }
     }
 
-    public sealed class JobRunArgs : Pulumi.ResourceArgs
+    public sealed class JobRunArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
@@ -287,9 +285,10 @@ namespace Pulumi.Oci.DataScience
         public JobRunArgs()
         {
         }
+        public static new JobRunArgs Empty => new JobRunArgs();
     }
 
-    public sealed class JobRunState : Pulumi.ResourceArgs
+    public sealed class JobRunState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
@@ -420,5 +419,6 @@ namespace Pulumi.Oci.DataScience
         public JobRunState()
         {
         }
+        public static new JobRunState Empty => new JobRunState();
     }
 }

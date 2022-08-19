@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesGetArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesGetArgs Empty => new DeploymentSpecificationRouteRequestPoliciesGetArgs();
     }
 }

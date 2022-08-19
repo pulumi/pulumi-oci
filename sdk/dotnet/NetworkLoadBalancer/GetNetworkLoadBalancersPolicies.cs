@@ -21,17 +21,15 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testNetworkLoadBalancersPolicies = Output.Create(Oci.NetworkLoadBalancer.GetNetworkLoadBalancersPolicies.InvokeAsync());
-        ///     }
+        ///     var testNetworkLoadBalancersPolicies = Oci.NetworkLoadBalancer.GetNetworkLoadBalancersPolicies.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -49,17 +47,15 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testNetworkLoadBalancersPolicies = Output.Create(Oci.NetworkLoadBalancer.GetNetworkLoadBalancersPolicies.InvokeAsync());
-        ///     }
+        ///     var testNetworkLoadBalancersPolicies = Oci.NetworkLoadBalancer.GetNetworkLoadBalancersPolicies.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -69,7 +65,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     }
 
 
-    public sealed class GetNetworkLoadBalancersPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkLoadBalancersPoliciesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetNetworkLoadBalancersPoliciesFilterArgs>? _filters;
@@ -82,9 +78,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetNetworkLoadBalancersPoliciesArgs()
         {
         }
+        public static new GetNetworkLoadBalancersPoliciesArgs Empty => new GetNetworkLoadBalancersPoliciesArgs();
     }
 
-    public sealed class GetNetworkLoadBalancersPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkLoadBalancersPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetNetworkLoadBalancersPoliciesFilterInputArgs>? _filters;
@@ -97,6 +94,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetNetworkLoadBalancersPoliciesInvokeArgs()
         {
         }
+        public static new GetNetworkLoadBalancersPoliciesInvokeArgs Empty => new GetNetworkLoadBalancersPoliciesInvokeArgs();
     }
 
 

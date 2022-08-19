@@ -21,6 +21,47 @@ import javax.annotation.Nullable;
  * Updates authentication policy for the specified tenancy
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.AuthenticationPolicy;
+ * import com.pulumi.oci.Identity.AuthenticationPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.AuthenticationPolicyNetworkPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.AuthenticationPolicyPasswordPolicyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAuthenticationPolicy = new AuthenticationPolicy(&#34;testAuthenticationPolicy&#34;, AuthenticationPolicyArgs.builder()        
+ *             .compartmentId(var_.tenancy_ocid())
+ *             .networkPolicy(AuthenticationPolicyNetworkPolicyArgs.builder()
+ *                 .networkSourceIds(var_.authentication_policy_network_policy_network_source_ids())
+ *                 .build())
+ *             .passwordPolicy(AuthenticationPolicyPasswordPolicyArgs.builder()
+ *                 .isLowercaseCharactersRequired(var_.authentication_policy_password_policy_is_lowercase_characters_required())
+ *                 .isNumericCharactersRequired(var_.authentication_policy_password_policy_is_numeric_characters_required())
+ *                 .isSpecialCharactersRequired(var_.authentication_policy_password_policy_is_special_characters_required())
+ *                 .isUppercaseCharactersRequired(var_.authentication_policy_password_policy_is_uppercase_characters_required())
+ *                 .isUsernameContainmentAllowed(var_.authentication_policy_password_policy_is_username_containment_allowed())
+ *                 .minimumPasswordLength(var_.authentication_policy_password_policy_minimum_password_length())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

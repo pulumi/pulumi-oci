@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseInsight = Oci.Opsi.GetDatabaseInsight.Invoke(new()
         ///     {
-        ///         var testDatabaseInsight = Output.Create(Oci.Opsi.GetDatabaseInsight.InvokeAsync(new Oci.Opsi.GetDatabaseInsightArgs
-        ///         {
-        ///             DatabaseInsightId = oci_opsi_database_insight.Test_database_insight.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseInsightId = oci_opsi_database_insight.Test_database_insight.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseInsight = Oci.Opsi.GetDatabaseInsight.Invoke(new()
         ///     {
-        ///         var testDatabaseInsight = Output.Create(Oci.Opsi.GetDatabaseInsight.InvokeAsync(new Oci.Opsi.GetDatabaseInsightArgs
-        ///         {
-        ///             DatabaseInsightId = oci_opsi_database_insight.Test_database_insight.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseInsightId = oci_opsi_database_insight.Test_database_insight.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetDatabaseInsightArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseInsightArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique database insight identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Opsi
         public GetDatabaseInsightArgs()
         {
         }
+        public static new GetDatabaseInsightArgs Empty => new GetDatabaseInsightArgs();
     }
 
-    public sealed class GetDatabaseInsightInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseInsightInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique database insight identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Opsi
         public GetDatabaseInsightInvokeArgs()
         {
         }
+        public static new GetDatabaseInsightInvokeArgs Empty => new GetDatabaseInsightInvokeArgs();
     }
 
 

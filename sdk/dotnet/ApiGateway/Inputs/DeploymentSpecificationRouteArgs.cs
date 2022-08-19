@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The backend to forward requests to.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteArgs()
         {
         }
+        public static new DeploymentSpecificationRouteArgs Empty => new DeploymentSpecificationRouteArgs();
     }
 }

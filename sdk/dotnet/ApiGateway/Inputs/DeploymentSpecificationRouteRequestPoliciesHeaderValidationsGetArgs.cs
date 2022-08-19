@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("headers")]
         private InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderGetArgs>? _headers;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesHeaderValidationsGetArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesHeaderValidationsGetArgs Empty => new DeploymentSpecificationRouteRequestPoliciesHeaderValidationsGetArgs();
     }
 }

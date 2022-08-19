@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImageShapes = Oci.Core.GetImageShapes.Invoke(new()
         ///     {
-        ///         var testImageShapes = Output.Create(Oci.Core.GetImageShapes.InvokeAsync(new Oci.Core.GetImageShapesArgs
-        ///         {
-        ///             ImageId = oci_core_image.Test_image.Id,
-        ///         }));
-        ///     }
+        ///         ImageId = oci_core_image.Test_image.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImageShapes = Oci.Core.GetImageShapes.Invoke(new()
         ///     {
-        ///         var testImageShapes = Output.Create(Oci.Core.GetImageShapes.InvokeAsync(new Oci.Core.GetImageShapesArgs
-        ///         {
-        ///             ImageId = oci_core_image.Test_image.Id,
-        ///         }));
-        ///     }
+        ///         ImageId = oci_core_image.Test_image.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetImageShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetImageShapesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetImageShapesFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Core
         public GetImageShapesArgs()
         {
         }
+        public static new GetImageShapesArgs Empty => new GetImageShapesArgs();
     }
 
-    public sealed class GetImageShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetImageShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetImageShapesFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Core
         public GetImageShapesInvokeArgs()
         {
         }
+        public static new GetImageShapesInvokeArgs Empty => new GetImageShapesInvokeArgs();
     }
 
 

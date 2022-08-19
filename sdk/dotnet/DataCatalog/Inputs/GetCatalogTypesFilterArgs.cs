@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog.Inputs
 {
 
-    public sealed class GetCatalogTypesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCatalogTypesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Immutable resource name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataCatalog.Inputs
         public GetCatalogTypesFilterInputArgs()
         {
         }
+        public static new GetCatalogTypesFilterInputArgs Empty => new GetCatalogTypesFilterInputArgs();
     }
 }

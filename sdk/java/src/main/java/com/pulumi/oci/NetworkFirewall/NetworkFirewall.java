@@ -22,6 +22,43 @@ import javax.annotation.Nullable;
  * Creates a new NetworkFirewall.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkFirewall.NetworkFirewall;
+ * import com.pulumi.oci.NetworkFirewall.NetworkFirewallArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkFirewall = new NetworkFirewall(&#34;testNetworkFirewall&#34;, NetworkFirewallArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .availabilityDomain(var_.network_firewall_availability_domain())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.network_firewall_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .ipv4address(var_.network_firewall_ipv4address())
+ *             .ipv6address(var_.network_firewall_ipv6address())
+ *             .networkSecurityGroupIds(var_.network_firewall_network_security_group_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

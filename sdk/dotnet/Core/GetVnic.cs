@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVnic = Oci.Core.GetVnic.Invoke(new()
         ///     {
-        ///         var testVnic = Output.Create(Oci.Core.GetVnic.InvokeAsync(new Oci.Core.GetVnicArgs
-        ///         {
-        ///             VnicId = oci_core_vnic.Test_vnic.Id,
-        ///         }));
-        ///     }
+        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVnic = Oci.Core.GetVnic.Invoke(new()
         ///     {
-        ///         var testVnic = Output.Create(Oci.Core.GetVnic.InvokeAsync(new Oci.Core.GetVnicArgs
-        ///         {
-        ///             VnicId = oci_core_vnic.Test_vnic.Id,
-        ///         }));
-        ///     }
+        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVnicArgs : Pulumi.InvokeArgs
+    public sealed class GetVnicArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Core
         public GetVnicArgs()
         {
         }
+        public static new GetVnicArgs Empty => new GetVnicArgs();
     }
 
-    public sealed class GetVnicInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVnicInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
@@ -107,6 +104,7 @@ namespace Pulumi.Oci.Core
         public GetVnicInvokeArgs()
         {
         }
+        public static new GetVnicInvokeArgs Empty => new GetVnicInvokeArgs();
     }
 
 

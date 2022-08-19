@@ -34,23 +34,21 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditEvents = Oci.DataSafe.GetAuditEvents.Invoke(new()
         ///     {
-        ///         var testAuditEvents = Output.Create(Oci.DataSafe.GetAuditEvents.InvokeAsync(new Oci.DataSafe.GetAuditEventsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_event_access_level,
-        ///             CompartmentIdInSubtree = @var.Audit_event_compartment_id_in_subtree,
-        ///             ScimQuery = @var.Audit_event_scim_query,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_event_access_level,
+        ///         CompartmentIdInSubtree = @var.Audit_event_compartment_id_in_subtree,
+        ///         ScimQuery = @var.Audit_event_scim_query,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,23 +79,21 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditEvents = Oci.DataSafe.GetAuditEvents.Invoke(new()
         ///     {
-        ///         var testAuditEvents = Output.Create(Oci.DataSafe.GetAuditEvents.InvokeAsync(new Oci.DataSafe.GetAuditEventsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_event_access_level,
-        ///             CompartmentIdInSubtree = @var.Audit_event_compartment_id_in_subtree,
-        ///             ScimQuery = @var.Audit_event_scim_query,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_event_access_level,
+        ///         CompartmentIdInSubtree = @var.Audit_event_compartment_id_in_subtree,
+        ///         ScimQuery = @var.Audit_event_scim_query,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -107,7 +103,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditEventsArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditEventsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -144,9 +140,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditEventsArgs()
         {
         }
+        public static new GetAuditEventsArgs Empty => new GetAuditEventsArgs();
     }
 
-    public sealed class GetAuditEventsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditEventsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -183,6 +180,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditEventsInvokeArgs()
         {
         }
+        public static new GetAuditEventsInvokeArgs Empty => new GetAuditEventsInvokeArgs();
     }
 
 

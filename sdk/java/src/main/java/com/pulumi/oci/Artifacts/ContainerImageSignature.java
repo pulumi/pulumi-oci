@@ -19,6 +19,40 @@ import javax.annotation.Nullable;
  * Upload a signature to an image.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Artifacts.ContainerImageSignature;
+ * import com.pulumi.oci.Artifacts.ContainerImageSignatureArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testContainerImageSignature = new ContainerImageSignature(&#34;testContainerImageSignature&#34;, ContainerImageSignatureArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .imageId(oci_core_image.test_image().id())
+ *             .kmsKeyId(oci_kms_key.test_key().id())
+ *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+ *             .message(var_.container_image_signature_message())
+ *             .signature(var_.container_image_signature_signature())
+ *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

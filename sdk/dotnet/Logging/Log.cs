@@ -18,43 +18,41 @@ namespace Pulumi.Oci.Logging
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLog = new Oci.Logging.Log("testLog", new()
     ///     {
-    ///         var testLog = new Oci.Logging.Log("testLog", new Oci.Logging.LogArgs
+    ///         DisplayName = @var.Log_display_name,
+    ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///         LogType = @var.Log_log_type,
+    ///         Configuration = new Oci.Logging.Inputs.LogConfigurationArgs
     ///         {
-    ///             DisplayName = @var.Log_display_name,
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogType = @var.Log_log_type,
-    ///             Configuration = new Oci.Logging.Inputs.LogConfigurationArgs
+    ///             Source = new Oci.Logging.Inputs.LogConfigurationSourceArgs
     ///             {
-    ///                 Source = new Oci.Logging.Inputs.LogConfigurationSourceArgs
-    ///                 {
-    ///                     Category = @var.Log_configuration_source_category,
-    ///                     Resource = @var.Log_configuration_source_resource,
-    ///                     Service = @var.Log_configuration_source_service,
-    ///                     SourceType = @var.Log_configuration_source_source_type,
-    ///                 },
-    ///                 CompartmentId = @var.Compartment_id,
+    ///                 Category = @var.Log_configuration_source_category,
+    ///                 Resource = @var.Log_configuration_source_resource,
+    ///                 Service = @var.Log_configuration_source_service,
+    ///                 SourceType = @var.Log_configuration_source_source_type,
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsEnabled = @var.Log_is_enabled,
-    ///             RetentionDuration = @var.Log_retention_duration,
-    ///         });
-    ///     }
+    ///             CompartmentId = @var.Compartment_id,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsEnabled = @var.Log_is_enabled,
+    ///         RetentionDuration = @var.Log_retention_duration,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -66,7 +64,7 @@ namespace Pulumi.Oci.Logging
     /// ```
     /// </summary>
     [OciResourceType("oci:Logging/log:Log")]
-    public partial class Log : Pulumi.CustomResource
+    public partial class Log : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment that the resource belongs to.
@@ -190,7 +188,7 @@ namespace Pulumi.Oci.Logging
         }
     }
 
-    public sealed class LogArgs : Pulumi.ResourceArgs
+    public sealed class LogArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Log object configuration.
@@ -255,9 +253,10 @@ namespace Pulumi.Oci.Logging
         public LogArgs()
         {
         }
+        public static new LogArgs Empty => new LogArgs();
     }
 
-    public sealed class LogState : Pulumi.ResourceArgs
+    public sealed class LogState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment that the resource belongs to.
@@ -352,5 +351,6 @@ namespace Pulumi.Oci.Logging
         public LogState()
         {
         }
+        public static new LogState Empty => new LogState();
     }
 }

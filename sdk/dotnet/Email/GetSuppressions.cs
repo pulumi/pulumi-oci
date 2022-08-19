@@ -24,23 +24,21 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSuppressions = Oci.Email.GetSuppressions.Invoke(new()
         ///     {
-        ///         var testSuppressions = Output.Create(Oci.Email.GetSuppressions.InvokeAsync(new Oci.Email.GetSuppressionsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             EmailAddress = @var.Suppression_email_address,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Suppression_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Suppression_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         EmailAddress = @var.Suppression_email_address,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Suppression_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Suppression_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.Email
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSuppressions = Oci.Email.GetSuppressions.Invoke(new()
         ///     {
-        ///         var testSuppressions = Output.Create(Oci.Email.GetSuppressions.InvokeAsync(new Oci.Email.GetSuppressionsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             EmailAddress = @var.Suppression_email_address,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Suppression_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Suppression_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         EmailAddress = @var.Suppression_email_address,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Suppression_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Suppression_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Email
     }
 
 
-    public sealed class GetSuppressionsArgs : Pulumi.InvokeArgs
+    public sealed class GetSuppressionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID for the compartment.
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.Email
         public GetSuppressionsArgs()
         {
         }
+        public static new GetSuppressionsArgs Empty => new GetSuppressionsArgs();
     }
 
-    public sealed class GetSuppressionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSuppressionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID for the compartment.
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.Email
         public GetSuppressionsInvokeArgs()
         {
         }
+        public static new GetSuppressionsInvokeArgs Empty => new GetSuppressionsInvokeArgs();
     }
 
 

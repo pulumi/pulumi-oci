@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms.Inputs
 {
 
-    public sealed class GetFleetsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetFleetsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Jms.Inputs
         public GetFleetsFilterArgs()
         {
         }
+        public static new GetFleetsFilterArgs Empty => new GetFleetsFilterArgs();
     }
 }

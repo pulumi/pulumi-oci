@@ -21,22 +21,20 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAgents = Oci.DatabaseMigration.GetAgents.Invoke(new()
         ///     {
-        ///         var testAgents = Output.Create(Oci.DatabaseMigration.GetAgents.InvokeAsync(new Oci.DatabaseMigration.GetAgentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Agent_display_name,
-        ///             State = @var.Agent_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Agent_display_name,
+        ///         State = @var.Agent_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAgents = Oci.DatabaseMigration.GetAgents.Invoke(new()
         ///     {
-        ///         var testAgents = Output.Create(Oci.DatabaseMigration.GetAgents.InvokeAsync(new Oci.DatabaseMigration.GetAgentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Agent_display_name,
-        ///             State = @var.Agent_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Agent_display_name,
+        ///         State = @var.Agent_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetAgentsArgs : Pulumi.InvokeArgs
+    public sealed class GetAgentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetAgentsArgs()
         {
         }
+        public static new GetAgentsArgs Empty => new GetAgentsArgs();
     }
 
-    public sealed class GetAgentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAgentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetAgentsInvokeArgs()
         {
         }
+        public static new GetAgentsInvokeArgs Empty => new GetAgentsInvokeArgs();
     }
 
 

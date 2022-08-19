@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsSecondaryVnicArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsSecondaryVnicArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsSecondaryVnicArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsSecondaryVnicArgs Empty => new InstanceConfigurationInstanceDetailsSecondaryVnicArgs();
     }
 }

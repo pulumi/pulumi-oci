@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGiVersions = Oci.Database.GetGiVersions.Invoke(new()
         ///     {
-        ///         var testGiVersions = Output.Create(Oci.Database.GetGiVersions.InvokeAsync(new Oci.Database.GetGiVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Shape = @var.Gi_version_shape,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Shape = @var.Gi_version_shape,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGiVersions = Oci.Database.GetGiVersions.Invoke(new()
         ///     {
-        ///         var testGiVersions = Output.Create(Oci.Database.GetGiVersions.InvokeAsync(new Oci.Database.GetGiVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Shape = @var.Gi_version_shape,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Shape = @var.Gi_version_shape,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetGiVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetGiVersionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Database
         public GetGiVersionsArgs()
         {
         }
+        public static new GetGiVersionsArgs Empty => new GetGiVersionsArgs();
     }
 
-    public sealed class GetGiVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGiVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Database
         public GetGiVersionsInvokeArgs()
         {
         }
+        public static new GetGiVersionsInvokeArgs Empty => new GetGiVersionsInvokeArgs();
     }
 
 

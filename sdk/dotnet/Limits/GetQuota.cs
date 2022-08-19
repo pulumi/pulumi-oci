@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQuota = Oci.Limits.GetQuota.Invoke(new()
         ///     {
-        ///         var testQuota = Output.Create(Oci.Limits.GetQuota.InvokeAsync(new Oci.Limits.GetQuotaArgs
-        ///         {
-        ///             QuotaId = oci_limits_quota.Test_quota.Id,
-        ///         }));
-        ///     }
+        ///         QuotaId = oci_limits_quota.Test_quota.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQuota = Oci.Limits.GetQuota.Invoke(new()
         ///     {
-        ///         var testQuota = Output.Create(Oci.Limits.GetQuota.InvokeAsync(new Oci.Limits.GetQuotaArgs
-        ///         {
-        ///             QuotaId = oci_limits_quota.Test_quota.Id,
-        ///         }));
-        ///     }
+        ///         QuotaId = oci_limits_quota.Test_quota.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Limits
     }
 
 
-    public sealed class GetQuotaArgs : Pulumi.InvokeArgs
+    public sealed class GetQuotaArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the quota.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Limits
         public GetQuotaArgs()
         {
         }
+        public static new GetQuotaArgs Empty => new GetQuotaArgs();
     }
 
-    public sealed class GetQuotaInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetQuotaInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the quota.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Limits
         public GetQuotaInvokeArgs()
         {
         }
+        public static new GetQuotaInvokeArgs Empty => new GetQuotaInvokeArgs();
     }
 
 

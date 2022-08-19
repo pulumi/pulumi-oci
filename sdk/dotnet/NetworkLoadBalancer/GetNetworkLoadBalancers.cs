@@ -22,22 +22,20 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkLoadBalancers = Oci.NetworkLoadBalancer.GetNetworkLoadBalancers.Invoke(new()
         ///     {
-        ///         var testNetworkLoadBalancers = Output.Create(Oci.NetworkLoadBalancer.GetNetworkLoadBalancers.InvokeAsync(new Oci.NetworkLoadBalancer.GetNetworkLoadBalancersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Network_load_balancer_display_name,
-        ///             State = @var.Network_load_balancer_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Network_load_balancer_display_name,
+        ///         State = @var.Network_load_balancer_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkLoadBalancers = Oci.NetworkLoadBalancer.GetNetworkLoadBalancers.Invoke(new()
         ///     {
-        ///         var testNetworkLoadBalancers = Output.Create(Oci.NetworkLoadBalancer.GetNetworkLoadBalancers.InvokeAsync(new Oci.NetworkLoadBalancer.GetNetworkLoadBalancersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Network_load_balancer_display_name,
-        ///             State = @var.Network_load_balancer_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Network_load_balancer_display_name,
+        ///         State = @var.Network_load_balancer_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     }
 
 
-    public sealed class GetNetworkLoadBalancersArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkLoadBalancersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetNetworkLoadBalancersArgs()
         {
         }
+        public static new GetNetworkLoadBalancersArgs Empty => new GetNetworkLoadBalancersArgs();
     }
 
-    public sealed class GetNetworkLoadBalancersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkLoadBalancersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetNetworkLoadBalancersInvokeArgs()
         {
         }
+        public static new GetNetworkLoadBalancersInvokeArgs Empty => new GetNetworkLoadBalancersInvokeArgs();
     }
 
 

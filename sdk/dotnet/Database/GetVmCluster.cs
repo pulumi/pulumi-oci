@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmCluster = Oci.Database.GetVmCluster.Invoke(new()
         ///     {
-        ///         var testVmCluster = Output.Create(Oci.Database.GetVmCluster.InvokeAsync(new Oci.Database.GetVmClusterArgs
-        ///         {
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmCluster = Oci.Database.GetVmCluster.Invoke(new()
         ///     {
-        ///         var testVmCluster = Output.Create(Oci.Database.GetVmCluster.InvokeAsync(new Oci.Database.GetVmClusterArgs
-        ///         {
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetVmClusterArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Database
         public GetVmClusterArgs()
         {
         }
+        public static new GetVmClusterArgs Empty => new GetVmClusterArgs();
     }
 
-    public sealed class GetVmClusterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Database
         public GetVmClusterInvokeArgs()
         {
         }
+        public static new GetVmClusterInvokeArgs Empty => new GetVmClusterInvokeArgs();
     }
 
 

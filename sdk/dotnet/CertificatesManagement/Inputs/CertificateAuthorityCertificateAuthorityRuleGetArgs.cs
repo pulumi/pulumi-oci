@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateAuthorityCertificateAuthorityRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateAuthorityCertificateAuthorityRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateAuthorityCertificateAuthorityRuleGetArgs()
         {
         }
+        public static new CertificateAuthorityCertificateAuthorityRuleGetArgs Empty => new CertificateAuthorityCertificateAuthorityRuleGetArgs();
     }
 }

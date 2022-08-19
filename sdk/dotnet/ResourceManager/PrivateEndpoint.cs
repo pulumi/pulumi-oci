@@ -17,35 +17,33 @@ namespace Pulumi.Oci.ResourceManager
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPrivateEndpoint = new Oci.ResourceManager.PrivateEndpoint("testPrivateEndpoint", new()
     ///     {
-    ///         var testPrivateEndpoint = new Oci.ResourceManager.PrivateEndpoint("testPrivateEndpoint", new Oci.ResourceManager.PrivateEndpointArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Private_endpoint_display_name,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Private_endpoint_display_name,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Private_endpoint_description,
-    ///             DnsZones = @var.Private_endpoint_dns_zones,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsUsedWithConfigurationSourceProvider = @var.Private_endpoint_is_used_with_configuration_source_provider,
-    ///             NsgIdLists = @var.Private_endpoint_nsg_id_list,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Private_endpoint_description,
+    ///         DnsZones = @var.Private_endpoint_dns_zones,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsUsedWithConfigurationSourceProvider = @var.Private_endpoint_is_used_with_configuration_source_provider,
+    ///         NsgIdLists = @var.Private_endpoint_nsg_id_list,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.ResourceManager
     /// ```
     /// </summary>
     [OciResourceType("oci:ResourceManager/privateEndpoint:PrivateEndpoint")]
-    public partial class PrivateEndpoint : Pulumi.CustomResource
+    public partial class PrivateEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
@@ -181,7 +179,7 @@ namespace Pulumi.Oci.ResourceManager
         }
     }
 
-    public sealed class PrivateEndpointArgs : Pulumi.ResourceArgs
+    public sealed class PrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
@@ -270,9 +268,10 @@ namespace Pulumi.Oci.ResourceManager
         public PrivateEndpointArgs()
         {
         }
+        public static new PrivateEndpointArgs Empty => new PrivateEndpointArgs();
     }
 
-    public sealed class PrivateEndpointState : Pulumi.ResourceArgs
+    public sealed class PrivateEndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
@@ -385,5 +384,6 @@ namespace Pulumi.Oci.ResourceManager
         public PrivateEndpointState()
         {
         }
+        public static new PrivateEndpointState Empty => new PrivateEndpointState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class TargetTargetResponderRecipeArgs : Pulumi.ResourceArgs
+    public sealed class TargetTargetResponderRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) compartment associated with condition
@@ -87,5 +87,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public TargetTargetResponderRecipeArgs()
         {
         }
+        public static new TargetTargetResponderRecipeArgs Empty => new TargetTargetResponderRecipeArgs();
     }
 }

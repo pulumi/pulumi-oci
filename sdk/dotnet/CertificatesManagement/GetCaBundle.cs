@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCaBundle = Oci.CertificatesManagement.GetCaBundle.Invoke(new()
         ///     {
-        ///         var testCaBundle = Output.Create(Oci.CertificatesManagement.GetCaBundle.InvokeAsync(new Oci.CertificatesManagement.GetCaBundleArgs
-        ///         {
-        ///             CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-        ///         }));
-        ///     }
+        ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCaBundle = Oci.CertificatesManagement.GetCaBundle.Invoke(new()
         ///     {
-        ///         var testCaBundle = Output.Create(Oci.CertificatesManagement.GetCaBundle.InvokeAsync(new Oci.CertificatesManagement.GetCaBundleArgs
-        ///         {
-        ///             CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-        ///         }));
-        ///     }
+        ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CertificatesManagement
     }
 
 
-    public sealed class GetCaBundleArgs : Pulumi.InvokeArgs
+    public sealed class GetCaBundleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the CA bundle.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCaBundleArgs()
         {
         }
+        public static new GetCaBundleArgs Empty => new GetCaBundleArgs();
     }
 
-    public sealed class GetCaBundleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCaBundleInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the CA bundle.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCaBundleInvokeArgs()
         {
         }
+        public static new GetCaBundleInvokeArgs Empty => new GetCaBundleInvokeArgs();
     }
 
 

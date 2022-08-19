@@ -17,31 +17,29 @@ namespace Pulumi.Oci.Apm
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testApmDomain = new Oci.Apm.ApmDomain("testApmDomain", new()
     ///     {
-    ///         var testApmDomain = new Oci.Apm.ApmDomain("testApmDomain", new Oci.Apm.ApmDomainArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Apm_domain_display_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Apm_domain_display_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Apm_domain_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsFreeTier = @var.Apm_domain_is_free_tier,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Apm_domain_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsFreeTier = @var.Apm_domain_is_free_tier,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.Apm
     /// ```
     /// </summary>
     [OciResourceType("oci:Apm/apmDomain:ApmDomain")]
-    public partial class ApmDomain : Pulumi.CustomResource
+    public partial class ApmDomain : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment corresponding to the APM domain.
@@ -159,7 +157,7 @@ namespace Pulumi.Oci.Apm
         }
     }
 
-    public sealed class ApmDomainArgs : Pulumi.ResourceArgs
+    public sealed class ApmDomainArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment corresponding to the APM domain.
@@ -212,9 +210,10 @@ namespace Pulumi.Oci.Apm
         public ApmDomainArgs()
         {
         }
+        public static new ApmDomainArgs Empty => new ApmDomainArgs();
     }
 
-    public sealed class ApmDomainState : Pulumi.ResourceArgs
+    public sealed class ApmDomainState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment corresponding to the APM domain.
@@ -291,5 +290,6 @@ namespace Pulumi.Oci.Apm
         public ApmDomainState()
         {
         }
+        public static new ApmDomainState Empty => new ApmDomainState();
     }
 }

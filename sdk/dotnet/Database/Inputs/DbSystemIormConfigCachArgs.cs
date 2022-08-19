@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DbSystemIormConfigCachArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemIormConfigCachArgs : global::Pulumi.ResourceArgs
     {
         [Input("dbPlans")]
         private InputList<Inputs.DbSystemIormConfigCachDbPlanArgs>? _dbPlans;
@@ -48,5 +48,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DbSystemIormConfigCachArgs()
         {
         }
+        public static new DbSystemIormConfigCachArgs Empty => new DbSystemIormConfigCachArgs();
     }
 }

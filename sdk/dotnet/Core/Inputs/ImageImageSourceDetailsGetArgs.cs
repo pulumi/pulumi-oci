@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class ImageImageSourceDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class ImageImageSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Object Storage bucket for the image.
@@ -65,5 +65,6 @@ namespace Pulumi.Oci.Core.Inputs
         public ImageImageSourceDetailsGetArgs()
         {
         }
+        public static new ImageImageSourceDetailsGetArgs Empty => new ImageImageSourceDetailsGetArgs();
     }
 }

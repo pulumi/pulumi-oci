@@ -21,22 +21,20 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogGroups = Oci.Logging.GetLogGroups.Invoke(new()
         ///     {
-        ///         var testLogGroups = Output.Create(Oci.Logging.GetLogGroups.InvokeAsync(new Oci.Logging.GetLogGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Log_group_display_name,
-        ///             IsCompartmentIdInSubtree = @var.Log_group_is_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Log_group_display_name,
+        ///         IsCompartmentIdInSubtree = @var.Log_group_is_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogGroups = Oci.Logging.GetLogGroups.Invoke(new()
         ///     {
-        ///         var testLogGroups = Output.Create(Oci.Logging.GetLogGroups.InvokeAsync(new Oci.Logging.GetLogGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Log_group_display_name,
-        ///             IsCompartmentIdInSubtree = @var.Log_group_is_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Log_group_display_name,
+        ///         IsCompartmentIdInSubtree = @var.Log_group_is_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Logging
     }
 
 
-    public sealed class GetLogGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetLogGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.Logging
         public GetLogGroupsArgs()
         {
         }
+        public static new GetLogGroupsArgs Empty => new GetLogGroupsArgs();
     }
 
-    public sealed class GetLogGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Logging
         public GetLogGroupsInvokeArgs()
         {
         }
+        public static new GetLogGroupsInvokeArgs Empty => new GetLogGroupsInvokeArgs();
     }
 
 

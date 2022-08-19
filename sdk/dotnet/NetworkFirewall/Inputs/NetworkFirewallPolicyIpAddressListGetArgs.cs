@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class NetworkFirewallPolicyIpAddressListGetArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicyIpAddressListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("ipAddressListName", required: true)]
         public Input<string> IpAddressListName { get; set; } = null!;
@@ -26,5 +26,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public NetworkFirewallPolicyIpAddressListGetArgs()
         {
         }
+        public static new NetworkFirewallPolicyIpAddressListGetArgs Empty => new NetworkFirewallPolicyIpAddressListGetArgs();
     }
 }

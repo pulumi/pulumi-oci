@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class JobProgressGetArgs : Pulumi.ResourceArgs
+    public sealed class JobProgressGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Current phase of the job.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public JobProgressGetArgs()
         {
         }
+        public static new JobProgressGetArgs Empty => new JobProgressGetArgs();
     }
 }

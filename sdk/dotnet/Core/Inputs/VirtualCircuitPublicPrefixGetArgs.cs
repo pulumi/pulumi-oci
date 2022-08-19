@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VirtualCircuitPublicPrefixGetArgs : Pulumi.ResourceArgs
+    public sealed class VirtualCircuitPublicPrefixGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An individual public IP prefix (CIDR) to add to the public virtual circuit. All prefix sizes are allowed.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VirtualCircuitPublicPrefixGetArgs()
         {
         }
+        public static new VirtualCircuitPublicPrefixGetArgs Empty => new VirtualCircuitPublicPrefixGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class GetObjectsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the object.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public GetObjectsFilterArgs()
         {
         }
+        public static new GetObjectsFilterArgs Empty => new GetObjectsFilterArgs();
     }
 }

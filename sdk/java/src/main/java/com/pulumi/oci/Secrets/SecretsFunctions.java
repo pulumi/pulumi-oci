@@ -24,6 +24,37 @@ public final class SecretsFunctions {
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretVersionName(oci_vault_secret_version.test_secret_version().name())
+     *             .stage(var_.secretbundle_stage())
+     *             .versionNumber(var_.secretbundle_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretbundleResult> getSecretbundle(GetSecretbundleArgs args) {
@@ -36,6 +67,37 @@ public final class SecretsFunctions {
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretVersionName(oci_vault_secret_version.test_secret_version().name())
+     *             .stage(var_.secretbundle_stage())
+     *             .versionNumber(var_.secretbundle_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretbundleResult> getSecretbundlePlain(GetSecretbundlePlainArgs args) {
@@ -48,6 +110,37 @@ public final class SecretsFunctions {
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretVersionName(oci_vault_secret_version.test_secret_version().name())
+     *             .stage(var_.secretbundle_stage())
+     *             .versionNumber(var_.secretbundle_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretbundleResult> getSecretbundle(GetSecretbundleArgs args, InvokeOptions options) {
@@ -60,6 +153,37 @@ public final class SecretsFunctions {
      * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretVersionName(oci_vault_secret_version.test_secret_version().name())
+     *             .stage(var_.secretbundle_stage())
+     *             .versionNumber(var_.secretbundle_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretbundleResult> getSecretbundlePlain(GetSecretbundlePlainArgs args, InvokeOptions options) {
@@ -71,6 +195,34 @@ public final class SecretsFunctions {
      * Lists all secret bundle versions for the specified secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretbundleVersionsResult> getSecretbundleVersions(GetSecretbundleVersionsArgs args) {
@@ -82,6 +234,34 @@ public final class SecretsFunctions {
      * Lists all secret bundle versions for the specified secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretbundleVersionsResult> getSecretbundleVersionsPlain(GetSecretbundleVersionsPlainArgs args) {
@@ -93,6 +273,34 @@ public final class SecretsFunctions {
      * Lists all secret bundle versions for the specified secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecretbundleVersionsResult> getSecretbundleVersions(GetSecretbundleVersionsArgs args, InvokeOptions options) {
@@ -104,6 +312,34 @@ public final class SecretsFunctions {
      * Lists all secret bundle versions for the specified secret.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Secrets.SecretsFunctions;
+     * import com.pulumi.oci.Secrets.inputs.GetSecretbundleVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
+     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecretbundleVersionsResult> getSecretbundleVersionsPlain(GetSecretbundleVersionsPlainArgs args, InvokeOptions options) {

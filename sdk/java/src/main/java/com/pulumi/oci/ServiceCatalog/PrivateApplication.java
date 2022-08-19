@@ -24,6 +24,46 @@ import javax.annotation.Nullable;
  * Creates a private application along with a single package to be hosted.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ServiceCatalog.PrivateApplication;
+ * import com.pulumi.oci.ServiceCatalog.PrivateApplicationArgs;
+ * import com.pulumi.oci.ServiceCatalog.inputs.PrivateApplicationPackageDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPrivateApplication = new PrivateApplication(&#34;testPrivateApplication&#34;, PrivateApplicationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.private_application_display_name())
+ *             .packageDetails(PrivateApplicationPackageDetailsArgs.builder()
+ *                 .packageType(var_.private_application_package_details_package_type())
+ *                 .version(var_.private_application_package_details_version())
+ *                 .zipFileBase64encoded(var_.private_application_package_details_zip_file_base64encoded())
+ *                 .build())
+ *             .shortDescription(var_.private_application_short_description())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .logoFileBase64encoded(var_.private_application_logo_file_base64encoded())
+ *             .longDescription(var_.private_application_long_description())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

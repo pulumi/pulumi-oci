@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway.Inputs
 {
 
-    public sealed class SubscriptionSubscriptionGetArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionSubscriptionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Bill to customer Account id.
@@ -141,5 +141,6 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public SubscriptionSubscriptionGetArgs()
         {
         }
+        public static new SubscriptionSubscriptionGetArgs Empty => new SubscriptionSubscriptionGetArgs();
     }
 }

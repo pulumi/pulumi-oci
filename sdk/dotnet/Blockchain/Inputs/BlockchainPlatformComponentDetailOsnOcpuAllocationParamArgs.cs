@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain.Inputs
 {
 
-    public sealed class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs : Pulumi.ResourceArgs
+    public sealed class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Number of OCPU allocation
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Blockchain.Inputs
         public BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs()
         {
         }
+        public static new BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs Empty => new BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs();
     }
 }

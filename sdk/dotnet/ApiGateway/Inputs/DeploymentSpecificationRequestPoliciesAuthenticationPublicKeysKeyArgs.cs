@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The algorithm intended for use with this key.
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs()
         {
         }
+        public static new DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs Empty => new DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs();
     }
 }

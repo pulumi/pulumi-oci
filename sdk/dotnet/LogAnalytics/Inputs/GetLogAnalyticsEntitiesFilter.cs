@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics.Inputs
 {
 
-    public sealed class GetLogAnalyticsEntitiesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsEntitiesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public GetLogAnalyticsEntitiesFilterArgs()
         {
         }
+        public static new GetLogAnalyticsEntitiesFilterArgs Empty => new GetLogAnalyticsEntitiesFilterArgs();
     }
 }

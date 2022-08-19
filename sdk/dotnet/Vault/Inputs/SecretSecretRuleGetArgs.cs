@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Vault.Inputs
 {
 
-    public sealed class SecretSecretRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class SecretSecretRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Vault.Inputs
         public SecretSecretRuleGetArgs()
         {
         }
+        public static new SecretSecretRuleGetArgs Empty => new SecretSecretRuleGetArgs();
     }
 }

@@ -23,7 +23,7 @@ namespace Pulumi.Oci.GoldenGate
     /// ```
     /// </summary>
     [OciResourceType("oci:GoldenGate/deployment:Deployment")]
-    public partial class Deployment : Pulumi.CustomResource
+    public partial class Deployment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -243,7 +243,7 @@ namespace Pulumi.Oci.GoldenGate
         }
     }
 
-    public sealed class DeploymentArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -356,9 +356,10 @@ namespace Pulumi.Oci.GoldenGate
         public DeploymentArgs()
         {
         }
+        public static new DeploymentArgs Empty => new DeploymentArgs();
     }
 
-    public sealed class DeploymentState : Pulumi.ResourceArgs
+    public sealed class DeploymentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -561,5 +562,6 @@ namespace Pulumi.Oci.GoldenGate
         public DeploymentState()
         {
         }
+        public static new DeploymentState Empty => new DeploymentState();
     }
 }

@@ -17,46 +17,44 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBuildRun = new Oci.DevOps.BuildRun("testBuildRun", new()
     ///     {
-    ///         var testBuildRun = new Oci.DevOps.BuildRun("testBuildRun", new Oci.DevOps.BuildRunArgs
+    ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+    ///         BuildRunArguments = new Oci.DevOps.Inputs.BuildRunBuildRunArgumentsArgs
     ///         {
-    ///             BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-    ///             BuildRunArguments = new Oci.DevOps.Inputs.BuildRunBuildRunArgumentsArgs
+    ///             Items = new[]
     ///             {
-    ///                 Items = 
+    ///                 new Oci.DevOps.Inputs.BuildRunBuildRunArgumentsItemArgs
     ///                 {
-    ///                     new Oci.DevOps.Inputs.BuildRunBuildRunArgumentsItemArgs
-    ///                     {
-    ///                         Name = @var.Build_run_build_run_arguments_items_name,
-    ///                         Value = @var.Build_run_build_run_arguments_items_value,
-    ///                     },
+    ///                     Name = @var.Build_run_build_run_arguments_items_name,
+    ///                     Value = @var.Build_run_build_run_arguments_items_value,
     ///                 },
     ///             },
-    ///             CommitInfo = new Oci.DevOps.Inputs.BuildRunCommitInfoArgs
-    ///             {
-    ///                 CommitHash = @var.Build_run_commit_info_commit_hash,
-    ///                 RepositoryBranch = @var.Build_run_commit_info_repository_branch,
-    ///                 RepositoryUrl = @var.Build_run_commit_info_repository_url,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Build_run_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         CommitInfo = new Oci.DevOps.Inputs.BuildRunCommitInfoArgs
+    ///         {
+    ///             CommitHash = @var.Build_run_commit_info_commit_hash,
+    ///             RepositoryBranch = @var.Build_run_commit_info_repository_branch,
+    ///             RepositoryUrl = @var.Build_run_commit_info_repository_url,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Build_run_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -68,7 +66,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/buildRun:BuildRun")]
-    public partial class BuildRun : Pulumi.CustomResource
+    public partial class BuildRun : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Outputs from the build.
@@ -210,7 +208,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class BuildRunArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the build pipeline.
@@ -263,9 +261,10 @@ namespace Pulumi.Oci.DevOps
         public BuildRunArgs()
         {
         }
+        public static new BuildRunArgs Empty => new BuildRunArgs();
     }
 
-    public sealed class BuildRunState : Pulumi.ResourceArgs
+    public sealed class BuildRunState : global::Pulumi.ResourceArgs
     {
         [Input("buildOutputs")]
         private InputList<Inputs.BuildRunBuildOutputGetArgs>? _buildOutputs;
@@ -402,5 +401,6 @@ namespace Pulumi.Oci.DevOps
         public BuildRunState()
         {
         }
+        public static new BuildRunState Empty => new BuildRunState();
     }
 }

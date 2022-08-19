@@ -17,20 +17,18 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRepositoryMirror = new Oci.DevOps.RepositoryMirror("testRepositoryMirror", new()
     ///     {
-    ///         var testRepositoryMirror = new Oci.DevOps.RepositoryMirror("testRepositoryMirror", new Oci.DevOps.RepositoryMirrorArgs
-    ///         {
-    ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-    ///         });
-    ///     }
+    ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -42,7 +40,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/repositoryMirror:RepositoryMirror")]
-    public partial class RepositoryMirror : Pulumi.CustomResource
+    public partial class RepositoryMirror : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique repository identifier.
@@ -94,7 +92,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class RepositoryMirrorArgs : Pulumi.ResourceArgs
+    public sealed class RepositoryMirrorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique repository identifier.
@@ -105,9 +103,10 @@ namespace Pulumi.Oci.DevOps
         public RepositoryMirrorArgs()
         {
         }
+        public static new RepositoryMirrorArgs Empty => new RepositoryMirrorArgs();
     }
 
-    public sealed class RepositoryMirrorState : Pulumi.ResourceArgs
+    public sealed class RepositoryMirrorState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique repository identifier.
@@ -118,5 +117,6 @@ namespace Pulumi.Oci.DevOps
         public RepositoryMirrorState()
         {
         }
+        public static new RepositoryMirrorState Empty => new RepositoryMirrorState();
     }
 }

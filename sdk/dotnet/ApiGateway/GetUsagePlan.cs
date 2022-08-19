@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUsagePlan = Oci.ApiGateway.GetUsagePlan.Invoke(new()
         ///     {
-        ///         var testUsagePlan = Output.Create(Oci.ApiGateway.GetUsagePlan.InvokeAsync(new Oci.ApiGateway.GetUsagePlanArgs
-        ///         {
-        ///             UsagePlanId = oci_apigateway_usage_plan.Test_usage_plan.Id,
-        ///         }));
-        ///     }
+        ///         UsagePlanId = oci_apigateway_usage_plan.Test_usage_plan.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUsagePlan = Oci.ApiGateway.GetUsagePlan.Invoke(new()
         ///     {
-        ///         var testUsagePlan = Output.Create(Oci.ApiGateway.GetUsagePlan.InvokeAsync(new Oci.ApiGateway.GetUsagePlanArgs
-        ///         {
-        ///             UsagePlanId = oci_apigateway_usage_plan.Test_usage_plan.Id,
-        ///         }));
-        ///     }
+        ///         UsagePlanId = oci_apigateway_usage_plan.Test_usage_plan.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ApiGateway
     }
 
 
-    public sealed class GetUsagePlanArgs : Pulumi.InvokeArgs
+    public sealed class GetUsagePlanArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the usage plan.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ApiGateway
         public GetUsagePlanArgs()
         {
         }
+        public static new GetUsagePlanArgs Empty => new GetUsagePlanArgs();
     }
 
-    public sealed class GetUsagePlanInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUsagePlanInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the usage plan.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ApiGateway
         public GetUsagePlanInvokeArgs()
         {
         }
+        public static new GetUsagePlanInvokeArgs Empty => new GetUsagePlanInvokeArgs();
     }
 
 

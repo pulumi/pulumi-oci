@@ -24,6 +24,40 @@ import javax.annotation.Nullable;
  * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.PluggableDatabasesRemoteClone;
+ * import com.pulumi.oci.Database.PluggableDatabasesRemoteCloneArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPluggableDatabasesRemoteClone = new PluggableDatabasesRemoteClone(&#34;testPluggableDatabasesRemoteClone&#34;, PluggableDatabasesRemoteCloneArgs.builder()        
+ *             .clonedPdbName(var_.pluggable_databases_remote_clone_cloned_pdb_name())
+ *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+ *             .sourceContainerDbAdminPassword(var_.pluggable_databases_remote_clone_source_container_db_admin_password())
+ *             .targetContainerDatabaseId(oci_database_database.test_database().id())
+ *             .pdbAdminPassword(var_.pluggable_databases_remote_clone_pdb_admin_password())
+ *             .shouldPdbAdminAccountBeLocked(var_.pluggable_databases_remote_clone_should_pdb_admin_account_be_locked())
+ *             .targetTdeWalletPassword(var_.pluggable_databases_remote_clone_target_tde_wallet_password())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

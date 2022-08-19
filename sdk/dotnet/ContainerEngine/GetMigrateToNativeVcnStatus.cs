@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ContainerEngine
     }
 
 
-    public sealed class GetMigrateToNativeVcnStatusArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrateToNativeVcnStatusArgs : global::Pulumi.InvokeArgs
     {
         [Input("clusterId", required: true)]
         public string ClusterId { get; set; } = null!;
@@ -27,9 +27,10 @@ namespace Pulumi.Oci.ContainerEngine
         public GetMigrateToNativeVcnStatusArgs()
         {
         }
+        public static new GetMigrateToNativeVcnStatusArgs Empty => new GetMigrateToNativeVcnStatusArgs();
     }
 
-    public sealed class GetMigrateToNativeVcnStatusInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrateToNativeVcnStatusInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("clusterId", required: true)]
         public Input<string> ClusterId { get; set; } = null!;
@@ -37,6 +38,7 @@ namespace Pulumi.Oci.ContainerEngine
         public GetMigrateToNativeVcnStatusInvokeArgs()
         {
         }
+        public static new GetMigrateToNativeVcnStatusInvokeArgs Empty => new GetMigrateToNativeVcnStatusInvokeArgs();
     }
 
 

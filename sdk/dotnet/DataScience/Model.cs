@@ -17,53 +17,51 @@ namespace Pulumi.Oci.DataScience
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testModel = new Oci.DataScience.Model("testModel", new()
     ///     {
-    ///         var testModel = new Oci.DataScience.Model("testModel", new Oci.DataScience.ModelArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         CustomMetadataLists = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ProjectId = oci_datascience_project.Test_project.Id,
-    ///             CustomMetadataLists = 
+    ///             new Oci.DataScience.Inputs.ModelCustomMetadataListArgs
     ///             {
-    ///                 new Oci.DataScience.Inputs.ModelCustomMetadataListArgs
-    ///                 {
-    ///                     Category = @var.Model_custom_metadata_list_category,
-    ///                     Description = @var.Model_custom_metadata_list_description,
-    ///                     Key = @var.Model_custom_metadata_list_key,
-    ///                     Value = @var.Model_custom_metadata_list_value,
-    ///                 },
+    ///                 Category = @var.Model_custom_metadata_list_category,
+    ///                 Description = @var.Model_custom_metadata_list_description,
+    ///                 Key = @var.Model_custom_metadata_list_key,
+    ///                 Value = @var.Model_custom_metadata_list_value,
     ///             },
-    ///             DefinedMetadataLists = 
+    ///         },
+    ///         DefinedMetadataLists = new[]
+    ///         {
+    ///             new Oci.DataScience.Inputs.ModelDefinedMetadataListArgs
     ///             {
-    ///                 new Oci.DataScience.Inputs.ModelDefinedMetadataListArgs
-    ///                 {
-    ///                     Category = @var.Model_defined_metadata_list_category,
-    ///                     Description = @var.Model_defined_metadata_list_description,
-    ///                     Key = @var.Model_defined_metadata_list_key,
-    ///                     Value = @var.Model_defined_metadata_list_value,
-    ///                 },
+    ///                 Category = @var.Model_defined_metadata_list_category,
+    ///                 Description = @var.Model_defined_metadata_list_description,
+    ///                 Key = @var.Model_defined_metadata_list_key,
+    ///                 Value = @var.Model_defined_metadata_list_value,
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Model_description,
-    ///             DisplayName = @var.Model_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             InputSchema = @var.Model_input_schema,
-    ///             OutputSchema = @var.Model_output_schema,
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Model_description,
+    ///         DisplayName = @var.Model_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         InputSchema = @var.Model_input_schema,
+    ///         OutputSchema = @var.Model_output_schema,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -75,7 +73,7 @@ namespace Pulumi.Oci.DataScience
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/model:Model")]
-    public partial class Model : Pulumi.CustomResource
+    public partial class Model : global::Pulumi.CustomResource
     {
         [Output("artifactContentDisposition")]
         public Output<string> ArtifactContentDisposition { get; private set; } = null!;
@@ -217,7 +215,7 @@ namespace Pulumi.Oci.DataScience
         }
     }
 
-    public sealed class ModelArgs : Pulumi.ResourceArgs
+    public sealed class ModelArgs : global::Pulumi.ResourceArgs
     {
         [Input("artifactContentDisposition")]
         public Input<string>? ArtifactContentDisposition { get; set; }
@@ -321,9 +319,10 @@ namespace Pulumi.Oci.DataScience
         public ModelArgs()
         {
         }
+        public static new ModelArgs Empty => new ModelArgs();
     }
 
-    public sealed class ModelState : Pulumi.ResourceArgs
+    public sealed class ModelState : global::Pulumi.ResourceArgs
     {
         [Input("artifactContentDisposition")]
         public Input<string>? ArtifactContentDisposition { get; set; }
@@ -448,5 +447,6 @@ namespace Pulumi.Oci.DataScience
         public ModelState()
         {
         }
+        public static new ModelState Empty => new ModelState();
     }
 }

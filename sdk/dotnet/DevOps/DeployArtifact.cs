@@ -17,43 +17,41 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDeployArtifact = new Oci.DevOps.DeployArtifact("testDeployArtifact", new()
     ///     {
-    ///         var testDeployArtifact = new Oci.DevOps.DeployArtifact("testDeployArtifact", new Oci.DevOps.DeployArtifactArgs
+    ///         ArgumentSubstitutionMode = @var.Deploy_artifact_argument_substitution_mode,
+    ///         DeployArtifactSource = new Oci.DevOps.Inputs.DeployArtifactDeployArtifactSourceArgs
     ///         {
-    ///             ArgumentSubstitutionMode = @var.Deploy_artifact_argument_substitution_mode,
-    ///             DeployArtifactSource = new Oci.DevOps.Inputs.DeployArtifactDeployArtifactSourceArgs
-    ///             {
-    ///                 DeployArtifactSourceType = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
-    ///                 Base64encodedContent = @var.Deploy_artifact_deploy_artifact_source_base64encoded_content,
-    ///                 ChartUrl = @var.Deploy_artifact_deploy_artifact_source_chart_url,
-    ///                 DeployArtifactPath = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path,
-    ///                 DeployArtifactVersion = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version,
-    ///                 ImageDigest = @var.Deploy_artifact_deploy_artifact_source_image_digest,
-    ///                 ImageUri = @var.Deploy_artifact_deploy_artifact_source_image_uri,
-    ///                 RepositoryId = oci_devops_repository.Test_repository.Id,
-    ///             },
-    ///             DeployArtifactType = @var.Deploy_artifact_deploy_artifact_type,
-    ///             ProjectId = oci_devops_project.Test_project.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Deploy_artifact_description,
-    ///             DisplayName = @var.Deploy_artifact_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             DeployArtifactSourceType = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
+    ///             Base64encodedContent = @var.Deploy_artifact_deploy_artifact_source_base64encoded_content,
+    ///             ChartUrl = @var.Deploy_artifact_deploy_artifact_source_chart_url,
+    ///             DeployArtifactPath = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path,
+    ///             DeployArtifactVersion = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version,
+    ///             ImageDigest = @var.Deploy_artifact_deploy_artifact_source_image_digest,
+    ///             ImageUri = @var.Deploy_artifact_deploy_artifact_source_image_uri,
+    ///             RepositoryId = oci_devops_repository.Test_repository.Id,
+    ///         },
+    ///         DeployArtifactType = @var.Deploy_artifact_deploy_artifact_type,
+    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Deploy_artifact_description,
+    ///         DisplayName = @var.Deploy_artifact_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/deployArtifact:DeployArtifact")]
-    public partial class DeployArtifact : Pulumi.CustomResource
+    public partial class DeployArtifact : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Mode for artifact parameter substitution.
@@ -195,7 +193,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class DeployArtifactArgs : Pulumi.ResourceArgs
+    public sealed class DeployArtifactArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Mode for artifact parameter substitution.
@@ -260,9 +258,10 @@ namespace Pulumi.Oci.DevOps
         public DeployArtifactArgs()
         {
         }
+        public static new DeployArtifactArgs Empty => new DeployArtifactArgs();
     }
 
-    public sealed class DeployArtifactState : Pulumi.ResourceArgs
+    public sealed class DeployArtifactState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Mode for artifact parameter substitution.
@@ -369,5 +368,6 @@ namespace Pulumi.Oci.DevOps
         public DeployArtifactState()
         {
         }
+        public static new DeployArtifactState Empty => new DeployArtifactState();
     }
 }

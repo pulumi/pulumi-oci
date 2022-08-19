@@ -14,57 +14,6 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// Schedule a task as specified and return task info.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testNamespaceScheduledTask = new Oci.LogAnalytics.NamespaceScheduledTask("testNamespaceScheduledTask", new Oci.LogAnalytics.NamespaceScheduledTaskArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Kind = @var.Namespace_scheduled_task_kind,
-    ///             Namespace = @var.Namespace_scheduled_task_namespace,
-    ///             Action = new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskActionArgs
-    ///             {
-    ///                 Type = @var.Namespace_scheduled_task_action_type,
-    ///                 CompartmentIdInSubtree = @var.Namespace_scheduled_task_action_compartment_id_in_subtree,
-    ///                 DataType = @var.Namespace_scheduled_task_action_data_type,
-    ///                 PurgeCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///                 PurgeDuration = @var.Namespace_scheduled_task_action_purge_duration,
-    ///                 QueryString = @var.Namespace_scheduled_task_action_query_string,
-    ///                 SavedSearchId = oci_log_analytics_saved_search.Test_saved_search.Id,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Namespace_scheduled_task_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             SavedSearchId = oci_log_analytics_saved_search.Test_saved_search.Id,
-    ///             Schedules = new Oci.LogAnalytics.Inputs.NamespaceScheduledTaskSchedulesArgs
-    ///             {
-    ///                 Type = @var.Namespace_scheduled_task_schedules_type,
-    ///                 Expression = @var.Namespace_scheduled_task_schedules_expression,
-    ///                 MisfirePolicy = @var.Namespace_scheduled_task_schedules_misfire_policy,
-    ///                 RecurringInterval = @var.Namespace_scheduled_task_schedules_recurring_interval,
-    ///                 RepeatCount = @var.Namespace_scheduled_task_schedules_repeat_count,
-    ///                 TimeZone = @var.Namespace_scheduled_task_schedules_time_zone,
-    ///             },
-    ///             TaskType = @var.Namespace_scheduled_task_task_type,
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// NamespaceScheduledTasks can be imported using the `id`, e.g.
@@ -74,7 +23,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask")]
-    public partial class NamespaceScheduledTask : Pulumi.CustomResource
+    public partial class NamespaceScheduledTask : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Action for scheduled task.
@@ -219,7 +168,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class NamespaceScheduledTaskArgs : Pulumi.ResourceArgs
+    public sealed class NamespaceScheduledTaskArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Action for scheduled task.
@@ -296,9 +245,10 @@ namespace Pulumi.Oci.LogAnalytics
         public NamespaceScheduledTaskArgs()
         {
         }
+        public static new NamespaceScheduledTaskArgs Empty => new NamespaceScheduledTaskArgs();
     }
 
-    public sealed class NamespaceScheduledTaskState : Pulumi.ResourceArgs
+    public sealed class NamespaceScheduledTaskState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Action for scheduled task.
@@ -414,5 +364,6 @@ namespace Pulumi.Oci.LogAnalytics
         public NamespaceScheduledTaskState()
         {
         }
+        public static new NamespaceScheduledTaskState Empty => new NamespaceScheduledTaskState();
     }
 }

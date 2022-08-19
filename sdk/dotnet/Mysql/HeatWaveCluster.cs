@@ -17,22 +17,20 @@ namespace Pulumi.Oci.Mysql
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testHeatWaveCluster = new Oci.Mysql.HeatWaveCluster("testHeatWaveCluster", new()
     ///     {
-    ///         var testHeatWaveCluster = new Oci.Mysql.HeatWaveCluster("testHeatWaveCluster", new Oci.Mysql.HeatWaveClusterArgs
-    ///         {
-    ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///             ClusterSize = @var.Heat_wave_cluster_cluster_size,
-    ///             ShapeName = oci_mysql_shape.Test_shape.Name,
-    ///         });
-    ///     }
+    ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+    ///         ClusterSize = @var.Heat_wave_cluster_cluster_size,
+    ///         ShapeName = oci_mysql_shape.Test_shape.Name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.Mysql
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/heatWaveCluster:HeatWaveCluster")]
-    public partial class HeatWaveCluster : Pulumi.CustomResource
+    public partial class HeatWaveCluster : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A HeatWave node is a compute host that is part of a HeatWave cluster.
@@ -138,7 +136,7 @@ namespace Pulumi.Oci.Mysql
         }
     }
 
-    public sealed class HeatWaveClusterArgs : Pulumi.ResourceArgs
+    public sealed class HeatWaveClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -167,9 +165,10 @@ namespace Pulumi.Oci.Mysql
         public HeatWaveClusterArgs()
         {
         }
+        public static new HeatWaveClusterArgs Empty => new HeatWaveClusterArgs();
     }
 
-    public sealed class HeatWaveClusterState : Pulumi.ResourceArgs
+    public sealed class HeatWaveClusterState : global::Pulumi.ResourceArgs
     {
         [Input("clusterNodes")]
         private InputList<Inputs.HeatWaveClusterClusterNodeGetArgs>? _clusterNodes;
@@ -228,5 +227,6 @@ namespace Pulumi.Oci.Mysql
         public HeatWaveClusterState()
         {
         }
+        public static new HeatWaveClusterState Empty => new HeatWaveClusterState();
     }
 }

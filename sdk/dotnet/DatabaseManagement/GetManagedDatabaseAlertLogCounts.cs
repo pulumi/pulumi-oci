@@ -22,27 +22,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseAlertLogCounts = Oci.DatabaseManagement.GetManagedDatabaseAlertLogCounts.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseAlertLogCounts = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseAlertLogCounts.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseAlertLogCountsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             GroupBy = @var.Managed_database_alert_log_count_group_by,
-        ///             IsRegularExpression = @var.Managed_database_alert_log_count_is_regular_expression,
-        ///             LevelFilter = @var.Managed_database_alert_log_count_level_filter,
-        ///             LogSearchText = @var.Managed_database_alert_log_count_log_search_text,
-        ///             TimeGreaterThanOrEqualTo = @var.Managed_database_alert_log_count_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Managed_database_alert_log_count_time_less_than_or_equal_to,
-        ///             TypeFilter = @var.Managed_database_alert_log_count_type_filter,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         GroupBy = @var.Managed_database_alert_log_count_group_by,
+        ///         IsRegularExpression = @var.Managed_database_alert_log_count_is_regular_expression,
+        ///         LevelFilter = @var.Managed_database_alert_log_count_level_filter,
+        ///         LogSearchText = @var.Managed_database_alert_log_count_log_search_text,
+        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_alert_log_count_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Managed_database_alert_log_count_time_less_than_or_equal_to,
+        ///         TypeFilter = @var.Managed_database_alert_log_count_type_filter,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,27 +59,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseAlertLogCounts = Oci.DatabaseManagement.GetManagedDatabaseAlertLogCounts.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseAlertLogCounts = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseAlertLogCounts.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseAlertLogCountsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             GroupBy = @var.Managed_database_alert_log_count_group_by,
-        ///             IsRegularExpression = @var.Managed_database_alert_log_count_is_regular_expression,
-        ///             LevelFilter = @var.Managed_database_alert_log_count_level_filter,
-        ///             LogSearchText = @var.Managed_database_alert_log_count_log_search_text,
-        ///             TimeGreaterThanOrEqualTo = @var.Managed_database_alert_log_count_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Managed_database_alert_log_count_time_less_than_or_equal_to,
-        ///             TypeFilter = @var.Managed_database_alert_log_count_type_filter,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         GroupBy = @var.Managed_database_alert_log_count_group_by,
+        ///         IsRegularExpression = @var.Managed_database_alert_log_count_is_regular_expression,
+        ///         LevelFilter = @var.Managed_database_alert_log_count_level_filter,
+        ///         LogSearchText = @var.Managed_database_alert_log_count_log_search_text,
+        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_alert_log_count_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Managed_database_alert_log_count_time_less_than_or_equal_to,
+        ///         TypeFilter = @var.Managed_database_alert_log_count_type_filter,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseAlertLogCountsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAlertLogCountsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseAlertLogCountsFilterArgs>? _filters;
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseAlertLogCountsArgs()
         {
         }
+        public static new GetManagedDatabaseAlertLogCountsArgs Empty => new GetManagedDatabaseAlertLogCountsArgs();
     }
 
-    public sealed class GetManagedDatabaseAlertLogCountsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAlertLogCountsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseAlertLogCountsFilterInputArgs>? _filters;
@@ -215,6 +212,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseAlertLogCountsInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseAlertLogCountsInvokeArgs Empty => new GetManagedDatabaseAlertLogCountsInvokeArgs();
     }
 
 

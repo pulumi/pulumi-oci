@@ -17,38 +17,36 @@ namespace Pulumi.Oci.ApiGateway
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSubscriber = new Oci.ApiGateway.Subscriber("testSubscriber", new()
     ///     {
-    ///         var testSubscriber = new Oci.ApiGateway.Subscriber("testSubscriber", new Oci.ApiGateway.SubscriberArgs
+    ///         Clients = new[]
     ///         {
-    ///             Clients = 
+    ///             new Oci.ApiGateway.Inputs.SubscriberClientArgs
     ///             {
-    ///                 new Oci.ApiGateway.Inputs.SubscriberClientArgs
-    ///                 {
-    ///                     Name = @var.Subscriber_clients_name,
-    ///                     Token = @var.Subscriber_clients_token,
-    ///                 },
+    ///                 Name = @var.Subscriber_clients_name,
+    ///                 Token = @var.Subscriber_clients_token,
     ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             UsagePlans = @var.Subscriber_usage_plans,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Subscriber_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         UsagePlans = @var.Subscriber_usage_plans,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Subscriber_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.ApiGateway
     /// ```
     /// </summary>
     [OciResourceType("oci:ApiGateway/subscriber:Subscriber")]
-    public partial class Subscriber : Pulumi.CustomResource
+    public partial class Subscriber : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The clients belonging to this subscriber.
@@ -166,7 +164,7 @@ namespace Pulumi.Oci.ApiGateway
         }
     }
 
-    public sealed class SubscriberArgs : Pulumi.ResourceArgs
+    public sealed class SubscriberArgs : global::Pulumi.ResourceArgs
     {
         [Input("clients", required: true)]
         private InputList<Inputs.SubscriberClientArgs>? _clients;
@@ -231,9 +229,10 @@ namespace Pulumi.Oci.ApiGateway
         public SubscriberArgs()
         {
         }
+        public static new SubscriberArgs Empty => new SubscriberArgs();
     }
 
-    public sealed class SubscriberState : Pulumi.ResourceArgs
+    public sealed class SubscriberState : global::Pulumi.ResourceArgs
     {
         [Input("clients")]
         private InputList<Inputs.SubscriberClientGetArgs>? _clients;
@@ -322,5 +321,6 @@ namespace Pulumi.Oci.ApiGateway
         public SubscriberState()
         {
         }
+        public static new SubscriberState Empty => new SubscriberState();
     }
 }

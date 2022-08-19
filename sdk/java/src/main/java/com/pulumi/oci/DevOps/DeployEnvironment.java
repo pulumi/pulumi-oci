@@ -23,6 +23,56 @@ import javax.annotation.Nullable;
  * Creates a new deployment environment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.DeployEnvironment;
+ * import com.pulumi.oci.DevOps.DeployEnvironmentArgs;
+ * import com.pulumi.oci.DevOps.inputs.DeployEnvironmentComputeInstanceGroupSelectorsArgs;
+ * import com.pulumi.oci.DevOps.inputs.DeployEnvironmentNetworkChannelArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDeployEnvironment = new DeployEnvironment(&#34;testDeployEnvironment&#34;, DeployEnvironmentArgs.builder()        
+ *             .deployEnvironmentType(var_.deploy_environment_deploy_environment_type())
+ *             .projectId(oci_devops_project.test_project().id())
+ *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+ *             .computeInstanceGroupSelectors(DeployEnvironmentComputeInstanceGroupSelectorsArgs.builder()
+ *                 .items(DeployEnvironmentComputeInstanceGroupSelectorsItemArgs.builder()
+ *                     .selectorType(var_.deploy_environment_compute_instance_group_selectors_items_selector_type())
+ *                     .computeInstanceIds(var_.deploy_environment_compute_instance_group_selectors_items_compute_instance_ids())
+ *                     .query(var_.deploy_environment_compute_instance_group_selectors_items_query())
+ *                     .region(var_.deploy_environment_compute_instance_group_selectors_items_region())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.deploy_environment_description())
+ *             .displayName(var_.deploy_environment_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .functionId(oci_functions_function.test_function().id())
+ *             .networkChannel(DeployEnvironmentNetworkChannelArgs.builder()
+ *                 .networkChannelType(var_.deploy_environment_network_channel_network_channel_type())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .nsgIds(var_.deploy_environment_network_channel_nsg_ids())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

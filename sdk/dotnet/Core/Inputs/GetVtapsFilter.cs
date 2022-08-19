@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetVtapsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetVtapsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetVtapsFilterArgs()
         {
         }
+        public static new GetVtapsFilterArgs Empty => new GetVtapsFilterArgs();
     }
 }

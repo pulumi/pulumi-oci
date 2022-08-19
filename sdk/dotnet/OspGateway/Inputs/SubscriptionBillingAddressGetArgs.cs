@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway.Inputs
 {
 
-    public sealed class SubscriptionBillingAddressGetArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionBillingAddressGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Address identifier.
@@ -81,5 +81,6 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public SubscriptionBillingAddressGetArgs()
         {
         }
+        public static new SubscriptionBillingAddressGetArgs Empty => new SubscriptionBillingAddressGetArgs();
     }
 }

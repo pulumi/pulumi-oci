@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class CertificateIssuerNameGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateIssuerNameGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The fully qualified domain name used for DNS lookups of the server.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public CertificateIssuerNameGetArgs()
         {
         }
+        public static new CertificateIssuerNameGetArgs Empty => new CertificateIssuerNameGetArgs();
     }
 }

@@ -18,28 +18,26 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExternalPluggableDatabase = new Oci.Database.ExternalPluggableDatabase("testExternalPluggableDatabase", new()
     ///     {
-    ///         var testExternalPluggableDatabase = new Oci.Database.ExternalPluggableDatabase("testExternalPluggableDatabase", new Oci.Database.ExternalPluggableDatabaseArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.External_pluggable_database_display_name,
+    ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
+    ///         DefinedTags = @var.External_pluggable_database_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.External_pluggable_database_display_name,
-    ///             ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-    ///             DefinedTags = @var.External_pluggable_database_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             SourceId = oci_database_source.Test_source.Id,
-    ///         });
-    ///     }
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         SourceId = oci_database_source.Test_source.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/externalPluggableDatabase:ExternalPluggableDatabase")]
-    public partial class ExternalPluggableDatabase : Pulumi.CustomResource
+    public partial class ExternalPluggableDatabase : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The character set of the external database.
@@ -223,7 +221,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExternalPluggableDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class ExternalPluggableDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -276,9 +274,10 @@ namespace Pulumi.Oci.Database
         public ExternalPluggableDatabaseArgs()
         {
         }
+        public static new ExternalPluggableDatabaseArgs Empty => new ExternalPluggableDatabaseArgs();
     }
 
-    public sealed class ExternalPluggableDatabaseState : Pulumi.ResourceArgs
+    public sealed class ExternalPluggableDatabaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The character set of the external database.
@@ -439,5 +438,6 @@ namespace Pulumi.Oci.Database
         public ExternalPluggableDatabaseState()
         {
         }
+        public static new ExternalPluggableDatabaseState Empty => new ExternalPluggableDatabaseState();
     }
 }

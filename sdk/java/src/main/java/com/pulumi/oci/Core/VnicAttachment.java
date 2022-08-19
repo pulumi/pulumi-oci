@@ -23,6 +23,50 @@ import javax.annotation.Nullable;
  * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.VnicAttachment;
+ * import com.pulumi.oci.Core.VnicAttachmentArgs;
+ * import com.pulumi.oci.Core.inputs.VnicAttachmentCreateVnicDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVnicAttachment = new VnicAttachment(&#34;testVnicAttachment&#34;, VnicAttachmentArgs.builder()        
+ *             .createVnicDetails(VnicAttachmentCreateVnicDetailsArgs.builder()
+ *                 .assignPrivateDnsRecord(var_.vnic_attachment_create_vnic_details_assign_private_dns_record())
+ *                 .assignPublicIp(var_.vnic_attachment_create_vnic_details_assign_public_ip())
+ *                 .definedTags(var_.vnic_attachment_create_vnic_details_defined_tags())
+ *                 .displayName(var_.vnic_attachment_create_vnic_details_display_name())
+ *                 .freeformTags(var_.vnic_attachment_create_vnic_details_freeform_tags())
+ *                 .hostnameLabel(var_.vnic_attachment_create_vnic_details_hostname_label())
+ *                 .nsgIds(var_.vnic_attachment_create_vnic_details_nsg_ids())
+ *                 .privateIp(var_.vnic_attachment_create_vnic_details_private_ip())
+ *                 .skipSourceDestCheck(var_.vnic_attachment_create_vnic_details_skip_source_dest_check())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .vlanId(oci_core_vlan.test_vlan().id())
+ *                 .build())
+ *             .instanceId(oci_core_instance.test_instance().id())
+ *             .displayName(var_.vnic_attachment_display_name())
+ *             .nicIndex(var_.vnic_attachment_nic_index())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

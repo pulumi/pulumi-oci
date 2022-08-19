@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string ApplicationId;
         /// <summary>
+        /// Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInvokeRunsRunApplicationLogConfigResult> ApplicationLogConfigs;
+        /// <summary>
         /// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         public readonly string ArchiveUri;
@@ -179,6 +183,8 @@ namespace Pulumi.Oci.DataFlow.Outputs
         private GetInvokeRunsRunResult(
             string applicationId,
 
+            ImmutableArray<Outputs.GetInvokeRunsRunApplicationLogConfigResult> applicationLogConfigs,
+
             string archiveUri,
 
             ImmutableArray<string> arguments,
@@ -260,6 +266,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
             string warehouseBucketUri)
         {
             ApplicationId = applicationId;
+            ApplicationLogConfigs = applicationLogConfigs;
             ArchiveUri = archiveUri;
             Arguments = arguments;
             Asynchronous = asynchronous;

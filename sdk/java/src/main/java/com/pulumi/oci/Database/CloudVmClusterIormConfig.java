@@ -23,6 +23,40 @@ import javax.annotation.Nullable;
  * The [UpdateCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/UpdateCloudVmClusterIormConfig/) API is used for Cloud Vm Cluster.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.CloudVmClusterIormConfig;
+ * import com.pulumi.oci.Database.CloudVmClusterIormConfigArgs;
+ * import com.pulumi.oci.Database.inputs.CloudVmClusterIormConfigDbPlanArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCloudVmClusterIormConfig = new CloudVmClusterIormConfig(&#34;testCloudVmClusterIormConfig&#34;, CloudVmClusterIormConfigArgs.builder()        
+ *             .dbPlans(CloudVmClusterIormConfigDbPlanArgs.builder()
+ *                 .dbName(var_.cloud_vm_cluster_iorm_config_db_plans_db_name())
+ *                 .share(var_.cloud_vm_cluster_iorm_config_db_plans_share())
+ *                 .build())
+ *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+ *             .objective(&#34;AUTO&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  */
 @ResourceType(type="oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig")

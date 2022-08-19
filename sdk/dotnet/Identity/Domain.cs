@@ -32,39 +32,37 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDomain = new Oci.Identity.Domain("testDomain", new()
     ///     {
-    ///         var testDomain = new Oci.Identity.Domain("testDomain", new Oci.Identity.DomainArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Description = @var.Domain_description,
+    ///         DisplayName = @var.Domain_display_name,
+    ///         HomeRegion = @var.Domain_home_region,
+    ///         LicenseType = @var.Domain_license_type,
+    ///         AdminEmail = @var.Domain_admin_email,
+    ///         AdminFirstName = @var.Domain_admin_first_name,
+    ///         AdminLastName = @var.Domain_admin_last_name,
+    ///         AdminUserName = oci_identity_user.Test_user.Name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Description = @var.Domain_description,
-    ///             DisplayName = @var.Domain_display_name,
-    ///             HomeRegion = @var.Domain_home_region,
-    ///             LicenseType = @var.Domain_license_type,
-    ///             AdminEmail = @var.Domain_admin_email,
-    ///             AdminFirstName = @var.Domain_admin_first_name,
-    ///             AdminLastName = @var.Domain_admin_last_name,
-    ///             AdminUserName = oci_identity_user.Test_user.Name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
-    ///             IsNotificationBypassed = @var.Domain_is_notification_bypassed,
-    ///             IsPrimaryEmailRequired = @var.Domain_is_primary_email_required,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
+    ///         IsNotificationBypassed = @var.Domain_is_notification_bypassed,
+    ///         IsPrimaryEmailRequired = @var.Domain_is_primary_email_required,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -76,7 +74,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/domain:Domain")]
-    public partial class Domain : Pulumi.CustomResource
+    public partial class Domain : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The admin email address
@@ -248,7 +246,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class DomainArgs : Pulumi.ResourceArgs
+    public sealed class DomainArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The admin email address
@@ -355,9 +353,10 @@ namespace Pulumi.Oci.Identity
         public DomainArgs()
         {
         }
+        public static new DomainArgs Empty => new DomainArgs();
     }
 
-    public sealed class DomainState : Pulumi.ResourceArgs
+    public sealed class DomainState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The admin email address
@@ -506,5 +505,6 @@ namespace Pulumi.Oci.Identity
         public DomainState()
         {
         }
+        public static new DomainState Empty => new DomainState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs : Pulumi.ResourceArgs
+    public sealed class MigrationGoldenGateDetailsHubRestAdminCredentialsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Administrator password
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationGoldenGateDetailsHubRestAdminCredentialsArgs()
         {
         }
+        public static new MigrationGoldenGateDetailsHubRestAdminCredentialsArgs Empty => new MigrationGoldenGateDetailsHubRestAdminCredentialsArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class JobProgressPhaseExtractArgs : Pulumi.ResourceArgs
+    public sealed class JobProgressPhaseExtractArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Message in entry.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public JobProgressPhaseExtractArgs()
         {
         }
+        public static new JobProgressPhaseExtractArgs Empty => new JobProgressPhaseExtractArgs();
     }
 }

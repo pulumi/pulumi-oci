@@ -27,6 +27,45 @@ import javax.annotation.Nullable;
  * and apply them to the sensitive data model.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.DiscoveryMod;
+ * import com.pulumi.oci.DataSafe.DiscoveryModArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDiscoveryJob = new DiscoveryMod(&#34;testDiscoveryJob&#34;, DiscoveryModArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .discoveryType(var_.discovery_job_discovery_type())
+ *             .displayName(var_.discovery_job_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isAppDefinedRelationDiscoveryEnabled(var_.discovery_job_is_app_defined_relation_discovery_enabled())
+ *             .isIncludeAllSchemas(var_.discovery_job_is_include_all_schemas())
+ *             .isIncludeAllSensitiveTypes(var_.discovery_job_is_include_all_sensitive_types())
+ *             .isSampleDataCollectionEnabled(var_.discovery_job_is_sample_data_collection_enabled())
+ *             .schemasForDiscoveries(var_.discovery_job_schemas_for_discovery())
+ *             .sensitiveTypeIdsForDiscoveries(var_.discovery_job_sensitive_type_ids_for_discovery())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

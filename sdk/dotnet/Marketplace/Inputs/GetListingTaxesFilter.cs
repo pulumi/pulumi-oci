@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class GetListingTaxesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetListingTaxesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Name of the tax code.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public GetListingTaxesFilterArgs()
         {
         }
+        public static new GetListingTaxesFilterArgs Empty => new GetListingTaxesFilterArgs();
     }
 }

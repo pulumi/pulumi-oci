@@ -21,22 +21,20 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUsagePlans = Oci.ApiGateway.GetUsagePlans.Invoke(new()
         ///     {
-        ///         var testUsagePlans = Output.Create(Oci.ApiGateway.GetUsagePlans.InvokeAsync(new Oci.ApiGateway.GetUsagePlansArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Usage_plan_display_name,
-        ///             State = @var.Usage_plan_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Usage_plan_display_name,
+        ///         State = @var.Usage_plan_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUsagePlans = Oci.ApiGateway.GetUsagePlans.Invoke(new()
         ///     {
-        ///         var testUsagePlans = Output.Create(Oci.ApiGateway.GetUsagePlans.InvokeAsync(new Oci.ApiGateway.GetUsagePlansArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Usage_plan_display_name,
-        ///             State = @var.Usage_plan_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Usage_plan_display_name,
+        ///         State = @var.Usage_plan_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ApiGateway
     }
 
 
-    public sealed class GetUsagePlansArgs : Pulumi.InvokeArgs
+    public sealed class GetUsagePlansArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the compartment in which to list resources.
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.ApiGateway
         public GetUsagePlansArgs()
         {
         }
+        public static new GetUsagePlansArgs Empty => new GetUsagePlansArgs();
     }
 
-    public sealed class GetUsagePlansInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUsagePlansInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the compartment in which to list resources.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.ApiGateway
         public GetUsagePlansInvokeArgs()
         {
         }
+        public static new GetUsagePlansInvokeArgs Empty => new GetUsagePlansInvokeArgs();
     }
 
 

@@ -20,25 +20,6 @@ import * as utilities from "../utilities";
  * 	}
  * 	```
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDatabaseUpgrade = new oci.database.DatabaseUpgrade("testDatabaseUpgrade", {
- *     action: _var.database_upgrade_action,
- *     databaseId: oci_database_database.test_database.id,
- *     databaseUpgradeSourceDetails: {
- *         databaseSoftwareImageId: oci_database_database_software_image.test_database_software_image.id,
- *         dbHomeId: oci_database_db_home.test_db_home.id,
- *         dbVersion: _var.database_upgrade_database_upgrade_source_details_db_version,
- *         options: _var.database_upgrade_database_upgrade_source_details_options,
- *         source: _var.database_upgrade_database_upgrade_source_details_source,
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * Import is not supported for this resource.

@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServices = Oci.Limits.GetServices.Invoke(new()
         ///     {
-        ///         var testServices = Output.Create(Oci.Limits.GetServices.InvokeAsync(new Oci.Limits.GetServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServices = Oci.Limits.GetServices.Invoke(new()
         ///     {
-        ///         var testServices = Output.Create(Oci.Limits.GetServices.InvokeAsync(new Oci.Limits.GetServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Limits
     }
 
 
-    public sealed class GetServicesArgs : Pulumi.InvokeArgs
+    public sealed class GetServicesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Limits
         public GetServicesArgs()
         {
         }
+        public static new GetServicesArgs Empty => new GetServicesArgs();
     }
 
-    public sealed class GetServicesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServicesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Limits
         public GetServicesInvokeArgs()
         {
         }
+        public static new GetServicesInvokeArgs Empty => new GetServicesInvokeArgs();
     }
 
 

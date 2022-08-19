@@ -27,6 +27,35 @@ import javax.annotation.Nullable;
  * Using this resource will impact the size of the instance pool, attach will increment the size of the pool
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.InstancePoolInstance;
+ * import com.pulumi.oci.Core.InstancePoolInstanceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testInstancePoolInstance = new InstancePoolInstance(&#34;testInstancePoolInstance&#34;, InstancePoolInstanceArgs.builder()        
+ *             .instanceId(oci_core_instance.test_instance().id())
+ *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

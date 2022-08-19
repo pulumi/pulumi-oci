@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/auditTrail:AuditTrail")]
-    public partial class AuditTrail : Pulumi.CustomResource
+    public partial class AuditTrail : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class AuditTrailArgs : Pulumi.ResourceArgs
+    public sealed class AuditTrailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the audit trail.
@@ -248,9 +248,10 @@ namespace Pulumi.Oci.DataSafe
         public AuditTrailArgs()
         {
         }
+        public static new AuditTrailArgs Empty => new AuditTrailArgs();
     }
 
-    public sealed class AuditTrailState : Pulumi.ResourceArgs
+    public sealed class AuditTrailState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The date from which the audit trail must start collecting data, in the format defined by RFC3339.
@@ -387,5 +388,6 @@ namespace Pulumi.Oci.DataSafe
         public AuditTrailState()
         {
         }
+        public static new AuditTrailState Empty => new AuditTrailState();
     }
 }

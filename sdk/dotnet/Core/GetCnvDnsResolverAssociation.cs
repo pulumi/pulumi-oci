@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVcnDnsResolverAssociation = Oci.Core.GetCnvDnsResolverAssociation.Invoke(new()
         ///     {
-        ///         var testVcnDnsResolverAssociation = Output.Create(Oci.Core.GetCnvDnsResolverAssociation.InvokeAsync(new Oci.Core.GetCnvDnsResolverAssociationArgs
-        ///         {
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVcnDnsResolverAssociation = Oci.Core.GetCnvDnsResolverAssociation.Invoke(new()
         ///     {
-        ///         var testVcnDnsResolverAssociation = Output.Create(Oci.Core.GetCnvDnsResolverAssociation.InvokeAsync(new Oci.Core.GetCnvDnsResolverAssociationArgs
-        ///         {
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetCnvDnsResolverAssociationArgs : Pulumi.InvokeArgs
+    public sealed class GetCnvDnsResolverAssociationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetCnvDnsResolverAssociationArgs()
         {
         }
+        public static new GetCnvDnsResolverAssociationArgs Empty => new GetCnvDnsResolverAssociationArgs();
     }
 
-    public sealed class GetCnvDnsResolverAssociationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCnvDnsResolverAssociationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetCnvDnsResolverAssociationInvokeArgs()
         {
         }
+        public static new GetCnvDnsResolverAssociationInvokeArgs Empty => new GetCnvDnsResolverAssociationInvokeArgs();
     }
 
 

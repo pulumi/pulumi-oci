@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class VmClusterAddVirtualNetworkDataCollectionOptionArgs : Pulumi.ResourceArgs
+    public sealed class VmClusterAddVirtualNetworkDataCollectionOptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Database.Inputs
         public VmClusterAddVirtualNetworkDataCollectionOptionArgs()
         {
         }
+        public static new VmClusterAddVirtualNetworkDataCollectionOptionArgs Empty => new VmClusterAddVirtualNetworkDataCollectionOptionArgs();
     }
 }

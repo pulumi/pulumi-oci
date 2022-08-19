@@ -17,32 +17,30 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSensitiveDataModelsSensitiveColumn = new Oci.DataSafe.SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn", new()
     ///     {
-    ///         var testSensitiveDataModelsSensitiveColumn = new Oci.DataSafe.SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn", new Oci.DataSafe.SensitiveDataModelsSensitiveColumnArgs
-    ///         {
-    ///             ColumnName = @var.Sensitive_data_models_sensitive_column_column_name,
-    ///             Object = @var.Sensitive_data_models_sensitive_column_object,
-    ///             SchemaName = @var.Sensitive_data_models_sensitive_column_schema_name,
-    ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-    ///             AppDefinedChildColumnKeys = @var.Sensitive_data_models_sensitive_column_app_defined_child_column_keys,
-    ///             AppName = @var.Sensitive_data_models_sensitive_column_app_name,
-    ///             DataType = @var.Sensitive_data_models_sensitive_column_data_type,
-    ///             DbDefinedChildColumnKeys = @var.Sensitive_data_models_sensitive_column_db_defined_child_column_keys,
-    ///             ObjectType = @var.Sensitive_data_models_sensitive_column_object_type,
-    ///             ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_keys,
-    ///             RelationType = @var.Sensitive_data_models_sensitive_column_relation_type,
-    ///             SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-    ///             Status = @var.Sensitive_data_models_sensitive_column_status,
-    ///         });
-    ///     }
+    ///         ColumnName = @var.Sensitive_data_models_sensitive_column_column_name,
+    ///         Object = @var.Sensitive_data_models_sensitive_column_object,
+    ///         SchemaName = @var.Sensitive_data_models_sensitive_column_schema_name,
+    ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+    ///         AppDefinedChildColumnKeys = @var.Sensitive_data_models_sensitive_column_app_defined_child_column_keys,
+    ///         AppName = @var.Sensitive_data_models_sensitive_column_app_name,
+    ///         DataType = @var.Sensitive_data_models_sensitive_column_data_type,
+    ///         DbDefinedChildColumnKeys = @var.Sensitive_data_models_sensitive_column_db_defined_child_column_keys,
+    ///         ObjectType = @var.Sensitive_data_models_sensitive_column_object_type,
+    ///         ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_keys,
+    ///         RelationType = @var.Sensitive_data_models_sensitive_column_relation_type,
+    ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+    ///         Status = @var.Sensitive_data_models_sensitive_column_status,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn")]
-    public partial class SensitiveDataModelsSensitiveColumn : Pulumi.CustomResource
+    public partial class SensitiveDataModelsSensitiveColumn : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
@@ -232,7 +230,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class SensitiveDataModelsSensitiveColumnArgs : Pulumi.ResourceArgs
+    public sealed class SensitiveDataModelsSensitiveColumnArgs : global::Pulumi.ResourceArgs
     {
         [Input("appDefinedChildColumnKeys")]
         private InputList<string>? _appDefinedChildColumnKeys;
@@ -333,9 +331,10 @@ namespace Pulumi.Oci.DataSafe
         public SensitiveDataModelsSensitiveColumnArgs()
         {
         }
+        public static new SensitiveDataModelsSensitiveColumnArgs Empty => new SensitiveDataModelsSensitiveColumnArgs();
     }
 
-    public sealed class SensitiveDataModelsSensitiveColumnState : Pulumi.ResourceArgs
+    public sealed class SensitiveDataModelsSensitiveColumnState : global::Pulumi.ResourceArgs
     {
         [Input("appDefinedChildColumnKeys")]
         private InputList<string>? _appDefinedChildColumnKeys;
@@ -502,5 +501,6 @@ namespace Pulumi.Oci.DataSafe
         public SensitiveDataModelsSensitiveColumnState()
         {
         }
+        public static new SensitiveDataModelsSensitiveColumnState Empty => new SensitiveDataModelsSensitiveColumnState();
     }
 }

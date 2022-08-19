@@ -41,6 +41,34 @@ public final class DataFlowFunctions {
      * Retrieves an application using an `applicationId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args) {
@@ -52,6 +80,34 @@ public final class DataFlowFunctions {
      * Retrieves an application using an `applicationId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args) {
@@ -63,6 +119,34 @@ public final class DataFlowFunctions {
      * Retrieves an application using an `applicationId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args, InvokeOptions options) {
@@ -74,6 +158,34 @@ public final class DataFlowFunctions {
      * Retrieves an application using an `applicationId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplication = DataFlowFunctions.getApplication(GetApplicationArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args, InvokeOptions options) {
@@ -85,6 +197,38 @@ public final class DataFlowFunctions {
      * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = DataFlowFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.application_display_name())
+     *             .displayNameStartsWith(var_.application_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .sparkVersion(var_.application_spark_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args) {
@@ -96,6 +240,38 @@ public final class DataFlowFunctions {
      * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = DataFlowFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.application_display_name())
+     *             .displayNameStartsWith(var_.application_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .sparkVersion(var_.application_spark_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args) {
@@ -107,6 +283,38 @@ public final class DataFlowFunctions {
      * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = DataFlowFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.application_display_name())
+     *             .displayNameStartsWith(var_.application_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .sparkVersion(var_.application_spark_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApplicationsResult> getApplications(GetApplicationsArgs args, InvokeOptions options) {
@@ -118,6 +326,38 @@ public final class DataFlowFunctions {
      * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApplications = DataFlowFunctions.getApplications(GetApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.application_display_name())
+     *             .displayNameStartsWith(var_.application_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .sparkVersion(var_.application_spark_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApplicationsResult> getApplicationsPlain(GetApplicationsPlainArgs args, InvokeOptions options) {
@@ -129,6 +369,34 @@ public final class DataFlowFunctions {
      * Retrieves the run for the specified `runId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvokeRunResult> getInvokeRun(GetInvokeRunArgs args) {
@@ -140,6 +408,34 @@ public final class DataFlowFunctions {
      * Retrieves the run for the specified `runId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvokeRunResult> getInvokeRunPlain(GetInvokeRunPlainArgs args) {
@@ -151,6 +447,34 @@ public final class DataFlowFunctions {
      * Retrieves the run for the specified `runId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvokeRunResult> getInvokeRun(GetInvokeRunArgs args, InvokeOptions options) {
@@ -162,6 +486,34 @@ public final class DataFlowFunctions {
      * Retrieves the run for the specified `runId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvokeRun = DataFlowFunctions.getInvokeRun(GetInvokeRunArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvokeRunResult> getInvokeRunPlain(GetInvokeRunPlainArgs args, InvokeOptions options) {
@@ -173,6 +525,40 @@ public final class DataFlowFunctions {
      * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .displayName(var_.invoke_run_display_name())
+     *             .displayNameStartsWith(var_.invoke_run_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .state(var_.invoke_run_state())
+     *             .timeCreatedGreaterThan(var_.invoke_run_time_created_greater_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvokeRunsResult> getInvokeRuns(GetInvokeRunsArgs args) {
@@ -184,6 +570,40 @@ public final class DataFlowFunctions {
      * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .displayName(var_.invoke_run_display_name())
+     *             .displayNameStartsWith(var_.invoke_run_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .state(var_.invoke_run_state())
+     *             .timeCreatedGreaterThan(var_.invoke_run_time_created_greater_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvokeRunsResult> getInvokeRunsPlain(GetInvokeRunsPlainArgs args) {
@@ -195,6 +615,40 @@ public final class DataFlowFunctions {
      * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .displayName(var_.invoke_run_display_name())
+     *             .displayNameStartsWith(var_.invoke_run_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .state(var_.invoke_run_state())
+     *             .timeCreatedGreaterThan(var_.invoke_run_time_created_greater_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvokeRunsResult> getInvokeRuns(GetInvokeRunsArgs args, InvokeOptions options) {
@@ -206,6 +660,40 @@ public final class DataFlowFunctions {
      * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetInvokeRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvokeRuns = DataFlowFunctions.getInvokeRuns(GetInvokeRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .displayName(var_.invoke_run_display_name())
+     *             .displayNameStartsWith(var_.invoke_run_display_name_starts_with())
+     *             .ownerPrincipalId(oci_dataflow_owner_principal.test_owner_principal().id())
+     *             .state(var_.invoke_run_state())
+     *             .timeCreatedGreaterThan(var_.invoke_run_time_created_greater_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvokeRunsResult> getInvokeRunsPlain(GetInvokeRunsPlainArgs args, InvokeOptions options) {
@@ -217,6 +705,34 @@ public final class DataFlowFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
@@ -228,6 +744,34 @@ public final class DataFlowFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
@@ -239,6 +783,34 @@ public final class DataFlowFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
@@ -250,6 +822,34 @@ public final class DataFlowFunctions {
      * Retrieves an private endpoint using a `privateEndpointId`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = DataFlowFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -258,9 +858,41 @@ public final class DataFlowFunctions {
     /**
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
      * 
-     * Lists all private endpoints in the specified compartment.
+     * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = DataFlowFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .displayNameStartsWith(var_.private_endpoint_display_name_starts_with())
+     *             .ownerPrincipalId(var_.owner_principal_id())
+     *             .state(var_.private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args) {
@@ -269,9 +901,41 @@ public final class DataFlowFunctions {
     /**
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
      * 
-     * Lists all private endpoints in the specified compartment.
+     * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = DataFlowFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .displayNameStartsWith(var_.private_endpoint_display_name_starts_with())
+     *             .ownerPrincipalId(var_.owner_principal_id())
+     *             .state(var_.private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args) {
@@ -280,9 +944,41 @@ public final class DataFlowFunctions {
     /**
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
      * 
-     * Lists all private endpoints in the specified compartment.
+     * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = DataFlowFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .displayNameStartsWith(var_.private_endpoint_display_name_starts_with())
+     *             .ownerPrincipalId(var_.owner_principal_id())
+     *             .state(var_.private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOptions options) {
@@ -291,9 +987,41 @@ public final class DataFlowFunctions {
     /**
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
      * 
-     * Lists all private endpoints in the specified compartment.
+     * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = DataFlowFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .displayNameStartsWith(var_.private_endpoint_display_name_starts_with())
+     *             .ownerPrincipalId(var_.owner_principal_id())
+     *             .state(var_.private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -305,6 +1033,35 @@ public final class DataFlowFunctions {
      * Retrieves the content of an run log.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
+     *             .name(var_.run_log_name())
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRunLogResult> getRunLog(GetRunLogArgs args) {
@@ -316,6 +1073,35 @@ public final class DataFlowFunctions {
      * Retrieves the content of an run log.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
+     *             .name(var_.run_log_name())
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRunLogResult> getRunLogPlain(GetRunLogPlainArgs args) {
@@ -327,6 +1113,35 @@ public final class DataFlowFunctions {
      * Retrieves the content of an run log.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
+     *             .name(var_.run_log_name())
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRunLogResult> getRunLog(GetRunLogArgs args, InvokeOptions options) {
@@ -338,6 +1153,35 @@ public final class DataFlowFunctions {
      * Retrieves the content of an run log.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunLog = DataFlowFunctions.getRunLog(GetRunLogArgs.builder()
+     *             .name(var_.run_log_name())
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRunLogResult> getRunLogPlain(GetRunLogPlainArgs args, InvokeOptions options) {
@@ -349,6 +1193,34 @@ public final class DataFlowFunctions {
      * Retrieves summaries of the run&#39;s logs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRunLogsResult> getRunLogs(GetRunLogsArgs args) {
@@ -360,6 +1232,34 @@ public final class DataFlowFunctions {
      * Retrieves summaries of the run&#39;s logs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRunLogsResult> getRunLogsPlain(GetRunLogsPlainArgs args) {
@@ -371,6 +1271,34 @@ public final class DataFlowFunctions {
      * Retrieves summaries of the run&#39;s logs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRunLogsResult> getRunLogs(GetRunLogsArgs args, InvokeOptions options) {
@@ -382,6 +1310,34 @@ public final class DataFlowFunctions {
      * Retrieves summaries of the run&#39;s logs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunLogs = DataFlowFunctions.getRunLogs(GetRunLogsArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRunLogsResult> getRunLogsPlain(GetRunLogsPlainArgs args, InvokeOptions options) {

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetShapeArgs : Pulumi.InvokeArgs
+    public sealed class GetShapeArgs : global::Pulumi.InvokeArgs
     {
         [Input("availabilityDomain")]
         public string? AvailabilityDomain { get; set; }
@@ -41,9 +41,10 @@ namespace Pulumi.Oci.Core
         public GetShapeArgs()
         {
         }
+        public static new GetShapeArgs Empty => new GetShapeArgs();
     }
 
-    public sealed class GetShapeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetShapeInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -65,6 +66,7 @@ namespace Pulumi.Oci.Core
         public GetShapeInvokeArgs()
         {
         }
+        public static new GetShapeInvokeArgs Empty => new GetShapeInvokeArgs();
     }
 
 

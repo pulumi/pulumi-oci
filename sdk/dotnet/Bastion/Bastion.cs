@@ -17,34 +17,32 @@ namespace Pulumi.Oci.Bastion
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBastion = new Oci.Bastion.Bastion("testBastion", new()
     ///     {
-    ///         var testBastion = new Oci.Bastion.Bastion("testBastion", new Oci.Bastion.BastionArgs
+    ///         BastionType = @var.Bastion_bastion_type,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         TargetSubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         ClientCidrBlockAllowLists = @var.Bastion_client_cidr_block_allow_list,
+    ///         DefinedTags = 
     ///         {
-    ///             BastionType = @var.Bastion_bastion_type,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             TargetSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             ClientCidrBlockAllowLists = @var.Bastion_client_cidr_block_allow_list,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             MaxSessionTtlInSeconds = @var.Bastion_max_session_ttl_in_seconds,
-    ///             PhoneBookEntry = @var.Bastion_phone_book_entry,
-    ///             StaticJumpHostIpAddresses = @var.Bastion_static_jump_host_ip_addresses,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         MaxSessionTtlInSeconds = @var.Bastion_max_session_ttl_in_seconds,
+    ///         PhoneBookEntry = @var.Bastion_phone_book_entry,
+    ///         StaticJumpHostIpAddresses = @var.Bastion_static_jump_host_ip_addresses,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.Bastion
     /// ```
     /// </summary>
     [OciResourceType("oci:Bastion/bastion:Bastion")]
-    public partial class Bastion : Pulumi.CustomResource
+    public partial class Bastion : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The type of bastion. Use `standard`.
@@ -210,7 +208,7 @@ namespace Pulumi.Oci.Bastion
         }
     }
 
-    public sealed class BastionArgs : Pulumi.ResourceArgs
+    public sealed class BastionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of bastion. Use `standard`.
@@ -299,9 +297,10 @@ namespace Pulumi.Oci.Bastion
         public BastionArgs()
         {
         }
+        public static new BastionArgs Empty => new BastionArgs();
     }
 
-    public sealed class BastionState : Pulumi.ResourceArgs
+    public sealed class BastionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of bastion. Use `standard`.
@@ -444,5 +443,6 @@ namespace Pulumi.Oci.Bastion
         public BastionState()
         {
         }
+        public static new BastionState Empty => new BastionState();
     }
 }

@@ -41,6 +41,50 @@ import javax.annotation.Nullable;
  * Destroying `the oci.Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.IpsecConnectionTunnelManagement;
+ * import com.pulumi.oci.Core.IpsecConnectionTunnelManagementArgs;
+ * import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs;
+ * import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIpSecConnectionTunnel = new IpsecConnectionTunnelManagement(&#34;testIpSecConnectionTunnel&#34;, IpsecConnectionTunnelManagementArgs.builder()        
+ *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+ *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+ *             .routing(var_.ip_sec_connection_tunnel_management_routing())
+ *             .bgpSessionInfos(IpsecConnectionTunnelManagementBgpSessionInfoArgs.builder()
+ *                 .customerBgpAsn(var_.ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn())
+ *                 .customerInterfaceIp(var_.ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip())
+ *                 .oracleInterfaceIp(var_.ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip())
+ *                 .build())
+ *             .displayName(var_.ip_sec_connection_tunnel_management_display_name())
+ *             .encryptionDomainConfig(IpsecConnectionTunnelManagementEncryptionDomainConfigArgs.builder()
+ *                 .cpeTrafficSelectors(var_.ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector())
+ *                 .oracleTrafficSelectors(var_.ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector())
+ *                 .build())
+ *             .sharedSecret(var_.ip_sec_connection_tunnel_management_shared_secret())
+ *             .ikeVersion(&#34;V1&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  */
 @ResourceType(type="oci:Core/ipsecConnectionTunnelManagement:IpsecConnectionTunnelManagement")

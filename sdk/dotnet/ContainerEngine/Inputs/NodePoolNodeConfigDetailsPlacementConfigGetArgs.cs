@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolNodeConfigDetailsPlacementConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolNodeConfigDetailsPlacementConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolNodeConfigDetailsPlacementConfigGetArgs()
         {
         }
+        public static new NodePoolNodeConfigDetailsPlacementConfigGetArgs Empty => new NodePoolNodeConfigDetailsPlacementConfigGetArgs();
     }
 }

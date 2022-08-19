@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolNodeShapeConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolNodeShapeConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The total amount of memory available to each node, in gigabytes.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolNodeShapeConfigGetArgs()
         {
         }
+        public static new NodePoolNodeShapeConfigGetArgs Empty => new NodePoolNodeShapeConfigGetArgs();
     }
 }

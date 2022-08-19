@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Budget
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBudget = Oci.Budget.GetBudget.Invoke(new()
         ///     {
-        ///         var testBudget = Output.Create(Oci.Budget.GetBudget.InvokeAsync(new Oci.Budget.GetBudgetArgs
-        ///         {
-        ///             BudgetId = oci_budget_budget.Test_budget.Id,
-        ///         }));
-        ///     }
+        ///         BudgetId = oci_budget_budget.Test_budget.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Budget
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBudget = Oci.Budget.GetBudget.Invoke(new()
         ///     {
-        ///         var testBudget = Output.Create(Oci.Budget.GetBudget.InvokeAsync(new Oci.Budget.GetBudgetArgs
-        ///         {
-        ///             BudgetId = oci_budget_budget.Test_budget.Id,
-        ///         }));
-        ///     }
+        ///         BudgetId = oci_budget_budget.Test_budget.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Budget
     }
 
 
-    public sealed class GetBudgetArgs : Pulumi.InvokeArgs
+    public sealed class GetBudgetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique budget OCID.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Budget
         public GetBudgetArgs()
         {
         }
+        public static new GetBudgetArgs Empty => new GetBudgetArgs();
     }
 
-    public sealed class GetBudgetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBudgetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique budget OCID.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Budget
         public GetBudgetInvokeArgs()
         {
         }
+        public static new GetBudgetInvokeArgs Empty => new GetBudgetInvokeArgs();
     }
 
 

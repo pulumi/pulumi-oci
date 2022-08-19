@@ -61,6 +61,11 @@ public final class ConnectorTarget {
      */
     private final @Nullable String logGroupId;
     /**
+     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * 
+     */
+    private final @Nullable String logSourceIdentifier;
+    /**
      * @return (Updatable) The name of the metric.  Example: `CpuUtilization`
      * 
      */
@@ -102,6 +107,7 @@ public final class ConnectorTarget {
         @CustomType.Parameter("functionId") @Nullable String functionId,
         @CustomType.Parameter("kind") String kind,
         @CustomType.Parameter("logGroupId") @Nullable String logGroupId,
+        @CustomType.Parameter("logSourceIdentifier") @Nullable String logSourceIdentifier,
         @CustomType.Parameter("metric") @Nullable String metric,
         @CustomType.Parameter("metricNamespace") @Nullable String metricNamespace,
         @CustomType.Parameter("namespace") @Nullable String namespace,
@@ -117,6 +123,7 @@ public final class ConnectorTarget {
         this.functionId = functionId;
         this.kind = kind;
         this.logGroupId = logGroupId;
+        this.logSourceIdentifier = logSourceIdentifier;
         this.metric = metric;
         this.metricNamespace = metricNamespace;
         this.namespace = namespace;
@@ -189,6 +196,13 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.logGroupId);
     }
     /**
+     * @return (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * 
+     */
+    public Optional<String> logSourceIdentifier() {
+        return Optional.ofNullable(this.logSourceIdentifier);
+    }
+    /**
      * @return (Updatable) The name of the metric.  Example: `CpuUtilization`
      * 
      */
@@ -249,6 +263,7 @@ public final class ConnectorTarget {
         private @Nullable String functionId;
         private String kind;
         private @Nullable String logGroupId;
+        private @Nullable String logSourceIdentifier;
         private @Nullable String metric;
         private @Nullable String metricNamespace;
         private @Nullable String namespace;
@@ -271,6 +286,7 @@ public final class ConnectorTarget {
     	      this.functionId = defaults.functionId;
     	      this.kind = defaults.kind;
     	      this.logGroupId = defaults.logGroupId;
+    	      this.logSourceIdentifier = defaults.logSourceIdentifier;
     	      this.metric = defaults.metric;
     	      this.metricNamespace = defaults.metricNamespace;
     	      this.namespace = defaults.namespace;
@@ -318,6 +334,10 @@ public final class ConnectorTarget {
             this.logGroupId = logGroupId;
             return this;
         }
+        public Builder logSourceIdentifier(@Nullable String logSourceIdentifier) {
+            this.logSourceIdentifier = logSourceIdentifier;
+            return this;
+        }
         public Builder metric(@Nullable String metric) {
             this.metric = metric;
             return this;
@@ -342,7 +362,7 @@ public final class ConnectorTarget {
             this.topicId = topicId;
             return this;
         }        public ConnectorTarget build() {
-            return new ConnectorTarget(batchRolloverSizeInMbs, batchRolloverTimeInMs, bucket, compartmentId, dimensions, enableFormattedMessaging, functionId, kind, logGroupId, metric, metricNamespace, namespace, objectNamePrefix, streamId, topicId);
+            return new ConnectorTarget(batchRolloverSizeInMbs, batchRolloverTimeInMs, bucket, compartmentId, dimensions, enableFormattedMessaging, functionId, kind, logGroupId, logSourceIdentifier, metric, metricNamespace, namespace, objectNamePrefix, streamId, topicId);
         }
     }
 }

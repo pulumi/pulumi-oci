@@ -27,22 +27,20 @@ namespace Pulumi.Oci.Monitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlarmStatuses = Oci.Monitoring.GetAlarmStatuses.Invoke(new()
         ///     {
-        ///         var testAlarmStatuses = Output.Create(Oci.Monitoring.GetAlarmStatuses.InvokeAsync(new Oci.Monitoring.GetAlarmStatusesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Alarm_status_compartment_id_in_subtree,
-        ///             DisplayName = @var.Alarm_status_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Alarm_status_compartment_id_in_subtree,
+        ///         DisplayName = @var.Alarm_status_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,22 +64,20 @@ namespace Pulumi.Oci.Monitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlarmStatuses = Oci.Monitoring.GetAlarmStatuses.Invoke(new()
         ///     {
-        ///         var testAlarmStatuses = Output.Create(Oci.Monitoring.GetAlarmStatuses.InvokeAsync(new Oci.Monitoring.GetAlarmStatusesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Alarm_status_compartment_id_in_subtree,
-        ///             DisplayName = @var.Alarm_status_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Alarm_status_compartment_id_in_subtree,
+        ///         DisplayName = @var.Alarm_status_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.Monitoring
     }
 
 
-    public sealed class GetAlarmStatusesArgs : Pulumi.InvokeArgs
+    public sealed class GetAlarmStatusesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Monitoring
         public GetAlarmStatusesArgs()
         {
         }
+        public static new GetAlarmStatusesArgs Empty => new GetAlarmStatusesArgs();
     }
 
-    public sealed class GetAlarmStatusesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAlarmStatusesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
@@ -155,6 +152,7 @@ namespace Pulumi.Oci.Monitoring
         public GetAlarmStatusesInvokeArgs()
         {
         }
+        public static new GetAlarmStatusesInvokeArgs Empty => new GetAlarmStatusesInvokeArgs();
     }
 
 

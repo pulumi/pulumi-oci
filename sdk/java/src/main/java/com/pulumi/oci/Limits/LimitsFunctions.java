@@ -37,6 +37,36 @@ public final class LimitsFunctions {
      * compartment level.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.limit_definition_name())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLimitDefinitionsResult> getLimitDefinitions(GetLimitDefinitionsArgs args) {
@@ -50,6 +80,36 @@ public final class LimitsFunctions {
      * compartment level.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.limit_definition_name())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLimitDefinitionsResult> getLimitDefinitionsPlain(GetLimitDefinitionsPlainArgs args) {
@@ -63,6 +123,36 @@ public final class LimitsFunctions {
      * compartment level.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.limit_definition_name())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLimitDefinitionsResult> getLimitDefinitions(GetLimitDefinitionsArgs args, InvokeOptions options) {
@@ -76,6 +166,36 @@ public final class LimitsFunctions {
      * compartment level.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.limit_definition_name())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLimitDefinitionsResult> getLimitDefinitionsPlain(GetLimitDefinitionsPlainArgs args, InvokeOptions options) {
@@ -87,6 +207,38 @@ public final class LimitsFunctions {
      * Includes a full list of resource limits belonging to a given service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .availabilityDomain(var_.limit_value_availability_domain())
+     *             .name(var_.limit_value_name())
+     *             .scopeType(var_.limit_value_scope_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLimitValuesResult> getLimitValues(GetLimitValuesArgs args) {
@@ -98,6 +250,38 @@ public final class LimitsFunctions {
      * Includes a full list of resource limits belonging to a given service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .availabilityDomain(var_.limit_value_availability_domain())
+     *             .name(var_.limit_value_name())
+     *             .scopeType(var_.limit_value_scope_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLimitValuesResult> getLimitValuesPlain(GetLimitValuesPlainArgs args) {
@@ -109,6 +293,38 @@ public final class LimitsFunctions {
      * Includes a full list of resource limits belonging to a given service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .availabilityDomain(var_.limit_value_availability_domain())
+     *             .name(var_.limit_value_name())
+     *             .scopeType(var_.limit_value_scope_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLimitValuesResult> getLimitValues(GetLimitValuesArgs args, InvokeOptions options) {
@@ -120,6 +336,38 @@ public final class LimitsFunctions {
      * Includes a full list of resource limits belonging to a given service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .availabilityDomain(var_.limit_value_availability_domain())
+     *             .name(var_.limit_value_name())
+     *             .scopeType(var_.limit_value_scope_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLimitValuesResult> getLimitValuesPlain(GetLimitValuesPlainArgs args, InvokeOptions options) {
@@ -131,6 +379,34 @@ public final class LimitsFunctions {
      * Gets the quota for the OCID specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
+     *             .quotaId(oci_limits_quota.test_quota().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQuotaResult> getQuota(GetQuotaArgs args) {
@@ -142,6 +418,34 @@ public final class LimitsFunctions {
      * Gets the quota for the OCID specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
+     *             .quotaId(oci_limits_quota.test_quota().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQuotaResult> getQuotaPlain(GetQuotaPlainArgs args) {
@@ -153,6 +457,34 @@ public final class LimitsFunctions {
      * Gets the quota for the OCID specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
+     *             .quotaId(oci_limits_quota.test_quota().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQuotaResult> getQuota(GetQuotaArgs args, InvokeOptions options) {
@@ -164,6 +496,34 @@ public final class LimitsFunctions {
      * Gets the quota for the OCID specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
+     *             .quotaId(oci_limits_quota.test_quota().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQuotaResult> getQuotaPlain(GetQuotaPlainArgs args, InvokeOptions options) {
@@ -175,6 +535,36 @@ public final class LimitsFunctions {
      * Lists all quotas on resources from the given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuotas = LimitsFunctions.getQuotas(GetQuotasArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.quota_name())
+     *             .state(var_.quota_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQuotasResult> getQuotas(GetQuotasArgs args) {
@@ -186,6 +576,36 @@ public final class LimitsFunctions {
      * Lists all quotas on resources from the given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuotas = LimitsFunctions.getQuotas(GetQuotasArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.quota_name())
+     *             .state(var_.quota_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQuotasResult> getQuotasPlain(GetQuotasPlainArgs args) {
@@ -197,6 +617,36 @@ public final class LimitsFunctions {
      * Lists all quotas on resources from the given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuotas = LimitsFunctions.getQuotas(GetQuotasArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.quota_name())
+     *             .state(var_.quota_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetQuotasResult> getQuotas(GetQuotasArgs args, InvokeOptions options) {
@@ -208,6 +658,36 @@ public final class LimitsFunctions {
      * Lists all quotas on resources from the given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testQuotas = LimitsFunctions.getQuotas(GetQuotasArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.quota_name())
+     *             .state(var_.quota_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetQuotasResult> getQuotasPlain(GetQuotasPlainArgs args, InvokeOptions options) {
@@ -222,6 +702,37 @@ public final class LimitsFunctions {
      *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .limitName(var_.resource_availability_limit_name())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .availabilityDomain(var_.resource_availability_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResourceAvailabilityResult> getResourceAvailability(GetResourceAvailabilityArgs args) {
@@ -236,6 +747,37 @@ public final class LimitsFunctions {
      *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .limitName(var_.resource_availability_limit_name())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .availabilityDomain(var_.resource_availability_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResourceAvailabilityResult> getResourceAvailabilityPlain(GetResourceAvailabilityPlainArgs args) {
@@ -250,6 +792,37 @@ public final class LimitsFunctions {
      *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .limitName(var_.resource_availability_limit_name())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .availabilityDomain(var_.resource_availability_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResourceAvailabilityResult> getResourceAvailability(GetResourceAvailabilityArgs args, InvokeOptions options) {
@@ -264,6 +837,37 @@ public final class LimitsFunctions {
      *       Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .limitName(var_.resource_availability_limit_name())
+     *             .serviceName(oci_limits_service.test_service().name())
+     *             .availabilityDomain(var_.resource_availability_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResourceAvailabilityResult> getResourceAvailabilityPlain(GetResourceAvailabilityPlainArgs args, InvokeOptions options) {
@@ -276,6 +880,34 @@ public final class LimitsFunctions {
      * This includes the programmatic service name, along with the friendly service name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = LimitsFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args) {
@@ -288,6 +920,34 @@ public final class LimitsFunctions {
      * This includes the programmatic service name, along with the friendly service name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = LimitsFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args) {
@@ -300,6 +960,34 @@ public final class LimitsFunctions {
      * This includes the programmatic service name, along with the friendly service name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = LimitsFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args, InvokeOptions options) {
@@ -312,6 +1000,34 @@ public final class LimitsFunctions {
      * This includes the programmatic service name, along with the friendly service name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Limits.LimitsFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = LimitsFunctions.getServices(GetServicesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args, InvokeOptions options) {

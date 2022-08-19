@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFastLaunchJobConfigs = Oci.DataScience.GetFastLaunchJobConfigs.Invoke(new()
         ///     {
-        ///         var testFastLaunchJobConfigs = Output.Create(Oci.DataScience.GetFastLaunchJobConfigs.InvokeAsync(new Oci.DataScience.GetFastLaunchJobConfigsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFastLaunchJobConfigs = Oci.DataScience.GetFastLaunchJobConfigs.Invoke(new()
         ///     {
-        ///         var testFastLaunchJobConfigs = Output.Create(Oci.DataScience.GetFastLaunchJobConfigs.InvokeAsync(new Oci.DataScience.GetFastLaunchJobConfigsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetFastLaunchJobConfigsArgs : Pulumi.InvokeArgs
+    public sealed class GetFastLaunchJobConfigsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataScience
         public GetFastLaunchJobConfigsArgs()
         {
         }
+        public static new GetFastLaunchJobConfigsArgs Empty => new GetFastLaunchJobConfigsArgs();
     }
 
-    public sealed class GetFastLaunchJobConfigsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFastLaunchJobConfigsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.DataScience
         public GetFastLaunchJobConfigsInvokeArgs()
         {
         }
+        public static new GetFastLaunchJobConfigsInvokeArgs Empty => new GetFastLaunchJobConfigsInvokeArgs();
     }
 
 

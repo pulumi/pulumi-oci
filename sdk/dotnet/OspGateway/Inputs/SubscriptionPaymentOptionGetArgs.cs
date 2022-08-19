@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway.Inputs
 {
 
-    public sealed class SubscriptionPaymentOptionGetArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionPaymentOptionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Credit card type.
@@ -81,5 +81,6 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public SubscriptionPaymentOptionGetArgs()
         {
         }
+        public static new SubscriptionPaymentOptionGetArgs Empty => new SubscriptionPaymentOptionGetArgs();
     }
 }

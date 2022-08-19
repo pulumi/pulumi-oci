@@ -21,25 +21,23 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobRuns = Oci.DataScience.GetJobRuns.Invoke(new()
         ///     {
-        ///         var testJobRuns = Output.Create(Oci.DataScience.GetJobRuns.InvokeAsync(new Oci.DataScience.GetJobRunsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Job_run_created_by,
-        ///             DisplayName = @var.Job_run_display_name,
-        ///             Id = @var.Job_run_id,
-        ///             JobId = oci_datascience_job.Test_job.Id,
-        ///             State = @var.Job_run_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Job_run_created_by,
+        ///         DisplayName = @var.Job_run_display_name,
+        ///         Id = @var.Job_run_id,
+        ///         JobId = oci_datascience_job.Test_job.Id,
+        ///         State = @var.Job_run_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobRuns = Oci.DataScience.GetJobRuns.Invoke(new()
         ///     {
-        ///         var testJobRuns = Output.Create(Oci.DataScience.GetJobRuns.InvokeAsync(new Oci.DataScience.GetJobRunsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Job_run_created_by,
-        ///             DisplayName = @var.Job_run_display_name,
-        ///             Id = @var.Job_run_id,
-        ///             JobId = oci_datascience_job.Test_job.Id,
-        ///             State = @var.Job_run_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Job_run_created_by,
+        ///         DisplayName = @var.Job_run_display_name,
+        ///         Id = @var.Job_run_id,
+        ///         JobId = oci_datascience_job.Test_job.Id,
+        ///         State = @var.Job_run_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetJobRunsArgs : Pulumi.InvokeArgs
+    public sealed class GetJobRunsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.DataScience
         public GetJobRunsArgs()
         {
         }
+        public static new GetJobRunsArgs Empty => new GetJobRunsArgs();
     }
 
-    public sealed class GetJobRunsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJobRunsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.DataScience
         public GetJobRunsInvokeArgs()
         {
         }
+        public static new GetJobRunsInvokeArgs Empty => new GetJobRunsInvokeArgs();
     }
 
 

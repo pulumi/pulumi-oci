@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVlan = Oci.Core.GetVlan.Invoke(new()
         ///     {
-        ///         var testVlan = Output.Create(Oci.Core.GetVlan.InvokeAsync(new Oci.Core.GetVlanArgs
-        ///         {
-        ///             VlanId = oci_core_vlan.Test_vlan.Id,
-        ///         }));
-        ///     }
+        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVlan = Oci.Core.GetVlan.Invoke(new()
         ///     {
-        ///         var testVlan = Output.Create(Oci.Core.GetVlan.InvokeAsync(new Oci.Core.GetVlanArgs
-        ///         {
-        ///             VlanId = oci_core_vlan.Test_vlan.Id,
-        ///         }));
-        ///     }
+        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVlanArgs : Pulumi.InvokeArgs
+    public sealed class GetVlanArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetVlanArgs()
         {
         }
+        public static new GetVlanArgs Empty => new GetVlanArgs();
     }
 
-    public sealed class GetVlanInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVlanInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetVlanInvokeArgs()
         {
         }
+        public static new GetVlanInvokeArgs Empty => new GetVlanInvokeArgs();
     }
 
 

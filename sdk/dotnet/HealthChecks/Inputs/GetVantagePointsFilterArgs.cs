@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.HealthChecks.Inputs
 {
 
-    public sealed class GetVantagePointsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetVantagePointsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Filters results that exactly match the `name` field.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.HealthChecks.Inputs
         public GetVantagePointsFilterInputArgs()
         {
         }
+        public static new GetVantagePointsFilterInputArgs Empty => new GetVantagePointsFilterInputArgs();
     }
 }

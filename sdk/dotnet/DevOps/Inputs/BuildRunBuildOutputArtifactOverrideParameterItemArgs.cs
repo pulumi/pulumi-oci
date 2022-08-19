@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunBuildOutputArtifactOverrideParameterItemArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunBuildOutputArtifactOverrideParameterItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the deployment artifact definition.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunBuildOutputArtifactOverrideParameterItemArgs()
         {
         }
+        public static new BuildRunBuildOutputArtifactOverrideParameterItemArgs Empty => new BuildRunBuildOutputArtifactOverrideParameterItemArgs();
     }
 }

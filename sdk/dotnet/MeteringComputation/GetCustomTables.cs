@@ -22,21 +22,19 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCustomTables = Oci.MeteringComputation.GetCustomTables.Invoke(new()
         ///     {
-        ///         var testCustomTables = Output.Create(Oci.MeteringComputation.GetCustomTables.InvokeAsync(new Oci.MeteringComputation.GetCustomTablesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCustomTables = Oci.MeteringComputation.GetCustomTables.Invoke(new()
         ///     {
-        ///         var testCustomTables = Output.Create(Oci.MeteringComputation.GetCustomTables.InvokeAsync(new Oci.MeteringComputation.GetCustomTablesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.MeteringComputation
     }
 
 
-    public sealed class GetCustomTablesArgs : Pulumi.InvokeArgs
+    public sealed class GetCustomTablesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment ID in which to list resources.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.MeteringComputation
         public GetCustomTablesArgs()
         {
         }
+        public static new GetCustomTablesArgs Empty => new GetCustomTablesArgs();
     }
 
-    public sealed class GetCustomTablesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCustomTablesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment ID in which to list resources.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.MeteringComputation
         public GetCustomTablesInvokeArgs()
         {
         }
+        public static new GetCustomTablesInvokeArgs Empty => new GetCustomTablesInvokeArgs();
     }
 
 

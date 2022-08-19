@@ -19,6 +19,10 @@ import * as utilities from "../utilities";
  * const testInvokeRun = new oci.dataflow.InvokeRun("testInvokeRun", {
  *     compartmentId: _var.compartment_id,
  *     applicationId: oci_dataflow_application.test_application.id,
+ *     applicationLogConfig: {
+ *         logGroupId: oci_logging_log_group.test_log_group.id,
+ *         logId: oci_logging_log.test_log.id,
+ *     },
  *     archiveUri: _var.invoke_run_archive_uri,
  *     arguments: _var.invoke_run_arguments,
  *     configuration: _var.invoke_run_configuration,
@@ -96,6 +100,10 @@ export class InvokeRun extends pulumi.CustomResource {
      * The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
      */
     public readonly applicationId!: pulumi.Output<string>;
+    /**
+     * Logging details of Application logs for Data Flow Run.
+     */
+    public readonly applicationLogConfig!: pulumi.Output<outputs.DataFlow.InvokeRunApplicationLogConfig>;
     /**
      * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
@@ -264,6 +272,7 @@ export class InvokeRun extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as InvokeRunState | undefined;
             resourceInputs["applicationId"] = state ? state.applicationId : undefined;
+            resourceInputs["applicationLogConfig"] = state ? state.applicationLogConfig : undefined;
             resourceInputs["archiveUri"] = state ? state.archiveUri : undefined;
             resourceInputs["arguments"] = state ? state.arguments : undefined;
             resourceInputs["asynchronous"] = state ? state.asynchronous : undefined;
@@ -309,6 +318,7 @@ export class InvokeRun extends pulumi.CustomResource {
                 throw new Error("Missing required property 'compartmentId'");
             }
             resourceInputs["applicationId"] = args ? args.applicationId : undefined;
+            resourceInputs["applicationLogConfig"] = args ? args.applicationLogConfig : undefined;
             resourceInputs["archiveUri"] = args ? args.archiveUri : undefined;
             resourceInputs["arguments"] = args ? args.arguments : undefined;
             resourceInputs["asynchronous"] = args ? args.asynchronous : undefined;
@@ -362,6 +372,10 @@ export interface InvokeRunState {
      * The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
      */
     applicationId?: pulumi.Input<string>;
+    /**
+     * Logging details of Application logs for Data Flow Run.
+     */
+    applicationLogConfig?: pulumi.Input<inputs.DataFlow.InvokeRunApplicationLogConfig>;
     /**
      * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
@@ -525,6 +539,10 @@ export interface InvokeRunArgs {
      * The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
      */
     applicationId?: pulumi.Input<string>;
+    /**
+     * Logging details of Application logs for Data Flow Run.
+     */
+    applicationLogConfig?: pulumi.Input<inputs.DataFlow.InvokeRunApplicationLogConfig>;
     /**
      * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */

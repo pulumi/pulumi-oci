@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOnPremConnector = Oci.DataSafe.GetOnpremConnector.Invoke(new()
         ///     {
-        ///         var testOnPremConnector = Output.Create(Oci.DataSafe.GetOnpremConnector.InvokeAsync(new Oci.DataSafe.GetOnpremConnectorArgs
-        ///         {
-        ///             OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
-        ///         }));
-        ///     }
+        ///         OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOnPremConnector = Oci.DataSafe.GetOnpremConnector.Invoke(new()
         ///     {
-        ///         var testOnPremConnector = Output.Create(Oci.DataSafe.GetOnpremConnector.InvokeAsync(new Oci.DataSafe.GetOnpremConnectorArgs
-        ///         {
-        ///             OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
-        ///         }));
-        ///     }
+        ///         OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetOnpremConnectorArgs : Pulumi.InvokeArgs
+    public sealed class GetOnpremConnectorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the on-premises connector.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetOnpremConnectorArgs()
         {
         }
+        public static new GetOnpremConnectorArgs Empty => new GetOnpremConnectorArgs();
     }
 
-    public sealed class GetOnpremConnectorInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOnpremConnectorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the on-premises connector.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetOnpremConnectorInvokeArgs()
         {
         }
+        public static new GetOnpremConnectorInvokeArgs Empty => new GetOnpremConnectorInvokeArgs();
     }
 
 

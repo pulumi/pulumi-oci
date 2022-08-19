@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DefaultDhcpOptionsOptionGetArgs : Pulumi.ResourceArgs
+    public sealed class DefaultDhcpOptionsOptionGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("customDnsServers")]
         private InputList<string>? _customDnsServers;
@@ -37,5 +37,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DefaultDhcpOptionsOptionGetArgs()
         {
         }
+        public static new DefaultDhcpOptionsOptionGetArgs Empty => new DefaultDhcpOptionsOptionGetArgs();
     }
 }

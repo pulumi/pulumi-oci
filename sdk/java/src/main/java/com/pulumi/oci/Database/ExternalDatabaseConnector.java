@@ -23,6 +23,55 @@ import javax.annotation.Nullable;
  * Creates a new external database connector.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.ExternalDatabaseConnector;
+ * import com.pulumi.oci.Database.ExternalDatabaseConnectorArgs;
+ * import com.pulumi.oci.Database.inputs.ExternalDatabaseConnectorConnectionCredentialsArgs;
+ * import com.pulumi.oci.Database.inputs.ExternalDatabaseConnectorConnectionStringArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExternalDatabaseConnector = new ExternalDatabaseConnector(&#34;testExternalDatabaseConnector&#34;, ExternalDatabaseConnectorArgs.builder()        
+ *             .connectionCredentials(ExternalDatabaseConnectorConnectionCredentialsArgs.builder()
+ *                 .credentialName(var_.external_database_connector_connection_credentials_credential_name())
+ *                 .credentialType(var_.external_database_connector_connection_credentials_credential_type())
+ *                 .password(var_.external_database_connector_connection_credentials_password())
+ *                 .role(var_.external_database_connector_connection_credentials_role())
+ *                 .sslSecretId(oci_vault_secret.test_secret().id())
+ *                 .username(var_.external_database_connector_connection_credentials_username())
+ *                 .build())
+ *             .connectionString(ExternalDatabaseConnectorConnectionStringArgs.builder()
+ *                 .hostname(var_.external_database_connector_connection_string_hostname())
+ *                 .port(var_.external_database_connector_connection_string_port())
+ *                 .protocol(var_.external_database_connector_connection_string_protocol())
+ *                 .service(var_.external_database_connector_connection_string_service())
+ *                 .build())
+ *             .connectorAgentId(oci_database_connector_agent.test_connector_agent().id())
+ *             .displayName(var_.external_database_connector_display_name())
+ *             .externalDatabaseId(oci_database_database.test_database().id())
+ *             .connectorType(var_.external_database_connector_connector_type())
+ *             .definedTags(var_.external_database_connector_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

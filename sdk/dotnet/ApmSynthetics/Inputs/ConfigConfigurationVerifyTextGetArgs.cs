@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigConfigurationVerifyTextGetArgs : Pulumi.ResourceArgs
+    public sealed class ConfigConfigurationVerifyTextGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Verification text in the response.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigConfigurationVerifyTextGetArgs()
         {
         }
+        public static new ConfigConfigurationVerifyTextGetArgs Empty => new ConfigConfigurationVerifyTextGetArgs();
     }
 }

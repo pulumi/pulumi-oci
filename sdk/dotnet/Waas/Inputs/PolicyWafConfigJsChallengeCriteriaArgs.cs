@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigJsChallengeCriteriaArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigJsChallengeCriteriaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -49,5 +49,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigJsChallengeCriteriaArgs()
         {
         }
+        public static new PolicyWafConfigJsChallengeCriteriaArgs Empty => new PolicyWafConfigJsChallengeCriteriaArgs();
     }
 }

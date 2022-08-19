@@ -17,29 +17,27 @@ namespace Pulumi.Oci.ServiceCatalog
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testServiceCatalog = new Oci.ServiceCatalog.Catalog("testServiceCatalog", new()
     ///     {
-    ///         var testServiceCatalog = new Oci.ServiceCatalog.Catalog("testServiceCatalog", new Oci.ServiceCatalog.CatalogArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Service_catalog_display_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Service_catalog_display_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.ServiceCatalog
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceCatalog/catalog:Catalog")]
-    public partial class Catalog : Pulumi.CustomResource
+    public partial class Catalog : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The unique identifier for the compartment where the service catalog will be created.
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.ServiceCatalog
         }
     }
 
-    public sealed class CatalogArgs : Pulumi.ResourceArgs
+    public sealed class CatalogArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The unique identifier for the compartment where the service catalog will be created.
@@ -180,9 +178,10 @@ namespace Pulumi.Oci.ServiceCatalog
         public CatalogArgs()
         {
         }
+        public static new CatalogArgs Empty => new CatalogArgs();
     }
 
-    public sealed class CatalogState : Pulumi.ResourceArgs
+    public sealed class CatalogState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The unique identifier for the compartment where the service catalog will be created.
@@ -241,5 +240,6 @@ namespace Pulumi.Oci.ServiceCatalog
         public CatalogState()
         {
         }
+        public static new CatalogState Empty => new CatalogState();
     }
 }

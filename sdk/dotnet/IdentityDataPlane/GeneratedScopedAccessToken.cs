@@ -17,21 +17,19 @@ namespace Pulumi.Oci.IdentityDataPlane
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testGenerateScopedAccessToken = new Oci.IdentityDataPlane.GeneratedScopedAccessToken("testGenerateScopedAccessToken", new()
     ///     {
-    ///         var testGenerateScopedAccessToken = new Oci.IdentityDataPlane.GeneratedScopedAccessToken("testGenerateScopedAccessToken", new Oci.IdentityDataPlane.GeneratedScopedAccessTokenArgs
-    ///         {
-    ///             PublicKey = @var.Generate_scoped_access_token_public_key,
-    ///             Scope = @var.Generate_scoped_access_token_scope,
-    ///         });
-    ///     }
+    ///         PublicKey = @var.Generate_scoped_access_token_public_key,
+    ///         Scope = @var.Generate_scoped_access_token_scope,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.IdentityDataPlane
     /// ```
     /// </summary>
     [OciResourceType("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken")]
-    public partial class GeneratedScopedAccessToken : Pulumi.CustomResource
+    public partial class GeneratedScopedAccessToken : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
@@ -107,7 +105,7 @@ namespace Pulumi.Oci.IdentityDataPlane
         }
     }
 
-    public sealed class GeneratedScopedAccessTokenArgs : Pulumi.ResourceArgs
+    public sealed class GeneratedScopedAccessTokenArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
@@ -124,9 +122,10 @@ namespace Pulumi.Oci.IdentityDataPlane
         public GeneratedScopedAccessTokenArgs()
         {
         }
+        public static new GeneratedScopedAccessTokenArgs Empty => new GeneratedScopedAccessTokenArgs();
     }
 
-    public sealed class GeneratedScopedAccessTokenState : Pulumi.ResourceArgs
+    public sealed class GeneratedScopedAccessTokenState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
@@ -149,5 +148,6 @@ namespace Pulumi.Oci.IdentityDataPlane
         public GeneratedScopedAccessTokenState()
         {
         }
+        public static new GeneratedScopedAccessTokenState Empty => new GeneratedScopedAccessTokenState();
     }
 }

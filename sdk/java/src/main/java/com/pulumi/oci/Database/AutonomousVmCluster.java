@@ -27,6 +27,59 @@ import javax.annotation.Nullable;
  * Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM Cluster in the Oracle cloud, see [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousVmCluster;
+ * import com.pulumi.oci.Database.AutonomousVmClusterArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousVmClusterMaintenanceWindowDetailArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousVmCluster = new AutonomousVmCluster(&#34;testAutonomousVmCluster&#34;, AutonomousVmClusterArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.autonomous_vm_cluster_display_name())
+ *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+ *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+ *             .autonomousDataStorageSizeInTbs(var_.autonomous_vm_cluster_autonomous_data_storage_size_in_tbs())
+ *             .cpuCoreCountPerNode(var_.autonomous_vm_cluster_cpu_core_count_per_node())
+ *             .definedTags(var_.autonomous_vm_cluster_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isLocalBackupEnabled(var_.autonomous_vm_cluster_is_local_backup_enabled())
+ *             .licenseModel(var_.autonomous_vm_cluster_license_model())
+ *             .maintenanceWindowDetails(AutonomousVmClusterMaintenanceWindowDetailArgs.builder()
+ *                 .preference(var_.autonomous_vm_cluster_maintenance_window_details_preference())
+ *                 .daysOfWeeks(AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs.builder()
+ *                     .name(var_.autonomous_vm_cluster_maintenance_window_details_days_of_week_name())
+ *                     .build())
+ *                 .hoursOfDays(var_.autonomous_vm_cluster_maintenance_window_details_hours_of_day())
+ *                 .leadTimeInWeeks(var_.autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks())
+ *                 .months(AutonomousVmClusterMaintenanceWindowDetailMonthArgs.builder()
+ *                     .name(var_.autonomous_vm_cluster_maintenance_window_details_months_name())
+ *                     .build())
+ *                 .weeksOfMonths(var_.autonomous_vm_cluster_maintenance_window_details_weeks_of_month())
+ *                 .build())
+ *             .memoryPerOracleComputeUnitInGbs(var_.autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs())
+ *             .timeZone(var_.autonomous_vm_cluster_time_zone())
+ *             .totalContainerDatabases(var_.autonomous_vm_cluster_total_container_databases())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

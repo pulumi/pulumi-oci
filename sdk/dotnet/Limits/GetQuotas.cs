@@ -21,22 +21,20 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQuotas = Oci.Limits.GetQuotas.Invoke(new()
         ///     {
-        ///         var testQuotas = Output.Create(Oci.Limits.GetQuotas.InvokeAsync(new Oci.Limits.GetQuotasArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Name = @var.Quota_name,
-        ///             State = @var.Quota_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Name = @var.Quota_name,
+        ///         State = @var.Quota_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.Limits
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQuotas = Oci.Limits.GetQuotas.Invoke(new()
         ///     {
-        ///         var testQuotas = Output.Create(Oci.Limits.GetQuotas.InvokeAsync(new Oci.Limits.GetQuotasArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Name = @var.Quota_name,
-        ///             State = @var.Quota_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Name = @var.Quota_name,
+        ///         State = @var.Quota_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Limits
     }
 
 
-    public sealed class GetQuotasArgs : Pulumi.InvokeArgs
+    public sealed class GetQuotasArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.Limits
         public GetQuotasArgs()
         {
         }
+        public static new GetQuotasArgs Empty => new GetQuotasArgs();
     }
 
-    public sealed class GetQuotasInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetQuotasInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Limits
         public GetQuotasInvokeArgs()
         {
         }
+        public static new GetQuotasInvokeArgs Empty => new GetQuotasInvokeArgs();
     }
 
 

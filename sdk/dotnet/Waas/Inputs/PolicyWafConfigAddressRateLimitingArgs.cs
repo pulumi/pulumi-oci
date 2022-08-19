@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigAddressRateLimitingArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigAddressRateLimitingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigAddressRateLimitingArgs()
         {
         }
+        public static new PolicyWafConfigAddressRateLimitingArgs Empty => new PolicyWafConfigAddressRateLimitingArgs();
     }
 }

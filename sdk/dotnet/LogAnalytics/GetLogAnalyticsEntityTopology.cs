@@ -21,22 +21,20 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsEntityTopology = Oci.LogAnalytics.GetLogAnalyticsEntityTopology.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsEntityTopology = Output.Create(Oci.LogAnalytics.GetLogAnalyticsEntityTopology.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsEntityTopologyArgs
-        ///         {
-        ///             LogAnalyticsEntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-        ///             Namespace = @var.Log_analytics_entity_topology_namespace,
-        ///             State = @var.Log_analytics_entity_topology_state,
-        ///         }));
-        ///     }
+        ///         LogAnalyticsEntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
+        ///         Namespace = @var.Log_analytics_entity_topology_namespace,
+        ///         State = @var.Log_analytics_entity_topology_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsEntityTopology = Oci.LogAnalytics.GetLogAnalyticsEntityTopology.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsEntityTopology = Output.Create(Oci.LogAnalytics.GetLogAnalyticsEntityTopology.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsEntityTopologyArgs
-        ///         {
-        ///             LogAnalyticsEntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-        ///             Namespace = @var.Log_analytics_entity_topology_namespace,
-        ///             State = @var.Log_analytics_entity_topology_state,
-        ///         }));
-        ///     }
+        ///         LogAnalyticsEntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
+        ///         Namespace = @var.Log_analytics_entity_topology_namespace,
+        ///         State = @var.Log_analytics_entity_topology_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsEntityTopologyArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsEntityTopologyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The log analytics entity OCID.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsEntityTopologyArgs()
         {
         }
+        public static new GetLogAnalyticsEntityTopologyArgs Empty => new GetLogAnalyticsEntityTopologyArgs();
     }
 
-    public sealed class GetLogAnalyticsEntityTopologyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsEntityTopologyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The log analytics entity OCID.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsEntityTopologyInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsEntityTopologyInvokeArgs Empty => new GetLogAnalyticsEntityTopologyInvokeArgs();
     }
 
 

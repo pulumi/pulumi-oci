@@ -23,30 +23,28 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseInsights = Oci.Opsi.GetDatabaseInsights.Invoke(new()
         ///     {
-        ///         var testDatabaseInsights = Output.Create(Oci.Opsi.GetDatabaseInsights.InvokeAsync(new Oci.Opsi.GetDatabaseInsightsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Database_insight_compartment_id_in_subtree,
-        ///             DatabaseIds = oci_database_database.Test_database.Id,
-        ///             DatabaseTypes = @var.Database_insight_database_type,
-        ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///             ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///             Fields = @var.Database_insight_fields,
-        ///             Id = @var.Database_insight_id,
-        ///             OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///             States = @var.Database_insight_state,
-        ///             Statuses = @var.Database_insight_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Database_insight_compartment_id_in_subtree,
+        ///         DatabaseIds = oci_database_database.Test_database.Id,
+        ///         DatabaseTypes = @var.Database_insight_database_type,
+        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+        ///         Fields = @var.Database_insight_fields,
+        ///         Id = @var.Database_insight_id,
+        ///         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+        ///         States = @var.Database_insight_state,
+        ///         Statuses = @var.Database_insight_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,30 +64,28 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseInsights = Oci.Opsi.GetDatabaseInsights.Invoke(new()
         ///     {
-        ///         var testDatabaseInsights = Output.Create(Oci.Opsi.GetDatabaseInsights.InvokeAsync(new Oci.Opsi.GetDatabaseInsightsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Database_insight_compartment_id_in_subtree,
-        ///             DatabaseIds = oci_database_database.Test_database.Id,
-        ///             DatabaseTypes = @var.Database_insight_database_type,
-        ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///             ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///             Fields = @var.Database_insight_fields,
-        ///             Id = @var.Database_insight_id,
-        ///             OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///             States = @var.Database_insight_state,
-        ///             Statuses = @var.Database_insight_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Database_insight_compartment_id_in_subtree,
+        ///         DatabaseIds = oci_database_database.Test_database.Id,
+        ///         DatabaseTypes = @var.Database_insight_database_type,
+        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+        ///         Fields = @var.Database_insight_fields,
+        ///         Id = @var.Database_insight_id,
+        ///         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+        ///         States = @var.Database_insight_state,
+        ///         Statuses = @var.Database_insight_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -99,7 +95,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetDatabaseInsightsArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseInsightsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -208,9 +204,10 @@ namespace Pulumi.Oci.Opsi
         public GetDatabaseInsightsArgs()
         {
         }
+        public static new GetDatabaseInsightsArgs Empty => new GetDatabaseInsightsArgs();
     }
 
-    public sealed class GetDatabaseInsightsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseInsightsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -319,6 +316,7 @@ namespace Pulumi.Oci.Opsi
         public GetDatabaseInsightsInvokeArgs()
         {
         }
+        public static new GetDatabaseInsightsInvokeArgs Empty => new GetDatabaseInsightsInvokeArgs();
     }
 
 

@@ -18,23 +18,21 @@ namespace Pulumi.Oci.Marketplace
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testListingPackageAgreement = new Oci.Marketplace.ListingPackageAgreement("testListingPackageAgreement", new()
     ///     {
-    ///         var testListingPackageAgreement = new Oci.Marketplace.ListingPackageAgreement("testListingPackageAgreement", new Oci.Marketplace.ListingPackageAgreementArgs
-    ///         {
-    ///             AgreementId = oci_marketplace_agreement.Test_agreement.Id,
-    ///             ListingId = oci_marketplace_listing.Test_listing.Id,
-    ///             PackageVersion = @var.Listing_package_agreement_package_version,
-    ///             CompartmentId = @var.Compartment_id,
-    ///         });
-    ///     }
+    ///         AgreementId = oci_marketplace_agreement.Test_agreement.Id,
+    ///         ListingId = oci_marketplace_listing.Test_listing.Id,
+    ///         PackageVersion = @var.Listing_package_agreement_package_version,
+    ///         CompartmentId = @var.Compartment_id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -42,7 +40,7 @@ namespace Pulumi.Oci.Marketplace
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement")]
-    public partial class ListingPackageAgreement : Pulumi.CustomResource
+    public partial class ListingPackageAgreement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The unique identifier for the agreement.
@@ -136,7 +134,7 @@ namespace Pulumi.Oci.Marketplace
         }
     }
 
-    public sealed class ListingPackageAgreementArgs : Pulumi.ResourceArgs
+    public sealed class ListingPackageAgreementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique identifier for the agreement.
@@ -165,9 +163,10 @@ namespace Pulumi.Oci.Marketplace
         public ListingPackageAgreementArgs()
         {
         }
+        public static new ListingPackageAgreementArgs Empty => new ListingPackageAgreementArgs();
     }
 
-    public sealed class ListingPackageAgreementState : Pulumi.ResourceArgs
+    public sealed class ListingPackageAgreementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique identifier for the agreement.
@@ -220,5 +219,6 @@ namespace Pulumi.Oci.Marketplace
         public ListingPackageAgreementState()
         {
         }
+        public static new ListingPackageAgreementState Empty => new ListingPackageAgreementState();
     }
 }

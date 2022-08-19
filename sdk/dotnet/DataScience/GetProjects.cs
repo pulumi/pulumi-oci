@@ -21,24 +21,22 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProjects = Oci.DataScience.GetProjects.Invoke(new()
         ///     {
-        ///         var testProjects = Output.Create(Oci.DataScience.GetProjects.InvokeAsync(new Oci.DataScience.GetProjectsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Project_created_by,
-        ///             DisplayName = @var.Project_display_name,
-        ///             Id = @var.Project_id,
-        ///             State = @var.Project_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Project_created_by,
+        ///         DisplayName = @var.Project_display_name,
+        ///         Id = @var.Project_id,
+        ///         State = @var.Project_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,24 +54,22 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProjects = Oci.DataScience.GetProjects.Invoke(new()
         ///     {
-        ///         var testProjects = Output.Create(Oci.DataScience.GetProjects.InvokeAsync(new Oci.DataScience.GetProjectsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Project_created_by,
-        ///             DisplayName = @var.Project_display_name,
-        ///             Id = @var.Project_id,
-        ///             State = @var.Project_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Project_created_by,
+        ///         DisplayName = @var.Project_display_name,
+        ///         Id = @var.Project_id,
+        ///         State = @var.Project_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetProjectsArgs : Pulumi.InvokeArgs
+    public sealed class GetProjectsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.DataScience
         public GetProjectsArgs()
         {
         }
+        public static new GetProjectsArgs Empty => new GetProjectsArgs();
     }
 
-    public sealed class GetProjectsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProjectsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.DataScience
         public GetProjectsInvokeArgs()
         {
         }
+        public static new GetProjectsInvokeArgs Empty => new GetProjectsInvokeArgs();
     }
 
 

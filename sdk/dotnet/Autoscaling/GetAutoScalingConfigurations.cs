@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Autoscaling
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutoScalingConfigurations = Oci.Autoscaling.GetAutoScalingConfigurations.Invoke(new()
         ///     {
-        ///         var testAutoScalingConfigurations = Output.Create(Oci.Autoscaling.GetAutoScalingConfigurations.InvokeAsync(new Oci.Autoscaling.GetAutoScalingConfigurationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Auto_scaling_configuration_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Auto_scaling_configuration_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Autoscaling
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutoScalingConfigurations = Oci.Autoscaling.GetAutoScalingConfigurations.Invoke(new()
         ///     {
-        ///         var testAutoScalingConfigurations = Output.Create(Oci.Autoscaling.GetAutoScalingConfigurations.InvokeAsync(new Oci.Autoscaling.GetAutoScalingConfigurationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Auto_scaling_configuration_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Auto_scaling_configuration_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Autoscaling
     }
 
 
-    public sealed class GetAutoScalingConfigurationsArgs : Pulumi.InvokeArgs
+    public sealed class GetAutoScalingConfigurationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Autoscaling
         public GetAutoScalingConfigurationsArgs()
         {
         }
+        public static new GetAutoScalingConfigurationsArgs Empty => new GetAutoScalingConfigurationsArgs();
     }
 
-    public sealed class GetAutoScalingConfigurationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutoScalingConfigurationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.Autoscaling
         public GetAutoScalingConfigurationsInvokeArgs()
         {
         }
+        public static new GetAutoScalingConfigurationsInvokeArgs Empty => new GetAutoScalingConfigurationsInvokeArgs();
     }
 
 

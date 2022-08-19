@@ -36,32 +36,30 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityAssessments = Oci.DataSafe.GetSecurityAssessments.Invoke(new()
         ///     {
-        ///         var testSecurityAssessments = Output.Create(Oci.DataSafe.GetSecurityAssessments.InvokeAsync(new Oci.DataSafe.GetSecurityAssessmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Security_assessment_access_level,
-        ///             CompartmentIdInSubtree = @var.Security_assessment_compartment_id_in_subtree,
-        ///             DisplayName = @var.Security_assessment_display_name,
-        ///             IsBaseline = @var.Security_assessment_is_baseline,
-        ///             IsScheduleAssessment = @var.Security_assessment_is_schedule_assessment,
-        ///             ScheduleAssessmentId = oci_data_safe_schedule_assessment.Test_schedule_assessment.Id,
-        ///             State = @var.Security_assessment_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Security_assessment_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Security_assessment_time_created_less_than,
-        ///             TriggeredBy = @var.Security_assessment_triggered_by,
-        ///             Type = @var.Security_assessment_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Security_assessment_access_level,
+        ///         CompartmentIdInSubtree = @var.Security_assessment_compartment_id_in_subtree,
+        ///         DisplayName = @var.Security_assessment_display_name,
+        ///         IsBaseline = @var.Security_assessment_is_baseline,
+        ///         IsScheduleAssessment = @var.Security_assessment_is_schedule_assessment,
+        ///         ScheduleAssessmentId = oci_data_safe_schedule_assessment.Test_schedule_assessment.Id,
+        ///         State = @var.Security_assessment_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Security_assessment_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Security_assessment_time_created_less_than,
+        ///         TriggeredBy = @var.Security_assessment_triggered_by,
+        ///         Type = @var.Security_assessment_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -94,32 +92,30 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityAssessments = Oci.DataSafe.GetSecurityAssessments.Invoke(new()
         ///     {
-        ///         var testSecurityAssessments = Output.Create(Oci.DataSafe.GetSecurityAssessments.InvokeAsync(new Oci.DataSafe.GetSecurityAssessmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Security_assessment_access_level,
-        ///             CompartmentIdInSubtree = @var.Security_assessment_compartment_id_in_subtree,
-        ///             DisplayName = @var.Security_assessment_display_name,
-        ///             IsBaseline = @var.Security_assessment_is_baseline,
-        ///             IsScheduleAssessment = @var.Security_assessment_is_schedule_assessment,
-        ///             ScheduleAssessmentId = oci_data_safe_schedule_assessment.Test_schedule_assessment.Id,
-        ///             State = @var.Security_assessment_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Security_assessment_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Security_assessment_time_created_less_than,
-        ///             TriggeredBy = @var.Security_assessment_triggered_by,
-        ///             Type = @var.Security_assessment_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Security_assessment_access_level,
+        ///         CompartmentIdInSubtree = @var.Security_assessment_compartment_id_in_subtree,
+        ///         DisplayName = @var.Security_assessment_display_name,
+        ///         IsBaseline = @var.Security_assessment_is_baseline,
+        ///         IsScheduleAssessment = @var.Security_assessment_is_schedule_assessment,
+        ///         ScheduleAssessmentId = oci_data_safe_schedule_assessment.Test_schedule_assessment.Id,
+        ///         State = @var.Security_assessment_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Security_assessment_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Security_assessment_time_created_less_than,
+        ///         TriggeredBy = @var.Security_assessment_triggered_by,
+        ///         Type = @var.Security_assessment_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -129,7 +125,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSecurityAssessmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityAssessmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -220,9 +216,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSecurityAssessmentsArgs()
         {
         }
+        public static new GetSecurityAssessmentsArgs Empty => new GetSecurityAssessmentsArgs();
     }
 
-    public sealed class GetSecurityAssessmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityAssessmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -313,6 +310,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSecurityAssessmentsInvokeArgs()
         {
         }
+        public static new GetSecurityAssessmentsInvokeArgs Empty => new GetSecurityAssessmentsInvokeArgs();
     }
 
 

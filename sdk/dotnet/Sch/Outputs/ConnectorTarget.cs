@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string? LogGroupId;
         /// <summary>
+        /// (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+        /// </summary>
+        public readonly string? LogSourceIdentifier;
+        /// <summary>
         /// (Updatable) The name of the metric.  Example: `CpuUtilization`
         /// </summary>
         public readonly string? Metric;
@@ -94,6 +98,8 @@ namespace Pulumi.Oci.Sch.Outputs
 
             string? logGroupId,
 
+            string? logSourceIdentifier,
+
             string? metric,
 
             string? metricNamespace,
@@ -115,6 +121,7 @@ namespace Pulumi.Oci.Sch.Outputs
             FunctionId = functionId;
             Kind = kind;
             LogGroupId = logGroupId;
+            LogSourceIdentifier = logSourceIdentifier;
             Metric = metric;
             MetricNamespace = metricNamespace;
             Namespace = @namespace;

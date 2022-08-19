@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageFailurePolicyArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageFailurePolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageFailurePolicyArgs()
         {
         }
+        public static new DeployStageFailurePolicyArgs Empty => new DeployStageFailurePolicyArgs();
     }
 }

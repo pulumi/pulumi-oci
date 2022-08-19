@@ -17,60 +17,58 @@ namespace Pulumi.Oci.Marketplace
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPublication = new Oci.Marketplace.Publication("testPublication", new()
     ///     {
-    ///         var testPublication = new Oci.Marketplace.Publication("testPublication", new Oci.Marketplace.PublicationArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IsAgreementAcknowledged = @var.Publication_is_agreement_acknowledged,
+    ///         ListingType = @var.Publication_listing_type,
+    ///         PackageDetails = new Oci.Marketplace.Inputs.PublicationPackageDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IsAgreementAcknowledged = @var.Publication_is_agreement_acknowledged,
-    ///             ListingType = @var.Publication_listing_type,
-    ///             PackageDetails = new Oci.Marketplace.Inputs.PublicationPackageDetailsArgs
+    ///             Eulas = new[]
     ///             {
-    ///                 Eulas = 
+    ///                 new Oci.Marketplace.Inputs.PublicationPackageDetailsEulaArgs
     ///                 {
-    ///                     new Oci.Marketplace.Inputs.PublicationPackageDetailsEulaArgs
-    ///                     {
-    ///                         EulaType = @var.Publication_package_details_eula_eula_type,
-    ///                         LicenseText = @var.Publication_package_details_eula_license_text,
-    ///                     },
-    ///                 },
-    ///                 OperatingSystem = new Oci.Marketplace.Inputs.PublicationPackageDetailsOperatingSystemArgs
-    ///                 {
-    ///                     Name = @var.Publication_package_details_operating_system_name,
-    ///                 },
-    ///                 PackageType = @var.Publication_package_details_package_type,
-    ///                 PackageVersion = @var.Publication_package_details_package_version,
-    ///                 ImageId = oci_core_image.Test_image.Id,
-    ///             },
-    ///             ShortDescription = @var.Publication_short_description,
-    ///             SupportContacts = 
-    ///             {
-    ///                 new Oci.Marketplace.Inputs.PublicationSupportContactArgs
-    ///                 {
-    ///                     Email = @var.Publication_support_contacts_email,
-    ///                     Name = @var.Publication_support_contacts_name,
-    ///                     Phone = @var.Publication_support_contacts_phone,
-    ///                     Subject = @var.Publication_support_contacts_subject,
+    ///                     EulaType = @var.Publication_package_details_eula_eula_type,
+    ///                     LicenseText = @var.Publication_package_details_eula_license_text,
     ///                 },
     ///             },
-    ///             DefinedTags = 
+    ///             OperatingSystem = new Oci.Marketplace.Inputs.PublicationPackageDetailsOperatingSystemArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 Name = @var.Publication_package_details_operating_system_name,
     ///             },
-    ///             FreeformTags = 
+    ///             PackageType = @var.Publication_package_details_package_type,
+    ///             PackageVersion = @var.Publication_package_details_package_version,
+    ///             ImageId = oci_core_image.Test_image.Id,
+    ///         },
+    ///         ShortDescription = @var.Publication_short_description,
+    ///         SupportContacts = new[]
+    ///         {
+    ///             new Oci.Marketplace.Inputs.PublicationSupportContactArgs
     ///             {
-    ///                 { "Department", "Finance" },
+    ///                 Email = @var.Publication_support_contacts_email,
+    ///                 Name = @var.Publication_support_contacts_name,
+    ///                 Phone = @var.Publication_support_contacts_phone,
+    ///                 Subject = @var.Publication_support_contacts_subject,
     ///             },
-    ///             LongDescription = @var.Publication_long_description,
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LongDescription = @var.Publication_long_description,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -82,7 +80,7 @@ namespace Pulumi.Oci.Marketplace
     /// ```
     /// </summary>
     [OciResourceType("oci:Marketplace/publication:Publication")]
-    public partial class Publication : Pulumi.CustomResource
+    public partial class Publication : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
@@ -218,7 +216,7 @@ namespace Pulumi.Oci.Marketplace
         }
     }
 
-    public sealed class PublicationArgs : Pulumi.ResourceArgs
+    public sealed class PublicationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
@@ -301,9 +299,10 @@ namespace Pulumi.Oci.Marketplace
         public PublicationArgs()
         {
         }
+        public static new PublicationArgs Empty => new PublicationArgs();
     }
 
-    public sealed class PublicationState : Pulumi.ResourceArgs
+    public sealed class PublicationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
@@ -428,5 +427,6 @@ namespace Pulumi.Oci.Marketplace
         public PublicationState()
         {
         }
+        public static new PublicationState Empty => new PublicationState();
     }
 }

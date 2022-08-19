@@ -47,40 +47,38 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSubnet = new Oci.Core.Subnet("testSubnet", new()
     ///     {
-    ///         var testSubnet = new Oci.Core.Subnet("testSubnet", new Oci.Core.SubnetArgs
+    ///         CidrBlock = @var.Subnet_cidr_block,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         AvailabilityDomain = @var.Subnet_availability_domain,
+    ///         DefinedTags = 
     ///         {
-    ///             CidrBlock = @var.Subnet_cidr_block,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             AvailabilityDomain = @var.Subnet_availability_domain,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DhcpOptionsId = oci_core_dhcp_options.Test_dhcp_options.Id,
-    ///             DisplayName = @var.Subnet_display_name,
-    ///             DnsLabel = @var.Subnet_dns_label,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Ipv6cidrBlock = @var.Subnet_ipv6cidr_block,
-    ///             Ipv6cidrBlocks = @var.Subnet_ipv6cidr_blocks,
-    ///             ProhibitInternetIngress = @var.Subnet_prohibit_internet_ingress,
-    ///             ProhibitPublicIpOnVnic = @var.Subnet_prohibit_public_ip_on_vnic,
-    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///             SecurityListIds = @var.Subnet_security_list_ids,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DhcpOptionsId = oci_core_dhcp_options.Test_dhcp_options.Id,
+    ///         DisplayName = @var.Subnet_display_name,
+    ///         DnsLabel = @var.Subnet_dns_label,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Ipv6cidrBlock = @var.Subnet_ipv6cidr_block,
+    ///         Ipv6cidrBlocks = @var.Subnet_ipv6cidr_blocks,
+    ///         ProhibitInternetIngress = @var.Subnet_prohibit_internet_ingress,
+    ///         ProhibitPublicIpOnVnic = @var.Subnet_prohibit_public_ip_on_vnic,
+    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///         SecurityListIds = @var.Subnet_security_list_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -92,7 +90,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/subnet:Subnet")]
-    public partial class Subnet : Pulumi.CustomResource
+    public partial class Subnet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
@@ -267,7 +265,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class SubnetArgs : Pulumi.ResourceArgs
+    public sealed class SubnetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
@@ -389,9 +387,10 @@ namespace Pulumi.Oci.Core
         public SubnetArgs()
         {
         }
+        public static new SubnetArgs Empty => new SubnetArgs();
     }
 
-    public sealed class SubnetState : Pulumi.ResourceArgs
+    public sealed class SubnetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
@@ -549,5 +548,6 @@ namespace Pulumi.Oci.Core
         public SubnetState()
         {
         }
+        public static new SubnetState Empty => new SubnetState();
     }
 }

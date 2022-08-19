@@ -22,26 +22,24 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaintenanceRuns = Oci.Database.GetMaintenanceRuns.Invoke(new()
         ///     {
-        ///         var testMaintenanceRuns = Output.Create(Oci.Database.GetMaintenanceRuns.InvokeAsync(new Oci.Database.GetMaintenanceRunsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Maintenance_run_availability_domain,
-        ///             MaintenanceSubtype = @var.Maintenance_run_maintenance_subtype,
-        ///             MaintenanceType = @var.Maintenance_run_maintenance_type,
-        ///             State = @var.Maintenance_run_state,
-        ///             TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
-        ///             TargetResourceType = @var.Maintenance_run_target_resource_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Maintenance_run_availability_domain,
+        ///         MaintenanceSubtype = @var.Maintenance_run_maintenance_subtype,
+        ///         MaintenanceType = @var.Maintenance_run_maintenance_type,
+        ///         State = @var.Maintenance_run_state,
+        ///         TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
+        ///         TargetResourceType = @var.Maintenance_run_target_resource_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,26 +58,24 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaintenanceRuns = Oci.Database.GetMaintenanceRuns.Invoke(new()
         ///     {
-        ///         var testMaintenanceRuns = Output.Create(Oci.Database.GetMaintenanceRuns.InvokeAsync(new Oci.Database.GetMaintenanceRunsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Maintenance_run_availability_domain,
-        ///             MaintenanceSubtype = @var.Maintenance_run_maintenance_subtype,
-        ///             MaintenanceType = @var.Maintenance_run_maintenance_type,
-        ///             State = @var.Maintenance_run_state,
-        ///             TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
-        ///             TargetResourceType = @var.Maintenance_run_target_resource_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Maintenance_run_availability_domain,
+        ///         MaintenanceSubtype = @var.Maintenance_run_maintenance_subtype,
+        ///         MaintenanceType = @var.Maintenance_run_maintenance_type,
+        ///         State = @var.Maintenance_run_state,
+        ///         TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
+        ///         TargetResourceType = @var.Maintenance_run_target_resource_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetMaintenanceRunsArgs : Pulumi.InvokeArgs
+    public sealed class GetMaintenanceRunsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
@@ -144,9 +140,10 @@ namespace Pulumi.Oci.Database
         public GetMaintenanceRunsArgs()
         {
         }
+        public static new GetMaintenanceRunsArgs Empty => new GetMaintenanceRunsArgs();
     }
 
-    public sealed class GetMaintenanceRunsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMaintenanceRunsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
@@ -201,6 +198,7 @@ namespace Pulumi.Oci.Database
         public GetMaintenanceRunsInvokeArgs()
         {
         }
+        public static new GetMaintenanceRunsInvokeArgs Empty => new GetMaintenanceRunsInvokeArgs();
     }
 
 

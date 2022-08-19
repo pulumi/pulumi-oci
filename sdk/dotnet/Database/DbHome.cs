@@ -14,76 +14,6 @@ namespace Pulumi.Oci.Database
     /// 
     /// Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testDbHome = new Oci.Database.DbHome("testDbHome", new Oci.Database.DbHomeArgs
-    ///         {
-    ///             Database = new Oci.Database.Inputs.DbHomeDatabaseArgs
-    ///             {
-    ///                 AdminPassword = @var.Db_home_database_admin_password,
-    ///                 BackupId = oci_database_backup.Test_backup.Id,
-    ///                 BackupTdePassword = @var.Db_home_database_backup_tde_password,
-    ///                 CharacterSet = @var.Db_home_database_character_set,
-    ///                 DatabaseId = oci_database_database.Test_database.Id,
-    ///                 DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
-    ///                 DbBackupConfig = new Oci.Database.Inputs.DbHomeDatabaseDbBackupConfigArgs
-    ///                 {
-    ///                     AutoBackupEnabled = @var.Db_home_database_db_backup_config_auto_backup_enabled,
-    ///                     AutoBackupWindow = @var.Db_home_database_db_backup_config_auto_backup_window,
-    ///                     BackupDestinationDetails = 
-    ///                     {
-    ///                         new Oci.Database.Inputs.DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs
-    ///                         {
-    ///                             Id = @var.Db_home_database_db_backup_config_backup_destination_details_id,
-    ///                             Type = @var.Db_home_database_db_backup_config_backup_destination_details_type,
-    ///                         },
-    ///                     },
-    ///                     RecoveryWindowInDays = @var.Db_home_database_db_backup_config_recovery_window_in_days,
-    ///                 },
-    ///                 DbName = @var.Db_home_database_db_name,
-    ///                 DbWorkload = @var.Db_home_database_db_workload,
-    ///                 DefinedTags = @var.Db_home_database_defined_tags,
-    ///                 FreeformTags = @var.Db_home_database_freeform_tags,
-    ///                 KmsKeyId = oci_kms_key.Test_key.Id,
-    ///                 KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///                 NcharacterSet = @var.Db_home_database_ncharacter_set,
-    ///                 PdbName = @var.Db_home_database_pdb_name,
-    ///                 SidPrefix = @var.Db_home_database_sid_prefix,
-    ///                 TdeWalletPassword = @var.Db_home_database_tde_wallet_password,
-    ///                 TimeStampForPointInTimeRecovery = @var.Db_home_database_time_stamp_for_point_in_time_recovery,
-    ///                 VaultId = oci_kms_vault.Test_vault.Id,
-    ///             },
-    ///             DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
-    ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///             DbVersion = 
-    ///             {
-    ///                 ,
-    ///             },
-    ///             DefinedTags = @var.Db_home_defined_tags,
-    ///             DisplayName = @var.Db_home_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsDesupportedVersion = @var.Db_home_is_desupported_version,
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///             Source = @var.Db_home_source,
-    ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// DbHomes can be imported using the `id`, e.g.
@@ -101,7 +31,7 @@ namespace Pulumi.Oci.Database
     ///  } The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
     /// </summary>
     [OciResourceType("oci:Database/dbHome:DbHome")]
-    public partial class DbHome : Pulumi.CustomResource
+    public partial class DbHome : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -255,7 +185,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class DbHomeArgs : Pulumi.ResourceArgs
+    public sealed class DbHomeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Details for creating a database.
@@ -344,9 +274,10 @@ namespace Pulumi.Oci.Database
         public DbHomeArgs()
         {
         }
+        public static new DbHomeArgs Empty => new DbHomeArgs();
     }
 
-    public sealed class DbHomeState : Pulumi.ResourceArgs
+    public sealed class DbHomeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -471,5 +402,6 @@ namespace Pulumi.Oci.Database
         public DbHomeState()
         {
         }
+        public static new DbHomeState Empty => new DbHomeState();
     }
 }

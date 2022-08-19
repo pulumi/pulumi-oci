@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetRegionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetRegionsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetRegionsFilterArgs()
         {
         }
+        public static new GetRegionsFilterArgs Empty => new GetRegionsFilterArgs();
     }
 }

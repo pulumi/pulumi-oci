@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceCatalogAssociation = Oci.ServiceCatalog.GetServiceCatalogAssociation.Invoke(new()
         ///     {
-        ///         var testServiceCatalogAssociation = Output.Create(Oci.ServiceCatalog.GetServiceCatalogAssociation.InvokeAsync(new Oci.ServiceCatalog.GetServiceCatalogAssociationArgs
-        ///         {
-        ///             ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
-        ///         }));
-        ///     }
+        ///         ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceCatalogAssociation = Oci.ServiceCatalog.GetServiceCatalogAssociation.Invoke(new()
         ///     {
-        ///         var testServiceCatalogAssociation = Output.Create(Oci.ServiceCatalog.GetServiceCatalogAssociation.InvokeAsync(new Oci.ServiceCatalog.GetServiceCatalogAssociationArgs
-        ///         {
-        ///             ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
-        ///         }));
-        ///     }
+        ///         ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceCatalog
     }
 
 
-    public sealed class GetServiceCatalogAssociationArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceCatalogAssociationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the service catalog association.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceCatalog
         public GetServiceCatalogAssociationArgs()
         {
         }
+        public static new GetServiceCatalogAssociationArgs Empty => new GetServiceCatalogAssociationArgs();
     }
 
-    public sealed class GetServiceCatalogAssociationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceCatalogAssociationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the service catalog association.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceCatalog
         public GetServiceCatalogAssociationInvokeArgs()
         {
         }
+        public static new GetServiceCatalogAssociationInvokeArgs Empty => new GetServiceCatalogAssociationInvokeArgs();
     }
 
 

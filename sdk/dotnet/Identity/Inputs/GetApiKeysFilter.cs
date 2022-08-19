@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetApiKeysFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetApiKeysFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetApiKeysFilterArgs()
         {
         }
+        public static new GetApiKeysFilterArgs Empty => new GetApiKeysFilterArgs();
     }
 }

@@ -54,6 +54,34 @@ public final class MysqlFunctions {
      * Gets information about the Analytics Cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsCluster = MysqlFunctions.getAnalyticsCluster(GetAnalyticsClusterArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnalyticsClusterResult> getAnalyticsCluster(GetAnalyticsClusterArgs args) {
@@ -66,6 +94,34 @@ public final class MysqlFunctions {
      * Gets information about the Analytics Cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsCluster = MysqlFunctions.getAnalyticsCluster(GetAnalyticsClusterArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnalyticsClusterResult> getAnalyticsClusterPlain(GetAnalyticsClusterPlainArgs args) {
@@ -78,6 +134,34 @@ public final class MysqlFunctions {
      * Gets information about the Analytics Cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsCluster = MysqlFunctions.getAnalyticsCluster(GetAnalyticsClusterArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnalyticsClusterResult> getAnalyticsCluster(GetAnalyticsClusterArgs args, InvokeOptions options) {
@@ -90,6 +174,34 @@ public final class MysqlFunctions {
      * Gets information about the Analytics Cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetAnalyticsClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsCluster = MysqlFunctions.getAnalyticsCluster(GetAnalyticsClusterArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnalyticsClusterResult> getAnalyticsClusterPlain(GetAnalyticsClusterPlainArgs args, InvokeOptions options) {
@@ -103,6 +215,34 @@ public final class MysqlFunctions {
      * the state of the Channel, its sources and targets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
+     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetChannelResult> getChannel(GetChannelArgs args) {
@@ -116,6 +256,34 @@ public final class MysqlFunctions {
      * the state of the Channel, its sources and targets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
+     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetChannelResult> getChannelPlain(GetChannelPlainArgs args) {
@@ -129,6 +297,34 @@ public final class MysqlFunctions {
      * the state of the Channel, its sources and targets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
+     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetChannelResult> getChannel(GetChannelArgs args, InvokeOptions options) {
@@ -142,6 +338,34 @@ public final class MysqlFunctions {
      * the state of the Channel, its sources and targets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
+     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetChannelResult> getChannelPlain(GetChannelPlainArgs args, InvokeOptions options) {
@@ -153,6 +377,39 @@ public final class MysqlFunctions {
      * Lists all the Channels that match the specified filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .displayName(var_.channel_display_name())
+     *             .isEnabled(var_.channel_is_enabled())
+     *             .state(var_.channel_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetChannelsResult> getChannels(GetChannelsArgs args) {
@@ -164,6 +421,39 @@ public final class MysqlFunctions {
      * Lists all the Channels that match the specified filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .displayName(var_.channel_display_name())
+     *             .isEnabled(var_.channel_is_enabled())
+     *             .state(var_.channel_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetChannelsResult> getChannelsPlain(GetChannelsPlainArgs args) {
@@ -175,6 +465,39 @@ public final class MysqlFunctions {
      * Lists all the Channels that match the specified filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .displayName(var_.channel_display_name())
+     *             .isEnabled(var_.channel_is_enabled())
+     *             .state(var_.channel_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetChannelsResult> getChannels(GetChannelsArgs args, InvokeOptions options) {
@@ -186,6 +509,39 @@ public final class MysqlFunctions {
      * Lists all the Channels that match the specified filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .displayName(var_.channel_display_name())
+     *             .isEnabled(var_.channel_is_enabled())
+     *             .state(var_.channel_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetChannelsResult> getChannelsPlain(GetChannelsPlainArgs args, InvokeOptions options) {
@@ -197,6 +553,34 @@ public final class MysqlFunctions {
      * Gets information about the HeatWave cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHeatWaveClusterResult> getHeatWaveCluster(GetHeatWaveClusterArgs args) {
@@ -208,6 +592,34 @@ public final class MysqlFunctions {
      * Gets information about the HeatWave cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHeatWaveClusterResult> getHeatWaveClusterPlain(GetHeatWaveClusterPlainArgs args) {
@@ -219,6 +631,34 @@ public final class MysqlFunctions {
      * Gets information about the HeatWave cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHeatWaveClusterResult> getHeatWaveCluster(GetHeatWaveClusterArgs args, InvokeOptions options) {
@@ -230,6 +670,34 @@ public final class MysqlFunctions {
      * Gets information about the HeatWave cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHeatWaveClusterResult> getHeatWaveClusterPlain(GetHeatWaveClusterPlainArgs args, InvokeOptions options) {
@@ -241,6 +709,34 @@ public final class MysqlFunctions {
      * Get information about the specified Backup
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
+     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlBackupResult> getMysqlBackup(GetMysqlBackupArgs args) {
@@ -252,6 +748,34 @@ public final class MysqlFunctions {
      * Get information about the specified Backup
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
+     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlBackupResult> getMysqlBackupPlain(GetMysqlBackupPlainArgs args) {
@@ -263,6 +787,34 @@ public final class MysqlFunctions {
      * Get information about the specified Backup
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
+     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlBackupResult> getMysqlBackup(GetMysqlBackupArgs args, InvokeOptions options) {
@@ -274,6 +826,34 @@ public final class MysqlFunctions {
      * Get information about the specified Backup
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
+     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlBackupResult> getMysqlBackupPlain(GetMysqlBackupPlainArgs args, InvokeOptions options) {
@@ -285,6 +865,39 @@ public final class MysqlFunctions {
      * Get a list of DB System backups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .creationType(var_.mysql_backup_creation_type())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .displayName(var_.mysql_backup_display_name())
+     *             .state(var_.mysql_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlBackupsResult> getMysqlBackups(GetMysqlBackupsArgs args) {
@@ -296,6 +909,39 @@ public final class MysqlFunctions {
      * Get a list of DB System backups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .creationType(var_.mysql_backup_creation_type())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .displayName(var_.mysql_backup_display_name())
+     *             .state(var_.mysql_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlBackupsResult> getMysqlBackupsPlain(GetMysqlBackupsPlainArgs args) {
@@ -307,6 +953,39 @@ public final class MysqlFunctions {
      * Get a list of DB System backups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .creationType(var_.mysql_backup_creation_type())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .displayName(var_.mysql_backup_display_name())
+     *             .state(var_.mysql_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlBackupsResult> getMysqlBackups(GetMysqlBackupsArgs args, InvokeOptions options) {
@@ -318,6 +997,39 @@ public final class MysqlFunctions {
      * Get a list of DB System backups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .creationType(var_.mysql_backup_creation_type())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .displayName(var_.mysql_backup_display_name())
+     *             .state(var_.mysql_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlBackupsResult> getMysqlBackupsPlain(GetMysqlBackupsPlainArgs args, InvokeOptions options) {
@@ -329,6 +1041,34 @@ public final class MysqlFunctions {
      * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlConfiguration = MysqlFunctions.getMysqlConfiguration(GetMysqlConfigurationArgs.builder()
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlConfigurationResult> getMysqlConfiguration(GetMysqlConfigurationArgs args) {
@@ -340,6 +1080,34 @@ public final class MysqlFunctions {
      * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlConfiguration = MysqlFunctions.getMysqlConfiguration(GetMysqlConfigurationArgs.builder()
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlConfigurationResult> getMysqlConfigurationPlain(GetMysqlConfigurationPlainArgs args) {
@@ -351,6 +1119,34 @@ public final class MysqlFunctions {
      * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlConfiguration = MysqlFunctions.getMysqlConfiguration(GetMysqlConfigurationArgs.builder()
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlConfigurationResult> getMysqlConfiguration(GetMysqlConfigurationArgs args, InvokeOptions options) {
@@ -362,6 +1158,34 @@ public final class MysqlFunctions {
      * Get the full details of the specified Configuration, including the list of MySQL Variables and their values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlConfiguration = MysqlFunctions.getMysqlConfiguration(GetMysqlConfigurationArgs.builder()
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlConfigurationResult> getMysqlConfigurationPlain(GetMysqlConfigurationPlainArgs args, InvokeOptions options) {
@@ -380,6 +1204,39 @@ public final class MysqlFunctions {
      *   - displayName ascending
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlConfigurations = MysqlFunctions.getMysqlConfigurations(GetMysqlConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .displayName(var_.mysql_configuration_display_name())
+     *             .shapeName(var_.mysql_shape_name())
+     *             .state(var_.mysql_configuration_state())
+     *             .types(var_.mysql_configuration_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlConfigurationsResult> getMysqlConfigurations(GetMysqlConfigurationsArgs args) {
@@ -398,6 +1255,39 @@ public final class MysqlFunctions {
      *   - displayName ascending
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlConfigurations = MysqlFunctions.getMysqlConfigurations(GetMysqlConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .displayName(var_.mysql_configuration_display_name())
+     *             .shapeName(var_.mysql_shape_name())
+     *             .state(var_.mysql_configuration_state())
+     *             .types(var_.mysql_configuration_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlConfigurationsResult> getMysqlConfigurationsPlain(GetMysqlConfigurationsPlainArgs args) {
@@ -416,6 +1306,39 @@ public final class MysqlFunctions {
      *   - displayName ascending
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlConfigurations = MysqlFunctions.getMysqlConfigurations(GetMysqlConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .displayName(var_.mysql_configuration_display_name())
+     *             .shapeName(var_.mysql_shape_name())
+     *             .state(var_.mysql_configuration_state())
+     *             .types(var_.mysql_configuration_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlConfigurationsResult> getMysqlConfigurations(GetMysqlConfigurationsArgs args, InvokeOptions options) {
@@ -434,6 +1357,39 @@ public final class MysqlFunctions {
      *   - displayName ascending
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlConfigurations = MysqlFunctions.getMysqlConfigurations(GetMysqlConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .displayName(var_.mysql_configuration_display_name())
+     *             .shapeName(var_.mysql_shape_name())
+     *             .state(var_.mysql_configuration_state())
+     *             .types(var_.mysql_configuration_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlConfigurationsResult> getMysqlConfigurationsPlain(GetMysqlConfigurationsPlainArgs args, InvokeOptions options) {
@@ -445,6 +1401,34 @@ public final class MysqlFunctions {
      * Get information about the specified DB System.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlDbSystemResult> getMysqlDbSystem(GetMysqlDbSystemArgs args) {
@@ -456,6 +1440,34 @@ public final class MysqlFunctions {
      * Get information about the specified DB System.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlDbSystemResult> getMysqlDbSystemPlain(GetMysqlDbSystemPlainArgs args) {
@@ -467,6 +1479,34 @@ public final class MysqlFunctions {
      * Get information about the specified DB System.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlDbSystemResult> getMysqlDbSystem(GetMysqlDbSystemArgs args, InvokeOptions options) {
@@ -478,6 +1518,34 @@ public final class MysqlFunctions {
      * Get information about the specified DB System.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlDbSystemResult> getMysqlDbSystemPlain(GetMysqlDbSystemPlainArgs args, InvokeOptions options) {
@@ -490,6 +1558,41 @@ public final class MysqlFunctions {
      * The default sort order is by timeUpdated, descending.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlDbSystems = MysqlFunctions.getMysqlDbSystems(GetMysqlDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .displayName(var_.mysql_db_system_display_name())
+     *             .isAnalyticsClusterAttached(var_.mysql_db_system_is_analytics_cluster_attached())
+     *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
+     *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
+     *             .state(var_.mysql_db_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlDbSystemsResult> getMysqlDbSystems(GetMysqlDbSystemsArgs args) {
@@ -502,6 +1605,41 @@ public final class MysqlFunctions {
      * The default sort order is by timeUpdated, descending.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlDbSystems = MysqlFunctions.getMysqlDbSystems(GetMysqlDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .displayName(var_.mysql_db_system_display_name())
+     *             .isAnalyticsClusterAttached(var_.mysql_db_system_is_analytics_cluster_attached())
+     *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
+     *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
+     *             .state(var_.mysql_db_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlDbSystemsResult> getMysqlDbSystemsPlain(GetMysqlDbSystemsPlainArgs args) {
@@ -514,6 +1652,41 @@ public final class MysqlFunctions {
      * The default sort order is by timeUpdated, descending.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlDbSystems = MysqlFunctions.getMysqlDbSystems(GetMysqlDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .displayName(var_.mysql_db_system_display_name())
+     *             .isAnalyticsClusterAttached(var_.mysql_db_system_is_analytics_cluster_attached())
+     *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
+     *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
+     *             .state(var_.mysql_db_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlDbSystemsResult> getMysqlDbSystems(GetMysqlDbSystemsArgs args, InvokeOptions options) {
@@ -526,6 +1699,41 @@ public final class MysqlFunctions {
      * The default sort order is by timeUpdated, descending.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlDbSystems = MysqlFunctions.getMysqlDbSystems(GetMysqlDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .configurationId(var_.mysql_configuration_id())
+     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .displayName(var_.mysql_db_system_display_name())
+     *             .isAnalyticsClusterAttached(var_.mysql_db_system_is_analytics_cluster_attached())
+     *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
+     *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
+     *             .state(var_.mysql_db_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlDbSystemsResult> getMysqlDbSystemsPlain(GetMysqlDbSystemsPlainArgs args, InvokeOptions options) {
@@ -539,6 +1747,34 @@ public final class MysqlFunctions {
      * The list is sorted by version family.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlVersions = MysqlFunctions.getMysqlVersion(GetMysqlVersionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlVersionResult> getMysqlVersion(GetMysqlVersionArgs args) {
@@ -552,6 +1788,34 @@ public final class MysqlFunctions {
      * The list is sorted by version family.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlVersions = MysqlFunctions.getMysqlVersion(GetMysqlVersionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlVersionResult> getMysqlVersionPlain(GetMysqlVersionPlainArgs args) {
@@ -565,6 +1829,34 @@ public final class MysqlFunctions {
      * The list is sorted by version family.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlVersions = MysqlFunctions.getMysqlVersion(GetMysqlVersionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMysqlVersionResult> getMysqlVersion(GetMysqlVersionArgs args, InvokeOptions options) {
@@ -578,6 +1870,34 @@ public final class MysqlFunctions {
      * The list is sorted by version family.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMysqlVersions = MysqlFunctions.getMysqlVersion(GetMysqlVersionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMysqlVersionResult> getMysqlVersionPlain(GetMysqlVersionPlainArgs args, InvokeOptions options) {
@@ -592,6 +1912,37 @@ public final class MysqlFunctions {
      * storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = MysqlFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.shape_availability_domain())
+     *             .isSupportedFors(var_.shape_is_supported_for())
+     *             .name(var_.shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args) {
@@ -606,6 +1957,37 @@ public final class MysqlFunctions {
      * storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = MysqlFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.shape_availability_domain())
+     *             .isSupportedFors(var_.shape_is_supported_for())
+     *             .name(var_.shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args) {
@@ -620,6 +2002,37 @@ public final class MysqlFunctions {
      * storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = MysqlFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.shape_availability_domain())
+     *             .isSupportedFors(var_.shape_is_supported_for())
+     *             .name(var_.shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
@@ -634,6 +2047,37 @@ public final class MysqlFunctions {
      * storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Mysql.MysqlFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = MysqlFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.shape_availability_domain())
+     *             .isSupportedFors(var_.shape_is_supported_for())
+     *             .name(var_.shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args, InvokeOptions options) {

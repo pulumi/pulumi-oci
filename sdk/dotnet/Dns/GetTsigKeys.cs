@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTsigKeys = Oci.Dns.GetTsigKeys.Invoke(new()
         ///     {
-        ///         var testTsigKeys = Output.Create(Oci.Dns.GetTsigKeys.InvokeAsync(new Oci.Dns.GetTsigKeysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Tsig_key_id,
-        ///             Name = @var.Tsig_key_name,
-        ///             State = @var.Tsig_key_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Tsig_key_id,
+        ///         Name = @var.Tsig_key_name,
+        ///         State = @var.Tsig_key_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTsigKeys = Oci.Dns.GetTsigKeys.Invoke(new()
         ///     {
-        ///         var testTsigKeys = Output.Create(Oci.Dns.GetTsigKeys.InvokeAsync(new Oci.Dns.GetTsigKeysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Tsig_key_id,
-        ///             Name = @var.Tsig_key_name,
-        ///             State = @var.Tsig_key_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Tsig_key_id,
+        ///         Name = @var.Tsig_key_name,
+        ///         State = @var.Tsig_key_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetTsigKeysArgs : Pulumi.InvokeArgs
+    public sealed class GetTsigKeysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Dns
         public GetTsigKeysArgs()
         {
         }
+        public static new GetTsigKeysArgs Empty => new GetTsigKeysArgs();
     }
 
-    public sealed class GetTsigKeysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTsigKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Dns
         public GetTsigKeysInvokeArgs()
         {
         }
+        public static new GetTsigKeysInvokeArgs Empty => new GetTsigKeysInvokeArgs();
     }
 
 

@@ -14,8 +14,8 @@ import * as utilities from "../utilities";
  * const testExportSet = new oci.filestorage.ExportSet("testExportSet", {
  *     mountTargetId: oci_file_storage_mount_target.test_mount_target.id,
  *     displayName: _var.export_set_name,
- *     maxFsStatBytes: 23843202333,
- *     maxFsStatFiles: 223442,
+ *     maxFsStatBytes: "23843202333",
+ *     maxFsStatFiles: "223442",
  * });
  * ```
  *

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepository = Oci.Artifacts.GetRepository.Invoke(new()
         ///     {
-        ///         var testRepository = Output.Create(Oci.Artifacts.GetRepository.InvokeAsync(new Oci.Artifacts.GetRepositoryArgs
-        ///         {
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepository = Oci.Artifacts.GetRepository.Invoke(new()
         ///     {
-        ///         var testRepository = Output.Create(Oci.Artifacts.GetRepository.InvokeAsync(new Oci.Artifacts.GetRepositoryArgs
-        ///         {
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Artifacts
     }
 
 
-    public sealed class GetRepositoryArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Artifacts
         public GetRepositoryArgs()
         {
         }
+        public static new GetRepositoryArgs Empty => new GetRepositoryArgs();
     }
 
-    public sealed class GetRepositoryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Artifacts
         public GetRepositoryInvokeArgs()
         {
         }
+        public static new GetRepositoryInvokeArgs Empty => new GetRepositoryInvokeArgs();
     }
 
 

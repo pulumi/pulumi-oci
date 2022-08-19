@@ -53,6 +53,42 @@ import javax.annotation.Nullable;
  * type, or by viewing the resource in the Console.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.FileStorage.MountTarget;
+ * import com.pulumi.oci.FileStorage.MountTargetArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMountTarget = new MountTarget(&#34;testMountTarget&#34;, MountTargetArgs.builder()        
+ *             .availabilityDomain(var_.mount_target_availability_domain())
+ *             .compartmentId(var_.compartment_id())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.mount_target_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .hostnameLabel(var_.mount_target_hostname_label())
+ *             .ipAddress(var_.mount_target_ip_address())
+ *             .nsgIds(var_.mount_target_nsg_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

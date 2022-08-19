@@ -24,23 +24,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgRouteTables = Oci.Core.GetDrgRouteTables.Invoke(new()
         ///     {
-        ///         var testDrgRouteTables = Output.Create(Oci.Core.GetDrgRouteTables.InvokeAsync(new Oci.Core.GetDrgRouteTablesArgs
-        ///         {
-        ///             DrgId = oci_core_drg.Test_drg.Id,
-        ///             DisplayName = @var.Drg_route_table_display_name,
-        ///             ImportDrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
-        ///             State = @var.Drg_route_table_state,
-        ///         }));
-        ///     }
+        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///         DisplayName = @var.Drg_route_table_display_name,
+        ///         ImportDrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+        ///         State = @var.Drg_route_table_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgRouteTables = Oci.Core.GetDrgRouteTables.Invoke(new()
         ///     {
-        ///         var testDrgRouteTables = Output.Create(Oci.Core.GetDrgRouteTables.InvokeAsync(new Oci.Core.GetDrgRouteTablesArgs
-        ///         {
-        ///             DrgId = oci_core_drg.Test_drg.Id,
-        ///             DisplayName = @var.Drg_route_table_display_name,
-        ///             ImportDrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
-        ///             State = @var.Drg_route_table_state,
-        ///         }));
-        ///     }
+        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///         DisplayName = @var.Drg_route_table_display_name,
+        ///         ImportDrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+        ///         State = @var.Drg_route_table_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDrgRouteTablesArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgRouteTablesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.Core
         public GetDrgRouteTablesArgs()
         {
         }
+        public static new GetDrgRouteTablesArgs Empty => new GetDrgRouteTablesArgs();
     }
 
-    public sealed class GetDrgRouteTablesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgRouteTablesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.Core
         public GetDrgRouteTablesInvokeArgs()
         {
         }
+        public static new GetDrgRouteTablesInvokeArgs Empty => new GetDrgRouteTablesInvokeArgs();
     }
 
 

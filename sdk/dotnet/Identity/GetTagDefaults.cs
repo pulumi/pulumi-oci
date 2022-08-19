@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTagDefaults = Oci.Identity.GetTagDefaults.Invoke(new()
         ///     {
-        ///         var testTagDefaults = Output.Create(Oci.Identity.GetTagDefaults.InvokeAsync(new Oci.Identity.GetTagDefaultsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Tag_default_id,
-        ///             State = @var.Tag_default_state,
-        ///             TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Tag_default_id,
+        ///         State = @var.Tag_default_state,
+        ///         TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTagDefaults = Oci.Identity.GetTagDefaults.Invoke(new()
         ///     {
-        ///         var testTagDefaults = Output.Create(Oci.Identity.GetTagDefaults.InvokeAsync(new Oci.Identity.GetTagDefaultsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Tag_default_id,
-        ///             State = @var.Tag_default_state,
-        ///             TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Tag_default_id,
+        ///         State = @var.Tag_default_state,
+        ///         TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetTagDefaultsArgs : Pulumi.InvokeArgs
+    public sealed class GetTagDefaultsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Identity
         public GetTagDefaultsArgs()
         {
         }
+        public static new GetTagDefaultsArgs Empty => new GetTagDefaultsArgs();
     }
 
-    public sealed class GetTagDefaultsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTagDefaultsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Identity
         public GetTagDefaultsInvokeArgs()
         {
         }
+        public static new GetTagDefaultsInvokeArgs Empty => new GetTagDefaultsInvokeArgs();
     }
 
 

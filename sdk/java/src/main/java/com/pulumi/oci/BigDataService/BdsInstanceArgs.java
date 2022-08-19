@@ -228,6 +228,21 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The OCID of the Key Management master encryption key.
+     * 
+     */
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
+
+    /**
+     * @return (Updatable) The OCID of the Key Management master encryption key.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
      * The master node in the BDS instance
      * 
      */
@@ -296,6 +311,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.isHighAvailability = $.isHighAvailability;
         this.isSecure = $.isSecure;
         this.kerberosRealmName = $.kerberosRealmName;
+        this.kmsKeyId = $.kmsKeyId;
         this.masterNode = $.masterNode;
         this.networkConfig = $.networkConfig;
         this.utilNode = $.utilNode;
@@ -610,6 +626,27 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder kerberosRealmName(String kerberosRealmName) {
             return kerberosRealmName(Output.of(kerberosRealmName));
+        }
+
+        /**
+         * @param kmsKeyId (Updatable) The OCID of the Key Management master encryption key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
+            $.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyId (Updatable) The OCID of the Key Management master encryption key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            return kmsKeyId(Output.of(kmsKeyId));
         }
 
         /**

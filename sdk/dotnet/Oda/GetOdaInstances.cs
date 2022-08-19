@@ -27,22 +27,20 @@ namespace Pulumi.Oci.Oda
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOdaInstances = Oci.Oda.GetOdaInstances.Invoke(new()
         ///     {
-        ///         var testOdaInstances = Output.Create(Oci.Oda.GetOdaInstances.InvokeAsync(new Oci.Oda.GetOdaInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Oda_instance_display_name,
-        ///             State = @var.Oda_instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Oda_instance_display_name,
+        ///         State = @var.Oda_instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,22 +64,20 @@ namespace Pulumi.Oci.Oda
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOdaInstances = Oci.Oda.GetOdaInstances.Invoke(new()
         ///     {
-        ///         var testOdaInstances = Output.Create(Oci.Oda.GetOdaInstances.InvokeAsync(new Oci.Oda.GetOdaInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Oda_instance_display_name,
-        ///             State = @var.Oda_instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Oda_instance_display_name,
+        ///         State = @var.Oda_instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.Oda
     }
 
 
-    public sealed class GetOdaInstancesArgs : Pulumi.InvokeArgs
+    public sealed class GetOdaInstancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// List the Digital Assistant instances that belong to this compartment.
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Oda
         public GetOdaInstancesArgs()
         {
         }
+        public static new GetOdaInstancesArgs Empty => new GetOdaInstancesArgs();
     }
 
-    public sealed class GetOdaInstancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOdaInstancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// List the Digital Assistant instances that belong to this compartment.
@@ -155,6 +152,7 @@ namespace Pulumi.Oci.Oda
         public GetOdaInstancesInvokeArgs()
         {
         }
+        public static new GetOdaInstancesInvokeArgs Empty => new GetOdaInstancesInvokeArgs();
     }
 
 

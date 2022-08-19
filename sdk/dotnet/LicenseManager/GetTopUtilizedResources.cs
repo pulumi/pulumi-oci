@@ -21,22 +21,20 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTopUtilizedResources = Oci.LicenseManager.GetTopUtilizedResources.Invoke(new()
         ///     {
-        ///         var testTopUtilizedResources = Output.Create(Oci.LicenseManager.GetTopUtilizedResources.InvokeAsync(new Oci.LicenseManager.GetTopUtilizedResourcesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsCompartmentIdInSubtree = @var.Top_utilized_resource_is_compartment_id_in_subtree,
-        ///             ResourceUnitType = @var.Top_utilized_resource_resource_unit_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsCompartmentIdInSubtree = @var.Top_utilized_resource_is_compartment_id_in_subtree,
+        ///         ResourceUnitType = @var.Top_utilized_resource_resource_unit_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTopUtilizedResources = Oci.LicenseManager.GetTopUtilizedResources.Invoke(new()
         ///     {
-        ///         var testTopUtilizedResources = Output.Create(Oci.LicenseManager.GetTopUtilizedResources.InvokeAsync(new Oci.LicenseManager.GetTopUtilizedResourcesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsCompartmentIdInSubtree = @var.Top_utilized_resource_is_compartment_id_in_subtree,
-        ///             ResourceUnitType = @var.Top_utilized_resource_resource_unit_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsCompartmentIdInSubtree = @var.Top_utilized_resource_is_compartment_id_in_subtree,
+        ///         ResourceUnitType = @var.Top_utilized_resource_resource_unit_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.LicenseManager
     }
 
 
-    public sealed class GetTopUtilizedResourcesArgs : Pulumi.InvokeArgs
+    public sealed class GetTopUtilizedResourcesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.LicenseManager
         public GetTopUtilizedResourcesArgs()
         {
         }
+        public static new GetTopUtilizedResourcesArgs Empty => new GetTopUtilizedResourcesArgs();
     }
 
-    public sealed class GetTopUtilizedResourcesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTopUtilizedResourcesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.LicenseManager
         public GetTopUtilizedResourcesInvokeArgs()
         {
         }
+        public static new GetTopUtilizedResourcesInvokeArgs Empty => new GetTopUtilizedResourcesInvokeArgs();
     }
 
 

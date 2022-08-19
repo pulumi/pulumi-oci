@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Apm.Inputs
 {
 
-    public sealed class GetApmDomainsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetApmDomainsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Apm.Inputs
         public GetApmDomainsFilterArgs()
         {
         }
+        public static new GetApmDomainsFilterArgs Empty => new GetApmDomainsFilterArgs();
     }
 }

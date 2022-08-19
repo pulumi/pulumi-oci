@@ -22,27 +22,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksFindings = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindings.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTasksFindings = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindings.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///             BeginExecId = oci_database_management_begin_exec.Test_begin_exec.Id,
-        ///             EndExecId = oci_database_management_end_exec.Test_end_exec.Id,
-        ///             FindingFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
-        ///             IndexHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
-        ///             SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_finding_search_period,
-        ///             StatsHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///         BeginExecId = oci_database_management_begin_exec.Test_begin_exec.Id,
+        ///         EndExecId = oci_database_management_end_exec.Test_end_exec.Id,
+        ///         FindingFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
+        ///         IndexHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+        ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_finding_search_period,
+        ///         StatsHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,27 +59,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksFindings = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindings.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTasksFindings = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindings.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///             BeginExecId = oci_database_management_begin_exec.Test_begin_exec.Id,
-        ///             EndExecId = oci_database_management_end_exec.Test_end_exec.Id,
-        ///             FindingFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
-        ///             IndexHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
-        ///             SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_finding_search_period,
-        ///             StatsHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///         BeginExecId = oci_database_management_begin_exec.Test_begin_exec.Id,
+        ///         EndExecId = oci_database_management_end_exec.Test_end_exec.Id,
+        ///         FindingFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
+        ///         IndexHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+        ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_finding_search_period,
+        ///         StatsHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs();
     }
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
@@ -215,6 +212,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs();
     }
 
 

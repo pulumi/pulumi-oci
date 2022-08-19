@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class GetCertificateVersionsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCertificateVersionsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public GetCertificateVersionsFilterInputArgs()
         {
         }
+        public static new GetCertificateVersionsFilterInputArgs Empty => new GetCertificateVersionsFilterInputArgs();
     }
 }

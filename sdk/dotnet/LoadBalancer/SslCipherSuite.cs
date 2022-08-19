@@ -17,21 +17,19 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSslCipherSuite = new Oci.LoadBalancer.SslCipherSuite("testSslCipherSuite", new()
     ///     {
-    ///         var testSslCipherSuite = new Oci.LoadBalancer.SslCipherSuite("testSslCipherSuite", new Oci.LoadBalancer.SslCipherSuiteArgs
-    ///         {
-    ///             Ciphers = @var.Ssl_cipher_suite_ciphers,
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         });
-    ///     }
+    ///         Ciphers = @var.Ssl_cipher_suite_ciphers,
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/sslCipherSuite:SslCipherSuite")]
-    public partial class SslCipherSuite : Pulumi.CustomResource
+    public partial class SslCipherSuite : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
@@ -110,7 +108,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class SslCipherSuiteArgs : Pulumi.ResourceArgs
+    public sealed class SslCipherSuiteArgs : global::Pulumi.ResourceArgs
     {
         [Input("ciphers", required: true)]
         private InputList<string>? _ciphers;
@@ -139,9 +137,10 @@ namespace Pulumi.Oci.LoadBalancer
         public SslCipherSuiteArgs()
         {
         }
+        public static new SslCipherSuiteArgs Empty => new SslCipherSuiteArgs();
     }
 
-    public sealed class SslCipherSuiteState : Pulumi.ResourceArgs
+    public sealed class SslCipherSuiteState : global::Pulumi.ResourceArgs
     {
         [Input("ciphers")]
         private InputList<string>? _ciphers;
@@ -173,5 +172,6 @@ namespace Pulumi.Oci.LoadBalancer
         public SslCipherSuiteState()
         {
         }
+        public static new SslCipherSuiteState Empty => new SslCipherSuiteState();
     }
 }

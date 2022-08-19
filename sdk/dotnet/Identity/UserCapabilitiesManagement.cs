@@ -19,25 +19,23 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUserCapabilitiesManagement = new Oci.Identity.UserCapabilitiesManagement("testUserCapabilitiesManagement", new()
     ///     {
-    ///         var testUserCapabilitiesManagement = new Oci.Identity.UserCapabilitiesManagement("testUserCapabilitiesManagement", new Oci.Identity.UserCapabilitiesManagementArgs
-    ///         {
-    ///             UserId = oci_identity_user.User1.Id,
-    ///             CanUseApiKeys = true,
-    ///             CanUseAuthTokens = true,
-    ///             CanUseConsolePassword = false,
-    ///             CanUseCustomerSecretKeys = true,
-    ///             CanUseSmtpCredentials = true,
-    ///         });
-    ///     }
+    ///         UserId = oci_identity_user.User1.Id,
+    ///         CanUseApiKeys = true,
+    ///         CanUseAuthTokens = true,
+    ///         CanUseConsolePassword = false,
+    ///         CanUseCustomerSecretKeys = true,
+    ///         CanUseSmtpCredentials = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement")]
-    public partial class UserCapabilitiesManagement : Pulumi.CustomResource
+    public partial class UserCapabilitiesManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Indicates if the user can use API keys.
@@ -131,7 +129,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class UserCapabilitiesManagementArgs : Pulumi.ResourceArgs
+    public sealed class UserCapabilitiesManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Indicates if the user can use API keys.
@@ -172,9 +170,10 @@ namespace Pulumi.Oci.Identity
         public UserCapabilitiesManagementArgs()
         {
         }
+        public static new UserCapabilitiesManagementArgs Empty => new UserCapabilitiesManagementArgs();
     }
 
-    public sealed class UserCapabilitiesManagementState : Pulumi.ResourceArgs
+    public sealed class UserCapabilitiesManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Indicates if the user can use API keys.
@@ -215,5 +214,6 @@ namespace Pulumi.Oci.Identity
         public UserCapabilitiesManagementState()
         {
         }
+        public static new UserCapabilitiesManagementState Empty => new UserCapabilitiesManagementState();
     }
 }

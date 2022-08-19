@@ -27,7 +27,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/libraryMasingFormat:LibraryMasingFormat")]
-    public partial class LibraryMasingFormat : Pulumi.CustomResource
+    public partial class LibraryMasingFormat : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the library masking format should be created.
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class LibraryMasingFormatArgs : Pulumi.ResourceArgs
+    public sealed class LibraryMasingFormatArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the library masking format should be created.
@@ -210,9 +210,10 @@ namespace Pulumi.Oci.DataSafe
         public LibraryMasingFormatArgs()
         {
         }
+        public static new LibraryMasingFormatArgs Empty => new LibraryMasingFormatArgs();
     }
 
-    public sealed class LibraryMasingFormatState : Pulumi.ResourceArgs
+    public sealed class LibraryMasingFormatState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the library masking format should be created.
@@ -307,5 +308,6 @@ namespace Pulumi.Oci.DataSafe
         public LibraryMasingFormatState()
         {
         }
+        public static new LibraryMasingFormatState Empty => new LibraryMasingFormatState();
     }
 }

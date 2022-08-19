@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class GetGuardTargetsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetGuardTargetsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// configuration name
@@ -36,5 +36,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public GetGuardTargetsFilterInputArgs()
         {
         }
+        public static new GetGuardTargetsFilterInputArgs Empty => new GetGuardTargetsFilterInputArgs();
     }
 }

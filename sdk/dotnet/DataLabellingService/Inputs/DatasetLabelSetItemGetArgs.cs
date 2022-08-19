@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataLabellingService.Inputs
 {
 
-    public sealed class DatasetLabelSetItemGetArgs : Pulumi.ResourceArgs
+    public sealed class DatasetLabelSetItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// An unique name for a label within its dataset.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
         public DatasetLabelSetItemGetArgs()
         {
         }
+        public static new DatasetLabelSetItemGetArgs Empty => new DatasetLabelSetItemGetArgs();
     }
 }

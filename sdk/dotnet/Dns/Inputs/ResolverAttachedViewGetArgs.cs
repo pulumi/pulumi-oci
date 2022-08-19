@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class ResolverAttachedViewGetArgs : Pulumi.ResourceArgs
+    public sealed class ResolverAttachedViewGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the view.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public ResolverAttachedViewGetArgs()
         {
         }
+        public static new ResolverAttachedViewGetArgs Empty => new ResolverAttachedViewGetArgs();
     }
 }

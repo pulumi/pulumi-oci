@@ -17,35 +17,33 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVlan = new Oci.Core.Vlan("testVlan", new()
     ///     {
-    ///         var testVlan = new Oci.Core.Vlan("testVlan", new Oci.Core.VlanArgs
+    ///         CidrBlock = @var.Vlan_cidr_block,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         AvailabilityDomain = @var.Vlan_availability_domain,
+    ///         DefinedTags = 
     ///         {
-    ///             CidrBlock = @var.Vlan_cidr_block,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             AvailabilityDomain = @var.Vlan_availability_domain,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Vlan_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             NsgIds = @var.Vlan_nsg_ids,
-    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///             VlanTag = @var.Vlan_vlan_tag,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Vlan_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         NsgIds = @var.Vlan_nsg_ids,
+    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///         VlanTag = @var.Vlan_vlan_tag,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/vlan:Vlan")]
-    public partial class Vlan : Pulumi.CustomResource
+    public partial class Vlan : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
@@ -175,7 +173,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VlanArgs : Pulumi.ResourceArgs
+    public sealed class VlanArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
@@ -258,9 +256,10 @@ namespace Pulumi.Oci.Core
         public VlanArgs()
         {
         }
+        public static new VlanArgs Empty => new VlanArgs();
     }
 
-    public sealed class VlanState : Pulumi.ResourceArgs
+    public sealed class VlanState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
@@ -355,5 +354,6 @@ namespace Pulumi.Oci.Core
         public VlanState()
         {
         }
+        public static new VlanState Empty => new VlanState();
     }
 }

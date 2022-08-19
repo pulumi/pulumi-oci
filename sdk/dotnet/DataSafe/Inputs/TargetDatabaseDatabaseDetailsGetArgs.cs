@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class TargetDatabaseDatabaseDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class TargetDatabaseDatabaseDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the autonomous database registered as a target database in Data Safe.
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public TargetDatabaseDatabaseDetailsGetArgs()
         {
         }
+        public static new TargetDatabaseDatabaseDetailsGetArgs Empty => new TargetDatabaseDatabaseDetailsGetArgs();
     }
 }

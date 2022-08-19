@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.UsageProxy.Inputs
 {
 
-    public sealed class GetSubscriptionProductsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionProductsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.UsageProxy.Inputs
         public GetSubscriptionProductsFilterArgs()
         {
         }
+        public static new GetSubscriptionProductsFilterArgs Empty => new GetSubscriptionProductsFilterArgs();
     }
 }

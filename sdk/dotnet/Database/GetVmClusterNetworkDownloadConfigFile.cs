@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterNetworkDownloadConfigFile = Oci.Database.GetVmClusterNetworkDownloadConfigFile.Invoke(new()
         ///     {
-        ///         var testVmClusterNetworkDownloadConfigFile = Output.Create(Oci.Database.GetVmClusterNetworkDownloadConfigFile.InvokeAsync(new Oci.Database.GetVmClusterNetworkDownloadConfigFileArgs
-        ///         {
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///             VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
-        ///             Base64EncodeContent = false,
-        ///         }));
-        ///     }
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+        ///         Base64EncodeContent = false,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterNetworkDownloadConfigFile = Oci.Database.GetVmClusterNetworkDownloadConfigFile.Invoke(new()
         ///     {
-        ///         var testVmClusterNetworkDownloadConfigFile = Output.Create(Oci.Database.GetVmClusterNetworkDownloadConfigFile.InvokeAsync(new Oci.Database.GetVmClusterNetworkDownloadConfigFileArgs
-        ///         {
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///             VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
-        ///             Base64EncodeContent = false,
-        ///         }));
-        ///     }
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+        ///         Base64EncodeContent = false,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetVmClusterNetworkDownloadConfigFileArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterNetworkDownloadConfigFileArgs : global::Pulumi.InvokeArgs
     {
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
@@ -101,9 +97,10 @@ namespace Pulumi.Oci.Database
         public GetVmClusterNetworkDownloadConfigFileArgs()
         {
         }
+        public static new GetVmClusterNetworkDownloadConfigFileArgs Empty => new GetVmClusterNetworkDownloadConfigFileArgs();
     }
 
-    public sealed class GetVmClusterNetworkDownloadConfigFileInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterNetworkDownloadConfigFileInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
@@ -123,6 +120,7 @@ namespace Pulumi.Oci.Database
         public GetVmClusterNetworkDownloadConfigFileInvokeArgs()
         {
         }
+        public static new GetVmClusterNetworkDownloadConfigFileInvokeArgs Empty => new GetVmClusterNetworkDownloadConfigFileInvokeArgs();
     }
 
 

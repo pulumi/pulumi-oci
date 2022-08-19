@@ -21,21 +21,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNamespaceScheduledTask = Oci.LogAnalytics.GetNamespaceScheduledTask.Invoke(new()
         ///     {
-        ///         var testNamespaceScheduledTask = Output.Create(Oci.LogAnalytics.GetNamespaceScheduledTask.InvokeAsync(new Oci.LogAnalytics.GetNamespaceScheduledTaskArgs
-        ///         {
-        ///             Namespace = @var.Namespace_scheduled_task_namespace,
-        ///             ScheduledTaskId = oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Namespace_scheduled_task_namespace,
+        ///         ScheduledTaskId = oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNamespaceScheduledTask = Oci.LogAnalytics.GetNamespaceScheduledTask.Invoke(new()
         ///     {
-        ///         var testNamespaceScheduledTask = Output.Create(Oci.LogAnalytics.GetNamespaceScheduledTask.InvokeAsync(new Oci.LogAnalytics.GetNamespaceScheduledTaskArgs
-        ///         {
-        ///             Namespace = @var.Namespace_scheduled_task_namespace,
-        ///             ScheduledTaskId = oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Namespace_scheduled_task_namespace,
+        ///         ScheduledTaskId = oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetNamespaceScheduledTaskArgs : Pulumi.InvokeArgs
+    public sealed class GetNamespaceScheduledTaskArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetNamespaceScheduledTaskArgs()
         {
         }
+        public static new GetNamespaceScheduledTaskArgs Empty => new GetNamespaceScheduledTaskArgs();
     }
 
-    public sealed class GetNamespaceScheduledTaskInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNamespaceScheduledTaskInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetNamespaceScheduledTaskInvokeArgs()
         {
         }
+        public static new GetNamespaceScheduledTaskInvokeArgs Empty => new GetNamespaceScheduledTaskInvokeArgs();
     }
 
 

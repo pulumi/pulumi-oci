@@ -17,24 +17,22 @@ namespace Pulumi.Oci.BigDataService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBdsInstanceApiKey = new Oci.BigDataService.BdsInstanceApiKey("testBdsInstanceApiKey", new()
     ///     {
-    ///         var testBdsInstanceApiKey = new Oci.BigDataService.BdsInstanceApiKey("testBdsInstanceApiKey", new Oci.BigDataService.BdsInstanceApiKeyArgs
-    ///         {
-    ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-    ///             KeyAlias = @var.Bds_instance_api_key_key_alias,
-    ///             Passphrase = @var.Bds_instance_api_key_passphrase,
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///             DefaultRegion = @var.Bds_instance_api_key_default_region,
-    ///         });
-    ///     }
+    ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+    ///         KeyAlias = @var.Bds_instance_api_key_key_alias,
+    ///         Passphrase = @var.Bds_instance_api_key_passphrase,
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///         DefaultRegion = @var.Bds_instance_api_key_default_region,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.BigDataService
     /// ```
     /// </summary>
     [OciResourceType("oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey")]
-    public partial class BdsInstanceApiKey : Pulumi.CustomResource
+    public partial class BdsInstanceApiKey : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -152,7 +150,7 @@ namespace Pulumi.Oci.BigDataService
         }
     }
 
-    public sealed class BdsInstanceApiKeyArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceApiKeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -187,9 +185,10 @@ namespace Pulumi.Oci.BigDataService
         public BdsInstanceApiKeyArgs()
         {
         }
+        public static new BdsInstanceApiKeyArgs Empty => new BdsInstanceApiKeyArgs();
     }
 
-    public sealed class BdsInstanceApiKeyState : Pulumi.ResourceArgs
+    public sealed class BdsInstanceApiKeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the cluster.
@@ -254,5 +253,6 @@ namespace Pulumi.Oci.BigDataService
         public BdsInstanceApiKeyState()
         {
         }
+        public static new BdsInstanceApiKeyState Empty => new BdsInstanceApiKeyState();
     }
 }

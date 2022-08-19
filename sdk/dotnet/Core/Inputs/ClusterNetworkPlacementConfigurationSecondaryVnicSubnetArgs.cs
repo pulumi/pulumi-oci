@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs : Pulumi.ResourceArgs
+    public sealed class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs()
         {
         }
+        public static new ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs Empty => new ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs();
     }
 }

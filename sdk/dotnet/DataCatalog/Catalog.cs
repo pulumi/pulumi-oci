@@ -18,29 +18,27 @@ namespace Pulumi.Oci.DataCatalog
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCatalog = new Oci.DataCatalog.Catalog("testCatalog", new()
     ///     {
-    ///         var testCatalog = new Oci.DataCatalog.Catalog("testCatalog", new Oci.DataCatalog.CatalogArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Catalog_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Catalog_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.DataCatalog
     /// ```
     /// </summary>
     [OciResourceType("oci:DataCatalog/catalog:Catalog")]
-    public partial class Catalog : Pulumi.CustomResource
+    public partial class Catalog : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The list of private reverse connection endpoints attached to the catalog
@@ -170,7 +168,7 @@ namespace Pulumi.Oci.DataCatalog
         }
     }
 
-    public sealed class CatalogArgs : Pulumi.ResourceArgs
+    public sealed class CatalogArgs : global::Pulumi.ResourceArgs
     {
         [Input("attachedCatalogPrivateEndpoints")]
         private InputList<string>? _attachedCatalogPrivateEndpoints;
@@ -223,9 +221,10 @@ namespace Pulumi.Oci.DataCatalog
         public CatalogArgs()
         {
         }
+        public static new CatalogArgs Empty => new CatalogArgs();
     }
 
-    public sealed class CatalogState : Pulumi.ResourceArgs
+    public sealed class CatalogState : global::Pulumi.ResourceArgs
     {
         [Input("attachedCatalogPrivateEndpoints")]
         private InputList<string>? _attachedCatalogPrivateEndpoints;
@@ -320,5 +319,6 @@ namespace Pulumi.Oci.DataCatalog
         public CatalogState()
         {
         }
+        public static new CatalogState Empty => new CatalogState();
     }
 }

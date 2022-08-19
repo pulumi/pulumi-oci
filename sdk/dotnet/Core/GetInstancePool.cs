@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstancePool = Oci.Core.GetInstancePool.Invoke(new()
         ///     {
-        ///         var testInstancePool = Output.Create(Oci.Core.GetInstancePool.InvokeAsync(new Oci.Core.GetInstancePoolArgs
-        ///         {
-        ///             InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
-        ///         }));
-        ///     }
+        ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstancePool = Oci.Core.GetInstancePool.Invoke(new()
         ///     {
-        ///         var testInstancePool = Output.Create(Oci.Core.GetInstancePool.InvokeAsync(new Oci.Core.GetInstancePoolArgs
-        ///         {
-        ///             InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
-        ///         }));
-        ///     }
+        ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstancePoolArgs : Pulumi.InvokeArgs
+    public sealed class GetInstancePoolArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetInstancePoolArgs()
         {
         }
+        public static new GetInstancePoolArgs Empty => new GetInstancePoolArgs();
     }
 
-    public sealed class GetInstancePoolInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstancePoolInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetInstancePoolInvokeArgs()
         {
         }
+        public static new GetInstancePoolInvokeArgs Empty => new GetInstancePoolInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class DetectorRecipeDetectorRuleDetailsConfigurationValueGetArgs : Pulumi.ResourceArgs
+    public sealed class DetectorRecipeDetectorRuleDetailsConfigurationValueGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) configuration list item type, either CUSTOM or MANAGED
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public DetectorRecipeDetectorRuleDetailsConfigurationValueGetArgs()
         {
         }
+        public static new DetectorRecipeDetectorRuleDetailsConfigurationValueGetArgs Empty => new DetectorRecipeDetectorRuleDetailsConfigurationValueGetArgs();
     }
 }

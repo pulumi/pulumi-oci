@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWaasPolicies = Oci.Waas.GetWaasPolicies.Invoke(new()
         ///     {
-        ///         var testWaasPolicies = Output.Create(Oci.Waas.GetWaasPolicies.InvokeAsync(new Oci.Waas.GetWaasPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayNames = @var.Waas_policy_display_names,
-        ///             Ids = @var.Waas_policy_ids,
-        ///             States = @var.Waas_policy_states,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Waas_policy_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Waas_policy_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayNames = @var.Waas_policy_display_names,
+        ///         Ids = @var.Waas_policy_ids,
+        ///         States = @var.Waas_policy_states,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Waas_policy_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Waas_policy_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWaasPolicies = Oci.Waas.GetWaasPolicies.Invoke(new()
         ///     {
-        ///         var testWaasPolicies = Output.Create(Oci.Waas.GetWaasPolicies.InvokeAsync(new Oci.Waas.GetWaasPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayNames = @var.Waas_policy_display_names,
-        ///             Ids = @var.Waas_policy_ids,
-        ///             States = @var.Waas_policy_states,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Waas_policy_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Waas_policy_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayNames = @var.Waas_policy_display_names,
+        ///         Ids = @var.Waas_policy_ids,
+        ///         States = @var.Waas_policy_states,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Waas_policy_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Waas_policy_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetWaasPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetWaasPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.Waas
         public GetWaasPoliciesArgs()
         {
         }
+        public static new GetWaasPoliciesArgs Empty => new GetWaasPoliciesArgs();
     }
 
-    public sealed class GetWaasPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetWaasPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -221,6 +218,7 @@ namespace Pulumi.Oci.Waas
         public GetWaasPoliciesInvokeArgs()
         {
         }
+        public static new GetWaasPoliciesInvokeArgs Empty => new GetWaasPoliciesInvokeArgs();
     }
 
 

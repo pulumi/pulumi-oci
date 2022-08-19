@@ -23,6 +23,42 @@ import javax.annotation.Nullable;
  * Creates a new Database Tools private endpoint.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseTools.DatabaseToolsPrivateEndpoint;
+ * import com.pulumi.oci.DatabaseTools.DatabaseToolsPrivateEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseToolsPrivateEndpoint = new DatabaseToolsPrivateEndpoint(&#34;testDatabaseToolsPrivateEndpoint&#34;, DatabaseToolsPrivateEndpointArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.database_tools_private_endpoint_display_name())
+ *             .endpointServiceId(oci_core_service.test_service().id())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.database_tools_private_endpoint_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .nsgIds(var_.database_tools_private_endpoint_nsg_ids())
+ *             .privateEndpointIp(var_.database_tools_private_endpoint_private_endpoint_ip())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

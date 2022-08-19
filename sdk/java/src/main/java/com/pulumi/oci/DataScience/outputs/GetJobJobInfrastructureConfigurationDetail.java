@@ -4,8 +4,10 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataScience.outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -21,6 +23,11 @@ public final class GetJobJobInfrastructureConfigurationDetail {
      */
     private final String jobInfrastructureType;
     /**
+     * @return Details for the job run shape configuration. Specify only when a flex shape is selected.
+     * 
+     */
+    private final List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+    /**
      * @return The shape used to launch the job run instances.
      * 
      */
@@ -35,10 +42,12 @@ public final class GetJobJobInfrastructureConfigurationDetail {
     private GetJobJobInfrastructureConfigurationDetail(
         @CustomType.Parameter("blockStorageSizeInGbs") Integer blockStorageSizeInGbs,
         @CustomType.Parameter("jobInfrastructureType") String jobInfrastructureType,
+        @CustomType.Parameter("jobShapeConfigDetails") List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails,
         @CustomType.Parameter("shapeName") String shapeName,
         @CustomType.Parameter("subnetId") String subnetId) {
         this.blockStorageSizeInGbs = blockStorageSizeInGbs;
         this.jobInfrastructureType = jobInfrastructureType;
+        this.jobShapeConfigDetails = jobShapeConfigDetails;
         this.shapeName = shapeName;
         this.subnetId = subnetId;
     }
@@ -56,6 +65,13 @@ public final class GetJobJobInfrastructureConfigurationDetail {
      */
     public String jobInfrastructureType() {
         return this.jobInfrastructureType;
+    }
+    /**
+     * @return Details for the job run shape configuration. Specify only when a flex shape is selected.
+     * 
+     */
+    public List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails() {
+        return this.jobShapeConfigDetails;
     }
     /**
      * @return The shape used to launch the job run instances.
@@ -83,6 +99,7 @@ public final class GetJobJobInfrastructureConfigurationDetail {
     public static final class Builder {
         private Integer blockStorageSizeInGbs;
         private String jobInfrastructureType;
+        private List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
         private String shapeName;
         private String subnetId;
 
@@ -94,6 +111,7 @@ public final class GetJobJobInfrastructureConfigurationDetail {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
     	      this.jobInfrastructureType = defaults.jobInfrastructureType;
+    	      this.jobShapeConfigDetails = defaults.jobShapeConfigDetails;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
         }
@@ -106,6 +124,13 @@ public final class GetJobJobInfrastructureConfigurationDetail {
             this.jobInfrastructureType = Objects.requireNonNull(jobInfrastructureType);
             return this;
         }
+        public Builder jobShapeConfigDetails(List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails) {
+            this.jobShapeConfigDetails = Objects.requireNonNull(jobShapeConfigDetails);
+            return this;
+        }
+        public Builder jobShapeConfigDetails(GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail... jobShapeConfigDetails) {
+            return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
+        }
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
@@ -114,7 +139,7 @@ public final class GetJobJobInfrastructureConfigurationDetail {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }        public GetJobJobInfrastructureConfigurationDetail build() {
-            return new GetJobJobInfrastructureConfigurationDetail(blockStorageSizeInGbs, jobInfrastructureType, shapeName, subnetId);
+            return new GetJobJobInfrastructureConfigurationDetail(blockStorageSizeInGbs, jobInfrastructureType, jobShapeConfigDetails, shapeName, subnetId);
         }
     }
 }

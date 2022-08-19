@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class SubscriberClientArgs : Pulumi.ResourceArgs
+    public sealed class SubscriberClientArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the client. Must be unique within a subscriber.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public SubscriberClientArgs()
         {
         }
+        public static new SubscriberClientArgs Empty => new SubscriberClientArgs();
     }
 }

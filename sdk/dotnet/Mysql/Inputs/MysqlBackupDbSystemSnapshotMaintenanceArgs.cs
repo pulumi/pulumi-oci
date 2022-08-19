@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlBackupDbSystemSnapshotMaintenanceArgs : Pulumi.ResourceArgs
+    public sealed class MysqlBackupDbSystemSnapshotMaintenanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The start time of the maintenance window.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlBackupDbSystemSnapshotMaintenanceArgs()
         {
         }
+        public static new MysqlBackupDbSystemSnapshotMaintenanceArgs Empty => new MysqlBackupDbSystemSnapshotMaintenanceArgs();
     }
 }

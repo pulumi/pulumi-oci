@@ -44,34 +44,32 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIpSecConnection = new Oci.Core.Ipsec("testIpSecConnection", new()
     ///     {
-    ///         var testIpSecConnection = new Oci.Core.Ipsec("testIpSecConnection", new Oci.Core.IpsecArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         CpeId = oci_core_cpe.Test_cpe.Id,
+    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         StaticRoutes = @var.Ip_sec_connection_static_routes,
+    ///         CpeLocalIdentifier = @var.Ip_sec_connection_cpe_local_identifier,
+    ///         CpeLocalIdentifierType = @var.Ip_sec_connection_cpe_local_identifier_type,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             CpeId = oci_core_cpe.Test_cpe.Id,
-    ///             DrgId = oci_core_drg.Test_drg.Id,
-    ///             StaticRoutes = @var.Ip_sec_connection_static_routes,
-    ///             CpeLocalIdentifier = @var.Ip_sec_connection_cpe_local_identifier,
-    ///             CpeLocalIdentifierType = @var.Ip_sec_connection_cpe_local_identifier_type,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Ip_sec_connection_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Ip_sec_connection_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -83,7 +81,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/ipsec:Ipsec")]
-    public partial class Ipsec : Pulumi.CustomResource
+    public partial class Ipsec : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -195,7 +193,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class IpsecArgs : Pulumi.ResourceArgs
+    public sealed class IpsecArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -272,9 +270,10 @@ namespace Pulumi.Oci.Core
         public IpsecArgs()
         {
         }
+        public static new IpsecArgs Empty => new IpsecArgs();
     }
 
-    public sealed class IpsecState : Pulumi.ResourceArgs
+    public sealed class IpsecState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -363,5 +362,6 @@ namespace Pulumi.Oci.Core
         public IpsecState()
         {
         }
+        public static new IpsecState Empty => new IpsecState();
     }
 }

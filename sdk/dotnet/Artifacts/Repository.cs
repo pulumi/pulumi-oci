@@ -17,32 +17,30 @@ namespace Pulumi.Oci.Artifacts
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRepository = new Oci.Artifacts.Repository("testRepository", new()
     ///     {
-    ///         var testRepository = new Oci.Artifacts.Repository("testRepository", new Oci.Artifacts.RepositoryArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IsImmutable = @var.Repository_is_immutable,
+    ///         RepositoryType = @var.Repository_repository_type,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IsImmutable = @var.Repository_is_immutable,
-    ///             RepositoryType = @var.Repository_repository_type,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Repository_description,
-    ///             DisplayName = @var.Repository_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Repository_description,
+    ///         DisplayName = @var.Repository_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Artifacts
     /// ```
     /// </summary>
     [OciResourceType("oci:Artifacts/repository:Repository")]
-    public partial class Repository : Pulumi.CustomResource
+    public partial class Repository : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
@@ -154,7 +152,7 @@ namespace Pulumi.Oci.Artifacts
         }
     }
 
-    public sealed class RepositoryArgs : Pulumi.ResourceArgs
+    public sealed class RepositoryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
@@ -213,9 +211,10 @@ namespace Pulumi.Oci.Artifacts
         public RepositoryArgs()
         {
         }
+        public static new RepositoryArgs Empty => new RepositoryArgs();
     }
 
-    public sealed class RepositoryState : Pulumi.ResourceArgs
+    public sealed class RepositoryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
@@ -286,5 +285,6 @@ namespace Pulumi.Oci.Artifacts
         public RepositoryState()
         {
         }
+        public static new RepositoryState Empty => new RepositoryState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class LogConfigurationGetArgs : Pulumi.ResourceArgs
+    public sealed class LogConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment that the resource belongs to.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public LogConfigurationGetArgs()
         {
         }
+        public static new LogConfigurationGetArgs Empty => new LogConfigurationGetArgs();
     }
 }

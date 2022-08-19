@@ -17,31 +17,29 @@ namespace Pulumi.Oci.Opsi
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testEnterpriseManagerBridge = new Oci.Opsi.EnterpriseManagerBridge("testEnterpriseManagerBridge", new()
     ///     {
-    ///         var testEnterpriseManagerBridge = new Oci.Opsi.EnterpriseManagerBridge("testEnterpriseManagerBridge", new Oci.Opsi.EnterpriseManagerBridgeArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Enterprise_manager_bridge_display_name,
+    ///         ObjectStorageBucketName = oci_objectstorage_bucket.Test_bucket.Name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Enterprise_manager_bridge_display_name,
-    ///             ObjectStorageBucketName = oci_objectstorage_bucket.Test_bucket.Name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Enterprise_manager_bridge_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Enterprise_manager_bridge_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge")]
-    public partial class EnterpriseManagerBridge : Pulumi.CustomResource
+    public partial class EnterpriseManagerBridge : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment identifier of the Enterprise Manager bridge
@@ -177,7 +175,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class EnterpriseManagerBridgeArgs : Pulumi.ResourceArgs
+    public sealed class EnterpriseManagerBridgeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment identifier of the Enterprise Manager bridge
@@ -230,9 +228,10 @@ namespace Pulumi.Oci.Opsi
         public EnterpriseManagerBridgeArgs()
         {
         }
+        public static new EnterpriseManagerBridgeArgs Empty => new EnterpriseManagerBridgeArgs();
     }
 
-    public sealed class EnterpriseManagerBridgeState : Pulumi.ResourceArgs
+    public sealed class EnterpriseManagerBridgeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment identifier of the Enterprise Manager bridge
@@ -333,5 +332,6 @@ namespace Pulumi.Oci.Opsi
         public EnterpriseManagerBridgeState()
         {
         }
+        public static new EnterpriseManagerBridgeState Empty => new EnterpriseManagerBridgeState();
     }
 }

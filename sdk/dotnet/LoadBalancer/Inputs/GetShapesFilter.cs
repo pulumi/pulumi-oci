@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the shape.  Example: `100Mbps`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetShapesFilterArgs()
         {
         }
+        public static new GetShapesFilterArgs Empty => new GetShapesFilterArgs();
     }
 }

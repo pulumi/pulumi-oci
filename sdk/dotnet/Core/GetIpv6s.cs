@@ -29,22 +29,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpv6s = Oci.Core.GetIpv6s.Invoke(new()
         ///     {
-        ///         var testIpv6s = Output.Create(Oci.Core.GetIpv6s.InvokeAsync(new Oci.Core.GetIpv6sArgs
-        ///         {
-        ///             IpAddress = @var.Ipv6_ip_address,
-        ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///             VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
-        ///         }));
-        ///     }
+        ///         IpAddress = @var.Ipv6_ip_address,
+        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -70,22 +68,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpv6s = Oci.Core.GetIpv6s.Invoke(new()
         ///     {
-        ///         var testIpv6s = Output.Create(Oci.Core.GetIpv6s.InvokeAsync(new Oci.Core.GetIpv6sArgs
-        ///         {
-        ///             IpAddress = @var.Ipv6_ip_address,
-        ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///             VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
-        ///         }));
-        ///     }
+        ///         IpAddress = @var.Ipv6_ip_address,
+        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetIpv6sArgs : Pulumi.InvokeArgs
+    public sealed class GetIpv6sArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetIpv6sFilterArgs>? _filters;
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Core
         public GetIpv6sArgs()
         {
         }
+        public static new GetIpv6sArgs Empty => new GetIpv6sArgs();
     }
 
-    public sealed class GetIpv6sInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIpv6sInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetIpv6sFilterInputArgs>? _filters;
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Core
         public GetIpv6sInvokeArgs()
         {
         }
+        public static new GetIpv6sInvokeArgs Empty => new GetIpv6sInvokeArgs();
     }
 
 

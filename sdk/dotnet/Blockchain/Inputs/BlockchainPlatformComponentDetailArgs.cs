@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain.Inputs
 {
 
-    public sealed class BlockchainPlatformComponentDetailArgs : Pulumi.ResourceArgs
+    public sealed class BlockchainPlatformComponentDetailArgs : global::Pulumi.ResourceArgs
     {
         [Input("osns")]
         private InputList<Inputs.BlockchainPlatformComponentDetailOsnArgs>? _osns;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Blockchain.Inputs
         public BlockchainPlatformComponentDetailArgs()
         {
         }
+        public static new BlockchainPlatformComponentDetailArgs Empty => new BlockchainPlatformComponentDetailArgs();
     }
 }

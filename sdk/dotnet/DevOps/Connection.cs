@@ -17,40 +17,38 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testConnection = new Oci.DevOps.Connection("testConnection", new()
     ///     {
-    ///         var testConnection = new Oci.DevOps.Connection("testConnection", new Oci.DevOps.ConnectionArgs
+    ///         ConnectionType = @var.Connection_connection_type,
+    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         AccessToken = @var.Connection_access_token,
+    ///         AppPassword = @var.Connection_app_password,
+    ///         BaseUrl = @var.Connection_base_url,
+    ///         DefinedTags = 
     ///         {
-    ///             ConnectionType = @var.Connection_connection_type,
-    ///             ProjectId = oci_devops_project.Test_project.Id,
-    ///             AccessToken = @var.Connection_access_token,
-    ///             AppPassword = @var.Connection_app_password,
-    ///             BaseUrl = @var.Connection_base_url,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Connection_description,
-    ///             DisplayName = @var.Connection_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             TlsVerifyConfig = new Oci.DevOps.Inputs.ConnectionTlsVerifyConfigArgs
-    ///             {
-    ///                 CaCertificateBundleId = oci_devops_ca_certificate_bundle.Test_ca_certificate_bundle.Id,
-    ///                 TlsVerifyMode = @var.Connection_tls_verify_config_tls_verify_mode,
-    ///             },
-    ///             Username = @var.Connection_username,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Connection_description,
+    ///         DisplayName = @var.Connection_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         TlsVerifyConfig = new Oci.DevOps.Inputs.ConnectionTlsVerifyConfigArgs
+    ///         {
+    ///             CaCertificateBundleId = oci_devops_ca_certificate_bundle.Test_ca_certificate_bundle.Id,
+    ///             TlsVerifyMode = @var.Connection_tls_verify_config_tls_verify_mode,
+    ///         },
+    ///         Username = @var.Connection_username,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -62,7 +60,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/connection:Connection")]
-    public partial class Connection : Pulumi.CustomResource
+    public partial class Connection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of personal access token saved in secret store.
@@ -204,7 +202,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class ConnectionArgs : Pulumi.ResourceArgs
+    public sealed class ConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of personal access token saved in secret store.
@@ -287,9 +285,10 @@ namespace Pulumi.Oci.DevOps
         public ConnectionArgs()
         {
         }
+        public static new ConnectionArgs Empty => new ConnectionArgs();
     }
 
-    public sealed class ConnectionState : Pulumi.ResourceArgs
+    public sealed class ConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of personal access token saved in secret store.
@@ -408,5 +407,6 @@ namespace Pulumi.Oci.DevOps
         public ConnectionState()
         {
         }
+        public static new ConnectionState Empty => new ConnectionState();
     }
 }

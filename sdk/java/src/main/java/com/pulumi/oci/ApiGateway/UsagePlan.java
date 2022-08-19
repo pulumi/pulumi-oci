@@ -23,6 +23,57 @@ import javax.annotation.Nullable;
  * Creates a new usage plan.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ApiGateway.UsagePlan;
+ * import com.pulumi.oci.ApiGateway.UsagePlanArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementQuotaArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementRateLimitArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testUsagePlan = new UsagePlan(&#34;testUsagePlan&#34;, UsagePlanArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .entitlements(UsagePlanEntitlementArgs.builder()
+ *                 .name(var_.usage_plan_entitlements_name())
+ *                 .description(var_.usage_plan_entitlements_description())
+ *                 .quota(UsagePlanEntitlementQuotaArgs.builder()
+ *                     .operationOnBreach(var_.usage_plan_entitlements_quota_operation_on_breach())
+ *                     .resetPolicy(var_.usage_plan_entitlements_quota_reset_policy())
+ *                     .unit(var_.usage_plan_entitlements_quota_unit())
+ *                     .value(var_.usage_plan_entitlements_quota_value())
+ *                     .build())
+ *                 .rateLimit(UsagePlanEntitlementRateLimitArgs.builder()
+ *                     .unit(var_.usage_plan_entitlements_rate_limit_unit())
+ *                     .value(var_.usage_plan_entitlements_rate_limit_value())
+ *                     .build())
+ *                 .targets(UsagePlanEntitlementTargetArgs.builder()
+ *                     .deploymentId(oci_apigateway_deployment.test_deployment().id())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.usage_plan_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

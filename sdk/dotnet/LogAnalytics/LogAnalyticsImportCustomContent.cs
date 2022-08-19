@@ -17,23 +17,21 @@ namespace Pulumi.Oci.LogAnalytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogAnalyticsImportCustomContent = new Oci.LogAnalytics.LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent", new()
     ///     {
-    ///         var testLogAnalyticsImportCustomContent = new Oci.LogAnalytics.LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent", new Oci.LogAnalytics.LogAnalyticsImportCustomContentArgs
-    ///         {
-    ///             ImportCustomContentFile = @var.Log_analytics_import_custom_content_import_custom_content_file,
-    ///             Namespace = @var.Log_analytics_import_custom_content_namespace,
-    ///             Expect = @var.Log_analytics_import_custom_content_expect,
-    ///             IsOverwrite = @var.Log_analytics_import_custom_content_is_overwrite,
-    ///         });
-    ///     }
+    ///         ImportCustomContentFile = @var.Log_analytics_import_custom_content_import_custom_content_file,
+    ///         Namespace = @var.Log_analytics_import_custom_content_namespace,
+    ///         Expect = @var.Log_analytics_import_custom_content_expect,
+    ///         IsOverwrite = @var.Log_analytics_import_custom_content_is_overwrite,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// Import is not supported for LogAnalyticsImportCustomContent
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent")]
-    public partial class LogAnalyticsImportCustomContent : Pulumi.CustomResource
+    public partial class LogAnalyticsImportCustomContent : global::Pulumi.CustomResource
     {
         /// <summary>
         /// LogAnalyticsImportCustomChangeList
@@ -141,7 +139,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class LogAnalyticsImportCustomContentArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsImportCustomContentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
@@ -170,9 +168,10 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsImportCustomContentArgs()
         {
         }
+        public static new LogAnalyticsImportCustomContentArgs Empty => new LogAnalyticsImportCustomContentArgs();
     }
 
-    public sealed class LogAnalyticsImportCustomContentState : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsImportCustomContentState : global::Pulumi.ResourceArgs
     {
         [Input("changeLists")]
         private InputList<Inputs.LogAnalyticsImportCustomContentChangeListGetArgs>? _changeLists;
@@ -255,5 +254,6 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsImportCustomContentState()
         {
         }
+        public static new LogAnalyticsImportCustomContentState Empty => new LogAnalyticsImportCustomContentState();
     }
 }

@@ -25,6 +25,34 @@ public final class AnnouncementsServiceFunctions {
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
+     *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnnouncementSubscriptionResult> getAnnouncementSubscription(GetAnnouncementSubscriptionArgs args) {
@@ -38,6 +66,34 @@ public final class AnnouncementsServiceFunctions {
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
+     *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnnouncementSubscriptionResult> getAnnouncementSubscriptionPlain(GetAnnouncementSubscriptionPlainArgs args) {
@@ -51,6 +107,34 @@ public final class AnnouncementsServiceFunctions {
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
+     *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnnouncementSubscriptionResult> getAnnouncementSubscription(GetAnnouncementSubscriptionArgs args, InvokeOptions options) {
@@ -64,6 +148,34 @@ public final class AnnouncementsServiceFunctions {
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
+     *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnnouncementSubscriptionResult> getAnnouncementSubscriptionPlain(GetAnnouncementSubscriptionPlainArgs args, InvokeOptions options) {
@@ -77,6 +189,37 @@ public final class AnnouncementsServiceFunctions {
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.announcement_subscription_display_name())
+     *             .id(var_.announcement_subscription_id())
+     *             .state(var_.announcement_subscription_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnnouncementSubscriptionsResult> getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs args) {
@@ -90,6 +233,37 @@ public final class AnnouncementsServiceFunctions {
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.announcement_subscription_display_name())
+     *             .id(var_.announcement_subscription_id())
+     *             .state(var_.announcement_subscription_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnnouncementSubscriptionsResult> getAnnouncementSubscriptionsPlain(GetAnnouncementSubscriptionsPlainArgs args) {
@@ -103,6 +277,37 @@ public final class AnnouncementsServiceFunctions {
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.announcement_subscription_display_name())
+     *             .id(var_.announcement_subscription_id())
+     *             .state(var_.announcement_subscription_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnnouncementSubscriptionsResult> getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs args, InvokeOptions options) {
@@ -116,6 +321,37 @@ public final class AnnouncementsServiceFunctions {
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AnnouncementsService.AnnouncementsServiceFunctions;
+     * import com.pulumi.oci.AnnouncementsService.inputs.GetAnnouncementSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.announcement_subscription_display_name())
+     *             .id(var_.announcement_subscription_id())
+     *             .state(var_.announcement_subscription_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnnouncementSubscriptionsResult> getAnnouncementSubscriptionsPlain(GetAnnouncementSubscriptionsPlainArgs args, InvokeOptions options) {

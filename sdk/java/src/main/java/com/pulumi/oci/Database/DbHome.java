@@ -25,6 +25,76 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.DbHome;
+ * import com.pulumi.oci.Database.DbHomeArgs;
+ * import com.pulumi.oci.Database.inputs.DbHomeDatabaseArgs;
+ * import com.pulumi.oci.Database.inputs.DbHomeDatabaseDbBackupConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDbHome = new DbHome(&#34;testDbHome&#34;, DbHomeArgs.builder()        
+ *             .database(DbHomeDatabaseArgs.builder()
+ *                 .adminPassword(var_.db_home_database_admin_password())
+ *                 .backupId(oci_database_backup.test_backup().id())
+ *                 .backupTdePassword(var_.db_home_database_backup_tde_password())
+ *                 .characterSet(var_.db_home_database_character_set())
+ *                 .databaseId(oci_database_database.test_database().id())
+ *                 .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+ *                 .dbBackupConfig(DbHomeDatabaseDbBackupConfigArgs.builder()
+ *                     .autoBackupEnabled(var_.db_home_database_db_backup_config_auto_backup_enabled())
+ *                     .autoBackupWindow(var_.db_home_database_db_backup_config_auto_backup_window())
+ *                     .backupDestinationDetails(DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs.builder()
+ *                         .id(var_.db_home_database_db_backup_config_backup_destination_details_id())
+ *                         .type(var_.db_home_database_db_backup_config_backup_destination_details_type())
+ *                         .build())
+ *                     .recoveryWindowInDays(var_.db_home_database_db_backup_config_recovery_window_in_days())
+ *                     .build())
+ *                 .dbName(var_.db_home_database_db_name())
+ *                 .dbWorkload(var_.db_home_database_db_workload())
+ *                 .definedTags(var_.db_home_database_defined_tags())
+ *                 .freeformTags(var_.db_home_database_freeform_tags())
+ *                 .kmsKeyId(oci_kms_key.test_key().id())
+ *                 .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+ *                 .ncharacterSet(var_.db_home_database_ncharacter_set())
+ *                 .pdbName(var_.db_home_database_pdb_name())
+ *                 .sidPrefix(var_.db_home_database_sid_prefix())
+ *                 .tdeWalletPassword(var_.db_home_database_tde_wallet_password())
+ *                 .timeStampForPointInTimeRecovery(var_.db_home_database_time_stamp_for_point_in_time_recovery())
+ *                 .vaultId(oci_kms_vault.test_vault().id())
+ *                 .build())
+ *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+ *             .dbSystemId(oci_database_db_system.test_db_system().id())
+ *             .dbVersion()
+ *             .definedTags(var_.db_home_defined_tags())
+ *             .displayName(var_.db_home_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isDesupportedVersion(var_.db_home_is_desupported_version())
+ *             .kmsKeyId(oci_kms_key.test_key().id())
+ *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+ *             .source(var_.db_home_source())
+ *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * DbHomes can be imported using the `id`, e.g.

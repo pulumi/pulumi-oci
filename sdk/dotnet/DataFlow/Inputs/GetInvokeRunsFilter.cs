@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow.Inputs
 {
 
-    public sealed class GetInvokeRunsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetInvokeRunsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataFlow.Inputs
         public GetInvokeRunsFilterArgs()
         {
         }
+        public static new GetInvokeRunsFilterArgs Empty => new GetInvokeRunsFilterArgs();
     }
 }

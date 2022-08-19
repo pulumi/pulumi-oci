@@ -21,17 +21,15 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testEdgeSubnets = Output.Create(Oci.Waas.GetEdgeSubnets.InvokeAsync());
-        ///     }
+        ///     var testEdgeSubnets = Oci.Waas.GetEdgeSubnets.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -49,17 +47,15 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testEdgeSubnets = Output.Create(Oci.Waas.GetEdgeSubnets.InvokeAsync());
-        ///     }
+        ///     var testEdgeSubnets = Oci.Waas.GetEdgeSubnets.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -69,7 +65,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetEdgeSubnetsArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeSubnetsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetEdgeSubnetsFilterArgs>? _filters;
@@ -82,9 +78,10 @@ namespace Pulumi.Oci.Waas
         public GetEdgeSubnetsArgs()
         {
         }
+        public static new GetEdgeSubnetsArgs Empty => new GetEdgeSubnetsArgs();
     }
 
-    public sealed class GetEdgeSubnetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeSubnetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetEdgeSubnetsFilterInputArgs>? _filters;
@@ -97,6 +94,7 @@ namespace Pulumi.Oci.Waas
         public GetEdgeSubnetsInvokeArgs()
         {
         }
+        public static new GetEdgeSubnetsInvokeArgs Empty => new GetEdgeSubnetsInvokeArgs();
     }
 
 

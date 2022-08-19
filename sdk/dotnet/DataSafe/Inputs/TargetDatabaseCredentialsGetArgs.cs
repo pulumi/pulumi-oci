@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class TargetDatabaseCredentialsGetArgs : Pulumi.ResourceArgs
+    public sealed class TargetDatabaseCredentialsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The password of the database user.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public TargetDatabaseCredentialsGetArgs()
         {
         }
+        public static new TargetDatabaseCredentialsGetArgs Empty => new TargetDatabaseCredentialsGetArgs();
     }
 }

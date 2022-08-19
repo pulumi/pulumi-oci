@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagement.Inputs
 {
 
-    public sealed class GetManagedInstanceModuleStreamsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetManagedInstanceModuleStreamsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.OsManagement.Inputs
         public GetManagedInstanceModuleStreamsFilterInputArgs()
         {
         }
+        public static new GetManagedInstanceModuleStreamsFilterInputArgs Empty => new GetManagedInstanceModuleStreamsFilterInputArgs();
     }
 }

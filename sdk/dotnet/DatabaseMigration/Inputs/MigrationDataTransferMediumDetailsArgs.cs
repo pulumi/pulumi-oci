@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationDataTransferMediumDetailsArgs : Pulumi.ResourceArgs
+    public sealed class MigrationDataTransferMediumDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationDataTransferMediumDetailsArgs()
         {
         }
+        public static new MigrationDataTransferMediumDetailsArgs Empty => new MigrationDataTransferMediumDetailsArgs();
     }
 }

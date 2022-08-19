@@ -44,6 +44,34 @@ public final class LicenseManagerFunctions {
      * Retrieves configuration for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
@@ -55,6 +83,34 @@ public final class LicenseManagerFunctions {
      * Retrieves configuration for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args) {
@@ -66,6 +122,34 @@ public final class LicenseManagerFunctions {
      * Retrieves configuration for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
@@ -77,6 +161,34 @@ public final class LicenseManagerFunctions {
      * Retrieves configuration for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.Audit.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args, InvokeOptions options) {
@@ -88,6 +200,35 @@ public final class LicenseManagerFunctions {
      * Retrieves the license metrics for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.license_metric_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLicenseMetricResult> getLicenseMetric(GetLicenseMetricArgs args) {
@@ -99,6 +240,35 @@ public final class LicenseManagerFunctions {
      * Retrieves the license metrics for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.license_metric_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLicenseMetricResult> getLicenseMetricPlain(GetLicenseMetricPlainArgs args) {
@@ -110,6 +280,35 @@ public final class LicenseManagerFunctions {
      * Retrieves the license metrics for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.license_metric_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLicenseMetricResult> getLicenseMetric(GetLicenseMetricArgs args, InvokeOptions options) {
@@ -121,6 +320,35 @@ public final class LicenseManagerFunctions {
      * Retrieves the license metrics for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseMetricArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.license_metric_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLicenseMetricResult> getLicenseMetricPlain(GetLicenseMetricPlainArgs args, InvokeOptions options) {
@@ -132,6 +360,34 @@ public final class LicenseManagerFunctions {
      * Retrieves license record details by the license record ID in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
+     *             .licenseRecordId(oci_license_manager_license_record.test_license_record().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLicenseRecordResult> getLicenseRecord(GetLicenseRecordArgs args) {
@@ -143,6 +399,34 @@ public final class LicenseManagerFunctions {
      * Retrieves license record details by the license record ID in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
+     *             .licenseRecordId(oci_license_manager_license_record.test_license_record().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLicenseRecordResult> getLicenseRecordPlain(GetLicenseRecordPlainArgs args) {
@@ -154,6 +438,34 @@ public final class LicenseManagerFunctions {
      * Retrieves license record details by the license record ID in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
+     *             .licenseRecordId(oci_license_manager_license_record.test_license_record().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLicenseRecordResult> getLicenseRecord(GetLicenseRecordArgs args, InvokeOptions options) {
@@ -165,6 +477,34 @@ public final class LicenseManagerFunctions {
      * Retrieves license record details by the license record ID in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
+     *             .licenseRecordId(oci_license_manager_license_record.test_license_record().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLicenseRecordResult> getLicenseRecordPlain(GetLicenseRecordPlainArgs args, InvokeOptions options) {
@@ -176,6 +516,34 @@ public final class LicenseManagerFunctions {
      * Retrieves all license records for a given product license ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLicenseRecordsResult> getLicenseRecords(GetLicenseRecordsArgs args) {
@@ -187,6 +555,34 @@ public final class LicenseManagerFunctions {
      * Retrieves all license records for a given product license ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLicenseRecordsResult> getLicenseRecordsPlain(GetLicenseRecordsPlainArgs args) {
@@ -198,6 +594,34 @@ public final class LicenseManagerFunctions {
      * Retrieves all license records for a given product license ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLicenseRecordsResult> getLicenseRecords(GetLicenseRecordsArgs args, InvokeOptions options) {
@@ -209,6 +633,34 @@ public final class LicenseManagerFunctions {
      * Retrieves all license records for a given product license ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetLicenseRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLicenseRecordsResult> getLicenseRecordsPlain(GetLicenseRecordsPlainArgs args, InvokeOptions options) {
@@ -220,6 +672,34 @@ public final class LicenseManagerFunctions {
      * Retrieves product license details by product license ID in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProductLicenseResult> getProductLicense(GetProductLicenseArgs args) {
@@ -231,6 +711,34 @@ public final class LicenseManagerFunctions {
      * Retrieves product license details by product license ID in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProductLicenseResult> getProductLicensePlain(GetProductLicensePlainArgs args) {
@@ -242,6 +750,34 @@ public final class LicenseManagerFunctions {
      * Retrieves product license details by product license ID in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProductLicenseResult> getProductLicense(GetProductLicenseArgs args, InvokeOptions options) {
@@ -253,6 +789,34 @@ public final class LicenseManagerFunctions {
      * Retrieves product license details by product license ID in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProductLicenseResult> getProductLicensePlain(GetProductLicensePlainArgs args, InvokeOptions options) {
@@ -264,6 +828,36 @@ public final class LicenseManagerFunctions {
      * Retrieves the product license consumers for a particular product license ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .isCompartmentIdInSubtree(var_.product_license_consumer_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProductLicenseConsumersResult> getProductLicenseConsumers(GetProductLicenseConsumersArgs args) {
@@ -275,6 +869,36 @@ public final class LicenseManagerFunctions {
      * Retrieves the product license consumers for a particular product license ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .isCompartmentIdInSubtree(var_.product_license_consumer_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProductLicenseConsumersResult> getProductLicenseConsumersPlain(GetProductLicenseConsumersPlainArgs args) {
@@ -286,6 +910,36 @@ public final class LicenseManagerFunctions {
      * Retrieves the product license consumers for a particular product license ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .isCompartmentIdInSubtree(var_.product_license_consumer_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProductLicenseConsumersResult> getProductLicenseConsumers(GetProductLicenseConsumersArgs args, InvokeOptions options) {
@@ -297,6 +951,36 @@ public final class LicenseManagerFunctions {
      * Retrieves the product license consumers for a particular product license ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicenseConsumersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .isCompartmentIdInSubtree(var_.product_license_consumer_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProductLicenseConsumersResult> getProductLicenseConsumersPlain(GetProductLicenseConsumersPlainArgs args, InvokeOptions options) {
@@ -308,6 +992,35 @@ public final class LicenseManagerFunctions {
      * Retrieves all the product licenses from a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.product_license_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProductLicensesResult> getProductLicenses(GetProductLicensesArgs args) {
@@ -319,6 +1032,35 @@ public final class LicenseManagerFunctions {
      * Retrieves all the product licenses from a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.product_license_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProductLicensesResult> getProductLicensesPlain(GetProductLicensesPlainArgs args) {
@@ -330,6 +1072,35 @@ public final class LicenseManagerFunctions {
      * Retrieves all the product licenses from a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.product_license_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProductLicensesResult> getProductLicenses(GetProductLicensesArgs args, InvokeOptions options) {
@@ -341,6 +1112,35 @@ public final class LicenseManagerFunctions {
      * Retrieves all the product licenses from a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.product_license_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProductLicensesResult> getProductLicensesPlain(GetProductLicensesPlainArgs args, InvokeOptions options) {
@@ -352,6 +1152,35 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized product licenses for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.top_utilized_product_license_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs args) {
@@ -363,6 +1192,35 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized product licenses for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.top_utilized_product_license_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicensesPlain(GetTopUtilizedProductLicensesPlainArgs args) {
@@ -374,6 +1232,35 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized product licenses for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.top_utilized_product_license_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs args, InvokeOptions options) {
@@ -385,6 +1272,35 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized product licenses for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedProductLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.top_utilized_product_license_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTopUtilizedProductLicensesResult> getTopUtilizedProductLicensesPlain(GetTopUtilizedProductLicensesPlainArgs args, InvokeOptions options) {
@@ -396,6 +1312,36 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized resources for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.top_utilized_resource_is_compartment_id_in_subtree())
+     *             .resourceUnitType(var_.top_utilized_resource_resource_unit_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTopUtilizedResourcesResult> getTopUtilizedResources(GetTopUtilizedResourcesArgs args) {
@@ -407,6 +1353,36 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized resources for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.top_utilized_resource_is_compartment_id_in_subtree())
+     *             .resourceUnitType(var_.top_utilized_resource_resource_unit_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTopUtilizedResourcesResult> getTopUtilizedResourcesPlain(GetTopUtilizedResourcesPlainArgs args) {
@@ -418,6 +1394,36 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized resources for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.top_utilized_resource_is_compartment_id_in_subtree())
+     *             .resourceUnitType(var_.top_utilized_resource_resource_unit_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTopUtilizedResourcesResult> getTopUtilizedResources(GetTopUtilizedResourcesArgs args, InvokeOptions options) {
@@ -429,6 +1435,36 @@ public final class LicenseManagerFunctions {
      * Retrieves the top utilized resources for a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LicenseManager.LicenseManagerFunctions;
+     * import com.pulumi.oci.LicenseManager.inputs.GetTopUtilizedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCompartmentIdInSubtree(var_.top_utilized_resource_is_compartment_id_in_subtree())
+     *             .resourceUnitType(var_.top_utilized_resource_resource_unit_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTopUtilizedResourcesResult> getTopUtilizedResourcesPlain(GetTopUtilizedResourcesPlainArgs args, InvokeOptions options) {

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Nosql.Inputs
 {
 
-    public sealed class GetTablesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetTablesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A shell-globbing-style (*?[]) filter for names.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Nosql.Inputs
         public GetTablesFilterInputArgs()
         {
         }
+        public static new GetTablesFilterInputArgs Empty => new GetTablesFilterInputArgs();
     }
 }

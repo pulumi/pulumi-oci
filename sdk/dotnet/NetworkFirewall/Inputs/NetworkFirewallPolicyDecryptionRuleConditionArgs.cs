@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class NetworkFirewallPolicyDecryptionRuleConditionArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicyDecryptionRuleConditionArgs : global::Pulumi.ResourceArgs
     {
         [Input("destinations")]
         private InputList<string>? _destinations;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public NetworkFirewallPolicyDecryptionRuleConditionArgs()
         {
         }
+        public static new NetworkFirewallPolicyDecryptionRuleConditionArgs Empty => new NetworkFirewallPolicyDecryptionRuleConditionArgs();
     }
 }

@@ -19,32 +19,30 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUserAssessment = new Oci.DataSafe.UserAssessment("testUserAssessment", new()
     ///     {
-    ///         var testUserAssessment = new Oci.DataSafe.UserAssessment("testUserAssessment", new Oci.DataSafe.UserAssessmentArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.User_assessment_description,
-    ///             DisplayName = @var.User_assessment_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Schedule = @var.User_assessment_schedule,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.User_assessment_description,
+    ///         DisplayName = @var.User_assessment_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Schedule = @var.User_assessment_schedule,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/userAssessment:UserAssessment")]
-    public partial class UserAssessment : Pulumi.CustomResource
+    public partial class UserAssessment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the user assessment.
@@ -234,7 +232,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class UserAssessmentArgs : Pulumi.ResourceArgs
+    public sealed class UserAssessmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the user assessment.
@@ -293,9 +291,10 @@ namespace Pulumi.Oci.DataSafe
         public UserAssessmentArgs()
         {
         }
+        public static new UserAssessmentArgs Empty => new UserAssessmentArgs();
     }
 
-    public sealed class UserAssessmentState : Pulumi.ResourceArgs
+    public sealed class UserAssessmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the user assessment.
@@ -468,5 +467,6 @@ namespace Pulumi.Oci.DataSafe
         public UserAssessmentState()
         {
         }
+        public static new UserAssessmentState Empty => new UserAssessmentState();
     }
 }

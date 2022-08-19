@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterImagePolicyConfigKeyDetailArgs : Pulumi.ResourceArgs
+    public sealed class ClusterImagePolicyConfigKeyDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterImagePolicyConfigKeyDetailArgs()
         {
         }
+        public static new ClusterImagePolicyConfigKeyDetailArgs Empty => new ClusterImagePolicyConfigKeyDetailArgs();
     }
 }

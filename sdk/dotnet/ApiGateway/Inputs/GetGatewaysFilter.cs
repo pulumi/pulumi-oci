@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GetGatewaysFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetGatewaysFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GetGatewaysFilterArgs()
         {
         }
+        public static new GetGatewaysFilterArgs Empty => new GetGatewaysFilterArgs();
     }
 }

@@ -23,22 +23,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublicIpPools = Oci.Core.GetPublicIpPools.Invoke(new()
         ///     {
-        ///         var testPublicIpPools = Output.Create(Oci.Core.GetPublicIpPools.InvokeAsync(new Oci.Core.GetPublicIpPoolsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
-        ///             DisplayName = @var.Public_ip_pool_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
+        ///         DisplayName = @var.Public_ip_pool_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublicIpPools = Oci.Core.GetPublicIpPools.Invoke(new()
         ///     {
-        ///         var testPublicIpPools = Output.Create(Oci.Core.GetPublicIpPools.InvokeAsync(new Oci.Core.GetPublicIpPoolsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
-        ///             DisplayName = @var.Public_ip_pool_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
+        ///         DisplayName = @var.Public_ip_pool_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetPublicIpPoolsArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicIpPoolsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given BYOIP CIDR block.
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.Core
         public GetPublicIpPoolsArgs()
         {
         }
+        public static new GetPublicIpPoolsArgs Empty => new GetPublicIpPoolsArgs();
     }
 
-    public sealed class GetPublicIpPoolsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicIpPoolsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given BYOIP CIDR block.
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.Core
         public GetPublicIpPoolsInvokeArgs()
         {
         }
+        public static new GetPublicIpPoolsInvokeArgs Empty => new GetPublicIpPoolsInvokeArgs();
     }
 
 

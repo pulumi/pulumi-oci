@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class CloudVmClusterDataCollectionOptionsArgs : Pulumi.ResourceArgs
+    public sealed class CloudVmClusterDataCollectionOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Database.Inputs
         public CloudVmClusterDataCollectionOptionsArgs()
         {
         }
+        public static new CloudVmClusterDataCollectionOptionsArgs Empty => new CloudVmClusterDataCollectionOptionsArgs();
     }
 }

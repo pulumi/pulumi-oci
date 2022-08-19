@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 {
 
-    public sealed class ModelModelTrainingResultRowReductionDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelModelTrainingResultRowReductionDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A boolean value to indicate if row reduction is applied
@@ -35,5 +35,6 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public ModelModelTrainingResultRowReductionDetailGetArgs()
         {
         }
+        public static new ModelModelTrainingResultRowReductionDetailGetArgs Empty => new ModelModelTrainingResultRowReductionDetailGetArgs();
     }
 }

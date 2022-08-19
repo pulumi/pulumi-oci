@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class RecommendationSupportedLevelArgs : Pulumi.ResourceArgs
+    public sealed class RecommendationSupportedLevelArgs : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.RecommendationSupportedLevelItemArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public RecommendationSupportedLevelArgs()
         {
         }
+        public static new RecommendationSupportedLevelArgs Empty => new RecommendationSupportedLevelArgs();
     }
 }

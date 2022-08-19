@@ -18,31 +18,29 @@ namespace Pulumi.Oci.Opsi
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAwrHub = new Oci.Opsi.AwrHub("testAwrHub", new()
     ///     {
-    ///         var testAwrHub = new Oci.Opsi.AwrHub("testAwrHub", new Oci.Opsi.AwrHubArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Awr_hub_display_name,
+    ///         ObjectStorageBucketName = oci_objectstorage_bucket.Test_bucket.Name,
+    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Awr_hub_display_name,
-    ///             ObjectStorageBucketName = oci_objectstorage_bucket.Test_bucket.Name,
-    ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/awrHub:AwrHub")]
-    public partial class AwrHub : Pulumi.CustomResource
+    public partial class AwrHub : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Mailbox URL required for AWR hub and AWR source setup.
@@ -172,7 +170,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class AwrHubArgs : Pulumi.ResourceArgs
+    public sealed class AwrHubArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -225,9 +223,10 @@ namespace Pulumi.Oci.Opsi
         public AwrHubArgs()
         {
         }
+        public static new AwrHubArgs Empty => new AwrHubArgs();
     }
 
-    public sealed class AwrHubState : Pulumi.ResourceArgs
+    public sealed class AwrHubState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Mailbox URL required for AWR hub and AWR source setup.
@@ -322,5 +321,6 @@ namespace Pulumi.Oci.Opsi
         public AwrHubState()
         {
         }
+        public static new AwrHubState Empty => new AwrHubState();
     }
 }

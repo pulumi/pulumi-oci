@@ -23,7 +23,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// ```
     /// </summary>
     [OciResourceType("oci:ContainerEngine/cluster:Cluster")]
-    public partial class Cluster : Pulumi.CustomResource
+    public partial class Cluster : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Available Kubernetes versions to which the clusters masters may be upgraded.
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.ContainerEngine
         }
     }
 
-    public sealed class ClusterArgs : Pulumi.ResourceArgs
+    public sealed class ClusterArgs : global::Pulumi.ResourceArgs
     {
         [Input("clusterPodNetworkOptions")]
         private InputList<Inputs.ClusterClusterPodNetworkOptionArgs>? _clusterPodNetworkOptions;
@@ -254,9 +254,10 @@ namespace Pulumi.Oci.ContainerEngine
         public ClusterArgs()
         {
         }
+        public static new ClusterArgs Empty => new ClusterArgs();
     }
 
-    public sealed class ClusterState : Pulumi.ResourceArgs
+    public sealed class ClusterState : global::Pulumi.ResourceArgs
     {
         [Input("availableKubernetesUpgrades")]
         private InputList<string>? _availableKubernetesUpgrades;
@@ -393,5 +394,6 @@ namespace Pulumi.Oci.ContainerEngine
         public ClusterState()
         {
         }
+        public static new ClusterState Empty => new ClusterState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OneSubsription.Inputs
 {
 
-    public sealed class GetSubscribedServicesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSubscribedServicesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Commercial name also called customer name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OneSubsription.Inputs
         public GetSubscribedServicesFilterInputArgs()
         {
         }
+        public static new GetSubscribedServicesFilterInputArgs Empty => new GetSubscribedServicesFilterInputArgs();
     }
 }

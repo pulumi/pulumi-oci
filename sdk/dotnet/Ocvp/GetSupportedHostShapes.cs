@@ -17,22 +17,20 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSupportedHostShapes = Oci.Ocvp.GetSupportedHostShapes.Invoke(new()
         ///     {
-        ///         var testSupportedHostShapes = Output.Create(Oci.Ocvp.GetSupportedHostShapes.InvokeAsync(new Oci.Ocvp.GetSupportedHostShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Supported_host_shape_name,
-        ///             SddcType = @var.Supported_host_shape_sddc_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Supported_host_shape_name,
+        ///         SddcType = @var.Supported_host_shape_sddc_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -46,22 +44,20 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSupportedHostShapes = Oci.Ocvp.GetSupportedHostShapes.Invoke(new()
         ///     {
-        ///         var testSupportedHostShapes = Output.Create(Oci.Ocvp.GetSupportedHostShapes.InvokeAsync(new Oci.Ocvp.GetSupportedHostShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Supported_host_shape_name,
-        ///             SddcType = @var.Supported_host_shape_sddc_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Supported_host_shape_name,
+        ///         SddcType = @var.Supported_host_shape_sddc_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,7 +67,7 @@ namespace Pulumi.Oci.Ocvp
     }
 
 
-    public sealed class GetSupportedHostShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetSupportedHostShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Ocvp
         public GetSupportedHostShapesArgs()
         {
         }
+        public static new GetSupportedHostShapesArgs Empty => new GetSupportedHostShapesArgs();
     }
 
-    public sealed class GetSupportedHostShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSupportedHostShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -135,6 +132,7 @@ namespace Pulumi.Oci.Ocvp
         public GetSupportedHostShapesInvokeArgs()
         {
         }
+        public static new GetSupportedHostShapesInvokeArgs Empty => new GetSupportedHostShapesInvokeArgs();
     }
 
 

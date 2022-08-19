@@ -17,59 +17,57 @@ namespace Pulumi.Oci.StackMonitoring
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDiscoveryJob = new Oci.StackMonitoring.DiscoveryJob("testDiscoveryJob", new()
     ///     {
-    ///         var testDiscoveryJob = new Oci.StackMonitoring.DiscoveryJob("testDiscoveryJob", new Oci.StackMonitoring.DiscoveryJobArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DiscoveryDetails = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DiscoveryDetails = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsArgs
+    ///             AgentId = @var.Management_agent_id,
+    ///             Properties = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsPropertiesArgs
     ///             {
-    ///                 AgentId = @var.Management_agent_id,
-    ///                 Properties = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsPropertiesArgs
+    ///                 PropertiesMap = @var.Discovery_job_discovery_details_properties_properties_map,
+    ///             },
+    ///             ResourceName = @var.Discovery_job_discovery_details_resource_name,
+    ///             ResourceType = @var.Discovery_job_discovery_details_resource_type,
+    ///             Credentials = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsArgs
+    ///             {
+    ///                 Items = new[]
     ///                 {
-    ///                     PropertiesMap = @var.Discovery_job_discovery_details_properties_properties_map,
-    ///                 },
-    ///                 ResourceName = @var.Discovery_job_discovery_details_resource_name,
-    ///                 ResourceType = @var.Discovery_job_discovery_details_resource_type,
-    ///                 Credentials = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsArgs
-    ///                 {
-    ///                     Items = 
+    ///                     new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsItemArgs
     ///                     {
-    ///                         new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsItemArgs
+    ///                         CredentialName = @var.Discovery_job_discovery_details_credentials_items_credential_name,
+    ///                         CredentialType = @var.Discovery_job_discovery_details_credentials_items_credential_type,
+    ///                         Properties = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs
     ///                         {
-    ///                             CredentialName = @var.Discovery_job_discovery_details_credentials_items_credential_name,
-    ///                             CredentialType = @var.Discovery_job_discovery_details_credentials_items_credential_type,
-    ///                             Properties = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs
-    ///                             {
-    ///                                 PropertiesMap = @var.Discovery_job_discovery_details_credentials_items_properties_properties_map,
-    ///                             },
+    ///                             PropertiesMap = @var.Discovery_job_discovery_details_credentials_items_properties_properties_map,
     ///                         },
     ///                     },
     ///                 },
-    ///                 Tags = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsTagsArgs
-    ///                 {
-    ///                     PropertiesMap = @var.Discovery_job_discovery_details_tags_properties_map,
-    ///                 },
     ///             },
-    ///             DefinedTags = 
+    ///             Tags = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsTagsArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
+    ///                 PropertiesMap = @var.Discovery_job_discovery_details_tags_properties_map,
     ///             },
-    ///             DiscoveryClient = @var.Discovery_job_discovery_client,
-    ///             DiscoveryType = @var.Discovery_job_discovery_type,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DiscoveryClient = @var.Discovery_job_discovery_client,
+    ///         DiscoveryType = @var.Discovery_job_discovery_type,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -81,7 +79,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/discoveryJob:DiscoveryJob")]
-    public partial class DiscoveryJob : Pulumi.CustomResource
+    public partial class DiscoveryJob : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of Compartment
@@ -205,7 +203,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
     }
 
-    public sealed class DiscoveryJobArgs : Pulumi.ResourceArgs
+    public sealed class DiscoveryJobArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of Compartment
@@ -258,9 +256,10 @@ namespace Pulumi.Oci.StackMonitoring
         public DiscoveryJobArgs()
         {
         }
+        public static new DiscoveryJobArgs Empty => new DiscoveryJobArgs();
     }
 
-    public sealed class DiscoveryJobState : Pulumi.ResourceArgs
+    public sealed class DiscoveryJobState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of Compartment
@@ -361,5 +360,6 @@ namespace Pulumi.Oci.StackMonitoring
         public DiscoveryJobState()
         {
         }
+        public static new DiscoveryJobState Empty => new DiscoveryJobState();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentInstallKey = Oci.ManagementAgent.GetManagementAgentInstallKey.Invoke(new()
         ///     {
-        ///         var testManagementAgentInstallKey = Output.Create(Oci.ManagementAgent.GetManagementAgentInstallKey.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentInstallKeyArgs
-        ///         {
-        ///             ManagementAgentInstallKeyId = oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
-        ///         }));
-        ///     }
+        ///         ManagementAgentInstallKeyId = oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentInstallKey = Oci.ManagementAgent.GetManagementAgentInstallKey.Invoke(new()
         ///     {
-        ///         var testManagementAgentInstallKey = Output.Create(Oci.ManagementAgent.GetManagementAgentInstallKey.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentInstallKeyArgs
-        ///         {
-        ///             ManagementAgentInstallKeyId = oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
-        ///         }));
-        ///     }
+        ///         ManagementAgentInstallKeyId = oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentInstallKeyArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentInstallKeyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Management Agent Install Key identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentInstallKeyArgs()
         {
         }
+        public static new GetManagementAgentInstallKeyArgs Empty => new GetManagementAgentInstallKeyArgs();
     }
 
-    public sealed class GetManagementAgentInstallKeyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentInstallKeyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Management Agent Install Key identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentInstallKeyInvokeArgs()
         {
         }
+        public static new GetManagementAgentInstallKeyInvokeArgs Empty => new GetManagementAgentInstallKeyInvokeArgs();
     }
 
 

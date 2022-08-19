@@ -22,23 +22,21 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstanceGroups = Oci.OsManagement.GetManagedInstanceGroups.Invoke(new()
         ///     {
-        ///         var testManagedInstanceGroups = Output.Create(Oci.OsManagement.GetManagedInstanceGroups.InvokeAsync(new Oci.OsManagement.GetManagedInstanceGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Managed_instance_group_display_name,
-        ///             OsFamily = @var.Managed_instance_group_os_family,
-        ///             State = @var.Managed_instance_group_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Managed_instance_group_display_name,
+        ///         OsFamily = @var.Managed_instance_group_os_family,
+        ///         State = @var.Managed_instance_group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstanceGroups = Oci.OsManagement.GetManagedInstanceGroups.Invoke(new()
         ///     {
-        ///         var testManagedInstanceGroups = Output.Create(Oci.OsManagement.GetManagedInstanceGroups.InvokeAsync(new Oci.OsManagement.GetManagedInstanceGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Managed_instance_group_display_name,
-        ///             OsFamily = @var.Managed_instance_group_os_family,
-        ///             State = @var.Managed_instance_group_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Managed_instance_group_display_name,
+        ///         OsFamily = @var.Managed_instance_group_os_family,
+        ///         State = @var.Managed_instance_group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetManagedInstanceGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstanceGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstanceGroupsArgs()
         {
         }
+        public static new GetManagedInstanceGroupsArgs Empty => new GetManagedInstanceGroupsArgs();
     }
 
-    public sealed class GetManagedInstanceGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstanceGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstanceGroupsInvokeArgs()
         {
         }
+        public static new GetManagedInstanceGroupsInvokeArgs Empty => new GetManagedInstanceGroupsInvokeArgs();
     }
 
 

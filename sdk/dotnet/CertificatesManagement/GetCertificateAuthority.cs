@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificateAuthority = Oci.CertificatesManagement.GetCertificateAuthority.Invoke(new()
         ///     {
-        ///         var testCertificateAuthority = Output.Create(Oci.CertificatesManagement.GetCertificateAuthority.InvokeAsync(new Oci.CertificatesManagement.GetCertificateAuthorityArgs
-        ///         {
-        ///             CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         }));
-        ///     }
+        ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificateAuthority = Oci.CertificatesManagement.GetCertificateAuthority.Invoke(new()
         ///     {
-        ///         var testCertificateAuthority = Output.Create(Oci.CertificatesManagement.GetCertificateAuthority.InvokeAsync(new Oci.CertificatesManagement.GetCertificateAuthorityArgs
-        ///         {
-        ///             CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         }));
-        ///     }
+        ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CertificatesManagement
     }
 
 
-    public sealed class GetCertificateAuthorityArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateAuthorityArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate authority (CA).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificateAuthorityArgs()
         {
         }
+        public static new GetCertificateAuthorityArgs Empty => new GetCertificateAuthorityArgs();
     }
 
-    public sealed class GetCertificateAuthorityInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateAuthorityInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate authority (CA).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificateAuthorityInvokeArgs()
         {
         }
+        public static new GetCertificateAuthorityInvokeArgs Empty => new GetCertificateAuthorityInvokeArgs();
     }
 
 

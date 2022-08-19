@@ -22,28 +22,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveDataModels = Oci.DataSafe.GetSensitiveDataModels.Invoke(new()
         ///     {
-        ///         var testSensitiveDataModels = Output.Create(Oci.DataSafe.GetSensitiveDataModels.InvokeAsync(new Oci.DataSafe.GetSensitiveDataModelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Sensitive_data_model_access_level,
-        ///             CompartmentIdInSubtree = @var.Sensitive_data_model_compartment_id_in_subtree,
-        ///             DisplayName = @var.Sensitive_data_model_display_name,
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///             State = @var.Sensitive_data_model_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_model_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Sensitive_data_model_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Sensitive_data_model_access_level,
+        ///         CompartmentIdInSubtree = @var.Sensitive_data_model_compartment_id_in_subtree,
+        ///         DisplayName = @var.Sensitive_data_model_display_name,
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         State = @var.Sensitive_data_model_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_model_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Sensitive_data_model_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,28 +60,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveDataModels = Oci.DataSafe.GetSensitiveDataModels.Invoke(new()
         ///     {
-        ///         var testSensitiveDataModels = Output.Create(Oci.DataSafe.GetSensitiveDataModels.InvokeAsync(new Oci.DataSafe.GetSensitiveDataModelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Sensitive_data_model_access_level,
-        ///             CompartmentIdInSubtree = @var.Sensitive_data_model_compartment_id_in_subtree,
-        ///             DisplayName = @var.Sensitive_data_model_display_name,
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///             State = @var.Sensitive_data_model_state,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_model_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Sensitive_data_model_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Sensitive_data_model_access_level,
+        ///         CompartmentIdInSubtree = @var.Sensitive_data_model_compartment_id_in_subtree,
+        ///         DisplayName = @var.Sensitive_data_model_display_name,
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         State = @var.Sensitive_data_model_state,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_model_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Sensitive_data_model_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSensitiveDataModelsArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveDataModelsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -160,9 +156,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveDataModelsArgs()
         {
         }
+        public static new GetSensitiveDataModelsArgs Empty => new GetSensitiveDataModelsArgs();
     }
 
-    public sealed class GetSensitiveDataModelsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveDataModelsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -229,6 +226,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveDataModelsInvokeArgs()
         {
         }
+        public static new GetSensitiveDataModelsInvokeArgs Empty => new GetSensitiveDataModelsInvokeArgs();
     }
 
 

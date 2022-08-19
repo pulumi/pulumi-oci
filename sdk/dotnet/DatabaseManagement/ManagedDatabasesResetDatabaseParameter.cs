@@ -17,29 +17,27 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testManagedDatabasesResetDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameter("testManagedDatabasesResetDatabaseParameter", new()
     ///     {
-    ///         var testManagedDatabasesResetDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameter("testManagedDatabasesResetDatabaseParameter", new Oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs
+    ///         Credentials = new Oci.DatabaseManagement.Inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs
     ///         {
-    ///             Credentials = new Oci.DatabaseManagement.Inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs
-    ///             {
-    ///                 Password = @var.Managed_databases_reset_database_parameter_credentials_password,
-    ///                 Role = @var.Managed_databases_reset_database_parameter_credentials_role,
-    ///                 SecretId = oci_vault_secret.Test_secret.Id,
-    ///                 UserName = oci_identity_user.Test_user.Name,
-    ///             },
-    ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-    ///             Parameters = @var.Managed_databases_reset_database_parameter_parameters,
-    ///             Scope = @var.Managed_databases_reset_database_parameter_scope,
-    ///         });
-    ///     }
+    ///             Password = @var.Managed_databases_reset_database_parameter_credentials_password,
+    ///             Role = @var.Managed_databases_reset_database_parameter_credentials_role,
+    ///             SecretId = oci_vault_secret.Test_secret.Id,
+    ///             UserName = oci_identity_user.Test_user.Name,
+    ///         },
+    ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+    ///         Parameters = @var.Managed_databases_reset_database_parameter_parameters,
+    ///         Scope = @var.Managed_databases_reset_database_parameter_scope,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter")]
-    public partial class ManagedDatabasesResetDatabaseParameter : Pulumi.CustomResource
+    public partial class ManagedDatabasesResetDatabaseParameter : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The database credentials used to perform management activity.
@@ -117,7 +115,7 @@ namespace Pulumi.Oci.DatabaseManagement
         }
     }
 
-    public sealed class ManagedDatabasesResetDatabaseParameterArgs : Pulumi.ResourceArgs
+    public sealed class ManagedDatabasesResetDatabaseParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database credentials used to perform management activity.
@@ -152,9 +150,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public ManagedDatabasesResetDatabaseParameterArgs()
         {
         }
+        public static new ManagedDatabasesResetDatabaseParameterArgs Empty => new ManagedDatabasesResetDatabaseParameterArgs();
     }
 
-    public sealed class ManagedDatabasesResetDatabaseParameterState : Pulumi.ResourceArgs
+    public sealed class ManagedDatabasesResetDatabaseParameterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database credentials used to perform management activity.
@@ -189,5 +188,6 @@ namespace Pulumi.Oci.DatabaseManagement
         public ManagedDatabasesResetDatabaseParameterState()
         {
         }
+        public static new ManagedDatabasesResetDatabaseParameterState Empty => new ManagedDatabasesResetDatabaseParameterState();
     }
 }

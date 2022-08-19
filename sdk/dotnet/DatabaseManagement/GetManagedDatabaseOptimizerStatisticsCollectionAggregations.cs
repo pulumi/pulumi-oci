@@ -27,24 +27,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseOptimizerStatisticsCollectionAggregations = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregations.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseOptimizerStatisticsCollectionAggregations = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregations.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs
-        ///         {
-        ///             GroupType = @var.Managed_database_optimizer_statistics_collection_aggregation_group_type,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to,
-        ///             StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to,
-        ///             TaskType = @var.Managed_database_optimizer_statistics_collection_aggregation_task_type,
-        ///         }));
-        ///     }
+        ///         GroupType = @var.Managed_database_optimizer_statistics_collection_aggregation_group_type,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to,
+        ///         StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to,
+        ///         TaskType = @var.Managed_database_optimizer_statistics_collection_aggregation_task_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -68,24 +66,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseOptimizerStatisticsCollectionAggregations = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregations.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseOptimizerStatisticsCollectionAggregations = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregations.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs
-        ///         {
-        ///             GroupType = @var.Managed_database_optimizer_statistics_collection_aggregation_group_type,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to,
-        ///             StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to,
-        ///             TaskType = @var.Managed_database_optimizer_statistics_collection_aggregation_task_type,
-        ///         }));
-        ///     }
+        ///         GroupType = @var.Managed_database_optimizer_statistics_collection_aggregation_group_type,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to,
+        ///         StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to,
+        ///         TaskType = @var.Managed_database_optimizer_statistics_collection_aggregation_task_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -141,9 +137,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs Empty => new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs();
     }
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -189,6 +186,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs Empty => new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsInvokeArgs();
     }
 
 

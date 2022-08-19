@@ -22,22 +22,20 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHttpMonitors = Oci.HealthChecks.GetHttpMonitors.Invoke(new()
         ///     {
-        ///         var testHttpMonitors = Output.Create(Oci.HealthChecks.GetHttpMonitors.InvokeAsync(new Oci.HealthChecks.GetHttpMonitorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Http_monitor_display_name,
-        ///             HomeRegion = @var.Http_monitor_home_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Http_monitor_display_name,
+        ///         HomeRegion = @var.Http_monitor_home_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHttpMonitors = Oci.HealthChecks.GetHttpMonitors.Invoke(new()
         ///     {
-        ///         var testHttpMonitors = Output.Create(Oci.HealthChecks.GetHttpMonitors.InvokeAsync(new Oci.HealthChecks.GetHttpMonitorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Http_monitor_display_name,
-        ///             HomeRegion = @var.Http_monitor_home_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Http_monitor_display_name,
+        ///         HomeRegion = @var.Http_monitor_home_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.HealthChecks
     }
 
 
-    public sealed class GetHttpMonitorsArgs : Pulumi.InvokeArgs
+    public sealed class GetHttpMonitorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filters results by compartment.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.HealthChecks
         public GetHttpMonitorsArgs()
         {
         }
+        public static new GetHttpMonitorsArgs Empty => new GetHttpMonitorsArgs();
     }
 
-    public sealed class GetHttpMonitorsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHttpMonitorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filters results by compartment.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.HealthChecks
         public GetHttpMonitorsInvokeArgs()
         {
         }
+        public static new GetHttpMonitorsInvokeArgs Empty => new GetHttpMonitorsInvokeArgs();
     }
 
 

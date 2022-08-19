@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityRecipe = Oci.CloudGuard.GetSecurityRecipe.Invoke(new()
         ///     {
-        ///         var testSecurityRecipe = Output.Create(Oci.CloudGuard.GetSecurityRecipe.InvokeAsync(new Oci.CloudGuard.GetSecurityRecipeArgs
-        ///         {
-        ///             SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
-        ///         }));
-        ///     }
+        ///         SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityRecipe = Oci.CloudGuard.GetSecurityRecipe.Invoke(new()
         ///     {
-        ///         var testSecurityRecipe = Output.Create(Oci.CloudGuard.GetSecurityRecipe.InvokeAsync(new Oci.CloudGuard.GetSecurityRecipeArgs
-        ///         {
-        ///             SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
-        ///         }));
-        ///     }
+        ///         SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetSecurityRecipeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityRecipeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the security zone recipe (`SecurityRecipe`)
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetSecurityRecipeArgs()
         {
         }
+        public static new GetSecurityRecipeArgs Empty => new GetSecurityRecipeArgs();
     }
 
-    public sealed class GetSecurityRecipeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityRecipeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the security zone recipe (`SecurityRecipe`)
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetSecurityRecipeInvokeArgs()
         {
         }
+        public static new GetSecurityRecipeInvokeArgs Empty => new GetSecurityRecipeInvokeArgs();
     }
 
 

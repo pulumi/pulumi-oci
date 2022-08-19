@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaintenanceRunHistory = Oci.Database.GetDatabaseMaintenanceRunHistory.Invoke(new()
         ///     {
-        ///         var testMaintenanceRunHistory = Output.Create(Oci.Database.GetDatabaseMaintenanceRunHistory.InvokeAsync(new Oci.Database.GetDatabaseMaintenanceRunHistoryArgs
-        ///         {
-        ///             MaintenanceRunHistoryId = oci_database_maintenance_run_history.Test_maintenance_run_history.Id,
-        ///         }));
-        ///     }
+        ///         MaintenanceRunHistoryId = oci_database_maintenance_run_history.Test_maintenance_run_history.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaintenanceRunHistory = Oci.Database.GetDatabaseMaintenanceRunHistory.Invoke(new()
         ///     {
-        ///         var testMaintenanceRunHistory = Output.Create(Oci.Database.GetDatabaseMaintenanceRunHistory.InvokeAsync(new Oci.Database.GetDatabaseMaintenanceRunHistoryArgs
-        ///         {
-        ///             MaintenanceRunHistoryId = oci_database_maintenance_run_history.Test_maintenance_run_history.Id,
-        ///         }));
-        ///     }
+        ///         MaintenanceRunHistoryId = oci_database_maintenance_run_history.Test_maintenance_run_history.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDatabaseMaintenanceRunHistoryArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseMaintenanceRunHistoryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The maintenance run history OCID.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetDatabaseMaintenanceRunHistoryArgs()
         {
         }
+        public static new GetDatabaseMaintenanceRunHistoryArgs Empty => new GetDatabaseMaintenanceRunHistoryArgs();
     }
 
-    public sealed class GetDatabaseMaintenanceRunHistoryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseMaintenanceRunHistoryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The maintenance run history OCID.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetDatabaseMaintenanceRunHistoryInvokeArgs()
         {
         }
+        public static new GetDatabaseMaintenanceRunHistoryInvokeArgs Empty => new GetDatabaseMaintenanceRunHistoryInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class ProtectionRuleExclusionArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleExclusionArgs : global::Pulumi.ResourceArgs
     {
         [Input("exclusions")]
         private InputList<string>? _exclusions;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public ProtectionRuleExclusionArgs()
         {
         }
+        public static new ProtectionRuleExclusionArgs Empty => new ProtectionRuleExclusionArgs();
     }
 }

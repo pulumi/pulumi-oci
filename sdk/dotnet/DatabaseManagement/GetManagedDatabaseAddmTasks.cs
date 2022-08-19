@@ -23,22 +23,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseAddmTasks = Oci.DatabaseManagement.GetManagedDatabaseAddmTasks.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseAddmTasks = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseAddmTasks.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseAddmTasksArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             TimeEnd = @var.Managed_database_addm_task_time_end,
-        ///             TimeStart = @var.Managed_database_addm_task_time_start,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         TimeEnd = @var.Managed_database_addm_task_time_end,
+        ///         TimeStart = @var.Managed_database_addm_task_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseAddmTasks = Oci.DatabaseManagement.GetManagedDatabaseAddmTasks.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseAddmTasks = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseAddmTasks.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseAddmTasksArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             TimeEnd = @var.Managed_database_addm_task_time_end,
-        ///             TimeStart = @var.Managed_database_addm_task_time_start,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         TimeEnd = @var.Managed_database_addm_task_time_end,
+        ///         TimeStart = @var.Managed_database_addm_task_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseAddmTasksArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAddmTasksArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseAddmTasksFilterArgs>? _filters;
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseAddmTasksArgs()
         {
         }
+        public static new GetManagedDatabaseAddmTasksArgs Empty => new GetManagedDatabaseAddmTasksArgs();
     }
 
-    public sealed class GetManagedDatabaseAddmTasksInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseAddmTasksInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseAddmTasksFilterInputArgs>? _filters;
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseAddmTasksInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseAddmTasksInvokeArgs Empty => new GetManagedDatabaseAddmTasksInvokeArgs();
     }
 
 

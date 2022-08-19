@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class ClusterNetworkInstancePoolPlacementConfigurationGetArgs : Pulumi.ResourceArgs
+    public sealed class ClusterNetworkInstancePoolPlacementConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.Core.Inputs
         public ClusterNetworkInstancePoolPlacementConfigurationGetArgs()
         {
         }
+        public static new ClusterNetworkInstancePoolPlacementConfigurationGetArgs Empty => new ClusterNetworkInstancePoolPlacementConfigurationGetArgs();
     }
 }

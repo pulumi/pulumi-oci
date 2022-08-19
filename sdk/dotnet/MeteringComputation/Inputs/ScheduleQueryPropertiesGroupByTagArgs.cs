@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class ScheduleQueryPropertiesGroupByTagArgs : Pulumi.ResourceArgs
+    public sealed class ScheduleQueryPropertiesGroupByTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The tag key.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public ScheduleQueryPropertiesGroupByTagArgs()
         {
         }
+        public static new ScheduleQueryPropertiesGroupByTagArgs Empty => new ScheduleQueryPropertiesGroupByTagArgs();
     }
 }

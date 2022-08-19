@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waa.Inputs
 {
 
-    public sealed class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionGetArgs : Pulumi.ResourceArgs
+    public sealed class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Waa.Inputs
         public AppAccelerationPolicyResponseCompressionPolicyGzipCompressionGetArgs()
         {
         }
+        public static new AppAccelerationPolicyResponseCompressionPolicyGzipCompressionGetArgs Empty => new AppAccelerationPolicyResponseCompressionPolicyGzipCompressionGetArgs();
     }
 }

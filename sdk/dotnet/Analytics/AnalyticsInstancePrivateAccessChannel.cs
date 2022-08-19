@@ -18,31 +18,29 @@ namespace Pulumi.Oci.Analytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAnalyticsInstancePrivateAccessChannel = new Oci.Analytics.AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel", new()
     ///     {
-    ///         var testAnalyticsInstancePrivateAccessChannel = new Oci.Analytics.AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel", new Oci.Analytics.AnalyticsInstancePrivateAccessChannelArgs
+    ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
+    ///         DisplayName = @var.Analytics_instance_private_access_channel_display_name,
+    ///         PrivateSourceDnsZones = new[]
     ///         {
-    ///             AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
-    ///             DisplayName = @var.Analytics_instance_private_access_channel_display_name,
-    ///             PrivateSourceDnsZones = 
+    ///             new Oci.Analytics.Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
     ///             {
-    ///                 new Oci.Analytics.Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
-    ///                 {
-    ///                     DnsZone = @var.Analytics_instance_private_access_channel_private_source_dns_zones_dns_zone,
-    ///                     Description = @var.Analytics_instance_private_access_channel_private_source_dns_zones_description,
-    ///                 },
+    ///                 DnsZone = @var.Analytics_instance_private_access_channel_private_source_dns_zones_dns_zone,
+    ///                 Description = @var.Analytics_instance_private_access_channel_private_source_dns_zones_description,
     ///             },
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Analytics
     /// ```
     /// </summary>
     [OciResourceType("oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel")]
-    public partial class AnalyticsInstancePrivateAccessChannel : Pulumi.CustomResource
+    public partial class AnalyticsInstancePrivateAccessChannel : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the AnalyticsInstance.
@@ -148,7 +146,7 @@ namespace Pulumi.Oci.Analytics
         }
     }
 
-    public sealed class AnalyticsInstancePrivateAccessChannelArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstancePrivateAccessChannelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the AnalyticsInstance.
@@ -189,9 +187,10 @@ namespace Pulumi.Oci.Analytics
         public AnalyticsInstancePrivateAccessChannelArgs()
         {
         }
+        public static new AnalyticsInstancePrivateAccessChannelArgs Empty => new AnalyticsInstancePrivateAccessChannelArgs();
     }
 
-    public sealed class AnalyticsInstancePrivateAccessChannelState : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstancePrivateAccessChannelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the AnalyticsInstance.
@@ -256,5 +255,6 @@ namespace Pulumi.Oci.Analytics
         public AnalyticsInstancePrivateAccessChannelState()
         {
         }
+        public static new AnalyticsInstancePrivateAccessChannelState Empty => new AnalyticsInstancePrivateAccessChannelState();
     }
 }

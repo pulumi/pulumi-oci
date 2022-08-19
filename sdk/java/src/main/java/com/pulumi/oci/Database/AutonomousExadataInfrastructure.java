@@ -26,6 +26,59 @@ import javax.annotation.Nullable;
  * **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) and [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster) operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousExadataInfrastructure;
+ * import com.pulumi.oci.Database.AutonomousExadataInfrastructureArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousExadataInfrastructure = new AutonomousExadataInfrastructure(&#34;testAutonomousExadataInfrastructure&#34;, AutonomousExadataInfrastructureArgs.builder()        
+ *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
+ *             .compartmentId(var_.compartment_id())
+ *             .shape(var_.autonomous_exadata_infrastructure_shape())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
+ *             .domain(var_.autonomous_exadata_infrastructure_domain())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .licenseModel(var_.autonomous_exadata_infrastructure_license_model())
+ *             .maintenanceWindowDetails(AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs.builder()
+ *                 .preference(var_.autonomous_exadata_infrastructure_maintenance_window_details_preference())
+ *                 .customActionTimeoutInMins(var_.autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins())
+ *                 .daysOfWeeks(AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs.builder()
+ *                     .name(var_.autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name())
+ *                     .build())
+ *                 .hoursOfDays(var_.autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day())
+ *                 .isCustomActionTimeoutEnabled(var_.autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled())
+ *                 .leadTimeInWeeks(var_.autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks())
+ *                 .months(AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs.builder()
+ *                     .name(var_.autonomous_exadata_infrastructure_maintenance_window_details_months_name())
+ *                     .build())
+ *                 .patchingMode(var_.autonomous_exadata_infrastructure_maintenance_window_details_patching_mode())
+ *                 .weeksOfMonths(var_.autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month())
+ *                 .build())
+ *             .nsgIds(var_.autonomous_exadata_infrastructure_nsg_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

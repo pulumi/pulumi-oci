@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Ons
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNotificationTopic = Oci.Ons.GetNotificationTopic.Invoke(new()
         ///     {
-        ///         var testNotificationTopic = Output.Create(Oci.Ons.GetNotificationTopic.InvokeAsync(new Oci.Ons.GetNotificationTopicArgs
-        ///         {
-        ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
-        ///         }));
-        ///     }
+        ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Ons
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNotificationTopic = Oci.Ons.GetNotificationTopic.Invoke(new()
         ///     {
-        ///         var testNotificationTopic = Output.Create(Oci.Ons.GetNotificationTopic.InvokeAsync(new Oci.Ons.GetNotificationTopicArgs
-        ///         {
-        ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
-        ///         }));
-        ///     }
+        ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Ons
     }
 
 
-    public sealed class GetNotificationTopicArgs : Pulumi.InvokeArgs
+    public sealed class GetNotificationTopicArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Ons
         public GetNotificationTopicArgs()
         {
         }
+        public static new GetNotificationTopicArgs Empty => new GetNotificationTopicArgs();
     }
 
-    public sealed class GetNotificationTopicInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNotificationTopicInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Ons
         public GetNotificationTopicInvokeArgs()
         {
         }
+        public static new GetNotificationTopicInvokeArgs Empty => new GetNotificationTopicInvokeArgs();
     }
 
 

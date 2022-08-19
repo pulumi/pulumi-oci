@@ -13,21 +13,19 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testHostname = new Oci.LoadBalancer.Hostname("testHostname", new()
     ///     {
-    ///         var testHostname = new Oci.LoadBalancer.Hostname("testHostname", new Oci.LoadBalancer.HostnameArgs
-    ///         {
-    ///             Hostname = @var.Hostname_hostname,
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         });
-    ///     }
+    ///         VirtualHostname = @var.Hostname_hostname,
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -39,7 +37,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/hostname:Hostname")]
-    public partial class Hostname : Pulumi.CustomResource
+    public partial class Hostname : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
@@ -106,7 +104,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class HostnameArgs : Pulumi.ResourceArgs
+    public sealed class HostnameArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
@@ -129,9 +127,10 @@ namespace Pulumi.Oci.LoadBalancer
         public HostnameArgs()
         {
         }
+        public static new HostnameArgs Empty => new HostnameArgs();
     }
 
-    public sealed class HostnameState : Pulumi.ResourceArgs
+    public sealed class HostnameState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
@@ -157,5 +156,6 @@ namespace Pulumi.Oci.LoadBalancer
         public HostnameState()
         {
         }
+        public static new HostnameState Empty => new HostnameState();
     }
 }

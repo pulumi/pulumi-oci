@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataLabellingService.Inputs
 {
 
-    public sealed class GetAnnotationFormatsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAnnotationFormatsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A unique name for the target AnnotationFormat for the Dataset.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
         public GetAnnotationFormatsFilterArgs()
         {
         }
+        public static new GetAnnotationFormatsFilterArgs Empty => new GetAnnotationFormatsFilterArgs();
     }
 }

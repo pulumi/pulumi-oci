@@ -25,25 +25,23 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRrset = Oci.Dns.GetRrset.Invoke(new()
         ///     {
-        ///         var testRrset = Output.Create(Oci.Dns.GetRrset.InvokeAsync(new Oci.Dns.GetRrsetArgs
-        ///         {
-        ///             Domain = @var.Rrset_domain,
-        ///             Rtype = @var.Rrset_rtype,
-        ///             ZoneNameOrId = oci_dns_zone.Test_zone.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Scope = @var.Rrset_scope,
-        ///             ViewId = oci_dns_view.Test_view.Id,
-        ///         }));
-        ///     }
+        ///         Domain = @var.Rrset_domain,
+        ///         Rtype = @var.Rrset_rtype,
+        ///         ZoneNameOrId = oci_dns_zone.Test_zone.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Scope = @var.Rrset_scope,
+        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -65,25 +63,23 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRrset = Oci.Dns.GetRrset.Invoke(new()
         ///     {
-        ///         var testRrset = Output.Create(Oci.Dns.GetRrset.InvokeAsync(new Oci.Dns.GetRrsetArgs
-        ///         {
-        ///             Domain = @var.Rrset_domain,
-        ///             Rtype = @var.Rrset_rtype,
-        ///             ZoneNameOrId = oci_dns_zone.Test_zone.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Scope = @var.Rrset_scope,
-        ///             ViewId = oci_dns_view.Test_view.Id,
-        ///         }));
-        ///     }
+        ///         Domain = @var.Rrset_domain,
+        ///         Rtype = @var.Rrset_rtype,
+        ///         ZoneNameOrId = oci_dns_zone.Test_zone.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Scope = @var.Rrset_scope,
+        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetRrsetArgs : Pulumi.InvokeArgs
+    public sealed class GetRrsetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -141,9 +137,10 @@ namespace Pulumi.Oci.Dns
         public GetRrsetArgs()
         {
         }
+        public static new GetRrsetArgs Empty => new GetRrsetArgs();
     }
 
-    public sealed class GetRrsetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRrsetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -191,6 +188,7 @@ namespace Pulumi.Oci.Dns
         public GetRrsetInvokeArgs()
         {
         }
+        public static new GetRrsetInvokeArgs Empty => new GetRrsetInvokeArgs();
     }
 
 

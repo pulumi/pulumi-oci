@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The unique name of the whitelist.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs()
         {
         }
+        public static new PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs Empty => new PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs();
     }
 }

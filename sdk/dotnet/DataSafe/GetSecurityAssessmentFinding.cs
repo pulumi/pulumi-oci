@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSecurityAssessmentFindingArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityAssessmentFindingArgs : global::Pulumi.InvokeArgs
     {
         [Input("accessLevel")]
         public string? AccessLevel { get; set; }
@@ -47,9 +47,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSecurityAssessmentFindingArgs()
         {
         }
+        public static new GetSecurityAssessmentFindingArgs Empty => new GetSecurityAssessmentFindingArgs();
     }
 
-    public sealed class GetSecurityAssessmentFindingInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityAssessmentFindingInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("accessLevel")]
         public Input<string>? AccessLevel { get; set; }
@@ -77,6 +78,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSecurityAssessmentFindingInvokeArgs()
         {
         }
+        public static new GetSecurityAssessmentFindingInvokeArgs Empty => new GetSecurityAssessmentFindingInvokeArgs();
     }
 
 

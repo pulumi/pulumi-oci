@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseInstanceWalletManagement = Oci.Database.GetAutonomousDatabaseInstanceWalletManagement.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseInstanceWalletManagement = Output.Create(Oci.Database.GetAutonomousDatabaseInstanceWalletManagement.InvokeAsync(new Oci.Database.GetAutonomousDatabaseInstanceWalletManagementArgs
-        ///         {
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseInstanceWalletManagement = Oci.Database.GetAutonomousDatabaseInstanceWalletManagement.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseInstanceWalletManagement = Output.Create(Oci.Database.GetAutonomousDatabaseInstanceWalletManagement.InvokeAsync(new Oci.Database.GetAutonomousDatabaseInstanceWalletManagementArgs
-        ///         {
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousDatabaseInstanceWalletManagementArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabaseInstanceWalletManagementArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabaseInstanceWalletManagementArgs()
         {
         }
+        public static new GetAutonomousDatabaseInstanceWalletManagementArgs Empty => new GetAutonomousDatabaseInstanceWalletManagementArgs();
     }
 
-    public sealed class GetAutonomousDatabaseInstanceWalletManagementInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabaseInstanceWalletManagementInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabaseInstanceWalletManagementInvokeArgs()
         {
         }
+        public static new GetAutonomousDatabaseInstanceWalletManagementInvokeArgs Empty => new GetAutonomousDatabaseInstanceWalletManagementInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnnotationFormat = Oci.DataLabellingService.GetAnnotationFormat.Invoke(new()
         ///     {
-        ///         var testAnnotationFormat = Output.Create(Oci.DataLabellingService.GetAnnotationFormat.InvokeAsync(new Oci.DataLabellingService.GetAnnotationFormatArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnnotationFormat = Oci.DataLabellingService.GetAnnotationFormat.Invoke(new()
         ///     {
-        ///         var testAnnotationFormat = Output.Create(Oci.DataLabellingService.GetAnnotationFormat.InvokeAsync(new Oci.DataLabellingService.GetAnnotationFormatArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataLabellingService
     }
 
 
-    public sealed class GetAnnotationFormatArgs : Pulumi.InvokeArgs
+    public sealed class GetAnnotationFormatArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataLabellingService
         public GetAnnotationFormatArgs()
         {
         }
+        public static new GetAnnotationFormatArgs Empty => new GetAnnotationFormatArgs();
     }
 
-    public sealed class GetAnnotationFormatInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAnnotationFormatInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataLabellingService
         public GetAnnotationFormatInvokeArgs()
         {
         }
+        public static new GetAnnotationFormatInvokeArgs Empty => new GetAnnotationFormatInvokeArgs();
     }
 
 

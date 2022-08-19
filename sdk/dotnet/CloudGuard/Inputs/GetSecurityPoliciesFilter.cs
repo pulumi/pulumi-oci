@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class GetSecurityPoliciesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public GetSecurityPoliciesFilterArgs()
         {
         }
+        public static new GetSecurityPoliciesFilterArgs Empty => new GetSecurityPoliciesFilterArgs();
     }
 }

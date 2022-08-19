@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunBuildRunSourceTriggerInfoActionGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunBuildRunSourceTriggerInfoActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the build pipeline.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunBuildRunSourceTriggerInfoActionGetArgs()
         {
         }
+        public static new BuildRunBuildRunSourceTriggerInfoActionGetArgs Empty => new BuildRunBuildRunSourceTriggerInfoActionGetArgs();
     }
 }

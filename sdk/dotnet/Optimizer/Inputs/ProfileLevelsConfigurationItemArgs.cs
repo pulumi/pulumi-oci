@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class ProfileLevelsConfigurationItemArgs : Pulumi.ResourceArgs
+    public sealed class ProfileLevelsConfigurationItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The pre-defined profile level.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public ProfileLevelsConfigurationItemArgs()
         {
         }
+        public static new ProfileLevelsConfigurationItemArgs Empty => new ProfileLevelsConfigurationItemArgs();
     }
 }

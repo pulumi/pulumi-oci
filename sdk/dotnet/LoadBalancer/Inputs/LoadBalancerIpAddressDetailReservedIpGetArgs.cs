@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class LoadBalancerIpAddressDetailReservedIpGetArgs : Pulumi.ResourceArgs
+    public sealed class LoadBalancerIpAddressDetailReservedIpGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Ocid of the pre-created public IP. That should be attahed to this load balancer.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public LoadBalancerIpAddressDetailReservedIpGetArgs()
         {
         }
+        public static new LoadBalancerIpAddressDetailReservedIpGetArgs Empty => new LoadBalancerIpAddressDetailReservedIpGetArgs();
     }
 }

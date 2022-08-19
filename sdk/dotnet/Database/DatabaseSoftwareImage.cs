@@ -17,33 +17,31 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDatabaseSoftwareImage = new Oci.Database.DatabaseSoftwareImage("testDatabaseSoftwareImage", new()
     ///     {
-    ///         var testDatabaseSoftwareImage = new Oci.Database.DatabaseSoftwareImage("testDatabaseSoftwareImage", new Oci.Database.DatabaseSoftwareImageArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Database_software_image_display_name,
+    ///         DatabaseSoftwareImageOneOffPatches = @var.Database_software_image_database_software_image_one_off_patches,
+    ///         DatabaseVersion = @var.Database_software_image_database_version,
+    ///         DefinedTags = @var.Database_software_image_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Database_software_image_display_name,
-    ///             DatabaseSoftwareImageOneOffPatches = @var.Database_software_image_database_software_image_one_off_patches,
-    ///             DatabaseVersion = @var.Database_software_image_database_version,
-    ///             DefinedTags = @var.Database_software_image_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             ImageShapeFamily = @var.Database_software_image_image_shape_family,
-    ///             ImageType = @var.Database_software_image_image_type,
-    ///             LsInventory = @var.Database_software_image_ls_inventory,
-    ///             PatchSet = @var.Database_software_image_patch_set,
-    ///             SourceDbHomeId = oci_database_db_home.Test_db_home.Id,
-    ///         });
-    ///     }
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         ImageShapeFamily = @var.Database_software_image_image_shape_family,
+    ///         ImageType = @var.Database_software_image_image_type,
+    ///         LsInventory = @var.Database_software_image_ls_inventory,
+    ///         PatchSet = @var.Database_software_image_patch_set,
+    ///         SourceDbHomeId = oci_database_db_home.Test_db_home.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage")]
-    public partial class DatabaseSoftwareImage : Pulumi.CustomResource
+    public partial class DatabaseSoftwareImage : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
@@ -203,7 +201,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class DatabaseSoftwareImageArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseSoftwareImageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
@@ -292,9 +290,10 @@ namespace Pulumi.Oci.Database
         public DatabaseSoftwareImageArgs()
         {
         }
+        public static new DatabaseSoftwareImageArgs Empty => new DatabaseSoftwareImageArgs();
     }
 
-    public sealed class DatabaseSoftwareImageState : Pulumi.ResourceArgs
+    public sealed class DatabaseSoftwareImageState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
@@ -425,5 +424,6 @@ namespace Pulumi.Oci.Database
         public DatabaseSoftwareImageState()
         {
         }
+        public static new DatabaseSoftwareImageState Empty => new DatabaseSoftwareImageState();
     }
 }

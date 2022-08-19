@@ -32,6 +32,64 @@ import javax.annotation.Nullable;
  * **Important:** You must configure the SDDC&#39;s networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Ocvp.Sddc;
+ * import com.pulumi.oci.Ocvp.SddcArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSddc = new Sddc(&#34;testSddc&#34;, SddcArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
+ *             .esxiHostsCount(var_.sddc_esxi_hosts_count())
+ *             .nsxEdgeUplink1vlanId(oci_core_vlan.test_nsx_edge_uplink1vlan().id())
+ *             .nsxEdgeUplink2vlanId(oci_core_vlan.test_nsx_edge_uplink2vlan().id())
+ *             .nsxEdgeVtepVlanId(oci_core_vlan.test_nsx_edge_vtep_vlan().id())
+ *             .nsxVtepVlanId(oci_core_vlan.test_nsx_vtep_vlan().id())
+ *             .provisioningSubnetId(oci_core_subnet.test_subnet().id())
+ *             .sshAuthorizedKeys(var_.sddc_ssh_authorized_keys())
+ *             .vmotionVlanId(oci_core_vlan.test_vmotion_vlan().id())
+ *             .vmwareSoftwareVersion(var_.sddc_vmware_software_version())
+ *             .vsanVlanId(oci_core_vlan.test_vsan_vlan().id())
+ *             .vsphereVlanId(oci_core_vlan.test_vsphere_vlan().id())
+ *             .capacityReservationId(oci_ocvp_capacity_reservation.test_capacity_reservation().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.sddc_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .hcxAction(var_.hcx_action())
+ *             .hcxVlanId(oci_core_vlan.test_vlan().id())
+ *             .initialHostOcpuCount(var_.sddc_initial_host_ocpu_count())
+ *             .initialHostShapeName(oci_core_shape.test_shape().name())
+ *             .initialSku(var_.sddc_initial_sku())
+ *             .instanceDisplayNamePrefix(var_.sddc_instance_display_name_prefix())
+ *             .isHcxEnabled(var_.sddc_is_hcx_enabled())
+ *             .isShieldedInstanceEnabled(var_.sddc_is_shielded_instance_enabled())
+ *             .isSingleHostSddc(var_.sddc_is_single_host_sddc())
+ *             .provisioningVlanId(oci_core_vlan.test_vlan().id())
+ *             .refreshHcxLicenseStatus(true)
+ *             .replicationVlanId(oci_core_vlan.test_vlan().id())
+ *             .reservingHcxOnPremiseLicenseKeys(var_.reserving_hcx_on_premise_license_keys())
+ *             .workloadNetworkCidr(var_.sddc_workload_network_cidr())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -129,14 +187,14 @@ public class Sddc extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+     * The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
      */
     @Export(name="esxiHostsCount", type=Integer.class, parameters={})
     private Output<Integer> esxiHostsCount;
 
     /**
-     * @return The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
+     * @return The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * 
      */
     public Output<Integer> esxiHostsCount() {
@@ -365,6 +423,20 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isShieldedInstanceEnabled() {
         return this.isShieldedInstanceEnabled;
+    }
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     * 
+     */
+    @Export(name="isSingleHostSddc", type=Boolean.class, parameters={})
+    private Output<Boolean> isSingleHostSddc;
+
+    /**
+     * @return Indicates whether this SDDC is designated for only single ESXi host.
+     * 
+     */
+    public Output<Boolean> isSingleHostSddc() {
+        return this.isSingleHostSddc;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.

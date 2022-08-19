@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class GetRegistryTypesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetRegistryTypesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Used to filter by the name of the object.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public GetRegistryTypesFilterInputArgs()
         {
         }
+        public static new GetRegistryTypesFilterInputArgs Empty => new GetRegistryTypesFilterInputArgs();
     }
 }

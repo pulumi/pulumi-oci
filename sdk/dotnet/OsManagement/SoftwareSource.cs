@@ -19,36 +19,34 @@ namespace Pulumi.Oci.OsManagement
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSoftwareSource = new Oci.OsManagement.SoftwareSource("testSoftwareSource", new()
     ///     {
-    ///         var testSoftwareSource = new Oci.OsManagement.SoftwareSource("testSoftwareSource", new Oci.OsManagement.SoftwareSourceArgs
+    ///         ArchType = @var.Software_source_arch_type,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Software_source_display_name,
+    ///         ChecksumType = @var.Software_source_checksum_type,
+    ///         DefinedTags = 
     ///         {
-    ///             ArchType = @var.Software_source_arch_type,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Software_source_display_name,
-    ///             ChecksumType = @var.Software_source_checksum_type,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Software_source_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             MaintainerEmail = @var.Software_source_maintainer_email,
-    ///             MaintainerName = @var.Software_source_maintainer_name,
-    ///             MaintainerPhone = @var.Software_source_maintainer_phone,
-    ///             ParentId = oci_osmanagement_parent.Test_parent.Id,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Software_source_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         MaintainerEmail = @var.Software_source_maintainer_email,
+    ///         MaintainerName = @var.Software_source_maintainer_name,
+    ///         MaintainerPhone = @var.Software_source_maintainer_phone,
+    ///         ParentId = oci_osmanagement_parent.Test_parent.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.OsManagement
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagement/softwareSource:SoftwareSource")]
-    public partial class SoftwareSource : Pulumi.CustomResource
+    public partial class SoftwareSource : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The architecture type supported by the Software Source
@@ -232,7 +230,7 @@ namespace Pulumi.Oci.OsManagement
         }
     }
 
-    public sealed class SoftwareSourceArgs : Pulumi.ResourceArgs
+    public sealed class SoftwareSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The architecture type supported by the Software Source
@@ -315,9 +313,10 @@ namespace Pulumi.Oci.OsManagement
         public SoftwareSourceArgs()
         {
         }
+        public static new SoftwareSourceArgs Empty => new SoftwareSourceArgs();
     }
 
-    public sealed class SoftwareSourceState : Pulumi.ResourceArgs
+    public sealed class SoftwareSourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The architecture type supported by the Software Source
@@ -466,5 +465,6 @@ namespace Pulumi.Oci.OsManagement
         public SoftwareSourceState()
         {
         }
+        public static new SoftwareSourceState Empty => new SoftwareSourceState();
     }
 }

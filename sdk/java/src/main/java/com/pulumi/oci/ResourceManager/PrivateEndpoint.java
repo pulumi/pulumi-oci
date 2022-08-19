@@ -23,6 +23,43 @@ import javax.annotation.Nullable;
  * Creates a a private endpoint in the specified compartment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ResourceManager.PrivateEndpoint;
+ * import com.pulumi.oci.ResourceManager.PrivateEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPrivateEndpoint = new PrivateEndpoint(&#34;testPrivateEndpoint&#34;, PrivateEndpointArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.private_endpoint_display_name())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.private_endpoint_description())
+ *             .dnsZones(var_.private_endpoint_dns_zones())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isUsedWithConfigurationSourceProvider(var_.private_endpoint_is_used_with_configuration_source_provider())
+ *             .nsgIdLists(var_.private_endpoint_nsg_id_list())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

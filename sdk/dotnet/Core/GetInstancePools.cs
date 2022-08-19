@@ -21,22 +21,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstancePools = Oci.Core.GetInstancePools.Invoke(new()
         ///     {
-        ///         var testInstancePools = Output.Create(Oci.Core.GetInstancePools.InvokeAsync(new Oci.Core.GetInstancePoolsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Instance_pool_display_name,
-        ///             State = @var.Instance_pool_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Instance_pool_display_name,
+        ///         State = @var.Instance_pool_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstancePools = Oci.Core.GetInstancePools.Invoke(new()
         ///     {
-        ///         var testInstancePools = Output.Create(Oci.Core.GetInstancePools.InvokeAsync(new Oci.Core.GetInstancePoolsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Instance_pool_display_name,
-        ///             State = @var.Instance_pool_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Instance_pool_display_name,
+        ///         State = @var.Instance_pool_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstancePoolsArgs : Pulumi.InvokeArgs
+    public sealed class GetInstancePoolsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.Core
         public GetInstancePoolsArgs()
         {
         }
+        public static new GetInstancePoolsArgs Empty => new GetInstancePoolsArgs();
     }
 
-    public sealed class GetInstancePoolsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstancePoolsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Core
         public GetInstancePoolsInvokeArgs()
         {
         }
+        public static new GetInstancePoolsInvokeArgs Empty => new GetInstancePoolsInvokeArgs();
     }
 
 

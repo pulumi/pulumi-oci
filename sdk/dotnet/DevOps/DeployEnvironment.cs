@@ -17,52 +17,50 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDeployEnvironment = new Oci.DevOps.DeployEnvironment("testDeployEnvironment", new()
     ///     {
-    ///         var testDeployEnvironment = new Oci.DevOps.DeployEnvironment("testDeployEnvironment", new Oci.DevOps.DeployEnvironmentArgs
+    ///         DeployEnvironmentType = @var.Deploy_environment_deploy_environment_type,
+    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+    ///         ComputeInstanceGroupSelectors = new Oci.DevOps.Inputs.DeployEnvironmentComputeInstanceGroupSelectorsArgs
     ///         {
-    ///             DeployEnvironmentType = @var.Deploy_environment_deploy_environment_type,
-    ///             ProjectId = oci_devops_project.Test_project.Id,
-    ///             ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-    ///             ComputeInstanceGroupSelectors = new Oci.DevOps.Inputs.DeployEnvironmentComputeInstanceGroupSelectorsArgs
+    ///             Items = new[]
     ///             {
-    ///                 Items = 
+    ///                 new Oci.DevOps.Inputs.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs
     ///                 {
-    ///                     new Oci.DevOps.Inputs.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs
-    ///                     {
-    ///                         SelectorType = @var.Deploy_environment_compute_instance_group_selectors_items_selector_type,
-    ///                         ComputeInstanceIds = @var.Deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
-    ///                         Query = @var.Deploy_environment_compute_instance_group_selectors_items_query,
-    ///                         Region = @var.Deploy_environment_compute_instance_group_selectors_items_region,
-    ///                     },
+    ///                     SelectorType = @var.Deploy_environment_compute_instance_group_selectors_items_selector_type,
+    ///                     ComputeInstanceIds = @var.Deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
+    ///                     Query = @var.Deploy_environment_compute_instance_group_selectors_items_query,
+    ///                     Region = @var.Deploy_environment_compute_instance_group_selectors_items_region,
     ///                 },
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Deploy_environment_description,
-    ///             DisplayName = @var.Deploy_environment_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             FunctionId = oci_functions_function.Test_function.Id,
-    ///             NetworkChannel = new Oci.DevOps.Inputs.DeployEnvironmentNetworkChannelArgs
-    ///             {
-    ///                 NetworkChannelType = @var.Deploy_environment_network_channel_network_channel_type,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 NsgIds = @var.Deploy_environment_network_channel_nsg_ids,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Deploy_environment_description,
+    ///         DisplayName = @var.Deploy_environment_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         FunctionId = oci_functions_function.Test_function.Id,
+    ///         NetworkChannel = new Oci.DevOps.Inputs.DeployEnvironmentNetworkChannelArgs
+    ///         {
+    ///             NetworkChannelType = @var.Deploy_environment_network_channel_network_channel_type,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             NsgIds = @var.Deploy_environment_network_channel_nsg_ids,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -74,7 +72,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/deployEnvironment:DeployEnvironment")]
-    public partial class DeployEnvironment : Pulumi.CustomResource
+    public partial class DeployEnvironment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the Kubernetes cluster.
@@ -216,7 +214,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class DeployEnvironmentArgs : Pulumi.ResourceArgs
+    public sealed class DeployEnvironmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the Kubernetes cluster.
@@ -293,9 +291,10 @@ namespace Pulumi.Oci.DevOps
         public DeployEnvironmentArgs()
         {
         }
+        public static new DeployEnvironmentArgs Empty => new DeployEnvironmentArgs();
     }
 
-    public sealed class DeployEnvironmentState : Pulumi.ResourceArgs
+    public sealed class DeployEnvironmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the Kubernetes cluster.
@@ -414,5 +413,6 @@ namespace Pulumi.Oci.DevOps
         public DeployEnvironmentState()
         {
         }
+        public static new DeployEnvironmentState Empty => new DeployEnvironmentState();
     }
 }

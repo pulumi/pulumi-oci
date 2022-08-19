@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class GetAuditProfilesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditProfilesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public GetAuditProfilesFilterArgs()
         {
         }
+        public static new GetAuditProfilesFilterArgs Empty => new GetAuditProfilesFilterArgs();
     }
 }

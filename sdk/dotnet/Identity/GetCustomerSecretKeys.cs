@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCustomerSecretKeys = Oci.Identity.GetCustomerSecretKeys.Invoke(new()
         ///     {
-        ///         var testCustomerSecretKeys = Output.Create(Oci.Identity.GetCustomerSecretKeys.InvokeAsync(new Oci.Identity.GetCustomerSecretKeysArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCustomerSecretKeys = Oci.Identity.GetCustomerSecretKeys.Invoke(new()
         ///     {
-        ///         var testCustomerSecretKeys = Output.Create(Oci.Identity.GetCustomerSecretKeys.InvokeAsync(new Oci.Identity.GetCustomerSecretKeysArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetCustomerSecretKeysArgs : Pulumi.InvokeArgs
+    public sealed class GetCustomerSecretKeysArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetCustomerSecretKeysFilterArgs>? _filters;
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Identity
         public GetCustomerSecretKeysArgs()
         {
         }
+        public static new GetCustomerSecretKeysArgs Empty => new GetCustomerSecretKeysArgs();
     }
 
-    public sealed class GetCustomerSecretKeysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCustomerSecretKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetCustomerSecretKeysFilterInputArgs>? _filters;
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Identity
         public GetCustomerSecretKeysInvokeArgs()
         {
         }
+        public static new GetCustomerSecretKeysInvokeArgs Empty => new GetCustomerSecretKeysInvokeArgs();
     }
 
 

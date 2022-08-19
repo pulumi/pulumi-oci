@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Limits.Inputs
 {
 
-    public sealed class GetLimitDefinitionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetLimitDefinitionsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Optional field, filter for a specific resource limit.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Limits.Inputs
         public GetLimitDefinitionsFilterArgs()
         {
         }
+        public static new GetLimitDefinitionsFilterArgs Empty => new GetLimitDefinitionsFilterArgs();
     }
 }

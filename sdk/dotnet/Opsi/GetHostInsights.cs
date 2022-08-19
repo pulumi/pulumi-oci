@@ -23,27 +23,25 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHostInsights = Oci.Opsi.GetHostInsights.Invoke(new()
         ///     {
-        ///         var testHostInsights = Output.Create(Oci.Opsi.GetHostInsights.InvokeAsync(new Oci.Opsi.GetHostInsightsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Host_insight_compartment_id_in_subtree,
-        ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///             ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///             HostTypes = @var.Host_insight_host_type,
-        ///             Id = @var.Host_insight_id,
-        ///             States = @var.Host_insight_state,
-        ///             Statuses = @var.Host_insight_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Host_insight_compartment_id_in_subtree,
+        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+        ///         HostTypes = @var.Host_insight_host_type,
+        ///         Id = @var.Host_insight_id,
+        ///         States = @var.Host_insight_state,
+        ///         Statuses = @var.Host_insight_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,27 +61,25 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHostInsights = Oci.Opsi.GetHostInsights.Invoke(new()
         ///     {
-        ///         var testHostInsights = Output.Create(Oci.Opsi.GetHostInsights.InvokeAsync(new Oci.Opsi.GetHostInsightsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Host_insight_compartment_id_in_subtree,
-        ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///             ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///             HostTypes = @var.Host_insight_host_type,
-        ///             Id = @var.Host_insight_id,
-        ///             States = @var.Host_insight_state,
-        ///             Statuses = @var.Host_insight_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Host_insight_compartment_id_in_subtree,
+        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+        ///         HostTypes = @var.Host_insight_host_type,
+        ///         Id = @var.Host_insight_id,
+        ///         States = @var.Host_insight_state,
+        ///         Statuses = @var.Host_insight_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetHostInsightsArgs : Pulumi.InvokeArgs
+    public sealed class GetHostInsightsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -174,9 +170,10 @@ namespace Pulumi.Oci.Opsi
         public GetHostInsightsArgs()
         {
         }
+        public static new GetHostInsightsArgs Empty => new GetHostInsightsArgs();
     }
 
-    public sealed class GetHostInsightsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHostInsightsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -257,6 +254,7 @@ namespace Pulumi.Oci.Opsi
         public GetHostInsightsInvokeArgs()
         {
         }
+        public static new GetHostInsightsInvokeArgs Empty => new GetHostInsightsInvokeArgs();
     }
 
 

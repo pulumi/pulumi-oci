@@ -20,21 +20,19 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSmtpCredential = new Oci.Identity.SmtpCredential("testSmtpCredential", new()
     ///     {
-    ///         var testSmtpCredential = new Oci.Identity.SmtpCredential("testSmtpCredential", new Oci.Identity.SmtpCredentialArgs
-    ///         {
-    ///             Description = @var.Smtp_credential_description,
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         Description = @var.Smtp_credential_description,
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/smtpCredential:SmtpCredential")]
-    public partial class SmtpCredential : Pulumi.CustomResource
+    public partial class SmtpCredential : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
@@ -140,7 +138,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class SmtpCredentialArgs : Pulumi.ResourceArgs
+    public sealed class SmtpCredentialArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
@@ -157,9 +155,10 @@ namespace Pulumi.Oci.Identity
         public SmtpCredentialArgs()
         {
         }
+        public static new SmtpCredentialArgs Empty => new SmtpCredentialArgs();
     }
 
-    public sealed class SmtpCredentialState : Pulumi.ResourceArgs
+    public sealed class SmtpCredentialState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
@@ -212,5 +211,6 @@ namespace Pulumi.Oci.Identity
         public SmtpCredentialState()
         {
         }
+        public static new SmtpCredentialState Empty => new SmtpCredentialState();
     }
 }

@@ -24,22 +24,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutions.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutions.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
-        ///             StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
+        ///         StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,22 +58,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutions.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutions.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
-        ///             StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
+        ///         StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -116,9 +112,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs Empty => new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs();
     }
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -149,6 +146,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs Empty => new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsInvokeArgs();
     }
 
 

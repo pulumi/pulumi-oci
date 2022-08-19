@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class ReportDefinitionSummaryArgs : Pulumi.ResourceArgs
+    public sealed class ReportDefinitionSummaryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the key or count of object.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public ReportDefinitionSummaryArgs()
         {
         }
+        public static new ReportDefinitionSummaryArgs Empty => new ReportDefinitionSummaryArgs();
     }
 }

@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpSecConnectionDeviceConfig = Oci.Core.GetIpsecConfig.Invoke(new()
         ///     {
-        ///         var testIpSecConnectionDeviceConfig = Output.Create(Oci.Core.GetIpsecConfig.InvokeAsync(new Oci.Core.GetIpsecConfigArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpSecConnectionDeviceConfig = Oci.Core.GetIpsecConfig.Invoke(new()
         ///     {
-        ///         var testIpSecConnectionDeviceConfig = Output.Create(Oci.Core.GetIpsecConfig.InvokeAsync(new Oci.Core.GetIpsecConfigArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetIpsecConfigArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConfigArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetIpsecConfigFilterArgs>? _filters;
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Core
         public GetIpsecConfigArgs()
         {
         }
+        public static new GetIpsecConfigArgs Empty => new GetIpsecConfigArgs();
     }
 
-    public sealed class GetIpsecConfigInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConfigInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetIpsecConfigFilterInputArgs>? _filters;
@@ -123,6 +120,7 @@ namespace Pulumi.Oci.Core
         public GetIpsecConfigInvokeArgs()
         {
         }
+        public static new GetIpsecConfigInvokeArgs Empty => new GetIpsecConfigInvokeArgs();
     }
 
 

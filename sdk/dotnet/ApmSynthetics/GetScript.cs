@@ -21,21 +21,19 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testScript = Oci.ApmSynthetics.GetScript.Invoke(new()
         ///     {
-        ///         var testScript = Output.Create(Oci.ApmSynthetics.GetScript.InvokeAsync(new Oci.ApmSynthetics.GetScriptArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///             ScriptId = oci_apm_synthetics_script.Test_script.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+        ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testScript = Oci.ApmSynthetics.GetScript.Invoke(new()
         ///     {
-        ///         var testScript = Output.Create(Oci.ApmSynthetics.GetScript.InvokeAsync(new Oci.ApmSynthetics.GetScriptArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///             ScriptId = oci_apm_synthetics_script.Test_script.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+        ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.ApmSynthetics
     }
 
 
-    public sealed class GetScriptArgs : Pulumi.InvokeArgs
+    public sealed class GetScriptArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetScriptArgs()
         {
         }
+        public static new GetScriptArgs Empty => new GetScriptArgs();
     }
 
-    public sealed class GetScriptInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetScriptInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetScriptInvokeArgs()
         {
         }
+        public static new GetScriptInvokeArgs Empty => new GetScriptInvokeArgs();
     }
 
 

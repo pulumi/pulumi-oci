@@ -26,24 +26,22 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystems = Oci.Database.GetDbSystems.Invoke(new()
         ///     {
-        ///         var testDbSystems = Output.Create(Oci.Database.GetDbSystems.InvokeAsync(new Oci.Database.GetDbSystemsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Db_system_availability_domain,
-        ///             BackupId = oci_database_backup.Test_backup.Id,
-        ///             DisplayName = @var.Db_system_display_name,
-        ///             State = @var.Db_system_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Db_system_availability_domain,
+        ///         BackupId = oci_database_backup.Test_backup.Id,
+        ///         DisplayName = @var.Db_system_display_name,
+        ///         State = @var.Db_system_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,24 +64,22 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystems = Oci.Database.GetDbSystems.Invoke(new()
         ///     {
-        ///         var testDbSystems = Output.Create(Oci.Database.GetDbSystems.InvokeAsync(new Oci.Database.GetDbSystemsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Db_system_availability_domain,
-        ///             BackupId = oci_database_backup.Test_backup.Id,
-        ///             DisplayName = @var.Db_system_display_name,
-        ///             State = @var.Db_system_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Db_system_availability_domain,
+        ///         BackupId = oci_database_backup.Test_backup.Id,
+        ///         DisplayName = @var.Db_system_display_name,
+        ///         State = @var.Db_system_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbSystemsArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.Database
         public GetDbSystemsArgs()
         {
         }
+        public static new GetDbSystemsArgs Empty => new GetDbSystemsArgs();
     }
 
-    public sealed class GetDbSystemsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
@@ -181,6 +178,7 @@ namespace Pulumi.Oci.Database
         public GetDbSystemsInvokeArgs()
         {
         }
+        public static new GetDbSystemsInvokeArgs Empty => new GetDbSystemsInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHostnames = Oci.LoadBalancer.GetHostnames.Invoke(new()
         ///     {
-        ///         var testHostnames = Output.Create(Oci.LoadBalancer.GetHostnames.InvokeAsync(new Oci.LoadBalancer.GetHostnamesArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHostnames = Oci.LoadBalancer.GetHostnames.Invoke(new()
         ///     {
-        ///         var testHostnames = Output.Create(Oci.LoadBalancer.GetHostnames.InvokeAsync(new Oci.LoadBalancer.GetHostnamesArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetHostnamesArgs : Pulumi.InvokeArgs
+    public sealed class GetHostnamesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetHostnamesFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetHostnamesArgs()
         {
         }
+        public static new GetHostnamesArgs Empty => new GetHostnamesArgs();
     }
 
-    public sealed class GetHostnamesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHostnamesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetHostnamesFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetHostnamesInvokeArgs()
         {
         }
+        public static new GetHostnamesInvokeArgs Empty => new GetHostnamesInvokeArgs();
     }
 
 

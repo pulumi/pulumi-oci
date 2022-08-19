@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class BootVolumeSourceDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class BootVolumeSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the boot volume replica.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public BootVolumeSourceDetailsGetArgs()
         {
         }
+        public static new BootVolumeSourceDetailsGetArgs Empty => new BootVolumeSourceDetailsGetArgs();
     }
 }

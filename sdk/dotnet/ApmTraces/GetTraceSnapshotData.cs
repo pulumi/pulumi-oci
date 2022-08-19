@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTraceSnapshotData = Oci.ApmTraces.GetTraceSnapshotData.Invoke(new()
         ///     {
-        ///         var testTraceSnapshotData = Output.Create(Oci.ApmTraces.GetTraceSnapshotData.InvokeAsync(new Oci.ApmTraces.GetTraceSnapshotDataArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             TraceKey = @var.Trace_snapshot_data_trace_key,
-        ///             IsSummarized = @var.Trace_snapshot_data_is_summarized,
-        ///             SnapshotTime = @var.Trace_snapshot_data_snapshot_time,
-        ///             ThreadId = oci_apm_traces_thread.Test_thread.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         TraceKey = @var.Trace_snapshot_data_trace_key,
+        ///         IsSummarized = @var.Trace_snapshot_data_is_summarized,
+        ///         SnapshotTime = @var.Trace_snapshot_data_snapshot_time,
+        ///         ThreadId = oci_apm_traces_thread.Test_thread.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTraceSnapshotData = Oci.ApmTraces.GetTraceSnapshotData.Invoke(new()
         ///     {
-        ///         var testTraceSnapshotData = Output.Create(Oci.ApmTraces.GetTraceSnapshotData.InvokeAsync(new Oci.ApmTraces.GetTraceSnapshotDataArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             TraceKey = @var.Trace_snapshot_data_trace_key,
-        ///             IsSummarized = @var.Trace_snapshot_data_is_summarized,
-        ///             SnapshotTime = @var.Trace_snapshot_data_snapshot_time,
-        ///             ThreadId = oci_apm_traces_thread.Test_thread.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         TraceKey = @var.Trace_snapshot_data_trace_key,
+        ///         IsSummarized = @var.Trace_snapshot_data_is_summarized,
+        ///         SnapshotTime = @var.Trace_snapshot_data_snapshot_time,
+        ///         ThreadId = oci_apm_traces_thread.Test_thread.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ApmTraces
     }
 
 
-    public sealed class GetTraceSnapshotDataArgs : Pulumi.InvokeArgs
+    public sealed class GetTraceSnapshotDataArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.ApmTraces
         public GetTraceSnapshotDataArgs()
         {
         }
+        public static new GetTraceSnapshotDataArgs Empty => new GetTraceSnapshotDataArgs();
     }
 
-    public sealed class GetTraceSnapshotDataInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTraceSnapshotDataInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.ApmTraces
         public GetTraceSnapshotDataInvokeArgs()
         {
         }
+        public static new GetTraceSnapshotDataInvokeArgs Empty => new GetTraceSnapshotDataInvokeArgs();
     }
 
 

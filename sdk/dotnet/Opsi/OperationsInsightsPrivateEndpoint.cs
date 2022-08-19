@@ -18,34 +18,32 @@ namespace Pulumi.Oci.Opsi
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOperationsInsightsPrivateEndpoint = new Oci.Opsi.OperationsInsightsPrivateEndpoint("testOperationsInsightsPrivateEndpoint", new()
     ///     {
-    ///         var testOperationsInsightsPrivateEndpoint = new Oci.Opsi.OperationsInsightsPrivateEndpoint("testOperationsInsightsPrivateEndpoint", new Oci.Opsi.OperationsInsightsPrivateEndpointArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Operations_insights_private_endpoint_display_name,
+    ///         IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Operations_insights_private_endpoint_display_name,
-    ///             IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Operations_insights_private_endpoint_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             NsgIds = @var.Operations_insights_private_endpoint_nsg_ids,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Operations_insights_private_endpoint_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         NsgIds = @var.Operations_insights_private_endpoint_nsg_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint")]
-    public partial class OperationsInsightsPrivateEndpoint : Pulumi.CustomResource
+    public partial class OperationsInsightsPrivateEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -193,7 +191,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class OperationsInsightsPrivateEndpointArgs : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsPrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -276,9 +274,10 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsPrivateEndpointArgs()
         {
         }
+        public static new OperationsInsightsPrivateEndpointArgs Empty => new OperationsInsightsPrivateEndpointArgs();
     }
 
-    public sealed class OperationsInsightsPrivateEndpointState : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsPrivateEndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -397,5 +396,6 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsPrivateEndpointState()
         {
         }
+        public static new OperationsInsightsPrivateEndpointState Empty => new OperationsInsightsPrivateEndpointState();
     }
 }

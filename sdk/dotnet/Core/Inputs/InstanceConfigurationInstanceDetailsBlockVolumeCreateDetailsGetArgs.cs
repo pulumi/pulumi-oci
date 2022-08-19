@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -84,5 +84,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsGetArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsGetArgs Empty => new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsGetArgs();
     }
 }

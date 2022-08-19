@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingPolicy = Oci.DataSafe.GetMaskingPolicy.Invoke(new()
         ///     {
-        ///         var testMaskingPolicy = Output.Create(Oci.DataSafe.GetMaskingPolicy.InvokeAsync(new Oci.DataSafe.GetMaskingPolicyArgs
-        ///         {
-        ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         }));
-        ///     }
+        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingPolicy = Oci.DataSafe.GetMaskingPolicy.Invoke(new()
         ///     {
-        ///         var testMaskingPolicy = Output.Create(Oci.DataSafe.GetMaskingPolicy.InvokeAsync(new Oci.DataSafe.GetMaskingPolicyArgs
-        ///         {
-        ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         }));
-        ///     }
+        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetMaskingPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the masking policy.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingPolicyArgs()
         {
         }
+        public static new GetMaskingPolicyArgs Empty => new GetMaskingPolicyArgs();
     }
 
-    public sealed class GetMaskingPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the masking policy.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingPolicyInvokeArgs()
         {
         }
+        public static new GetMaskingPolicyInvokeArgs Empty => new GetMaskingPolicyInvokeArgs();
     }
 
 

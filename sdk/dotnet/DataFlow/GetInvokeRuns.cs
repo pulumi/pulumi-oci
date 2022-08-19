@@ -22,26 +22,24 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvokeRuns = Oci.DataFlow.GetInvokeRuns.Invoke(new()
         ///     {
-        ///         var testInvokeRuns = Output.Create(Oci.DataFlow.GetInvokeRuns.InvokeAsync(new Oci.DataFlow.GetInvokeRunsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///             DisplayName = @var.Invoke_run_display_name,
-        ///             DisplayNameStartsWith = @var.Invoke_run_display_name_starts_with,
-        ///             OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///             State = @var.Invoke_run_state,
-        ///             TimeCreatedGreaterThan = @var.Invoke_run_time_created_greater_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///         DisplayName = @var.Invoke_run_display_name,
+        ///         DisplayNameStartsWith = @var.Invoke_run_display_name_starts_with,
+        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
+        ///         State = @var.Invoke_run_state,
+        ///         TimeCreatedGreaterThan = @var.Invoke_run_time_created_greater_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,26 +58,24 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvokeRuns = Oci.DataFlow.GetInvokeRuns.Invoke(new()
         ///     {
-        ///         var testInvokeRuns = Output.Create(Oci.DataFlow.GetInvokeRuns.InvokeAsync(new Oci.DataFlow.GetInvokeRunsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///             DisplayName = @var.Invoke_run_display_name,
-        ///             DisplayNameStartsWith = @var.Invoke_run_display_name_starts_with,
-        ///             OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///             State = @var.Invoke_run_state,
-        ///             TimeCreatedGreaterThan = @var.Invoke_run_time_created_greater_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///         DisplayName = @var.Invoke_run_display_name,
+        ///         DisplayNameStartsWith = @var.Invoke_run_display_name_starts_with,
+        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
+        ///         State = @var.Invoke_run_state,
+        ///         TimeCreatedGreaterThan = @var.Invoke_run_time_created_greater_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.DataFlow
     }
 
 
-    public sealed class GetInvokeRunsArgs : Pulumi.InvokeArgs
+    public sealed class GetInvokeRunsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the application.
@@ -144,9 +140,10 @@ namespace Pulumi.Oci.DataFlow
         public GetInvokeRunsArgs()
         {
         }
+        public static new GetInvokeRunsArgs Empty => new GetInvokeRunsArgs();
     }
 
-    public sealed class GetInvokeRunsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInvokeRunsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the application.
@@ -201,6 +198,7 @@ namespace Pulumi.Oci.DataFlow
         public GetInvokeRunsInvokeArgs()
         {
         }
+        public static new GetInvokeRunsInvokeArgs Empty => new GetInvokeRunsInvokeArgs();
     }
 
 

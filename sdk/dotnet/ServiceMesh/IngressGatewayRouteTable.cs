@@ -17,57 +17,55 @@ namespace Pulumi.Oci.ServiceMesh
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIngressGatewayRouteTable = new Oci.ServiceMesh.IngressGatewayRouteTable("testIngressGatewayRouteTable", new()
     ///     {
-    ///         var testIngressGatewayRouteTable = new Oci.ServiceMesh.IngressGatewayRouteTable("testIngressGatewayRouteTable", new Oci.ServiceMesh.IngressGatewayRouteTableArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+    ///         RouteRules = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-    ///             RouteRules = 
+    ///             new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleArgs
     ///             {
-    ///                 new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleArgs
+    ///                 Destinations = new[]
     ///                 {
-    ///                     Destinations = 
+    ///                     new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleDestinationArgs
     ///                     {
-    ///                         new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleDestinationArgs
-    ///                         {
-    ///                             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-    ///                             Port = @var.Ingress_gateway_route_table_route_rules_destinations_port,
-    ///                             Weight = @var.Ingress_gateway_route_table_route_rules_destinations_weight,
-    ///                         },
+    ///                         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+    ///                         Port = @var.Ingress_gateway_route_table_route_rules_destinations_port,
+    ///                         Weight = @var.Ingress_gateway_route_table_route_rules_destinations_weight,
     ///                     },
-    ///                     Type = @var.Ingress_gateway_route_table_route_rules_type,
-    ///                     IngressGatewayHost = new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs
-    ///                     {
-    ///                         Name = @var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
-    ///                         Port = @var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
-    ///                     },
-    ///                     IsGrpc = @var.Ingress_gateway_route_table_route_rules_is_grpc,
-    ///                     IsHostRewriteEnabled = @var.Ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
-    ///                     IsPathRewriteEnabled = @var.Ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
-    ///                     Path = @var.Ingress_gateway_route_table_route_rules_path,
-    ///                     PathType = @var.Ingress_gateway_route_table_route_rules_path_type,
     ///                 },
+    ///                 Type = @var.Ingress_gateway_route_table_route_rules_type,
+    ///                 IngressGatewayHost = new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs
+    ///                 {
+    ///                     Name = @var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
+    ///                     Port = @var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
+    ///                 },
+    ///                 IsGrpc = @var.Ingress_gateway_route_table_route_rules_is_grpc,
+    ///                 IsHostRewriteEnabled = @var.Ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
+    ///                 IsPathRewriteEnabled = @var.Ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
+    ///                 Path = @var.Ingress_gateway_route_table_route_rules_path,
+    ///                 PathType = @var.Ingress_gateway_route_table_route_rules_path_type,
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Ingress_gateway_route_table_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Priority = @var.Ingress_gateway_route_table_priority,
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Ingress_gateway_route_table_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Priority = @var.Ingress_gateway_route_table_priority,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -79,7 +77,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/ingressGatewayRouteTable:IngressGatewayRouteTable")]
-    public partial class IngressGatewayRouteTable : Pulumi.CustomResource
+    public partial class IngressGatewayRouteTable : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -203,7 +201,7 @@ namespace Pulumi.Oci.ServiceMesh
         }
     }
 
-    public sealed class IngressGatewayRouteTableArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayRouteTableArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -274,9 +272,10 @@ namespace Pulumi.Oci.ServiceMesh
         public IngressGatewayRouteTableArgs()
         {
         }
+        public static new IngressGatewayRouteTableArgs Empty => new IngressGatewayRouteTableArgs();
     }
 
-    public sealed class IngressGatewayRouteTableState : Pulumi.ResourceArgs
+    public sealed class IngressGatewayRouteTableState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -383,5 +382,6 @@ namespace Pulumi.Oci.ServiceMesh
         public IngressGatewayRouteTableState()
         {
         }
+        public static new IngressGatewayRouteTableState Empty => new IngressGatewayRouteTableState();
     }
 }

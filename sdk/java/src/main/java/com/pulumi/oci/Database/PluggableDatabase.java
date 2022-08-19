@@ -25,6 +25,40 @@ import javax.annotation.Nullable;
  * Use the [StartPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StartPluggableDatabase) and [StopPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StopPluggableDatabase) APIs to start and stop the pluggable database.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.PluggableDatabase;
+ * import com.pulumi.oci.Database.PluggableDatabaseArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPluggableDatabase = new PluggableDatabase(&#34;testPluggableDatabase&#34;, PluggableDatabaseArgs.builder()        
+ *             .containerDatabaseId(oci_database_database.test_database().id())
+ *             .pdbName(var_.pluggable_database_pdb_name())
+ *             .definedTags(var_.pluggable_database_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .pdbAdminPassword(var_.pluggable_database_pdb_admin_password())
+ *             .shouldPdbAdminAccountBeLocked(var_.pluggable_database_should_pdb_admin_account_be_locked())
+ *             .tdeWalletPassword(var_.pluggable_database_tde_wallet_password())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

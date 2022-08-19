@@ -17,43 +17,41 @@ namespace Pulumi.Oci.GoldenGate
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDatabaseRegistration = new Oci.GoldenGate.DatabaseRegistration("testDatabaseRegistration", new()
     ///     {
-    ///         var testDatabaseRegistration = new Oci.GoldenGate.DatabaseRegistration("testDatabaseRegistration", new Oci.GoldenGate.DatabaseRegistrationArgs
+    ///         AliasName = @var.Database_registration_alias_name,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Database_registration_display_name,
+    ///         Fqdn = @var.Database_registration_fqdn,
+    ///         Password = @var.Database_registration_password,
+    ///         Username = @var.Database_registration_username,
+    ///         ConnectionString = @var.Database_registration_connection_string,
+    ///         DatabaseId = oci_database_database.Test_database.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             AliasName = @var.Database_registration_alias_name,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Database_registration_display_name,
-    ///             Fqdn = @var.Database_registration_fqdn,
-    ///             Password = @var.Database_registration_password,
-    ///             Username = @var.Database_registration_username,
-    ///             ConnectionString = @var.Database_registration_connection_string,
-    ///             DatabaseId = oci_database_database.Test_database.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Database_registration_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IpAddress = @var.Database_registration_ip_address,
-    ///             KeyId = oci_kms_key.Test_key.Id,
-    ///             SecretCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///             SessionMode = @var.Database_registration_session_mode,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VaultId = oci_kms_vault.Test_vault.Id,
-    ///             Wallet = @var.Database_registration_wallet,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Database_registration_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IpAddress = @var.Database_registration_ip_address,
+    ///         KeyId = oci_kms_key.Test_key.Id,
+    ///         SecretCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         SessionMode = @var.Database_registration_session_mode,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         VaultId = oci_kms_vault.Test_vault.Id,
+    ///         Wallet = @var.Database_registration_wallet,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.GoldenGate
     /// ```
     /// </summary>
     [OciResourceType("oci:GoldenGate/databaseRegistration:DatabaseRegistration")]
-    public partial class DatabaseRegistration : Pulumi.CustomResource
+    public partial class DatabaseRegistration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Credential store alias.
@@ -261,7 +259,7 @@ namespace Pulumi.Oci.GoldenGate
         }
     }
 
-    public sealed class DatabaseRegistrationArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseRegistrationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Credential store alias.
@@ -386,9 +384,10 @@ namespace Pulumi.Oci.GoldenGate
         public DatabaseRegistrationArgs()
         {
         }
+        public static new DatabaseRegistrationArgs Empty => new DatabaseRegistrationArgs();
     }
 
-    public sealed class DatabaseRegistrationState : Pulumi.ResourceArgs
+    public sealed class DatabaseRegistrationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Credential store alias.
@@ -561,5 +560,6 @@ namespace Pulumi.Oci.GoldenGate
         public DatabaseRegistrationState()
         {
         }
+        public static new DatabaseRegistrationState Empty => new DatabaseRegistrationState();
     }
 }

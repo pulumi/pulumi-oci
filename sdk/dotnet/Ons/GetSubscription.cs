@@ -24,20 +24,18 @@ namespace Pulumi.Oci.Ons
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscription = Oci.Ons.GetSubscription.Invoke(new()
         ///     {
-        ///         var testSubscription = Output.Create(Oci.Ons.GetSubscription.InvokeAsync(new Oci.Ons.GetSubscriptionArgs
-        ///         {
-        ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///         }));
-        ///     }
+        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,20 +56,18 @@ namespace Pulumi.Oci.Ons
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscription = Oci.Ons.GetSubscription.Invoke(new()
         ///     {
-        ///         var testSubscription = Output.Create(Oci.Ons.GetSubscription.InvokeAsync(new Oci.Ons.GetSubscriptionArgs
-        ///         {
-        ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///         }));
-        ///     }
+        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Ons
     }
 
 
-    public sealed class GetSubscriptionArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to retrieve.
@@ -92,9 +88,10 @@ namespace Pulumi.Oci.Ons
         public GetSubscriptionArgs()
         {
         }
+        public static new GetSubscriptionArgs Empty => new GetSubscriptionArgs();
     }
 
-    public sealed class GetSubscriptionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to retrieve.
@@ -105,6 +102,7 @@ namespace Pulumi.Oci.Ons
         public GetSubscriptionInvokeArgs()
         {
         }
+        public static new GetSubscriptionInvokeArgs Empty => new GetSubscriptionInvokeArgs();
     }
 
 

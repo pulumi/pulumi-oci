@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class HttpRedirectTargetArgs : Pulumi.ResourceArgs
+    public sealed class HttpRedirectTargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The host portion of the redirect.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public HttpRedirectTargetArgs()
         {
         }
+        public static new HttpRedirectTargetArgs Empty => new HttpRedirectTargetArgs();
     }
 }

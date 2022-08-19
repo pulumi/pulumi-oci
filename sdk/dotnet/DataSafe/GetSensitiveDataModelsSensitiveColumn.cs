@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveDataModelsSensitiveColumn = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumn.Invoke(new()
         ///     {
-        ///         var testSensitiveDataModelsSensitiveColumn = Output.Create(Oci.DataSafe.GetSensitiveDataModelsSensitiveColumn.InvokeAsync(new Oci.DataSafe.GetSensitiveDataModelsSensitiveColumnArgs
-        ///         {
-        ///             SensitiveColumnKey = @var.Sensitive_data_models_sensitive_column_sensitive_column_key,
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         }));
-        ///     }
+        ///         SensitiveColumnKey = @var.Sensitive_data_models_sensitive_column_sensitive_column_key,
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveDataModelsSensitiveColumn = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumn.Invoke(new()
         ///     {
-        ///         var testSensitiveDataModelsSensitiveColumn = Output.Create(Oci.DataSafe.GetSensitiveDataModelsSensitiveColumn.InvokeAsync(new Oci.DataSafe.GetSensitiveDataModelsSensitiveColumnArgs
-        ///         {
-        ///             SensitiveColumnKey = @var.Sensitive_data_models_sensitive_column_sensitive_column_key,
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         }));
-        ///     }
+        ///         SensitiveColumnKey = @var.Sensitive_data_models_sensitive_column_sensitive_column_key,
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSensitiveDataModelsSensitiveColumnArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveDataModelsSensitiveColumnArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveDataModelsSensitiveColumnArgs()
         {
         }
+        public static new GetSensitiveDataModelsSensitiveColumnArgs Empty => new GetSensitiveDataModelsSensitiveColumnArgs();
     }
 
-    public sealed class GetSensitiveDataModelsSensitiveColumnInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveDataModelsSensitiveColumnInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveDataModelsSensitiveColumnInvokeArgs()
         {
         }
+        public static new GetSensitiveDataModelsSensitiveColumnInvokeArgs Empty => new GetSensitiveDataModelsSensitiveColumnInvokeArgs();
     }
 
 

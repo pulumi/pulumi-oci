@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeGlobalImageCapabilitySchemasVersions = Oci.Core.GetComputeGlobalImageCapabilitySchemasVersions.Invoke(new()
         ///     {
-        ///         var testComputeGlobalImageCapabilitySchemasVersions = Output.Create(Oci.Core.GetComputeGlobalImageCapabilitySchemasVersions.InvokeAsync(new Oci.Core.GetComputeGlobalImageCapabilitySchemasVersionsArgs
-        ///         {
-        ///             ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-        ///             DisplayName = @var.Compute_global_image_capability_schemas_version_display_name,
-        ///         }));
-        ///     }
+        ///         ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
+        ///         DisplayName = @var.Compute_global_image_capability_schemas_version_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeGlobalImageCapabilitySchemasVersions = Oci.Core.GetComputeGlobalImageCapabilitySchemasVersions.Invoke(new()
         ///     {
-        ///         var testComputeGlobalImageCapabilitySchemasVersions = Output.Create(Oci.Core.GetComputeGlobalImageCapabilitySchemasVersions.InvokeAsync(new Oci.Core.GetComputeGlobalImageCapabilitySchemasVersionsArgs
-        ///         {
-        ///             ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-        ///             DisplayName = @var.Compute_global_image_capability_schemas_version_display_name,
-        ///         }));
-        ///     }
+        ///         ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
+        ///         DisplayName = @var.Compute_global_image_capability_schemas_version_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetComputeGlobalImageCapabilitySchemasVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeGlobalImageCapabilitySchemasVersionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Core
         public GetComputeGlobalImageCapabilitySchemasVersionsArgs()
         {
         }
+        public static new GetComputeGlobalImageCapabilitySchemasVersionsArgs Empty => new GetComputeGlobalImageCapabilitySchemasVersionsArgs();
     }
 
-    public sealed class GetComputeGlobalImageCapabilitySchemasVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeGlobalImageCapabilitySchemasVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.Core
         public GetComputeGlobalImageCapabilitySchemasVersionsInvokeArgs()
         {
         }
+        public static new GetComputeGlobalImageCapabilitySchemasVersionsInvokeArgs Empty => new GetComputeGlobalImageCapabilitySchemasVersionsInvokeArgs();
     }
 
 

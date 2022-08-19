@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabasePdbConversionHistoryEntry = Oci.Database.GetDatabasePdbConversionHistoryEntry.Invoke(new()
         ///     {
-        ///         var testDatabasePdbConversionHistoryEntry = Output.Create(Oci.Database.GetDatabasePdbConversionHistoryEntry.InvokeAsync(new Oci.Database.GetDatabasePdbConversionHistoryEntryArgs
-        ///         {
-        ///             DatabaseId = oci_database_database.Test_database.Id,
-        ///             PdbConversionHistoryEntryId = oci_database_pdb_conversion_history_entry.Test_pdb_conversion_history_entry.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///         PdbConversionHistoryEntryId = oci_database_pdb_conversion_history_entry.Test_pdb_conversion_history_entry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabasePdbConversionHistoryEntry = Oci.Database.GetDatabasePdbConversionHistoryEntry.Invoke(new()
         ///     {
-        ///         var testDatabasePdbConversionHistoryEntry = Output.Create(Oci.Database.GetDatabasePdbConversionHistoryEntry.InvokeAsync(new Oci.Database.GetDatabasePdbConversionHistoryEntryArgs
-        ///         {
-        ///             DatabaseId = oci_database_database.Test_database.Id,
-        ///             PdbConversionHistoryEntryId = oci_database_pdb_conversion_history_entry.Test_pdb_conversion_history_entry.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///         PdbConversionHistoryEntryId = oci_database_pdb_conversion_history_entry.Test_pdb_conversion_history_entry.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDatabasePdbConversionHistoryEntryArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabasePdbConversionHistoryEntryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDatabasePdbConversionHistoryEntryArgs()
         {
         }
+        public static new GetDatabasePdbConversionHistoryEntryArgs Empty => new GetDatabasePdbConversionHistoryEntryArgs();
     }
 
-    public sealed class GetDatabasePdbConversionHistoryEntryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabasePdbConversionHistoryEntryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Database
         public GetDatabasePdbConversionHistoryEntryInvokeArgs()
         {
         }
+        public static new GetDatabasePdbConversionHistoryEntryInvokeArgs Empty => new GetDatabasePdbConversionHistoryEntryInvokeArgs();
     }
 
 

@@ -24,6 +24,38 @@ import javax.annotation.Nullable;
  * Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.PluggableDatabasesLocalClone;
+ * import com.pulumi.oci.Database.PluggableDatabasesLocalCloneArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPluggableDatabasesLocalClone = new PluggableDatabasesLocalClone(&#34;testPluggableDatabasesLocalClone&#34;, PluggableDatabasesLocalCloneArgs.builder()        
+ *             .clonedPdbName(var_.pluggable_databases_local_clone_cloned_pdb_name())
+ *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+ *             .pdbAdminPassword(var_.pluggable_databases_local_clone_pdb_admin_password())
+ *             .shouldPdbAdminAccountBeLocked(var_.pluggable_databases_local_clone_should_pdb_admin_account_be_locked())
+ *             .targetTdeWalletPassword(var_.pluggable_databases_local_clone_target_tde_wallet_password())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

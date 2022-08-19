@@ -24,21 +24,19 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResolver = Oci.Dns.GetResolver.Invoke(new()
         ///     {
-        ///         var testResolver = Output.Create(Oci.Dns.GetResolver.InvokeAsync(new Oci.Dns.GetResolverArgs
-        ///         {
-        ///             ResolverId = oci_dns_resolver.Test_resolver.Id,
-        ///             Scope = "PRIVATE",
-        ///         }));
-        ///     }
+        ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
+        ///         Scope = "PRIVATE",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,21 +57,19 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResolver = Oci.Dns.GetResolver.Invoke(new()
         ///     {
-        ///         var testResolver = Output.Create(Oci.Dns.GetResolver.InvokeAsync(new Oci.Dns.GetResolverArgs
-        ///         {
-        ///             ResolverId = oci_dns_resolver.Test_resolver.Id,
-        ///             Scope = "PRIVATE",
-        ///         }));
-        ///     }
+        ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
+        ///         Scope = "PRIVATE",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetResolverArgs : Pulumi.InvokeArgs
+    public sealed class GetResolverArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the target resolver.
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Dns
         public GetResolverArgs()
         {
         }
+        public static new GetResolverArgs Empty => new GetResolverArgs();
     }
 
-    public sealed class GetResolverInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetResolverInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the target resolver.
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Dns
         public GetResolverInvokeArgs()
         {
         }
+        public static new GetResolverInvokeArgs Empty => new GetResolverInvokeArgs();
     }
 
 

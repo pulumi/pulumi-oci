@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayHostListenerArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayHostListenerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Port on which ingress gateway is listening.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayHostListenerArgs()
         {
         }
+        public static new IngressGatewayHostListenerArgs Empty => new IngressGatewayHostListenerArgs();
     }
 }

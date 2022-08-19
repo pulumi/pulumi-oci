@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuildPipeline = Oci.DevOps.GetBuildPipeline.Invoke(new()
         ///     {
-        ///         var testBuildPipeline = Output.Create(Oci.DevOps.GetBuildPipeline.InvokeAsync(new Oci.DevOps.GetBuildPipelineArgs
-        ///         {
-        ///             BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-        ///         }));
-        ///     }
+        ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuildPipeline = Oci.DevOps.GetBuildPipeline.Invoke(new()
         ///     {
-        ///         var testBuildPipeline = Output.Create(Oci.DevOps.GetBuildPipeline.InvokeAsync(new Oci.DevOps.GetBuildPipelineArgs
-        ///         {
-        ///             BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-        ///         }));
-        ///     }
+        ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetBuildPipelineArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildPipelineArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique build pipeline identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DevOps
         public GetBuildPipelineArgs()
         {
         }
+        public static new GetBuildPipelineArgs Empty => new GetBuildPipelineArgs();
     }
 
-    public sealed class GetBuildPipelineInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildPipelineInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique build pipeline identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DevOps
         public GetBuildPipelineInvokeArgs()
         {
         }
+        public static new GetBuildPipelineInvokeArgs Empty => new GetBuildPipelineInvokeArgs();
     }
 
 

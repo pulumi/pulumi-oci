@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class JobProgressPhaseArgs : Pulumi.ResourceArgs
+    public sealed class JobProgressPhaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Duration of the phase in milliseconds
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public JobProgressPhaseArgs()
         {
         }
+        public static new JobProgressPhaseArgs Empty => new JobProgressPhaseArgs();
     }
 }

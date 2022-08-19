@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbNode = Oci.Database.GetDbNode.Invoke(new()
         ///     {
-        ///         var testDbNode = Output.Create(Oci.Database.GetDbNode.InvokeAsync(new Oci.Database.GetDbNodeArgs
-        ///         {
-        ///             DbNodeId = @var.Db_node_id,
-        ///         }));
-        ///     }
+        ///         DbNodeId = @var.Db_node_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbNode = Oci.Database.GetDbNode.Invoke(new()
         ///     {
-        ///         var testDbNode = Output.Create(Oci.Database.GetDbNode.InvokeAsync(new Oci.Database.GetDbNodeArgs
-        ///         {
-        ///             DbNodeId = @var.Db_node_id,
-        ///         }));
-        ///     }
+        ///         DbNodeId = @var.Db_node_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbNodeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbNodeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetDbNodeArgs()
         {
         }
+        public static new GetDbNodeArgs Empty => new GetDbNodeArgs();
     }
 
-    public sealed class GetDbNodeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbNodeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetDbNodeInvokeArgs()
         {
         }
+        public static new GetDbNodeInvokeArgs Empty => new GetDbNodeInvokeArgs();
     }
 
 

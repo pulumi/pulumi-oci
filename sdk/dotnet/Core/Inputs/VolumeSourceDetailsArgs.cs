@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VolumeSourceDetailsArgs : Pulumi.ResourceArgs
+    public sealed class VolumeSourceDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the block volume replica.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VolumeSourceDetailsArgs()
         {
         }
+        public static new VolumeSourceDetailsArgs Empty => new VolumeSourceDetailsArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 {
 
-    public sealed class DataAssetDataSourceDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class DataAssetDataSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// atp db password Secret Id
@@ -135,5 +135,6 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public DataAssetDataSourceDetailsGetArgs()
         {
         }
+        public static new DataAssetDataSourceDetailsGetArgs Empty => new DataAssetDataSourceDetailsGetArgs();
     }
 }

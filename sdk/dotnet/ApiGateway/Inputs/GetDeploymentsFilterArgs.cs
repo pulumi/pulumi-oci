@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GetDeploymentsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetDeploymentsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The case-insensitive name of the header.  This name must be unique across transformation policies.
@@ -36,5 +36,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GetDeploymentsFilterInputArgs()
         {
         }
+        public static new GetDeploymentsFilterInputArgs Empty => new GetDeploymentsFilterInputArgs();
     }
 }

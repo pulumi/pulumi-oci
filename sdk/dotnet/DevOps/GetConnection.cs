@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnection = Oci.DevOps.GetConnection.Invoke(new()
         ///     {
-        ///         var testConnection = Output.Create(Oci.DevOps.GetConnection.InvokeAsync(new Oci.DevOps.GetConnectionArgs
-        ///         {
-        ///             ConnectionId = oci_devops_connection.Test_connection.Id,
-        ///         }));
-        ///     }
+        ///         ConnectionId = oci_devops_connection.Test_connection.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnection = Oci.DevOps.GetConnection.Invoke(new()
         ///     {
-        ///         var testConnection = Output.Create(Oci.DevOps.GetConnection.InvokeAsync(new Oci.DevOps.GetConnectionArgs
-        ///         {
-        ///             ConnectionId = oci_devops_connection.Test_connection.Id,
-        ///         }));
-        ///     }
+        ///         ConnectionId = oci_devops_connection.Test_connection.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetConnectionArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique connection identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DevOps
         public GetConnectionArgs()
         {
         }
+        public static new GetConnectionArgs Empty => new GetConnectionArgs();
     }
 
-    public sealed class GetConnectionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique connection identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DevOps
         public GetConnectionInvokeArgs()
         {
         }
+        public static new GetConnectionInvokeArgs Empty => new GetConnectionInvokeArgs();
     }
 
 

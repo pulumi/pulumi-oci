@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class GetShapesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetShapesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public GetShapesFilterInputArgs()
         {
         }
+        public static new GetShapesFilterInputArgs Empty => new GetShapesFilterInputArgs();
     }
 }

@@ -29,37 +29,35 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testManagedDatabasesChangeDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter", new()
     ///     {
-    ///         var testManagedDatabasesChangeDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter", new Oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs
+    ///         Credentials = new Oci.DatabaseManagement.Inputs.ManagedDatabasesChangeDatabaseParameterCredentialsArgs
     ///         {
-    ///             Credentials = new Oci.DatabaseManagement.Inputs.ManagedDatabasesChangeDatabaseParameterCredentialsArgs
+    ///             Password = @var.Managed_databases_change_database_parameter_credentials_password,
+    ///             Role = @var.Managed_databases_change_database_parameter_credentials_role,
+    ///             SecretId = oci_vault_secret.Test_secret.Id,
+    ///             UserName = oci_identity_user.Test_user.Name,
+    ///         },
+    ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+    ///         Parameters = new[]
+    ///         {
+    ///             new Oci.DatabaseManagement.Inputs.ManagedDatabasesChangeDatabaseParameterParameterArgs
     ///             {
-    ///                 Password = @var.Managed_databases_change_database_parameter_credentials_password,
-    ///                 Role = @var.Managed_databases_change_database_parameter_credentials_role,
-    ///                 SecretId = oci_vault_secret.Test_secret.Id,
-    ///                 UserName = oci_identity_user.Test_user.Name,
+    ///                 Name = @var.Managed_databases_change_database_parameter_parameters_name,
+    ///                 Value = @var.Managed_databases_change_database_parameter_parameters_value,
+    ///                 UpdateComment = @var.Managed_databases_change_database_parameter_parameters_update_comment,
     ///             },
-    ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-    ///             Parameters = 
-    ///             {
-    ///                 new Oci.DatabaseManagement.Inputs.ManagedDatabasesChangeDatabaseParameterParameterArgs
-    ///                 {
-    ///                     Name = @var.Managed_databases_change_database_parameter_parameters_name,
-    ///                     Value = @var.Managed_databases_change_database_parameter_parameters_value,
-    ///                     UpdateComment = @var.Managed_databases_change_database_parameter_parameters_update_comment,
-    ///                 },
-    ///             },
-    ///             Scope = @var.Managed_databases_change_database_parameter_scope,
-    ///         });
-    ///     }
+    ///         },
+    ///         Scope = @var.Managed_databases_change_database_parameter_scope,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -67,7 +65,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter")]
-    public partial class ManagedDatabasesChangeDatabaseParameter : Pulumi.CustomResource
+    public partial class ManagedDatabasesChangeDatabaseParameter : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The database credentials used to perform management activity.
@@ -137,7 +135,7 @@ namespace Pulumi.Oci.DatabaseManagement
         }
     }
 
-    public sealed class ManagedDatabasesChangeDatabaseParameterArgs : Pulumi.ResourceArgs
+    public sealed class ManagedDatabasesChangeDatabaseParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database credentials used to perform management activity.
@@ -172,9 +170,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public ManagedDatabasesChangeDatabaseParameterArgs()
         {
         }
+        public static new ManagedDatabasesChangeDatabaseParameterArgs Empty => new ManagedDatabasesChangeDatabaseParameterArgs();
     }
 
-    public sealed class ManagedDatabasesChangeDatabaseParameterState : Pulumi.ResourceArgs
+    public sealed class ManagedDatabasesChangeDatabaseParameterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database credentials used to perform management activity.
@@ -209,5 +208,6 @@ namespace Pulumi.Oci.DatabaseManagement
         public ManagedDatabasesChangeDatabaseParameterState()
         {
         }
+        public static new ManagedDatabasesChangeDatabaseParameterState Empty => new ManagedDatabasesChangeDatabaseParameterState();
     }
 }

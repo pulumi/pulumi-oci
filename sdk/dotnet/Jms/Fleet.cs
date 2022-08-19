@@ -23,41 +23,39 @@ namespace Pulumi.Oci.Jms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testFleet = new Oci.Jms.Fleet("testFleet", new()
     ///     {
-    ///         var testFleet = new Oci.Jms.Fleet("testFleet", new Oci.Jms.FleetArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Fleet_display_name,
+    ///         InventoryLog = new Oci.Jms.Inputs.FleetInventoryLogArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Fleet_display_name,
-    ///             InventoryLog = new Oci.Jms.Inputs.FleetInventoryLogArgs
-    ///             {
-    ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///                 LogId = oci_logging_log.Test_log.Id,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Fleet_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsAdvancedFeaturesEnabled = @var.Fleet_is_advanced_features_enabled,
-    ///             OperationLog = new Oci.Jms.Inputs.FleetOperationLogArgs
-    ///             {
-    ///                 LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///                 LogId = oci_logging_log.Test_log.Id,
-    ///             },
-    ///         });
-    ///     }
+    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///             LogId = oci_logging_log.Test_log.Id,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Fleet_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsAdvancedFeaturesEnabled = @var.Fleet_is_advanced_features_enabled,
+    ///         OperationLog = new Oci.Jms.Inputs.FleetOperationLogArgs
+    ///         {
+    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///             LogId = oci_logging_log.Test_log.Id,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -69,7 +67,7 @@ namespace Pulumi.Oci.Jms
     /// ```
     /// </summary>
     [OciResourceType("oci:Jms/fleet:Fleet")]
-    public partial class Fleet : Pulumi.CustomResource
+    public partial class Fleet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -205,7 +203,7 @@ namespace Pulumi.Oci.Jms
         }
     }
 
-    public sealed class FleetArgs : Pulumi.ResourceArgs
+    public sealed class FleetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -270,9 +268,10 @@ namespace Pulumi.Oci.Jms
         public FleetArgs()
         {
         }
+        public static new FleetArgs Empty => new FleetArgs();
     }
 
-    public sealed class FleetState : Pulumi.ResourceArgs
+    public sealed class FleetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -385,5 +384,6 @@ namespace Pulumi.Oci.Jms
         public FleetState()
         {
         }
+        public static new FleetState Empty => new FleetState();
     }
 }

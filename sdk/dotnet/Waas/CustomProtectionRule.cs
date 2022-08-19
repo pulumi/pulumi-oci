@@ -19,31 +19,29 @@ namespace Pulumi.Oci.Waas
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCustomProtectionRule = new Oci.Waas.CustomProtectionRule("testCustomProtectionRule", new()
     ///     {
-    ///         var testCustomProtectionRule = new Oci.Waas.CustomProtectionRule("testCustomProtectionRule", new Oci.Waas.CustomProtectionRuleArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Custom_protection_rule_display_name,
+    ///         Template = @var.Custom_protection_rule_template,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Custom_protection_rule_display_name,
-    ///             Template = @var.Custom_protection_rule_template,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Custom_protection_rule_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Custom_protection_rule_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Waas
     /// ```
     /// </summary>
     [OciResourceType("oci:Waas/customProtectionRule:CustomProtectionRule")]
-    public partial class CustomProtectionRule : Pulumi.CustomResource
+    public partial class CustomProtectionRule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
@@ -155,7 +153,7 @@ namespace Pulumi.Oci.Waas
         }
     }
 
-    public sealed class CustomProtectionRuleArgs : Pulumi.ResourceArgs
+    public sealed class CustomProtectionRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
@@ -208,9 +206,10 @@ namespace Pulumi.Oci.Waas
         public CustomProtectionRuleArgs()
         {
         }
+        public static new CustomProtectionRuleArgs Empty => new CustomProtectionRuleArgs();
     }
 
-    public sealed class CustomProtectionRuleState : Pulumi.ResourceArgs
+    public sealed class CustomProtectionRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
@@ -287,5 +286,6 @@ namespace Pulumi.Oci.Waas
         public CustomProtectionRuleState()
         {
         }
+        public static new CustomProtectionRuleState Empty => new CustomProtectionRuleState();
     }
 }

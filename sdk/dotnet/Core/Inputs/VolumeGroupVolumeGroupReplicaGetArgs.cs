@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VolumeGroupVolumeGroupReplicaGetArgs : Pulumi.ResourceArgs
+    public sealed class VolumeGroupVolumeGroupReplicaGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VolumeGroupVolumeGroupReplicaGetArgs()
         {
         }
+        public static new VolumeGroupVolumeGroupReplicaGetArgs Empty => new VolumeGroupVolumeGroupReplicaGetArgs();
     }
 }

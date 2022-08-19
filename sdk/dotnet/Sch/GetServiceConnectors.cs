@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Sch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceConnectors = Oci.Sch.GetServiceConnectors.Invoke(new()
         ///     {
-        ///         var testServiceConnectors = Output.Create(Oci.Sch.GetServiceConnectors.InvokeAsync(new Oci.Sch.GetServiceConnectorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Service_connector_display_name,
-        ///             State = @var.Service_connector_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Service_connector_display_name,
+        ///         State = @var.Service_connector_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Sch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceConnectors = Oci.Sch.GetServiceConnectors.Invoke(new()
         ///     {
-        ///         var testServiceConnectors = Output.Create(Oci.Sch.GetServiceConnectors.InvokeAsync(new Oci.Sch.GetServiceConnectorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Service_connector_display_name,
-        ///             State = @var.Service_connector_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Service_connector_display_name,
+        ///         State = @var.Service_connector_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Sch
     }
 
 
-    public sealed class GetServiceConnectorsArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceConnectorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Sch
         public GetServiceConnectorsArgs()
         {
         }
+        public static new GetServiceConnectorsArgs Empty => new GetServiceConnectorsArgs();
     }
 
-    public sealed class GetServiceConnectorsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceConnectorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Sch
         public GetServiceConnectorsInvokeArgs()
         {
         }
+        public static new GetServiceConnectorsInvokeArgs Empty => new GetServiceConnectorsInvokeArgs();
     }
 
 

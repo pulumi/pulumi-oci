@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateAuthorityCertificateAuthorityConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateAuthorityCertificateAuthorityConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The origin of the CA.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateAuthorityCertificateAuthorityConfigGetArgs()
         {
         }
+        public static new CertificateAuthorityCertificateAuthorityConfigGetArgs Empty => new CertificateAuthorityCertificateAuthorityConfigGetArgs();
     }
 }

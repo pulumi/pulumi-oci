@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Bastion
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBastion = Oci.Bastion.GetBastion.Invoke(new()
         ///     {
-        ///         var testBastion = Output.Create(Oci.Bastion.GetBastion.InvokeAsync(new Oci.Bastion.GetBastionArgs
-        ///         {
-        ///             BastionId = oci_bastion_bastion.Test_bastion.Id,
-        ///         }));
-        ///     }
+        ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Bastion
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBastion = Oci.Bastion.GetBastion.Invoke(new()
         ///     {
-        ///         var testBastion = Output.Create(Oci.Bastion.GetBastion.InvokeAsync(new Oci.Bastion.GetBastionArgs
-        ///         {
-        ///             BastionId = oci_bastion_bastion.Test_bastion.Id,
-        ///         }));
-        ///     }
+        ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Bastion
     }
 
 
-    public sealed class GetBastionArgs : Pulumi.InvokeArgs
+    public sealed class GetBastionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier (OCID) of the bastion.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Bastion
         public GetBastionArgs()
         {
         }
+        public static new GetBastionArgs Empty => new GetBastionArgs();
     }
 
-    public sealed class GetBastionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBastionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier (OCID) of the bastion.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Bastion
         public GetBastionInvokeArgs()
         {
         }
+        public static new GetBastionInvokeArgs Empty => new GetBastionInvokeArgs();
     }
 
 

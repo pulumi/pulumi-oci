@@ -25,6 +25,67 @@ import javax.annotation.Nullable;
  * Creates a new configuration item.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ApmConfig.Config;
+ * import com.pulumi.oci.ApmConfig.ConfigArgs;
+ * import com.pulumi.oci.ApmConfig.inputs.ConfigDimensionArgs;
+ * import com.pulumi.oci.ApmConfig.inputs.ConfigMetricArgs;
+ * import com.pulumi.oci.ApmConfig.inputs.ConfigRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testConfig = new Config(&#34;testConfig&#34;, ConfigArgs.builder()        
+ *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+ *             .configType(var_.config_config_type())
+ *             .displayName(var_.config_display_name())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.config_description())
+ *             .dimensions(ConfigDimensionArgs.builder()
+ *                 .name(var_.config_dimensions_name())
+ *                 .valueSource(var_.config_dimensions_value_source())
+ *                 .build())
+ *             .filterId(oci_apm_config_filter.test_filter().id())
+ *             .filterText(var_.config_filter_text())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .group(var_.config_group())
+ *             .metrics(ConfigMetricArgs.builder()
+ *                 .description(var_.config_metrics_description())
+ *                 .name(var_.config_metrics_name())
+ *                 .unit(var_.config_metrics_unit())
+ *                 .valueSource(var_.config_metrics_value_source())
+ *                 .build())
+ *             .namespace(var_.config_namespace())
+ *             .opcDryRun(var_.config_opc_dry_run())
+ *             .options(var_.config_options())
+ *             .rules(ConfigRuleArgs.builder()
+ *                 .displayName(var_.config_rules_display_name())
+ *                 .filterText(var_.config_rules_filter_text())
+ *                 .isApplyToErrorSpans(var_.config_rules_is_apply_to_error_spans())
+ *                 .isEnabled(var_.config_rules_is_enabled())
+ *                 .priority(var_.config_rules_priority())
+ *                 .satisfiedResponseTime(var_.config_rules_satisfied_response_time())
+ *                 .toleratingResponseTime(var_.config_rules_tolerating_response_time())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

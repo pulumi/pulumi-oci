@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceMeasuredBootReport = Oci.Core.GetInstanceMeasuredBootReport.Invoke(new()
         ///     {
-        ///         var testInstanceMeasuredBootReport = Output.Create(Oci.Core.GetInstanceMeasuredBootReport.InvokeAsync(new Oci.Core.GetInstanceMeasuredBootReportArgs
-        ///         {
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///         }));
-        ///     }
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceMeasuredBootReport = Oci.Core.GetInstanceMeasuredBootReport.Invoke(new()
         ///     {
-        ///         var testInstanceMeasuredBootReport = Output.Create(Oci.Core.GetInstanceMeasuredBootReport.InvokeAsync(new Oci.Core.GetInstanceMeasuredBootReportArgs
-        ///         {
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///         }));
-        ///     }
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstanceMeasuredBootReportArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceMeasuredBootReportArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetInstanceMeasuredBootReportArgs()
         {
         }
+        public static new GetInstanceMeasuredBootReportArgs Empty => new GetInstanceMeasuredBootReportArgs();
     }
 
-    public sealed class GetInstanceMeasuredBootReportInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceMeasuredBootReportInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetInstanceMeasuredBootReportInvokeArgs()
         {
         }
+        public static new GetInstanceMeasuredBootReportInvokeArgs Empty => new GetInstanceMeasuredBootReportInvokeArgs();
     }
 
 

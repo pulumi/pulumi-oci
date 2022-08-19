@@ -10,45 +10,6 @@ import * as utilities from "../utilities";
  *
  * Schedule a task as specified and return task info.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testNamespaceScheduledTask = new oci.loganalytics.NamespaceScheduledTask("testNamespaceScheduledTask", {
- *     compartmentId: _var.compartment_id,
- *     kind: _var.namespace_scheduled_task_kind,
- *     namespace: _var.namespace_scheduled_task_namespace,
- *     action: {
- *         type: _var.namespace_scheduled_task_action_type,
- *         compartmentIdInSubtree: _var.namespace_scheduled_task_action_compartment_id_in_subtree,
- *         dataType: _var.namespace_scheduled_task_action_data_type,
- *         purgeCompartmentId: oci_identity_compartment.test_compartment.id,
- *         purgeDuration: _var.namespace_scheduled_task_action_purge_duration,
- *         queryString: _var.namespace_scheduled_task_action_query_string,
- *         savedSearchId: oci_log_analytics_saved_search.test_saved_search.id,
- *     },
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     displayName: _var.namespace_scheduled_task_display_name,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     savedSearchId: oci_log_analytics_saved_search.test_saved_search.id,
- *     schedules: {
- *         type: _var.namespace_scheduled_task_schedules_type,
- *         expression: _var.namespace_scheduled_task_schedules_expression,
- *         misfirePolicy: _var.namespace_scheduled_task_schedules_misfire_policy,
- *         recurringInterval: _var.namespace_scheduled_task_schedules_recurring_interval,
- *         repeatCount: _var.namespace_scheduled_task_schedules_repeat_count,
- *         timeZone: _var.namespace_scheduled_task_schedules_time_zone,
- *     },
- *     taskType: _var.namespace_scheduled_task_task_type,
- * });
- * ```
- *
  * ## Import
  *
  * NamespaceScheduledTasks can be imported using the `id`, e.g.

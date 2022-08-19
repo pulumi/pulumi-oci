@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateAuthorityCertificateRevocationListDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateAuthorityCertificateRevocationListDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("customFormattedUrls")]
         private InputList<string>? _customFormattedUrls;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateAuthorityCertificateRevocationListDetailsGetArgs()
         {
         }
+        public static new CertificateAuthorityCertificateRevocationListDetailsGetArgs Empty => new CertificateAuthorityCertificateRevocationListDetailsGetArgs();
     }
 }

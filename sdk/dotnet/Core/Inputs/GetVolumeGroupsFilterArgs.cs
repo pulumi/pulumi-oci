@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetVolumeGroupsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetVolumeGroupsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetVolumeGroupsFilterInputArgs()
         {
         }
+        public static new GetVolumeGroupsFilterInputArgs Empty => new GetVolumeGroupsFilterInputArgs();
     }
 }

@@ -17,26 +17,24 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAppCatalogSubscription = new Oci.Core.AppCatalogSubscription("testAppCatalogSubscription", new()
     ///     {
-    ///         var testAppCatalogSubscription = new Oci.Core.AppCatalogSubscription("testAppCatalogSubscription", new Oci.Core.AppCatalogSubscriptionArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-    ///             ListingResourceVersion = @var.App_catalog_subscription_listing_resource_version,
-    ///             OracleTermsOfUseLink = @var.App_catalog_subscription_oracle_terms_of_use_link,
-    ///             Signature = @var.App_catalog_subscription_signature,
-    ///             TimeRetrieved = @var.App_catalog_subscription_time_retrieved,
-    ///             EulaLink = @var.App_catalog_subscription_eula_link,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+    ///         ListingResourceVersion = @var.App_catalog_subscription_listing_resource_version,
+    ///         OracleTermsOfUseLink = @var.App_catalog_subscription_oracle_terms_of_use_link,
+    ///         Signature = @var.App_catalog_subscription_signature,
+    ///         TimeRetrieved = @var.App_catalog_subscription_time_retrieved,
+    ///         EulaLink = @var.App_catalog_subscription_eula_link,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -48,7 +46,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/appCatalogSubscription:AppCatalogSubscription")]
-    public partial class AppCatalogSubscription : Pulumi.CustomResource
+    public partial class AppCatalogSubscription : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The compartmentID for the subscription.
@@ -166,7 +164,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class AppCatalogSubscriptionArgs : Pulumi.ResourceArgs
+    public sealed class AppCatalogSubscriptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartmentID for the subscription.
@@ -213,9 +211,10 @@ namespace Pulumi.Oci.Core
         public AppCatalogSubscriptionArgs()
         {
         }
+        public static new AppCatalogSubscriptionArgs Empty => new AppCatalogSubscriptionArgs();
     }
 
-    public sealed class AppCatalogSubscriptionState : Pulumi.ResourceArgs
+    public sealed class AppCatalogSubscriptionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartmentID for the subscription.
@@ -292,5 +291,6 @@ namespace Pulumi.Oci.Core
         public AppCatalogSubscriptionState()
         {
         }
+        public static new AppCatalogSubscriptionState Empty => new AppCatalogSubscriptionState();
     }
 }

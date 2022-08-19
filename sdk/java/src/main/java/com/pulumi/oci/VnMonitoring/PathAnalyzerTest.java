@@ -26,6 +26,74 @@ import javax.annotation.Nullable;
  * Creates a new `PathAnalyzerTest` resource.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.VnMonitoring.PathAnalyzerTest;
+ * import com.pulumi.oci.VnMonitoring.PathAnalyzerTestArgs;
+ * import com.pulumi.oci.VnMonitoring.inputs.PathAnalyzerTestDestinationEndpointArgs;
+ * import com.pulumi.oci.VnMonitoring.inputs.PathAnalyzerTestSourceEndpointArgs;
+ * import com.pulumi.oci.VnMonitoring.inputs.PathAnalyzerTestProtocolParametersArgs;
+ * import com.pulumi.oci.VnMonitoring.inputs.PathAnalyzerTestQueryOptionsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPathAnalyzerTest = new PathAnalyzerTest(&#34;testPathAnalyzerTest&#34;, PathAnalyzerTestArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .destinationEndpoint(PathAnalyzerTestDestinationEndpointArgs.builder()
+ *                 .type(var_.path_analyzer_test_destination_endpoint_type())
+ *                 .address(var_.path_analyzer_test_destination_endpoint_address())
+ *                 .instanceId(oci_core_instance.test_instance().id())
+ *                 .listenerId(oci_load_balancer_listener.test_listener().id())
+ *                 .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *                 .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .vlanId(oci_core_vlan.test_vlan().id())
+ *                 .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+ *                 .build())
+ *             .protocol(var_.path_analyzer_test_protocol())
+ *             .sourceEndpoint(PathAnalyzerTestSourceEndpointArgs.builder()
+ *                 .type(var_.path_analyzer_test_source_endpoint_type())
+ *                 .address(var_.path_analyzer_test_source_endpoint_address())
+ *                 .instanceId(oci_core_instance.test_instance().id())
+ *                 .listenerId(oci_load_balancer_listener.test_listener().id())
+ *                 .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *                 .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .vlanId(oci_core_vlan.test_vlan().id())
+ *                 .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.path_analyzer_test_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .protocolParameters(PathAnalyzerTestProtocolParametersArgs.builder()
+ *                 .type(var_.path_analyzer_test_protocol_parameters_type())
+ *                 .destinationPort(var_.path_analyzer_test_protocol_parameters_destination_port())
+ *                 .icmpCode(var_.path_analyzer_test_protocol_parameters_icmp_code())
+ *                 .icmpType(var_.path_analyzer_test_protocol_parameters_icmp_type())
+ *                 .sourcePort(var_.path_analyzer_test_protocol_parameters_source_port())
+ *                 .build())
+ *             .queryOptions(PathAnalyzerTestQueryOptionsArgs.builder()
+ *                 .isBiDirectionalAnalysis(var_.path_analyzer_test_query_options_is_bi_directional_analysis())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

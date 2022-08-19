@@ -22,22 +22,20 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPreauthenticatedRequests = Oci.ObjectStorage.GetPreauthrequests.Invoke(new()
         ///     {
-        ///         var testPreauthenticatedRequests = Output.Create(Oci.ObjectStorage.GetPreauthrequests.InvokeAsync(new Oci.ObjectStorage.GetPreauthrequestsArgs
-        ///         {
-        ///             Bucket = @var.Preauthenticated_request_bucket,
-        ///             Namespace = @var.Preauthenticated_request_namespace,
-        ///             ObjectNamePrefix = @var.Preauthenticated_request_object_name_prefix,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Preauthenticated_request_bucket,
+        ///         Namespace = @var.Preauthenticated_request_namespace,
+        ///         ObjectNamePrefix = @var.Preauthenticated_request_object_name_prefix,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPreauthenticatedRequests = Oci.ObjectStorage.GetPreauthrequests.Invoke(new()
         ///     {
-        ///         var testPreauthenticatedRequests = Output.Create(Oci.ObjectStorage.GetPreauthrequests.InvokeAsync(new Oci.ObjectStorage.GetPreauthrequestsArgs
-        ///         {
-        ///             Bucket = @var.Preauthenticated_request_bucket,
-        ///             Namespace = @var.Preauthenticated_request_namespace,
-        ///             ObjectNamePrefix = @var.Preauthenticated_request_object_name_prefix,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Preauthenticated_request_bucket,
+        ///         Namespace = @var.Preauthenticated_request_namespace,
+        ///         ObjectNamePrefix = @var.Preauthenticated_request_object_name_prefix,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetPreauthrequestsArgs : Pulumi.InvokeArgs
+    public sealed class GetPreauthrequestsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetPreauthrequestsArgs()
         {
         }
+        public static new GetPreauthrequestsArgs Empty => new GetPreauthrequestsArgs();
     }
 
-    public sealed class GetPreauthrequestsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPreauthrequestsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetPreauthrequestsInvokeArgs()
         {
         }
+        public static new GetPreauthrequestsInvokeArgs Empty => new GetPreauthrequestsInvokeArgs();
     }
 
 

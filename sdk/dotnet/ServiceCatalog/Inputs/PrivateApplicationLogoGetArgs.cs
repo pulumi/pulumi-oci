@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceCatalog.Inputs
 {
 
-    public sealed class PrivateApplicationLogoGetArgs : Pulumi.ResourceArgs
+    public sealed class PrivateApplicationLogoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The content URL of the uploaded data.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceCatalog.Inputs
         public PrivateApplicationLogoGetArgs()
         {
         }
+        public static new PrivateApplicationLogoGetArgs Empty => new PrivateApplicationLogoGetArgs();
     }
 }

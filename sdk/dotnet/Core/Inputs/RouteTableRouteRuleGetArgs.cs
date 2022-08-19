@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class RouteTableRouteRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class RouteTableRouteRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
@@ -50,5 +50,6 @@ namespace Pulumi.Oci.Core.Inputs
         public RouteTableRouteRuleGetArgs()
         {
         }
+        public static new RouteTableRouteRuleGetArgs Empty => new RouteTableRouteRuleGetArgs();
     }
 }

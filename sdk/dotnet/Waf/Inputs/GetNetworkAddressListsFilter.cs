@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class GetNetworkAddressListsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkAddressListsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public GetNetworkAddressListsFilterArgs()
         {
         }
+        public static new GetNetworkAddressListsFilterArgs Empty => new GetNetworkAddressListsFilterArgs();
     }
 }

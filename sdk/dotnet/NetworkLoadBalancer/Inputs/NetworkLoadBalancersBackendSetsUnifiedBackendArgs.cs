@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
 {
 
-    public sealed class NetworkLoadBalancersBackendSetsUnifiedBackendArgs : Pulumi.ResourceArgs
+    public sealed class NetworkLoadBalancersBackendSetsUnifiedBackendArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public NetworkLoadBalancersBackendSetsUnifiedBackendArgs()
         {
         }
+        public static new NetworkLoadBalancersBackendSetsUnifiedBackendArgs Empty => new NetworkLoadBalancersBackendSetsUnifiedBackendArgs();
     }
 }

@@ -21,45 +21,43 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testComputeCapacityReservation = new Oci.Core.ComputeCapacityReservation("testComputeCapacityReservation", new()
     ///     {
-    ///         var testComputeCapacityReservation = new Oci.Core.ComputeCapacityReservation("testComputeCapacityReservation", new Oci.Core.ComputeCapacityReservationArgs
+    ///         AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Compute_capacity_reservation_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         InstanceReservationConfigs = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Compute_capacity_reservation_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             InstanceReservationConfigs = 
-    ///             {
-    ///                 new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigArgs
+    ///                 InstanceShape = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape,
+    ///                 ReservedCount = @var.Compute_capacity_reservation_instance_reservation_configs_reserved_count,
+    ///                 FaultDomain = @var.Compute_capacity_reservation_instance_reservation_configs_fault_domain,
+    ///                 InstanceShapeConfig = new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     ///                 {
-    ///                     InstanceShape = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape,
-    ///                     ReservedCount = @var.Compute_capacity_reservation_instance_reservation_configs_reserved_count,
-    ///                     FaultDomain = @var.Compute_capacity_reservation_instance_reservation_configs_fault_domain,
-    ///                     InstanceShapeConfig = new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
-    ///                     {
-    ///                         MemoryInGbs = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,
-    ///                         Ocpus = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus,
-    ///                     },
+    ///                     MemoryInGbs = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,
+    ///                     Ocpus = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus,
     ///                 },
     ///             },
-    ///             IsDefaultReservation = @var.Compute_capacity_reservation_is_default_reservation,
-    ///         });
-    ///     }
+    ///         },
+    ///         IsDefaultReservation = @var.Compute_capacity_reservation_is_default_reservation,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -71,7 +69,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/computeCapacityReservation:ComputeCapacityReservation")]
-    public partial class ComputeCapacityReservation : Pulumi.CustomResource
+    public partial class ComputeCapacityReservation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
@@ -189,7 +187,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class ComputeCapacityReservationArgs : Pulumi.ResourceArgs
+    public sealed class ComputeCapacityReservationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
@@ -254,9 +252,10 @@ namespace Pulumi.Oci.Core
         public ComputeCapacityReservationArgs()
         {
         }
+        public static new ComputeCapacityReservationArgs Empty => new ComputeCapacityReservationArgs();
     }
 
-    public sealed class ComputeCapacityReservationState : Pulumi.ResourceArgs
+    public sealed class ComputeCapacityReservationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
@@ -351,5 +350,6 @@ namespace Pulumi.Oci.Core
         public ComputeCapacityReservationState()
         {
         }
+        public static new ComputeCapacityReservationState Empty => new ComputeCapacityReservationState();
     }
 }

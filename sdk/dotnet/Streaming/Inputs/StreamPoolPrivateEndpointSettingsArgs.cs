@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Streaming.Inputs
 {
 
-    public sealed class StreamPoolPrivateEndpointSettingsArgs : Pulumi.ResourceArgs
+    public sealed class StreamPoolPrivateEndpointSettingsArgs : global::Pulumi.ResourceArgs
     {
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Streaming.Inputs
         public StreamPoolPrivateEndpointSettingsArgs()
         {
         }
+        public static new StreamPoolPrivateEndpointSettingsArgs Empty => new StreamPoolPrivateEndpointSettingsArgs();
     }
 }

@@ -27,6 +27,78 @@ import javax.annotation.Nullable;
  * Creates a new monitored resource for the given resource type
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResource;
+ * import com.pulumi.oci.StackMonitoring.MonitoredResourceArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAliasesArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceAliasesCredentialArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceCredentialsArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceDatabaseConnectionDetailsArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourcePropertyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMonitoredResource = new MonitoredResource(&#34;testMonitoredResource&#34;, MonitoredResourceArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .type(var_.monitored_resource_type())
+ *             .aliases(MonitoredResourceAliasesArgs.builder()
+ *                 .credential(MonitoredResourceAliasesCredentialArgs.builder()
+ *                     .name(var_.monitored_resource_aliases_credential_name())
+ *                     .service(var_.monitored_resource_aliases_credential_service())
+ *                     .source(var_.monitored_resource_aliases_credential_source())
+ *                     .build())
+ *                 .name(var_.monitored_resource_aliases_name())
+ *                 .source(var_.monitored_resource_aliases_source())
+ *                 .build())
+ *             .credentials(MonitoredResourceCredentialsArgs.builder()
+ *                 .credentialType(var_.monitored_resource_credentials_credential_type())
+ *                 .description(var_.monitored_resource_credentials_description())
+ *                 .keyId(var_.monitored_resource_credentials_key_id())
+ *                 .name(var_.monitored_resource_credentials_name())
+ *                 .properties(MonitoredResourceCredentialsPropertyArgs.builder()
+ *                     .name(var_.monitored_resource_credentials_properties_name())
+ *                     .value(var_.monitored_resource_credentials_properties_value())
+ *                     .build())
+ *                 .source(var_.monitored_resource_credentials_source())
+ *                 .type(var_.monitored_resource_credentials_type())
+ *                 .build())
+ *             .databaseConnectionDetails(MonitoredResourceDatabaseConnectionDetailsArgs.builder()
+ *                 .port(var_.monitored_resource_database_connection_details_port())
+ *                 .protocol(var_.monitored_resource_database_connection_details_protocol())
+ *                 .serviceName(var_.monitored_resource_database_service_name())
+ *                 .connectorId(var_.monitored_resource_database_connector_id())
+ *                 .dbId(var_.monitored_resource_database_id())
+ *                 .dbUniqueName(var_.monitored_resource_database_connection_details_db_unique_name())
+ *                 .build())
+ *             .displayName(var_.monitored_resource_display_name())
+ *             .externalResourceId(var_.monitored_resource_external_resource_id())
+ *             .hostName(var_.monitored_resource_host_name())
+ *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+ *             .properties(MonitoredResourcePropertyArgs.builder()
+ *                 .name(var_.monitored_resource_properties_name())
+ *                 .value(var_.monitored_resource_properties_value())
+ *                 .build())
+ *             .resourceTimeZone(var_.monitored_resource_resource_time_zone())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

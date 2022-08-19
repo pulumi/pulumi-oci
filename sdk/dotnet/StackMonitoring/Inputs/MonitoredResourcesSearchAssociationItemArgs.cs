@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class MonitoredResourcesSearchAssociationItemArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesSearchAssociationItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Association type to be created between source and destination resources
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public MonitoredResourcesSearchAssociationItemArgs()
         {
         }
+        public static new MonitoredResourcesSearchAssociationItemArgs Empty => new MonitoredResourcesSearchAssociationItemArgs();
     }
 }

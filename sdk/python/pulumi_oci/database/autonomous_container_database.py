@@ -1200,6 +1200,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                 )],
                 hours_of_days=var["autonomous_container_database_maintenance_window_details_hours_of_day"],
                 is_custom_action_timeout_enabled=var["autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled"],
+                is_monthly_patching_enabled=var["autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled"],
                 lead_time_in_weeks=var["autonomous_container_database_maintenance_window_details_lead_time_in_weeks"],
                 months=[oci.database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs(
                     name=var["autonomous_container_database_maintenance_window_details_months_name"],
@@ -1313,6 +1314,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                 )],
                 hours_of_days=var["autonomous_container_database_maintenance_window_details_hours_of_day"],
                 is_custom_action_timeout_enabled=var["autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled"],
+                is_monthly_patching_enabled=var["autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled"],
                 lead_time_in_weeks=var["autonomous_container_database_maintenance_window_details_lead_time_in_weeks"],
                 months=[oci.database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs(
                     name=var["autonomous_container_database_maintenance_window_details_months_name"],

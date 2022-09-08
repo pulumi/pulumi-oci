@@ -46,7 +46,7 @@ class GetRegistryTypeResult:
     @pulumi.getter(name="connectionAttributes")
     def connection_attributes(self) -> Mapping[str, Any]:
         """
-        Map of connectionType as key and List of attributes as value
+        Mapping the connectionType as the key to the list of attributes as the value.
         """
         return pulumi.get(self, "connection_attributes")
 
@@ -54,7 +54,7 @@ class GetRegistryTypeResult:
     @pulumi.getter(name="dataAssetAttributes")
     def data_asset_attributes(self) -> Sequence['outputs.GetRegistryTypeDataAssetAttributeResult']:
         """
-        list of attributes for the dataAsset
+        The list of attributes of the data asset.
         """
         return pulumi.get(self, "data_asset_attributes")
 
@@ -103,7 +103,7 @@ def get_registry_type(fields: Optional[Sequence[str]] = None,
     """
     This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
 
-    This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+    This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
 
     ## Example Usage
 
@@ -118,8 +118,8 @@ def get_registry_type(fields: Optional[Sequence[str]] = None,
 
 
     :param Sequence[str] fields: Specifies the fields to get for an object.
-    :param str registry_id: The registry Ocid.
-    :param str type_key: key of the a specefic Type.
+    :param str registry_id: The registry OCID.
+    :param str type_key: Key of the a specific type.
     """
     __args__ = dict()
     __args__['fields'] = fields
@@ -145,7 +145,7 @@ def get_registry_type_output(fields: Optional[pulumi.Input[Optional[Sequence[str
     """
     This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
 
-    This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+    This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
 
     ## Example Usage
 
@@ -160,7 +160,7 @@ def get_registry_type_output(fields: Optional[pulumi.Input[Optional[Sequence[str
 
 
     :param Sequence[str] fields: Specifies the fields to get for an object.
-    :param str registry_id: The registry Ocid.
-    :param str type_key: key of the a specefic Type.
+    :param str registry_id: The registry OCID.
+    :param str type_key: Key of the a specific type.
     """
     ...

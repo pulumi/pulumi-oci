@@ -22,6 +22,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotDeletionPolicy',
     'MysqlBackupDbSystemSnapshotEndpoint',
     'MysqlBackupDbSystemSnapshotMaintenance',
+    'MysqlConfigurationInitVariables',
+    'MysqlConfigurationVariables',
     'MysqlDbSystemAnalyticsCluster',
     'MysqlDbSystemBackupPolicy',
     'MysqlDbSystemBackupPolicyPitrPolicy',
@@ -60,9 +62,11 @@ __all__ = [
     'GetMysqlBackupsBackupDbSystemSnapshotEndpointResult',
     'GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult',
     'GetMysqlBackupsFilterResult',
+    'GetMysqlConfigurationInitVariableResult',
     'GetMysqlConfigurationVariableResult',
     'GetMysqlConfigurationsConfigurationResult',
-    'GetMysqlConfigurationsConfigurationVariablesResult',
+    'GetMysqlConfigurationsConfigurationInitVariableResult',
+    'GetMysqlConfigurationsConfigurationVariableResult',
     'GetMysqlConfigurationsFilterResult',
     'GetMysqlDbSystemAnalyticsClusterResult',
     'GetMysqlDbSystemBackupPolicyResult',
@@ -1182,6 +1186,1176 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
         The start time of the maintenance window.
         """
         return pulumi.get(self, "window_start_time")
+
+
+@pulumi.output_type
+class MysqlConfigurationInitVariables(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lowerCaseTableNames":
+            suggest = "lower_case_table_names"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlConfigurationInitVariables. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlConfigurationInitVariables.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlConfigurationInitVariables.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 lower_case_table_names: Optional[str] = None):
+        """
+        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        """
+        if lower_case_table_names is not None:
+            pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+
+    @property
+    @pulumi.getter(name="lowerCaseTableNames")
+    def lower_case_table_names(self) -> Optional[str]:
+        """
+        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        """
+        return pulumi.get(self, "lower_case_table_names")
+
+
+@pulumi.output_type
+class MysqlConfigurationVariables(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bigTables":
+            suggest = "big_tables"
+        elif key == "binlogExpireLogsSeconds":
+            suggest = "binlog_expire_logs_seconds"
+        elif key == "binlogRowMetadata":
+            suggest = "binlog_row_metadata"
+        elif key == "binlogRowValueOptions":
+            suggest = "binlog_row_value_options"
+        elif key == "binlogTransactionCompression":
+            suggest = "binlog_transaction_compression"
+        elif key == "completionType":
+            suggest = "completion_type"
+        elif key == "connectTimeout":
+            suggest = "connect_timeout"
+        elif key == "connectionMemoryChunkSize":
+            suggest = "connection_memory_chunk_size"
+        elif key == "connectionMemoryLimit":
+            suggest = "connection_memory_limit"
+        elif key == "cteMaxRecursionDepth":
+            suggest = "cte_max_recursion_depth"
+        elif key == "defaultAuthenticationPlugin":
+            suggest = "default_authentication_plugin"
+        elif key == "foreignKeyChecks":
+            suggest = "foreign_key_checks"
+        elif key == "generatedRandomPasswordLength":
+            suggest = "generated_random_password_length"
+        elif key == "globalConnectionMemoryLimit":
+            suggest = "global_connection_memory_limit"
+        elif key == "globalConnectionMemoryTracking":
+            suggest = "global_connection_memory_tracking"
+        elif key == "groupReplicationConsistency":
+            suggest = "group_replication_consistency"
+        elif key == "informationSchemaStatsExpiry":
+            suggest = "information_schema_stats_expiry"
+        elif key == "innodbBufferPoolDumpPct":
+            suggest = "innodb_buffer_pool_dump_pct"
+        elif key == "innodbBufferPoolInstances":
+            suggest = "innodb_buffer_pool_instances"
+        elif key == "innodbBufferPoolSize":
+            suggest = "innodb_buffer_pool_size"
+        elif key == "innodbDdlBufferSize":
+            suggest = "innodb_ddl_buffer_size"
+        elif key == "innodbDdlThreads":
+            suggest = "innodb_ddl_threads"
+        elif key == "innodbFtEnableStopword":
+            suggest = "innodb_ft_enable_stopword"
+        elif key == "innodbFtMaxTokenSize":
+            suggest = "innodb_ft_max_token_size"
+        elif key == "innodbFtMinTokenSize":
+            suggest = "innodb_ft_min_token_size"
+        elif key == "innodbFtNumWordOptimize":
+            suggest = "innodb_ft_num_word_optimize"
+        elif key == "innodbFtResultCacheLimit":
+            suggest = "innodb_ft_result_cache_limit"
+        elif key == "innodbFtServerStopwordTable":
+            suggest = "innodb_ft_server_stopword_table"
+        elif key == "innodbLockWaitTimeout":
+            suggest = "innodb_lock_wait_timeout"
+        elif key == "innodbLogWriterThreads":
+            suggest = "innodb_log_writer_threads"
+        elif key == "innodbMaxPurgeLag":
+            suggest = "innodb_max_purge_lag"
+        elif key == "innodbMaxPurgeLagDelay":
+            suggest = "innodb_max_purge_lag_delay"
+        elif key == "innodbStatsPersistentSamplePages":
+            suggest = "innodb_stats_persistent_sample_pages"
+        elif key == "innodbStatsTransientSamplePages":
+            suggest = "innodb_stats_transient_sample_pages"
+        elif key == "interactiveTimeout":
+            suggest = "interactive_timeout"
+        elif key == "localInfile":
+            suggest = "local_infile"
+        elif key == "mandatoryRoles":
+            suggest = "mandatory_roles"
+        elif key == "maxAllowedPacket":
+            suggest = "max_allowed_packet"
+        elif key == "maxBinlogCacheSize":
+            suggest = "max_binlog_cache_size"
+        elif key == "maxConnectErrors":
+            suggest = "max_connect_errors"
+        elif key == "maxConnections":
+            suggest = "max_connections"
+        elif key == "maxExecutionTime":
+            suggest = "max_execution_time"
+        elif key == "maxHeapTableSize":
+            suggest = "max_heap_table_size"
+        elif key == "maxPreparedStmtCount":
+            suggest = "max_prepared_stmt_count"
+        elif key == "mysqlFirewallMode":
+            suggest = "mysql_firewall_mode"
+        elif key == "mysqlZstdDefaultCompressionLevel":
+            suggest = "mysql_zstd_default_compression_level"
+        elif key == "mysqlxConnectTimeout":
+            suggest = "mysqlx_connect_timeout"
+        elif key == "mysqlxDeflateDefaultCompressionLevel":
+            suggest = "mysqlx_deflate_default_compression_level"
+        elif key == "mysqlxDeflateMaxClientCompressionLevel":
+            suggest = "mysqlx_deflate_max_client_compression_level"
+        elif key == "mysqlxDocumentIdUniquePrefix":
+            suggest = "mysqlx_document_id_unique_prefix"
+        elif key == "mysqlxEnableHelloNotice":
+            suggest = "mysqlx_enable_hello_notice"
+        elif key == "mysqlxIdleWorkerThreadTimeout":
+            suggest = "mysqlx_idle_worker_thread_timeout"
+        elif key == "mysqlxInteractiveTimeout":
+            suggest = "mysqlx_interactive_timeout"
+        elif key == "mysqlxLz4defaultCompressionLevel":
+            suggest = "mysqlx_lz4default_compression_level"
+        elif key == "mysqlxLz4maxClientCompressionLevel":
+            suggest = "mysqlx_lz4max_client_compression_level"
+        elif key == "mysqlxMaxAllowedPacket":
+            suggest = "mysqlx_max_allowed_packet"
+        elif key == "mysqlxMinWorkerThreads":
+            suggest = "mysqlx_min_worker_threads"
+        elif key == "mysqlxReadTimeout":
+            suggest = "mysqlx_read_timeout"
+        elif key == "mysqlxWaitTimeout":
+            suggest = "mysqlx_wait_timeout"
+        elif key == "mysqlxWriteTimeout":
+            suggest = "mysqlx_write_timeout"
+        elif key == "mysqlxZstdDefaultCompressionLevel":
+            suggest = "mysqlx_zstd_default_compression_level"
+        elif key == "mysqlxZstdMaxClientCompressionLevel":
+            suggest = "mysqlx_zstd_max_client_compression_level"
+        elif key == "netReadTimeout":
+            suggest = "net_read_timeout"
+        elif key == "netWriteTimeout":
+            suggest = "net_write_timeout"
+        elif key == "parserMaxMemSize":
+            suggest = "parser_max_mem_size"
+        elif key == "queryAllocBlockSize":
+            suggest = "query_alloc_block_size"
+        elif key == "queryPreallocSize":
+            suggest = "query_prealloc_size"
+        elif key == "regexpTimeLimit":
+            suggest = "regexp_time_limit"
+        elif key == "sortBufferSize":
+            suggest = "sort_buffer_size"
+        elif key == "sqlMode":
+            suggest = "sql_mode"
+        elif key == "sqlRequirePrimaryKey":
+            suggest = "sql_require_primary_key"
+        elif key == "sqlWarnings":
+            suggest = "sql_warnings"
+        elif key == "threadPoolDedicatedListeners":
+            suggest = "thread_pool_dedicated_listeners"
+        elif key == "threadPoolMaxTransactionsLimit":
+            suggest = "thread_pool_max_transactions_limit"
+        elif key == "timeZone":
+            suggest = "time_zone"
+        elif key == "tmpTableSize":
+            suggest = "tmp_table_size"
+        elif key == "transactionIsolation":
+            suggest = "transaction_isolation"
+        elif key == "waitTimeout":
+            suggest = "wait_timeout"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlConfigurationVariables. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlConfigurationVariables.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlConfigurationVariables.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 autocommit: Optional[bool] = None,
+                 big_tables: Optional[bool] = None,
+                 binlog_expire_logs_seconds: Optional[int] = None,
+                 binlog_row_metadata: Optional[str] = None,
+                 binlog_row_value_options: Optional[str] = None,
+                 binlog_transaction_compression: Optional[bool] = None,
+                 completion_type: Optional[str] = None,
+                 connect_timeout: Optional[int] = None,
+                 connection_memory_chunk_size: Optional[int] = None,
+                 connection_memory_limit: Optional[str] = None,
+                 cte_max_recursion_depth: Optional[str] = None,
+                 default_authentication_plugin: Optional[str] = None,
+                 foreign_key_checks: Optional[bool] = None,
+                 generated_random_password_length: Optional[int] = None,
+                 global_connection_memory_limit: Optional[str] = None,
+                 global_connection_memory_tracking: Optional[bool] = None,
+                 group_replication_consistency: Optional[str] = None,
+                 information_schema_stats_expiry: Optional[int] = None,
+                 innodb_buffer_pool_dump_pct: Optional[int] = None,
+                 innodb_buffer_pool_instances: Optional[int] = None,
+                 innodb_buffer_pool_size: Optional[str] = None,
+                 innodb_ddl_buffer_size: Optional[str] = None,
+                 innodb_ddl_threads: Optional[int] = None,
+                 innodb_ft_enable_stopword: Optional[bool] = None,
+                 innodb_ft_max_token_size: Optional[int] = None,
+                 innodb_ft_min_token_size: Optional[int] = None,
+                 innodb_ft_num_word_optimize: Optional[int] = None,
+                 innodb_ft_result_cache_limit: Optional[str] = None,
+                 innodb_ft_server_stopword_table: Optional[str] = None,
+                 innodb_lock_wait_timeout: Optional[int] = None,
+                 innodb_log_writer_threads: Optional[bool] = None,
+                 innodb_max_purge_lag: Optional[str] = None,
+                 innodb_max_purge_lag_delay: Optional[int] = None,
+                 innodb_stats_persistent_sample_pages: Optional[str] = None,
+                 innodb_stats_transient_sample_pages: Optional[str] = None,
+                 interactive_timeout: Optional[int] = None,
+                 local_infile: Optional[bool] = None,
+                 mandatory_roles: Optional[str] = None,
+                 max_allowed_packet: Optional[int] = None,
+                 max_binlog_cache_size: Optional[str] = None,
+                 max_connect_errors: Optional[str] = None,
+                 max_connections: Optional[int] = None,
+                 max_execution_time: Optional[str] = None,
+                 max_heap_table_size: Optional[str] = None,
+                 max_prepared_stmt_count: Optional[int] = None,
+                 mysql_firewall_mode: Optional[bool] = None,
+                 mysql_zstd_default_compression_level: Optional[int] = None,
+                 mysqlx_connect_timeout: Optional[int] = None,
+                 mysqlx_deflate_default_compression_level: Optional[int] = None,
+                 mysqlx_deflate_max_client_compression_level: Optional[int] = None,
+                 mysqlx_document_id_unique_prefix: Optional[int] = None,
+                 mysqlx_enable_hello_notice: Optional[bool] = None,
+                 mysqlx_idle_worker_thread_timeout: Optional[int] = None,
+                 mysqlx_interactive_timeout: Optional[int] = None,
+                 mysqlx_lz4default_compression_level: Optional[int] = None,
+                 mysqlx_lz4max_client_compression_level: Optional[int] = None,
+                 mysqlx_max_allowed_packet: Optional[int] = None,
+                 mysqlx_min_worker_threads: Optional[int] = None,
+                 mysqlx_read_timeout: Optional[int] = None,
+                 mysqlx_wait_timeout: Optional[int] = None,
+                 mysqlx_write_timeout: Optional[int] = None,
+                 mysqlx_zstd_default_compression_level: Optional[int] = None,
+                 mysqlx_zstd_max_client_compression_level: Optional[int] = None,
+                 net_read_timeout: Optional[int] = None,
+                 net_write_timeout: Optional[int] = None,
+                 parser_max_mem_size: Optional[str] = None,
+                 query_alloc_block_size: Optional[str] = None,
+                 query_prealloc_size: Optional[str] = None,
+                 regexp_time_limit: Optional[int] = None,
+                 sort_buffer_size: Optional[str] = None,
+                 sql_mode: Optional[str] = None,
+                 sql_require_primary_key: Optional[bool] = None,
+                 sql_warnings: Optional[bool] = None,
+                 thread_pool_dedicated_listeners: Optional[bool] = None,
+                 thread_pool_max_transactions_limit: Optional[int] = None,
+                 time_zone: Optional[str] = None,
+                 tmp_table_size: Optional[str] = None,
+                 transaction_isolation: Optional[str] = None,
+                 wait_timeout: Optional[int] = None):
+        """
+        :param bool autocommit: ("autocommit")
+        :param bool big_tables: If enabled, the server stores all temporary tables on disk rather than in memory.
+        :param int binlog_expire_logs_seconds: Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+        :param str binlog_row_metadata: Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+        :param str binlog_row_value_options: When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+        :param bool binlog_transaction_compression: Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+        :param str completion_type: ("completion_type")
+        :param int connect_timeout: The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+        :param int connection_memory_chunk_size: Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        :param str connection_memory_limit: Set the maximum amount of memory that can be used by a single user connection.
+        :param str cte_max_recursion_depth: ("cte_max_recursion_depth")
+        :param str default_authentication_plugin: ("default_authentication_plugin")
+        :param bool foreign_key_checks: ("foreign_key_checks")
+        :param int generated_random_password_length: ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+        :param str global_connection_memory_limit: Set the total amount of memory that can be used by all user connections.
+        :param bool global_connection_memory_tracking: Determines whether the MySQL server calculates Global_connection_memory.
+        :param str group_replication_consistency: * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+               * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+               * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+               * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+               * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        :param int information_schema_stats_expiry: ("information_schema_stats_expiry")
+        :param int innodb_buffer_pool_dump_pct: Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+        :param int innodb_buffer_pool_instances: ("innodb_buffer_pool_instances")
+        :param str innodb_buffer_pool_size: The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        :param bool innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
+        :param int innodb_ft_max_token_size: ("innodb_ft_max_token_size")
+        :param int innodb_ft_min_token_size: ("innodb_ft_min_token_size")
+        :param int innodb_ft_num_word_optimize: ("innodb_ft_num_word_optimize")
+        :param str innodb_ft_result_cache_limit: ("innodb_ft_result_cache_limit")
+        :param str innodb_ft_server_stopword_table: ("innodb_ft_server_stopword_table")
+        :param int innodb_lock_wait_timeout: ("innodb_lock_wait_timeout")
+        :param bool innodb_log_writer_threads: Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        :param str innodb_max_purge_lag: The desired maximum purge lag in terms of transactions.
+        :param int innodb_max_purge_lag_delay: The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+        :param str innodb_stats_persistent_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        :param str innodb_stats_transient_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        :param int interactive_timeout: The number of seconds the server waits for activity on an interactive connection before closing it.
+        :param bool local_infile: ("local_infile")
+        :param str mandatory_roles: ("mandatory_roles")
+        :param int max_allowed_packet: The maximum size of one packet or any generated/intermediate string.
+        :param str max_binlog_cache_size: Sets the size of the transaction cache.
+        :param str max_connect_errors: ("max_connect_errors")
+        :param int max_connections: ("max_connections")
+        :param str max_execution_time: ("max_execution_time")
+        :param str max_heap_table_size: This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+        :param int max_prepared_stmt_count: ("max_prepared_stmt_count")
+        :param bool mysql_firewall_mode: ("mysql_firewall_mode")
+        :param int mysql_zstd_default_compression_level: DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+        :param int mysqlx_connect_timeout: The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+        :param int mysqlx_deflate_default_compression_level: Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+        :param int mysqlx_deflate_max_client_compression_level: Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+        :param int mysqlx_document_id_unique_prefix: ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+        :param bool mysqlx_enable_hello_notice: ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_idle_worker_thread_timeout: ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_interactive_timeout: The number of seconds to wait for interactive clients to timeout.
+        :param int mysqlx_lz4default_compression_level: Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+        :param int mysqlx_lz4max_client_compression_level: Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+        :param int mysqlx_max_allowed_packet: The maximum size of network packets that can be received by X Plugin.
+        :param int mysqlx_min_worker_threads: ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_read_timeout: The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+        :param int mysqlx_wait_timeout: The number of seconds that X Plugin waits for activity on a connection.
+        :param int mysqlx_write_timeout: The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+        :param int mysqlx_zstd_default_compression_level: Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+        :param int mysqlx_zstd_max_client_compression_level: Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+        :param int net_read_timeout: The number of seconds to wait for more data from a connection before aborting the read.
+        :param int net_write_timeout: The number of seconds to wait for a block to be written to a connection before aborting the write.
+        :param str parser_max_mem_size: ("parser_max_mem_size")
+        :param str query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param str query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param str sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
+        :param str sql_mode: ("sql_mode")
+        :param bool sql_require_primary_key: ("sql_require_primary_key")
+        :param bool sql_warnings: ("sql_warnings")
+        :param bool thread_pool_dedicated_listeners: Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        :param int thread_pool_max_transactions_limit: Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        :param str time_zone: Initializes the time zone for each client that connects.
+        :param str tmp_table_size: The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+        :param str transaction_isolation: ("transaction_isolation")
+        :param int wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
+        """
+        if autocommit is not None:
+            pulumi.set(__self__, "autocommit", autocommit)
+        if big_tables is not None:
+            pulumi.set(__self__, "big_tables", big_tables)
+        if binlog_expire_logs_seconds is not None:
+            pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+        if binlog_row_metadata is not None:
+            pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
+        if binlog_row_value_options is not None:
+            pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
+        if binlog_transaction_compression is not None:
+            pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
+        if completion_type is not None:
+            pulumi.set(__self__, "completion_type", completion_type)
+        if connect_timeout is not None:
+            pulumi.set(__self__, "connect_timeout", connect_timeout)
+        if connection_memory_chunk_size is not None:
+            pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
+        if connection_memory_limit is not None:
+            pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
+        if cte_max_recursion_depth is not None:
+            pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
+        if default_authentication_plugin is not None:
+            pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
+        if foreign_key_checks is not None:
+            pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
+        if generated_random_password_length is not None:
+            pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
+        if global_connection_memory_limit is not None:
+            pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
+        if global_connection_memory_tracking is not None:
+            pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
+        if group_replication_consistency is not None:
+            pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
+        if information_schema_stats_expiry is not None:
+            pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
+        if innodb_buffer_pool_dump_pct is not None:
+            pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
+        if innodb_buffer_pool_instances is not None:
+            pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
+        if innodb_buffer_pool_size is not None:
+            pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
+        if innodb_ddl_buffer_size is not None:
+            pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+        if innodb_ddl_threads is not None:
+            pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
+        if innodb_ft_enable_stopword is not None:
+            pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
+        if innodb_ft_max_token_size is not None:
+            pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
+        if innodb_ft_min_token_size is not None:
+            pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
+        if innodb_ft_num_word_optimize is not None:
+            pulumi.set(__self__, "innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
+        if innodb_ft_result_cache_limit is not None:
+            pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
+        if innodb_ft_server_stopword_table is not None:
+            pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
+        if innodb_lock_wait_timeout is not None:
+            pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+        if innodb_log_writer_threads is not None:
+            pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
+        if innodb_max_purge_lag is not None:
+            pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
+        if innodb_max_purge_lag_delay is not None:
+            pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        if innodb_stats_persistent_sample_pages is not None:
+            pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+        if innodb_stats_transient_sample_pages is not None:
+            pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        if interactive_timeout is not None:
+            pulumi.set(__self__, "interactive_timeout", interactive_timeout)
+        if local_infile is not None:
+            pulumi.set(__self__, "local_infile", local_infile)
+        if mandatory_roles is not None:
+            pulumi.set(__self__, "mandatory_roles", mandatory_roles)
+        if max_allowed_packet is not None:
+            pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
+        if max_binlog_cache_size is not None:
+            pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
+        if max_connect_errors is not None:
+            pulumi.set(__self__, "max_connect_errors", max_connect_errors)
+        if max_connections is not None:
+            pulumi.set(__self__, "max_connections", max_connections)
+        if max_execution_time is not None:
+            pulumi.set(__self__, "max_execution_time", max_execution_time)
+        if max_heap_table_size is not None:
+            pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
+        if max_prepared_stmt_count is not None:
+            pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
+        if mysql_firewall_mode is not None:
+            pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
+        if mysql_zstd_default_compression_level is not None:
+            pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
+        if mysqlx_connect_timeout is not None:
+            pulumi.set(__self__, "mysqlx_connect_timeout", mysqlx_connect_timeout)
+        if mysqlx_deflate_default_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
+        if mysqlx_deflate_max_client_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
+        if mysqlx_document_id_unique_prefix is not None:
+            pulumi.set(__self__, "mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
+        if mysqlx_enable_hello_notice is not None:
+            pulumi.set(__self__, "mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
+        if mysqlx_idle_worker_thread_timeout is not None:
+            pulumi.set(__self__, "mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
+        if mysqlx_interactive_timeout is not None:
+            pulumi.set(__self__, "mysqlx_interactive_timeout", mysqlx_interactive_timeout)
+        if mysqlx_lz4default_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
+        if mysqlx_lz4max_client_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
+        if mysqlx_max_allowed_packet is not None:
+            pulumi.set(__self__, "mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
+        if mysqlx_min_worker_threads is not None:
+            pulumi.set(__self__, "mysqlx_min_worker_threads", mysqlx_min_worker_threads)
+        if mysqlx_read_timeout is not None:
+            pulumi.set(__self__, "mysqlx_read_timeout", mysqlx_read_timeout)
+        if mysqlx_wait_timeout is not None:
+            pulumi.set(__self__, "mysqlx_wait_timeout", mysqlx_wait_timeout)
+        if mysqlx_write_timeout is not None:
+            pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
+        if mysqlx_zstd_default_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
+        if mysqlx_zstd_max_client_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+        if net_read_timeout is not None:
+            pulumi.set(__self__, "net_read_timeout", net_read_timeout)
+        if net_write_timeout is not None:
+            pulumi.set(__self__, "net_write_timeout", net_write_timeout)
+        if parser_max_mem_size is not None:
+            pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
+        if query_alloc_block_size is not None:
+            pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
+        if query_prealloc_size is not None:
+            pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
+        if regexp_time_limit is not None:
+            pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
+        if sort_buffer_size is not None:
+            pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
+        if sql_mode is not None:
+            pulumi.set(__self__, "sql_mode", sql_mode)
+        if sql_require_primary_key is not None:
+            pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
+        if sql_warnings is not None:
+            pulumi.set(__self__, "sql_warnings", sql_warnings)
+        if thread_pool_dedicated_listeners is not None:
+            pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+        if thread_pool_max_transactions_limit is not None:
+            pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
+        if tmp_table_size is not None:
+            pulumi.set(__self__, "tmp_table_size", tmp_table_size)
+        if transaction_isolation is not None:
+            pulumi.set(__self__, "transaction_isolation", transaction_isolation)
+        if wait_timeout is not None:
+            pulumi.set(__self__, "wait_timeout", wait_timeout)
+
+    @property
+    @pulumi.getter
+    def autocommit(self) -> Optional[bool]:
+        """
+        ("autocommit")
+        """
+        return pulumi.get(self, "autocommit")
+
+    @property
+    @pulumi.getter(name="bigTables")
+    def big_tables(self) -> Optional[bool]:
+        """
+        If enabled, the server stores all temporary tables on disk rather than in memory.
+        """
+        return pulumi.get(self, "big_tables")
+
+    @property
+    @pulumi.getter(name="binlogExpireLogsSeconds")
+    def binlog_expire_logs_seconds(self) -> Optional[int]:
+        """
+        Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+        """
+        return pulumi.get(self, "binlog_expire_logs_seconds")
+
+    @property
+    @pulumi.getter(name="binlogRowMetadata")
+    def binlog_row_metadata(self) -> Optional[str]:
+        """
+        Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+        """
+        return pulumi.get(self, "binlog_row_metadata")
+
+    @property
+    @pulumi.getter(name="binlogRowValueOptions")
+    def binlog_row_value_options(self) -> Optional[str]:
+        """
+        When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+        """
+        return pulumi.get(self, "binlog_row_value_options")
+
+    @property
+    @pulumi.getter(name="binlogTransactionCompression")
+    def binlog_transaction_compression(self) -> Optional[bool]:
+        """
+        Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+        """
+        return pulumi.get(self, "binlog_transaction_compression")
+
+    @property
+    @pulumi.getter(name="completionType")
+    def completion_type(self) -> Optional[str]:
+        """
+        ("completion_type")
+        """
+        return pulumi.get(self, "completion_type")
+
+    @property
+    @pulumi.getter(name="connectTimeout")
+    def connect_timeout(self) -> Optional[int]:
+        """
+        The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+        """
+        return pulumi.get(self, "connect_timeout")
+
+    @property
+    @pulumi.getter(name="connectionMemoryChunkSize")
+    def connection_memory_chunk_size(self) -> Optional[int]:
+        """
+        Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        """
+        return pulumi.get(self, "connection_memory_chunk_size")
+
+    @property
+    @pulumi.getter(name="connectionMemoryLimit")
+    def connection_memory_limit(self) -> Optional[str]:
+        """
+        Set the maximum amount of memory that can be used by a single user connection.
+        """
+        return pulumi.get(self, "connection_memory_limit")
+
+    @property
+    @pulumi.getter(name="cteMaxRecursionDepth")
+    def cte_max_recursion_depth(self) -> Optional[str]:
+        """
+        ("cte_max_recursion_depth")
+        """
+        return pulumi.get(self, "cte_max_recursion_depth")
+
+    @property
+    @pulumi.getter(name="defaultAuthenticationPlugin")
+    def default_authentication_plugin(self) -> Optional[str]:
+        """
+        ("default_authentication_plugin")
+        """
+        return pulumi.get(self, "default_authentication_plugin")
+
+    @property
+    @pulumi.getter(name="foreignKeyChecks")
+    def foreign_key_checks(self) -> Optional[bool]:
+        """
+        ("foreign_key_checks")
+        """
+        return pulumi.get(self, "foreign_key_checks")
+
+    @property
+    @pulumi.getter(name="generatedRandomPasswordLength")
+    def generated_random_password_length(self) -> Optional[int]:
+        """
+        ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "generated_random_password_length")
+
+    @property
+    @pulumi.getter(name="globalConnectionMemoryLimit")
+    def global_connection_memory_limit(self) -> Optional[str]:
+        """
+        Set the total amount of memory that can be used by all user connections.
+        """
+        return pulumi.get(self, "global_connection_memory_limit")
+
+    @property
+    @pulumi.getter(name="globalConnectionMemoryTracking")
+    def global_connection_memory_tracking(self) -> Optional[bool]:
+        """
+        Determines whether the MySQL server calculates Global_connection_memory.
+        """
+        return pulumi.get(self, "global_connection_memory_tracking")
+
+    @property
+    @pulumi.getter(name="groupReplicationConsistency")
+    def group_replication_consistency(self) -> Optional[str]:
+        """
+        * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+        * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+        * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        """
+        return pulumi.get(self, "group_replication_consistency")
+
+    @property
+    @pulumi.getter(name="informationSchemaStatsExpiry")
+    def information_schema_stats_expiry(self) -> Optional[int]:
+        """
+        ("information_schema_stats_expiry")
+        """
+        return pulumi.get(self, "information_schema_stats_expiry")
+
+    @property
+    @pulumi.getter(name="innodbBufferPoolDumpPct")
+    def innodb_buffer_pool_dump_pct(self) -> Optional[int]:
+        """
+        Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+        """
+        return pulumi.get(self, "innodb_buffer_pool_dump_pct")
+
+    @property
+    @pulumi.getter(name="innodbBufferPoolInstances")
+    def innodb_buffer_pool_instances(self) -> Optional[int]:
+        """
+        ("innodb_buffer_pool_instances")
+        """
+        return pulumi.get(self, "innodb_buffer_pool_instances")
+
+    @property
+    @pulumi.getter(name="innodbBufferPoolSize")
+    def innodb_buffer_pool_size(self) -> Optional[str]:
+        """
+        The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+        """
+        return pulumi.get(self, "innodb_buffer_pool_size")
+
+    @property
+    @pulumi.getter(name="innodbDdlBufferSize")
+    def innodb_ddl_buffer_size(self) -> Optional[str]:
+        """
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        """
+        return pulumi.get(self, "innodb_ddl_buffer_size")
+
+    @property
+    @pulumi.getter(name="innodbDdlThreads")
+    def innodb_ddl_threads(self) -> Optional[int]:
+        """
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        """
+        return pulumi.get(self, "innodb_ddl_threads")
+
+    @property
+    @pulumi.getter(name="innodbFtEnableStopword")
+    def innodb_ft_enable_stopword(self) -> Optional[bool]:
+        """
+        ("innodb_ft_enable_stopword")
+        """
+        return pulumi.get(self, "innodb_ft_enable_stopword")
+
+    @property
+    @pulumi.getter(name="innodbFtMaxTokenSize")
+    def innodb_ft_max_token_size(self) -> Optional[int]:
+        """
+        ("innodb_ft_max_token_size")
+        """
+        return pulumi.get(self, "innodb_ft_max_token_size")
+
+    @property
+    @pulumi.getter(name="innodbFtMinTokenSize")
+    def innodb_ft_min_token_size(self) -> Optional[int]:
+        """
+        ("innodb_ft_min_token_size")
+        """
+        return pulumi.get(self, "innodb_ft_min_token_size")
+
+    @property
+    @pulumi.getter(name="innodbFtNumWordOptimize")
+    def innodb_ft_num_word_optimize(self) -> Optional[int]:
+        """
+        ("innodb_ft_num_word_optimize")
+        """
+        return pulumi.get(self, "innodb_ft_num_word_optimize")
+
+    @property
+    @pulumi.getter(name="innodbFtResultCacheLimit")
+    def innodb_ft_result_cache_limit(self) -> Optional[str]:
+        """
+        ("innodb_ft_result_cache_limit")
+        """
+        return pulumi.get(self, "innodb_ft_result_cache_limit")
+
+    @property
+    @pulumi.getter(name="innodbFtServerStopwordTable")
+    def innodb_ft_server_stopword_table(self) -> Optional[str]:
+        """
+        ("innodb_ft_server_stopword_table")
+        """
+        return pulumi.get(self, "innodb_ft_server_stopword_table")
+
+    @property
+    @pulumi.getter(name="innodbLockWaitTimeout")
+    def innodb_lock_wait_timeout(self) -> Optional[int]:
+        """
+        ("innodb_lock_wait_timeout")
+        """
+        return pulumi.get(self, "innodb_lock_wait_timeout")
+
+    @property
+    @pulumi.getter(name="innodbLogWriterThreads")
+    def innodb_log_writer_threads(self) -> Optional[bool]:
+        """
+        Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        """
+        return pulumi.get(self, "innodb_log_writer_threads")
+
+    @property
+    @pulumi.getter(name="innodbMaxPurgeLag")
+    def innodb_max_purge_lag(self) -> Optional[str]:
+        """
+        The desired maximum purge lag in terms of transactions.
+        """
+        return pulumi.get(self, "innodb_max_purge_lag")
+
+    @property
+    @pulumi.getter(name="innodbMaxPurgeLagDelay")
+    def innodb_max_purge_lag_delay(self) -> Optional[int]:
+        """
+        The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+        """
+        return pulumi.get(self, "innodb_max_purge_lag_delay")
+
+    @property
+    @pulumi.getter(name="innodbStatsPersistentSamplePages")
+    def innodb_stats_persistent_sample_pages(self) -> Optional[str]:
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        """
+        return pulumi.get(self, "innodb_stats_persistent_sample_pages")
+
+    @property
+    @pulumi.getter(name="innodbStatsTransientSamplePages")
+    def innodb_stats_transient_sample_pages(self) -> Optional[str]:
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        """
+        return pulumi.get(self, "innodb_stats_transient_sample_pages")
+
+    @property
+    @pulumi.getter(name="interactiveTimeout")
+    def interactive_timeout(self) -> Optional[int]:
+        """
+        The number of seconds the server waits for activity on an interactive connection before closing it.
+        """
+        return pulumi.get(self, "interactive_timeout")
+
+    @property
+    @pulumi.getter(name="localInfile")
+    def local_infile(self) -> Optional[bool]:
+        """
+        ("local_infile")
+        """
+        return pulumi.get(self, "local_infile")
+
+    @property
+    @pulumi.getter(name="mandatoryRoles")
+    def mandatory_roles(self) -> Optional[str]:
+        """
+        ("mandatory_roles")
+        """
+        return pulumi.get(self, "mandatory_roles")
+
+    @property
+    @pulumi.getter(name="maxAllowedPacket")
+    def max_allowed_packet(self) -> Optional[int]:
+        """
+        The maximum size of one packet or any generated/intermediate string.
+        """
+        return pulumi.get(self, "max_allowed_packet")
+
+    @property
+    @pulumi.getter(name="maxBinlogCacheSize")
+    def max_binlog_cache_size(self) -> Optional[str]:
+        """
+        Sets the size of the transaction cache.
+        """
+        return pulumi.get(self, "max_binlog_cache_size")
+
+    @property
+    @pulumi.getter(name="maxConnectErrors")
+    def max_connect_errors(self) -> Optional[str]:
+        """
+        ("max_connect_errors")
+        """
+        return pulumi.get(self, "max_connect_errors")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> Optional[int]:
+        """
+        ("max_connections")
+        """
+        return pulumi.get(self, "max_connections")
+
+    @property
+    @pulumi.getter(name="maxExecutionTime")
+    def max_execution_time(self) -> Optional[str]:
+        """
+        ("max_execution_time")
+        """
+        return pulumi.get(self, "max_execution_time")
+
+    @property
+    @pulumi.getter(name="maxHeapTableSize")
+    def max_heap_table_size(self) -> Optional[str]:
+        """
+        This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+        """
+        return pulumi.get(self, "max_heap_table_size")
+
+    @property
+    @pulumi.getter(name="maxPreparedStmtCount")
+    def max_prepared_stmt_count(self) -> Optional[int]:
+        """
+        ("max_prepared_stmt_count")
+        """
+        return pulumi.get(self, "max_prepared_stmt_count")
+
+    @property
+    @pulumi.getter(name="mysqlFirewallMode")
+    def mysql_firewall_mode(self) -> Optional[bool]:
+        """
+        ("mysql_firewall_mode")
+        """
+        return pulumi.get(self, "mysql_firewall_mode")
+
+    @property
+    @pulumi.getter(name="mysqlZstdDefaultCompressionLevel")
+    def mysql_zstd_default_compression_level(self) -> Optional[int]:
+        """
+        DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+        """
+        return pulumi.get(self, "mysql_zstd_default_compression_level")
+
+    @property
+    @pulumi.getter(name="mysqlxConnectTimeout")
+    def mysqlx_connect_timeout(self) -> Optional[int]:
+        """
+        The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+        """
+        return pulumi.get(self, "mysqlx_connect_timeout")
+
+    @property
+    @pulumi.getter(name="mysqlxDeflateDefaultCompressionLevel")
+    def mysqlx_deflate_default_compression_level(self) -> Optional[int]:
+        """
+        Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_deflate_default_compression_level")
+
+    @property
+    @pulumi.getter(name="mysqlxDeflateMaxClientCompressionLevel")
+    def mysqlx_deflate_max_client_compression_level(self) -> Optional[int]:
+        """
+        Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_deflate_max_client_compression_level")
+
+    @property
+    @pulumi.getter(name="mysqlxDocumentIdUniquePrefix")
+    def mysqlx_document_id_unique_prefix(self) -> Optional[int]:
+        """
+        ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "mysqlx_document_id_unique_prefix")
+
+    @property
+    @pulumi.getter(name="mysqlxEnableHelloNotice")
+    def mysqlx_enable_hello_notice(self) -> Optional[bool]:
+        """
+        ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "mysqlx_enable_hello_notice")
+
+    @property
+    @pulumi.getter(name="mysqlxIdleWorkerThreadTimeout")
+    def mysqlx_idle_worker_thread_timeout(self) -> Optional[int]:
+        """
+        ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "mysqlx_idle_worker_thread_timeout")
+
+    @property
+    @pulumi.getter(name="mysqlxInteractiveTimeout")
+    def mysqlx_interactive_timeout(self) -> Optional[int]:
+        """
+        The number of seconds to wait for interactive clients to timeout.
+        """
+        return pulumi.get(self, "mysqlx_interactive_timeout")
+
+    @property
+    @pulumi.getter(name="mysqlxLz4defaultCompressionLevel")
+    def mysqlx_lz4default_compression_level(self) -> Optional[int]:
+        """
+        Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_lz4default_compression_level")
+
+    @property
+    @pulumi.getter(name="mysqlxLz4maxClientCompressionLevel")
+    def mysqlx_lz4max_client_compression_level(self) -> Optional[int]:
+        """
+        Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_lz4max_client_compression_level")
+
+    @property
+    @pulumi.getter(name="mysqlxMaxAllowedPacket")
+    def mysqlx_max_allowed_packet(self) -> Optional[int]:
+        """
+        The maximum size of network packets that can be received by X Plugin.
+        """
+        return pulumi.get(self, "mysqlx_max_allowed_packet")
+
+    @property
+    @pulumi.getter(name="mysqlxMinWorkerThreads")
+    def mysqlx_min_worker_threads(self) -> Optional[int]:
+        """
+        ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "mysqlx_min_worker_threads")
+
+    @property
+    @pulumi.getter(name="mysqlxReadTimeout")
+    def mysqlx_read_timeout(self) -> Optional[int]:
+        """
+        The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+        """
+        return pulumi.get(self, "mysqlx_read_timeout")
+
+    @property
+    @pulumi.getter(name="mysqlxWaitTimeout")
+    def mysqlx_wait_timeout(self) -> Optional[int]:
+        """
+        The number of seconds that X Plugin waits for activity on a connection.
+        """
+        return pulumi.get(self, "mysqlx_wait_timeout")
+
+    @property
+    @pulumi.getter(name="mysqlxWriteTimeout")
+    def mysqlx_write_timeout(self) -> Optional[int]:
+        """
+        The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+        """
+        return pulumi.get(self, "mysqlx_write_timeout")
+
+    @property
+    @pulumi.getter(name="mysqlxZstdDefaultCompressionLevel")
+    def mysqlx_zstd_default_compression_level(self) -> Optional[int]:
+        """
+        Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_zstd_default_compression_level")
+
+    @property
+    @pulumi.getter(name="mysqlxZstdMaxClientCompressionLevel")
+    def mysqlx_zstd_max_client_compression_level(self) -> Optional[int]:
+        """
+        Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_zstd_max_client_compression_level")
+
+    @property
+    @pulumi.getter(name="netReadTimeout")
+    def net_read_timeout(self) -> Optional[int]:
+        """
+        The number of seconds to wait for more data from a connection before aborting the read.
+        """
+        return pulumi.get(self, "net_read_timeout")
+
+    @property
+    @pulumi.getter(name="netWriteTimeout")
+    def net_write_timeout(self) -> Optional[int]:
+        """
+        The number of seconds to wait for a block to be written to a connection before aborting the write.
+        """
+        return pulumi.get(self, "net_write_timeout")
+
+    @property
+    @pulumi.getter(name="parserMaxMemSize")
+    def parser_max_mem_size(self) -> Optional[str]:
+        """
+        ("parser_max_mem_size")
+        """
+        return pulumi.get(self, "parser_max_mem_size")
+
+    @property
+    @pulumi.getter(name="queryAllocBlockSize")
+    def query_alloc_block_size(self) -> Optional[str]:
+        """
+        ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "query_alloc_block_size")
+
+    @property
+    @pulumi.getter(name="queryPreallocSize")
+    def query_prealloc_size(self) -> Optional[str]:
+        """
+        ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "query_prealloc_size")
+
+    @property
+    @pulumi.getter(name="regexpTimeLimit")
+    def regexp_time_limit(self) -> Optional[int]:
+        """
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        """
+        return pulumi.get(self, "regexp_time_limit")
+
+    @property
+    @pulumi.getter(name="sortBufferSize")
+    def sort_buffer_size(self) -> Optional[str]:
+        """
+        Each session that must perform a sort allocates a buffer of this size.
+        """
+        return pulumi.get(self, "sort_buffer_size")
+
+    @property
+    @pulumi.getter(name="sqlMode")
+    def sql_mode(self) -> Optional[str]:
+        """
+        ("sql_mode")
+        """
+        return pulumi.get(self, "sql_mode")
+
+    @property
+    @pulumi.getter(name="sqlRequirePrimaryKey")
+    def sql_require_primary_key(self) -> Optional[bool]:
+        """
+        ("sql_require_primary_key")
+        """
+        return pulumi.get(self, "sql_require_primary_key")
+
+    @property
+    @pulumi.getter(name="sqlWarnings")
+    def sql_warnings(self) -> Optional[bool]:
+        """
+        ("sql_warnings")
+        """
+        return pulumi.get(self, "sql_warnings")
+
+    @property
+    @pulumi.getter(name="threadPoolDedicatedListeners")
+    def thread_pool_dedicated_listeners(self) -> Optional[bool]:
+        """
+        Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        """
+        return pulumi.get(self, "thread_pool_dedicated_listeners")
+
+    @property
+    @pulumi.getter(name="threadPoolMaxTransactionsLimit")
+    def thread_pool_max_transactions_limit(self) -> Optional[int]:
+        """
+        Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        """
+        return pulumi.get(self, "thread_pool_max_transactions_limit")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> Optional[str]:
+        """
+        Initializes the time zone for each client that connects.
+        """
+        return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="tmpTableSize")
+    def tmp_table_size(self) -> Optional[str]:
+        """
+        The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+        """
+        return pulumi.get(self, "tmp_table_size")
+
+    @property
+    @pulumi.getter(name="transactionIsolation")
+    def transaction_isolation(self) -> Optional[str]:
+        """
+        ("transaction_isolation")
+        """
+        return pulumi.get(self, "transaction_isolation")
+
+    @property
+    @pulumi.getter(name="waitTimeout")
+    def wait_timeout(self) -> Optional[int]:
+        """
+        The number of seconds the server waits for activity on a noninteractive connection before closing it.
+        """
+        return pulumi.get(self, "wait_timeout")
 
 
 @pulumi.output_type
@@ -4157,36 +5331,70 @@ class GetMysqlBackupsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlConfigurationInitVariableResult(dict):
+    def __init__(__self__, *,
+                 lower_case_table_names: str):
+        """
+        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        """
+        pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+
+    @property
+    @pulumi.getter(name="lowerCaseTableNames")
+    def lower_case_table_names(self) -> str:
+        """
+        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        """
+        return pulumi.get(self, "lower_case_table_names")
+
+
+@pulumi.output_type
 class GetMysqlConfigurationVariableResult(dict):
     def __init__(__self__, *,
                  autocommit: bool,
+                 big_tables: bool,
                  binlog_expire_logs_seconds: int,
                  binlog_row_metadata: str,
                  binlog_row_value_options: str,
                  binlog_transaction_compression: bool,
                  completion_type: str,
                  connect_timeout: int,
-                 cte_max_recursion_depth: int,
+                 connection_memory_chunk_size: int,
+                 connection_memory_limit: str,
+                 cte_max_recursion_depth: str,
                  default_authentication_plugin: str,
                  foreign_key_checks: bool,
                  generated_random_password_length: int,
+                 global_connection_memory_limit: str,
+                 global_connection_memory_tracking: bool,
                  group_replication_consistency: str,
                  information_schema_stats_expiry: int,
+                 innodb_buffer_pool_dump_pct: int,
                  innodb_buffer_pool_instances: int,
                  innodb_buffer_pool_size: str,
+                 innodb_ddl_buffer_size: str,
+                 innodb_ddl_threads: int,
                  innodb_ft_enable_stopword: bool,
                  innodb_ft_max_token_size: int,
                  innodb_ft_min_token_size: int,
                  innodb_ft_num_word_optimize: int,
-                 innodb_ft_result_cache_limit: int,
+                 innodb_ft_result_cache_limit: str,
                  innodb_ft_server_stopword_table: str,
                  innodb_lock_wait_timeout: int,
-                 innodb_max_purge_lag: int,
+                 innodb_log_writer_threads: bool,
+                 innodb_max_purge_lag: str,
                  innodb_max_purge_lag_delay: int,
+                 innodb_stats_persistent_sample_pages: str,
+                 innodb_stats_transient_sample_pages: str,
+                 interactive_timeout: int,
                  local_infile: bool,
                  mandatory_roles: str,
+                 max_allowed_packet: int,
+                 max_binlog_cache_size: str,
+                 max_connect_errors: str,
                  max_connections: int,
-                 max_execution_time: int,
+                 max_execution_time: str,
+                 max_heap_table_size: str,
                  max_prepared_stmt_count: int,
                  mysql_firewall_mode: bool,
                  mysql_zstd_default_compression_level: int,
@@ -4206,88 +5414,130 @@ class GetMysqlConfigurationVariableResult(dict):
                  mysqlx_write_timeout: int,
                  mysqlx_zstd_default_compression_level: int,
                  mysqlx_zstd_max_client_compression_level: int,
-                 parser_max_mem_size: int,
-                 query_alloc_block_size: int,
-                 query_prealloc_size: int,
+                 net_read_timeout: int,
+                 net_write_timeout: int,
+                 parser_max_mem_size: str,
+                 query_alloc_block_size: str,
+                 query_prealloc_size: str,
+                 regexp_time_limit: int,
+                 sort_buffer_size: str,
                  sql_mode: str,
                  sql_require_primary_key: bool,
                  sql_warnings: bool,
-                 transaction_isolation: str):
+                 thread_pool_dedicated_listeners: bool,
+                 thread_pool_max_transactions_limit: int,
+                 time_zone: str,
+                 tmp_table_size: str,
+                 transaction_isolation: str,
+                 wait_timeout: int):
         """
         :param bool autocommit: ("autocommit")
+        :param bool big_tables: If enabled, the server stores all temporary tables on disk rather than in memory.
         :param int binlog_expire_logs_seconds: Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
         :param str binlog_row_metadata: Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
         :param str binlog_row_value_options: When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
         :param bool binlog_transaction_compression: Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
         :param str completion_type: ("completion_type")
-        :param int connect_timeout: ("connect_timeout")
-        :param int cte_max_recursion_depth: ("cte_max_recursion_depth")
+        :param int connect_timeout: The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+        :param int connection_memory_chunk_size: Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        :param str connection_memory_limit: Set the maximum amount of memory that can be used by a single user connection.
+        :param str cte_max_recursion_depth: ("cte_max_recursion_depth")
         :param str default_authentication_plugin: ("default_authentication_plugin")
         :param bool foreign_key_checks: ("foreign_key_checks")
         :param int generated_random_password_length: ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+        :param str global_connection_memory_limit: Set the total amount of memory that can be used by all user connections.
+        :param bool global_connection_memory_tracking: Determines whether the MySQL server calculates Global_connection_memory.
         :param str group_replication_consistency: * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
                * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
                * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
                * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
                * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
         :param int information_schema_stats_expiry: ("information_schema_stats_expiry")
+        :param int innodb_buffer_pool_dump_pct: Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
         :param int innodb_buffer_pool_instances: ("innodb_buffer_pool_instances")
-        :param str innodb_buffer_pool_size: ("innodb_buffer_pool_size")
+        :param str innodb_buffer_pool_size: The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
         :param bool innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
         :param int innodb_ft_max_token_size: ("innodb_ft_max_token_size")
         :param int innodb_ft_min_token_size: ("innodb_ft_min_token_size")
         :param int innodb_ft_num_word_optimize: ("innodb_ft_num_word_optimize")
-        :param int innodb_ft_result_cache_limit: ("innodb_ft_result_cache_limit")
+        :param str innodb_ft_result_cache_limit: ("innodb_ft_result_cache_limit")
         :param str innodb_ft_server_stopword_table: ("innodb_ft_server_stopword_table")
         :param int innodb_lock_wait_timeout: ("innodb_lock_wait_timeout")
-        :param int innodb_max_purge_lag: ("innodb_max_purge_lag")
-        :param int innodb_max_purge_lag_delay: ("innodb_max_purge_lag_delay")
+        :param bool innodb_log_writer_threads: Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        :param str innodb_max_purge_lag: The desired maximum purge lag in terms of transactions.
+        :param int innodb_max_purge_lag_delay: The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+        :param str innodb_stats_persistent_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        :param str innodb_stats_transient_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        :param int interactive_timeout: The number of seconds the server waits for activity on an interactive connection before closing it.
         :param bool local_infile: ("local_infile")
         :param str mandatory_roles: ("mandatory_roles")
+        :param int max_allowed_packet: The maximum size of one packet or any generated/intermediate string.
+        :param str max_binlog_cache_size: Sets the size of the transaction cache.
+        :param str max_connect_errors: ("max_connect_errors")
         :param int max_connections: ("max_connections")
-        :param int max_execution_time: ("max_execution_time")
+        :param str max_execution_time: ("max_execution_time")
+        :param str max_heap_table_size: This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
         :param int max_prepared_stmt_count: ("max_prepared_stmt_count")
         :param bool mysql_firewall_mode: ("mysql_firewall_mode")
         :param int mysql_zstd_default_compression_level: DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
-        :param int mysqlx_connect_timeout: ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_connect_timeout: The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
         :param int mysqlx_deflate_default_compression_level: Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
         :param int mysqlx_deflate_max_client_compression_level: Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
         :param int mysqlx_document_id_unique_prefix: ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
         :param bool mysqlx_enable_hello_notice: ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
         :param int mysqlx_idle_worker_thread_timeout: ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
-        :param int mysqlx_interactive_timeout: ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_interactive_timeout: The number of seconds to wait for interactive clients to timeout.
         :param int mysqlx_lz4default_compression_level: Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
         :param int mysqlx_lz4max_client_compression_level: Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
-        :param int mysqlx_max_allowed_packet: ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_max_allowed_packet: The maximum size of network packets that can be received by X Plugin.
         :param int mysqlx_min_worker_threads: ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
-        :param int mysqlx_read_timeout: ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
-        :param int mysqlx_wait_timeout: ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
-        :param int mysqlx_write_timeout: ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_read_timeout: The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+        :param int mysqlx_wait_timeout: The number of seconds that X Plugin waits for activity on a connection.
+        :param int mysqlx_write_timeout: The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
         :param int mysqlx_zstd_default_compression_level: Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
         :param int mysqlx_zstd_max_client_compression_level: Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
-        :param int parser_max_mem_size: ("parser_max_mem_size")
-        :param int query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
-        :param int query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param int net_read_timeout: The number of seconds to wait for more data from a connection before aborting the read.
+        :param int net_write_timeout: The number of seconds to wait for a block to be written to a connection before aborting the write.
+        :param str parser_max_mem_size: ("parser_max_mem_size")
+        :param str query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param str query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param str sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
         :param str sql_mode: ("sql_mode")
         :param bool sql_require_primary_key: ("sql_require_primary_key")
         :param bool sql_warnings: ("sql_warnings")
+        :param bool thread_pool_dedicated_listeners: Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        :param int thread_pool_max_transactions_limit: Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        :param str time_zone: Initializes the time zone for each client that connects.
+        :param str tmp_table_size: The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
         :param str transaction_isolation: ("transaction_isolation")
+        :param int wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
         """
         pulumi.set(__self__, "autocommit", autocommit)
+        pulumi.set(__self__, "big_tables", big_tables)
         pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
         pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
         pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
         pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
         pulumi.set(__self__, "completion_type", completion_type)
         pulumi.set(__self__, "connect_timeout", connect_timeout)
+        pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
+        pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
         pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
         pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
         pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
         pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
+        pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
+        pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
         pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
         pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
+        pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
         pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
         pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
+        pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+        pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
         pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
         pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
         pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
@@ -4295,12 +5545,20 @@ class GetMysqlConfigurationVariableResult(dict):
         pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
         pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
         pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+        pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
         pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
         pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+        pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        pulumi.set(__self__, "interactive_timeout", interactive_timeout)
         pulumi.set(__self__, "local_infile", local_infile)
         pulumi.set(__self__, "mandatory_roles", mandatory_roles)
+        pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
+        pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
+        pulumi.set(__self__, "max_connect_errors", max_connect_errors)
         pulumi.set(__self__, "max_connections", max_connections)
         pulumi.set(__self__, "max_execution_time", max_execution_time)
+        pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
         pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
         pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
         pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
@@ -4320,13 +5578,22 @@ class GetMysqlConfigurationVariableResult(dict):
         pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
         pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
         pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+        pulumi.set(__self__, "net_read_timeout", net_read_timeout)
+        pulumi.set(__self__, "net_write_timeout", net_write_timeout)
         pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
         pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
         pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
+        pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
+        pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
         pulumi.set(__self__, "sql_mode", sql_mode)
         pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
         pulumi.set(__self__, "sql_warnings", sql_warnings)
+        pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+        pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        pulumi.set(__self__, "time_zone", time_zone)
+        pulumi.set(__self__, "tmp_table_size", tmp_table_size)
         pulumi.set(__self__, "transaction_isolation", transaction_isolation)
+        pulumi.set(__self__, "wait_timeout", wait_timeout)
 
     @property
     @pulumi.getter
@@ -4335,6 +5602,14 @@ class GetMysqlConfigurationVariableResult(dict):
         ("autocommit")
         """
         return pulumi.get(self, "autocommit")
+
+    @property
+    @pulumi.getter(name="bigTables")
+    def big_tables(self) -> bool:
+        """
+        If enabled, the server stores all temporary tables on disk rather than in memory.
+        """
+        return pulumi.get(self, "big_tables")
 
     @property
     @pulumi.getter(name="binlogExpireLogsSeconds")
@@ -4380,13 +5655,29 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="connectTimeout")
     def connect_timeout(self) -> int:
         """
-        ("connect_timeout")
+        The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
         """
         return pulumi.get(self, "connect_timeout")
 
     @property
+    @pulumi.getter(name="connectionMemoryChunkSize")
+    def connection_memory_chunk_size(self) -> int:
+        """
+        Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        """
+        return pulumi.get(self, "connection_memory_chunk_size")
+
+    @property
+    @pulumi.getter(name="connectionMemoryLimit")
+    def connection_memory_limit(self) -> str:
+        """
+        Set the maximum amount of memory that can be used by a single user connection.
+        """
+        return pulumi.get(self, "connection_memory_limit")
+
+    @property
     @pulumi.getter(name="cteMaxRecursionDepth")
-    def cte_max_recursion_depth(self) -> int:
+    def cte_max_recursion_depth(self) -> str:
         """
         ("cte_max_recursion_depth")
         """
@@ -4417,6 +5708,22 @@ class GetMysqlConfigurationVariableResult(dict):
         return pulumi.get(self, "generated_random_password_length")
 
     @property
+    @pulumi.getter(name="globalConnectionMemoryLimit")
+    def global_connection_memory_limit(self) -> str:
+        """
+        Set the total amount of memory that can be used by all user connections.
+        """
+        return pulumi.get(self, "global_connection_memory_limit")
+
+    @property
+    @pulumi.getter(name="globalConnectionMemoryTracking")
+    def global_connection_memory_tracking(self) -> bool:
+        """
+        Determines whether the MySQL server calculates Global_connection_memory.
+        """
+        return pulumi.get(self, "global_connection_memory_tracking")
+
+    @property
     @pulumi.getter(name="groupReplicationConsistency")
     def group_replication_consistency(self) -> str:
         """
@@ -4437,6 +5744,14 @@ class GetMysqlConfigurationVariableResult(dict):
         return pulumi.get(self, "information_schema_stats_expiry")
 
     @property
+    @pulumi.getter(name="innodbBufferPoolDumpPct")
+    def innodb_buffer_pool_dump_pct(self) -> int:
+        """
+        Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+        """
+        return pulumi.get(self, "innodb_buffer_pool_dump_pct")
+
+    @property
     @pulumi.getter(name="innodbBufferPoolInstances")
     def innodb_buffer_pool_instances(self) -> int:
         """
@@ -4448,9 +5763,25 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="innodbBufferPoolSize")
     def innodb_buffer_pool_size(self) -> str:
         """
-        ("innodb_buffer_pool_size")
+        The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
         """
         return pulumi.get(self, "innodb_buffer_pool_size")
+
+    @property
+    @pulumi.getter(name="innodbDdlBufferSize")
+    def innodb_ddl_buffer_size(self) -> str:
+        """
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        """
+        return pulumi.get(self, "innodb_ddl_buffer_size")
+
+    @property
+    @pulumi.getter(name="innodbDdlThreads")
+    def innodb_ddl_threads(self) -> int:
+        """
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        """
+        return pulumi.get(self, "innodb_ddl_threads")
 
     @property
     @pulumi.getter(name="innodbFtEnableStopword")
@@ -4486,7 +5817,7 @@ class GetMysqlConfigurationVariableResult(dict):
 
     @property
     @pulumi.getter(name="innodbFtResultCacheLimit")
-    def innodb_ft_result_cache_limit(self) -> int:
+    def innodb_ft_result_cache_limit(self) -> str:
         """
         ("innodb_ft_result_cache_limit")
         """
@@ -4509,10 +5840,18 @@ class GetMysqlConfigurationVariableResult(dict):
         return pulumi.get(self, "innodb_lock_wait_timeout")
 
     @property
-    @pulumi.getter(name="innodbMaxPurgeLag")
-    def innodb_max_purge_lag(self) -> int:
+    @pulumi.getter(name="innodbLogWriterThreads")
+    def innodb_log_writer_threads(self) -> bool:
         """
-        ("innodb_max_purge_lag")
+        Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        """
+        return pulumi.get(self, "innodb_log_writer_threads")
+
+    @property
+    @pulumi.getter(name="innodbMaxPurgeLag")
+    def innodb_max_purge_lag(self) -> str:
+        """
+        The desired maximum purge lag in terms of transactions.
         """
         return pulumi.get(self, "innodb_max_purge_lag")
 
@@ -4520,9 +5859,33 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="innodbMaxPurgeLagDelay")
     def innodb_max_purge_lag_delay(self) -> int:
         """
-        ("innodb_max_purge_lag_delay")
+        The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
         """
         return pulumi.get(self, "innodb_max_purge_lag_delay")
+
+    @property
+    @pulumi.getter(name="innodbStatsPersistentSamplePages")
+    def innodb_stats_persistent_sample_pages(self) -> str:
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        """
+        return pulumi.get(self, "innodb_stats_persistent_sample_pages")
+
+    @property
+    @pulumi.getter(name="innodbStatsTransientSamplePages")
+    def innodb_stats_transient_sample_pages(self) -> str:
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        """
+        return pulumi.get(self, "innodb_stats_transient_sample_pages")
+
+    @property
+    @pulumi.getter(name="interactiveTimeout")
+    def interactive_timeout(self) -> int:
+        """
+        The number of seconds the server waits for activity on an interactive connection before closing it.
+        """
+        return pulumi.get(self, "interactive_timeout")
 
     @property
     @pulumi.getter(name="localInfile")
@@ -4541,6 +5904,30 @@ class GetMysqlConfigurationVariableResult(dict):
         return pulumi.get(self, "mandatory_roles")
 
     @property
+    @pulumi.getter(name="maxAllowedPacket")
+    def max_allowed_packet(self) -> int:
+        """
+        The maximum size of one packet or any generated/intermediate string.
+        """
+        return pulumi.get(self, "max_allowed_packet")
+
+    @property
+    @pulumi.getter(name="maxBinlogCacheSize")
+    def max_binlog_cache_size(self) -> str:
+        """
+        Sets the size of the transaction cache.
+        """
+        return pulumi.get(self, "max_binlog_cache_size")
+
+    @property
+    @pulumi.getter(name="maxConnectErrors")
+    def max_connect_errors(self) -> str:
+        """
+        ("max_connect_errors")
+        """
+        return pulumi.get(self, "max_connect_errors")
+
+    @property
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> int:
         """
@@ -4550,11 +5937,19 @@ class GetMysqlConfigurationVariableResult(dict):
 
     @property
     @pulumi.getter(name="maxExecutionTime")
-    def max_execution_time(self) -> int:
+    def max_execution_time(self) -> str:
         """
         ("max_execution_time")
         """
         return pulumi.get(self, "max_execution_time")
+
+    @property
+    @pulumi.getter(name="maxHeapTableSize")
+    def max_heap_table_size(self) -> str:
+        """
+        This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+        """
+        return pulumi.get(self, "max_heap_table_size")
 
     @property
     @pulumi.getter(name="maxPreparedStmtCount")
@@ -4584,7 +5979,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="mysqlxConnectTimeout")
     def mysqlx_connect_timeout(self) -> int:
         """
-        ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
         """
         return pulumi.get(self, "mysqlx_connect_timeout")
 
@@ -4632,7 +6027,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="mysqlxInteractiveTimeout")
     def mysqlx_interactive_timeout(self) -> int:
         """
-        ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds to wait for interactive clients to timeout.
         """
         return pulumi.get(self, "mysqlx_interactive_timeout")
 
@@ -4656,7 +6051,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="mysqlxMaxAllowedPacket")
     def mysqlx_max_allowed_packet(self) -> int:
         """
-        ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
+        The maximum size of network packets that can be received by X Plugin.
         """
         return pulumi.get(self, "mysqlx_max_allowed_packet")
 
@@ -4672,7 +6067,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="mysqlxReadTimeout")
     def mysqlx_read_timeout(self) -> int:
         """
-        ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
         """
         return pulumi.get(self, "mysqlx_read_timeout")
 
@@ -4680,7 +6075,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="mysqlxWaitTimeout")
     def mysqlx_wait_timeout(self) -> int:
         """
-        ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds that X Plugin waits for activity on a connection.
         """
         return pulumi.get(self, "mysqlx_wait_timeout")
 
@@ -4688,7 +6083,7 @@ class GetMysqlConfigurationVariableResult(dict):
     @pulumi.getter(name="mysqlxWriteTimeout")
     def mysqlx_write_timeout(self) -> int:
         """
-        ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
         """
         return pulumi.get(self, "mysqlx_write_timeout")
 
@@ -4709,8 +6104,24 @@ class GetMysqlConfigurationVariableResult(dict):
         return pulumi.get(self, "mysqlx_zstd_max_client_compression_level")
 
     @property
+    @pulumi.getter(name="netReadTimeout")
+    def net_read_timeout(self) -> int:
+        """
+        The number of seconds to wait for more data from a connection before aborting the read.
+        """
+        return pulumi.get(self, "net_read_timeout")
+
+    @property
+    @pulumi.getter(name="netWriteTimeout")
+    def net_write_timeout(self) -> int:
+        """
+        The number of seconds to wait for a block to be written to a connection before aborting the write.
+        """
+        return pulumi.get(self, "net_write_timeout")
+
+    @property
     @pulumi.getter(name="parserMaxMemSize")
-    def parser_max_mem_size(self) -> int:
+    def parser_max_mem_size(self) -> str:
         """
         ("parser_max_mem_size")
         """
@@ -4718,7 +6129,7 @@ class GetMysqlConfigurationVariableResult(dict):
 
     @property
     @pulumi.getter(name="queryAllocBlockSize")
-    def query_alloc_block_size(self) -> int:
+    def query_alloc_block_size(self) -> str:
         """
         ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         """
@@ -4726,11 +6137,27 @@ class GetMysqlConfigurationVariableResult(dict):
 
     @property
     @pulumi.getter(name="queryPreallocSize")
-    def query_prealloc_size(self) -> int:
+    def query_prealloc_size(self) -> str:
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
         """
         return pulumi.get(self, "query_prealloc_size")
+
+    @property
+    @pulumi.getter(name="regexpTimeLimit")
+    def regexp_time_limit(self) -> int:
+        """
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        """
+        return pulumi.get(self, "regexp_time_limit")
+
+    @property
+    @pulumi.getter(name="sortBufferSize")
+    def sort_buffer_size(self) -> str:
+        """
+        Each session that must perform a sort allocates a buffer of this size.
+        """
+        return pulumi.get(self, "sort_buffer_size")
 
     @property
     @pulumi.getter(name="sqlMode")
@@ -4757,12 +6184,52 @@ class GetMysqlConfigurationVariableResult(dict):
         return pulumi.get(self, "sql_warnings")
 
     @property
+    @pulumi.getter(name="threadPoolDedicatedListeners")
+    def thread_pool_dedicated_listeners(self) -> bool:
+        """
+        Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        """
+        return pulumi.get(self, "thread_pool_dedicated_listeners")
+
+    @property
+    @pulumi.getter(name="threadPoolMaxTransactionsLimit")
+    def thread_pool_max_transactions_limit(self) -> int:
+        """
+        Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        """
+        return pulumi.get(self, "thread_pool_max_transactions_limit")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        """
+        Initializes the time zone for each client that connects.
+        """
+        return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="tmpTableSize")
+    def tmp_table_size(self) -> str:
+        """
+        The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+        """
+        return pulumi.get(self, "tmp_table_size")
+
+    @property
     @pulumi.getter(name="transactionIsolation")
     def transaction_isolation(self) -> str:
         """
         ("transaction_isolation")
         """
         return pulumi.get(self, "transaction_isolation")
+
+    @property
+    @pulumi.getter(name="waitTimeout")
+    def wait_timeout(self) -> int:
+        """
+        The number of seconds the server waits for activity on a noninteractive connection before closing it.
+        """
+        return pulumi.get(self, "wait_timeout")
 
 
 @pulumi.output_type
@@ -4774,13 +6241,14 @@ class GetMysqlConfigurationsConfigurationResult(dict):
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 init_variables: Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult'],
                  parent_configuration_id: str,
                  shape_name: str,
                  state: str,
                  time_created: str,
                  time_updated: str,
                  type: str,
-                 variables: 'outputs.GetMysqlConfigurationsConfigurationVariablesResult'):
+                 variables: Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult']):
         """
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4788,13 +6256,14 @@ class GetMysqlConfigurationsConfigurationResult(dict):
         :param str display_name: A filter to return only the resource matching the given display name exactly.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the Configuration.
+        :param Sequence['GetMysqlConfigurationsConfigurationInitVariableArgs'] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         :param str parent_configuration_id: The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
         :param str shape_name: The requested Shape name.
         :param str state: Configuration Lifecycle State
         :param str time_created: The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str type: The requested Configuration types.
-        :param 'GetMysqlConfigurationsConfigurationVariablesArgs' variables: User controllable service variables.
+        :param Sequence['GetMysqlConfigurationsConfigurationVariableArgs'] variables: User-defined service variables.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -4802,6 +6271,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "init_variables", init_variables)
         pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "state", state)
@@ -4859,6 +6329,14 @@ class GetMysqlConfigurationsConfigurationResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="initVariables")
+    def init_variables(self) -> Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult']:
+        """
+        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        """
+        return pulumi.get(self, "init_variables")
+
+    @property
     @pulumi.getter(name="parentConfigurationId")
     def parent_configuration_id(self) -> str:
         """
@@ -4908,44 +6386,78 @@ class GetMysqlConfigurationsConfigurationResult(dict):
 
     @property
     @pulumi.getter
-    def variables(self) -> 'outputs.GetMysqlConfigurationsConfigurationVariablesResult':
+    def variables(self) -> Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult']:
         """
-        User controllable service variables.
+        User-defined service variables.
         """
         return pulumi.get(self, "variables")
 
 
 @pulumi.output_type
-class GetMysqlConfigurationsConfigurationVariablesResult(dict):
+class GetMysqlConfigurationsConfigurationInitVariableResult(dict):
+    def __init__(__self__, *,
+                 lower_case_table_names: str):
+        """
+        :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        """
+        pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+
+    @property
+    @pulumi.getter(name="lowerCaseTableNames")
+    def lower_case_table_names(self) -> str:
+        """
+        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        """
+        return pulumi.get(self, "lower_case_table_names")
+
+
+@pulumi.output_type
+class GetMysqlConfigurationsConfigurationVariableResult(dict):
     def __init__(__self__, *,
                  autocommit: bool,
+                 big_tables: bool,
                  binlog_expire_logs_seconds: int,
                  binlog_row_metadata: str,
                  binlog_row_value_options: str,
                  binlog_transaction_compression: bool,
                  completion_type: str,
                  connect_timeout: int,
-                 cte_max_recursion_depth: int,
+                 connection_memory_chunk_size: int,
+                 connection_memory_limit: str,
+                 cte_max_recursion_depth: str,
                  default_authentication_plugin: str,
                  foreign_key_checks: bool,
                  generated_random_password_length: int,
+                 global_connection_memory_limit: str,
+                 global_connection_memory_tracking: bool,
                  group_replication_consistency: str,
                  information_schema_stats_expiry: int,
+                 innodb_buffer_pool_dump_pct: int,
                  innodb_buffer_pool_instances: int,
                  innodb_buffer_pool_size: str,
+                 innodb_ddl_buffer_size: str,
+                 innodb_ddl_threads: int,
                  innodb_ft_enable_stopword: bool,
                  innodb_ft_max_token_size: int,
                  innodb_ft_min_token_size: int,
                  innodb_ft_num_word_optimize: int,
-                 innodb_ft_result_cache_limit: int,
+                 innodb_ft_result_cache_limit: str,
                  innodb_ft_server_stopword_table: str,
                  innodb_lock_wait_timeout: int,
-                 innodb_max_purge_lag: int,
+                 innodb_log_writer_threads: bool,
+                 innodb_max_purge_lag: str,
                  innodb_max_purge_lag_delay: int,
+                 innodb_stats_persistent_sample_pages: str,
+                 innodb_stats_transient_sample_pages: str,
+                 interactive_timeout: int,
                  local_infile: bool,
                  mandatory_roles: str,
+                 max_allowed_packet: int,
+                 max_binlog_cache_size: str,
+                 max_connect_errors: str,
                  max_connections: int,
-                 max_execution_time: int,
+                 max_execution_time: str,
+                 max_heap_table_size: str,
                  max_prepared_stmt_count: int,
                  mysql_firewall_mode: bool,
                  mysql_zstd_default_compression_level: int,
@@ -4965,88 +6477,130 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
                  mysqlx_write_timeout: int,
                  mysqlx_zstd_default_compression_level: int,
                  mysqlx_zstd_max_client_compression_level: int,
-                 parser_max_mem_size: int,
-                 query_alloc_block_size: int,
-                 query_prealloc_size: int,
+                 net_read_timeout: int,
+                 net_write_timeout: int,
+                 parser_max_mem_size: str,
+                 query_alloc_block_size: str,
+                 query_prealloc_size: str,
+                 regexp_time_limit: int,
+                 sort_buffer_size: str,
                  sql_mode: str,
                  sql_require_primary_key: bool,
                  sql_warnings: bool,
-                 transaction_isolation: str):
+                 thread_pool_dedicated_listeners: bool,
+                 thread_pool_max_transactions_limit: int,
+                 time_zone: str,
+                 tmp_table_size: str,
+                 transaction_isolation: str,
+                 wait_timeout: int):
         """
         :param bool autocommit: ("autocommit")
+        :param bool big_tables: If enabled, the server stores all temporary tables on disk rather than in memory.
         :param int binlog_expire_logs_seconds: Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
         :param str binlog_row_metadata: Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
         :param str binlog_row_value_options: When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
         :param bool binlog_transaction_compression: Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
         :param str completion_type: ("completion_type")
-        :param int connect_timeout: ("connect_timeout")
-        :param int cte_max_recursion_depth: ("cte_max_recursion_depth")
+        :param int connect_timeout: The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+        :param int connection_memory_chunk_size: Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        :param str connection_memory_limit: Set the maximum amount of memory that can be used by a single user connection.
+        :param str cte_max_recursion_depth: ("cte_max_recursion_depth")
         :param str default_authentication_plugin: ("default_authentication_plugin")
         :param bool foreign_key_checks: ("foreign_key_checks")
         :param int generated_random_password_length: ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+        :param str global_connection_memory_limit: Set the total amount of memory that can be used by all user connections.
+        :param bool global_connection_memory_tracking: Determines whether the MySQL server calculates Global_connection_memory.
         :param str group_replication_consistency: * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
                * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
                * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
                * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
                * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
         :param int information_schema_stats_expiry: ("information_schema_stats_expiry")
+        :param int innodb_buffer_pool_dump_pct: Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
         :param int innodb_buffer_pool_instances: ("innodb_buffer_pool_instances")
-        :param str innodb_buffer_pool_size: ("innodb_buffer_pool_size")
+        :param str innodb_buffer_pool_size: The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+        :param str innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        :param int innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
         :param bool innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
         :param int innodb_ft_max_token_size: ("innodb_ft_max_token_size")
         :param int innodb_ft_min_token_size: ("innodb_ft_min_token_size")
         :param int innodb_ft_num_word_optimize: ("innodb_ft_num_word_optimize")
-        :param int innodb_ft_result_cache_limit: ("innodb_ft_result_cache_limit")
+        :param str innodb_ft_result_cache_limit: ("innodb_ft_result_cache_limit")
         :param str innodb_ft_server_stopword_table: ("innodb_ft_server_stopword_table")
         :param int innodb_lock_wait_timeout: ("innodb_lock_wait_timeout")
-        :param int innodb_max_purge_lag: ("innodb_max_purge_lag")
-        :param int innodb_max_purge_lag_delay: ("innodb_max_purge_lag_delay")
+        :param bool innodb_log_writer_threads: Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        :param str innodb_max_purge_lag: The desired maximum purge lag in terms of transactions.
+        :param int innodb_max_purge_lag_delay: The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+        :param str innodb_stats_persistent_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        :param str innodb_stats_transient_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        :param int interactive_timeout: The number of seconds the server waits for activity on an interactive connection before closing it.
         :param bool local_infile: ("local_infile")
         :param str mandatory_roles: ("mandatory_roles")
+        :param int max_allowed_packet: The maximum size of one packet or any generated/intermediate string.
+        :param str max_binlog_cache_size: Sets the size of the transaction cache.
+        :param str max_connect_errors: ("max_connect_errors")
         :param int max_connections: ("max_connections")
-        :param int max_execution_time: ("max_execution_time")
+        :param str max_execution_time: ("max_execution_time")
+        :param str max_heap_table_size: This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
         :param int max_prepared_stmt_count: ("max_prepared_stmt_count")
         :param bool mysql_firewall_mode: ("mysql_firewall_mode")
         :param int mysql_zstd_default_compression_level: DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
-        :param int mysqlx_connect_timeout: ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_connect_timeout: The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
         :param int mysqlx_deflate_default_compression_level: Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
         :param int mysqlx_deflate_max_client_compression_level: Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
         :param int mysqlx_document_id_unique_prefix: ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
         :param bool mysqlx_enable_hello_notice: ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
         :param int mysqlx_idle_worker_thread_timeout: ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
-        :param int mysqlx_interactive_timeout: ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_interactive_timeout: The number of seconds to wait for interactive clients to timeout.
         :param int mysqlx_lz4default_compression_level: Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
         :param int mysqlx_lz4max_client_compression_level: Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
-        :param int mysqlx_max_allowed_packet: ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_max_allowed_packet: The maximum size of network packets that can be received by X Plugin.
         :param int mysqlx_min_worker_threads: ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
-        :param int mysqlx_read_timeout: ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
-        :param int mysqlx_wait_timeout: ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
-        :param int mysqlx_write_timeout: ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        :param int mysqlx_read_timeout: The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+        :param int mysqlx_wait_timeout: The number of seconds that X Plugin waits for activity on a connection.
+        :param int mysqlx_write_timeout: The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
         :param int mysqlx_zstd_default_compression_level: Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
         :param int mysqlx_zstd_max_client_compression_level: Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
-        :param int parser_max_mem_size: ("parser_max_mem_size")
-        :param int query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
-        :param int query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param int net_read_timeout: The number of seconds to wait for more data from a connection before aborting the read.
+        :param int net_write_timeout: The number of seconds to wait for a block to be written to a connection before aborting the write.
+        :param str parser_max_mem_size: ("parser_max_mem_size")
+        :param str query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param str query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param int regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param str sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
         :param str sql_mode: ("sql_mode")
         :param bool sql_require_primary_key: ("sql_require_primary_key")
         :param bool sql_warnings: ("sql_warnings")
+        :param bool thread_pool_dedicated_listeners: Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        :param int thread_pool_max_transactions_limit: Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        :param str time_zone: Initializes the time zone for each client that connects.
+        :param str tmp_table_size: The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
         :param str transaction_isolation: ("transaction_isolation")
+        :param int wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
         """
         pulumi.set(__self__, "autocommit", autocommit)
+        pulumi.set(__self__, "big_tables", big_tables)
         pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
         pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
         pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
         pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
         pulumi.set(__self__, "completion_type", completion_type)
         pulumi.set(__self__, "connect_timeout", connect_timeout)
+        pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
+        pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
         pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
         pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
         pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
         pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
+        pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
+        pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
         pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
         pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
+        pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
         pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
         pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
+        pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+        pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
         pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
         pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
         pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
@@ -5054,12 +6608,20 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
         pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
         pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+        pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
         pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
         pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+        pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        pulumi.set(__self__, "interactive_timeout", interactive_timeout)
         pulumi.set(__self__, "local_infile", local_infile)
         pulumi.set(__self__, "mandatory_roles", mandatory_roles)
+        pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
+        pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
+        pulumi.set(__self__, "max_connect_errors", max_connect_errors)
         pulumi.set(__self__, "max_connections", max_connections)
         pulumi.set(__self__, "max_execution_time", max_execution_time)
+        pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
         pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
         pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
         pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
@@ -5079,13 +6641,22 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
         pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
         pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+        pulumi.set(__self__, "net_read_timeout", net_read_timeout)
+        pulumi.set(__self__, "net_write_timeout", net_write_timeout)
         pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
         pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
         pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
+        pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
+        pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
         pulumi.set(__self__, "sql_mode", sql_mode)
         pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
         pulumi.set(__self__, "sql_warnings", sql_warnings)
+        pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+        pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        pulumi.set(__self__, "time_zone", time_zone)
+        pulumi.set(__self__, "tmp_table_size", tmp_table_size)
         pulumi.set(__self__, "transaction_isolation", transaction_isolation)
+        pulumi.set(__self__, "wait_timeout", wait_timeout)
 
     @property
     @pulumi.getter
@@ -5094,6 +6665,14 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         ("autocommit")
         """
         return pulumi.get(self, "autocommit")
+
+    @property
+    @pulumi.getter(name="bigTables")
+    def big_tables(self) -> bool:
+        """
+        If enabled, the server stores all temporary tables on disk rather than in memory.
+        """
+        return pulumi.get(self, "big_tables")
 
     @property
     @pulumi.getter(name="binlogExpireLogsSeconds")
@@ -5139,13 +6718,29 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="connectTimeout")
     def connect_timeout(self) -> int:
         """
-        ("connect_timeout")
+        The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
         """
         return pulumi.get(self, "connect_timeout")
 
     @property
+    @pulumi.getter(name="connectionMemoryChunkSize")
+    def connection_memory_chunk_size(self) -> int:
+        """
+        Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        """
+        return pulumi.get(self, "connection_memory_chunk_size")
+
+    @property
+    @pulumi.getter(name="connectionMemoryLimit")
+    def connection_memory_limit(self) -> str:
+        """
+        Set the maximum amount of memory that can be used by a single user connection.
+        """
+        return pulumi.get(self, "connection_memory_limit")
+
+    @property
     @pulumi.getter(name="cteMaxRecursionDepth")
-    def cte_max_recursion_depth(self) -> int:
+    def cte_max_recursion_depth(self) -> str:
         """
         ("cte_max_recursion_depth")
         """
@@ -5176,6 +6771,22 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         return pulumi.get(self, "generated_random_password_length")
 
     @property
+    @pulumi.getter(name="globalConnectionMemoryLimit")
+    def global_connection_memory_limit(self) -> str:
+        """
+        Set the total amount of memory that can be used by all user connections.
+        """
+        return pulumi.get(self, "global_connection_memory_limit")
+
+    @property
+    @pulumi.getter(name="globalConnectionMemoryTracking")
+    def global_connection_memory_tracking(self) -> bool:
+        """
+        Determines whether the MySQL server calculates Global_connection_memory.
+        """
+        return pulumi.get(self, "global_connection_memory_tracking")
+
+    @property
     @pulumi.getter(name="groupReplicationConsistency")
     def group_replication_consistency(self) -> str:
         """
@@ -5196,6 +6807,14 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         return pulumi.get(self, "information_schema_stats_expiry")
 
     @property
+    @pulumi.getter(name="innodbBufferPoolDumpPct")
+    def innodb_buffer_pool_dump_pct(self) -> int:
+        """
+        Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+        """
+        return pulumi.get(self, "innodb_buffer_pool_dump_pct")
+
+    @property
     @pulumi.getter(name="innodbBufferPoolInstances")
     def innodb_buffer_pool_instances(self) -> int:
         """
@@ -5207,9 +6826,25 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="innodbBufferPoolSize")
     def innodb_buffer_pool_size(self) -> str:
         """
-        ("innodb_buffer_pool_size")
+        The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
         """
         return pulumi.get(self, "innodb_buffer_pool_size")
+
+    @property
+    @pulumi.getter(name="innodbDdlBufferSize")
+    def innodb_ddl_buffer_size(self) -> str:
+        """
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        """
+        return pulumi.get(self, "innodb_ddl_buffer_size")
+
+    @property
+    @pulumi.getter(name="innodbDdlThreads")
+    def innodb_ddl_threads(self) -> int:
+        """
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        """
+        return pulumi.get(self, "innodb_ddl_threads")
 
     @property
     @pulumi.getter(name="innodbFtEnableStopword")
@@ -5245,7 +6880,7 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
 
     @property
     @pulumi.getter(name="innodbFtResultCacheLimit")
-    def innodb_ft_result_cache_limit(self) -> int:
+    def innodb_ft_result_cache_limit(self) -> str:
         """
         ("innodb_ft_result_cache_limit")
         """
@@ -5268,10 +6903,18 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         return pulumi.get(self, "innodb_lock_wait_timeout")
 
     @property
-    @pulumi.getter(name="innodbMaxPurgeLag")
-    def innodb_max_purge_lag(self) -> int:
+    @pulumi.getter(name="innodbLogWriterThreads")
+    def innodb_log_writer_threads(self) -> bool:
         """
-        ("innodb_max_purge_lag")
+        Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        """
+        return pulumi.get(self, "innodb_log_writer_threads")
+
+    @property
+    @pulumi.getter(name="innodbMaxPurgeLag")
+    def innodb_max_purge_lag(self) -> str:
+        """
+        The desired maximum purge lag in terms of transactions.
         """
         return pulumi.get(self, "innodb_max_purge_lag")
 
@@ -5279,9 +6922,33 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="innodbMaxPurgeLagDelay")
     def innodb_max_purge_lag_delay(self) -> int:
         """
-        ("innodb_max_purge_lag_delay")
+        The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
         """
         return pulumi.get(self, "innodb_max_purge_lag_delay")
+
+    @property
+    @pulumi.getter(name="innodbStatsPersistentSamplePages")
+    def innodb_stats_persistent_sample_pages(self) -> str:
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        """
+        return pulumi.get(self, "innodb_stats_persistent_sample_pages")
+
+    @property
+    @pulumi.getter(name="innodbStatsTransientSamplePages")
+    def innodb_stats_transient_sample_pages(self) -> str:
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        """
+        return pulumi.get(self, "innodb_stats_transient_sample_pages")
+
+    @property
+    @pulumi.getter(name="interactiveTimeout")
+    def interactive_timeout(self) -> int:
+        """
+        The number of seconds the server waits for activity on an interactive connection before closing it.
+        """
+        return pulumi.get(self, "interactive_timeout")
 
     @property
     @pulumi.getter(name="localInfile")
@@ -5300,6 +6967,30 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         return pulumi.get(self, "mandatory_roles")
 
     @property
+    @pulumi.getter(name="maxAllowedPacket")
+    def max_allowed_packet(self) -> int:
+        """
+        The maximum size of one packet or any generated/intermediate string.
+        """
+        return pulumi.get(self, "max_allowed_packet")
+
+    @property
+    @pulumi.getter(name="maxBinlogCacheSize")
+    def max_binlog_cache_size(self) -> str:
+        """
+        Sets the size of the transaction cache.
+        """
+        return pulumi.get(self, "max_binlog_cache_size")
+
+    @property
+    @pulumi.getter(name="maxConnectErrors")
+    def max_connect_errors(self) -> str:
+        """
+        ("max_connect_errors")
+        """
+        return pulumi.get(self, "max_connect_errors")
+
+    @property
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> int:
         """
@@ -5309,11 +7000,19 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
 
     @property
     @pulumi.getter(name="maxExecutionTime")
-    def max_execution_time(self) -> int:
+    def max_execution_time(self) -> str:
         """
         ("max_execution_time")
         """
         return pulumi.get(self, "max_execution_time")
+
+    @property
+    @pulumi.getter(name="maxHeapTableSize")
+    def max_heap_table_size(self) -> str:
+        """
+        This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+        """
+        return pulumi.get(self, "max_heap_table_size")
 
     @property
     @pulumi.getter(name="maxPreparedStmtCount")
@@ -5343,7 +7042,7 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="mysqlxConnectTimeout")
     def mysqlx_connect_timeout(self) -> int:
         """
-        ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
         """
         return pulumi.get(self, "mysqlx_connect_timeout")
 
@@ -5391,7 +7090,7 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="mysqlxInteractiveTimeout")
     def mysqlx_interactive_timeout(self) -> int:
         """
-        ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds to wait for interactive clients to timeout.
         """
         return pulumi.get(self, "mysqlx_interactive_timeout")
 
@@ -5415,7 +7114,7 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="mysqlxMaxAllowedPacket")
     def mysqlx_max_allowed_packet(self) -> int:
         """
-        ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
+        The maximum size of network packets that can be received by X Plugin.
         """
         return pulumi.get(self, "mysqlx_max_allowed_packet")
 
@@ -5431,7 +7130,7 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="mysqlxReadTimeout")
     def mysqlx_read_timeout(self) -> int:
         """
-        ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
         """
         return pulumi.get(self, "mysqlx_read_timeout")
 
@@ -5439,7 +7138,7 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="mysqlxWaitTimeout")
     def mysqlx_wait_timeout(self) -> int:
         """
-        ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds that X Plugin waits for activity on a connection.
         """
         return pulumi.get(self, "mysqlx_wait_timeout")
 
@@ -5447,7 +7146,7 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
     @pulumi.getter(name="mysqlxWriteTimeout")
     def mysqlx_write_timeout(self) -> int:
         """
-        ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
         """
         return pulumi.get(self, "mysqlx_write_timeout")
 
@@ -5468,8 +7167,24 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         return pulumi.get(self, "mysqlx_zstd_max_client_compression_level")
 
     @property
+    @pulumi.getter(name="netReadTimeout")
+    def net_read_timeout(self) -> int:
+        """
+        The number of seconds to wait for more data from a connection before aborting the read.
+        """
+        return pulumi.get(self, "net_read_timeout")
+
+    @property
+    @pulumi.getter(name="netWriteTimeout")
+    def net_write_timeout(self) -> int:
+        """
+        The number of seconds to wait for a block to be written to a connection before aborting the write.
+        """
+        return pulumi.get(self, "net_write_timeout")
+
+    @property
     @pulumi.getter(name="parserMaxMemSize")
-    def parser_max_mem_size(self) -> int:
+    def parser_max_mem_size(self) -> str:
         """
         ("parser_max_mem_size")
         """
@@ -5477,7 +7192,7 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
 
     @property
     @pulumi.getter(name="queryAllocBlockSize")
-    def query_alloc_block_size(self) -> int:
+    def query_alloc_block_size(self) -> str:
         """
         ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         """
@@ -5485,11 +7200,27 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
 
     @property
     @pulumi.getter(name="queryPreallocSize")
-    def query_prealloc_size(self) -> int:
+    def query_prealloc_size(self) -> str:
         """
         ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
         """
         return pulumi.get(self, "query_prealloc_size")
+
+    @property
+    @pulumi.getter(name="regexpTimeLimit")
+    def regexp_time_limit(self) -> int:
+        """
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        """
+        return pulumi.get(self, "regexp_time_limit")
+
+    @property
+    @pulumi.getter(name="sortBufferSize")
+    def sort_buffer_size(self) -> str:
+        """
+        Each session that must perform a sort allocates a buffer of this size.
+        """
+        return pulumi.get(self, "sort_buffer_size")
 
     @property
     @pulumi.getter(name="sqlMode")
@@ -5516,12 +7247,52 @@ class GetMysqlConfigurationsConfigurationVariablesResult(dict):
         return pulumi.get(self, "sql_warnings")
 
     @property
+    @pulumi.getter(name="threadPoolDedicatedListeners")
+    def thread_pool_dedicated_listeners(self) -> bool:
+        """
+        Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        """
+        return pulumi.get(self, "thread_pool_dedicated_listeners")
+
+    @property
+    @pulumi.getter(name="threadPoolMaxTransactionsLimit")
+    def thread_pool_max_transactions_limit(self) -> int:
+        """
+        Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        """
+        return pulumi.get(self, "thread_pool_max_transactions_limit")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        """
+        Initializes the time zone for each client that connects.
+        """
+        return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="tmpTableSize")
+    def tmp_table_size(self) -> str:
+        """
+        The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+        """
+        return pulumi.get(self, "tmp_table_size")
+
+    @property
     @pulumi.getter(name="transactionIsolation")
     def transaction_isolation(self) -> str:
         """
         ("transaction_isolation")
         """
         return pulumi.get(self, "transaction_isolation")
+
+    @property
+    @pulumi.getter(name="waitTimeout")
+    def wait_timeout(self) -> int:
+        """
+        The number of seconds the server waits for activity on a noninteractive connection before closing it.
+        """
+        return pulumi.get(self, "wait_timeout")
 
 
 @pulumi.output_type

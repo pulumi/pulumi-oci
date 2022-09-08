@@ -55,6 +55,7 @@ __all__ = [
     'CloudVmClusterIormConfigCachArgs',
     'CloudVmClusterIormConfigCachDbPlanArgs',
     'CloudVmClusterIormConfigDbPlanArgs',
+    'DataGuardAssociationDataCollectionOptionsArgs',
     'DatabaseConnectionStringArgs',
     'DatabaseDatabaseArgs',
     'DatabaseDatabaseDbBackupConfigArgs',
@@ -70,6 +71,7 @@ __all__ = [
     'DbHomeDatabaseConnectionStringArgs',
     'DbHomeDatabaseDbBackupConfigArgs',
     'DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs',
+    'DbSystemDataCollectionOptionsArgs',
     'DbSystemDbHomeArgs',
     'DbSystemDbHomeDatabaseArgs',
     'DbSystemDbHomeDatabaseConnectionStringArgs',
@@ -170,6 +172,7 @@ __all__ = [
     'GetGiVersionsFilterArgs',
     'GetKeyStoresFilterArgs',
     'GetMaintenanceRunsFilterArgs',
+    'GetManagedPreferredCredentialsFilterArgs',
     'GetPluggableDatabasesFilterArgs',
     'GetVmClusterNetworksFilterArgs',
     'GetVmClusterPatchHistoryEntriesFilterArgs',
@@ -383,6 +386,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -394,6 +398,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -408,6 +413,8 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -467,6 +474,18 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -560,6 +579,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -571,6 +591,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -585,6 +606,8 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -654,6 +677,18 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -1602,6 +1637,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -1613,6 +1649,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -1627,6 +1664,8 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -1686,6 +1725,18 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -1779,6 +1830,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -1790,6 +1842,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -1804,6 +1857,8 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -1873,6 +1928,18 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -1997,6 +2064,7 @@ class AutonomousVmClusterMaintenanceWindowArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -2019,6 +2087,8 @@ class AutonomousVmClusterMaintenanceWindowArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -2072,6 +2142,15 @@ class AutonomousVmClusterMaintenanceWindowArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -2162,6 +2241,7 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -2184,6 +2264,8 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -2247,6 +2329,15 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -2538,6 +2629,7 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -2549,6 +2641,7 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -2563,6 +2656,8 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -2632,6 +2727,18 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -2729,12 +2836,20 @@ class CloudExadataInfrastructureMaintenanceWindowMonthArgs:
 @pulumi.input_type
 class CloudVmClusterDataCollectionOptionsArgs:
     def __init__(__self__, *,
-                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None):
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
@@ -2747,6 +2862,30 @@ class CloudVmClusterDataCollectionOptionsArgs:
     @is_diagnostics_events_enabled.setter
     def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
 
 
 @pulumi.input_type
@@ -2926,6 +3065,61 @@ class CloudVmClusterIormConfigDbPlanArgs:
     @flash_cache_limit.setter
     def flash_cache_limit(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "flash_cache_limit", value)
+
+
+@pulumi.input_type
+class DataGuardAssociationDataCollectionOptionsArgs:
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
 
 
 @pulumi.input_type
@@ -4413,6 +4607,61 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
 
 
 @pulumi.input_type
+class DbSystemDataCollectionOptionsArgs:
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
+
+
+@pulumi.input_type
 class DbSystemDbHomeArgs:
     def __init__(__self__, *,
                  database: pulumi.Input['DbSystemDbHomeDatabaseArgs'],
@@ -5335,6 +5584,7 @@ class DbSystemMaintenanceWindowArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -5346,6 +5596,7 @@ class DbSystemMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -5360,6 +5611,8 @@ class DbSystemMaintenanceWindowArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -5419,6 +5672,18 @@ class DbSystemMaintenanceWindowArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -5511,6 +5776,7 @@ class DbSystemMaintenanceWindowDetailsArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -5522,6 +5788,7 @@ class DbSystemMaintenanceWindowDetailsArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -5536,6 +5803,8 @@ class DbSystemMaintenanceWindowDetailsArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -5595,6 +5864,18 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -6118,6 +6399,7 @@ class ExadataInfrastructureMaintenanceWindowArgs:
                  days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs']]]] = None,
                  hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
                  is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
                  lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
@@ -6129,6 +6411,7 @@ class ExadataInfrastructureMaintenanceWindowArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -6143,6 +6426,8 @@ class ExadataInfrastructureMaintenanceWindowArgs:
             pulumi.set(__self__, "hours_of_days", hours_of_days)
         if is_custom_action_timeout_enabled is not None:
             pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
         if lead_time_in_weeks is not None:
             pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
         if months is not None:
@@ -6212,6 +6497,18 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @is_custom_action_timeout_enabled.setter
     def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
 
     @property
     @pulumi.getter(name="leadTimeInWeeks")
@@ -7419,24 +7716,56 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
 @pulumi.input_type
 class VmClusterAddVirtualNetworkDataCollectionOptionArgs:
     def __init__(__self__, *,
-                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None):
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
         """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
     def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
 
 
 @pulumi.input_type
@@ -7464,24 +7793,56 @@ class VmClusterAddVirtualNetworkDbServerArgs:
 @pulumi.input_type
 class VmClusterDataCollectionOptionsArgs:
     def __init__(__self__, *,
-                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None):
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
         """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
     def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
 
 
 @pulumi.input_type
@@ -7737,24 +8098,56 @@ class VmClusterNetworkVmNetworkNodeArgs:
 @pulumi.input_type
 class VmClusterRemoveVirtualMachineDataCollectionOptionArgs:
     def __init__(__self__, *,
-                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None):
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param pulumi.Input[bool] is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param pulumi.Input[bool] is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
 
     @property
     @pulumi.getter(name="isDiagnosticsEventsEnabled")
     def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
         """
         return pulumi.get(self, "is_diagnostics_events_enabled")
 
     @is_diagnostics_events_enabled.setter
     def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
 
 
 @pulumi.input_type
@@ -9647,6 +10040,45 @@ class GetKeyStoresFilterArgs:
 
 @pulumi.input_type
 class GetMaintenanceRunsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedPreferredCredentialsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

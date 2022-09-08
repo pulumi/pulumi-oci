@@ -21,6 +21,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgs',
     'MysqlBackupDbSystemSnapshotEndpointArgs',
     'MysqlBackupDbSystemSnapshotMaintenanceArgs',
+    'MysqlConfigurationInitVariablesArgs',
+    'MysqlConfigurationVariablesArgs',
     'MysqlDbSystemAnalyticsClusterArgs',
     'MysqlDbSystemBackupPolicyArgs',
     'MysqlDbSystemBackupPolicyPitrPolicyArgs',
@@ -1117,6 +1119,1329 @@ class MysqlBackupDbSystemSnapshotMaintenanceArgs:
     @window_start_time.setter
     def window_start_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "window_start_time", value)
+
+
+@pulumi.input_type
+class MysqlConfigurationInitVariablesArgs:
+    def __init__(__self__, *,
+                 lower_case_table_names: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        """
+        if lower_case_table_names is not None:
+            pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+
+    @property
+    @pulumi.getter(name="lowerCaseTableNames")
+    def lower_case_table_names(self) -> Optional[pulumi.Input[str]]:
+        """
+        Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        """
+        return pulumi.get(self, "lower_case_table_names")
+
+    @lower_case_table_names.setter
+    def lower_case_table_names(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lower_case_table_names", value)
+
+
+@pulumi.input_type
+class MysqlConfigurationVariablesArgs:
+    def __init__(__self__, *,
+                 autocommit: Optional[pulumi.Input[bool]] = None,
+                 big_tables: Optional[pulumi.Input[bool]] = None,
+                 binlog_expire_logs_seconds: Optional[pulumi.Input[int]] = None,
+                 binlog_row_metadata: Optional[pulumi.Input[str]] = None,
+                 binlog_row_value_options: Optional[pulumi.Input[str]] = None,
+                 binlog_transaction_compression: Optional[pulumi.Input[bool]] = None,
+                 completion_type: Optional[pulumi.Input[str]] = None,
+                 connect_timeout: Optional[pulumi.Input[int]] = None,
+                 connection_memory_chunk_size: Optional[pulumi.Input[int]] = None,
+                 connection_memory_limit: Optional[pulumi.Input[str]] = None,
+                 cte_max_recursion_depth: Optional[pulumi.Input[str]] = None,
+                 default_authentication_plugin: Optional[pulumi.Input[str]] = None,
+                 foreign_key_checks: Optional[pulumi.Input[bool]] = None,
+                 generated_random_password_length: Optional[pulumi.Input[int]] = None,
+                 global_connection_memory_limit: Optional[pulumi.Input[str]] = None,
+                 global_connection_memory_tracking: Optional[pulumi.Input[bool]] = None,
+                 group_replication_consistency: Optional[pulumi.Input[str]] = None,
+                 information_schema_stats_expiry: Optional[pulumi.Input[int]] = None,
+                 innodb_buffer_pool_dump_pct: Optional[pulumi.Input[int]] = None,
+                 innodb_buffer_pool_instances: Optional[pulumi.Input[int]] = None,
+                 innodb_buffer_pool_size: Optional[pulumi.Input[str]] = None,
+                 innodb_ddl_buffer_size: Optional[pulumi.Input[str]] = None,
+                 innodb_ddl_threads: Optional[pulumi.Input[int]] = None,
+                 innodb_ft_enable_stopword: Optional[pulumi.Input[bool]] = None,
+                 innodb_ft_max_token_size: Optional[pulumi.Input[int]] = None,
+                 innodb_ft_min_token_size: Optional[pulumi.Input[int]] = None,
+                 innodb_ft_num_word_optimize: Optional[pulumi.Input[int]] = None,
+                 innodb_ft_result_cache_limit: Optional[pulumi.Input[str]] = None,
+                 innodb_ft_server_stopword_table: Optional[pulumi.Input[str]] = None,
+                 innodb_lock_wait_timeout: Optional[pulumi.Input[int]] = None,
+                 innodb_log_writer_threads: Optional[pulumi.Input[bool]] = None,
+                 innodb_max_purge_lag: Optional[pulumi.Input[str]] = None,
+                 innodb_max_purge_lag_delay: Optional[pulumi.Input[int]] = None,
+                 innodb_stats_persistent_sample_pages: Optional[pulumi.Input[str]] = None,
+                 innodb_stats_transient_sample_pages: Optional[pulumi.Input[str]] = None,
+                 interactive_timeout: Optional[pulumi.Input[int]] = None,
+                 local_infile: Optional[pulumi.Input[bool]] = None,
+                 mandatory_roles: Optional[pulumi.Input[str]] = None,
+                 max_allowed_packet: Optional[pulumi.Input[int]] = None,
+                 max_binlog_cache_size: Optional[pulumi.Input[str]] = None,
+                 max_connect_errors: Optional[pulumi.Input[str]] = None,
+                 max_connections: Optional[pulumi.Input[int]] = None,
+                 max_execution_time: Optional[pulumi.Input[str]] = None,
+                 max_heap_table_size: Optional[pulumi.Input[str]] = None,
+                 max_prepared_stmt_count: Optional[pulumi.Input[int]] = None,
+                 mysql_firewall_mode: Optional[pulumi.Input[bool]] = None,
+                 mysql_zstd_default_compression_level: Optional[pulumi.Input[int]] = None,
+                 mysqlx_connect_timeout: Optional[pulumi.Input[int]] = None,
+                 mysqlx_deflate_default_compression_level: Optional[pulumi.Input[int]] = None,
+                 mysqlx_deflate_max_client_compression_level: Optional[pulumi.Input[int]] = None,
+                 mysqlx_document_id_unique_prefix: Optional[pulumi.Input[int]] = None,
+                 mysqlx_enable_hello_notice: Optional[pulumi.Input[bool]] = None,
+                 mysqlx_idle_worker_thread_timeout: Optional[pulumi.Input[int]] = None,
+                 mysqlx_interactive_timeout: Optional[pulumi.Input[int]] = None,
+                 mysqlx_lz4default_compression_level: Optional[pulumi.Input[int]] = None,
+                 mysqlx_lz4max_client_compression_level: Optional[pulumi.Input[int]] = None,
+                 mysqlx_max_allowed_packet: Optional[pulumi.Input[int]] = None,
+                 mysqlx_min_worker_threads: Optional[pulumi.Input[int]] = None,
+                 mysqlx_read_timeout: Optional[pulumi.Input[int]] = None,
+                 mysqlx_wait_timeout: Optional[pulumi.Input[int]] = None,
+                 mysqlx_write_timeout: Optional[pulumi.Input[int]] = None,
+                 mysqlx_zstd_default_compression_level: Optional[pulumi.Input[int]] = None,
+                 mysqlx_zstd_max_client_compression_level: Optional[pulumi.Input[int]] = None,
+                 net_read_timeout: Optional[pulumi.Input[int]] = None,
+                 net_write_timeout: Optional[pulumi.Input[int]] = None,
+                 parser_max_mem_size: Optional[pulumi.Input[str]] = None,
+                 query_alloc_block_size: Optional[pulumi.Input[str]] = None,
+                 query_prealloc_size: Optional[pulumi.Input[str]] = None,
+                 regexp_time_limit: Optional[pulumi.Input[int]] = None,
+                 sort_buffer_size: Optional[pulumi.Input[str]] = None,
+                 sql_mode: Optional[pulumi.Input[str]] = None,
+                 sql_require_primary_key: Optional[pulumi.Input[bool]] = None,
+                 sql_warnings: Optional[pulumi.Input[bool]] = None,
+                 thread_pool_dedicated_listeners: Optional[pulumi.Input[bool]] = None,
+                 thread_pool_max_transactions_limit: Optional[pulumi.Input[int]] = None,
+                 time_zone: Optional[pulumi.Input[str]] = None,
+                 tmp_table_size: Optional[pulumi.Input[str]] = None,
+                 transaction_isolation: Optional[pulumi.Input[str]] = None,
+                 wait_timeout: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] autocommit: ("autocommit")
+        :param pulumi.Input[bool] big_tables: If enabled, the server stores all temporary tables on disk rather than in memory.
+        :param pulumi.Input[int] binlog_expire_logs_seconds: Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+        :param pulumi.Input[str] binlog_row_metadata: Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+        :param pulumi.Input[str] binlog_row_value_options: When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+        :param pulumi.Input[bool] binlog_transaction_compression: Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+        :param pulumi.Input[str] completion_type: ("completion_type")
+        :param pulumi.Input[int] connect_timeout: The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+        :param pulumi.Input[int] connection_memory_chunk_size: Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        :param pulumi.Input[str] connection_memory_limit: Set the maximum amount of memory that can be used by a single user connection.
+        :param pulumi.Input[str] cte_max_recursion_depth: ("cte_max_recursion_depth")
+        :param pulumi.Input[str] default_authentication_plugin: ("default_authentication_plugin")
+        :param pulumi.Input[bool] foreign_key_checks: ("foreign_key_checks")
+        :param pulumi.Input[int] generated_random_password_length: ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+        :param pulumi.Input[str] global_connection_memory_limit: Set the total amount of memory that can be used by all user connections.
+        :param pulumi.Input[bool] global_connection_memory_tracking: Determines whether the MySQL server calculates Global_connection_memory.
+        :param pulumi.Input[str] group_replication_consistency: * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+               * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+               * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+               * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+               * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        :param pulumi.Input[int] information_schema_stats_expiry: ("information_schema_stats_expiry")
+        :param pulumi.Input[int] innodb_buffer_pool_dump_pct: Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+        :param pulumi.Input[int] innodb_buffer_pool_instances: ("innodb_buffer_pool_instances")
+        :param pulumi.Input[str] innodb_buffer_pool_size: The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+        :param pulumi.Input[str] innodb_ddl_buffer_size: innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        :param pulumi.Input[int] innodb_ddl_threads: innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        :param pulumi.Input[bool] innodb_ft_enable_stopword: ("innodb_ft_enable_stopword")
+        :param pulumi.Input[int] innodb_ft_max_token_size: ("innodb_ft_max_token_size")
+        :param pulumi.Input[int] innodb_ft_min_token_size: ("innodb_ft_min_token_size")
+        :param pulumi.Input[int] innodb_ft_num_word_optimize: ("innodb_ft_num_word_optimize")
+        :param pulumi.Input[str] innodb_ft_result_cache_limit: ("innodb_ft_result_cache_limit")
+        :param pulumi.Input[str] innodb_ft_server_stopword_table: ("innodb_ft_server_stopword_table")
+        :param pulumi.Input[int] innodb_lock_wait_timeout: ("innodb_lock_wait_timeout")
+        :param pulumi.Input[bool] innodb_log_writer_threads: Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        :param pulumi.Input[str] innodb_max_purge_lag: The desired maximum purge lag in terms of transactions.
+        :param pulumi.Input[int] innodb_max_purge_lag_delay: The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+        :param pulumi.Input[str] innodb_stats_persistent_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        :param pulumi.Input[str] innodb_stats_transient_sample_pages: The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        :param pulumi.Input[int] interactive_timeout: The number of seconds the server waits for activity on an interactive connection before closing it.
+        :param pulumi.Input[bool] local_infile: ("local_infile")
+        :param pulumi.Input[str] mandatory_roles: ("mandatory_roles")
+        :param pulumi.Input[int] max_allowed_packet: The maximum size of one packet or any generated/intermediate string.
+        :param pulumi.Input[str] max_binlog_cache_size: Sets the size of the transaction cache.
+        :param pulumi.Input[str] max_connect_errors: ("max_connect_errors")
+        :param pulumi.Input[int] max_connections: ("max_connections")
+        :param pulumi.Input[str] max_execution_time: ("max_execution_time")
+        :param pulumi.Input[str] max_heap_table_size: This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+        :param pulumi.Input[int] max_prepared_stmt_count: ("max_prepared_stmt_count")
+        :param pulumi.Input[bool] mysql_firewall_mode: ("mysql_firewall_mode")
+        :param pulumi.Input[int] mysql_zstd_default_compression_level: DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+        :param pulumi.Input[int] mysqlx_connect_timeout: The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+        :param pulumi.Input[int] mysqlx_deflate_default_compression_level: Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+        :param pulumi.Input[int] mysqlx_deflate_max_client_compression_level: Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+        :param pulumi.Input[int] mysqlx_document_id_unique_prefix: ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+        :param pulumi.Input[bool] mysqlx_enable_hello_notice: ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+        :param pulumi.Input[int] mysqlx_idle_worker_thread_timeout: ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        :param pulumi.Input[int] mysqlx_interactive_timeout: The number of seconds to wait for interactive clients to timeout.
+        :param pulumi.Input[int] mysqlx_lz4default_compression_level: Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+        :param pulumi.Input[int] mysqlx_lz4max_client_compression_level: Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+        :param pulumi.Input[int] mysqlx_max_allowed_packet: The maximum size of network packets that can be received by X Plugin.
+        :param pulumi.Input[int] mysqlx_min_worker_threads: ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+        :param pulumi.Input[int] mysqlx_read_timeout: The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+        :param pulumi.Input[int] mysqlx_wait_timeout: The number of seconds that X Plugin waits for activity on a connection.
+        :param pulumi.Input[int] mysqlx_write_timeout: The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+        :param pulumi.Input[int] mysqlx_zstd_default_compression_level: Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+        :param pulumi.Input[int] mysqlx_zstd_max_client_compression_level: Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+        :param pulumi.Input[int] net_read_timeout: The number of seconds to wait for more data from a connection before aborting the read.
+        :param pulumi.Input[int] net_write_timeout: The number of seconds to wait for a block to be written to a connection before aborting the write.
+        :param pulumi.Input[str] parser_max_mem_size: ("parser_max_mem_size")
+        :param pulumi.Input[str] query_alloc_block_size: ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param pulumi.Input[str] query_prealloc_size: ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        :param pulumi.Input[int] regexp_time_limit: regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        :param pulumi.Input[str] sort_buffer_size: Each session that must perform a sort allocates a buffer of this size.
+        :param pulumi.Input[str] sql_mode: ("sql_mode")
+        :param pulumi.Input[bool] sql_require_primary_key: ("sql_require_primary_key")
+        :param pulumi.Input[bool] sql_warnings: ("sql_warnings")
+        :param pulumi.Input[bool] thread_pool_dedicated_listeners: Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        :param pulumi.Input[int] thread_pool_max_transactions_limit: Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        :param pulumi.Input[str] time_zone: Initializes the time zone for each client that connects.
+        :param pulumi.Input[str] tmp_table_size: The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+        :param pulumi.Input[str] transaction_isolation: ("transaction_isolation")
+        :param pulumi.Input[int] wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
+        """
+        if autocommit is not None:
+            pulumi.set(__self__, "autocommit", autocommit)
+        if big_tables is not None:
+            pulumi.set(__self__, "big_tables", big_tables)
+        if binlog_expire_logs_seconds is not None:
+            pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+        if binlog_row_metadata is not None:
+            pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
+        if binlog_row_value_options is not None:
+            pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
+        if binlog_transaction_compression is not None:
+            pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
+        if completion_type is not None:
+            pulumi.set(__self__, "completion_type", completion_type)
+        if connect_timeout is not None:
+            pulumi.set(__self__, "connect_timeout", connect_timeout)
+        if connection_memory_chunk_size is not None:
+            pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
+        if connection_memory_limit is not None:
+            pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
+        if cte_max_recursion_depth is not None:
+            pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
+        if default_authentication_plugin is not None:
+            pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
+        if foreign_key_checks is not None:
+            pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
+        if generated_random_password_length is not None:
+            warnings.warn("""The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+            pulumi.log.warn("""generated_random_password_length is deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if generated_random_password_length is not None:
+            pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
+        if global_connection_memory_limit is not None:
+            pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
+        if global_connection_memory_tracking is not None:
+            pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
+        if group_replication_consistency is not None:
+            pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
+        if information_schema_stats_expiry is not None:
+            pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
+        if innodb_buffer_pool_dump_pct is not None:
+            pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
+        if innodb_buffer_pool_instances is not None:
+            pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
+        if innodb_buffer_pool_size is not None:
+            pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
+        if innodb_ddl_buffer_size is not None:
+            pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+        if innodb_ddl_threads is not None:
+            pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
+        if innodb_ft_enable_stopword is not None:
+            pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
+        if innodb_ft_max_token_size is not None:
+            pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
+        if innodb_ft_min_token_size is not None:
+            pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
+        if innodb_ft_num_word_optimize is not None:
+            pulumi.set(__self__, "innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
+        if innodb_ft_result_cache_limit is not None:
+            pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
+        if innodb_ft_server_stopword_table is not None:
+            pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
+        if innodb_lock_wait_timeout is not None:
+            pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+        if innodb_log_writer_threads is not None:
+            pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
+        if innodb_max_purge_lag is not None:
+            pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
+        if innodb_max_purge_lag_delay is not None:
+            pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        if innodb_stats_persistent_sample_pages is not None:
+            pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+        if innodb_stats_transient_sample_pages is not None:
+            pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        if interactive_timeout is not None:
+            pulumi.set(__self__, "interactive_timeout", interactive_timeout)
+        if local_infile is not None:
+            pulumi.set(__self__, "local_infile", local_infile)
+        if mandatory_roles is not None:
+            pulumi.set(__self__, "mandatory_roles", mandatory_roles)
+        if max_allowed_packet is not None:
+            pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
+        if max_binlog_cache_size is not None:
+            pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
+        if max_connect_errors is not None:
+            pulumi.set(__self__, "max_connect_errors", max_connect_errors)
+        if max_connections is not None:
+            pulumi.set(__self__, "max_connections", max_connections)
+        if max_execution_time is not None:
+            pulumi.set(__self__, "max_execution_time", max_execution_time)
+        if max_heap_table_size is not None:
+            pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
+        if max_prepared_stmt_count is not None:
+            pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
+        if mysql_firewall_mode is not None:
+            pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
+        if mysql_zstd_default_compression_level is not None:
+            warnings.warn("""The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+            pulumi.log.warn("""mysql_zstd_default_compression_level is deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if mysql_zstd_default_compression_level is not None:
+            pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
+        if mysqlx_connect_timeout is not None:
+            pulumi.set(__self__, "mysqlx_connect_timeout", mysqlx_connect_timeout)
+        if mysqlx_deflate_default_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
+        if mysqlx_deflate_max_client_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
+        if mysqlx_document_id_unique_prefix is not None:
+            warnings.warn("""The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+            pulumi.log.warn("""mysqlx_document_id_unique_prefix is deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if mysqlx_document_id_unique_prefix is not None:
+            pulumi.set(__self__, "mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
+        if mysqlx_enable_hello_notice is not None:
+            pulumi.set(__self__, "mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
+        if mysqlx_idle_worker_thread_timeout is not None:
+            warnings.warn("""The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+            pulumi.log.warn("""mysqlx_idle_worker_thread_timeout is deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if mysqlx_idle_worker_thread_timeout is not None:
+            pulumi.set(__self__, "mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
+        if mysqlx_interactive_timeout is not None:
+            pulumi.set(__self__, "mysqlx_interactive_timeout", mysqlx_interactive_timeout)
+        if mysqlx_lz4default_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
+        if mysqlx_lz4max_client_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
+        if mysqlx_max_allowed_packet is not None:
+            pulumi.set(__self__, "mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
+        if mysqlx_min_worker_threads is not None:
+            warnings.warn("""The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+            pulumi.log.warn("""mysqlx_min_worker_threads is deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if mysqlx_min_worker_threads is not None:
+            pulumi.set(__self__, "mysqlx_min_worker_threads", mysqlx_min_worker_threads)
+        if mysqlx_read_timeout is not None:
+            pulumi.set(__self__, "mysqlx_read_timeout", mysqlx_read_timeout)
+        if mysqlx_wait_timeout is not None:
+            pulumi.set(__self__, "mysqlx_wait_timeout", mysqlx_wait_timeout)
+        if mysqlx_write_timeout is not None:
+            pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
+        if mysqlx_zstd_default_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
+        if mysqlx_zstd_max_client_compression_level is not None:
+            pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+        if net_read_timeout is not None:
+            pulumi.set(__self__, "net_read_timeout", net_read_timeout)
+        if net_write_timeout is not None:
+            pulumi.set(__self__, "net_write_timeout", net_write_timeout)
+        if parser_max_mem_size is not None:
+            pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
+        if query_alloc_block_size is not None:
+            warnings.warn("""The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+            pulumi.log.warn("""query_alloc_block_size is deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if query_alloc_block_size is not None:
+            pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
+        if query_prealloc_size is not None:
+            warnings.warn("""The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
+            pulumi.log.warn("""query_prealloc_size is deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.""")
+        if query_prealloc_size is not None:
+            pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
+        if regexp_time_limit is not None:
+            pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
+        if sort_buffer_size is not None:
+            pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
+        if sql_mode is not None:
+            pulumi.set(__self__, "sql_mode", sql_mode)
+        if sql_require_primary_key is not None:
+            pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
+        if sql_warnings is not None:
+            pulumi.set(__self__, "sql_warnings", sql_warnings)
+        if thread_pool_dedicated_listeners is not None:
+            pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+        if thread_pool_max_transactions_limit is not None:
+            pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
+        if tmp_table_size is not None:
+            pulumi.set(__self__, "tmp_table_size", tmp_table_size)
+        if transaction_isolation is not None:
+            pulumi.set(__self__, "transaction_isolation", transaction_isolation)
+        if wait_timeout is not None:
+            pulumi.set(__self__, "wait_timeout", wait_timeout)
+
+    @property
+    @pulumi.getter
+    def autocommit(self) -> Optional[pulumi.Input[bool]]:
+        """
+        ("autocommit")
+        """
+        return pulumi.get(self, "autocommit")
+
+    @autocommit.setter
+    def autocommit(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "autocommit", value)
+
+    @property
+    @pulumi.getter(name="bigTables")
+    def big_tables(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If enabled, the server stores all temporary tables on disk rather than in memory.
+        """
+        return pulumi.get(self, "big_tables")
+
+    @big_tables.setter
+    def big_tables(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "big_tables", value)
+
+    @property
+    @pulumi.getter(name="binlogExpireLogsSeconds")
+    def binlog_expire_logs_seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+        """
+        return pulumi.get(self, "binlog_expire_logs_seconds")
+
+    @binlog_expire_logs_seconds.setter
+    def binlog_expire_logs_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "binlog_expire_logs_seconds", value)
+
+    @property
+    @pulumi.getter(name="binlogRowMetadata")
+    def binlog_row_metadata(self) -> Optional[pulumi.Input[str]]:
+        """
+        Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+        """
+        return pulumi.get(self, "binlog_row_metadata")
+
+    @binlog_row_metadata.setter
+    def binlog_row_metadata(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "binlog_row_metadata", value)
+
+    @property
+    @pulumi.getter(name="binlogRowValueOptions")
+    def binlog_row_value_options(self) -> Optional[pulumi.Input[str]]:
+        """
+        When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+        """
+        return pulumi.get(self, "binlog_row_value_options")
+
+    @binlog_row_value_options.setter
+    def binlog_row_value_options(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "binlog_row_value_options", value)
+
+    @property
+    @pulumi.getter(name="binlogTransactionCompression")
+    def binlog_transaction_compression(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+        """
+        return pulumi.get(self, "binlog_transaction_compression")
+
+    @binlog_transaction_compression.setter
+    def binlog_transaction_compression(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "binlog_transaction_compression", value)
+
+    @property
+    @pulumi.getter(name="completionType")
+    def completion_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("completion_type")
+        """
+        return pulumi.get(self, "completion_type")
+
+    @completion_type.setter
+    def completion_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "completion_type", value)
+
+    @property
+    @pulumi.getter(name="connectTimeout")
+    def connect_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+        """
+        return pulumi.get(self, "connect_timeout")
+
+    @connect_timeout.setter
+    def connect_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "connect_timeout", value)
+
+    @property
+    @pulumi.getter(name="connectionMemoryChunkSize")
+    def connection_memory_chunk_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        """
+        return pulumi.get(self, "connection_memory_chunk_size")
+
+    @connection_memory_chunk_size.setter
+    def connection_memory_chunk_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "connection_memory_chunk_size", value)
+
+    @property
+    @pulumi.getter(name="connectionMemoryLimit")
+    def connection_memory_limit(self) -> Optional[pulumi.Input[str]]:
+        """
+        Set the maximum amount of memory that can be used by a single user connection.
+        """
+        return pulumi.get(self, "connection_memory_limit")
+
+    @connection_memory_limit.setter
+    def connection_memory_limit(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_memory_limit", value)
+
+    @property
+    @pulumi.getter(name="cteMaxRecursionDepth")
+    def cte_max_recursion_depth(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("cte_max_recursion_depth")
+        """
+        return pulumi.get(self, "cte_max_recursion_depth")
+
+    @cte_max_recursion_depth.setter
+    def cte_max_recursion_depth(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cte_max_recursion_depth", value)
+
+    @property
+    @pulumi.getter(name="defaultAuthenticationPlugin")
+    def default_authentication_plugin(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("default_authentication_plugin")
+        """
+        return pulumi.get(self, "default_authentication_plugin")
+
+    @default_authentication_plugin.setter
+    def default_authentication_plugin(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "default_authentication_plugin", value)
+
+    @property
+    @pulumi.getter(name="foreignKeyChecks")
+    def foreign_key_checks(self) -> Optional[pulumi.Input[bool]]:
+        """
+        ("foreign_key_checks")
+        """
+        return pulumi.get(self, "foreign_key_checks")
+
+    @foreign_key_checks.setter
+    def foreign_key_checks(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "foreign_key_checks", value)
+
+    @property
+    @pulumi.getter(name="generatedRandomPasswordLength")
+    def generated_random_password_length(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "generated_random_password_length")
+
+    @generated_random_password_length.setter
+    def generated_random_password_length(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "generated_random_password_length", value)
+
+    @property
+    @pulumi.getter(name="globalConnectionMemoryLimit")
+    def global_connection_memory_limit(self) -> Optional[pulumi.Input[str]]:
+        """
+        Set the total amount of memory that can be used by all user connections.
+        """
+        return pulumi.get(self, "global_connection_memory_limit")
+
+    @global_connection_memory_limit.setter
+    def global_connection_memory_limit(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "global_connection_memory_limit", value)
+
+    @property
+    @pulumi.getter(name="globalConnectionMemoryTracking")
+    def global_connection_memory_tracking(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Determines whether the MySQL server calculates Global_connection_memory.
+        """
+        return pulumi.get(self, "global_connection_memory_tracking")
+
+    @global_connection_memory_tracking.setter
+    def global_connection_memory_tracking(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "global_connection_memory_tracking", value)
+
+    @property
+    @pulumi.getter(name="groupReplicationConsistency")
+    def group_replication_consistency(self) -> Optional[pulumi.Input[str]]:
+        """
+        * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+        * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+        * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+        """
+        return pulumi.get(self, "group_replication_consistency")
+
+    @group_replication_consistency.setter
+    def group_replication_consistency(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "group_replication_consistency", value)
+
+    @property
+    @pulumi.getter(name="informationSchemaStatsExpiry")
+    def information_schema_stats_expiry(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("information_schema_stats_expiry")
+        """
+        return pulumi.get(self, "information_schema_stats_expiry")
+
+    @information_schema_stats_expiry.setter
+    def information_schema_stats_expiry(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "information_schema_stats_expiry", value)
+
+    @property
+    @pulumi.getter(name="innodbBufferPoolDumpPct")
+    def innodb_buffer_pool_dump_pct(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+        """
+        return pulumi.get(self, "innodb_buffer_pool_dump_pct")
+
+    @innodb_buffer_pool_dump_pct.setter
+    def innodb_buffer_pool_dump_pct(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_buffer_pool_dump_pct", value)
+
+    @property
+    @pulumi.getter(name="innodbBufferPoolInstances")
+    def innodb_buffer_pool_instances(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("innodb_buffer_pool_instances")
+        """
+        return pulumi.get(self, "innodb_buffer_pool_instances")
+
+    @innodb_buffer_pool_instances.setter
+    def innodb_buffer_pool_instances(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_buffer_pool_instances", value)
+
+    @property
+    @pulumi.getter(name="innodbBufferPoolSize")
+    def innodb_buffer_pool_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+        """
+        return pulumi.get(self, "innodb_buffer_pool_size")
+
+    @innodb_buffer_pool_size.setter
+    def innodb_buffer_pool_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_buffer_pool_size", value)
+
+    @property
+    @pulumi.getter(name="innodbDdlBufferSize")
+    def innodb_ddl_buffer_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        """
+        return pulumi.get(self, "innodb_ddl_buffer_size")
+
+    @innodb_ddl_buffer_size.setter
+    def innodb_ddl_buffer_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_ddl_buffer_size", value)
+
+    @property
+    @pulumi.getter(name="innodbDdlThreads")
+    def innodb_ddl_threads(self) -> Optional[pulumi.Input[int]]:
+        """
+        innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        """
+        return pulumi.get(self, "innodb_ddl_threads")
+
+    @innodb_ddl_threads.setter
+    def innodb_ddl_threads(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_ddl_threads", value)
+
+    @property
+    @pulumi.getter(name="innodbFtEnableStopword")
+    def innodb_ft_enable_stopword(self) -> Optional[pulumi.Input[bool]]:
+        """
+        ("innodb_ft_enable_stopword")
+        """
+        return pulumi.get(self, "innodb_ft_enable_stopword")
+
+    @innodb_ft_enable_stopword.setter
+    def innodb_ft_enable_stopword(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "innodb_ft_enable_stopword", value)
+
+    @property
+    @pulumi.getter(name="innodbFtMaxTokenSize")
+    def innodb_ft_max_token_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("innodb_ft_max_token_size")
+        """
+        return pulumi.get(self, "innodb_ft_max_token_size")
+
+    @innodb_ft_max_token_size.setter
+    def innodb_ft_max_token_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_ft_max_token_size", value)
+
+    @property
+    @pulumi.getter(name="innodbFtMinTokenSize")
+    def innodb_ft_min_token_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("innodb_ft_min_token_size")
+        """
+        return pulumi.get(self, "innodb_ft_min_token_size")
+
+    @innodb_ft_min_token_size.setter
+    def innodb_ft_min_token_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_ft_min_token_size", value)
+
+    @property
+    @pulumi.getter(name="innodbFtNumWordOptimize")
+    def innodb_ft_num_word_optimize(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("innodb_ft_num_word_optimize")
+        """
+        return pulumi.get(self, "innodb_ft_num_word_optimize")
+
+    @innodb_ft_num_word_optimize.setter
+    def innodb_ft_num_word_optimize(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_ft_num_word_optimize", value)
+
+    @property
+    @pulumi.getter(name="innodbFtResultCacheLimit")
+    def innodb_ft_result_cache_limit(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("innodb_ft_result_cache_limit")
+        """
+        return pulumi.get(self, "innodb_ft_result_cache_limit")
+
+    @innodb_ft_result_cache_limit.setter
+    def innodb_ft_result_cache_limit(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_ft_result_cache_limit", value)
+
+    @property
+    @pulumi.getter(name="innodbFtServerStopwordTable")
+    def innodb_ft_server_stopword_table(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("innodb_ft_server_stopword_table")
+        """
+        return pulumi.get(self, "innodb_ft_server_stopword_table")
+
+    @innodb_ft_server_stopword_table.setter
+    def innodb_ft_server_stopword_table(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_ft_server_stopword_table", value)
+
+    @property
+    @pulumi.getter(name="innodbLockWaitTimeout")
+    def innodb_lock_wait_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("innodb_lock_wait_timeout")
+        """
+        return pulumi.get(self, "innodb_lock_wait_timeout")
+
+    @innodb_lock_wait_timeout.setter
+    def innodb_lock_wait_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_lock_wait_timeout", value)
+
+    @property
+    @pulumi.getter(name="innodbLogWriterThreads")
+    def innodb_log_writer_threads(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+        """
+        return pulumi.get(self, "innodb_log_writer_threads")
+
+    @innodb_log_writer_threads.setter
+    def innodb_log_writer_threads(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "innodb_log_writer_threads", value)
+
+    @property
+    @pulumi.getter(name="innodbMaxPurgeLag")
+    def innodb_max_purge_lag(self) -> Optional[pulumi.Input[str]]:
+        """
+        The desired maximum purge lag in terms of transactions.
+        """
+        return pulumi.get(self, "innodb_max_purge_lag")
+
+    @innodb_max_purge_lag.setter
+    def innodb_max_purge_lag(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_max_purge_lag", value)
+
+    @property
+    @pulumi.getter(name="innodbMaxPurgeLagDelay")
+    def innodb_max_purge_lag_delay(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+        """
+        return pulumi.get(self, "innodb_max_purge_lag_delay")
+
+    @innodb_max_purge_lag_delay.setter
+    def innodb_max_purge_lag_delay(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "innodb_max_purge_lag_delay", value)
+
+    @property
+    @pulumi.getter(name="innodbStatsPersistentSamplePages")
+    def innodb_stats_persistent_sample_pages(self) -> Optional[pulumi.Input[str]]:
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        """
+        return pulumi.get(self, "innodb_stats_persistent_sample_pages")
+
+    @innodb_stats_persistent_sample_pages.setter
+    def innodb_stats_persistent_sample_pages(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_stats_persistent_sample_pages", value)
+
+    @property
+    @pulumi.getter(name="innodbStatsTransientSamplePages")
+    def innodb_stats_transient_sample_pages(self) -> Optional[pulumi.Input[str]]:
+        """
+        The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        """
+        return pulumi.get(self, "innodb_stats_transient_sample_pages")
+
+    @innodb_stats_transient_sample_pages.setter
+    def innodb_stats_transient_sample_pages(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "innodb_stats_transient_sample_pages", value)
+
+    @property
+    @pulumi.getter(name="interactiveTimeout")
+    def interactive_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds the server waits for activity on an interactive connection before closing it.
+        """
+        return pulumi.get(self, "interactive_timeout")
+
+    @interactive_timeout.setter
+    def interactive_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "interactive_timeout", value)
+
+    @property
+    @pulumi.getter(name="localInfile")
+    def local_infile(self) -> Optional[pulumi.Input[bool]]:
+        """
+        ("local_infile")
+        """
+        return pulumi.get(self, "local_infile")
+
+    @local_infile.setter
+    def local_infile(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "local_infile", value)
+
+    @property
+    @pulumi.getter(name="mandatoryRoles")
+    def mandatory_roles(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("mandatory_roles")
+        """
+        return pulumi.get(self, "mandatory_roles")
+
+    @mandatory_roles.setter
+    def mandatory_roles(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mandatory_roles", value)
+
+    @property
+    @pulumi.getter(name="maxAllowedPacket")
+    def max_allowed_packet(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum size of one packet or any generated/intermediate string.
+        """
+        return pulumi.get(self, "max_allowed_packet")
+
+    @max_allowed_packet.setter
+    def max_allowed_packet(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_allowed_packet", value)
+
+    @property
+    @pulumi.getter(name="maxBinlogCacheSize")
+    def max_binlog_cache_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        Sets the size of the transaction cache.
+        """
+        return pulumi.get(self, "max_binlog_cache_size")
+
+    @max_binlog_cache_size.setter
+    def max_binlog_cache_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_binlog_cache_size", value)
+
+    @property
+    @pulumi.getter(name="maxConnectErrors")
+    def max_connect_errors(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("max_connect_errors")
+        """
+        return pulumi.get(self, "max_connect_errors")
+
+    @max_connect_errors.setter
+    def max_connect_errors(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_connect_errors", value)
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("max_connections")
+        """
+        return pulumi.get(self, "max_connections")
+
+    @max_connections.setter
+    def max_connections(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_connections", value)
+
+    @property
+    @pulumi.getter(name="maxExecutionTime")
+    def max_execution_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("max_execution_time")
+        """
+        return pulumi.get(self, "max_execution_time")
+
+    @max_execution_time.setter
+    def max_execution_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_execution_time", value)
+
+    @property
+    @pulumi.getter(name="maxHeapTableSize")
+    def max_heap_table_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+        """
+        return pulumi.get(self, "max_heap_table_size")
+
+    @max_heap_table_size.setter
+    def max_heap_table_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_heap_table_size", value)
+
+    @property
+    @pulumi.getter(name="maxPreparedStmtCount")
+    def max_prepared_stmt_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("max_prepared_stmt_count")
+        """
+        return pulumi.get(self, "max_prepared_stmt_count")
+
+    @max_prepared_stmt_count.setter
+    def max_prepared_stmt_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_prepared_stmt_count", value)
+
+    @property
+    @pulumi.getter(name="mysqlFirewallMode")
+    def mysql_firewall_mode(self) -> Optional[pulumi.Input[bool]]:
+        """
+        ("mysql_firewall_mode")
+        """
+        return pulumi.get(self, "mysql_firewall_mode")
+
+    @mysql_firewall_mode.setter
+    def mysql_firewall_mode(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "mysql_firewall_mode", value)
+
+    @property
+    @pulumi.getter(name="mysqlZstdDefaultCompressionLevel")
+    def mysql_zstd_default_compression_level(self) -> Optional[pulumi.Input[int]]:
+        """
+        DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+        """
+        return pulumi.get(self, "mysql_zstd_default_compression_level")
+
+    @mysql_zstd_default_compression_level.setter
+    def mysql_zstd_default_compression_level(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysql_zstd_default_compression_level", value)
+
+    @property
+    @pulumi.getter(name="mysqlxConnectTimeout")
+    def mysqlx_connect_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+        """
+        return pulumi.get(self, "mysqlx_connect_timeout")
+
+    @mysqlx_connect_timeout.setter
+    def mysqlx_connect_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_connect_timeout", value)
+
+    @property
+    @pulumi.getter(name="mysqlxDeflateDefaultCompressionLevel")
+    def mysqlx_deflate_default_compression_level(self) -> Optional[pulumi.Input[int]]:
+        """
+        Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_deflate_default_compression_level")
+
+    @mysqlx_deflate_default_compression_level.setter
+    def mysqlx_deflate_default_compression_level(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_deflate_default_compression_level", value)
+
+    @property
+    @pulumi.getter(name="mysqlxDeflateMaxClientCompressionLevel")
+    def mysqlx_deflate_max_client_compression_level(self) -> Optional[pulumi.Input[int]]:
+        """
+        Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_deflate_max_client_compression_level")
+
+    @mysqlx_deflate_max_client_compression_level.setter
+    def mysqlx_deflate_max_client_compression_level(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_deflate_max_client_compression_level", value)
+
+    @property
+    @pulumi.getter(name="mysqlxDocumentIdUniquePrefix")
+    def mysqlx_document_id_unique_prefix(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "mysqlx_document_id_unique_prefix")
+
+    @mysqlx_document_id_unique_prefix.setter
+    def mysqlx_document_id_unique_prefix(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_document_id_unique_prefix", value)
+
+    @property
+    @pulumi.getter(name="mysqlxEnableHelloNotice")
+    def mysqlx_enable_hello_notice(self) -> Optional[pulumi.Input[bool]]:
+        """
+        ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "mysqlx_enable_hello_notice")
+
+    @mysqlx_enable_hello_notice.setter
+    def mysqlx_enable_hello_notice(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "mysqlx_enable_hello_notice", value)
+
+    @property
+    @pulumi.getter(name="mysqlxIdleWorkerThreadTimeout")
+    def mysqlx_idle_worker_thread_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "mysqlx_idle_worker_thread_timeout")
+
+    @mysqlx_idle_worker_thread_timeout.setter
+    def mysqlx_idle_worker_thread_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_idle_worker_thread_timeout", value)
+
+    @property
+    @pulumi.getter(name="mysqlxInteractiveTimeout")
+    def mysqlx_interactive_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds to wait for interactive clients to timeout.
+        """
+        return pulumi.get(self, "mysqlx_interactive_timeout")
+
+    @mysqlx_interactive_timeout.setter
+    def mysqlx_interactive_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_interactive_timeout", value)
+
+    @property
+    @pulumi.getter(name="mysqlxLz4defaultCompressionLevel")
+    def mysqlx_lz4default_compression_level(self) -> Optional[pulumi.Input[int]]:
+        """
+        Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_lz4default_compression_level")
+
+    @mysqlx_lz4default_compression_level.setter
+    def mysqlx_lz4default_compression_level(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_lz4default_compression_level", value)
+
+    @property
+    @pulumi.getter(name="mysqlxLz4maxClientCompressionLevel")
+    def mysqlx_lz4max_client_compression_level(self) -> Optional[pulumi.Input[int]]:
+        """
+        Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_lz4max_client_compression_level")
+
+    @mysqlx_lz4max_client_compression_level.setter
+    def mysqlx_lz4max_client_compression_level(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_lz4max_client_compression_level", value)
+
+    @property
+    @pulumi.getter(name="mysqlxMaxAllowedPacket")
+    def mysqlx_max_allowed_packet(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum size of network packets that can be received by X Plugin.
+        """
+        return pulumi.get(self, "mysqlx_max_allowed_packet")
+
+    @mysqlx_max_allowed_packet.setter
+    def mysqlx_max_allowed_packet(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_max_allowed_packet", value)
+
+    @property
+    @pulumi.getter(name="mysqlxMinWorkerThreads")
+    def mysqlx_min_worker_threads(self) -> Optional[pulumi.Input[int]]:
+        """
+        ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "mysqlx_min_worker_threads")
+
+    @mysqlx_min_worker_threads.setter
+    def mysqlx_min_worker_threads(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_min_worker_threads", value)
+
+    @property
+    @pulumi.getter(name="mysqlxReadTimeout")
+    def mysqlx_read_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+        """
+        return pulumi.get(self, "mysqlx_read_timeout")
+
+    @mysqlx_read_timeout.setter
+    def mysqlx_read_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_read_timeout", value)
+
+    @property
+    @pulumi.getter(name="mysqlxWaitTimeout")
+    def mysqlx_wait_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds that X Plugin waits for activity on a connection.
+        """
+        return pulumi.get(self, "mysqlx_wait_timeout")
+
+    @mysqlx_wait_timeout.setter
+    def mysqlx_wait_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_wait_timeout", value)
+
+    @property
+    @pulumi.getter(name="mysqlxWriteTimeout")
+    def mysqlx_write_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+        """
+        return pulumi.get(self, "mysqlx_write_timeout")
+
+    @mysqlx_write_timeout.setter
+    def mysqlx_write_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_write_timeout", value)
+
+    @property
+    @pulumi.getter(name="mysqlxZstdDefaultCompressionLevel")
+    def mysqlx_zstd_default_compression_level(self) -> Optional[pulumi.Input[int]]:
+        """
+        Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_zstd_default_compression_level")
+
+    @mysqlx_zstd_default_compression_level.setter
+    def mysqlx_zstd_default_compression_level(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_zstd_default_compression_level", value)
+
+    @property
+    @pulumi.getter(name="mysqlxZstdMaxClientCompressionLevel")
+    def mysqlx_zstd_max_client_compression_level(self) -> Optional[pulumi.Input[int]]:
+        """
+        Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
+        """
+        return pulumi.get(self, "mysqlx_zstd_max_client_compression_level")
+
+    @mysqlx_zstd_max_client_compression_level.setter
+    def mysqlx_zstd_max_client_compression_level(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "mysqlx_zstd_max_client_compression_level", value)
+
+    @property
+    @pulumi.getter(name="netReadTimeout")
+    def net_read_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds to wait for more data from a connection before aborting the read.
+        """
+        return pulumi.get(self, "net_read_timeout")
+
+    @net_read_timeout.setter
+    def net_read_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "net_read_timeout", value)
+
+    @property
+    @pulumi.getter(name="netWriteTimeout")
+    def net_write_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds to wait for a block to be written to a connection before aborting the write.
+        """
+        return pulumi.get(self, "net_write_timeout")
+
+    @net_write_timeout.setter
+    def net_write_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "net_write_timeout", value)
+
+    @property
+    @pulumi.getter(name="parserMaxMemSize")
+    def parser_max_mem_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("parser_max_mem_size")
+        """
+        return pulumi.get(self, "parser_max_mem_size")
+
+    @parser_max_mem_size.setter
+    def parser_max_mem_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "parser_max_mem_size", value)
+
+    @property
+    @pulumi.getter(name="queryAllocBlockSize")
+    def query_alloc_block_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "query_alloc_block_size")
+
+    @query_alloc_block_size.setter
+    def query_alloc_block_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query_alloc_block_size", value)
+
+    @property
+    @pulumi.getter(name="queryPreallocSize")
+    def query_prealloc_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
+        """
+        return pulumi.get(self, "query_prealloc_size")
+
+    @query_prealloc_size.setter
+    def query_prealloc_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query_prealloc_size", value)
+
+    @property
+    @pulumi.getter(name="regexpTimeLimit")
+    def regexp_time_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        """
+        return pulumi.get(self, "regexp_time_limit")
+
+    @regexp_time_limit.setter
+    def regexp_time_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "regexp_time_limit", value)
+
+    @property
+    @pulumi.getter(name="sortBufferSize")
+    def sort_buffer_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        Each session that must perform a sort allocates a buffer of this size.
+        """
+        return pulumi.get(self, "sort_buffer_size")
+
+    @sort_buffer_size.setter
+    def sort_buffer_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sort_buffer_size", value)
+
+    @property
+    @pulumi.getter(name="sqlMode")
+    def sql_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("sql_mode")
+        """
+        return pulumi.get(self, "sql_mode")
+
+    @sql_mode.setter
+    def sql_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sql_mode", value)
+
+    @property
+    @pulumi.getter(name="sqlRequirePrimaryKey")
+    def sql_require_primary_key(self) -> Optional[pulumi.Input[bool]]:
+        """
+        ("sql_require_primary_key")
+        """
+        return pulumi.get(self, "sql_require_primary_key")
+
+    @sql_require_primary_key.setter
+    def sql_require_primary_key(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "sql_require_primary_key", value)
+
+    @property
+    @pulumi.getter(name="sqlWarnings")
+    def sql_warnings(self) -> Optional[pulumi.Input[bool]]:
+        """
+        ("sql_warnings")
+        """
+        return pulumi.get(self, "sql_warnings")
+
+    @sql_warnings.setter
+    def sql_warnings(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "sql_warnings", value)
+
+    @property
+    @pulumi.getter(name="threadPoolDedicatedListeners")
+    def thread_pool_dedicated_listeners(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        """
+        return pulumi.get(self, "thread_pool_dedicated_listeners")
+
+    @thread_pool_dedicated_listeners.setter
+    def thread_pool_dedicated_listeners(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "thread_pool_dedicated_listeners", value)
+
+    @property
+    @pulumi.getter(name="threadPoolMaxTransactionsLimit")
+    def thread_pool_max_transactions_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        """
+        return pulumi.get(self, "thread_pool_max_transactions_limit")
+
+    @thread_pool_max_transactions_limit.setter
+    def thread_pool_max_transactions_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "thread_pool_max_transactions_limit", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> Optional[pulumi.Input[str]]:
+        """
+        Initializes the time zone for each client that connects.
+        """
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_zone", value)
+
+    @property
+    @pulumi.getter(name="tmpTableSize")
+    def tmp_table_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+        """
+        return pulumi.get(self, "tmp_table_size")
+
+    @tmp_table_size.setter
+    def tmp_table_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tmp_table_size", value)
+
+    @property
+    @pulumi.getter(name="transactionIsolation")
+    def transaction_isolation(self) -> Optional[pulumi.Input[str]]:
+        """
+        ("transaction_isolation")
+        """
+        return pulumi.get(self, "transaction_isolation")
+
+    @transaction_isolation.setter
+    def transaction_isolation(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "transaction_isolation", value)
+
+    @property
+    @pulumi.getter(name="waitTimeout")
+    def wait_timeout(self) -> Optional[pulumi.Input[int]]:
+        """
+        The number of seconds the server waits for activity on a noninteractive connection before closing it.
+        """
+        return pulumi.get(self, "wait_timeout")
+
+    @wait_timeout.setter
+    def wait_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "wait_timeout", value)
 
 
 @pulumi.input_type

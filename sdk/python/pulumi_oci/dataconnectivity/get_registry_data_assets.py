@@ -124,7 +124,7 @@ class GetRegistryDataAssetsResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -198,15 +198,15 @@ def get_registry_data_assets(endpoint_ids: Optional[Sequence[str]] = None,
     ```
 
 
-    :param Sequence[str] endpoint_ids: Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
-    :param Sequence[str] exclude_endpoint_ids: Endpoints which will be excluded while listing dataAssets
-    :param Sequence[str] exclude_types: Types which wont be listed while listing dataAsset/Connection
+    :param Sequence[str] endpoint_ids: Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
+    :param Sequence[str] exclude_endpoint_ids: Endpoints which will be excluded while listing data assets.
+    :param Sequence[str] exclude_types: The types that will be excluded from the list of data assets/connections.
     :param str favorites_query_param: If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
     :param Sequence[str] fields: Specifies the fields to get for an object.
     :param str folder_id: Unique key of the folder.
-    :param Sequence[str] include_types: DataAsset type which needs to be listed while listing dataAssets
+    :param Sequence[str] include_types: Artifact type which needs to be listed while listing Artifacts.
     :param str name: Used to filter by the name of the object.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     :param str type: Specific DataAsset Type
     """
     __args__ = dict()
@@ -276,15 +276,15 @@ def get_registry_data_assets_output(endpoint_ids: Optional[pulumi.Input[Optional
     ```
 
 
-    :param Sequence[str] endpoint_ids: Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
-    :param Sequence[str] exclude_endpoint_ids: Endpoints which will be excluded while listing dataAssets
-    :param Sequence[str] exclude_types: Types which wont be listed while listing dataAsset/Connection
+    :param Sequence[str] endpoint_ids: Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
+    :param Sequence[str] exclude_endpoint_ids: Endpoints which will be excluded while listing data assets.
+    :param Sequence[str] exclude_types: The types that will be excluded from the list of data assets/connections.
     :param str favorites_query_param: If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
     :param Sequence[str] fields: Specifies the fields to get for an object.
     :param str folder_id: Unique key of the folder.
-    :param Sequence[str] include_types: DataAsset type which needs to be listed while listing dataAssets
+    :param Sequence[str] include_types: Artifact type which needs to be listed while listing Artifacts.
     :param str name: Used to filter by the name of the object.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     :param str type: Specific DataAsset Type
     """
     ...

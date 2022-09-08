@@ -383,6 +383,7 @@ class GetCategoriesCategoryCollectionResult(dict):
 class GetCategoriesCategoryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
+                 compartment_name: str,
                  description: str,
                  estimated_cost_saving: float,
                  extended_metadata: Mapping[str, Any],
@@ -395,6 +396,7 @@ class GetCategoriesCategoryCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The OCID of the compartment.
+        :param str compartment_name: The name associated with the compartment.
         :param str description: Text describing the category.
         :param float estimated_cost_saving: The estimated cost savings, in dollars, for the category.
         :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs for the category.
@@ -407,6 +409,7 @@ class GetCategoriesCategoryCollectionItemResult(dict):
         :param str time_updated: The date and time the category details were last updated, in the format defined by RFC3339.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_name", compartment_name)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
         pulumi.set(__self__, "extended_metadata", extended_metadata)
@@ -425,6 +428,14 @@ class GetCategoriesCategoryCollectionItemResult(dict):
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="compartmentName")
+    def compartment_name(self) -> str:
+        """
+        The name associated with the compartment.
+        """
+        return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter

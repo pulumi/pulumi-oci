@@ -20,7 +20,9 @@ class AnalyticsInstancePrivateAccessChannelArgs:
                  display_name: pulumi.Input[str],
                  private_source_dns_zones: pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]],
                  subnet_id: pulumi.Input[str],
-                 vcn_id: pulumi.Input[str]):
+                 vcn_id: pulumi.Input[str],
+                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] = None):
         """
         The set of arguments for constructing a AnalyticsInstancePrivateAccessChannel resource.
         :param pulumi.Input[str] analytics_instance_id: The OCID of the AnalyticsInstance.
@@ -28,12 +30,18 @@ class AnalyticsInstancePrivateAccessChannelArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         :param pulumi.Input[str] subnet_id: (Updatable) OCID of the customer subnet connected to private access channel.
         :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) Network Security Group OCIDs for an Analytics instance.
+        :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]] private_source_scan_hosts: (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
         """
         pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "private_source_dns_zones", private_source_dns_zones)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
+        if network_security_group_ids is not None:
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if private_source_scan_hosts is not None:
+            pulumi.set(__self__, "private_source_scan_hosts", private_source_scan_hosts)
 
     @property
     @pulumi.getter(name="analyticsInstanceId")
@@ -95,6 +103,30 @@ class AnalyticsInstancePrivateAccessChannelArgs:
     def vcn_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "vcn_id", value)
 
+    @property
+    @pulumi.getter(name="networkSecurityGroupIds")
+    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Network Security Group OCIDs for an Analytics instance.
+        """
+        return pulumi.get(self, "network_security_group_ids")
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "network_security_group_ids", value)
+
+    @property
+    @pulumi.getter(name="privateSourceScanHosts")
+    def private_source_scan_hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]]:
+        """
+        (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        """
+        return pulumi.get(self, "private_source_scan_hosts")
+
+    @private_source_scan_hosts.setter
+    def private_source_scan_hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]]):
+        pulumi.set(self, "private_source_scan_hosts", value)
+
 
 @pulumi.input_type
 class _AnalyticsInstancePrivateAccessChannelState:
@@ -104,7 +136,9 @@ class _AnalyticsInstancePrivateAccessChannelState:
                  egress_source_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
+                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_source_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]] = None,
+                 private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
@@ -114,7 +148,9 @@ class _AnalyticsInstancePrivateAccessChannelState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] egress_source_ip_addresses: The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
         :param pulumi.Input[str] ip_address: IP Address of the Private Access channel.
         :param pulumi.Input[str] key: Private Access Channel unique identifier key.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) Network Security Group OCIDs for an Analytics instance.
         :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+        :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]] private_source_scan_hosts: (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
         :param pulumi.Input[str] subnet_id: (Updatable) OCID of the customer subnet connected to private access channel.
         :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel.
         """
@@ -128,8 +164,12 @@ class _AnalyticsInstancePrivateAccessChannelState:
             pulumi.set(__self__, "ip_address", ip_address)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if network_security_group_ids is not None:
+            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if private_source_dns_zones is not None:
             pulumi.set(__self__, "private_source_dns_zones", private_source_dns_zones)
+        if private_source_scan_hosts is not None:
+            pulumi.set(__self__, "private_source_scan_hosts", private_source_scan_hosts)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if vcn_id is not None:
@@ -196,6 +236,18 @@ class _AnalyticsInstancePrivateAccessChannelState:
         pulumi.set(self, "key", value)
 
     @property
+    @pulumi.getter(name="networkSecurityGroupIds")
+    def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Network Security Group OCIDs for an Analytics instance.
+        """
+        return pulumi.get(self, "network_security_group_ids")
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "network_security_group_ids", value)
+
+    @property
     @pulumi.getter(name="privateSourceDnsZones")
     def private_source_dns_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]]:
         """
@@ -206,6 +258,18 @@ class _AnalyticsInstancePrivateAccessChannelState:
     @private_source_dns_zones.setter
     def private_source_dns_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]]):
         pulumi.set(self, "private_source_dns_zones", value)
+
+    @property
+    @pulumi.getter(name="privateSourceScanHosts")
+    def private_source_scan_hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]]:
+        """
+        (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        """
+        return pulumi.get(self, "private_source_scan_hosts")
+
+    @private_source_scan_hosts.setter
+    def private_source_scan_hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]]):
+        pulumi.set(self, "private_source_scan_hosts", value)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -239,7 +303,9 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  analytics_instance_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_source_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]]] = None,
+                 private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -263,7 +329,13 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                 description=var["analytics_instance_private_access_channel_private_source_dns_zones_description"],
             )],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"])
+            vcn_id=oci_core_vcn["test_vcn"]["id"],
+            network_security_group_ids=var["analytics_instance_private_access_channel_network_security_group_ids"],
+            private_source_scan_hosts=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs(
+                scan_hostname=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname"],
+                scan_port=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_port"],
+                description=var["analytics_instance_private_access_channel_private_source_scan_hosts_description"],
+            )])
         ```
 
         ## Import
@@ -278,7 +350,9 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] analytics_instance_id: The OCID of the AnalyticsInstance.
         :param pulumi.Input[str] display_name: (Updatable) Display Name of the Private Access Channel.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) Network Security Group OCIDs for an Analytics instance.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] private_source_scan_hosts: (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
         :param pulumi.Input[str] subnet_id: (Updatable) OCID of the customer subnet connected to private access channel.
         :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel.
         """
@@ -308,7 +382,13 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                 description=var["analytics_instance_private_access_channel_private_source_dns_zones_description"],
             )],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"])
+            vcn_id=oci_core_vcn["test_vcn"]["id"],
+            network_security_group_ids=var["analytics_instance_private_access_channel_network_security_group_ids"],
+            private_source_scan_hosts=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs(
+                scan_hostname=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname"],
+                scan_port=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_port"],
+                description=var["analytics_instance_private_access_channel_private_source_scan_hosts_description"],
+            )])
         ```
 
         ## Import
@@ -336,7 +416,9 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  analytics_instance_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_source_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]]] = None,
+                 private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -354,9 +436,11 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             if private_source_dns_zones is None and not opts.urn:
                 raise TypeError("Missing required property 'private_source_dns_zones'")
             __props__.__dict__["private_source_dns_zones"] = private_source_dns_zones
+            __props__.__dict__["private_source_scan_hosts"] = private_source_scan_hosts
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -381,7 +465,9 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
             egress_source_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ip_address: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
+            network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_source_dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]]] = None,
+            private_source_scan_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'AnalyticsInstancePrivateAccessChannel':
         """
@@ -396,7 +482,9 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] egress_source_ip_addresses: The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
         :param pulumi.Input[str] ip_address: IP Address of the Private Access channel.
         :param pulumi.Input[str] key: Private Access Channel unique identifier key.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) Network Security Group OCIDs for an Analytics instance.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs']]]] private_source_dns_zones: (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs']]]] private_source_scan_hosts: (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
         :param pulumi.Input[str] subnet_id: (Updatable) OCID of the customer subnet connected to private access channel.
         :param pulumi.Input[str] vcn_id: (Updatable) OCID of the customer VCN peered with private access channel.
         """
@@ -409,7 +497,9 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         __props__.__dict__["egress_source_ip_addresses"] = egress_source_ip_addresses
         __props__.__dict__["ip_address"] = ip_address
         __props__.__dict__["key"] = key
+        __props__.__dict__["network_security_group_ids"] = network_security_group_ids
         __props__.__dict__["private_source_dns_zones"] = private_source_dns_zones
+        __props__.__dict__["private_source_scan_hosts"] = private_source_scan_hosts
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["vcn_id"] = vcn_id
         return AnalyticsInstancePrivateAccessChannel(resource_name, opts=opts, __props__=__props__)
@@ -455,12 +545,28 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         return pulumi.get(self, "key")
 
     @property
+    @pulumi.getter(name="networkSecurityGroupIds")
+    def network_security_group_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) Network Security Group OCIDs for an Analytics instance.
+        """
+        return pulumi.get(self, "network_security_group_ids")
+
+    @property
     @pulumi.getter(name="privateSourceDnsZones")
     def private_source_dns_zones(self) -> pulumi.Output[Sequence['outputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone']]:
         """
         (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         """
         return pulumi.get(self, "private_source_dns_zones")
+
+    @property
+    @pulumi.getter(name="privateSourceScanHosts")
+    def private_source_scan_hosts(self) -> pulumi.Output[Sequence['outputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost']]:
+        """
+        (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        """
+        return pulumi.get(self, "private_source_scan_hosts")
 
     @property
     @pulumi.getter(name="subnetId")

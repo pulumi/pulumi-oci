@@ -21,11 +21,11 @@ class RegistryArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Registry resource.
-        :param pulumi.Input[str] display_name: (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+        :param pulumi.Input[str] display_name: (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Data Connectivity Management Registry description
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "display_name", display_name)
         if compartment_id is not None:
@@ -41,7 +41,7 @@ class RegistryArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+        (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
         """
         return pulumi.get(self, "display_name")
 
@@ -89,7 +89,7 @@ class RegistryArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -116,13 +116,13 @@ class _RegistryState:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Data Connectivity Management Registry description
-        :param pulumi.Input[str] display_name: (Updatable) Data Connectivity Management Registry display name, registries can be renamed
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] state: Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+        :param pulumi.Input[str] display_name: (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] state: Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
         :param pulumi.Input[str] state_message: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] time_created: The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] updated_by: Name of the user who updated the DCMS Registry.
+        :param pulumi.Input[str] time_created: Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_updated: Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] updated_by: Name of the user who updated the DCMS registry.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -185,7 +185,7 @@ class _RegistryState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+        (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
         """
         return pulumi.get(self, "display_name")
 
@@ -197,7 +197,7 @@ class _RegistryState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -209,7 +209,7 @@ class _RegistryState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+        Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -233,7 +233,7 @@ class _RegistryState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -245,7 +245,7 @@ class _RegistryState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -257,7 +257,7 @@ class _RegistryState:
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> Optional[pulumi.Input[str]]:
         """
-        Name of the user who updated the DCMS Registry.
+        Name of the user who updated the DCMS registry.
         """
         return pulumi.get(self, "updated_by")
 
@@ -280,7 +280,7 @@ class Registry(pulumi.CustomResource):
         """
         This resource provides the Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
 
-        Creates a new Data Connectivity Management Registry ready for performing data Connectivity Management.
+        Creates a new Data Connectivity Management registry ready to perform data connectivity management.
 
         ## Example Usage
 
@@ -313,8 +313,8 @@ class Registry(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Data Connectivity Management Registry description
-        :param pulumi.Input[str] display_name: (Updatable) Data Connectivity Management Registry display name, registries can be renamed
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] display_name: (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         ...
     @overload
@@ -325,7 +325,7 @@ class Registry(pulumi.CustomResource):
         """
         This resource provides the Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
 
-        Creates a new Data Connectivity Management Registry ready for performing data Connectivity Management.
+        Creates a new Data Connectivity Management registry ready to perform data connectivity management.
 
         ## Example Usage
 
@@ -424,13 +424,13 @@ class Registry(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Data Connectivity Management Registry description
-        :param pulumi.Input[str] display_name: (Updatable) Data Connectivity Management Registry display name, registries can be renamed
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] state: Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+        :param pulumi.Input[str] display_name: (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] state: Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
         :param pulumi.Input[str] state_message: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] time_created: The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] updated_by: Name of the user who updated the DCMS Registry.
+        :param pulumi.Input[str] time_created: Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_updated: Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] updated_by: Name of the user who updated the DCMS registry.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -476,7 +476,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+        (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
         """
         return pulumi.get(self, "display_name")
 
@@ -484,7 +484,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -492,7 +492,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+        Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -508,7 +508,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -516,7 +516,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -524,7 +524,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> pulumi.Output[str]:
         """
-        Name of the user who updated the DCMS Registry.
+        Name of the user who updated the DCMS registry.
         """
         return pulumi.get(self, "updated_by")
 

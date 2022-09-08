@@ -44,7 +44,8 @@ class VmClusterArgs:
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-        :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of Db server.
@@ -175,7 +176,7 @@ class VmClusterArgs:
     @pulumi.getter(name="dataCollectionOptions")
     def data_collection_options(self) -> Optional[pulumi.Input['VmClusterDataCollectionOptionsArgs']]:
         """
-        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
@@ -186,6 +187,9 @@ class VmClusterArgs:
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The data disk group size to be allocated in GBs.
+        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
@@ -357,7 +361,8 @@ class _VmClusterState:
         Input properties used for looking up and filtering VmCluster resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
-        :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        :param pulumi.Input['VmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of Db server.
@@ -474,7 +479,7 @@ class _VmClusterState:
     @pulumi.getter(name="dataCollectionOptions")
     def data_collection_options(self) -> Optional[pulumi.Input['VmClusterDataCollectionOptionsArgs']]:
         """
-        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
@@ -485,6 +490,9 @@ class _VmClusterState:
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The data disk group size to be allocated in GBs.
+        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
@@ -809,6 +817,8 @@ class VmCluster(pulumi.CustomResource):
             vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
             data_collection_options=oci.database.VmClusterDataCollectionOptionsArgs(
                 is_diagnostics_events_enabled=var["vm_cluster_data_collection_options_is_diagnostics_events_enabled"],
+                is_health_monitoring_enabled=var["vm_cluster_data_collection_options_is_health_monitoring_enabled"],
+                is_incident_logs_enabled=var["vm_cluster_data_collection_options_is_incident_logs_enabled"],
             ),
             data_storage_size_in_tbs=var["vm_cluster_data_storage_size_in_tbs"],
             db_node_storage_size_in_gbs=var["vm_cluster_db_node_storage_size_in_gbs"],
@@ -835,7 +845,8 @@ class VmCluster(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        :param pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of Db server.
@@ -879,6 +890,8 @@ class VmCluster(pulumi.CustomResource):
             vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
             data_collection_options=oci.database.VmClusterDataCollectionOptionsArgs(
                 is_diagnostics_events_enabled=var["vm_cluster_data_collection_options_is_diagnostics_events_enabled"],
+                is_health_monitoring_enabled=var["vm_cluster_data_collection_options_is_health_monitoring_enabled"],
+                is_incident_logs_enabled=var["vm_cluster_data_collection_options_is_incident_logs_enabled"],
             ),
             data_storage_size_in_tbs=var["vm_cluster_data_storage_size_in_tbs"],
             db_node_storage_size_in_gbs=var["vm_cluster_db_node_storage_size_in_gbs"],
@@ -1035,7 +1048,8 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
-        :param pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        :param pulumi.Input[pulumi.InputType['VmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[float] data_storage_size_in_gb: (Updatable) The data disk group size to be allocated in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of Db server.
@@ -1117,13 +1131,16 @@ class VmCluster(pulumi.CustomResource):
     @pulumi.getter(name="dataCollectionOptions")
     def data_collection_options(self) -> pulumi.Output['outputs.VmClusterDataCollectionOptions']:
         """
-        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> pulumi.Output[float]:
+        """
+        (Updatable) The data disk group size to be allocated in GBs.
+        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property

@@ -417,7 +417,7 @@ class Zone(pulumi.CustomResource):
         This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 
         Creates a new zone in the specified compartment. Additionally, for Private DNS,
-        the `scope` and `viewId` query parameters are required when creating private zones.
+        the `viewId` field is required when creating private zones.
 
         ## Example Usage
 
@@ -441,19 +441,11 @@ class Zone(pulumi.CustomResource):
 
         ## Import
 
-        For legacy Zones that were created without using `scope`, these Zones can be imported using the `id`, e.g.
+        Zones can be imported using their OCID, e.g.
 
         ```sh
          $ pulumi import oci:Dns/zone:Zone test_zone "id"
         ```
-
-         For Zones created using `scope` and `view_id`, these Zones can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/zone:Zone test_zone "zoneNameOrId/{zoneNameOrId}/scope/{scope}/viewId/{viewId}"
-        ```
-
-         skip adding `{view_id}` at the end if Zone was created without `view_id`.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -477,7 +469,7 @@ class Zone(pulumi.CustomResource):
         This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 
         Creates a new zone in the specified compartment. Additionally, for Private DNS,
-        the `scope` and `viewId` query parameters are required when creating private zones.
+        the `viewId` field is required when creating private zones.
 
         ## Example Usage
 
@@ -501,19 +493,11 @@ class Zone(pulumi.CustomResource):
 
         ## Import
 
-        For legacy Zones that were created without using `scope`, these Zones can be imported using the `id`, e.g.
+        Zones can be imported using their OCID, e.g.
 
         ```sh
          $ pulumi import oci:Dns/zone:Zone test_zone "id"
         ```
-
-         For Zones created using `scope` and `view_id`, these Zones can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/zone:Zone test_zone "zoneNameOrId/{zoneNameOrId}/scope/{scope}/viewId/{viewId}"
-        ```
-
-         skip adding `{view_id}` at the end if Zone was created without `view_id`.
 
         :param str resource_name: The name of the resource.
         :param ZoneArgs args: The arguments to use to populate this resource's properties.
@@ -694,7 +678,7 @@ class Zone(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[Optional[str]]:
+    def scope(self) -> pulumi.Output[str]:
         """
         Specifies to operate only on resources that have a matching DNS scope. 
         This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.

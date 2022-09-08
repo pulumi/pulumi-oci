@@ -48,7 +48,7 @@ class GetSubscriptionRedeemableUserResult:
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetSubscriptionRedeemableUserItemResult']:
         """
-        The list of user email IDs that can redeem rewards.
+        The list of user summary that can redeem rewards.
         """
         return pulumi.get(self, "items")
 
@@ -87,7 +87,7 @@ def get_subscription_redeemable_user(subscription_id: Optional[str] = None,
     """
     This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
 
-    Provides the email IDs of users that can redeem rewards for the given subscription ID.
+    Provides the list of user summary that can redeem rewards for the given subscription ID.
 
     ## Example Usage
 
@@ -124,7 +124,7 @@ def get_subscription_redeemable_user_output(subscription_id: Optional[pulumi.Inp
     """
     This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
 
-    Provides the email IDs of users that can redeem rewards for the given subscription ID.
+    Provides the list of user summary that can redeem rewards for the given subscription ID.
 
     ## Example Usage
 

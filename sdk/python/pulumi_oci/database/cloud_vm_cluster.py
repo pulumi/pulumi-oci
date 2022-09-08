@@ -1172,6 +1172,8 @@ class CloudVmCluster(pulumi.CustomResource):
             cluster_name=var["cloud_vm_cluster_cluster_name"],
             data_collection_options=oci.database.CloudVmClusterDataCollectionOptionsArgs(
                 is_diagnostics_events_enabled=var["cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled"],
+                is_health_monitoring_enabled=var["cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled"],
+                is_incident_logs_enabled=var["cloud_vm_cluster_data_collection_options_is_incident_logs_enabled"],
             ),
             data_storage_percentage=var["cloud_vm_cluster_data_storage_percentage"],
             defined_tags=var["cloud_vm_cluster_defined_tags"],
@@ -1263,6 +1265,8 @@ class CloudVmCluster(pulumi.CustomResource):
             cluster_name=var["cloud_vm_cluster_cluster_name"],
             data_collection_options=oci.database.CloudVmClusterDataCollectionOptionsArgs(
                 is_diagnostics_events_enabled=var["cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled"],
+                is_health_monitoring_enabled=var["cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled"],
+                is_incident_logs_enabled=var["cloud_vm_cluster_data_collection_options_is_incident_logs_enabled"],
             ),
             data_storage_percentage=var["cloud_vm_cluster_data_storage_percentage"],
             defined_tags=var["cloud_vm_cluster_defined_tags"],

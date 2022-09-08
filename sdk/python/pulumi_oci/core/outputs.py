@@ -11,6 +11,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'BootVolumeAutotunePolicy',
     'BootVolumeBackupSourceDetails',
     'BootVolumeBootVolumeReplica',
     'BootVolumeSourceDetails',
@@ -64,6 +65,7 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsBlockVolume',
     'InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails',
     'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails',
+    'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy',
     'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails',
     'InstanceConfigurationInstanceDetailsLaunchDetails',
     'InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig',
@@ -123,6 +125,7 @@ __all__ = [
     'VirtualNetworkByoipv6cidrDetail',
     'VnicAttachmentCreateVnicDetails',
     'VolumeAttachmentMultipathDevice',
+    'VolumeAutotunePolicy',
     'VolumeBackupPolicySchedule',
     'VolumeBackupSourceDetails',
     'VolumeBlockVolumeReplica',
@@ -140,6 +143,7 @@ __all__ = [
     'GetBlockVolumeReplicasFilterResult',
     'GetBootVolumeAttachmentsBootVolumeAttachmentResult',
     'GetBootVolumeAttachmentsFilterResult',
+    'GetBootVolumeAutotunePolicyResult',
     'GetBootVolumeBackupSourceDetailResult',
     'GetBootVolumeBackupsBootVolumeBackupResult',
     'GetBootVolumeBackupsBootVolumeBackupSourceDetailResult',
@@ -149,6 +153,7 @@ __all__ = [
     'GetBootVolumeReplicasFilterResult',
     'GetBootVolumeSourceDetailResult',
     'GetBootVolumesBootVolumeResult',
+    'GetBootVolumesBootVolumeAutotunePolicyResult',
     'GetBootVolumesBootVolumeBootVolumeReplicaResult',
     'GetBootVolumesBootVolumeSourceDetailResult',
     'GetBootVolumesFilterResult',
@@ -286,6 +291,7 @@ __all__ = [
     'GetInstanceConfigurationInstanceDetailBlockVolumeResult',
     'GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailResult',
     'GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult',
+    'GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult',
     'GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailAgentConfigResult',
@@ -307,6 +313,7 @@ __all__ = [
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult',
+    'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigResult',
@@ -500,6 +507,7 @@ __all__ = [
     'GetVolumeAttachmentsFilterResult',
     'GetVolumeAttachmentsVolumeAttachmentResult',
     'GetVolumeAttachmentsVolumeAttachmentMultipathDeviceResult',
+    'GetVolumeAutotunePolicyResult',
     'GetVolumeBackupPoliciesFilterResult',
     'GetVolumeBackupPoliciesVolumeBackupPolicyResult',
     'GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult',
@@ -523,11 +531,61 @@ __all__ = [
     'GetVolumeSourceDetailResult',
     'GetVolumesFilterResult',
     'GetVolumesVolumeResult',
+    'GetVolumesVolumeAutotunePolicyResult',
     'GetVolumesVolumeBlockVolumeReplicaResult',
     'GetVolumesVolumeSourceDetailResult',
     'GetVtapsFilterResult',
     'GetVtapsVtapResult',
 ]
+
+@pulumi.output_type
+class BootVolumeAutotunePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autotuneType":
+            suggest = "autotune_type"
+        elif key == "maxVpusPerGb":
+            suggest = "max_vpus_per_gb"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BootVolumeAutotunePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BootVolumeAutotunePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BootVolumeAutotunePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: Optional[str] = None):
+        """
+        :param str autotune_type: (Updatable) This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        if max_vpus_per_gb is not None:
+            pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        (Updatable) This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> Optional[str]:
+        """
+        (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
+
 
 @pulumi.output_type
 class BootVolumeBackupSourceDetails(dict):
@@ -3725,7 +3783,9 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "availabilityDomain":
+        if key == "autotunePolicies":
+            suggest = "autotune_policies"
+        elif key == "availabilityDomain":
             suggest = "availability_domain"
         elif key == "backupPolicyId":
             suggest = "backup_policy_id"
@@ -3758,6 +3818,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 autotune_policies: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy']] = None,
                  availability_domain: Optional[str] = None,
                  backup_policy_id: Optional[str] = None,
                  compartment_id: Optional[str] = None,
@@ -3769,6 +3830,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
                  source_details: Optional['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails'] = None,
                  vpus_per_gb: Optional[str] = None):
         """
+        :param Sequence['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param str compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
@@ -3779,6 +3841,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
+        if autotune_policies is not None:
+            pulumi.set(__self__, "autotune_policies", autotune_policies)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_policy_id is not None:
@@ -3799,6 +3863,14 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
             pulumi.set(__self__, "source_details", source_details)
         if vpus_per_gb is not None:
             pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy']]:
+        """
+        The list of autotune policies enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -3876,6 +3948,55 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         return pulumi.get(self, "vpus_per_gb")
+
+
+@pulumi.output_type
+class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autotuneType":
+            suggest = "autotune_type"
+        elif key == "maxVpusPerGb":
+            suggest = "max_vpus_per_gb"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: Optional[str] = None):
+        """
+        :param str autotune_type: This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        if max_vpus_per_gb is not None:
+            pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> Optional[str]:
+        """
+        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
 
 
 @pulumi.output_type
@@ -8477,6 +8598,55 @@ class VolumeAttachmentMultipathDevice(dict):
 
 
 @pulumi.output_type
+class VolumeAutotunePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autotuneType":
+            suggest = "autotune_type"
+        elif key == "maxVpusPerGb":
+            suggest = "max_vpus_per_gb"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VolumeAutotunePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VolumeAutotunePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VolumeAutotunePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: Optional[str] = None):
+        """
+        :param str autotune_type: (Updatable) This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        if max_vpus_per_gb is not None:
+            pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        (Updatable) This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> Optional[str]:
+        """
+        (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
+
+
+@pulumi.output_type
 class VolumeBackupPolicySchedule(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -9707,6 +9877,35 @@ class GetBootVolumeAttachmentsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetBootVolumeAutotunePolicyResult(dict):
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: str):
+        """
+        :param str autotune_type: This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> str:
+        """
+        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
+
+
+@pulumi.output_type
 class GetBootVolumeBackupSourceDetailResult(dict):
     def __init__(__self__, *,
                  boot_volume_backup_id: str,
@@ -10263,6 +10462,7 @@ class GetBootVolumeSourceDetailResult(dict):
 class GetBootVolumesBootVolumeResult(dict):
     def __init__(__self__, *,
                  auto_tuned_vpus_per_gb: str,
+                 autotune_policies: Sequence['outputs.GetBootVolumesBootVolumeAutotunePolicyResult'],
                  availability_domain: str,
                  backup_policy_id: str,
                  boot_volume_replicas: Sequence['outputs.GetBootVolumesBootVolumeBootVolumeReplicaResult'],
@@ -10285,7 +10485,8 @@ class GetBootVolumesBootVolumeResult(dict):
                  volume_group_id: str,
                  vpus_per_gb: str):
         """
-        :param str auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        :param str auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
+        :param Sequence['GetBootVolumesBootVolumeAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param Sequence['GetBootVolumesBootVolumeBootVolumeReplicaArgs'] boot_volume_replicas: The list of boot volume replicas of this boot volume
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -10294,7 +10495,7 @@ class GetBootVolumesBootVolumeResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the boot volume replica.
         :param str image_id: The image OCID used to create the boot volume.
-        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param bool is_hydrated: Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
         :param str kms_key_id: The OCID of the Key Management master encryption key assigned to the boot volume.
         :param str size_in_gbs: The size of the boot volume in GBs.
@@ -10306,6 +10507,7 @@ class GetBootVolumesBootVolumeResult(dict):
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
+        pulumi.set(__self__, "autotune_policies", autotune_policies)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         pulumi.set(__self__, "boot_volume_replicas", boot_volume_replicas)
@@ -10332,9 +10534,17 @@ class GetBootVolumesBootVolumeResult(dict):
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> str:
         """
-        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Sequence['outputs.GetBootVolumesBootVolumeAutotunePolicyResult']:
+        """
+        The list of autotune policies enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -10414,7 +10624,7 @@ class GetBootVolumesBootVolumeResult(dict):
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> bool:
         """
-        Specifies whether the auto-tune performance is enabled for this boot volume.
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 
@@ -10494,6 +10704,35 @@ class GetBootVolumesBootVolumeResult(dict):
         The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         return pulumi.get(self, "vpus_per_gb")
+
+
+@pulumi.output_type
+class GetBootVolumesBootVolumeAutotunePolicyResult(dict):
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: str):
+        """
+        :param str autotune_type: This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> str:
+        """
+        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
 
 
 @pulumi.output_type
@@ -17753,6 +17992,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetailResult(dict):
 @pulumi.output_type
 class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
     def __init__(__self__, *,
+                 autotune_policies: Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult'],
                  availability_domain: str,
                  backup_policy_id: str,
                  compartment_id: str,
@@ -17764,6 +18004,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
                  source_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult'],
                  vpus_per_gb: str):
         """
+        :param Sequence['GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param str compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
@@ -17774,6 +18015,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
+        pulumi.set(__self__, "autotune_policies", autotune_policies)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -17784,6 +18026,14 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult']:
+        """
+        The list of autotune policies enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -17861,6 +18111,35 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         return pulumi.get(self, "vpus_per_gb")
+
+
+@pulumi.output_type
+class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult(dict):
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: str):
+        """
+        :param str autotune_type: This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> str:
+        """
+        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
 
 
 @pulumi.output_type
@@ -19207,6 +19486,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAtt
 @pulumi.output_type
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
     def __init__(__self__, *,
+                 autotune_policies: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult'],
                  availability_domain: str,
                  backup_policy_id: str,
                  compartment_id: str,
@@ -19218,6 +19498,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
                  source_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult'],
                  vpus_per_gb: str):
         """
+        :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -19228,6 +19509,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
+        pulumi.set(__self__, "autotune_policies", autotune_policies)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -19238,6 +19520,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "vpus_per_gb", vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult']:
+        """
+        The list of autotune policies enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -19315,6 +19605,35 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         return pulumi.get(self, "vpus_per_gb")
+
+
+@pulumi.output_type
+class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult(dict):
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: str):
+        """
+        :param str autotune_type: This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> str:
+        """
+        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
 
 
 @pulumi.output_type
@@ -31375,6 +31694,35 @@ class GetVolumeAttachmentsVolumeAttachmentMultipathDeviceResult(dict):
 
 
 @pulumi.output_type
+class GetVolumeAutotunePolicyResult(dict):
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: str):
+        """
+        :param str autotune_type: This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> str:
+        """
+        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
+
+
+@pulumi.output_type
 class GetVolumeBackupPoliciesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -32873,6 +33221,7 @@ class GetVolumesFilterResult(dict):
 class GetVolumesVolumeResult(dict):
     def __init__(__self__, *,
                  auto_tuned_vpus_per_gb: str,
+                 autotune_policies: Sequence['outputs.GetVolumesVolumeAutotunePolicyResult'],
                  availability_domain: str,
                  backup_policy_id: str,
                  block_volume_replicas: Sequence['outputs.GetVolumesVolumeBlockVolumeReplicaResult'],
@@ -32895,7 +33244,8 @@ class GetVolumesVolumeResult(dict):
                  volume_group_id: str,
                  vpus_per_gb: str):
         """
-        :param str auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        :param str auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to.
+        :param Sequence['GetVolumesVolumeAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param Sequence['GetVolumesVolumeBlockVolumeReplicaArgs'] block_volume_replicas: The list of block volume replicas of this volume.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -32903,7 +33253,7 @@ class GetVolumesVolumeResult(dict):
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the block volume replica.
-        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this volume.
+        :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param bool is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
         :param str kms_key_id: The OCID of the Key Management key which is the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
@@ -32915,6 +33265,7 @@ class GetVolumesVolumeResult(dict):
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
+        pulumi.set(__self__, "autotune_policies", autotune_policies)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_policy_id", backup_policy_id)
         pulumi.set(__self__, "block_volume_replicas", block_volume_replicas)
@@ -32941,9 +33292,17 @@ class GetVolumesVolumeResult(dict):
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> str:
         """
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this volume is effectively tuned to.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Sequence['outputs.GetVolumesVolumeAutotunePolicyResult']:
+        """
+        The list of autotune policies enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -33015,7 +33374,7 @@ class GetVolumesVolumeResult(dict):
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> bool:
         """
-        Specifies whether the auto-tune performance is enabled for this volume.
+        Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 
@@ -33100,6 +33459,35 @@ class GetVolumesVolumeResult(dict):
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         """
         return pulumi.get(self, "vpus_per_gb")
+
+
+@pulumi.output_type
+class GetVolumesVolumeAutotunePolicyResult(dict):
+    def __init__(__self__, *,
+                 autotune_type: str,
+                 max_vpus_per_gb: str):
+        """
+        :param str autotune_type: This specifies the type of autotunes supported by OCI.
+        :param str max_vpus_per_gb: This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        pulumi.set(__self__, "autotune_type", autotune_type)
+        pulumi.set(__self__, "max_vpus_per_gb", max_vpus_per_gb)
+
+    @property
+    @pulumi.getter(name="autotuneType")
+    def autotune_type(self) -> str:
+        """
+        This specifies the type of autotunes supported by OCI.
+        """
+        return pulumi.get(self, "autotune_type")
+
+    @property
+    @pulumi.getter(name="maxVpusPerGb")
+    def max_vpus_per_gb(self) -> str:
+        """
+        This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+        """
+        return pulumi.get(self, "max_vpus_per_gb")
 
 
 @pulumi.output_type

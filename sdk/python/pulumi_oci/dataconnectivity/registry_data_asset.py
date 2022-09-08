@@ -36,20 +36,20 @@ class RegistryDataAssetArgs:
                  registry_metadata: Optional[pulumi.Input['RegistryDataAssetRegistryMetadataArgs']] = None):
         """
         The set of arguments for constructing a RegistryDataAsset resource.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the data asset in a key-value map format.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input['RegistryDataAssetDefaultConnectionArgs'] default_connection: (Updatable) The default connection key.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] end_points: (Updatable) The list of endpoints with which this data asset is associated.
-        :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
+        :param pulumi.Input[str] external_key: (Updatable) The external key of the object.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input['RegistryDataAssetMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input['RegistryDataAssetMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input['RegistryDataAssetNativeTypeSystemArgs'] native_type_system: (Updatable) The type system maps from and to a type.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
@@ -91,7 +91,7 @@ class RegistryDataAssetArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -103,7 +103,7 @@ class RegistryDataAssetArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -127,7 +127,7 @@ class RegistryDataAssetArgs:
     @pulumi.getter(name="registryId")
     def registry_id(self) -> pulumi.Input[str]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -175,7 +175,7 @@ class RegistryDataAssetArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -199,7 +199,7 @@ class RegistryDataAssetArgs:
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -223,7 +223,7 @@ class RegistryDataAssetArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryDataAssetMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -247,7 +247,7 @@ class RegistryDataAssetArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -329,20 +329,20 @@ class _RegistryDataAssetState:
         Input properties used for looking up and filtering RegistryDataAsset resources.
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input['RegistryDataAssetDefaultConnectionArgs'] default_connection: (Updatable) The default connection key.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] end_points: (Updatable) The list of endpoints with which this data asset is associated.
-        :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] external_key: (Updatable) The external key of the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input['RegistryDataAssetMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
+        :param pulumi.Input['RegistryDataAssetMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input['RegistryDataAssetNativeTypeSystemArgs'] native_type_system: (Updatable) The type system maps from and to a type.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the data asset in a key-value map format.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         :param pulumi.Input['RegistryDataAssetRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
@@ -411,7 +411,7 @@ class _RegistryDataAssetState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -435,7 +435,7 @@ class _RegistryDataAssetState:
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -447,7 +447,7 @@ class _RegistryDataAssetState:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -471,7 +471,7 @@ class _RegistryDataAssetState:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryDataAssetMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -483,7 +483,7 @@ class _RegistryDataAssetState:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -507,7 +507,7 @@ class _RegistryDataAssetState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -567,7 +567,7 @@ class _RegistryDataAssetState:
     @pulumi.getter(name="registryId")
     def registry_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -834,20 +834,20 @@ class RegistryDataAsset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input[pulumi.InputType['RegistryDataAssetDefaultConnectionArgs']] default_connection: (Updatable) The default connection key.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] end_points: (Updatable) The list of endpoints with which this data asset is associated.
-        :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] external_key: (Updatable) The external key of the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[pulumi.InputType['RegistryDataAssetMetadataArgs']] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
+        :param pulumi.Input[pulumi.InputType['RegistryDataAssetMetadataArgs']] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[pulumi.InputType['RegistryDataAssetNativeTypeSystemArgs']] native_type_system: (Updatable) The type system maps from and to a type.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the data asset in a key-value map format.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         :param pulumi.Input[pulumi.InputType['RegistryDataAssetRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
@@ -1170,20 +1170,20 @@ class RegistryDataAsset(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input[pulumi.InputType['RegistryDataAssetDefaultConnectionArgs']] default_connection: (Updatable) The default connection key.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] end_points: (Updatable) The list of endpoints with which this data asset is associated.
-        :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] external_key: (Updatable) The external key of the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[pulumi.InputType['RegistryDataAssetMetadataArgs']] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
+        :param pulumi.Input[pulumi.InputType['RegistryDataAssetMetadataArgs']] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[pulumi.InputType['RegistryDataAssetNativeTypeSystemArgs']] native_type_system: (Updatable) The type system maps from and to a type.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the data asset in a key-value map format.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         :param pulumi.Input[pulumi.InputType['RegistryDataAssetRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
@@ -1231,7 +1231,7 @@ class RegistryDataAsset(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -1247,7 +1247,7 @@ class RegistryDataAsset(pulumi.CustomResource):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> pulumi.Output[str]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -1255,7 +1255,7 @@ class RegistryDataAsset(pulumi.CustomResource):
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -1271,7 +1271,7 @@ class RegistryDataAsset(pulumi.CustomResource):
     @pulumi.getter
     def metadata(self) -> pulumi.Output['outputs.RegistryDataAssetMetadata']:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -1279,7 +1279,7 @@ class RegistryDataAsset(pulumi.CustomResource):
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -1295,7 +1295,7 @@ class RegistryDataAsset(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1335,7 +1335,7 @@ class RegistryDataAsset(pulumi.CustomResource):
     @pulumi.getter(name="registryId")
     def registry_id(self) -> pulumi.Output[str]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 

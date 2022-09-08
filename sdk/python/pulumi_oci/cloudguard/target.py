@@ -31,7 +31,7 @@ class TargetArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
         :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
-        :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
+        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -96,7 +96,7 @@ class TargetArgs:
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> pulumi.Input[str]:
         """
-        possible type of targets(compartment/HCMCloud/ERPCloud)
+        possible type of targets(COMPARTMENT/FACLOUD)
         """
         return pulumi.get(self, "target_resource_type")
 
@@ -212,7 +212,7 @@ class _TargetState:
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailArgs']]] target_details: Details specific to the target type.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
-        :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
+        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
@@ -412,7 +412,7 @@ class _TargetState:
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        possible type of targets(compartment/HCMCloud/ERPCloud)
+        possible type of targets(COMPARTMENT/FACLOUD)
         """
         return pulumi.get(self, "target_resource_type")
 
@@ -544,7 +544,7 @@ class Target(pulumi.CustomResource):
         :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
-        :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
+        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetResponderRecipeArgs']]]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
         """
         ...
@@ -720,7 +720,7 @@ class Target(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetailArgs']]]] target_details: Details specific to the target type.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
-        :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
+        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetResponderRecipeArgs']]]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
@@ -856,7 +856,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> pulumi.Output[str]:
         """
-        possible type of targets(compartment/HCMCloud/ERPCloud)
+        possible type of targets(COMPARTMENT/FACLOUD)
         """
         return pulumi.get(self, "target_resource_type")
 

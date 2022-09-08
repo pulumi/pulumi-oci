@@ -155,7 +155,7 @@ class GetResolverEndpointResult:
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
+    def scope(self) -> Optional[str]:
         return pulumi.get(self, "scope")
 
     @property
@@ -281,7 +281,7 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[str] = None,
 @_utilities.lift_output_func(get_resolver_endpoint)
 def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[str]] = None,
                                  resolver_id: Optional[pulumi.Input[str]] = None,
-                                 scope: Optional[pulumi.Input[str]] = None,
+                                 scope: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolverEndpointResult]:
     """
     This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.

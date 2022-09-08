@@ -109,7 +109,7 @@ class GetViewResult:
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
+    def scope(self) -> Optional[str]:
         return pulumi.get(self, "scope")
 
     @property
@@ -146,7 +146,7 @@ class GetViewResult:
 
     @property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> str:
+    def view_id(self) -> Optional[str]:
         return pulumi.get(self, "view_id")
 
 
@@ -216,8 +216,8 @@ def get_view(scope: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_view)
-def get_view_output(scope: Optional[pulumi.Input[str]] = None,
-                    view_id: Optional[pulumi.Input[str]] = None,
+def get_view_output(scope: Optional[pulumi.Input[Optional[str]]] = None,
+                    view_id: Optional[pulumi.Input[Optional[str]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetViewResult]:
     """
     This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.

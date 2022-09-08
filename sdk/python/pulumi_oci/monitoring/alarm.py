@@ -27,6 +27,7 @@ class AlarmArgs:
                  body: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[bool]] = None,
                  message_format: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                  pending_duration: Optional[pulumi.Input[str]] = None,
@@ -47,6 +48,7 @@ class AlarmArgs:
         :param pulumi.Input[str] body: (Updatable) The human-readable content of the notification delivered. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_notifications_per_metric_dimension_enabled: (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
         :param pulumi.Input[str] message_format: (Updatable) The format to use for notification messages sent from this alarm. The formats are:
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
@@ -69,6 +71,8 @@ class AlarmArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_notifications_per_metric_dimension_enabled is not None:
+            pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
         if message_format is not None:
             pulumi.set(__self__, "message_format", message_format)
         if metric_compartment_id_in_subtree is not None:
@@ -217,6 +221,18 @@ class AlarmArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
+    def is_notifications_per_metric_dimension_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        """
+        return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
+
+    @is_notifications_per_metric_dimension_enabled.setter
+    def is_notifications_per_metric_dimension_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_notifications_per_metric_dimension_enabled", value)
+
+    @property
     @pulumi.getter(name="messageFormat")
     def message_format(self) -> Optional[pulumi.Input[str]]:
         """
@@ -311,6 +327,7 @@ class _AlarmState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[bool]] = None,
                  message_format: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
@@ -334,6 +351,7 @@ class _AlarmState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the alarm is enabled.  Example: `true`
+        :param pulumi.Input[bool] is_notifications_per_metric_dimension_enabled: (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
         :param pulumi.Input[str] message_format: (Updatable) The format to use for notification messages sent from this alarm. The formats are:
         :param pulumi.Input[str] metric_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
@@ -363,6 +381,8 @@ class _AlarmState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_notifications_per_metric_dimension_enabled is not None:
+            pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
         if message_format is not None:
             pulumi.set(__self__, "message_format", message_format)
         if metric_compartment_id is not None:
@@ -475,6 +495,18 @@ class _AlarmState:
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
+    def is_notifications_per_metric_dimension_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        """
+        return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
+
+    @is_notifications_per_metric_dimension_enabled.setter
+    def is_notifications_per_metric_dimension_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_notifications_per_metric_dimension_enabled", value)
 
     @property
     @pulumi.getter(name="messageFormat")
@@ -657,6 +689,7 @@ class Alarm(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[bool]] = None,
                  message_format: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
@@ -701,6 +734,7 @@ class Alarm(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_notifications_per_metric_dimension_enabled=var["alarm_is_notifications_per_metric_dimension_enabled"],
             message_format=var["alarm_message_format"],
             metric_compartment_id_in_subtree=var["alarm_metric_compartment_id_in_subtree"],
             pending_duration=var["alarm_pending_duration"],
@@ -731,6 +765,7 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the alarm is enabled.  Example: `true`
+        :param pulumi.Input[bool] is_notifications_per_metric_dimension_enabled: (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
         :param pulumi.Input[str] message_format: (Updatable) The format to use for notification messages sent from this alarm. The formats are:
         :param pulumi.Input[str] metric_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
@@ -781,6 +816,7 @@ class Alarm(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_notifications_per_metric_dimension_enabled=var["alarm_is_notifications_per_metric_dimension_enabled"],
             message_format=var["alarm_message_format"],
             metric_compartment_id_in_subtree=var["alarm_metric_compartment_id_in_subtree"],
             pending_duration=var["alarm_pending_duration"],
@@ -824,6 +860,7 @@ class Alarm(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[bool]] = None,
                  message_format: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
@@ -859,6 +896,7 @@ class Alarm(pulumi.CustomResource):
             if is_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'is_enabled'")
             __props__.__dict__["is_enabled"] = is_enabled
+            __props__.__dict__["is_notifications_per_metric_dimension_enabled"] = is_notifications_per_metric_dimension_enabled
             __props__.__dict__["message_format"] = message_format
             if metric_compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'metric_compartment_id'")
@@ -898,6 +936,7 @@ class Alarm(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_enabled: Optional[pulumi.Input[bool]] = None,
+            is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[bool]] = None,
             message_format: Optional[pulumi.Input[str]] = None,
             metric_compartment_id: Optional[pulumi.Input[str]] = None,
             metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
@@ -926,6 +965,7 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the alarm is enabled.  Example: `true`
+        :param pulumi.Input[bool] is_notifications_per_metric_dimension_enabled: (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
         :param pulumi.Input[str] message_format: (Updatable) The format to use for notification messages sent from this alarm. The formats are:
         :param pulumi.Input[str] metric_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
@@ -952,6 +992,7 @@ class Alarm(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_enabled"] = is_enabled
+        __props__.__dict__["is_notifications_per_metric_dimension_enabled"] = is_notifications_per_metric_dimension_enabled
         __props__.__dict__["message_format"] = message_format
         __props__.__dict__["metric_compartment_id"] = metric_compartment_id
         __props__.__dict__["metric_compartment_id_in_subtree"] = metric_compartment_id_in_subtree
@@ -1023,6 +1064,14 @@ class Alarm(pulumi.CustomResource):
         (Updatable) Whether the alarm is enabled.  Example: `true`
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
+    def is_notifications_per_metric_dimension_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        """
+        return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
 
     @property
     @pulumi.getter(name="messageFormat")

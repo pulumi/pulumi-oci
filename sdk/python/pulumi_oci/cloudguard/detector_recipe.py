@@ -18,32 +18,37 @@ class DetectorRecipeArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
-                 source_detector_recipe_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 detector: Optional[pulumi.Input[str]] = None,
                  detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 source_detector_recipe_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DetectorRecipe resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
-        :param pulumi.Input[str] source_detector_recipe_id: The id of the source detector recipe.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
+        :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] source_detector_recipe_id: The id of the source detector recipe.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "source_detector_recipe_id", source_detector_recipe_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if detector is not None:
+            pulumi.set(__self__, "detector", detector)
         if detector_rules is not None:
             pulumi.set(__self__, "detector_rules", detector_rules)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if source_detector_recipe_id is not None:
+            pulumi.set(__self__, "source_detector_recipe_id", source_detector_recipe_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -70,18 +75,6 @@ class DetectorRecipeArgs:
         pulumi.set(self, "display_name", value)
 
     @property
-    @pulumi.getter(name="sourceDetectorRecipeId")
-    def source_detector_recipe_id(self) -> pulumi.Input[str]:
-        """
-        The id of the source detector recipe.
-        """
-        return pulumi.get(self, "source_detector_recipe_id")
-
-    @source_detector_recipe_id.setter
-    def source_detector_recipe_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "source_detector_recipe_id", value)
-
-    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -97,13 +90,25 @@ class DetectorRecipeArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Detector recipe description.
+        (Updatable) Description for DetectorRecipeDetectorRule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def detector(self) -> Optional[pulumi.Input[str]]:
+        """
+        detector for the rule
+        """
+        return pulumi.get(self, "detector")
+
+    @detector.setter
+    def detector(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detector", value)
 
     @property
     @pulumi.getter(name="detectorRules")
@@ -129,6 +134,18 @@ class DetectorRecipeArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="sourceDetectorRecipeId")
+    def source_detector_recipe_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the source detector recipe.
+        """
+        return pulumi.get(self, "source_detector_recipe_id")
+
+    @source_detector_recipe_id.setter
+    def source_detector_recipe_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_detector_recipe_id", value)
+
 
 @pulumi.input_type
 class _DetectorRecipeState:
@@ -145,13 +162,14 @@ class _DetectorRecipeState:
                  source_detector_recipe_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DetectorRecipe resources.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
@@ -161,6 +179,7 @@ class _DetectorRecipeState:
         :param pulumi.Input[str] source_detector_recipe_id: The id of the source detector recipe.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: The recipe attached to targets
         :param pulumi.Input[str] time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
@@ -188,6 +207,8 @@ class _DetectorRecipeState:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if target_ids is not None:
+            pulumi.set(__self__, "target_ids", target_ids)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -221,7 +242,7 @@ class _DetectorRecipeState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Detector recipe description.
+        (Updatable) Description for DetectorRecipeDetectorRule.
         """
         return pulumi.get(self, "description")
 
@@ -338,6 +359,18 @@ class _DetectorRecipeState:
         pulumi.set(self, "system_tags", value)
 
     @property
+    @pulumi.getter(name="targetIds")
+    def target_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The recipe attached to targets
+        """
+        return pulumi.get(self, "target_ids")
+
+    @target_ids.setter
+    def target_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "target_ids", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -370,6 +403,7 @@ class DetectorRecipe(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 detector: Optional[pulumi.Input[str]] = None,
                  detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeDetectorRuleArgs']]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -392,7 +426,8 @@ class DetectorRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
+        :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeDetectorRuleArgs']]]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -435,6 +470,7 @@ class DetectorRecipe(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 detector: Optional[pulumi.Input[str]] = None,
                  detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeDetectorRuleArgs']]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -453,19 +489,18 @@ class DetectorRecipe(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
+            __props__.__dict__["detector"] = detector
             __props__.__dict__["detector_rules"] = detector_rules
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if source_detector_recipe_id is None and not opts.urn:
-                raise TypeError("Missing required property 'source_detector_recipe_id'")
             __props__.__dict__["source_detector_recipe_id"] = source_detector_recipe_id
-            __props__.__dict__["detector"] = None
             __props__.__dict__["effective_detector_rules"] = None
             __props__.__dict__["owner"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["target_ids"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(DetectorRecipe, __self__).__init__(
@@ -490,6 +525,7 @@ class DetectorRecipe(pulumi.CustomResource):
             source_detector_recipe_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'DetectorRecipe':
         """
@@ -501,7 +537,7 @@ class DetectorRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeDetectorRuleArgs']]]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
@@ -511,6 +547,7 @@ class DetectorRecipe(pulumi.CustomResource):
         :param pulumi.Input[str] source_detector_recipe_id: The id of the source detector recipe.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: The recipe attached to targets
         :param pulumi.Input[str] time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
@@ -530,6 +567,7 @@ class DetectorRecipe(pulumi.CustomResource):
         __props__.__dict__["source_detector_recipe_id"] = source_detector_recipe_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["target_ids"] = target_ids
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return DetectorRecipe(resource_name, opts=opts, __props__=__props__)
@@ -554,7 +592,7 @@ class DetectorRecipe(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) Detector recipe description.
+        (Updatable) Description for DetectorRecipeDetectorRule.
         """
         return pulumi.get(self, "description")
 
@@ -629,6 +667,14 @@ class DetectorRecipe(pulumi.CustomResource):
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="targetIds")
+    def target_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The recipe attached to targets
+        """
+        return pulumi.get(self, "target_ids")
 
     @property
     @pulumi.getter(name="timeCreated")

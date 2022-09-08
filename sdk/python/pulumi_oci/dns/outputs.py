@@ -1242,13 +1242,13 @@ class GetResolverEndpointsResolverEndpointResult(dict):
                  listening_address: str,
                  name: str,
                  resolver_id: str,
-                 scope: str,
                  self: str,
                  state: str,
                  subnet_id: str,
                  time_created: str,
                  time_updated: str,
-                 nsg_ids: Optional[Sequence[str]] = None):
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 scope: Optional[str] = None):
         """
         :param str compartment_id: The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         :param str endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
@@ -1258,13 +1258,13 @@ class GetResolverEndpointsResolverEndpointResult(dict):
         :param str listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
         :param str name: The name of a resource.
         :param str resolver_id: The OCID of the target resolver.
-        :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
         :param str self: The canonical absolute URL of the resource.
         :param str state: The state of a resource.
         :param str subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
         :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param Sequence[str] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
+        :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "endpoint_type", endpoint_type)
@@ -1274,7 +1274,6 @@ class GetResolverEndpointsResolverEndpointResult(dict):
         pulumi.set(__self__, "listening_address", listening_address)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "resolver_id", resolver_id)
-        pulumi.set(__self__, "scope", scope)
         pulumi.set(__self__, "self", self)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1282,6 +1281,8 @@ class GetResolverEndpointsResolverEndpointResult(dict):
         pulumi.set(__self__, "time_updated", time_updated)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1349,14 +1350,6 @@ class GetResolverEndpointsResolverEndpointResult(dict):
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
-        """
-        Value must be `PRIVATE` when listing private name resolver endpoints.
-        """
-        return pulumi.get(self, "scope")
-
-    @property
-    @pulumi.getter
     def self(self) -> str:
         """
         The canonical absolute URL of the resource.
@@ -1402,6 +1395,14 @@ class GetResolverEndpointsResolverEndpointResult(dict):
         An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
         """
         return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter
+    def scope(self) -> Optional[str]:
+        """
+        Value must be `PRIVATE` when listing private name resolver endpoints.
+        """
+        return pulumi.get(self, "scope")
 
 
 @pulumi.output_type

@@ -552,6 +552,7 @@ class _SddcState:
                  time_hcx_billing_cycle_end: Optional[pulumi.Input[str]] = None,
                  time_hcx_license_status_updated: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
+                 upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]] = None,
                  vcenter_fqdn: Optional[pulumi.Input[str]] = None,
                  vcenter_initial_password: Optional[pulumi.Input[str]] = None,
                  vcenter_private_ip_id: Optional[pulumi.Input[str]] = None,
@@ -559,6 +560,8 @@ class _SddcState:
                  vmotion_vlan_id: Optional[pulumi.Input[str]] = None,
                  vmware_software_version: Optional[pulumi.Input[str]] = None,
                  vsan_vlan_id: Optional[pulumi.Input[str]] = None,
+                 vsphere_upgrade_guide: Optional[pulumi.Input[str]] = None,
+                 vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]] = None,
                  vsphere_vlan_id: Optional[pulumi.Input[str]] = None,
                  workload_network_cidr: Optional[pulumi.Input[str]] = None):
         """
@@ -608,6 +611,7 @@ class _SddcState:
         :param pulumi.Input[str] time_hcx_billing_cycle_end: The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_hcx_license_status_updated: The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]] upgrade_licenses: The vSphere licenses to be used when upgrade SDDC.
         :param pulumi.Input[str] vcenter_fqdn: The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         :param pulumi.Input[str] vcenter_initial_password: The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
         :param pulumi.Input[str] vcenter_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
@@ -615,6 +619,8 @@ class _SddcState:
         :param pulumi.Input[str] vmotion_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
         :param pulumi.Input[str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[str] vsan_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+        :param pulumi.Input[str] vsphere_upgrade_guide: The link of guidance to upgrade vSphere.
+        :param pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]] vsphere_upgrade_objects: The links of binary objects needed for upgrade vSphere.
         :param pulumi.Input[str] vsphere_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
         :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
@@ -708,6 +714,8 @@ class _SddcState:
             pulumi.set(__self__, "time_hcx_license_status_updated", time_hcx_license_status_updated)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if upgrade_licenses is not None:
+            pulumi.set(__self__, "upgrade_licenses", upgrade_licenses)
         if vcenter_fqdn is not None:
             pulumi.set(__self__, "vcenter_fqdn", vcenter_fqdn)
         if vcenter_initial_password is not None:
@@ -722,6 +730,10 @@ class _SddcState:
             pulumi.set(__self__, "vmware_software_version", vmware_software_version)
         if vsan_vlan_id is not None:
             pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
+        if vsphere_upgrade_guide is not None:
+            pulumi.set(__self__, "vsphere_upgrade_guide", vsphere_upgrade_guide)
+        if vsphere_upgrade_objects is not None:
+            pulumi.set(__self__, "vsphere_upgrade_objects", vsphere_upgrade_objects)
         if vsphere_vlan_id is not None:
             pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
         if workload_network_cidr is not None:
@@ -1268,6 +1280,18 @@ class _SddcState:
         pulumi.set(self, "time_updated", value)
 
     @property
+    @pulumi.getter(name="upgradeLicenses")
+    def upgrade_licenses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]]:
+        """
+        The vSphere licenses to be used when upgrade SDDC.
+        """
+        return pulumi.get(self, "upgrade_licenses")
+
+    @upgrade_licenses.setter
+    def upgrade_licenses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]]):
+        pulumi.set(self, "upgrade_licenses", value)
+
+    @property
     @pulumi.getter(name="vcenterFqdn")
     def vcenter_fqdn(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1350,6 +1374,30 @@ class _SddcState:
     @vsan_vlan_id.setter
     def vsan_vlan_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vsan_vlan_id", value)
+
+    @property
+    @pulumi.getter(name="vsphereUpgradeGuide")
+    def vsphere_upgrade_guide(self) -> Optional[pulumi.Input[str]]:
+        """
+        The link of guidance to upgrade vSphere.
+        """
+        return pulumi.get(self, "vsphere_upgrade_guide")
+
+    @vsphere_upgrade_guide.setter
+    def vsphere_upgrade_guide(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vsphere_upgrade_guide", value)
+
+    @property
+    @pulumi.getter(name="vsphereUpgradeObjects")
+    def vsphere_upgrade_objects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]]:
+        """
+        The links of binary objects needed for upgrade vSphere.
+        """
+        return pulumi.get(self, "vsphere_upgrade_objects")
+
+    @vsphere_upgrade_objects.setter
+    def vsphere_upgrade_objects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]]):
+        pulumi.set(self, "vsphere_upgrade_objects", value)
 
     @property
     @pulumi.getter(name="vsphereVlanId")
@@ -1708,10 +1756,13 @@ class Sddc(pulumi.CustomResource):
             __props__.__dict__["time_hcx_billing_cycle_end"] = None
             __props__.__dict__["time_hcx_license_status_updated"] = None
             __props__.__dict__["time_updated"] = None
+            __props__.__dict__["upgrade_licenses"] = None
             __props__.__dict__["vcenter_fqdn"] = None
             __props__.__dict__["vcenter_initial_password"] = None
             __props__.__dict__["vcenter_private_ip_id"] = None
             __props__.__dict__["vcenter_username"] = None
+            __props__.__dict__["vsphere_upgrade_guide"] = None
+            __props__.__dict__["vsphere_upgrade_objects"] = None
         super(Sddc, __self__).__init__(
             'oci:Ocvp/sddc:Sddc',
             resource_name,
@@ -1767,6 +1818,7 @@ class Sddc(pulumi.CustomResource):
             time_hcx_billing_cycle_end: Optional[pulumi.Input[str]] = None,
             time_hcx_license_status_updated: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
+            upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SddcUpgradeLicenseArgs']]]]] = None,
             vcenter_fqdn: Optional[pulumi.Input[str]] = None,
             vcenter_initial_password: Optional[pulumi.Input[str]] = None,
             vcenter_private_ip_id: Optional[pulumi.Input[str]] = None,
@@ -1774,6 +1826,8 @@ class Sddc(pulumi.CustomResource):
             vmotion_vlan_id: Optional[pulumi.Input[str]] = None,
             vmware_software_version: Optional[pulumi.Input[str]] = None,
             vsan_vlan_id: Optional[pulumi.Input[str]] = None,
+            vsphere_upgrade_guide: Optional[pulumi.Input[str]] = None,
+            vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SddcVsphereUpgradeObjectArgs']]]]] = None,
             vsphere_vlan_id: Optional[pulumi.Input[str]] = None,
             workload_network_cidr: Optional[pulumi.Input[str]] = None) -> 'Sddc':
         """
@@ -1828,6 +1882,7 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[str] time_hcx_billing_cycle_end: The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_hcx_license_status_updated: The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SddcUpgradeLicenseArgs']]]] upgrade_licenses: The vSphere licenses to be used when upgrade SDDC.
         :param pulumi.Input[str] vcenter_fqdn: The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         :param pulumi.Input[str] vcenter_initial_password: The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
         :param pulumi.Input[str] vcenter_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
@@ -1835,6 +1890,8 @@ class Sddc(pulumi.CustomResource):
         :param pulumi.Input[str] vmotion_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
         :param pulumi.Input[str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[str] vsan_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
+        :param pulumi.Input[str] vsphere_upgrade_guide: The link of guidance to upgrade vSphere.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SddcVsphereUpgradeObjectArgs']]]] vsphere_upgrade_objects: The links of binary objects needed for upgrade vSphere.
         :param pulumi.Input[str] vsphere_vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
         :param pulumi.Input[str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
@@ -1887,6 +1944,7 @@ class Sddc(pulumi.CustomResource):
         __props__.__dict__["time_hcx_billing_cycle_end"] = time_hcx_billing_cycle_end
         __props__.__dict__["time_hcx_license_status_updated"] = time_hcx_license_status_updated
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["upgrade_licenses"] = upgrade_licenses
         __props__.__dict__["vcenter_fqdn"] = vcenter_fqdn
         __props__.__dict__["vcenter_initial_password"] = vcenter_initial_password
         __props__.__dict__["vcenter_private_ip_id"] = vcenter_private_ip_id
@@ -1894,6 +1952,8 @@ class Sddc(pulumi.CustomResource):
         __props__.__dict__["vmotion_vlan_id"] = vmotion_vlan_id
         __props__.__dict__["vmware_software_version"] = vmware_software_version
         __props__.__dict__["vsan_vlan_id"] = vsan_vlan_id
+        __props__.__dict__["vsphere_upgrade_guide"] = vsphere_upgrade_guide
+        __props__.__dict__["vsphere_upgrade_objects"] = vsphere_upgrade_objects
         __props__.__dict__["vsphere_vlan_id"] = vsphere_vlan_id
         __props__.__dict__["workload_network_cidr"] = workload_network_cidr
         return Sddc(resource_name, opts=opts, __props__=__props__)
@@ -2259,6 +2319,14 @@ class Sddc(pulumi.CustomResource):
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="upgradeLicenses")
+    def upgrade_licenses(self) -> pulumi.Output[Sequence['outputs.SddcUpgradeLicense']]:
+        """
+        The vSphere licenses to be used when upgrade SDDC.
+        """
+        return pulumi.get(self, "upgrade_licenses")
+
+    @property
     @pulumi.getter(name="vcenterFqdn")
     def vcenter_fqdn(self) -> pulumi.Output[str]:
         """
@@ -2313,6 +2381,22 @@ class Sddc(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
         """
         return pulumi.get(self, "vsan_vlan_id")
+
+    @property
+    @pulumi.getter(name="vsphereUpgradeGuide")
+    def vsphere_upgrade_guide(self) -> pulumi.Output[str]:
+        """
+        The link of guidance to upgrade vSphere.
+        """
+        return pulumi.get(self, "vsphere_upgrade_guide")
+
+    @property
+    @pulumi.getter(name="vsphereUpgradeObjects")
+    def vsphere_upgrade_objects(self) -> pulumi.Output[Sequence['outputs.SddcVsphereUpgradeObject']]:
+        """
+        The links of binary objects needed for upgrade vSphere.
+        """
+        return pulumi.get(self, "vsphere_upgrade_objects")
 
     @property
     @pulumi.getter(name="vsphereVlanId")

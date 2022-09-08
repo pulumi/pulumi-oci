@@ -323,6 +323,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         use_chap=var["instance_configuration_instance_details_block_volumes_attach_details_use_chap"],
                     ),
                     create_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs(
+                        autotune_policies=[oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs(
+                            autotune_type=var["instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type"],
+                            max_vpus_per_gb=var["instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb"],
+                        )],
                         availability_domain=var["instance_configuration_instance_details_block_volumes_create_details_availability_domain"],
                         backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
                         compartment_id=var["compartment_id"],
@@ -516,6 +520,10 @@ class InstanceConfiguration(pulumi.CustomResource):
                         use_chap=var["instance_configuration_instance_details_block_volumes_attach_details_use_chap"],
                     ),
                     create_details=oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs(
+                        autotune_policies=[oci.core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs(
+                            autotune_type=var["instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type"],
+                            max_vpus_per_gb=var["instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb"],
+                        )],
                         availability_domain=var["instance_configuration_instance_details_block_volumes_create_details_availability_domain"],
                         backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
                         compartment_id=var["compartment_id"],

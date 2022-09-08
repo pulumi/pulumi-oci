@@ -22,6 +22,11 @@ __all__ = [
     'GetSubscriptionRedeemableUsersRedeemableUserCollectionResult',
     'GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult',
     'GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult',
+    'GetSubscriptionRedemptionItemResult',
+    'GetSubscriptionRedemptionsFilterResult',
+    'GetSubscriptionRedemptionsRedemptionCollectionResult',
+    'GetSubscriptionRedemptionsRedemptionCollectionItemResult',
+    'GetSubscriptionRedemptionsRedemptionCollectionItemItemResult',
     'GetSubscriptionRewardItemResult',
     'GetSubscriptionRewardSummaryResult',
     'GetSubscriptionRewardsFilterResult',
@@ -38,6 +43,10 @@ class SubscriptionRedeemableUserItem(dict):
         suggest = None
         if key == "emailId":
             suggest = "email_id"
+        elif key == "firstName":
+            suggest = "first_name"
+        elif key == "lastName":
+            suggest = "last_name"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in SubscriptionRedeemableUserItem. Access the value via the '{suggest}' property getter instead.")
@@ -51,11 +60,19 @@ class SubscriptionRedeemableUserItem(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 email_id: str):
+                 email_id: str,
+                 first_name: Optional[str] = None,
+                 last_name: Optional[str] = None):
         """
         :param str email_id: The email ID for a user that can redeem rewards.
+        :param str first_name: The first name of the user that can redeem rewards.
+        :param str last_name: The last name of the user that can redeem rewards.
         """
         pulumi.set(__self__, "email_id", email_id)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
 
     @property
     @pulumi.getter(name="emailId")
@@ -64,6 +81,22 @@ class SubscriptionRedeemableUserItem(dict):
         The email ID for a user that can redeem rewards.
         """
         return pulumi.get(self, "email_id")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> Optional[str]:
+        """
+        The first name of the user that can redeem rewards.
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> Optional[str]:
+        """
+        The last name of the user that can redeem rewards.
+        """
+        return pulumi.get(self, "last_name")
 
 
 @pulumi.output_type
@@ -256,19 +289,41 @@ class GetSubscriptionProductsProductCollectionItemItemResult(dict):
 @pulumi.output_type
 class GetSubscriptionRedeemableUserItemResult(dict):
     def __init__(__self__, *,
-                 email_id: str):
+                 email_id: str,
+                 first_name: str,
+                 last_name: str):
         """
-        :param str email_id: The email ID of a user that can redeem rewards.
+        :param str email_id: The email ID of the user that can redeem rewards.
+        :param str first_name: The first name of the user that can redeem rewards.
+        :param str last_name: The last name of the user that can redeem rewards.
         """
         pulumi.set(__self__, "email_id", email_id)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
 
     @property
     @pulumi.getter(name="emailId")
     def email_id(self) -> str:
         """
-        The email ID of a user that can redeem rewards.
+        The email ID of the user that can redeem rewards.
         """
         return pulumi.get(self, "email_id")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        The first name of the user that can redeem rewards.
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        The last name of the user that can redeem rewards.
+        """
+        return pulumi.get(self, "last_name")
 
 
 @pulumi.output_type
@@ -303,7 +358,7 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult']):
         """
-        :param Sequence['GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs'] items: The list of user email IDs that can redeem rewards.
+        :param Sequence['GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs'] items: The list of user summary that can redeem rewards.
         """
         pulumi.set(__self__, "items", items)
 
@@ -311,7 +366,7 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult']:
         """
-        The list of user email IDs that can redeem rewards.
+        The list of user summary that can redeem rewards.
         """
         return pulumi.get(self, "items")
 
@@ -324,7 +379,7 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(dict):
                  tenancy_id: str,
                  user_id: str):
         """
-        :param Sequence['GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs'] items: The list of user email IDs that can redeem rewards.
+        :param Sequence['GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs'] items: The list of user summary that can redeem rewards.
         :param str subscription_id: The subscription ID for which rewards information is requested for.
         :param str tenancy_id: The OCID of the tenancy.
         """
@@ -337,7 +392,7 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult']:
         """
-        The list of user email IDs that can redeem rewards.
+        The list of user summary that can redeem rewards.
         """
         return pulumi.get(self, "items")
 
@@ -366,19 +421,338 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(dict):
 @pulumi.output_type
 class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult(dict):
     def __init__(__self__, *,
-                 email_id: str):
+                 email_id: str,
+                 first_name: str,
+                 last_name: str):
         """
-        :param str email_id: The email ID of a user that can redeem rewards.
+        :param str email_id: The email ID of the user that can redeem rewards.
+        :param str first_name: The first name of the user that can redeem rewards.
+        :param str last_name: The last name of the user that can redeem rewards.
         """
         pulumi.set(__self__, "email_id", email_id)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
 
     @property
     @pulumi.getter(name="emailId")
     def email_id(self) -> str:
         """
-        The email ID of a user that can redeem rewards.
+        The email ID of the user that can redeem rewards.
         """
         return pulumi.get(self, "email_id")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        The first name of the user that can redeem rewards.
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        The last name of the user that can redeem rewards.
+        """
+        return pulumi.get(self, "last_name")
+
+
+@pulumi.output_type
+class GetSubscriptionRedemptionItemResult(dict):
+    def __init__(__self__, *,
+                 base_rewards: float,
+                 fx_rate: float,
+                 invoice_currency: str,
+                 invoice_number: str,
+                 invoice_total_amount: float,
+                 redeemed_rewards: float,
+                 redemption_code: str,
+                 redemption_email: str,
+                 time_invoiced: str,
+                 time_redeemed: str):
+        """
+        :param float base_rewards: It provides the redeemed rewards in base/subscription currency.
+        :param float fx_rate: It provides the fxRate between invoice currency and subscription currency.
+        :param str invoice_currency: The currency associated with invoice.
+        :param str invoice_number: It provides the invoice number against the redemption.
+        :param float invoice_total_amount: It provides the invoice total amount of given redemption.
+        :param float redeemed_rewards: It provides the redeemed rewards in invoice currency.
+        :param str redemption_code: The redemption code used in the Billing Center during the reward redemption process.
+        :param str redemption_email: It provides the redemption email id.
+        :param str time_invoiced: It provides the invoice date.
+        :param str time_redeemed: It provides redeem date.
+        """
+        pulumi.set(__self__, "base_rewards", base_rewards)
+        pulumi.set(__self__, "fx_rate", fx_rate)
+        pulumi.set(__self__, "invoice_currency", invoice_currency)
+        pulumi.set(__self__, "invoice_number", invoice_number)
+        pulumi.set(__self__, "invoice_total_amount", invoice_total_amount)
+        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
+        pulumi.set(__self__, "redemption_code", redemption_code)
+        pulumi.set(__self__, "redemption_email", redemption_email)
+        pulumi.set(__self__, "time_invoiced", time_invoiced)
+        pulumi.set(__self__, "time_redeemed", time_redeemed)
+
+    @property
+    @pulumi.getter(name="baseRewards")
+    def base_rewards(self) -> float:
+        """
+        It provides the redeemed rewards in base/subscription currency.
+        """
+        return pulumi.get(self, "base_rewards")
+
+    @property
+    @pulumi.getter(name="fxRate")
+    def fx_rate(self) -> float:
+        """
+        It provides the fxRate between invoice currency and subscription currency.
+        """
+        return pulumi.get(self, "fx_rate")
+
+    @property
+    @pulumi.getter(name="invoiceCurrency")
+    def invoice_currency(self) -> str:
+        """
+        The currency associated with invoice.
+        """
+        return pulumi.get(self, "invoice_currency")
+
+    @property
+    @pulumi.getter(name="invoiceNumber")
+    def invoice_number(self) -> str:
+        """
+        It provides the invoice number against the redemption.
+        """
+        return pulumi.get(self, "invoice_number")
+
+    @property
+    @pulumi.getter(name="invoiceTotalAmount")
+    def invoice_total_amount(self) -> float:
+        """
+        It provides the invoice total amount of given redemption.
+        """
+        return pulumi.get(self, "invoice_total_amount")
+
+    @property
+    @pulumi.getter(name="redeemedRewards")
+    def redeemed_rewards(self) -> float:
+        """
+        It provides the redeemed rewards in invoice currency.
+        """
+        return pulumi.get(self, "redeemed_rewards")
+
+    @property
+    @pulumi.getter(name="redemptionCode")
+    def redemption_code(self) -> str:
+        """
+        The redemption code used in the Billing Center during the reward redemption process.
+        """
+        return pulumi.get(self, "redemption_code")
+
+    @property
+    @pulumi.getter(name="redemptionEmail")
+    def redemption_email(self) -> str:
+        """
+        It provides the redemption email id.
+        """
+        return pulumi.get(self, "redemption_email")
+
+    @property
+    @pulumi.getter(name="timeInvoiced")
+    def time_invoiced(self) -> str:
+        """
+        It provides the invoice date.
+        """
+        return pulumi.get(self, "time_invoiced")
+
+    @property
+    @pulumi.getter(name="timeRedeemed")
+    def time_redeemed(self) -> str:
+        """
+        It provides redeem date.
+        """
+        return pulumi.get(self, "time_redeemed")
+
+
+@pulumi.output_type
+class GetSubscriptionRedemptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSubscriptionRedemptionsRedemptionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult']):
+        """
+        :param Sequence['GetSubscriptionRedemptionsRedemptionCollectionItemArgs'] items: The list of redemption summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult']:
+        """
+        The list of redemption summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubscriptionRedemptionsRedemptionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult']):
+        """
+        :param Sequence['GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs'] items: The list of redemption summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult']:
+        """
+        The list of redemption summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSubscriptionRedemptionsRedemptionCollectionItemItemResult(dict):
+    def __init__(__self__, *,
+                 base_rewards: float,
+                 fx_rate: float,
+                 invoice_currency: str,
+                 invoice_number: str,
+                 invoice_total_amount: float,
+                 redeemed_rewards: float,
+                 redemption_code: str,
+                 redemption_email: str,
+                 time_invoiced: str,
+                 time_redeemed: str):
+        """
+        :param float base_rewards: It provides the redeemed rewards in base/subscription currency.
+        :param float fx_rate: It provides the fxRate between invoice currency and subscription currency.
+        :param str invoice_currency: The currency associated with invoice.
+        :param str invoice_number: It provides the invoice number against the redemption.
+        :param float invoice_total_amount: It provides the invoice total amount of given redemption.
+        :param float redeemed_rewards: It provides the redeemed rewards in invoice currency.
+        :param str redemption_code: The redemption code used in the Billing Center during the reward redemption process.
+        :param str redemption_email: It provides the redemption email id.
+        :param str time_invoiced: It provides the invoice date.
+        :param str time_redeemed: It provides redeem date.
+        """
+        pulumi.set(__self__, "base_rewards", base_rewards)
+        pulumi.set(__self__, "fx_rate", fx_rate)
+        pulumi.set(__self__, "invoice_currency", invoice_currency)
+        pulumi.set(__self__, "invoice_number", invoice_number)
+        pulumi.set(__self__, "invoice_total_amount", invoice_total_amount)
+        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
+        pulumi.set(__self__, "redemption_code", redemption_code)
+        pulumi.set(__self__, "redemption_email", redemption_email)
+        pulumi.set(__self__, "time_invoiced", time_invoiced)
+        pulumi.set(__self__, "time_redeemed", time_redeemed)
+
+    @property
+    @pulumi.getter(name="baseRewards")
+    def base_rewards(self) -> float:
+        """
+        It provides the redeemed rewards in base/subscription currency.
+        """
+        return pulumi.get(self, "base_rewards")
+
+    @property
+    @pulumi.getter(name="fxRate")
+    def fx_rate(self) -> float:
+        """
+        It provides the fxRate between invoice currency and subscription currency.
+        """
+        return pulumi.get(self, "fx_rate")
+
+    @property
+    @pulumi.getter(name="invoiceCurrency")
+    def invoice_currency(self) -> str:
+        """
+        The currency associated with invoice.
+        """
+        return pulumi.get(self, "invoice_currency")
+
+    @property
+    @pulumi.getter(name="invoiceNumber")
+    def invoice_number(self) -> str:
+        """
+        It provides the invoice number against the redemption.
+        """
+        return pulumi.get(self, "invoice_number")
+
+    @property
+    @pulumi.getter(name="invoiceTotalAmount")
+    def invoice_total_amount(self) -> float:
+        """
+        It provides the invoice total amount of given redemption.
+        """
+        return pulumi.get(self, "invoice_total_amount")
+
+    @property
+    @pulumi.getter(name="redeemedRewards")
+    def redeemed_rewards(self) -> float:
+        """
+        It provides the redeemed rewards in invoice currency.
+        """
+        return pulumi.get(self, "redeemed_rewards")
+
+    @property
+    @pulumi.getter(name="redemptionCode")
+    def redemption_code(self) -> str:
+        """
+        The redemption code used in the Billing Center during the reward redemption process.
+        """
+        return pulumi.get(self, "redemption_code")
+
+    @property
+    @pulumi.getter(name="redemptionEmail")
+    def redemption_email(self) -> str:
+        """
+        It provides the redemption email id.
+        """
+        return pulumi.get(self, "redemption_email")
+
+    @property
+    @pulumi.getter(name="timeInvoiced")
+    def time_invoiced(self) -> str:
+        """
+        It provides the invoice date.
+        """
+        return pulumi.get(self, "time_invoiced")
+
+    @property
+    @pulumi.getter(name="timeRedeemed")
+    def time_redeemed(self) -> str:
+        """
+        It provides redeem date.
+        """
+        return pulumi.get(self, "time_redeemed")
 
 
 @pulumi.output_type
@@ -531,7 +905,7 @@ class GetSubscriptionRewardSummaryResult(dict):
                  total_rewards_available: float):
         """
         :param str currency: The currency unit for the reward amount.
-        :param str redemption_code: The redemption code used in the billing center during the reward redemption process
+        :param str redemption_code: The redemption code used in the Billing Center during the reward redemption process.
         :param float rewards_rate: The current Rewards percentage in decimal format.
         :param str subscription_id: The subscription ID for which rewards information is requested for.
         :param str tenancy_id: The OCID of the tenancy.
@@ -556,7 +930,7 @@ class GetSubscriptionRewardSummaryResult(dict):
     @pulumi.getter(name="redemptionCode")
     def redemption_code(self) -> str:
         """
-        The redemption code used in the billing center during the reward redemption process
+        The redemption code used in the Billing Center during the reward redemption process.
         """
         return pulumi.get(self, "redemption_code")
 
@@ -817,7 +1191,7 @@ class GetSubscriptionRewardsRewardCollectionItemSummaryResult(dict):
                  total_rewards_available: float):
         """
         :param str currency: The currency unit for the reward amount.
-        :param str redemption_code: The redemption code used in the billing center during the reward redemption process
+        :param str redemption_code: The redemption code used in the Billing Center during the reward redemption process.
         :param float rewards_rate: The current Rewards percentage in decimal format.
         :param str subscription_id: The subscription ID for which rewards information is requested for.
         :param str tenancy_id: The OCID of the tenancy.
@@ -842,7 +1216,7 @@ class GetSubscriptionRewardsRewardCollectionItemSummaryResult(dict):
     @pulumi.getter(name="redemptionCode")
     def redemption_code(self) -> str:
         """
-        The redemption code used in the billing center during the reward redemption process
+        The redemption code used in the Billing Center during the reward redemption process.
         """
         return pulumi.get(self, "redemption_code")
 

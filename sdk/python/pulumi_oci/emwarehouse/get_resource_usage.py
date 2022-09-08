@@ -22,7 +22,7 @@ class GetResourceUsageResult:
     """
     A collection of values returned by getResourceUsage.
     """
-    def __init__(__self__, em_instance_count=None, em_instances=None, em_warehouse_id=None, id=None, operations_insights_warehouse_id=None, targets_count=None):
+    def __init__(__self__, em_instance_count=None, em_instances=None, em_warehouse_id=None, id=None, operations_insights_warehouse_id=None, schema_name=None, targets_count=None):
         if em_instance_count and not isinstance(em_instance_count, int):
             raise TypeError("Expected argument 'em_instance_count' to be a int")
         pulumi.set(__self__, "em_instance_count", em_instance_count)
@@ -38,6 +38,9 @@ class GetResourceUsageResult:
         if operations_insights_warehouse_id and not isinstance(operations_insights_warehouse_id, str):
             raise TypeError("Expected argument 'operations_insights_warehouse_id' to be a str")
         pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
+        if schema_name and not isinstance(schema_name, str):
+            raise TypeError("Expected argument 'schema_name' to be a str")
+        pulumi.set(__self__, "schema_name", schema_name)
         if targets_count and not isinstance(targets_count, int):
             raise TypeError("Expected argument 'targets_count' to be a int")
         pulumi.set(__self__, "targets_count", targets_count)
@@ -80,6 +83,14 @@ class GetResourceUsageResult:
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        schema name
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
     @pulumi.getter(name="targetsCount")
     def targets_count(self) -> int:
         """
@@ -99,6 +110,7 @@ class AwaitableGetResourceUsageResult(GetResourceUsageResult):
             em_warehouse_id=self.em_warehouse_id,
             id=self.id,
             operations_insights_warehouse_id=self.operations_insights_warehouse_id,
+            schema_name=self.schema_name,
             targets_count=self.targets_count)
 
 
@@ -132,6 +144,7 @@ def get_resource_usage(em_warehouse_id: Optional[str] = None,
         em_warehouse_id=__ret__.em_warehouse_id,
         id=__ret__.id,
         operations_insights_warehouse_id=__ret__.operations_insights_warehouse_id,
+        schema_name=__ret__.schema_name,
         targets_count=__ret__.targets_count)
 
 

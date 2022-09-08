@@ -1094,6 +1094,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                 )],
                 hours_of_days=var["exadata_infrastructure_maintenance_window_hours_of_day"],
                 is_custom_action_timeout_enabled=var["exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled"],
+                is_monthly_patching_enabled=var["exadata_infrastructure_maintenance_window_is_monthly_patching_enabled"],
                 lead_time_in_weeks=var["exadata_infrastructure_maintenance_window_lead_time_in_weeks"],
                 months=[oci.database.ExadataInfrastructureMaintenanceWindowMonthArgs(
                     name=var["exadata_infrastructure_maintenance_window_months_name"],
@@ -1191,6 +1192,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
                 )],
                 hours_of_days=var["exadata_infrastructure_maintenance_window_hours_of_day"],
                 is_custom_action_timeout_enabled=var["exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled"],
+                is_monthly_patching_enabled=var["exadata_infrastructure_maintenance_window_is_monthly_patching_enabled"],
                 lead_time_in_weeks=var["exadata_infrastructure_maintenance_window_lead_time_in_weeks"],
                 months=[oci.database.ExadataInfrastructureMaintenanceWindowMonthArgs(
                     name=var["exadata_infrastructure_maintenance_window_months_name"],

@@ -93,6 +93,8 @@ if typing.TYPE_CHECKING:
     filestorage = __filestorage
     import pulumi_oci.functions as __functions
     functions = __functions
+    import pulumi_oci.fusionapps as __fusionapps
+    fusionapps = __fusionapps
     import pulumi_oci.genericartifactscontent as __genericartifactscontent
     genericartifactscontent = __genericartifactscontent
     import pulumi_oci.goldengate as __goldengate
@@ -244,6 +246,7 @@ else:
     events = _utilities.lazy_import('pulumi_oci.events')
     filestorage = _utilities.lazy_import('pulumi_oci.filestorage')
     functions = _utilities.lazy_import('pulumi_oci.functions')
+    fusionapps = _utilities.lazy_import('pulumi_oci.fusionapps')
     genericartifactscontent = _utilities.lazy_import('pulumi_oci.genericartifactscontent')
     goldengate = _utilities.lazy_import('pulumi_oci.goldengate')
     healthchecks = _utilities.lazy_import('pulumi_oci.healthchecks')
@@ -692,6 +695,14 @@ _utilities.register(
   "fqn": "pulumi_oci.cloudguard",
   "classes": {
    "oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration": "CloudGuardConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudGuard/cloudGuardDataSource",
+  "fqn": "pulumi_oci.cloudguard",
+  "classes": {
+   "oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource": "CloudGuardDataSource"
   }
  },
  {
@@ -2456,6 +2467,46 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "FusionApps/fusionEnvironment",
+  "fqn": "pulumi_oci.fusionapps",
+  "classes": {
+   "oci:FusionApps/fusionEnvironment:FusionEnvironment": "FusionEnvironment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FusionApps/fusionEnvironmentAdminUser",
+  "fqn": "pulumi_oci.fusionapps",
+  "classes": {
+   "oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser": "FusionEnvironmentAdminUser"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FusionApps/fusionEnvironmentDataMaskingActivity",
+  "fqn": "pulumi_oci.fusionapps",
+  "classes": {
+   "oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity": "FusionEnvironmentDataMaskingActivity"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FusionApps/fusionEnvironmentFamily",
+  "fqn": "pulumi_oci.fusionapps",
+  "classes": {
+   "oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily": "FusionEnvironmentFamily"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "FusionApps/fusionEnvironmentRefreshActivity",
+  "fqn": "pulumi_oci.fusionapps",
+  "classes": {
+   "oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity": "FusionEnvironmentRefreshActivity"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "GenericArtifactsContent/artifactByPath",
   "fqn": "pulumi_oci.genericartifactscontent",
   "classes": {
@@ -3132,6 +3183,14 @@ _utilities.register(
   "fqn": "pulumi_oci.mysql",
   "classes": {
    "oci:Mysql/mysqlBackup:MysqlBackup": "MysqlBackup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Mysql/mysqlConfiguration",
+  "fqn": "pulumi_oci.mysql",
+  "classes": {
+   "oci:Mysql/mysqlConfiguration:MysqlConfiguration": "MysqlConfiguration"
   }
  },
  {

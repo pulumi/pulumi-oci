@@ -67,7 +67,7 @@ class GetRegistryFolderResult:
     @pulumi.getter(name="dataAssets")
     def data_assets(self) -> Sequence['outputs.GetRegistryFolderDataAssetResult']:
         """
-        List of data assets which belongs to this folder
+        The list of data assets that belong to the folder.
         """
         return pulumi.get(self, "data_assets")
 
@@ -75,7 +75,7 @@ class GetRegistryFolderResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -93,7 +93,7 @@ class GetRegistryFolderResult:
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -101,7 +101,7 @@ class GetRegistryFolderResult:
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -125,7 +125,7 @@ class GetRegistryFolderResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -149,7 +149,7 @@ class GetRegistryFolderResult:
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryFolderParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -200,7 +200,7 @@ def get_registry_folder(folder_key: Optional[str] = None,
 
 
     :param str folder_key: The folder ID.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     """
     __args__ = dict()
     __args__['folderKey'] = folder_key
@@ -245,6 +245,6 @@ def get_registry_folder_output(folder_key: Optional[pulumi.Input[str]] = None,
 
 
     :param str folder_key: The folder ID.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     """
     ...

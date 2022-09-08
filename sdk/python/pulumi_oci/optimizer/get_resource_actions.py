@@ -23,7 +23,10 @@ class GetResourceActionsResult:
     """
     A collection of values returned by getResourceActions.
     """
-    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, name=None, recommendation_id=None, resource_action_collections=None, resource_type=None, state=None, status=None):
+    def __init__(__self__, child_tenancy_ids=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, include_organization=None, name=None, recommendation_id=None, recommendation_name=None, resource_action_collections=None, resource_type=None, state=None, status=None):
+        if child_tenancy_ids and not isinstance(child_tenancy_ids, list):
+            raise TypeError("Expected argument 'child_tenancy_ids' to be a list")
+        pulumi.set(__self__, "child_tenancy_ids", child_tenancy_ids)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -36,12 +39,18 @@ class GetResourceActionsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if include_organization and not isinstance(include_organization, bool):
+            raise TypeError("Expected argument 'include_organization' to be a bool")
+        pulumi.set(__self__, "include_organization", include_organization)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
         if recommendation_id and not isinstance(recommendation_id, str):
             raise TypeError("Expected argument 'recommendation_id' to be a str")
         pulumi.set(__self__, "recommendation_id", recommendation_id)
+        if recommendation_name and not isinstance(recommendation_name, str):
+            raise TypeError("Expected argument 'recommendation_name' to be a str")
+        pulumi.set(__self__, "recommendation_name", recommendation_name)
         if resource_action_collections and not isinstance(resource_action_collections, list):
             raise TypeError("Expected argument 'resource_action_collections' to be a list")
         pulumi.set(__self__, "resource_action_collections", resource_action_collections)
@@ -54,6 +63,11 @@ class GetResourceActionsResult:
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="childTenancyIds")
+    def child_tenancy_ids(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "child_tenancy_ids")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -82,6 +96,11 @@ class GetResourceActionsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="includeOrganization")
+    def include_organization(self) -> Optional[bool]:
+        return pulumi.get(self, "include_organization")
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
@@ -91,11 +110,16 @@ class GetResourceActionsResult:
 
     @property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> str:
+    def recommendation_id(self) -> Optional[str]:
         """
         The unique OCID associated with the recommendation.
         """
         return pulumi.get(self, "recommendation_id")
+
+    @property
+    @pulumi.getter(name="recommendationName")
+    def recommendation_name(self) -> Optional[str]:
+        return pulumi.get(self, "recommendation_name")
 
     @property
     @pulumi.getter(name="resourceActionCollections")
@@ -136,23 +160,29 @@ class AwaitableGetResourceActionsResult(GetResourceActionsResult):
         if False:
             yield self
         return GetResourceActionsResult(
+            child_tenancy_ids=self.child_tenancy_ids,
             compartment_id=self.compartment_id,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
             filters=self.filters,
             id=self.id,
+            include_organization=self.include_organization,
             name=self.name,
             recommendation_id=self.recommendation_id,
+            recommendation_name=self.recommendation_name,
             resource_action_collections=self.resource_action_collections,
             resource_type=self.resource_type,
             state=self.state,
             status=self.status)
 
 
-def get_resource_actions(compartment_id: Optional[str] = None,
+def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
+                         compartment_id: Optional[str] = None,
                          compartment_id_in_subtree: Optional[bool] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetResourceActionsFilterArgs']]] = None,
+                         include_organization: Optional[bool] = None,
                          name: Optional[str] = None,
                          recommendation_id: Optional[str] = None,
+                         recommendation_name: Optional[str] = None,
                          resource_type: Optional[str] = None,
                          state: Optional[str] = None,
                          status: Optional[str] = None,
@@ -160,7 +190,7 @@ def get_resource_actions(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
 
-    Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+    Lists the Cloud Advisor resource actions that are supported.
 
     ## Example Usage
 
@@ -170,28 +200,37 @@ def get_resource_actions(compartment_id: Optional[str] = None,
 
     test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=var["compartment_id"],
         compartment_id_in_subtree=var["resource_action_compartment_id_in_subtree"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
+        child_tenancy_ids=var["resource_action_child_tenancy_ids"],
+        include_organization=var["resource_action_include_organization"],
         name=var["resource_action_name"],
+        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
+        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
         resource_type=var["resource_action_resource_type"],
         state=var["resource_action_state"],
         status=var["resource_action_status"])
     ```
 
 
+    :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
     :param str compartment_id: The OCID of the compartment.
     :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+    :param bool include_organization: When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_id: The unique OCID associated with the recommendation.
+    :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
     :param str resource_type: Optional. A filter that returns results that match the resource type specified.
     :param str state: A filter that returns results that match the lifecycle state specified.
     :param str status: A filter that returns recommendations that match the status specified.
     """
     __args__ = dict()
+    __args__['childTenancyIds'] = child_tenancy_ids
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
+    __args__['includeOrganization'] = include_organization
     __args__['name'] = name
     __args__['recommendationId'] = recommendation_id
+    __args__['recommendationName'] = recommendation_name
     __args__['resourceType'] = resource_type
     __args__['state'] = state
     __args__['status'] = status
@@ -199,12 +238,15 @@ def get_resource_actions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getResourceActions:getResourceActions', __args__, opts=opts, typ=GetResourceActionsResult).value
 
     return AwaitableGetResourceActionsResult(
+        child_tenancy_ids=__ret__.child_tenancy_ids,
         compartment_id=__ret__.compartment_id,
         compartment_id_in_subtree=__ret__.compartment_id_in_subtree,
         filters=__ret__.filters,
         id=__ret__.id,
+        include_organization=__ret__.include_organization,
         name=__ret__.name,
         recommendation_id=__ret__.recommendation_id,
+        recommendation_name=__ret__.recommendation_name,
         resource_action_collections=__ret__.resource_action_collections,
         resource_type=__ret__.resource_type,
         state=__ret__.state,
@@ -212,11 +254,14 @@ def get_resource_actions(compartment_id: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_resource_actions)
-def get_resource_actions_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                compartment_id: Optional[pulumi.Input[str]] = None,
                                 compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetResourceActionsFilterArgs']]]]] = None,
+                                include_organization: Optional[pulumi.Input[Optional[bool]]] = None,
                                 name: Optional[pulumi.Input[Optional[str]]] = None,
-                                recommendation_id: Optional[pulumi.Input[str]] = None,
+                                recommendation_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                recommendation_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 status: Optional[pulumi.Input[Optional[str]]] = None,
@@ -224,7 +269,7 @@ def get_resource_actions_output(compartment_id: Optional[pulumi.Input[str]] = No
     """
     This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
 
-    Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+    Lists the Cloud Advisor resource actions that are supported.
 
     ## Example Usage
 
@@ -234,18 +279,24 @@ def get_resource_actions_output(compartment_id: Optional[pulumi.Input[str]] = No
 
     test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=var["compartment_id"],
         compartment_id_in_subtree=var["resource_action_compartment_id_in_subtree"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
+        child_tenancy_ids=var["resource_action_child_tenancy_ids"],
+        include_organization=var["resource_action_include_organization"],
         name=var["resource_action_name"],
+        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
+        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
         resource_type=var["resource_action_resource_type"],
         state=var["resource_action_state"],
         status=var["resource_action_status"])
     ```
 
 
+    :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
     :param str compartment_id: The OCID of the compartment.
     :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+    :param bool include_organization: When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_id: The unique OCID associated with the recommendation.
+    :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
     :param str resource_type: Optional. A filter that returns results that match the resource type specified.
     :param str state: A filter that returns results that match the lifecycle state specified.
     :param str status: A filter that returns recommendations that match the status specified.

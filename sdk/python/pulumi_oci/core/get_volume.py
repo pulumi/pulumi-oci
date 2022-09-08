@@ -22,10 +22,13 @@ class GetVolumeResult:
     """
     A collection of values returned by getVolume.
     """
-    def __init__(__self__, auto_tuned_vpus_per_gb=None, availability_domain=None, backup_policy_id=None, block_volume_replicas=None, block_volume_replicas_deletion=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_backup_id=None, volume_group_id=None, volume_id=None, vpus_per_gb=None):
+    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, block_volume_replicas=None, block_volume_replicas_deletion=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_backup_id=None, volume_group_id=None, volume_id=None, vpus_per_gb=None):
         if auto_tuned_vpus_per_gb and not isinstance(auto_tuned_vpus_per_gb, str):
             raise TypeError("Expected argument 'auto_tuned_vpus_per_gb' to be a str")
         pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
+        if autotune_policies and not isinstance(autotune_policies, list):
+            raise TypeError("Expected argument 'autotune_policies' to be a list")
+        pulumi.set(__self__, "autotune_policies", autotune_policies)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -105,9 +108,17 @@ class GetVolumeResult:
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> str:
         """
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this volume is effectively tuned to.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Sequence['outputs.GetVolumeAutotunePolicyResult']:
+        """
+        The list of autotune policies enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -180,6 +191,7 @@ class GetVolumeResult:
     def is_auto_tune_enabled(self) -> bool:
         """
         Specifies whether the auto-tune performance is enabled for this boot volume.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 
@@ -278,6 +290,7 @@ class AwaitableGetVolumeResult(GetVolumeResult):
             yield self
         return GetVolumeResult(
             auto_tuned_vpus_per_gb=self.auto_tuned_vpus_per_gb,
+            autotune_policies=self.autotune_policies,
             availability_domain=self.availability_domain,
             backup_policy_id=self.backup_policy_id,
             block_volume_replicas=self.block_volume_replicas,
@@ -328,6 +341,7 @@ def get_volume(volume_id: Optional[str] = None,
 
     return AwaitableGetVolumeResult(
         auto_tuned_vpus_per_gb=__ret__.auto_tuned_vpus_per_gb,
+        autotune_policies=__ret__.autotune_policies,
         availability_domain=__ret__.availability_domain,
         backup_policy_id=__ret__.backup_policy_id,
         block_volume_replicas=__ret__.block_volume_replicas,

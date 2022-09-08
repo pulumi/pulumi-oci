@@ -35,17 +35,17 @@ class RegistryConnectionArgs:
         """
         The set of arguments for constructing a RegistryConnection resource.
         :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the connection in a key-value map format.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties of the connection in a key-value map format.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         :param pulumi.Input[str] type: (Updatable) Specific Connection Type
-        :param pulumi.Input[Sequence[pulumi.Input['RegistryConnectionConnectionPropertyArgs']]] connection_properties: (Updatable) The properties for the connection.
+        :param pulumi.Input[Sequence[pulumi.Input['RegistryConnectionConnectionPropertyArgs']]] connection_properties: (Updatable) The properties of the connection.
         :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
-        :param pulumi.Input[bool] is_default: (Updatable) The default property for the connection.
+        :param pulumi.Input[bool] is_default: (Updatable) The default property of the connection.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input['RegistryConnectionMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The object's type.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input['RegistryConnectionMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The object type.
+        :param pulumi.Input[str] model_version: (Updatable) The model version of the object.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
         :param pulumi.Input['RegistryConnectionPrimarySchemaArgs'] primary_schema: (Updatable) The schema object.
@@ -96,7 +96,7 @@ class RegistryConnectionArgs:
     @pulumi.getter
     def properties(self) -> pulumi.Input[Mapping[str, Any]]:
         """
-        (Updatable) All the properties for the connection in a key-value map format.
+        (Updatable) All the properties of the connection in a key-value map format.
         """
         return pulumi.get(self, "properties")
 
@@ -108,7 +108,7 @@ class RegistryConnectionArgs:
     @pulumi.getter(name="registryId")
     def registry_id(self) -> pulumi.Input[str]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -132,7 +132,7 @@ class RegistryConnectionArgs:
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RegistryConnectionConnectionPropertyArgs']]]]:
         """
-        (Updatable) The properties for the connection.
+        (Updatable) The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -156,7 +156,7 @@ class RegistryConnectionArgs:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) The default property for the connection.
+        (Updatable) The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -180,7 +180,7 @@ class RegistryConnectionArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryConnectionMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -192,7 +192,7 @@ class RegistryConnectionArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The object's type.
+        (Updatable) The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -204,7 +204,7 @@ class RegistryConnectionArgs:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The object's model version.
+        (Updatable) The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -216,7 +216,7 @@ class RegistryConnectionArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -294,20 +294,20 @@ class _RegistryConnectionState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering RegistryConnection resources.
-        :param pulumi.Input[Sequence[pulumi.Input['RegistryConnectionConnectionPropertyArgs']]] connection_properties: (Updatable) The properties for the connection.
+        :param pulumi.Input[Sequence[pulumi.Input['RegistryConnectionConnectionPropertyArgs']]] connection_properties: (Updatable) The properties of the connection.
         :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
         :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
-        :param pulumi.Input[bool] is_default: (Updatable) The default property for the connection.
+        :param pulumi.Input[bool] is_default: (Updatable) The default property of the connection.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input['RegistryConnectionMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The object's type.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input['RegistryConnectionMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The object type.
+        :param pulumi.Input[str] model_version: (Updatable) The model version of the object.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
         :param pulumi.Input['RegistryConnectionPrimarySchemaArgs'] primary_schema: (Updatable) The schema object.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the connection in a key-value map format.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties of the connection in a key-value map format.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         :param pulumi.Input['RegistryConnectionRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] type: (Updatable) Specific Connection Type
         """
@@ -348,7 +348,7 @@ class _RegistryConnectionState:
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RegistryConnectionConnectionPropertyArgs']]]]:
         """
-        (Updatable) The properties for the connection.
+        (Updatable) The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -384,7 +384,7 @@ class _RegistryConnectionState:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) The default property for the connection.
+        (Updatable) The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -408,7 +408,7 @@ class _RegistryConnectionState:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryConnectionMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -420,7 +420,7 @@ class _RegistryConnectionState:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The object's type.
+        (Updatable) The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -432,7 +432,7 @@ class _RegistryConnectionState:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The object's model version.
+        (Updatable) The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -444,7 +444,7 @@ class _RegistryConnectionState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -492,7 +492,7 @@ class _RegistryConnectionState:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) All the properties for the connection in a key-value map format.
+        (Updatable) All the properties of the connection in a key-value map format.
         """
         return pulumi.get(self, "properties")
 
@@ -504,7 +504,7 @@ class _RegistryConnectionState:
     @pulumi.getter(name="registryId")
     def registry_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -670,20 +670,20 @@ class RegistryConnection(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RegistryConnectionConnectionPropertyArgs']]]] connection_properties: (Updatable) The properties for the connection.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RegistryConnectionConnectionPropertyArgs']]]] connection_properties: (Updatable) The properties of the connection.
         :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
         :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
-        :param pulumi.Input[bool] is_default: (Updatable) The default property for the connection.
+        :param pulumi.Input[bool] is_default: (Updatable) The default property of the connection.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[pulumi.InputType['RegistryConnectionMetadataArgs']] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The object's type.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[pulumi.InputType['RegistryConnectionMetadataArgs']] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The object type.
+        :param pulumi.Input[str] model_version: (Updatable) The model version of the object.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
         :param pulumi.Input[pulumi.InputType['RegistryConnectionPrimarySchemaArgs']] primary_schema: (Updatable) The schema object.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the connection in a key-value map format.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties of the connection in a key-value map format.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         :param pulumi.Input[pulumi.InputType['RegistryConnectionRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] type: (Updatable) Specific Connection Type
         """
@@ -899,20 +899,20 @@ class RegistryConnection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RegistryConnectionConnectionPropertyArgs']]]] connection_properties: (Updatable) The properties for the connection.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RegistryConnectionConnectionPropertyArgs']]]] connection_properties: (Updatable) The properties of the connection.
         :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
         :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
-        :param pulumi.Input[bool] is_default: (Updatable) The default property for the connection.
+        :param pulumi.Input[bool] is_default: (Updatable) The default property of the connection.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[pulumi.InputType['RegistryConnectionMetadataArgs']] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The object's type.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[pulumi.InputType['RegistryConnectionMetadataArgs']] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The object type.
+        :param pulumi.Input[str] model_version: (Updatable) The model version of the object.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
         :param pulumi.Input[pulumi.InputType['RegistryConnectionPrimarySchemaArgs']] primary_schema: (Updatable) The schema object.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the connection in a key-value map format.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties of the connection in a key-value map format.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         :param pulumi.Input[pulumi.InputType['RegistryConnectionRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] type: (Updatable) Specific Connection Type
         """
@@ -942,7 +942,7 @@ class RegistryConnection(pulumi.CustomResource):
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> pulumi.Output[Sequence['outputs.RegistryConnectionConnectionProperty']]:
         """
-        (Updatable) The properties for the connection.
+        (Updatable) The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -966,7 +966,7 @@ class RegistryConnection(pulumi.CustomResource):
     @pulumi.getter(name="isDefault")
     def is_default(self) -> pulumi.Output[bool]:
         """
-        (Updatable) The default property for the connection.
+        (Updatable) The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -982,7 +982,7 @@ class RegistryConnection(pulumi.CustomResource):
     @pulumi.getter
     def metadata(self) -> pulumi.Output['outputs.RegistryConnectionMetadata']:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -990,7 +990,7 @@ class RegistryConnection(pulumi.CustomResource):
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The object's type.
+        (Updatable) The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -998,7 +998,7 @@ class RegistryConnection(pulumi.CustomResource):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> pulumi.Output[str]:
         """
-        (Updatable) The object's model version.
+        (Updatable) The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -1006,7 +1006,7 @@ class RegistryConnection(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1038,7 +1038,7 @@ class RegistryConnection(pulumi.CustomResource):
     @pulumi.getter
     def properties(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) All the properties for the connection in a key-value map format.
+        (Updatable) All the properties of the connection in a key-value map format.
         """
         return pulumi.get(self, "properties")
 
@@ -1046,7 +1046,7 @@ class RegistryConnection(pulumi.CustomResource):
     @pulumi.getter(name="registryId")
     def registry_id(self) -> pulumi.Output[str]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 

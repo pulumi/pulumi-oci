@@ -139,13 +139,16 @@ class GetVmClusterResult:
     @pulumi.getter(name="dataCollectionOptions")
     def data_collection_options(self) -> Sequence['outputs.GetVmClusterDataCollectionOptionResult']:
         """
-        Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> float:
+        """
+        Size of the DATA disk group in GBs.
+        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property

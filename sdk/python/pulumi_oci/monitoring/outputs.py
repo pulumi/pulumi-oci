@@ -318,6 +318,7 @@ class GetAlarmsAlarmResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_enabled: bool,
+                 is_notifications_per_metric_dimension_enabled: bool,
                  message_format: str,
                  metric_compartment_id: str,
                  metric_compartment_id_in_subtree: bool,
@@ -341,6 +342,7 @@ class GetAlarmsAlarmResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
         :param bool is_enabled: Whether the alarm is enabled.  Example: `true`
+        :param bool is_notifications_per_metric_dimension_enabled: When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
         :param str message_format: The format to use for notification messages sent from this alarm. The formats are:
         :param str metric_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param bool metric_compartment_id_in_subtree: When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
@@ -364,6 +366,7 @@ class GetAlarmsAlarmResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
         pulumi.set(__self__, "message_format", message_format)
         pulumi.set(__self__, "metric_compartment_id", metric_compartment_id)
         pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
@@ -442,6 +445,14 @@ class GetAlarmsAlarmResult(dict):
         Whether the alarm is enabled.  Example: `true`
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
+    def is_notifications_per_metric_dimension_enabled(self) -> bool:
+        """
+        When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        """
+        return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
 
     @property
     @pulumi.getter(name="messageFormat")

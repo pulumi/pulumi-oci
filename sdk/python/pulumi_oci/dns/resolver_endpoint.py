@@ -17,30 +17,29 @@ class ResolverEndpointInitArgs:
                  is_forwarding: pulumi.Input[bool],
                  is_listening: pulumi.Input[bool],
                  resolver_id: pulumi.Input[str],
-                 scope: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
                  endpoint_type: Optional[pulumi.Input[str]] = None,
                  forwarding_address: Optional[pulumi.Input[str]] = None,
                  listening_address: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ResolverEndpoint resource.
         :param pulumi.Input[bool] is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
         :param pulumi.Input[bool] is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
         :param pulumi.Input[str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
         :param pulumi.Input[str] endpoint_type: (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
         :param pulumi.Input[str] forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         :param pulumi.Input[str] listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
         :param pulumi.Input[str] name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
+        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
         """
         pulumi.set(__self__, "is_forwarding", is_forwarding)
         pulumi.set(__self__, "is_listening", is_listening)
         pulumi.set(__self__, "resolver_id", resolver_id)
-        pulumi.set(__self__, "scope", scope)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if endpoint_type is not None:
             pulumi.set(__self__, "endpoint_type", endpoint_type)
@@ -52,6 +51,8 @@ class ResolverEndpointInitArgs:
             pulumi.set(__self__, "name", name)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
 
     @property
     @pulumi.getter(name="isForwarding")
@@ -88,18 +89,6 @@ class ResolverEndpointInitArgs:
     @resolver_id.setter
     def resolver_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "resolver_id", value)
-
-    @property
-    @pulumi.getter
-    def scope(self) -> pulumi.Input[str]:
-        """
-        Value must be `PRIVATE` when creating private name resolver endpoints.
-        """
-        return pulumi.get(self, "scope")
-
-    @scope.setter
-    def scope(self, value: pulumi.Input[str]):
-        pulumi.set(self, "scope", value)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -172,6 +161,18 @@ class ResolverEndpointInitArgs:
     @nsg_ids.setter
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> Optional[pulumi.Input[str]]:
+        """
+        Value must be `PRIVATE` when creating private name resolver endpoints.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
@@ -579,8 +580,6 @@ class ResolverEndpoint(pulumi.CustomResource):
             if resolver_id is None and not opts.urn:
                 raise TypeError("Missing required property 'resolver_id'")
             __props__.__dict__["resolver_id"] = resolver_id
-            if scope is None and not opts.urn:
-                raise TypeError("Missing required property 'scope'")
             __props__.__dict__["scope"] = scope
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
@@ -733,7 +732,7 @@ class ResolverEndpoint(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[str]:
+    def scope(self) -> pulumi.Output[Optional[str]]:
         """
         Value must be `PRIVATE` when creating private name resolver endpoints.
         """

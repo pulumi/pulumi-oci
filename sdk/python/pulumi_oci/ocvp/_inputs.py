@@ -11,6 +11,8 @@ from .. import _utilities
 
 __all__ = [
     'SddcHcxOnPremLicenseArgs',
+    'SddcUpgradeLicenseArgs',
+    'SddcVsphereUpgradeObjectArgs',
     'GetExsiHostsFilterArgs',
     'GetSddcsFilterArgs',
     'GetSupportedHostShapesFilterArgs',
@@ -71,6 +73,84 @@ class SddcHcxOnPremLicenseArgs:
     @system_name.setter
     def system_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "system_name", value)
+
+
+@pulumi.input_type
+class SddcUpgradeLicenseArgs:
+    def __init__(__self__, *,
+                 license_key: Optional[pulumi.Input[str]] = None,
+                 license_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] license_key: vSphere license key value.
+        :param pulumi.Input[str] license_type: vSphere license type.
+        """
+        if license_key is not None:
+            pulumi.set(__self__, "license_key", license_key)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+
+    @property
+    @pulumi.getter(name="licenseKey")
+    def license_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        vSphere license key value.
+        """
+        return pulumi.get(self, "license_key")
+
+    @license_key.setter
+    def license_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_key", value)
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        vSphere license type.
+        """
+        return pulumi.get(self, "license_type")
+
+    @license_type.setter
+    def license_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_type", value)
+
+
+@pulumi.input_type
+class SddcVsphereUpgradeObjectArgs:
+    def __init__(__self__, *,
+                 download_link: Optional[pulumi.Input[str]] = None,
+                 link_description: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] download_link: Binary object download link.
+        :param pulumi.Input[str] link_description: Binary object description.
+        """
+        if download_link is not None:
+            pulumi.set(__self__, "download_link", download_link)
+        if link_description is not None:
+            pulumi.set(__self__, "link_description", link_description)
+
+    @property
+    @pulumi.getter(name="downloadLink")
+    def download_link(self) -> Optional[pulumi.Input[str]]:
+        """
+        Binary object download link.
+        """
+        return pulumi.get(self, "download_link")
+
+    @download_link.setter
+    def download_link(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "download_link", value)
+
+    @property
+    @pulumi.getter(name="linkDescription")
+    def link_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Binary object description.
+        """
+        return pulumi.get(self, "link_description")
+
+    @link_description.setter
+    def link_description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "link_description", value)
 
 
 @pulumi.input_type

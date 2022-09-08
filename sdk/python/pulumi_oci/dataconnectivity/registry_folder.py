@@ -29,17 +29,17 @@ class RegistryFolderArgs:
                  parent_ref: Optional[pulumi.Input['RegistryFolderParentRefArgs']] = None):
         """
         The set of arguments for constructing a RegistryFolder resource.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
-        :param pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetArgs']]] data_assets: (Updatable) List of data assets which belongs to this folder
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] registry_id: The registry OCID.
+        :param pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetArgs']]] data_assets: (Updatable) The list of data assets that belong to the folder.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input['RegistryFolderParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryFolderParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         """
         pulumi.set(__self__, "identifier", identifier)
         pulumi.set(__self__, "registry_id", registry_id)
@@ -66,7 +66,7 @@ class RegistryFolderArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -78,7 +78,7 @@ class RegistryFolderArgs:
     @pulumi.getter(name="registryId")
     def registry_id(self) -> pulumi.Input[str]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -90,7 +90,7 @@ class RegistryFolderArgs:
     @pulumi.getter(name="dataAssets")
     def data_assets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetArgs']]]]:
         """
-        (Updatable) List of data assets which belongs to this folder
+        (Updatable) The list of data assets that belong to the folder.
         """
         return pulumi.get(self, "data_assets")
 
@@ -102,7 +102,7 @@ class RegistryFolderArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -114,7 +114,7 @@ class RegistryFolderArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -150,7 +150,7 @@ class RegistryFolderArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -186,7 +186,7 @@ class RegistryFolderArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryFolderParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -211,17 +211,17 @@ class _RegistryFolderState:
                  registry_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering RegistryFolder resources.
-        :param pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetArgs']]] data_assets: (Updatable) List of data assets which belongs to this folder
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetArgs']]] data_assets: (Updatable) The list of data assets that belong to the folder.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input['RegistryFolderParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input['RegistryFolderParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         """
         if data_assets is not None:
             pulumi.set(__self__, "data_assets", data_assets)
@@ -250,7 +250,7 @@ class _RegistryFolderState:
     @pulumi.getter(name="dataAssets")
     def data_assets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetArgs']]]]:
         """
-        (Updatable) List of data assets which belongs to this folder
+        (Updatable) The list of data assets that belong to the folder.
         """
         return pulumi.get(self, "data_assets")
 
@@ -262,7 +262,7 @@ class _RegistryFolderState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -274,7 +274,7 @@ class _RegistryFolderState:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -286,7 +286,7 @@ class _RegistryFolderState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -322,7 +322,7 @@ class _RegistryFolderState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -358,7 +358,7 @@ class _RegistryFolderState:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryFolderParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -370,7 +370,7 @@ class _RegistryFolderState:
     @pulumi.getter(name="registryId")
     def registry_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -399,7 +399,7 @@ class RegistryFolder(pulumi.CustomResource):
         """
         This resource provides the Registry Folder resource in Oracle Cloud Infrastructure Data Connectivity service.
 
-        Creates a folder under a specefied registry.
+        Creates a folder under a specified registry.
 
         ## Import
 
@@ -411,17 +411,17 @@ class RegistryFolder(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RegistryFolderDataAssetArgs']]]] data_assets: (Updatable) List of data assets which belongs to this folder
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RegistryFolderDataAssetArgs']]]] data_assets: (Updatable) The list of data assets that belong to the folder.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input[pulumi.InputType['RegistryFolderParentRefArgs']] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[pulumi.InputType['RegistryFolderParentRefArgs']] parent_ref: (Updatable) A reference to the parent object.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         """
         ...
     @overload
@@ -432,7 +432,7 @@ class RegistryFolder(pulumi.CustomResource):
         """
         This resource provides the Registry Folder resource in Oracle Cloud Infrastructure Data Connectivity service.
 
-        Creates a folder under a specefied registry.
+        Creates a folder under a specified registry.
 
         ## Import
 
@@ -520,17 +520,17 @@ class RegistryFolder(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RegistryFolderDataAssetArgs']]]] data_assets: (Updatable) List of data assets which belongs to this folder
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RegistryFolderDataAssetArgs']]]] data_assets: (Updatable) The list of data assets that belong to the folder.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input[pulumi.InputType['RegistryFolderParentRefArgs']] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[str] registry_id: The registry Ocid.
+        :param pulumi.Input[pulumi.InputType['RegistryFolderParentRefArgs']] parent_ref: (Updatable) A reference to the parent object.
+        :param pulumi.Input[str] registry_id: The registry OCID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -553,7 +553,7 @@ class RegistryFolder(pulumi.CustomResource):
     @pulumi.getter(name="dataAssets")
     def data_assets(self) -> pulumi.Output[Sequence['outputs.RegistryFolderDataAsset']]:
         """
-        (Updatable) List of data assets which belongs to this folder
+        (Updatable) The list of data assets that belong to the folder.
         """
         return pulumi.get(self, "data_assets")
 
@@ -561,7 +561,7 @@ class RegistryFolder(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -569,7 +569,7 @@ class RegistryFolder(pulumi.CustomResource):
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -577,7 +577,7 @@ class RegistryFolder(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -601,7 +601,7 @@ class RegistryFolder(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -625,7 +625,7 @@ class RegistryFolder(pulumi.CustomResource):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> pulumi.Output['outputs.RegistryFolderParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -633,7 +633,7 @@ class RegistryFolder(pulumi.CustomResource):
     @pulumi.getter(name="registryId")
     def registry_id(self) -> pulumi.Output[str]:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 

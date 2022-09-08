@@ -85,7 +85,8 @@ class _VmClusterAddVirtualNetworkState:
         Input properties used for looking up and filtering VmClusterAddVirtualNetwork resources.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[float] data_storage_size_in_gb: Size of the DATA disk group in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDbServerArgs']]] db_servers: The list of Exacc DB servers for the cluster to be added.
@@ -192,7 +193,7 @@ class _VmClusterAddVirtualNetworkState:
     @pulumi.getter(name="dataCollectionOptions")
     def data_collection_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]]]:
         """
-        Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
@@ -203,6 +204,9 @@ class _VmClusterAddVirtualNetworkState:
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[float]]:
+        """
+        Size of the DATA disk group in GBs.
+        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @data_storage_size_in_gb.setter
@@ -661,7 +665,8 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] cpus_enabled: The number of enabled CPU cores.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param pulumi.Input[float] data_storage_size_in_gb: Size of the DATA disk group in GBs.
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterAddVirtualNetworkDbServerArgs']]]] db_servers: The list of Exacc DB servers for the cluster to be added.
@@ -738,13 +743,16 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
     @pulumi.getter(name="dataCollectionOptions")
     def data_collection_options(self) -> pulumi.Output[Sequence['outputs.VmClusterAddVirtualNetworkDataCollectionOption']]:
         """
-        Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> pulumi.Output[float]:
+        """
+        Size of the DATA disk group in GBs.
+        """
         return pulumi.get(self, "data_storage_size_in_gb")
 
     @property

@@ -19,6 +19,7 @@ class TriggerArgs:
                  actions: pulumi.Input[Sequence[pulumi.Input['TriggerActionArgs']]],
                  project_id: pulumi.Input[str],
                  trigger_source: pulumi.Input[str],
+                 connection_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -38,6 +39,8 @@ class TriggerArgs:
         pulumi.set(__self__, "actions", actions)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "trigger_source", trigger_source)
+        if connection_id is not None:
+            pulumi.set(__self__, "connection_id", connection_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -84,6 +87,15 @@ class TriggerArgs:
     @trigger_source.setter
     def trigger_source(self, value: pulumi.Input[str]):
         pulumi.set(self, "trigger_source", value)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "connection_id")
+
+    @connection_id.setter
+    def connection_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_id", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -151,6 +163,7 @@ class _TriggerState:
     def __init__(__self__, *,
                  actions: Optional[pulumi.Input[Sequence[pulumi.Input['TriggerActionArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 connection_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -186,6 +199,8 @@ class _TriggerState:
             pulumi.set(__self__, "actions", actions)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_id is not None:
+            pulumi.set(__self__, "connection_id", connection_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -236,6 +251,15 @@ class _TriggerState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "connection_id")
+
+    @connection_id.setter
+    def connection_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_id", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -400,6 +424,7 @@ class Trigger(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]]] = None,
+                 connection_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -531,6 +556,7 @@ class Trigger(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]]] = None,
+                 connection_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -550,6 +576,7 @@ class Trigger(pulumi.CustomResource):
             if actions is None and not opts.urn:
                 raise TypeError("Missing required property 'actions'")
             __props__.__dict__["actions"] = actions
+            __props__.__dict__["connection_id"] = connection_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
@@ -580,6 +607,7 @@ class Trigger(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             actions: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TriggerActionArgs']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            connection_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -622,6 +650,7 @@ class Trigger(pulumi.CustomResource):
 
         __props__.__dict__["actions"] = actions
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["connection_id"] = connection_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
@@ -652,6 +681,11 @@ class Trigger(pulumi.CustomResource):
         The OCID of the compartment that contains the trigger.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "connection_id")
 
     @property
     @pulumi.getter(name="definedTags")

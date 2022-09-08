@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
     public sealed class GetRegistryConnectionsConnectionSummaryCollectionItemResult
     {
         /// <summary>
-        /// The properties for the connection.
+        /// The properties of the connection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyResult> ConnectionProperties;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Identifier;
         /// <summary>
-        /// The default property for the connection.
+        /// The default property of the connection.
         /// </summary>
         public readonly bool IsDefault;
         /// <summary>
@@ -34,15 +34,15 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         public readonly Outputs.GetRegistryConnectionsConnectionSummaryCollectionItemMetadataResult Metadata;
         /// <summary>
-        /// The object's type.
+        /// The object type.
         /// </summary>
         public readonly string ModelType;
         /// <summary>
-        /// The object's model version.
+        /// The model version of the object.
         /// </summary>
         public readonly string ModelVersion;
         /// <summary>
@@ -62,11 +62,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly Outputs.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaResult PrimarySchema;
         /// <summary>
-        /// All the properties for the connection in a key-value map format.
+        /// All the properties of the connection in a key-value map format.
         /// </summary>
         public readonly ImmutableDictionary<string, object> Properties;
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         public readonly string RegistryId;
         /// <summary>

@@ -121,6 +121,10 @@ namespace Pulumi.Oci.EmWarehouse
         /// </summary>
         public readonly string OperationsInsightsWarehouseId;
         /// <summary>
+        /// schema name
+        /// </summary>
+        public readonly string SchemaName;
+        /// <summary>
         /// EmInstance Target count
         /// </summary>
         public readonly int TargetsCount;
@@ -137,6 +141,8 @@ namespace Pulumi.Oci.EmWarehouse
 
             string operationsInsightsWarehouseId,
 
+            string schemaName,
+
             int targetsCount)
         {
             EmInstanceCount = emInstanceCount;
@@ -144,6 +150,7 @@ namespace Pulumi.Oci.EmWarehouse
             EmWarehouseId = emWarehouseId;
             Id = id;
             OperationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            SchemaName = schemaName;
             TargetsCount = targetsCount;
         }
     }

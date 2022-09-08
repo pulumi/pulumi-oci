@@ -111,6 +111,10 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The name associated with the compartment.
+        /// </summary>
+        public readonly string CompartmentName;
+        /// <summary>
         /// Text describing the category.
         /// </summary>
         public readonly string Description;
@@ -157,6 +161,8 @@ namespace Pulumi.Oci.Optimizer
 
             string compartmentId,
 
+            string compartmentName,
+
             string description,
 
             double estimatedCostSaving,
@@ -179,6 +185,7 @@ namespace Pulumi.Oci.Optimizer
         {
             CategoryId = categoryId;
             CompartmentId = compartmentId;
+            CompartmentName = compartmentName;
             Description = description;
             EstimatedCostSaving = estimatedCostSaving;
             ExtendedMetadata = extendedMetadata;

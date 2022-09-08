@@ -25,7 +25,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Detector recipe description.
+        /// (Updatable) The id of the attached DataSource.
+        /// </summary>
+        [Input("dataSourceId")]
+        public Input<string>? DataSourceId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Description for DetectorRecipeDetectorRule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -60,6 +66,18 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("entitiesMappings")]
+        private InputList<Inputs.DetectorRecipeEffectiveDetectorRuleEntitiesMappingGetArgs>? _entitiesMappings;
+
+        /// <summary>
+        /// (Updatable) Data Source entities mapping for a Detector Rule
+        /// </summary>
+        public InputList<Inputs.DetectorRecipeEffectiveDetectorRuleEntitiesMappingGetArgs> EntitiesMappings
+        {
+            get => _entitiesMappings ?? (_entitiesMappings = new InputList<Inputs.DetectorRecipeEffectiveDetectorRuleEntitiesMappingGetArgs>());
+            set => _entitiesMappings = value;
+        }
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -79,7 +97,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// Recommendation for DetectorRecipeDetectorRule
+        /// (Updatable) Recommendation for DetectorRecipeDetectorRule
         /// </summary>
         [Input("recommendation")]
         public Input<string>? Recommendation { get; set; }

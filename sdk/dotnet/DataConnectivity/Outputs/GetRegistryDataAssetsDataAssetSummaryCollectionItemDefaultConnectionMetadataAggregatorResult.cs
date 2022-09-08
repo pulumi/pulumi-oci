@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
     public sealed class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorResult
     {
         /// <summary>
-        /// A user defined description for the object.
+        /// A user-defined description for the object.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         public readonly string Identifier;
         /// <summary>

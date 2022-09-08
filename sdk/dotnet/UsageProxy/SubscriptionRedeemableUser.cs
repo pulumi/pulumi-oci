@@ -12,7 +12,7 @@ namespace Pulumi.Oci.UsageProxy
     /// <summary>
     /// This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
     /// 
-    /// Adds the list of redeemable user email IDs for a subscription ID.
+    /// Adds the list of redeemable user summary for a subscription ID.
     /// 
     /// ## Example Usage
     /// 
@@ -32,6 +32,8 @@ namespace Pulumi.Oci.UsageProxy
     ///             new Oci.UsageProxy.Inputs.SubscriptionRedeemableUserItemArgs
     ///             {
     ///                 EmailId = oci_usage_proxy_email.Test_email.Id,
+    ///                 FirstName = @var.Subscription_redeemable_user_items_first_name,
+    ///                 LastName = @var.Subscription_redeemable_user_items_last_name,
     ///             },
     ///         },
     ///         UserId = oci_identity_user.Test_user.Id,
@@ -52,7 +54,7 @@ namespace Pulumi.Oci.UsageProxy
     public partial class SubscriptionRedeemableUser : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The list of email IDs to be added to the list of users that can redeem rewards.
+        /// The list of new user to be added to the list of user that can redeem rewards.
         /// </summary>
         [Output("items")]
         public Output<ImmutableArray<Outputs.SubscriptionRedeemableUserItem>> Items { get; private set; } = null!;
@@ -125,7 +127,7 @@ namespace Pulumi.Oci.UsageProxy
         private InputList<Inputs.SubscriptionRedeemableUserItemArgs>? _items;
 
         /// <summary>
-        /// The list of email IDs to be added to the list of users that can redeem rewards.
+        /// The list of new user to be added to the list of user that can redeem rewards.
         /// </summary>
         public InputList<Inputs.SubscriptionRedeemableUserItemArgs> Items
         {
@@ -163,7 +165,7 @@ namespace Pulumi.Oci.UsageProxy
         private InputList<Inputs.SubscriptionRedeemableUserItemGetArgs>? _items;
 
         /// <summary>
-        /// The list of email IDs to be added to the list of users that can redeem rewards.
+        /// The list of new user to be added to the list of user that can redeem rewards.
         /// </summary>
         public InputList<Inputs.SubscriptionRedeemableUserItemGetArgs> Items
         {

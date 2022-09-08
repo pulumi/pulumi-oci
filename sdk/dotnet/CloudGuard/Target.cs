@@ -187,7 +187,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> TargetResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// possible type of targets(compartment/HCMCloud/ERPCloud)
+        /// possible type of targets(COMPARTMENT/FACLOUD)
         /// </summary>
         [Output("targetResourceType")]
         public Output<string> TargetResourceType { get; private set; } = null!;
@@ -323,7 +323,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string> TargetResourceId { get; set; } = null!;
 
         /// <summary>
-        /// possible type of targets(compartment/HCMCloud/ERPCloud)
+        /// possible type of targets(COMPARTMENT/FACLOUD)
         /// </summary>
         [Input("targetResourceType", required: true)]
         public Input<string> TargetResourceType { get; set; } = null!;
@@ -463,7 +463,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? TargetResourceId { get; set; }
 
         /// <summary>
-        /// possible type of targets(compartment/HCMCloud/ERPCloud)
+        /// possible type of targets(COMPARTMENT/FACLOUD)
         /// </summary>
         [Input("targetResourceType")]
         public Input<string>? TargetResourceType { get; set; }

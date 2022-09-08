@@ -46,6 +46,14 @@ namespace Pulumi.Oci.Core
     ///             Id = @var.Boot_volume_source_details_id,
     ///             Type = @var.Boot_volume_source_details_type,
     ///         },
+    ///         AutotunePolicies = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.BootVolumeAutotunePolicyArgs
+    ///             {
+    ///                 AutotuneType = @var.Boot_volume_autotune_policies_autotune_type,
+    ///                 MaxVpusPerGb = @var.Boot_volume_autotune_policies_max_vpus_per_gb,
+    ///             },
+    ///         },
     ///         AvailabilityDomain = @var.Boot_volume_availability_domain,
     ///         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
     ///         BootVolumeReplicas = new[]
@@ -87,10 +95,16 @@ namespace Pulumi.Oci.Core
     public partial class BootVolume : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         /// </summary>
         [Output("autoTunedVpusPerGb")]
         public Output<string> AutoTunedVpusPerGb { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The list of autotune policies to be enabled for this volume.
+        /// </summary>
+        [Output("autotunePolicies")]
+        public Output<ImmutableArray<Outputs.BootVolumeAutotunePolicy>> AutotunePolicies { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -144,7 +158,7 @@ namespace Pulumi.Oci.Core
         public Output<string> ImageId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         /// </summary>
         [Output("isAutoTuneEnabled")]
         public Output<bool> IsAutoTuneEnabled { get; private set; } = null!;
@@ -252,6 +266,18 @@ namespace Pulumi.Oci.Core
 
     public sealed class BootVolumeArgs : global::Pulumi.ResourceArgs
     {
+        [Input("autotunePolicies")]
+        private InputList<Inputs.BootVolumeAutotunePolicyArgs>? _autotunePolicies;
+
+        /// <summary>
+        /// (Updatable) The list of autotune policies to be enabled for this volume.
+        /// </summary>
+        public InputList<Inputs.BootVolumeAutotunePolicyArgs> AutotunePolicies
+        {
+            get => _autotunePolicies ?? (_autotunePolicies = new InputList<Inputs.BootVolumeAutotunePolicyArgs>());
+            set => _autotunePolicies = value;
+        }
+
         /// <summary>
         /// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         /// </summary>
@@ -316,7 +342,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         /// </summary>
         [Input("isAutoTuneEnabled")]
         public Input<bool>? IsAutoTuneEnabled { get; set; }
@@ -351,10 +377,22 @@ namespace Pulumi.Oci.Core
     public sealed class BootVolumeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         /// </summary>
         [Input("autoTunedVpusPerGb")]
         public Input<string>? AutoTunedVpusPerGb { get; set; }
+
+        [Input("autotunePolicies")]
+        private InputList<Inputs.BootVolumeAutotunePolicyGetArgs>? _autotunePolicies;
+
+        /// <summary>
+        /// (Updatable) The list of autotune policies to be enabled for this volume.
+        /// </summary>
+        public InputList<Inputs.BootVolumeAutotunePolicyGetArgs> AutotunePolicies
+        {
+            get => _autotunePolicies ?? (_autotunePolicies = new InputList<Inputs.BootVolumeAutotunePolicyGetArgs>());
+            set => _autotunePolicies = value;
+        }
 
         /// <summary>
         /// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -426,7 +464,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         /// </summary>
         [Input("isAutoTuneEnabled")]
         public Input<bool>? IsAutoTuneEnabled { get; set; }

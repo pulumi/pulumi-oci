@@ -18,6 +18,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleResult> CandidateResponderRules;
         /// <summary>
+        /// The id of the attached DataSource.
+        /// </summary>
+        public readonly string DataSourceId;
+        /// <summary>
         /// Description for DetectorRecipeDetectorRule.
         /// </summary>
         public readonly string Description;
@@ -37,6 +41,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Data Source entities mapping for a Detector Rule
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingResult> EntitiesMappings;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -74,6 +82,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult(
             ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleResult> candidateResponderRules,
 
+            string dataSourceId,
+
             string description,
 
             ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult> details,
@@ -83,6 +93,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string detectorRuleId,
 
             string displayName,
+
+            ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingResult> entitiesMappings,
 
             string lifecycleDetails,
 
@@ -101,11 +113,13 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string timeUpdated)
         {
             CandidateResponderRules = candidateResponderRules;
+            DataSourceId = dataSourceId;
             Description = description;
             Details = details;
             Detector = detector;
             DetectorRuleId = detectorRuleId;
             DisplayName = displayName;
+            EntitiesMappings = entitiesMappings;
             LifecycleDetails = lifecycleDetails;
             ManagedListTypes = managedListTypes;
             Recommendation = recommendation;

@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int CpuCoreCount;
         /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemDataCollectionOptionResult> DataCollectionOptions;
+        /// <summary>
         /// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         /// </summary>
         public readonly int DataStoragePercentage;
@@ -221,6 +225,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int cpuCoreCount,
 
+            ImmutableArray<Outputs.GetDbSystemsDbSystemDataCollectionOptionResult> dataCollectionOptions,
+
             int dataStoragePercentage,
 
             int dataStorageSizeInGb,
@@ -319,6 +325,7 @@ namespace Pulumi.Oci.Database.Outputs
             ClusterName = clusterName;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
+            DataCollectionOptions = dataCollectionOptions;
             DataStoragePercentage = dataStoragePercentage;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DatabaseEdition = databaseEdition;

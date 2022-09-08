@@ -31,6 +31,30 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
+        /// (Updatable) The id of the attached DataSource.
+        /// </summary>
+        [Input("dataSourceId")]
+        public Input<string>? DataSourceId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Description for DetectorRecipeDetectorRule.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        [Input("entitiesMappings")]
+        private InputList<Inputs.DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs>? _entitiesMappings;
+
+        /// <summary>
+        /// (Updatable) Data Source entities mapping for a Detector Rule
+        /// </summary>
+        public InputList<Inputs.DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs> EntitiesMappings
+        {
+            get => _entitiesMappings ?? (_entitiesMappings = new InputList<Inputs.DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs>());
+            set => _entitiesMappings = value;
+        }
+
+        /// <summary>
         /// configuration allowed or not
         /// </summary>
         [Input("isConfigurationAllowed")]
@@ -53,6 +77,12 @@ namespace Pulumi.Oci.CloudGuard.Inputs
             get => _labels ?? (_labels = new InputList<string>());
             set => _labels = value;
         }
+
+        /// <summary>
+        /// (Updatable) Recommendation for DetectorRecipeDetectorRule
+        /// </summary>
+        [Input("recommendation")]
+        public Input<string>? Recommendation { get; set; }
 
         /// <summary>
         /// (Updatable) The Risk Level

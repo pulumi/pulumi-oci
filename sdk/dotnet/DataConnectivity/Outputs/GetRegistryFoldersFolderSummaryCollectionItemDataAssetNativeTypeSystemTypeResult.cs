@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly Outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionResult ConfigDefinition;
         /// <summary>
-        /// User-defined description for the folder.
+        /// User-defined description of the folder.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string DtType;
         /// <summary>
-        /// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         public readonly string Key;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly int ObjectStatus;
         /// <summary>
-        /// A reference to the object's parent.
+        /// A reference to the parent object.
         /// </summary>
         public readonly Outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefResult ParentRef;
         /// <summary>

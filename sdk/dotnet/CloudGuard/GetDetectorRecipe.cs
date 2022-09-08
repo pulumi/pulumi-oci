@@ -125,7 +125,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDetectorRecipeDetectorRuleResult> DetectorRules;
         /// <summary>
-        /// Display name for DetectorRecipeDetectorRule.
+        /// The display name of entity
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -156,6 +156,10 @@ namespace Pulumi.Oci.CloudGuard
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
+        /// The recipe attached to targets
+        /// </summary>
+        public readonly ImmutableArray<string> TargetIds;
         /// <summary>
         /// The date and time the detector recipe was created. Format defined by RFC3339.
         /// </summary>
@@ -195,6 +199,8 @@ namespace Pulumi.Oci.CloudGuard
 
             ImmutableDictionary<string, object> systemTags,
 
+            ImmutableArray<string> targetIds,
+
             string timeCreated,
 
             string timeUpdated)
@@ -213,6 +219,7 @@ namespace Pulumi.Oci.CloudGuard
             SourceDetectorRecipeId = sourceDetectorRecipeId;
             State = state;
             SystemTags = systemTags;
+            TargetIds = targetIds;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

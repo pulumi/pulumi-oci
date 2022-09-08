@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Dns
         /// Value must be `PRIVATE` when creating private name resolver endpoints.
         /// </summary>
         [Output("scope")]
-        public Output<string> Scope { get; private set; } = null!;
+        public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
         /// The canonical absolute URL of the resource.
@@ -249,8 +249,8 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// Value must be `PRIVATE` when creating private name resolver endpoints.
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         /// <summary>
         /// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.

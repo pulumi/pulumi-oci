@@ -140,7 +140,7 @@ namespace Pulumi.Oci.DataConnectivity
     public partial class RegistryConnection : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The properties for the connection.
+        /// (Updatable) The properties of the connection.
         /// </summary>
         [Output("connectionProperties")]
         public Output<ImmutableArray<Outputs.RegistryConnectionConnectionProperty>> ConnectionProperties { get; private set; } = null!;
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Output<string> Identifier { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The default property for the connection.
+        /// (Updatable) The default property of the connection.
         /// </summary>
         [Output("isDefault")]
         public Output<bool> IsDefault { get; private set; } = null!;
@@ -170,25 +170,25 @@ namespace Pulumi.Oci.DataConnectivity
         public Output<string> Key { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.RegistryConnectionMetadata> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The object's type.
+        /// (Updatable) The object type.
         /// </summary>
         [Output("modelType")]
         public Output<string> ModelType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The object's model version.
+        /// (Updatable) The model version of the object.
         /// </summary>
         [Output("modelVersion")]
         public Output<string> ModelVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -212,13 +212,13 @@ namespace Pulumi.Oci.DataConnectivity
         public Output<Outputs.RegistryConnectionPrimarySchema> PrimarySchema { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) All the properties for the connection in a key-value map format.
+        /// (Updatable) All the properties of the connection in a key-value map format.
         /// </summary>
         [Output("properties")]
         public Output<ImmutableDictionary<string, object>> Properties { get; private set; } = null!;
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Output("registryId")]
         public Output<string> RegistryId { get; private set; } = null!;
@@ -285,7 +285,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputList<Inputs.RegistryConnectionConnectionPropertyArgs>? _connectionProperties;
 
         /// <summary>
-        /// (Updatable) The properties for the connection.
+        /// (Updatable) The properties of the connection.
         /// </summary>
         public InputList<Inputs.RegistryConnectionConnectionPropertyArgs> ConnectionProperties
         {
@@ -306,7 +306,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string> Identifier { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The default property for the connection.
+        /// (Updatable) The default property of the connection.
         /// </summary>
         [Input("isDefault")]
         public Input<bool>? IsDefault { get; set; }
@@ -318,25 +318,25 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.RegistryConnectionMetadataArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// (Updatable) The object's type.
+        /// (Updatable) The object type.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }
 
         /// <summary>
-        /// (Updatable) The object's model version.
+        /// (Updatable) The model version of the object.
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -363,7 +363,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputMap<object>? _properties;
 
         /// <summary>
-        /// (Updatable) All the properties for the connection in a key-value map format.
+        /// (Updatable) All the properties of the connection in a key-value map format.
         /// </summary>
         public InputMap<object> Properties
         {
@@ -372,7 +372,7 @@ namespace Pulumi.Oci.DataConnectivity
         }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public Input<string> RegistryId { get; set; } = null!;
@@ -401,7 +401,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputList<Inputs.RegistryConnectionConnectionPropertyGetArgs>? _connectionProperties;
 
         /// <summary>
-        /// (Updatable) The properties for the connection.
+        /// (Updatable) The properties of the connection.
         /// </summary>
         public InputList<Inputs.RegistryConnectionConnectionPropertyGetArgs> ConnectionProperties
         {
@@ -422,7 +422,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// (Updatable) The default property for the connection.
+        /// (Updatable) The default property of the connection.
         /// </summary>
         [Input("isDefault")]
         public Input<bool>? IsDefault { get; set; }
@@ -434,25 +434,25 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.RegistryConnectionMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// (Updatable) The object's type.
+        /// (Updatable) The object type.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }
 
         /// <summary>
-        /// (Updatable) The object's model version.
+        /// (Updatable) The model version of the object.
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -479,7 +479,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputMap<object>? _properties;
 
         /// <summary>
-        /// (Updatable) All the properties for the connection in a key-value map format.
+        /// (Updatable) All the properties of the connection in a key-value map format.
         /// </summary>
         public InputMap<object> Properties
         {
@@ -488,7 +488,7 @@ namespace Pulumi.Oci.DataConnectivity
         }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId")]
         public Input<string>? RegistryId { get; set; }

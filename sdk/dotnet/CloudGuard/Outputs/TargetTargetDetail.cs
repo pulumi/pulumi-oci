@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? SecurityZoneId;
         /// <summary>
-        /// possible type of targets(compartment/HCMCloud/ERPCloud)
+        /// possible type of targets(COMPARTMENT/FACLOUD)
         /// </summary>
         public readonly string? TargetResourceType;
         /// <summary>

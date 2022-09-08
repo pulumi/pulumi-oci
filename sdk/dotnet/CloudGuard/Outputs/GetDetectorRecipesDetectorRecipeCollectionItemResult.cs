@@ -66,6 +66,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
+        /// The recipe attached to targets
+        /// </summary>
+        public readonly ImmutableArray<string> TargetIds;
+        /// <summary>
         /// The date and time the detector recipe was created. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeCreated;
@@ -102,6 +106,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableDictionary<string, object> systemTags,
 
+            ImmutableArray<string> targetIds,
+
             string timeCreated,
 
             string timeUpdated)
@@ -119,6 +125,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             SourceDetectorRecipeId = sourceDetectorRecipeId;
             State = state;
             SystemTags = systemTags;
+            TargetIds = targetIds;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

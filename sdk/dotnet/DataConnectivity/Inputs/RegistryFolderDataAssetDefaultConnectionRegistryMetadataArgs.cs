@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? AggregatorKey { get; set; }
 
         /// <summary>
-        /// (Updatable) The id of the user who created the object.
+        /// (Updatable) The ID of the user who created the object.
         /// </summary>
         [Input("createdByUserId")]
         public Input<string>? CreatedByUserId { get; set; }
@@ -31,13 +31,13 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? CreatedByUserName { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies whether this object is a favorite or not.
+        /// (Updatable) Specifies whether the object is a favorite.
         /// </summary>
         [Input("isFavorite")]
         public Input<bool>? IsFavorite { get; set; }
 
         /// <summary>
-        /// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         private InputList<string>? _labels;
 
         /// <summary>
-        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         /// </summary>
         public InputList<string> Labels
         {
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The id of the user who updated the object.
+        /// (Updatable) The ID of the user who updated the object.
         /// </summary>
         [Input("updatedByUserId")]
         public Input<string>? UpdatedByUserId { get; set; }

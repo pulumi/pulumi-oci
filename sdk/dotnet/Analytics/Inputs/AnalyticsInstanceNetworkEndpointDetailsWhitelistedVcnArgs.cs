@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Analytics.Inputs
         private InputList<string>? _whitelistedIps;
 
         /// <summary>
-        /// Source IP addresses or IP address ranges igress rules.
+        /// Source IP addresses or IP address ranges in ingress rules.
         /// </summary>
         public InputList<string> WhitelistedIps
         {

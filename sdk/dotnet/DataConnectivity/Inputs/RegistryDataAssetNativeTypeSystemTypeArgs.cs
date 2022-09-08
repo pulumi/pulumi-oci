@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<Inputs.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs>? ConfigDefinition { get; set; }
 
         /// <summary>
-        /// (Updatable) A user defined description for the object.
+        /// (Updatable) A user-defined description for the object.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) The property which disciminates the subtypes.
+        /// (Updatable) The property which differentiates the subtypes.
         /// </summary>
         [Input("modelType", required: true)]
         public Input<string> ModelType { get; set; } = null!;
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<int>? ObjectStatus { get; set; }
 
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         [Input("parentRef")]
         public Input<Inputs.RegistryDataAssetNativeTypeSystemTypeParentRefArgs>? ParentRef { get; set; }

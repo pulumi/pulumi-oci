@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// Gets a Data Connectivity Management Registry by identifier
+        /// Retrieves a Data Connectivity Management registry using the specified identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// Gets a Data Connectivity Management Registry by identifier
+        /// Retrieves a Data Connectivity Management registry using the specified identifier.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.DataConnectivity
     public sealed class GetRegistryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public string RegistryId { get; set; } = null!;
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.DataConnectivity
     public sealed class GetRegistryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public Input<string> RegistryId { get; set; } = null!;
@@ -116,20 +116,20 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Data Connectivity Management Registry display name, registries can be renamed
+        /// Data Connectivity Management registry display name; registries can be renamed.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// A unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
         public readonly string RegistryId;
         /// <summary>
-        /// Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+        /// Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -137,15 +137,15 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly string StateMessage;
         /// <summary>
-        /// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        /// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        /// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Name of the user who updated the DCMS Registry.
+        /// Name of the user who updated the DCMS registry.
         /// </summary>
         public readonly string UpdatedBy;
 

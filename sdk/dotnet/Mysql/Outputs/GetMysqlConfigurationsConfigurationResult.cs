@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlConfigurationsConfigurationInitVariableResult> InitVariables;
+        /// <summary>
         /// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
         /// </summary>
         public readonly string ParentConfigurationId;
@@ -62,9 +66,9 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// User controllable service variables.
+        /// User-defined service variables.
         /// </summary>
-        public readonly Outputs.GetMysqlConfigurationsConfigurationVariablesResult Variables;
+        public readonly ImmutableArray<Outputs.GetMysqlConfigurationsConfigurationVariableResult> Variables;
 
         [OutputConstructor]
         private GetMysqlConfigurationsConfigurationResult(
@@ -80,6 +84,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string id,
 
+            ImmutableArray<Outputs.GetMysqlConfigurationsConfigurationInitVariableResult> initVariables,
+
             string parentConfigurationId,
 
             string shapeName,
@@ -92,7 +98,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string type,
 
-            Outputs.GetMysqlConfigurationsConfigurationVariablesResult variables)
+            ImmutableArray<Outputs.GetMysqlConfigurationsConfigurationVariableResult> variables)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
@@ -100,6 +106,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            InitVariables = initVariables;
             ParentConfigurationId = parentConfigurationId;
             ShapeName = shapeName;
             State = state;

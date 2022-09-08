@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Detector recipe description.
+        /// (Updatable) Description for DetectorRecipeDetectorRule.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -96,6 +96,12 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The recipe attached to targets
+        /// </summary>
+        [Output("targetIds")]
+        public Output<ImmutableArray<string>> TargetIds { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the detector recipe was created. Format defined by RFC3339.
@@ -174,10 +180,16 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Detector recipe description.
+        /// (Updatable) Description for DetectorRecipeDetectorRule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// detector for the rule
+        /// </summary>
+        [Input("detector")]
+        public Input<string>? Detector { get; set; }
 
         [Input("detectorRules")]
         private InputList<Inputs.DetectorRecipeDetectorRuleArgs>? _detectorRules;
@@ -212,8 +224,8 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The id of the source detector recipe.
         /// </summary>
-        [Input("sourceDetectorRecipeId", required: true)]
-        public Input<string> SourceDetectorRecipeId { get; set; } = null!;
+        [Input("sourceDetectorRecipeId")]
+        public Input<string>? SourceDetectorRecipeId { get; set; }
 
         public DetectorRecipeArgs()
         {
@@ -242,7 +254,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Detector recipe description.
+        /// (Updatable) Description for DetectorRecipeDetectorRule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -323,6 +335,18 @@ namespace Pulumi.Oci.CloudGuard
         {
             get => _systemTags ?? (_systemTags = new InputMap<object>());
             set => _systemTags = value;
+        }
+
+        [Input("targetIds")]
+        private InputList<string>? _targetIds;
+
+        /// <summary>
+        /// The recipe attached to targets
+        /// </summary>
+        public InputList<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new InputList<string>());
+            set => _targetIds = value;
         }
 
         /// <summary>

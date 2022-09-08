@@ -32,6 +32,8 @@ namespace Pulumi.Oci.Optimizer
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Category_compartment_id_in_subtree,
+        ///         ChildTenancyIds = @var.Category_child_tenancy_ids,
+        ///         IncludeOrganization = @var.Category_include_organization,
         ///         Name = @var.Category_name,
         ///         State = @var.Category_state,
         ///     });
@@ -65,6 +67,8 @@ namespace Pulumi.Oci.Optimizer
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Category_compartment_id_in_subtree,
+        ///         ChildTenancyIds = @var.Category_child_tenancy_ids,
+        ///         IncludeOrganization = @var.Category_include_organization,
         ///         Name = @var.Category_name,
         ///         State = @var.Category_state,
         ///     });
@@ -81,6 +85,18 @@ namespace Pulumi.Oci.Optimizer
 
     public sealed class GetCategoriesArgs : global::Pulumi.InvokeArgs
     {
+        [Input("childTenancyIds")]
+        private List<string>? _childTenancyIds;
+
+        /// <summary>
+        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+        /// </summary>
+        public List<string> ChildTenancyIds
+        {
+            get => _childTenancyIds ?? (_childTenancyIds = new List<string>());
+            set => _childTenancyIds = value;
+        }
+
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
@@ -102,6 +118,12 @@ namespace Pulumi.Oci.Optimizer
         }
 
         /// <summary>
+        /// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+        /// </summary>
+        [Input("includeOrganization")]
+        public bool? IncludeOrganization { get; set; }
+
+        /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
         [Input("name")]
@@ -121,6 +143,18 @@ namespace Pulumi.Oci.Optimizer
 
     public sealed class GetCategoriesInvokeArgs : global::Pulumi.InvokeArgs
     {
+        [Input("childTenancyIds")]
+        private InputList<string>? _childTenancyIds;
+
+        /// <summary>
+        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+        /// </summary>
+        public InputList<string> ChildTenancyIds
+        {
+            get => _childTenancyIds ?? (_childTenancyIds = new InputList<string>());
+            set => _childTenancyIds = value;
+        }
+
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
@@ -140,6 +174,12 @@ namespace Pulumi.Oci.Optimizer
             get => _filters ?? (_filters = new InputList<Inputs.GetCategoriesFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+        /// </summary>
+        [Input("includeOrganization")]
+        public Input<bool>? IncludeOrganization { get; set; }
 
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
@@ -167,6 +207,7 @@ namespace Pulumi.Oci.Optimizer
         /// The list of category_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCategoriesCategoryCollectionResult> CategoryCollections;
+        public readonly ImmutableArray<string> ChildTenancyIds;
         /// <summary>
         /// The OCID of the tenancy. The tenancy is the root compartment.
         /// </summary>
@@ -177,6 +218,7 @@ namespace Pulumi.Oci.Optimizer
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IncludeOrganization;
         /// <summary>
         /// The name assigned to the category.
         /// </summary>
@@ -190,6 +232,8 @@ namespace Pulumi.Oci.Optimizer
         private GetCategoriesResult(
             ImmutableArray<Outputs.GetCategoriesCategoryCollectionResult> categoryCollections,
 
+            ImmutableArray<string> childTenancyIds,
+
             string compartmentId,
 
             bool compartmentIdInSubtree,
@@ -198,15 +242,19 @@ namespace Pulumi.Oci.Optimizer
 
             string id,
 
+            bool? includeOrganization,
+
             string? name,
 
             string? state)
         {
             CategoryCollections = categoryCollections;
+            ChildTenancyIds = childTenancyIds;
             CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
             Filters = filters;
             Id = id;
+            IncludeOrganization = includeOrganization;
             Name = name;
             State = state;
         }

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+        /// This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
         /// 
         /// 
         /// {{% examples %}}
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+        /// This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
         /// 
         /// 
         /// {{% examples %}}
@@ -92,13 +92,13 @@ namespace Pulumi.Oci.DataConnectivity
         }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public string RegistryId { get; set; } = null!;
 
         /// <summary>
-        /// key of the a specefic Type.
+        /// Key of the a specific type.
         /// </summary>
         [Input("typeKey", required: true)]
         public string TypeKey { get; set; } = null!;
@@ -124,13 +124,13 @@ namespace Pulumi.Oci.DataConnectivity
         }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public Input<string> RegistryId { get; set; } = null!;
 
         /// <summary>
-        /// key of the a specefic Type.
+        /// Key of the a specific type.
         /// </summary>
         [Input("typeKey", required: true)]
         public Input<string> TypeKey { get; set; } = null!;
@@ -146,11 +146,11 @@ namespace Pulumi.Oci.DataConnectivity
     public sealed class GetRegistryTypeResult
     {
         /// <summary>
-        /// Map of connectionType as key and List of attributes as value
+        /// Mapping the connectionType as the key to the list of attributes as the value.
         /// </summary>
         public readonly ImmutableDictionary<string, object> ConnectionAttributes;
         /// <summary>
-        /// list of attributes for the dataAsset
+        /// The list of attributes of the data asset.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryTypeDataAssetAttributeResult> DataAssetAttributes;
         public readonly ImmutableArray<string> Fields;

@@ -14,6 +14,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetTargetDetectorRecipeDetectorRuleResult
     {
         /// <summary>
+        /// The id of the attached DataSource.
+        /// </summary>
+        public readonly string DataSourceId;
+        /// <summary>
         /// ResponderRule description.
         /// </summary>
         public readonly string Description;
@@ -33,6 +37,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// ResponderRule display name.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Data Source entities mapping for a Detector Rule
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult> EntitiesMappings;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -68,6 +76,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
         [OutputConstructor]
         private GetGuardTargetTargetDetectorRecipeDetectorRuleResult(
+            string dataSourceId,
+
             string description,
 
             ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult> details,
@@ -77,6 +87,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string detectorRuleId,
 
             string displayName,
+
+            ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult> entitiesMappings,
 
             string lifecycleDetails,
 
@@ -94,11 +106,13 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             string timeUpdated)
         {
+            DataSourceId = dataSourceId;
             Description = description;
             Details = details;
             Detector = detector;
             DetectorRuleId = detectorRuleId;
             DisplayName = displayName;
+            EntitiesMappings = entitiesMappings;
             LifecycleDetails = lifecycleDetails;
             ManagedListTypes = managedListTypes;
             Recommendation = recommendation;

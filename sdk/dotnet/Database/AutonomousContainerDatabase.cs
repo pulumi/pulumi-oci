@@ -67,6 +67,7 @@ namespace Pulumi.Oci.Database
     ///             },
     ///             HoursOfDays = @var.Autonomous_container_database_maintenance_window_details_hours_of_day,
     ///             IsCustomActionTimeoutEnabled = @var.Autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled,
+    ///             IsMonthlyPatchingEnabled = @var.Autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled,
     ///             LeadTimeInWeeks = @var.Autonomous_container_database_maintenance_window_details_lead_time_in_weeks,
     ///             Months = new[]
     ///             {

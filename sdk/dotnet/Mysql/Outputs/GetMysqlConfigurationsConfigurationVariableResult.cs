@@ -11,12 +11,16 @@ namespace Pulumi.Oci.Mysql.Outputs
 {
 
     [OutputType]
-    public sealed class GetMysqlConfigurationsConfigurationVariablesResult
+    public sealed class GetMysqlConfigurationsConfigurationVariableResult
     {
         /// <summary>
         /// ("autocommit")
         /// </summary>
         public readonly bool Autocommit;
+        /// <summary>
+        /// If enabled, the server stores all temporary tables on disk rather than in memory.
+        /// </summary>
+        public readonly bool BigTables;
         /// <summary>
         /// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
         /// </summary>
@@ -38,13 +42,21 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string CompletionType;
         /// <summary>
-        /// ("connect_timeout")
+        /// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
         /// </summary>
         public readonly int ConnectTimeout;
         /// <summary>
+        /// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+        /// </summary>
+        public readonly int ConnectionMemoryChunkSize;
+        /// <summary>
+        /// Set the maximum amount of memory that can be used by a single user connection.
+        /// </summary>
+        public readonly string ConnectionMemoryLimit;
+        /// <summary>
         /// ("cte_max_recursion_depth")
         /// </summary>
-        public readonly int CteMaxRecursionDepth;
+        public readonly string CteMaxRecursionDepth;
         /// <summary>
         /// ("default_authentication_plugin")
         /// </summary>
@@ -58,6 +70,14 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int GeneratedRandomPasswordLength;
         /// <summary>
+        /// Set the total amount of memory that can be used by all user connections.
+        /// </summary>
+        public readonly string GlobalConnectionMemoryLimit;
+        /// <summary>
+        /// Determines whether the MySQL server calculates Global_connection_memory.
+        /// </summary>
+        public readonly bool GlobalConnectionMemoryTracking;
+        /// <summary>
         /// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
         /// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
         /// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -70,13 +90,25 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int InformationSchemaStatsExpiry;
         /// <summary>
+        /// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+        /// </summary>
+        public readonly int InnodbBufferPoolDumpPct;
+        /// <summary>
         /// ("innodb_buffer_pool_instances")
         /// </summary>
         public readonly int InnodbBufferPoolInstances;
         /// <summary>
-        /// ("innodb_buffer_pool_size")
+        /// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
         /// </summary>
         public readonly string InnodbBufferPoolSize;
+        /// <summary>
+        /// innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+        /// </summary>
+        public readonly string InnodbDdlBufferSize;
+        /// <summary>
+        /// innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+        /// </summary>
+        public readonly int InnodbDdlThreads;
         /// <summary>
         /// ("innodb_ft_enable_stopword")
         /// </summary>
@@ -96,7 +128,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// ("innodb_ft_result_cache_limit")
         /// </summary>
-        public readonly int InnodbFtResultCacheLimit;
+        public readonly string InnodbFtResultCacheLimit;
         /// <summary>
         /// ("innodb_ft_server_stopword_table")
         /// </summary>
@@ -106,13 +138,29 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int InnodbLockWaitTimeout;
         /// <summary>
-        /// ("innodb_max_purge_lag")
+        /// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
         /// </summary>
-        public readonly int InnodbMaxPurgeLag;
+        public readonly bool InnodbLogWriterThreads;
         /// <summary>
-        /// ("innodb_max_purge_lag_delay")
+        /// The desired maximum purge lag in terms of transactions.
+        /// </summary>
+        public readonly string InnodbMaxPurgeLag;
+        /// <summary>
+        /// The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
         /// </summary>
         public readonly int InnodbMaxPurgeLagDelay;
+        /// <summary>
+        /// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+        /// </summary>
+        public readonly string InnodbStatsPersistentSamplePages;
+        /// <summary>
+        /// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+        /// </summary>
+        public readonly string InnodbStatsTransientSamplePages;
+        /// <summary>
+        /// The number of seconds the server waits for activity on an interactive connection before closing it.
+        /// </summary>
+        public readonly int InteractiveTimeout;
         /// <summary>
         /// ("local_infile")
         /// </summary>
@@ -122,13 +170,29 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string MandatoryRoles;
         /// <summary>
+        /// The maximum size of one packet or any generated/intermediate string.
+        /// </summary>
+        public readonly int MaxAllowedPacket;
+        /// <summary>
+        /// Sets the size of the transaction cache.
+        /// </summary>
+        public readonly string MaxBinlogCacheSize;
+        /// <summary>
+        /// ("max_connect_errors")
+        /// </summary>
+        public readonly string MaxConnectErrors;
+        /// <summary>
         /// ("max_connections")
         /// </summary>
         public readonly int MaxConnections;
         /// <summary>
         /// ("max_execution_time")
         /// </summary>
-        public readonly int MaxExecutionTime;
+        public readonly string MaxExecutionTime;
+        /// <summary>
+        /// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+        /// </summary>
+        public readonly string MaxHeapTableSize;
         /// <summary>
         /// ("max_prepared_stmt_count")
         /// </summary>
@@ -142,7 +206,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int MysqlZstdDefaultCompressionLevel;
         /// <summary>
-        /// ("mysqlx_connect_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        /// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
         /// </summary>
         public readonly int MysqlxConnectTimeout;
         /// <summary>
@@ -166,7 +230,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int MysqlxIdleWorkerThreadTimeout;
         /// <summary>
-        /// ("mysqlx_interactive_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        /// The number of seconds to wait for interactive clients to timeout.
         /// </summary>
         public readonly int MysqlxInteractiveTimeout;
         /// <summary>
@@ -178,7 +242,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int MysqlxLz4maxClientCompressionLevel;
         /// <summary>
-        /// ("mysqlx_max_allowed_packet") DEPRECATED -- variable should not be settable and will be ignored
+        /// The maximum size of network packets that can be received by X Plugin.
         /// </summary>
         public readonly int MysqlxMaxAllowedPacket;
         /// <summary>
@@ -186,15 +250,15 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int MysqlxMinWorkerThreads;
         /// <summary>
-        /// ("mysqlx_read_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        /// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
         /// </summary>
         public readonly int MysqlxReadTimeout;
         /// <summary>
-        /// ("mysqlx_wait_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        /// The number of seconds that X Plugin waits for activity on a connection.
         /// </summary>
         public readonly int MysqlxWaitTimeout;
         /// <summary>
-        /// ("mysqlx_write_timeout") DEPRECATED -- variable should not be settable and will be ignored
+        /// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
         /// </summary>
         public readonly int MysqlxWriteTimeout;
         /// <summary>
@@ -206,17 +270,33 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int MysqlxZstdMaxClientCompressionLevel;
         /// <summary>
+        /// The number of seconds to wait for more data from a connection before aborting the read.
+        /// </summary>
+        public readonly int NetReadTimeout;
+        /// <summary>
+        /// The number of seconds to wait for a block to be written to a connection before aborting the write.
+        /// </summary>
+        public readonly int NetWriteTimeout;
+        /// <summary>
         /// ("parser_max_mem_size")
         /// </summary>
-        public readonly int ParserMaxMemSize;
+        public readonly string ParserMaxMemSize;
         /// <summary>
         /// ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly int QueryAllocBlockSize;
+        public readonly string QueryAllocBlockSize;
         /// <summary>
         /// ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly int QueryPreallocSize;
+        public readonly string QueryPreallocSize;
+        /// <summary>
+        /// regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+        /// </summary>
+        public readonly int RegexpTimeLimit;
+        /// <summary>
+        /// Each session that must perform a sort allocates a buffer of this size.
+        /// </summary>
+        public readonly string SortBufferSize;
         /// <summary>
         /// ("sql_mode")
         /// </summary>
@@ -230,13 +310,35 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly bool SqlWarnings;
         /// <summary>
+        /// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+        /// </summary>
+        public readonly bool ThreadPoolDedicatedListeners;
+        /// <summary>
+        /// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+        /// </summary>
+        public readonly int ThreadPoolMaxTransactionsLimit;
+        /// <summary>
+        /// Initializes the time zone for each client that connects.
+        /// </summary>
+        public readonly string TimeZone;
+        /// <summary>
+        /// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+        /// </summary>
+        public readonly string TmpTableSize;
+        /// <summary>
         /// ("transaction_isolation")
         /// </summary>
         public readonly string TransactionIsolation;
+        /// <summary>
+        /// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+        /// </summary>
+        public readonly int WaitTimeout;
 
         [OutputConstructor]
-        private GetMysqlConfigurationsConfigurationVariablesResult(
+        private GetMysqlConfigurationsConfigurationVariableResult(
             bool autocommit,
+
+            bool bigTables,
 
             int binlogExpireLogsSeconds,
 
@@ -250,7 +352,11 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int connectTimeout,
 
-            int cteMaxRecursionDepth,
+            int connectionMemoryChunkSize,
+
+            string connectionMemoryLimit,
+
+            string cteMaxRecursionDepth,
 
             string defaultAuthenticationPlugin,
 
@@ -258,13 +364,23 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int generatedRandomPasswordLength,
 
+            string globalConnectionMemoryLimit,
+
+            bool globalConnectionMemoryTracking,
+
             string groupReplicationConsistency,
 
             int informationSchemaStatsExpiry,
 
+            int innodbBufferPoolDumpPct,
+
             int innodbBufferPoolInstances,
 
             string innodbBufferPoolSize,
+
+            string innodbDdlBufferSize,
+
+            int innodbDdlThreads,
 
             bool innodbFtEnableStopword,
 
@@ -274,23 +390,39 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int innodbFtNumWordOptimize,
 
-            int innodbFtResultCacheLimit,
+            string innodbFtResultCacheLimit,
 
             string innodbFtServerStopwordTable,
 
             int innodbLockWaitTimeout,
 
-            int innodbMaxPurgeLag,
+            bool innodbLogWriterThreads,
+
+            string innodbMaxPurgeLag,
 
             int innodbMaxPurgeLagDelay,
+
+            string innodbStatsPersistentSamplePages,
+
+            string innodbStatsTransientSamplePages,
+
+            int interactiveTimeout,
 
             bool localInfile,
 
             string mandatoryRoles,
 
+            int maxAllowedPacket,
+
+            string maxBinlogCacheSize,
+
+            string maxConnectErrors,
+
             int maxConnections,
 
-            int maxExecutionTime,
+            string maxExecutionTime,
+
+            string maxHeapTableSize,
 
             int maxPreparedStmtCount,
 
@@ -330,11 +462,19 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int mysqlxZstdMaxClientCompressionLevel,
 
-            int parserMaxMemSize,
+            int netReadTimeout,
 
-            int queryAllocBlockSize,
+            int netWriteTimeout,
 
-            int queryPreallocSize,
+            string parserMaxMemSize,
+
+            string queryAllocBlockSize,
+
+            string queryPreallocSize,
+
+            int regexpTimeLimit,
+
+            string sortBufferSize,
 
             string sqlMode,
 
@@ -342,23 +482,41 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             bool sqlWarnings,
 
-            string transactionIsolation)
+            bool threadPoolDedicatedListeners,
+
+            int threadPoolMaxTransactionsLimit,
+
+            string timeZone,
+
+            string tmpTableSize,
+
+            string transactionIsolation,
+
+            int waitTimeout)
         {
             Autocommit = autocommit;
+            BigTables = bigTables;
             BinlogExpireLogsSeconds = binlogExpireLogsSeconds;
             BinlogRowMetadata = binlogRowMetadata;
             BinlogRowValueOptions = binlogRowValueOptions;
             BinlogTransactionCompression = binlogTransactionCompression;
             CompletionType = completionType;
             ConnectTimeout = connectTimeout;
+            ConnectionMemoryChunkSize = connectionMemoryChunkSize;
+            ConnectionMemoryLimit = connectionMemoryLimit;
             CteMaxRecursionDepth = cteMaxRecursionDepth;
             DefaultAuthenticationPlugin = defaultAuthenticationPlugin;
             ForeignKeyChecks = foreignKeyChecks;
             GeneratedRandomPasswordLength = generatedRandomPasswordLength;
+            GlobalConnectionMemoryLimit = globalConnectionMemoryLimit;
+            GlobalConnectionMemoryTracking = globalConnectionMemoryTracking;
             GroupReplicationConsistency = groupReplicationConsistency;
             InformationSchemaStatsExpiry = informationSchemaStatsExpiry;
+            InnodbBufferPoolDumpPct = innodbBufferPoolDumpPct;
             InnodbBufferPoolInstances = innodbBufferPoolInstances;
             InnodbBufferPoolSize = innodbBufferPoolSize;
+            InnodbDdlBufferSize = innodbDdlBufferSize;
+            InnodbDdlThreads = innodbDdlThreads;
             InnodbFtEnableStopword = innodbFtEnableStopword;
             InnodbFtMaxTokenSize = innodbFtMaxTokenSize;
             InnodbFtMinTokenSize = innodbFtMinTokenSize;
@@ -366,12 +524,20 @@ namespace Pulumi.Oci.Mysql.Outputs
             InnodbFtResultCacheLimit = innodbFtResultCacheLimit;
             InnodbFtServerStopwordTable = innodbFtServerStopwordTable;
             InnodbLockWaitTimeout = innodbLockWaitTimeout;
+            InnodbLogWriterThreads = innodbLogWriterThreads;
             InnodbMaxPurgeLag = innodbMaxPurgeLag;
             InnodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
+            InnodbStatsPersistentSamplePages = innodbStatsPersistentSamplePages;
+            InnodbStatsTransientSamplePages = innodbStatsTransientSamplePages;
+            InteractiveTimeout = interactiveTimeout;
             LocalInfile = localInfile;
             MandatoryRoles = mandatoryRoles;
+            MaxAllowedPacket = maxAllowedPacket;
+            MaxBinlogCacheSize = maxBinlogCacheSize;
+            MaxConnectErrors = maxConnectErrors;
             MaxConnections = maxConnections;
             MaxExecutionTime = maxExecutionTime;
+            MaxHeapTableSize = maxHeapTableSize;
             MaxPreparedStmtCount = maxPreparedStmtCount;
             MysqlFirewallMode = mysqlFirewallMode;
             MysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
@@ -391,13 +557,22 @@ namespace Pulumi.Oci.Mysql.Outputs
             MysqlxWriteTimeout = mysqlxWriteTimeout;
             MysqlxZstdDefaultCompressionLevel = mysqlxZstdDefaultCompressionLevel;
             MysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
+            NetReadTimeout = netReadTimeout;
+            NetWriteTimeout = netWriteTimeout;
             ParserMaxMemSize = parserMaxMemSize;
             QueryAllocBlockSize = queryAllocBlockSize;
             QueryPreallocSize = queryPreallocSize;
+            RegexpTimeLimit = regexpTimeLimit;
+            SortBufferSize = sortBufferSize;
             SqlMode = sqlMode;
             SqlRequirePrimaryKey = sqlRequirePrimaryKey;
             SqlWarnings = sqlWarnings;
+            ThreadPoolDedicatedListeners = threadPoolDedicatedListeners;
+            ThreadPoolMaxTransactionsLimit = threadPoolMaxTransactionsLimit;
+            TimeZone = timeZone;
+            TmpTableSize = tmpTableSize;
             TransactionIsolation = transactionIsolation;
+            WaitTimeout = waitTimeout;
         }
     }
 }

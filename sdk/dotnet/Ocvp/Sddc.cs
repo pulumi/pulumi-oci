@@ -354,6 +354,12 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
+        /// The vSphere licenses to be used when upgrade SDDC.
+        /// </summary>
+        [Output("upgradeLicenses")]
+        public Output<ImmutableArray<Outputs.SddcUpgradeLicense>> UpgradeLicenses { get; private set; } = null!;
+
+        /// <summary>
         /// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         /// </summary>
         [Output("vcenterFqdn")]
@@ -394,6 +400,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("vsanVlanId")]
         public Output<string> VsanVlanId { get; private set; } = null!;
+
+        /// <summary>
+        /// The link of guidance to upgrade vSphere.
+        /// </summary>
+        [Output("vsphereUpgradeGuide")]
+        public Output<string> VsphereUpgradeGuide { get; private set; } = null!;
+
+        /// <summary>
+        /// The links of binary objects needed for upgrade vSphere.
+        /// </summary>
+        [Output("vsphereUpgradeObjects")]
+        public Output<ImmutableArray<Outputs.SddcVsphereUpgradeObject>> VsphereUpgradeObjects { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
@@ -959,6 +977,18 @@ namespace Pulumi.Oci.Ocvp
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
+        [Input("upgradeLicenses")]
+        private InputList<Inputs.SddcUpgradeLicenseGetArgs>? _upgradeLicenses;
+
+        /// <summary>
+        /// The vSphere licenses to be used when upgrade SDDC.
+        /// </summary>
+        public InputList<Inputs.SddcUpgradeLicenseGetArgs> UpgradeLicenses
+        {
+            get => _upgradeLicenses ?? (_upgradeLicenses = new InputList<Inputs.SddcUpgradeLicenseGetArgs>());
+            set => _upgradeLicenses = value;
+        }
+
         /// <summary>
         /// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         /// </summary>
@@ -1000,6 +1030,24 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("vsanVlanId")]
         public Input<string>? VsanVlanId { get; set; }
+
+        /// <summary>
+        /// The link of guidance to upgrade vSphere.
+        /// </summary>
+        [Input("vsphereUpgradeGuide")]
+        public Input<string>? VsphereUpgradeGuide { get; set; }
+
+        [Input("vsphereUpgradeObjects")]
+        private InputList<Inputs.SddcVsphereUpgradeObjectGetArgs>? _vsphereUpgradeObjects;
+
+        /// <summary>
+        /// The links of binary objects needed for upgrade vSphere.
+        /// </summary>
+        public InputList<Inputs.SddcVsphereUpgradeObjectGetArgs> VsphereUpgradeObjects
+        {
+            get => _vsphereUpgradeObjects ?? (_vsphereUpgradeObjects = new InputList<Inputs.SddcVsphereUpgradeObjectGetArgs>());
+            set => _vsphereUpgradeObjects = value;
+        }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.

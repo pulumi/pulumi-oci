@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The external key for the object.
+        /// The external key of the object.
         /// </summary>
         public readonly string ExternalKey;
         /// <summary>
@@ -38,15 +38,15 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         public readonly Outputs.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataResult Metadata;
         /// <summary>
-        /// The object's type.
+        /// The object type.
         /// </summary>
         public readonly string ModelType;
         /// <summary>
-        /// The object's model version.
+        /// The model version of the object.
         /// </summary>
         public readonly string ModelVersion;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly int ObjectVersion;
         /// <summary>
-        /// A reference to the object's parent.
+        /// A reference to the parent object.
         /// </summary>
         public readonly Outputs.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefResult ParentRef;
         /// <summary>

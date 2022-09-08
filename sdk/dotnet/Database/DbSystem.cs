@@ -102,6 +102,12 @@ namespace Pulumi.Oci.Database
         public Output<int> CpuCoreCount { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        /// </summary>
+        [Output("dataCollectionOptions")]
+        public Output<Outputs.DbSystemDataCollectionOptions> DataCollectionOptions { get; private set; } = null!;
+
+        /// <summary>
         /// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         /// </summary>
         [Output("dataStoragePercentage")]
@@ -473,6 +479,12 @@ namespace Pulumi.Oci.Database
         public Input<int>? CpuCoreCount { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        /// </summary>
+        [Input("dataCollectionOptions")]
+        public Input<Inputs.DbSystemDataCollectionOptionsArgs>? DataCollectionOptions { get; set; }
+
+        /// <summary>
         /// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         /// </summary>
         [Input("dataStoragePercentage")]
@@ -732,6 +744,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        /// </summary>
+        [Input("dataCollectionOptions")]
+        public Input<Inputs.DbSystemDataCollectionOptionsGetArgs>? DataCollectionOptions { get; set; }
 
         /// <summary>
         /// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.

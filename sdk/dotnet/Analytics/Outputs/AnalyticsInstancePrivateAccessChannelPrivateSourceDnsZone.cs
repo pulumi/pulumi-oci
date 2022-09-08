@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Analytics.Outputs
     public sealed class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone
     {
         /// <summary>
-        /// (Updatable) Description of private source dns zone.
+        /// (Updatable) Description of private source scan host zone.
         /// </summary>
         public readonly string? Description;
         /// <summary>

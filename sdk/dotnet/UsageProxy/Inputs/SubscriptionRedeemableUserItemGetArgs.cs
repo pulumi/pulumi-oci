@@ -18,6 +18,18 @@ namespace Pulumi.Oci.UsageProxy.Inputs
         [Input("emailId", required: true)]
         public Input<string> EmailId { get; set; } = null!;
 
+        /// <summary>
+        /// The first name of the user that can redeem rewards.
+        /// </summary>
+        [Input("firstName")]
+        public Input<string>? FirstName { get; set; }
+
+        /// <summary>
+        /// The last name of the user that can redeem rewards.
+        /// </summary>
+        [Input("lastName")]
+        public Input<string>? LastName { get; set; }
+
         public SubscriptionRedeemableUserItemGetArgs()
         {
         }

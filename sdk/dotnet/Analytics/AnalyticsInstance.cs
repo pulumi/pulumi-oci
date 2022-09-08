@@ -49,9 +49,11 @@ namespace Pulumi.Oci.Analytics
     ///         NetworkEndpointDetails = new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsArgs
     ///         {
     ///             NetworkEndpointType = @var.Analytics_instance_network_endpoint_details_network_endpoint_type,
+    ///             NetworkSecurityGroupIds = @var.Analytics_instance_network_endpoint_details_network_security_group_ids,
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
     ///             VcnId = oci_core_vcn.Test_vcn.Id,
     ///             WhitelistedIps = @var.Analytics_instance_network_endpoint_details_whitelisted_ips,
+    ///             WhitelistedServices = @var.Analytics_instance_network_endpoint_details_whitelisted_services,
     ///             WhitelistedVcns = new[]
     ///             {
     ///                 new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
     public sealed class GetRegistryTypesTypesSummaryCollectionItemResult
     {
         /// <summary>
-        /// Map of connectionType as key and List of attributes as value
+        /// Mapping the connectionType as the key to the list of attributes as the value.
         /// </summary>
         public readonly ImmutableDictionary<string, object> ConnectionAttributes;
         /// <summary>
-        /// list of attributes for the dataAsset
+        /// The list of attributes of the data asset.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult> DataAssetAttributes;
         public readonly string? Description;

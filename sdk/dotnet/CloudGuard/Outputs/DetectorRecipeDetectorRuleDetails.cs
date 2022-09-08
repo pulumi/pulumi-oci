@@ -22,6 +22,18 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsConfiguration> Configurations;
         /// <summary>
+        /// (Updatable) The id of the attached DataSource.
+        /// </summary>
+        public readonly string? DataSourceId;
+        /// <summary>
+        /// (Updatable) Description for DetectorRecipeDetectorRule.
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
+        /// (Updatable) Data Source entities mapping for a Detector Rule
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsEntitiesMapping> EntitiesMappings;
+        /// <summary>
         /// configuration allowed or not
         /// </summary>
         public readonly bool? IsConfigurationAllowed;
@@ -34,6 +46,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
+        /// (Updatable) Recommendation for DetectorRecipeDetectorRule
+        /// </summary>
+        public readonly string? Recommendation;
+        /// <summary>
         /// (Updatable) The Risk Level
         /// </summary>
         public readonly string RiskLevel;
@@ -44,19 +60,31 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsConfiguration> configurations,
 
+            string? dataSourceId,
+
+            string? description,
+
+            ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsEntitiesMapping> entitiesMappings,
+
             bool? isConfigurationAllowed,
 
             bool isEnabled,
 
             ImmutableArray<string> labels,
 
+            string? recommendation,
+
             string riskLevel)
         {
             Condition = condition;
             Configurations = configurations;
+            DataSourceId = dataSourceId;
+            Description = description;
+            EntitiesMappings = entitiesMappings;
             IsConfigurationAllowed = isConfigurationAllowed;
             IsEnabled = isEnabled;
             Labels = labels;
+            Recommendation = recommendation;
             RiskLevel = riskLevel;
         }
     }

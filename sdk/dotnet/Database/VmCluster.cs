@@ -35,6 +35,8 @@ namespace Pulumi.Oci.Database
     ///         DataCollectionOptions = new Oci.Database.Inputs.VmClusterDataCollectionOptionsArgs
     ///         {
     ///             IsDiagnosticsEventsEnabled = @var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+    ///             IsHealthMonitoringEnabled = @var.Vm_cluster_data_collection_options_is_health_monitoring_enabled,
+    ///             IsIncidentLogsEnabled = @var.Vm_cluster_data_collection_options_is_incident_logs_enabled,
     ///         },
     ///         DataStorageSizeInTbs = @var.Vm_cluster_data_storage_size_in_tbs,
     ///         DbNodeStorageSizeInGbs = @var.Vm_cluster_db_node_storage_size_in_gbs,
@@ -81,11 +83,14 @@ namespace Pulumi.Oci.Database
         public Output<int> CpusEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
         [Output("dataCollectionOptions")]
         public Output<Outputs.VmClusterDataCollectionOptions> DataCollectionOptions { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The data disk group size to be allocated in GBs.
+        /// </summary>
         [Output("dataStorageSizeInGb")]
         public Output<double> DataStorageSizeInGb { get; private set; } = null!;
 
@@ -277,11 +282,14 @@ namespace Pulumi.Oci.Database
         public Input<int> CpuCoreCount { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
         [Input("dataCollectionOptions")]
         public Input<Inputs.VmClusterDataCollectionOptionsArgs>? DataCollectionOptions { get; set; }
 
+        /// <summary>
+        /// (Updatable) The data disk group size to be allocated in GBs.
+        /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<double>? DataStorageSizeInGb { get; set; }
 
@@ -426,11 +434,14 @@ namespace Pulumi.Oci.Database
         public Input<int>? CpusEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
         [Input("dataCollectionOptions")]
         public Input<Inputs.VmClusterDataCollectionOptionsGetArgs>? DataCollectionOptions { get; set; }
 
+        /// <summary>
+        /// (Updatable) The data disk group size to be allocated in GBs.
+        /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<double>? DataStorageSizeInGb { get; set; }
 

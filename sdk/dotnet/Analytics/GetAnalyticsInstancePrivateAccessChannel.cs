@@ -137,11 +137,19 @@ namespace Pulumi.Oci.Analytics
         /// Private Access Channel unique identifier key.
         /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// Network Security Group OCIDs for an Analytics instance.
+        /// </summary>
+        public readonly ImmutableArray<string> NetworkSecurityGroupIds;
         public readonly string PrivateAccessChannelKey;
         /// <summary>
         /// List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult> PrivateSourceDnsZones;
+        /// <summary>
+        /// List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult> PrivateSourceScanHosts;
         /// <summary>
         /// OCID of the customer subnet connected to private access channel.
         /// </summary>
@@ -165,9 +173,13 @@ namespace Pulumi.Oci.Analytics
 
             string key,
 
+            ImmutableArray<string> networkSecurityGroupIds,
+
             string privateAccessChannelKey,
 
             ImmutableArray<Outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult> privateSourceDnsZones,
+
+            ImmutableArray<Outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult> privateSourceScanHosts,
 
             string subnetId,
 
@@ -179,8 +191,10 @@ namespace Pulumi.Oci.Analytics
             Id = id;
             IpAddress = ipAddress;
             Key = key;
+            NetworkSecurityGroupIds = networkSecurityGroupIds;
             PrivateAccessChannelKey = privateAccessChannelKey;
             PrivateSourceDnsZones = privateSourceDnsZones;
+            PrivateSourceScanHosts = privateSourceScanHosts;
             SubnetId = subnetId;
             VcnId = vcnId;
         }

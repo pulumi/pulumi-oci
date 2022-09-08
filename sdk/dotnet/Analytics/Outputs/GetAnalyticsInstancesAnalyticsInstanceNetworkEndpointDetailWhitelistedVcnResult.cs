@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Source IP addresses or IP address ranges igress rules.
+        /// Source IP addresses or IP address ranges in ingress rules.
         /// </summary>
         public readonly ImmutableArray<string> WhitelistedIps;
 

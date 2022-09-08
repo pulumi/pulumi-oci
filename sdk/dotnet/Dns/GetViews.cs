@@ -122,8 +122,8 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// Value must be `PRIVATE` when listing private views.
         /// </summary>
-        [Input("scope", required: true)]
-        public string Scope { get; set; } = null!;
+        [Input("scope")]
+        public string? Scope { get; set; }
 
         /// <summary>
         /// The state of a resource.
@@ -168,8 +168,8 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// Value must be `PRIVATE` when listing private views.
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         /// <summary>
         /// The state of a resource.
@@ -200,7 +200,7 @@ namespace Pulumi.Oci.Dns
         /// The OCID of the view.
         /// </summary>
         public readonly string? Id;
-        public readonly string Scope;
+        public readonly string? Scope;
         /// <summary>
         /// The current state of the resource.
         /// </summary>
@@ -220,7 +220,7 @@ namespace Pulumi.Oci.Dns
 
             string? id,
 
-            string scope,
+            string? scope,
 
             string? state,
 

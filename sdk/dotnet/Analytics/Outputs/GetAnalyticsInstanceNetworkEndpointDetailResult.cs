@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly string NetworkEndpointType;
         /// <summary>
+        /// Network Security Group OCIDs for an Analytics instance.
+        /// </summary>
+        public readonly ImmutableArray<string> NetworkSecurityGroupIds;
+        /// <summary>
         /// OCID of the customer subnet connected to private access channel.
         /// </summary>
         public readonly string SubnetId;
@@ -26,9 +30,13 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly string VcnId;
         /// <summary>
-        /// Source IP addresses or IP address ranges igress rules.
+        /// Source IP addresses or IP address ranges in ingress rules.
         /// </summary>
         public readonly ImmutableArray<string> WhitelistedIps;
+        /// <summary>
+        /// Oracle Cloud Services that are allowed to access this Analytics instance.
+        /// </summary>
+        public readonly ImmutableArray<string> WhitelistedServices;
         /// <summary>
         /// Virtual Cloud Networks allowed to access this network endpoint.
         /// </summary>
@@ -38,18 +46,24 @@ namespace Pulumi.Oci.Analytics.Outputs
         private GetAnalyticsInstanceNetworkEndpointDetailResult(
             string networkEndpointType,
 
+            ImmutableArray<string> networkSecurityGroupIds,
+
             string subnetId,
 
             string vcnId,
 
             ImmutableArray<string> whitelistedIps,
 
+            ImmutableArray<string> whitelistedServices,
+
             ImmutableArray<Outputs.GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult> whitelistedVcns)
         {
             NetworkEndpointType = networkEndpointType;
+            NetworkSecurityGroupIds = networkSecurityGroupIds;
             SubnetId = subnetId;
             VcnId = vcnId;
             WhitelistedIps = whitelistedIps;
+            WhitelistedServices = whitelistedServices;
             WhitelistedVcns = whitelistedVcns;
         }
     }

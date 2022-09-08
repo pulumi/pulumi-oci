@@ -18,11 +18,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> ConfigParameterDefinitions;
         /// <summary>
-        /// Specifies whether the configuration is contained or not.
+        /// Specifies whether the configuration is contained.
         /// </summary>
         public readonly bool IsContained;
         /// <summary>
-        /// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         public readonly string Key;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly int ObjectStatus;
         /// <summary>
-        /// A reference to the object's parent.
+        /// A reference to the parent object.
         /// </summary>
         public readonly Outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefResult ParentRef;
 

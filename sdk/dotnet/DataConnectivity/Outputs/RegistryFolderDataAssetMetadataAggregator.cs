@@ -14,19 +14,19 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
     public sealed class RegistryFolderDataAssetMetadataAggregator
     {
         /// <summary>
-        /// (Updatable) User-defined description for the folder.
+        /// (Updatable) User-defined description of the folder.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         public readonly string? Identifier;
         /// <summary>
-        /// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         public readonly string? Name;
         /// <summary>

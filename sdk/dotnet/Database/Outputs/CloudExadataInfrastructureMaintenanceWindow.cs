@@ -31,6 +31,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool? IsCustomActionTimeoutEnabled;
         /// <summary>
+        /// (Updatable) If true, enables the monthly patching option.
+        /// </summary>
+        public readonly bool? IsMonthlyPatchingEnabled;
+        /// <summary>
         /// (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         /// </summary>
         public readonly int? LeadTimeInWeeks;
@@ -61,6 +65,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool? isCustomActionTimeoutEnabled,
 
+            bool? isMonthlyPatchingEnabled,
+
             int? leadTimeInWeeks,
 
             ImmutableArray<Outputs.CloudExadataInfrastructureMaintenanceWindowMonth> months,
@@ -75,6 +81,7 @@ namespace Pulumi.Oci.Database.Outputs
             DaysOfWeeks = daysOfWeeks;
             HoursOfDays = hoursOfDays;
             IsCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            IsMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
             LeadTimeInWeeks = leadTimeInWeeks;
             Months = months;
             PatchingMode = patchingMode;

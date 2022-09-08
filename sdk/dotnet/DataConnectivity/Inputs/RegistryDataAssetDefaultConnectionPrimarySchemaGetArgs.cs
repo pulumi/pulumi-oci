@@ -19,19 +19,19 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? DefaultConnection { get; set; }
 
         /// <summary>
-        /// (Updatable) A user defined description for the object.
+        /// (Updatable) A user-defined description for the object.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The external key for the object.
+        /// (Updatable) The external key of the object.
         /// </summary>
         [Input("externalKey")]
         public Input<string>? ExternalKey { get; set; }
 
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier", required: true)]
         public Input<string> Identifier { get; set; } = null!;
@@ -49,13 +49,13 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// (Updatable) The property which disciminates the subtypes.
+        /// (Updatable) The property which differentiates the subtypes.
         /// </summary>
         [Input("modelType", required: true)]
         public Input<string> ModelType { get; set; } = null!;
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<int>? ObjectVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         [Input("parentRef")]
         public Input<Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaParentRefGetArgs>? ParentRef { get; set; }

@@ -95,7 +95,7 @@ namespace Pulumi.Oci.DataConnectivity
         private List<string>? _endpointIds;
 
         /// <summary>
-        /// Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+        /// Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
         /// </summary>
         public List<string> EndpointIds
         {
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.DataConnectivity
         private List<string>? _excludeEndpointIds;
 
         /// <summary>
-        /// Endpoints which will be excluded while listing dataAssets
+        /// Endpoints which will be excluded while listing data assets.
         /// </summary>
         public List<string> ExcludeEndpointIds
         {
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DataConnectivity
         private List<string>? _excludeTypes;
 
         /// <summary>
-        /// Types which wont be listed while listing dataAsset/Connection
+        /// The types that will be excluded from the list of data assets/connections.
         /// </summary>
         public List<string> ExcludeTypes
         {
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.DataConnectivity
         private List<string>? _includeTypes;
 
         /// <summary>
-        /// DataAsset type which needs to be listed while listing dataAssets
+        /// Artifact type which needs to be listed while listing Artifacts.
         /// </summary>
         public List<string> IncludeTypes
         {
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.DataConnectivity
         public string? Name { get; set; }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public string RegistryId { get; set; } = null!;
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputList<string>? _endpointIds;
 
         /// <summary>
-        /// Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+        /// Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
         /// </summary>
         public InputList<string> EndpointIds
         {
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputList<string>? _excludeEndpointIds;
 
         /// <summary>
-        /// Endpoints which will be excluded while listing dataAssets
+        /// Endpoints which will be excluded while listing data assets.
         /// </summary>
         public InputList<string> ExcludeEndpointIds
         {
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputList<string>? _excludeTypes;
 
         /// <summary>
-        /// Types which wont be listed while listing dataAsset/Connection
+        /// The types that will be excluded from the list of data assets/connections.
         /// </summary>
         public InputList<string> ExcludeTypes
         {
@@ -269,7 +269,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputList<string>? _includeTypes;
 
         /// <summary>
-        /// DataAsset type which needs to be listed while listing dataAssets
+        /// Artifact type which needs to be listed while listing Artifacts.
         /// </summary>
         public InputList<string> IncludeTypes
         {
@@ -284,7 +284,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public Input<string> RegistryId { get; set; } = null!;
@@ -322,7 +322,7 @@ namespace Pulumi.Oci.DataConnectivity
         public readonly string Id;
         public readonly ImmutableArray<string> IncludeTypes;
         /// <summary>
-        /// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         public readonly string? Name;
         public readonly string RegistryId;

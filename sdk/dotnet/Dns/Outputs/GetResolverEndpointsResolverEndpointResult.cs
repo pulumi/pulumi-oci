@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// Value must be `PRIVATE` when listing private name resolver endpoints.
         /// </summary>
-        public readonly string Scope;
+        public readonly string? Scope;
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.Dns.Outputs
 
             string resolverId,
 
-            string scope,
+            string? scope,
 
             string self,
 

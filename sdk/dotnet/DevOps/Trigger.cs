@@ -84,6 +84,9 @@ namespace Pulumi.Oci.DevOps
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
+        [Output("connectionId")]
+        public Output<string> ConnectionId { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -220,6 +223,9 @@ namespace Pulumi.Oci.DevOps
             set => _actions = value;
         }
 
+        [Input("connectionId")]
+        public Input<string>? ConnectionId { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -299,6 +305,9 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("connectionId")]
+        public Input<string>? ConnectionId { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;

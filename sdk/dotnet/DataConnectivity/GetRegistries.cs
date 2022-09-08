@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// Returns a list of Data Connectivity Management Registries.
+        /// Retrieves a list of Data Connectivity Management registries.
         /// 
         /// 
         /// {{% examples %}}
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// Returns a list of Data Connectivity Management Registries.
+        /// Retrieves a list of Data Connectivity Management registries.
         /// 
         /// 
         /// {{% examples %}}
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.DataConnectivity
         }
 
         /// <summary>
-        /// This parameter allows list registries to deep look at whole tenancy.
+        /// This parameter allows list registries to deep look at the whole tenancy.
         /// </summary>
         [Input("isDeepLookup")]
         public bool? IsDeepLookup { get; set; }
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.DataConnectivity
         }
 
         /// <summary>
-        /// This parameter allows list registries to deep look at whole tenancy.
+        /// This parameter allows list registries to deep look at the whole tenancy.
         /// </summary>
         [Input("isDeepLookup")]
         public Input<bool>? IsDeepLookup { get; set; }
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistriesRegistrySummaryCollectionResult> RegistrySummaryCollections;
         /// <summary>
-        /// Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+        /// Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
         /// </summary>
         public readonly string? State;
 

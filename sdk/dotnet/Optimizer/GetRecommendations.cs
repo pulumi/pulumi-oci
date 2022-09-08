@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
         /// 
-        /// Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+        /// Lists the Cloud Advisor recommendations that are currently supported.
         /// 
         /// 
         /// {{% examples %}}
@@ -30,9 +30,12 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testRecommendations = Oci.Optimizer.GetRecommendations.Invoke(new()
         ///     {
-        ///         CategoryId = oci_optimizer_category.Test_category.Id,
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Recommendation_compartment_id_in_subtree,
+        ///         CategoryId = oci_optimizer_category.Test_category.Id,
+        ///         CategoryName = oci_optimizer_category.Test_category.Name,
+        ///         ChildTenancyIds = @var.Recommendation_child_tenancy_ids,
+        ///         IncludeOrganization = @var.Recommendation_include_organization,
         ///         Name = @var.Recommendation_name,
         ///         State = @var.Recommendation_state,
         ///         Status = @var.Recommendation_status,
@@ -49,7 +52,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
         /// 
-        /// Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+        /// Lists the Cloud Advisor recommendations that are currently supported.
         /// 
         /// 
         /// {{% examples %}}
@@ -65,9 +68,12 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testRecommendations = Oci.Optimizer.GetRecommendations.Invoke(new()
         ///     {
-        ///         CategoryId = oci_optimizer_category.Test_category.Id,
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Recommendation_compartment_id_in_subtree,
+        ///         CategoryId = oci_optimizer_category.Test_category.Id,
+        ///         CategoryName = oci_optimizer_category.Test_category.Name,
+        ///         ChildTenancyIds = @var.Recommendation_child_tenancy_ids,
+        ///         IncludeOrganization = @var.Recommendation_include_organization,
         ///         Name = @var.Recommendation_name,
         ///         State = @var.Recommendation_state,
         ///         Status = @var.Recommendation_status,
@@ -88,8 +94,26 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The unique OCID associated with the category.
         /// </summary>
-        [Input("categoryId", required: true)]
-        public string CategoryId { get; set; } = null!;
+        [Input("categoryId")]
+        public string? CategoryId { get; set; }
+
+        /// <summary>
+        /// Optional. A filter that returns results that match the category name specified.
+        /// </summary>
+        [Input("categoryName")]
+        public string? CategoryName { get; set; }
+
+        [Input("childTenancyIds")]
+        private List<string>? _childTenancyIds;
+
+        /// <summary>
+        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+        /// </summary>
+        public List<string> ChildTenancyIds
+        {
+            get => _childTenancyIds ?? (_childTenancyIds = new List<string>());
+            set => _childTenancyIds = value;
+        }
 
         /// <summary>
         /// The OCID of the compartment.
@@ -110,6 +134,12 @@ namespace Pulumi.Oci.Optimizer
             get => _filters ?? (_filters = new List<Inputs.GetRecommendationsFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+        /// </summary>
+        [Input("includeOrganization")]
+        public bool? IncludeOrganization { get; set; }
 
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
@@ -140,8 +170,26 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The unique OCID associated with the category.
         /// </summary>
-        [Input("categoryId", required: true)]
-        public Input<string> CategoryId { get; set; } = null!;
+        [Input("categoryId")]
+        public Input<string>? CategoryId { get; set; }
+
+        /// <summary>
+        /// Optional. A filter that returns results that match the category name specified.
+        /// </summary>
+        [Input("categoryName")]
+        public Input<string>? CategoryName { get; set; }
+
+        [Input("childTenancyIds")]
+        private InputList<string>? _childTenancyIds;
+
+        /// <summary>
+        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+        /// </summary>
+        public InputList<string> ChildTenancyIds
+        {
+            get => _childTenancyIds ?? (_childTenancyIds = new InputList<string>());
+            set => _childTenancyIds = value;
+        }
 
         /// <summary>
         /// The OCID of the compartment.
@@ -162,6 +210,12 @@ namespace Pulumi.Oci.Optimizer
             get => _filters ?? (_filters = new InputList<Inputs.GetRecommendationsFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+        /// </summary>
+        [Input("includeOrganization")]
+        public Input<bool>? IncludeOrganization { get; set; }
 
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
@@ -194,7 +248,9 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The unique OCID associated with the category.
         /// </summary>
-        public readonly string CategoryId;
+        public readonly string? CategoryId;
+        public readonly string? CategoryName;
+        public readonly ImmutableArray<string> ChildTenancyIds;
         /// <summary>
         /// The OCID of the tenancy. The tenancy is the root compartment.
         /// </summary>
@@ -205,6 +261,7 @@ namespace Pulumi.Oci.Optimizer
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IncludeOrganization;
         /// <summary>
         /// The name of the profile level.
         /// </summary>
@@ -224,7 +281,11 @@ namespace Pulumi.Oci.Optimizer
 
         [OutputConstructor]
         private GetRecommendationsResult(
-            string categoryId,
+            string? categoryId,
+
+            string? categoryName,
+
+            ImmutableArray<string> childTenancyIds,
 
             string compartmentId,
 
@@ -233,6 +294,8 @@ namespace Pulumi.Oci.Optimizer
             ImmutableArray<Outputs.GetRecommendationsFilterResult> filters,
 
             string id,
+
+            bool? includeOrganization,
 
             string? name,
 
@@ -243,10 +306,13 @@ namespace Pulumi.Oci.Optimizer
             string? status)
         {
             CategoryId = categoryId;
+            CategoryName = categoryName;
+            ChildTenancyIds = childTenancyIds;
             CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
             Filters = filters;
             Id = id;
+            IncludeOrganization = includeOrganization;
             Name = name;
             RecommendationCollections = recommendationCollections;
             State = state;

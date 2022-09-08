@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         private InputList<Inputs.RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs>? _connectionProperties;
 
         /// <summary>
-        /// (Updatable) The properties for the connection.
+        /// (Updatable) The properties of the connection.
         /// </summary>
         public InputList<Inputs.RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs> ConnectionProperties
         {
@@ -25,31 +25,31 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         }
 
         /// <summary>
-        /// (Updatable) User-defined description for the folder.
+        /// (Updatable) User-defined description of the folder.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier", required: true)]
         public Input<string> Identifier { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The default property for the connection.
+        /// (Updatable) The default property of the connection.
         /// </summary>
         [Input("isDefault")]
         public Input<bool>? IsDefault { get; set; }
 
         /// <summary>
-        /// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.RegistryFolderDataAssetDefaultConnectionMetadataArgs>? Metadata { get; set; }
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

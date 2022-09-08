@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The name associated with the compartment.
+        /// </summary>
+        public readonly string CompartmentName;
+        /// <summary>
         /// Text describing the category.
         /// </summary>
         public readonly string Description;
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.Optimizer.Outputs
         private GetCategoriesCategoryCollectionItemResult(
             string compartmentId,
 
+            string compartmentName,
+
             string description,
 
             double estimatedCostSaving,
@@ -83,6 +89,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
             string timeUpdated)
         {
             CompartmentId = compartmentId;
+            CompartmentName = compartmentName;
             Description = description;
             EstimatedCostSaving = estimatedCostSaving;
             ExtendedMetadata = extendedMetadata;

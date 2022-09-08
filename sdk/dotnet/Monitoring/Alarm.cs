@@ -50,6 +50,7 @@ namespace Pulumi.Oci.Monitoring
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsNotificationsPerMetricDimensionEnabled = @var.Alarm_is_notifications_per_metric_dimension_enabled,
     ///         MessageFormat = @var.Alarm_message_format,
     ///         MetricCompartmentIdInSubtree = @var.Alarm_metric_compartment_id_in_subtree,
     ///         PendingDuration = @var.Alarm_pending_duration,
@@ -119,6 +120,12 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         [Output("isEnabled")]
         public Output<bool> IsEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        /// </summary>
+        [Output("isNotificationsPerMetricDimensionEnabled")]
+        public Output<bool> IsNotificationsPerMetricDimensionEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
@@ -311,6 +318,12 @@ namespace Pulumi.Oci.Monitoring
         public Input<bool> IsEnabled { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        /// </summary>
+        [Input("isNotificationsPerMetricDimensionEnabled")]
+        public Input<bool>? IsNotificationsPerMetricDimensionEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
         /// </summary>
         [Input("messageFormat")]
@@ -443,6 +456,12 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        /// </summary>
+        [Input("isNotificationsPerMetricDimensionEnabled")]
+        public Input<bool>? IsNotificationsPerMetricDimensionEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The format to use for notification messages sent from this alarm. The formats are:

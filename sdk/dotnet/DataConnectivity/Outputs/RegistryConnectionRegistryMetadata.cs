@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string? AggregatorKey;
         /// <summary>
-        /// (Updatable) The id of the user who created the object.
+        /// (Updatable) The ID of the user who created the object.
         /// </summary>
         public readonly string? CreatedByUserId;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string? CreatedByUserName;
         /// <summary>
-        /// (Updatable) Specifies whether this object is a favorite or not.
+        /// (Updatable) Specifies whether the object is a favorite.
         /// </summary>
         public readonly bool? IsFavorite;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string? TimeUpdated;
         /// <summary>
-        /// (Updatable) The id of the user who updated the object.
+        /// (Updatable) The ID of the user who updated the object.
         /// </summary>
         public readonly string? UpdatedByUserId;
         /// <summary>

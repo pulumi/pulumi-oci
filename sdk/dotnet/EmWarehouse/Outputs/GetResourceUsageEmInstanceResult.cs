@@ -14,6 +14,10 @@ namespace Pulumi.Oci.EmWarehouse.Outputs
     public sealed class GetResourceUsageEmInstanceResult
     {
         /// <summary>
+        /// emdDiscoverer url
+        /// </summary>
+        public readonly string EmDiscovererUrl;
+        /// <summary>
         /// emHost name
         /// </summary>
         public readonly string EmHost;
@@ -28,12 +32,15 @@ namespace Pulumi.Oci.EmWarehouse.Outputs
 
         [OutputConstructor]
         private GetResourceUsageEmInstanceResult(
+            string emDiscovererUrl,
+
             string emHost,
 
             string emId,
 
             int targetsCount)
         {
+            EmDiscovererUrl = emDiscovererUrl;
             EmHost = emHost;
             EmId = emId;
             TargetsCount = targetsCount;

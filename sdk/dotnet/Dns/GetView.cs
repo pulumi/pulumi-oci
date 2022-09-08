@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Task<GetViewResult> InvokeAsync(GetViewArgs args, InvokeOptions? options = null)
+        public static Task<GetViewResult> InvokeAsync(GetViewArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetViewResult>("oci:Dns/getView:getView", args ?? new GetViewArgs(), options.WithDefaults());
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Output<GetViewResult> Invoke(GetViewInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetViewResult> Invoke(GetViewInvokeArgs? args = null, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetViewResult>("oci:Dns/getView:getView", args ?? new GetViewInvokeArgs(), options.WithDefaults());
     }
 
@@ -84,14 +84,14 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// Value must be `PRIVATE` when listing views for private zones.
         /// </summary>
-        [Input("scope", required: true)]
-        public string Scope { get; set; } = null!;
+        [Input("scope")]
+        public string? Scope { get; set; }
 
         /// <summary>
         /// The OCID of the target view.
         /// </summary>
-        [Input("viewId", required: true)]
-        public string ViewId { get; set; } = null!;
+        [Input("viewId")]
+        public string? ViewId { get; set; }
 
         public GetViewArgs()
         {
@@ -104,14 +104,14 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// Value must be `PRIVATE` when listing views for private zones.
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         /// <summary>
         /// The OCID of the target view.
         /// </summary>
-        [Input("viewId", required: true)]
-        public Input<string> ViewId { get; set; } = null!;
+        [Input("viewId")]
+        public Input<string>? ViewId { get; set; }
 
         public GetViewInvokeArgs()
         {
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Dns
         /// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         /// </summary>
         public readonly bool IsProtected;
-        public readonly string Scope;
+        public readonly string? Scope;
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Dns
         /// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
         public readonly string TimeUpdated;
-        public readonly string ViewId;
+        public readonly string? ViewId;
 
         [OutputConstructor]
         private GetViewResult(
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.Dns
 
             bool isProtected,
 
-            string scope,
+            string? scope,
 
             string self,
 
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.Dns
 
             string timeUpdated,
 
-            string viewId)
+            string? viewId)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

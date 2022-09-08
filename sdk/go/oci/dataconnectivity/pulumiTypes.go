@@ -11,7 +11,7 @@ import (
 )
 
 type RegistryConnectionConnectionProperty struct {
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The value for the connection name property.
 	Value *string `pulumi:"value"`
@@ -29,7 +29,7 @@ type RegistryConnectionConnectionPropertyInput interface {
 }
 
 type RegistryConnectionConnectionPropertyArgs struct {
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The value for the connection name property.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -86,7 +86,7 @@ func (o RegistryConnectionConnectionPropertyOutput) ToRegistryConnectionConnecti
 	return o
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryConnectionConnectionPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionConnectionProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -117,7 +117,7 @@ func (o RegistryConnectionConnectionPropertyArrayOutput) Index(i pulumi.IntInput
 }
 
 type RegistryConnectionMetadata struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator *RegistryConnectionMetadataAggregator `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -125,13 +125,13 @@ type RegistryConnectionMetadata struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -157,7 +157,7 @@ type RegistryConnectionMetadataInput interface {
 }
 
 type RegistryConnectionMetadataArgs struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator RegistryConnectionMetadataAggregatorPtrInput `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
@@ -165,13 +165,13 @@ type RegistryConnectionMetadataArgs struct {
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -262,7 +262,7 @@ func (o RegistryConnectionMetadataOutput) ToRegistryConnectionMetadataPtrOutputW
 	}).(RegistryConnectionMetadataPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryConnectionMetadataOutput) Aggregator() RegistryConnectionMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionMetadata) *RegistryConnectionMetadataAggregator { return v.Aggregator }).(RegistryConnectionMetadataAggregatorPtrOutput)
 }
@@ -282,7 +282,7 @@ func (o RegistryConnectionMetadataOutput) CreatedByName() pulumi.StringPtrOutput
 	return o.ApplyT(func(v RegistryConnectionMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryConnectionMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
@@ -292,12 +292,12 @@ func (o RegistryConnectionMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v RegistryConnectionMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryConnectionMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryConnectionMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryConnectionMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -351,7 +351,7 @@ func (o RegistryConnectionMetadataPtrOutput) Elem() RegistryConnectionMetadataOu
 	}).(RegistryConnectionMetadataOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryConnectionMetadataPtrOutput) Aggregator() RegistryConnectionMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionMetadata) *RegistryConnectionMetadataAggregator {
 		if v == nil {
@@ -391,7 +391,7 @@ func (o RegistryConnectionMetadataPtrOutput) CreatedByName() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryConnectionMetadataPtrOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionMetadata) *string {
 		if v == nil {
@@ -411,7 +411,7 @@ func (o RegistryConnectionMetadataPtrOutput) InfoFields() pulumi.MapOutput {
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryConnectionMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionMetadata) *bool {
 		if v == nil {
@@ -421,7 +421,7 @@ func (o RegistryConnectionMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryConnectionMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryConnectionMetadata) []string {
 		if v == nil {
@@ -488,7 +488,7 @@ type RegistryConnectionMetadataAggregator struct {
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specific Connection Type
 	Type *string `pulumi:"type"`
@@ -512,7 +512,7 @@ type RegistryConnectionMetadataAggregatorArgs struct {
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Specific Connection Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -610,7 +610,7 @@ func (o RegistryConnectionMetadataAggregatorOutput) Key() pulumi.StringPtrOutput
 	return o.ApplyT(func(v RegistryConnectionMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryConnectionMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -674,7 +674,7 @@ func (o RegistryConnectionMetadataAggregatorPtrOutput) Key() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryConnectionMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionMetadataAggregator) *string {
 		if v == nil {
@@ -699,7 +699,7 @@ type RegistryConnectionPrimarySchema struct {
 	DefaultConnection *string `pulumi:"defaultConnection"`
 	// (Updatable) The description of the aggregator.
 	Description *string `pulumi:"description"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey *string `pulumi:"externalKey"`
 	// (Updatable) The identifier of the aggregator.
 	Identifier string `pulumi:"identifier"`
@@ -707,19 +707,19 @@ type RegistryConnectionPrimarySchema struct {
 	IsHasContainers *bool `pulumi:"isHasContainers"`
 	// (Updatable) The identifying key for the object.
 	Key string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryConnectionPrimarySchemaMetadata `pulumi:"metadata"`
-	// (Updatable) The object's type.
+	// (Updatable) The object type.
 	ModelType string `pulumi:"modelType"`
-	// (Updatable) The object's model version.
+	// (Updatable) The model version of the object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion *int `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryConnectionPrimarySchemaParentRef `pulumi:"parentRef"`
 	// (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName *string `pulumi:"resourceName"`
@@ -741,7 +741,7 @@ type RegistryConnectionPrimarySchemaArgs struct {
 	DefaultConnection pulumi.StringPtrInput `pulumi:"defaultConnection"`
 	// (Updatable) The description of the aggregator.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey pulumi.StringPtrInput `pulumi:"externalKey"`
 	// (Updatable) The identifier of the aggregator.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
@@ -749,19 +749,19 @@ type RegistryConnectionPrimarySchemaArgs struct {
 	IsHasContainers pulumi.BoolPtrInput `pulumi:"isHasContainers"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryConnectionPrimarySchemaMetadataPtrInput `pulumi:"metadata"`
-	// (Updatable) The object's type.
+	// (Updatable) The object type.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
-	// (Updatable) The object's model version.
+	// (Updatable) The model version of the object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryConnectionPrimarySchemaParentRefPtrInput `pulumi:"parentRef"`
 	// (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
@@ -854,7 +854,7 @@ func (o RegistryConnectionPrimarySchemaOutput) Description() pulumi.StringPtrOut
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The external key for the object.
+// (Updatable) The external key of the object.
 func (o RegistryConnectionPrimarySchemaOutput) ExternalKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) *string { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
@@ -874,22 +874,22 @@ func (o RegistryConnectionPrimarySchemaOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryConnectionPrimarySchemaOutput) Metadata() RegistryConnectionPrimarySchemaMetadataPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) *RegistryConnectionPrimarySchemaMetadata { return v.Metadata }).(RegistryConnectionPrimarySchemaMetadataPtrOutput)
 }
 
-// (Updatable) The object's type.
+// (Updatable) The object type.
 func (o RegistryConnectionPrimarySchemaOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) string { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The object's model version.
+// (Updatable) The model version of the object.
 func (o RegistryConnectionPrimarySchemaOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryConnectionPrimarySchemaOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -904,7 +904,7 @@ func (o RegistryConnectionPrimarySchemaOutput) ObjectVersion() pulumi.IntPtrOutp
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryConnectionPrimarySchemaOutput) ParentRef() RegistryConnectionPrimarySchemaParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchema) *RegistryConnectionPrimarySchemaParentRef { return v.ParentRef }).(RegistryConnectionPrimarySchemaParentRefPtrOutput)
 }
@@ -958,7 +958,7 @@ func (o RegistryConnectionPrimarySchemaPtrOutput) Description() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The external key for the object.
+// (Updatable) The external key of the object.
 func (o RegistryConnectionPrimarySchemaPtrOutput) ExternalKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchema) *string {
 		if v == nil {
@@ -998,7 +998,7 @@ func (o RegistryConnectionPrimarySchemaPtrOutput) Key() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryConnectionPrimarySchemaPtrOutput) Metadata() RegistryConnectionPrimarySchemaMetadataPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchema) *RegistryConnectionPrimarySchemaMetadata {
 		if v == nil {
@@ -1008,7 +1008,7 @@ func (o RegistryConnectionPrimarySchemaPtrOutput) Metadata() RegistryConnectionP
 	}).(RegistryConnectionPrimarySchemaMetadataPtrOutput)
 }
 
-// (Updatable) The object's type.
+// (Updatable) The object type.
 func (o RegistryConnectionPrimarySchemaPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchema) *string {
 		if v == nil {
@@ -1018,7 +1018,7 @@ func (o RegistryConnectionPrimarySchemaPtrOutput) ModelType() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The object's model version.
+// (Updatable) The model version of the object.
 func (o RegistryConnectionPrimarySchemaPtrOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchema) *string {
 		if v == nil {
@@ -1028,7 +1028,7 @@ func (o RegistryConnectionPrimarySchemaPtrOutput) ModelVersion() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryConnectionPrimarySchemaPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchema) *string {
 		if v == nil {
@@ -1058,7 +1058,7 @@ func (o RegistryConnectionPrimarySchemaPtrOutput) ObjectVersion() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryConnectionPrimarySchemaPtrOutput) ParentRef() RegistryConnectionPrimarySchemaParentRefPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchema) *RegistryConnectionPrimarySchemaParentRef {
 		if v == nil {
@@ -1079,7 +1079,7 @@ func (o RegistryConnectionPrimarySchemaPtrOutput) ResourceName() pulumi.StringPt
 }
 
 type RegistryConnectionPrimarySchemaMetadata struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator *RegistryConnectionPrimarySchemaMetadataAggregator `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -1087,13 +1087,13 @@ type RegistryConnectionPrimarySchemaMetadata struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -1119,7 +1119,7 @@ type RegistryConnectionPrimarySchemaMetadataInput interface {
 }
 
 type RegistryConnectionPrimarySchemaMetadataArgs struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator RegistryConnectionPrimarySchemaMetadataAggregatorPtrInput `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
@@ -1127,13 +1127,13 @@ type RegistryConnectionPrimarySchemaMetadataArgs struct {
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -1224,7 +1224,7 @@ func (o RegistryConnectionPrimarySchemaMetadataOutput) ToRegistryConnectionPrima
 	}).(RegistryConnectionPrimarySchemaMetadataPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryConnectionPrimarySchemaMetadataOutput) Aggregator() RegistryConnectionPrimarySchemaMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchemaMetadata) *RegistryConnectionPrimarySchemaMetadataAggregator {
 		return v.Aggregator
@@ -1246,7 +1246,7 @@ func (o RegistryConnectionPrimarySchemaMetadataOutput) CreatedByName() pulumi.St
 	return o.ApplyT(func(v RegistryConnectionPrimarySchemaMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryConnectionPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchemaMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
@@ -1256,12 +1256,12 @@ func (o RegistryConnectionPrimarySchemaMetadataOutput) InfoFields() pulumi.MapOu
 	return o.ApplyT(func(v RegistryConnectionPrimarySchemaMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryConnectionPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchemaMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryConnectionPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchemaMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -1315,7 +1315,7 @@ func (o RegistryConnectionPrimarySchemaMetadataPtrOutput) Elem() RegistryConnect
 	}).(RegistryConnectionPrimarySchemaMetadataOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryConnectionPrimarySchemaMetadataPtrOutput) Aggregator() RegistryConnectionPrimarySchemaMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchemaMetadata) *RegistryConnectionPrimarySchemaMetadataAggregator {
 		if v == nil {
@@ -1355,7 +1355,7 @@ func (o RegistryConnectionPrimarySchemaMetadataPtrOutput) CreatedByName() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryConnectionPrimarySchemaMetadataPtrOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchemaMetadata) *string {
 		if v == nil {
@@ -1375,7 +1375,7 @@ func (o RegistryConnectionPrimarySchemaMetadataPtrOutput) InfoFields() pulumi.Ma
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryConnectionPrimarySchemaMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchemaMetadata) *bool {
 		if v == nil {
@@ -1385,7 +1385,7 @@ func (o RegistryConnectionPrimarySchemaMetadataPtrOutput) IsFavorite() pulumi.Bo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryConnectionPrimarySchemaMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchemaMetadata) []string {
 		if v == nil {
@@ -1452,7 +1452,7 @@ type RegistryConnectionPrimarySchemaMetadataAggregator struct {
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specific Connection Type
 	Type *string `pulumi:"type"`
@@ -1476,7 +1476,7 @@ type RegistryConnectionPrimarySchemaMetadataAggregatorArgs struct {
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Specific Connection Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -1574,7 +1574,7 @@ func (o RegistryConnectionPrimarySchemaMetadataAggregatorOutput) Key() pulumi.St
 	return o.ApplyT(func(v RegistryConnectionPrimarySchemaMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryConnectionPrimarySchemaMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionPrimarySchemaMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1638,7 +1638,7 @@ func (o RegistryConnectionPrimarySchemaMetadataAggregatorPtrOutput) Key() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryConnectionPrimarySchemaMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionPrimarySchemaMetadataAggregator) *string {
 		if v == nil {
@@ -1798,15 +1798,15 @@ func (o RegistryConnectionPrimarySchemaParentRefPtrOutput) Parent() pulumi.Strin
 type RegistryConnectionRegistryMetadata struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId *string `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName *string `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -1814,7 +1814,7 @@ type RegistryConnectionRegistryMetadata struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId *string `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName *string `pulumi:"updatedByUserName"`
@@ -1834,15 +1834,15 @@ type RegistryConnectionRegistryMetadataInput interface {
 type RegistryConnectionRegistryMetadataArgs struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId pulumi.StringPtrInput `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName pulumi.StringPtrInput `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -1850,7 +1850,7 @@ type RegistryConnectionRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringPtrInput `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringPtrInput `pulumi:"updatedByUserName"`
@@ -1938,7 +1938,7 @@ func (o RegistryConnectionRegistryMetadataOutput) AggregatorKey() pulumi.StringP
 	return o.ApplyT(func(v RegistryConnectionRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryConnectionRegistryMetadataOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionRegistryMetadata) *string { return v.CreatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -1948,7 +1948,7 @@ func (o RegistryConnectionRegistryMetadataOutput) CreatedByUserName() pulumi.Str
 	return o.ApplyT(func(v RegistryConnectionRegistryMetadata) *string { return v.CreatedByUserName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryConnectionRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
@@ -1958,7 +1958,7 @@ func (o RegistryConnectionRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryConnectionRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryConnectionRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -1978,7 +1978,7 @@ func (o RegistryConnectionRegistryMetadataOutput) TimeUpdated() pulumi.StringPtr
 	return o.ApplyT(func(v RegistryConnectionRegistryMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryConnectionRegistryMetadataOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryConnectionRegistryMetadata) *string { return v.UpdatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -2022,7 +2022,7 @@ func (o RegistryConnectionRegistryMetadataPtrOutput) AggregatorKey() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryConnectionRegistryMetadataPtrOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionRegistryMetadata) *string {
 		if v == nil {
@@ -2042,7 +2042,7 @@ func (o RegistryConnectionRegistryMetadataPtrOutput) CreatedByUserName() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryConnectionRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionRegistryMetadata) *bool {
 		if v == nil {
@@ -2062,7 +2062,7 @@ func (o RegistryConnectionRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryConnectionRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryConnectionRegistryMetadata) []string {
 		if v == nil {
@@ -2102,7 +2102,7 @@ func (o RegistryConnectionRegistryMetadataPtrOutput) TimeUpdated() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryConnectionRegistryMetadataPtrOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryConnectionRegistryMetadata) *string {
 		if v == nil {
@@ -2123,23 +2123,23 @@ func (o RegistryConnectionRegistryMetadataPtrOutput) UpdatedByUserName() pulumi.
 }
 
 type RegistryDataAssetDefaultConnection struct {
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties []RegistryDataAssetDefaultConnectionConnectionProperty `pulumi:"connectionProperties"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault *bool `pulumi:"isDefault"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryDataAssetDefaultConnectionMetadata `pulumi:"metadata"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
@@ -2167,23 +2167,23 @@ type RegistryDataAssetDefaultConnectionInput interface {
 }
 
 type RegistryDataAssetDefaultConnectionArgs struct {
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties RegistryDataAssetDefaultConnectionConnectionPropertyArrayInput `pulumi:"connectionProperties"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault pulumi.BoolPtrInput `pulumi:"isDefault"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryDataAssetDefaultConnectionMetadataPtrInput `pulumi:"metadata"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
@@ -2276,24 +2276,24 @@ func (o RegistryDataAssetDefaultConnectionOutput) ToRegistryDataAssetDefaultConn
 	}).(RegistryDataAssetDefaultConnectionPtrOutput)
 }
 
-// (Updatable) The properties for the connection.
+// (Updatable) The properties of the connection.
 func (o RegistryDataAssetDefaultConnectionOutput) ConnectionProperties() RegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) []RegistryDataAssetDefaultConnectionConnectionProperty {
 		return v.ConnectionProperties
 	}).(RegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetDefaultConnectionOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetDefaultConnectionOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// (Updatable) The default property for the connection.
+// (Updatable) The default property of the connection.
 func (o RegistryDataAssetDefaultConnectionOutput) IsDefault() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
@@ -2303,14 +2303,14 @@ func (o RegistryDataAssetDefaultConnectionOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryDataAssetDefaultConnectionOutput) Metadata() RegistryDataAssetDefaultConnectionMetadataPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) *RegistryDataAssetDefaultConnectionMetadata {
 		return v.Metadata
 	}).(RegistryDataAssetDefaultConnectionMetadataPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetDefaultConnectionOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -2320,7 +2320,7 @@ func (o RegistryDataAssetDefaultConnectionOutput) ModelVersion() pulumi.StringPt
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnection) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2383,7 +2383,7 @@ func (o RegistryDataAssetDefaultConnectionPtrOutput) Elem() RegistryDataAssetDef
 	}).(RegistryDataAssetDefaultConnectionOutput)
 }
 
-// (Updatable) The properties for the connection.
+// (Updatable) The properties of the connection.
 func (o RegistryDataAssetDefaultConnectionPtrOutput) ConnectionProperties() RegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnection) []RegistryDataAssetDefaultConnectionConnectionProperty {
 		if v == nil {
@@ -2393,7 +2393,7 @@ func (o RegistryDataAssetDefaultConnectionPtrOutput) ConnectionProperties() Regi
 	}).(RegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetDefaultConnectionPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnection) *string {
 		if v == nil {
@@ -2403,7 +2403,7 @@ func (o RegistryDataAssetDefaultConnectionPtrOutput) Description() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetDefaultConnectionPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnection) *string {
 		if v == nil {
@@ -2413,7 +2413,7 @@ func (o RegistryDataAssetDefaultConnectionPtrOutput) Identifier() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The default property for the connection.
+// (Updatable) The default property of the connection.
 func (o RegistryDataAssetDefaultConnectionPtrOutput) IsDefault() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnection) *bool {
 		if v == nil {
@@ -2433,7 +2433,7 @@ func (o RegistryDataAssetDefaultConnectionPtrOutput) Key() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryDataAssetDefaultConnectionPtrOutput) Metadata() RegistryDataAssetDefaultConnectionMetadataPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnection) *RegistryDataAssetDefaultConnectionMetadata {
 		if v == nil {
@@ -2443,7 +2443,7 @@ func (o RegistryDataAssetDefaultConnectionPtrOutput) Metadata() RegistryDataAsse
 	}).(RegistryDataAssetDefaultConnectionMetadataPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetDefaultConnectionPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnection) *string {
 		if v == nil {
@@ -2463,7 +2463,7 @@ func (o RegistryDataAssetDefaultConnectionPtrOutput) ModelVersion() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnection) *string {
 		if v == nil {
@@ -2534,7 +2534,7 @@ func (o RegistryDataAssetDefaultConnectionPtrOutput) Type() pulumi.StringPtrOutp
 }
 
 type RegistryDataAssetDefaultConnectionConnectionProperty struct {
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The value for the connection name property.
 	Value *string `pulumi:"value"`
@@ -2552,7 +2552,7 @@ type RegistryDataAssetDefaultConnectionConnectionPropertyInput interface {
 }
 
 type RegistryDataAssetDefaultConnectionConnectionPropertyArgs struct {
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The value for the connection name property.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -2609,7 +2609,7 @@ func (o RegistryDataAssetDefaultConnectionConnectionPropertyOutput) ToRegistryDa
 	return o
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionConnectionPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionConnectionProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2640,7 +2640,7 @@ func (o RegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput) Index(i
 }
 
 type RegistryDataAssetDefaultConnectionMetadata struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator *RegistryDataAssetDefaultConnectionMetadataAggregator `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -2648,13 +2648,13 @@ type RegistryDataAssetDefaultConnectionMetadata struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -2680,7 +2680,7 @@ type RegistryDataAssetDefaultConnectionMetadataInput interface {
 }
 
 type RegistryDataAssetDefaultConnectionMetadataArgs struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator RegistryDataAssetDefaultConnectionMetadataAggregatorPtrInput `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
@@ -2688,13 +2688,13 @@ type RegistryDataAssetDefaultConnectionMetadataArgs struct {
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -2785,7 +2785,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataOutput) ToRegistryDataAssetDef
 	}).(RegistryDataAssetDefaultConnectionMetadataPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryDataAssetDefaultConnectionMetadataOutput) Aggregator() RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadata) *RegistryDataAssetDefaultConnectionMetadataAggregator {
 		return v.Aggregator
@@ -2807,7 +2807,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataOutput) CreatedByName() pulumi
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryDataAssetDefaultConnectionMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
@@ -2817,12 +2817,12 @@ func (o RegistryDataAssetDefaultConnectionMetadataOutput) InfoFields() pulumi.Ma
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetDefaultConnectionMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetDefaultConnectionMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -2876,7 +2876,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) Elem() RegistryData
 	}).(RegistryDataAssetDefaultConnectionMetadataOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) Aggregator() RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionMetadata) *RegistryDataAssetDefaultConnectionMetadataAggregator {
 		if v == nil {
@@ -2916,7 +2916,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) CreatedByName() pul
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionMetadata) *string {
 		if v == nil {
@@ -2936,7 +2936,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) InfoFields() pulumi
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionMetadata) *bool {
 		if v == nil {
@@ -2946,7 +2946,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) IsFavorite() pulumi
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionMetadata) []string {
 		if v == nil {
@@ -3007,13 +3007,13 @@ func (o RegistryDataAssetDefaultConnectionMetadataPtrOutput) UpdatedByName() pul
 }
 
 type RegistryDataAssetDefaultConnectionMetadataAggregator struct {
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type *string `pulumi:"type"`
@@ -3031,13 +3031,13 @@ type RegistryDataAssetDefaultConnectionMetadataAggregatorInput interface {
 }
 
 type RegistryDataAssetDefaultConnectionMetadataAggregatorArgs struct {
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -3120,12 +3120,12 @@ func (o RegistryDataAssetDefaultConnectionMetadataAggregatorOutput) ToRegistryDa
 	}).(RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetDefaultConnectionMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetDefaultConnectionMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
@@ -3135,7 +3135,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataAggregatorOutput) Key() pulumi
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -3169,7 +3169,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Elem() Re
 	}).(RegistryDataAssetDefaultConnectionMetadataAggregatorOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionMetadataAggregator) *string {
 		if v == nil {
@@ -3179,7 +3179,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Descripti
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionMetadataAggregator) *string {
 		if v == nil {
@@ -3199,7 +3199,7 @@ func (o RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Key() pul
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionMetadataAggregator) *string {
 		if v == nil {
@@ -3222,29 +3222,29 @@ func (o RegistryDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Type() pu
 type RegistryDataAssetDefaultConnectionPrimarySchema struct {
 	// (Updatable) The default connection key.
 	DefaultConnection *string `pulumi:"defaultConnection"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey *string `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// (Updatable) Specifies whether the schema has containers.
 	IsHasContainers *bool `pulumi:"isHasContainers"`
 	// (Updatable) The identifying key for the object.
 	Key string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryDataAssetDefaultConnectionPrimarySchemaMetadata `pulumi:"metadata"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion *int `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryDataAssetDefaultConnectionPrimarySchemaParentRef `pulumi:"parentRef"`
 	// (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName *string `pulumi:"resourceName"`
@@ -3264,29 +3264,29 @@ type RegistryDataAssetDefaultConnectionPrimarySchemaInput interface {
 type RegistryDataAssetDefaultConnectionPrimarySchemaArgs struct {
 	// (Updatable) The default connection key.
 	DefaultConnection pulumi.StringPtrInput `pulumi:"defaultConnection"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey pulumi.StringPtrInput `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// (Updatable) Specifies whether the schema has containers.
 	IsHasContainers pulumi.BoolPtrInput `pulumi:"isHasContainers"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrInput `pulumi:"metadata"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtrInput `pulumi:"parentRef"`
 	// (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
@@ -3374,17 +3374,17 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) DefaultConnection
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) *string { return v.DefaultConnection }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The external key for the object.
+// (Updatable) The external key of the object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) ExternalKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) *string { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -3399,14 +3399,14 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) Key() pulumi.Stri
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) Metadata() RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) *RegistryDataAssetDefaultConnectionPrimarySchemaMetadata {
 		return v.Metadata
 	}).(RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -3416,7 +3416,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) ModelVersion() pu
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -3431,7 +3431,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) ObjectVersion() p
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaOutput) ParentRef() RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchema) *RegistryDataAssetDefaultConnectionPrimarySchemaParentRef {
 		return v.ParentRef
@@ -3477,7 +3477,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) DefaultConnect
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -3487,7 +3487,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) Description() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The external key for the object.
+// (Updatable) The external key of the object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) ExternalKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -3497,7 +3497,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) ExternalKey() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -3527,7 +3527,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) Key() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) Metadata() RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchema) *RegistryDataAssetDefaultConnectionPrimarySchemaMetadata {
 		if v == nil {
@@ -3537,7 +3537,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) Metadata() Reg
 	}).(RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -3557,7 +3557,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) ModelVersion()
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -3587,7 +3587,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) ObjectVersion(
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) ParentRef() RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchema) *RegistryDataAssetDefaultConnectionPrimarySchemaParentRef {
 		if v == nil {
@@ -3608,7 +3608,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaPtrOutput) ResourceName()
 }
 
 type RegistryDataAssetDefaultConnectionPrimarySchemaMetadata struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator *RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -3616,13 +3616,13 @@ type RegistryDataAssetDefaultConnectionPrimarySchemaMetadata struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -3648,7 +3648,7 @@ type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataInput interface {
 }
 
 type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrInput `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
@@ -3656,13 +3656,13 @@ type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs struct {
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -3753,7 +3753,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) ToRegistr
 	}).(RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Aggregator() RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) *RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
 		return v.Aggregator
@@ -3775,7 +3775,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) CreatedBy
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
@@ -3787,12 +3787,12 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) InfoField
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -3846,7 +3846,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) Elem()
 	}).(RegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) Aggregator() RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) *RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
 		if v == nil {
@@ -3886,7 +3886,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) Create
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) *string {
 		if v == nil {
@@ -3906,7 +3906,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) InfoFi
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) *bool {
 		if v == nil {
@@ -3916,7 +3916,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) IsFavo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchemaMetadata) []string {
 		if v == nil {
@@ -3977,13 +3977,13 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) Update
 }
 
 type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator struct {
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type *string `pulumi:"type"`
@@ -4001,13 +4001,13 @@ type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput inte
 }
 
 type RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs struct {
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -4090,14 +4090,14 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput)
 	}).(RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		return v.Description
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
@@ -4107,7 +4107,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput)
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -4141,7 +4141,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutp
 	}).(RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		if v == nil {
@@ -4151,7 +4151,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		if v == nil {
@@ -4171,7 +4171,7 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		if v == nil {
@@ -4331,15 +4331,15 @@ func (o RegistryDataAssetDefaultConnectionPrimarySchemaParentRefPtrOutput) Paren
 type RegistryDataAssetDefaultConnectionRegistryMetadata struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId *string `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName *string `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -4347,7 +4347,7 @@ type RegistryDataAssetDefaultConnectionRegistryMetadata struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId *string `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName *string `pulumi:"updatedByUserName"`
@@ -4367,15 +4367,15 @@ type RegistryDataAssetDefaultConnectionRegistryMetadataInput interface {
 type RegistryDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId pulumi.StringPtrInput `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName pulumi.StringPtrInput `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -4383,7 +4383,7 @@ type RegistryDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringPtrInput `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringPtrInput `pulumi:"updatedByUserName"`
@@ -4471,7 +4471,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataOutput) AggregatorKey(
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryDataAssetDefaultConnectionRegistryMetadataOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionRegistryMetadata) *string { return v.CreatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -4481,7 +4481,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataOutput) CreatedByUserN
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionRegistryMetadata) *string { return v.CreatedByUserName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetDefaultConnectionRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
@@ -4491,7 +4491,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataOutput) Key() pulumi.S
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetDefaultConnectionRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -4511,7 +4511,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataOutput) TimeUpdated() 
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionRegistryMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryDataAssetDefaultConnectionRegistryMetadataOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetDefaultConnectionRegistryMetadata) *string { return v.UpdatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -4555,7 +4555,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) AggregatorK
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionRegistryMetadata) *string {
 		if v == nil {
@@ -4575,7 +4575,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) CreatedByUs
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionRegistryMetadata) *bool {
 		if v == nil {
@@ -4595,7 +4595,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) Key() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionRegistryMetadata) []string {
 		if v == nil {
@@ -4635,7 +4635,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) TimeUpdated
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetDefaultConnectionRegistryMetadata) *string {
 		if v == nil {
@@ -4656,7 +4656,7 @@ func (o RegistryDataAssetDefaultConnectionRegistryMetadataPtrOutput) UpdatedByUs
 }
 
 type RegistryDataAssetMetadata struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator *RegistryDataAssetMetadataAggregator `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -4664,13 +4664,13 @@ type RegistryDataAssetMetadata struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -4696,7 +4696,7 @@ type RegistryDataAssetMetadataInput interface {
 }
 
 type RegistryDataAssetMetadataArgs struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator RegistryDataAssetMetadataAggregatorPtrInput `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
@@ -4704,13 +4704,13 @@ type RegistryDataAssetMetadataArgs struct {
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -4801,7 +4801,7 @@ func (o RegistryDataAssetMetadataOutput) ToRegistryDataAssetMetadataPtrOutputWit
 	}).(RegistryDataAssetMetadataPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryDataAssetMetadataOutput) Aggregator() RegistryDataAssetMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetMetadata) *RegistryDataAssetMetadataAggregator { return v.Aggregator }).(RegistryDataAssetMetadataAggregatorPtrOutput)
 }
@@ -4821,7 +4821,7 @@ func (o RegistryDataAssetMetadataOutput) CreatedByName() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v RegistryDataAssetMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryDataAssetMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
@@ -4831,12 +4831,12 @@ func (o RegistryDataAssetMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v RegistryDataAssetMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryDataAssetMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -4890,7 +4890,7 @@ func (o RegistryDataAssetMetadataPtrOutput) Elem() RegistryDataAssetMetadataOutp
 	}).(RegistryDataAssetMetadataOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryDataAssetMetadataPtrOutput) Aggregator() RegistryDataAssetMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetMetadata) *RegistryDataAssetMetadataAggregator {
 		if v == nil {
@@ -4930,7 +4930,7 @@ func (o RegistryDataAssetMetadataPtrOutput) CreatedByName() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryDataAssetMetadataPtrOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetMetadata) *string {
 		if v == nil {
@@ -4950,7 +4950,7 @@ func (o RegistryDataAssetMetadataPtrOutput) InfoFields() pulumi.MapOutput {
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetMetadata) *bool {
 		if v == nil {
@@ -4960,7 +4960,7 @@ func (o RegistryDataAssetMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryDataAssetMetadata) []string {
 		if v == nil {
@@ -5021,13 +5021,13 @@ func (o RegistryDataAssetMetadataPtrOutput) UpdatedByName() pulumi.StringPtrOutp
 }
 
 type RegistryDataAssetMetadataAggregator struct {
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type *string `pulumi:"type"`
@@ -5045,13 +5045,13 @@ type RegistryDataAssetMetadataAggregatorInput interface {
 }
 
 type RegistryDataAssetMetadataAggregatorArgs struct {
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -5134,12 +5134,12 @@ func (o RegistryDataAssetMetadataAggregatorOutput) ToRegistryDataAssetMetadataAg
 	}).(RegistryDataAssetMetadataAggregatorPtrOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
@@ -5149,7 +5149,7 @@ func (o RegistryDataAssetMetadataAggregatorOutput) Key() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v RegistryDataAssetMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -5183,7 +5183,7 @@ func (o RegistryDataAssetMetadataAggregatorPtrOutput) Elem() RegistryDataAssetMe
 	}).(RegistryDataAssetMetadataAggregatorOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetMetadataAggregatorPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetMetadataAggregator) *string {
 		if v == nil {
@@ -5193,7 +5193,7 @@ func (o RegistryDataAssetMetadataAggregatorPtrOutput) Description() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetMetadataAggregatorPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetMetadataAggregator) *string {
 		if v == nil {
@@ -5213,7 +5213,7 @@ func (o RegistryDataAssetMetadataAggregatorPtrOutput) Key() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetMetadataAggregator) *string {
 		if v == nil {
@@ -5234,23 +5234,23 @@ func (o RegistryDataAssetMetadataAggregatorPtrOutput) Type() pulumi.StringPtrOut
 }
 
 type RegistryDataAssetNativeTypeSystem struct {
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion *int `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryDataAssetNativeTypeSystemParentRef `pulumi:"parentRef"`
 	// (Updatable) The type system to map from.
 	TypeMappingFrom map[string]interface{} `pulumi:"typeMappingFrom"`
@@ -5272,23 +5272,23 @@ type RegistryDataAssetNativeTypeSystemInput interface {
 }
 
 type RegistryDataAssetNativeTypeSystemArgs struct {
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryDataAssetNativeTypeSystemParentRefPtrInput `pulumi:"parentRef"`
 	// (Updatable) The type system to map from.
 	TypeMappingFrom pulumi.MapInput `pulumi:"typeMappingFrom"`
@@ -5375,12 +5375,12 @@ func (o RegistryDataAssetNativeTypeSystemOutput) ToRegistryDataAssetNativeTypeSy
 	}).(RegistryDataAssetNativeTypeSystemPtrOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetNativeTypeSystemOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetNativeTypeSystemOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystem) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
@@ -5390,7 +5390,7 @@ func (o RegistryDataAssetNativeTypeSystemOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetNativeTypeSystemOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystem) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
@@ -5400,7 +5400,7 @@ func (o RegistryDataAssetNativeTypeSystemOutput) ModelVersion() pulumi.StringPtr
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystem) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetNativeTypeSystemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -5415,7 +5415,7 @@ func (o RegistryDataAssetNativeTypeSystemOutput) ObjectVersion() pulumi.IntPtrOu
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystem) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryDataAssetNativeTypeSystemOutput) ParentRef() RegistryDataAssetNativeTypeSystemParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystem) *RegistryDataAssetNativeTypeSystemParentRef {
 		return v.ParentRef
@@ -5461,7 +5461,7 @@ func (o RegistryDataAssetNativeTypeSystemPtrOutput) Elem() RegistryDataAssetNati
 	}).(RegistryDataAssetNativeTypeSystemOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetNativeTypeSystemPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystem) *string {
 		if v == nil {
@@ -5471,7 +5471,7 @@ func (o RegistryDataAssetNativeTypeSystemPtrOutput) Description() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetNativeTypeSystemPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystem) *string {
 		if v == nil {
@@ -5491,7 +5491,7 @@ func (o RegistryDataAssetNativeTypeSystemPtrOutput) Key() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetNativeTypeSystemPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystem) *string {
 		if v == nil {
@@ -5511,7 +5511,7 @@ func (o RegistryDataAssetNativeTypeSystemPtrOutput) ModelVersion() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetNativeTypeSystemPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystem) *string {
 		if v == nil {
@@ -5541,7 +5541,7 @@ func (o RegistryDataAssetNativeTypeSystemPtrOutput) ObjectVersion() pulumi.IntPt
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryDataAssetNativeTypeSystemPtrOutput) ParentRef() RegistryDataAssetNativeTypeSystemParentRefPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystem) *RegistryDataAssetNativeTypeSystemParentRef {
 		if v == nil {
@@ -5721,21 +5721,21 @@ func (o RegistryDataAssetNativeTypeSystemParentRefPtrOutput) Parent() pulumi.Str
 type RegistryDataAssetNativeTypeSystemType struct {
 	// (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinition *RegistryDataAssetNativeTypeSystemTypeConfigDefinition `pulumi:"configDefinition"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
 	// (Updatable) The data type.
 	DtType *string `pulumi:"dtType"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryDataAssetNativeTypeSystemTypeParentRef `pulumi:"parentRef"`
 	// (Updatable) The data type system name.
 	TypeSystemName *string `pulumi:"typeSystemName"`
@@ -5755,21 +5755,21 @@ type RegistryDataAssetNativeTypeSystemTypeInput interface {
 type RegistryDataAssetNativeTypeSystemTypeArgs struct {
 	// (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinition RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrInput `pulumi:"configDefinition"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The data type.
 	DtType pulumi.StringPtrInput `pulumi:"dtType"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryDataAssetNativeTypeSystemTypeParentRefPtrInput `pulumi:"parentRef"`
 	// (Updatable) The data type system name.
 	TypeSystemName pulumi.StringPtrInput `pulumi:"typeSystemName"`
@@ -5833,7 +5833,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeOutput) ConfigDefinition() Registry
 	}).(RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetNativeTypeSystemTypeOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemType) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -5848,7 +5848,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeOutput) Key() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemType) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetNativeTypeSystemTypeOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemType) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -5858,7 +5858,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeOutput) ModelVersion() pulumi.Strin
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemType) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetNativeTypeSystemTypeOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemType) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -5868,7 +5868,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeOutput) ObjectStatus() pulumi.IntPt
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemType) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryDataAssetNativeTypeSystemTypeOutput) ParentRef() RegistryDataAssetNativeTypeSystemTypeParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemType) *RegistryDataAssetNativeTypeSystemTypeParentRef {
 		return v.ParentRef
@@ -5903,19 +5903,19 @@ func (o RegistryDataAssetNativeTypeSystemTypeArrayOutput) Index(i pulumi.IntInpu
 type RegistryDataAssetNativeTypeSystemTypeConfigDefinition struct {
 	// (Updatable) The parameter configuration details.
 	ConfigParameterDefinitions map[string]interface{} `pulumi:"configParameterDefinitions"`
-	// (Updatable) Specifies whether the configuration is contained or not.
+	// (Updatable) Specifies whether the configuration is contained.
 	IsContained *bool `pulumi:"isContained"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef `pulumi:"parentRef"`
 }
 
@@ -5933,19 +5933,19 @@ type RegistryDataAssetNativeTypeSystemTypeConfigDefinitionInput interface {
 type RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs struct {
 	// (Updatable) The parameter configuration details.
 	ConfigParameterDefinitions pulumi.MapInput `pulumi:"configParameterDefinitions"`
-	// (Updatable) Specifies whether the configuration is contained or not.
+	// (Updatable) Specifies whether the configuration is contained.
 	IsContained pulumi.BoolPtrInput `pulumi:"isContained"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrInput `pulumi:"parentRef"`
 }
 
@@ -6033,7 +6033,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ConfigParam
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether the configuration is contained or not.
+// (Updatable) Specifies whether the configuration is contained.
 func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) IsContained() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *bool { return v.IsContained }).(pulumi.BoolPtrOutput)
 }
@@ -6043,7 +6043,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Key() pulum
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
@@ -6053,7 +6053,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ModelVersio
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -6063,7 +6063,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ObjectStatu
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ParentRef() RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
 		return v.ParentRef
@@ -6104,7 +6104,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) ConfigPa
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether the configuration is contained or not.
+// (Updatable) Specifies whether the configuration is contained.
 func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) IsContained() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *bool {
 		if v == nil {
@@ -6124,7 +6124,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) Key() pu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *string {
 		if v == nil {
@@ -6144,7 +6144,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) ModelVer
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *string {
 		if v == nil {
@@ -6164,7 +6164,7 @@ func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) ObjectSt
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) ParentRef() RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetNativeTypeSystemTypeConfigDefinition) *RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
 		if v == nil {
@@ -6451,15 +6451,15 @@ func (o RegistryDataAssetNativeTypeSystemTypeParentRefPtrOutput) Parent() pulumi
 type RegistryDataAssetRegistryMetadata struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId *string `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName *string `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -6467,7 +6467,7 @@ type RegistryDataAssetRegistryMetadata struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId *string `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName *string `pulumi:"updatedByUserName"`
@@ -6487,15 +6487,15 @@ type RegistryDataAssetRegistryMetadataInput interface {
 type RegistryDataAssetRegistryMetadataArgs struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId pulumi.StringPtrInput `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName pulumi.StringPtrInput `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -6503,7 +6503,7 @@ type RegistryDataAssetRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringPtrInput `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringPtrInput `pulumi:"updatedByUserName"`
@@ -6591,7 +6591,7 @@ func (o RegistryDataAssetRegistryMetadataOutput) AggregatorKey() pulumi.StringPt
 	return o.ApplyT(func(v RegistryDataAssetRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryDataAssetRegistryMetadataOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetRegistryMetadata) *string { return v.CreatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -6601,7 +6601,7 @@ func (o RegistryDataAssetRegistryMetadataOutput) CreatedByUserName() pulumi.Stri
 	return o.ApplyT(func(v RegistryDataAssetRegistryMetadata) *string { return v.CreatedByUserName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
@@ -6611,7 +6611,7 @@ func (o RegistryDataAssetRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryDataAssetRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -6631,7 +6631,7 @@ func (o RegistryDataAssetRegistryMetadataOutput) TimeUpdated() pulumi.StringPtrO
 	return o.ApplyT(func(v RegistryDataAssetRegistryMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryDataAssetRegistryMetadataOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryDataAssetRegistryMetadata) *string { return v.UpdatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -6675,7 +6675,7 @@ func (o RegistryDataAssetRegistryMetadataPtrOutput) AggregatorKey() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryDataAssetRegistryMetadataPtrOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetRegistryMetadata) *string {
 		if v == nil {
@@ -6695,7 +6695,7 @@ func (o RegistryDataAssetRegistryMetadataPtrOutput) CreatedByUserName() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryDataAssetRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetRegistryMetadata) *bool {
 		if v == nil {
@@ -6715,7 +6715,7 @@ func (o RegistryDataAssetRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryDataAssetRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryDataAssetRegistryMetadata) []string {
 		if v == nil {
@@ -6755,7 +6755,7 @@ func (o RegistryDataAssetRegistryMetadataPtrOutput) TimeUpdated() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryDataAssetRegistryMetadataPtrOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryDataAssetRegistryMetadata) *string {
 		if v == nil {
@@ -6780,21 +6780,21 @@ type RegistryFolderDataAsset struct {
 	AssetProperties map[string]interface{} `pulumi:"assetProperties"`
 	// (Updatable) The default connection key.
 	DefaultConnection *RegistryFolderDataAssetDefaultConnection `pulumi:"defaultConnection"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey *string `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryFolderDataAssetMetadata `pulumi:"metadata"`
 	// (Updatable) The type of the folder.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// (Updatable) The type system maps from and to a type.
 	NativeTypeSystem *RegistryFolderDataAssetNativeTypeSystem `pulumi:"nativeTypeSystem"`
@@ -6826,21 +6826,21 @@ type RegistryFolderDataAssetArgs struct {
 	AssetProperties pulumi.MapInput `pulumi:"assetProperties"`
 	// (Updatable) The default connection key.
 	DefaultConnection RegistryFolderDataAssetDefaultConnectionPtrInput `pulumi:"defaultConnection"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey pulumi.StringPtrInput `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryFolderDataAssetMetadataPtrInput `pulumi:"metadata"`
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The type system maps from and to a type.
 	NativeTypeSystem RegistryFolderDataAssetNativeTypeSystemPtrInput `pulumi:"nativeTypeSystem"`
@@ -6917,27 +6917,27 @@ func (o RegistryFolderDataAssetOutput) DefaultConnection() RegistryFolderDataAss
 	return o.ApplyT(func(v RegistryFolderDataAsset) *RegistryFolderDataAssetDefaultConnection { return v.DefaultConnection }).(RegistryFolderDataAssetDefaultConnectionPtrOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAsset) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The external key for the object.
+// (Updatable) The external key of the object.
 func (o RegistryFolderDataAssetOutput) ExternalKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAsset) *string { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAsset) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAsset) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryFolderDataAssetOutput) Metadata() RegistryFolderDataAssetMetadataPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAsset) *RegistryFolderDataAssetMetadata { return v.Metadata }).(RegistryFolderDataAssetMetadataPtrOutput)
 }
@@ -6952,7 +6952,7 @@ func (o RegistryFolderDataAssetOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAsset) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAsset) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -7008,23 +7008,23 @@ func (o RegistryFolderDataAssetArrayOutput) Index(i pulumi.IntInput) RegistryFol
 }
 
 type RegistryFolderDataAssetDefaultConnection struct {
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties []RegistryFolderDataAssetDefaultConnectionConnectionProperty `pulumi:"connectionProperties"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault *bool `pulumi:"isDefault"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryFolderDataAssetDefaultConnectionMetadata `pulumi:"metadata"`
 	// (Updatable) The type of the folder.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
@@ -7052,23 +7052,23 @@ type RegistryFolderDataAssetDefaultConnectionInput interface {
 }
 
 type RegistryFolderDataAssetDefaultConnectionArgs struct {
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayInput `pulumi:"connectionProperties"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault pulumi.BoolPtrInput `pulumi:"isDefault"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryFolderDataAssetDefaultConnectionMetadataPtrInput `pulumi:"metadata"`
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
@@ -7161,34 +7161,34 @@ func (o RegistryFolderDataAssetDefaultConnectionOutput) ToRegistryFolderDataAsse
 	}).(RegistryFolderDataAssetDefaultConnectionPtrOutput)
 }
 
-// (Updatable) The properties for the connection.
+// (Updatable) The properties of the connection.
 func (o RegistryFolderDataAssetDefaultConnectionOutput) ConnectionProperties() RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnection) []RegistryFolderDataAssetDefaultConnectionConnectionProperty {
 		return v.ConnectionProperties
 	}).(RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetDefaultConnectionOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnection) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetDefaultConnectionOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnection) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// (Updatable) The default property for the connection.
+// (Updatable) The default property of the connection.
 func (o RegistryFolderDataAssetDefaultConnectionOutput) IsDefault() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnection) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnection) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryFolderDataAssetDefaultConnectionOutput) Metadata() RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnection) *RegistryFolderDataAssetDefaultConnectionMetadata {
 		return v.Metadata
@@ -7205,7 +7205,7 @@ func (o RegistryFolderDataAssetDefaultConnectionOutput) ModelVersion() pulumi.St
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnection) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnection) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -7268,7 +7268,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Elem() RegistryFolder
 	}).(RegistryFolderDataAssetDefaultConnectionOutput)
 }
 
-// (Updatable) The properties for the connection.
+// (Updatable) The properties of the connection.
 func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) ConnectionProperties() RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnection) []RegistryFolderDataAssetDefaultConnectionConnectionProperty {
 		if v == nil {
@@ -7278,7 +7278,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) ConnectionProperties(
 	}).(RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnection) *string {
 		if v == nil {
@@ -7288,7 +7288,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Description() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnection) *string {
 		if v == nil {
@@ -7298,7 +7298,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Identifier() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The default property for the connection.
+// (Updatable) The default property of the connection.
 func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) IsDefault() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnection) *bool {
 		if v == nil {
@@ -7308,7 +7308,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) IsDefault() pulumi.Bo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnection) *string {
 		if v == nil {
@@ -7318,7 +7318,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Key() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Metadata() RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnection) *RegistryFolderDataAssetDefaultConnectionMetadata {
 		if v == nil {
@@ -7348,7 +7348,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) ModelVersion() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnection) *string {
 		if v == nil {
@@ -7419,7 +7419,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPtrOutput) Type() pulumi.StringP
 }
 
 type RegistryFolderDataAssetDefaultConnectionConnectionProperty struct {
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The value for the connection name property.
 	Value *string `pulumi:"value"`
@@ -7437,7 +7437,7 @@ type RegistryFolderDataAssetDefaultConnectionConnectionPropertyInput interface {
 }
 
 type RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs struct {
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The value for the connection name property.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -7494,7 +7494,7 @@ func (o RegistryFolderDataAssetDefaultConnectionConnectionPropertyOutput) ToRegi
 	return o
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionConnectionPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionConnectionProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -7525,7 +7525,7 @@ func (o RegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput) I
 }
 
 type RegistryFolderDataAssetDefaultConnectionMetadata struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator *RegistryFolderDataAssetDefaultConnectionMetadataAggregator `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -7533,13 +7533,13 @@ type RegistryFolderDataAssetDefaultConnectionMetadata struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -7565,7 +7565,7 @@ type RegistryFolderDataAssetDefaultConnectionMetadataInput interface {
 }
 
 type RegistryFolderDataAssetDefaultConnectionMetadataArgs struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrInput `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
@@ -7573,13 +7573,13 @@ type RegistryFolderDataAssetDefaultConnectionMetadataArgs struct {
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -7670,7 +7670,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataOutput) ToRegistryFolder
 	}).(RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataOutput) Aggregator() RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadata) *RegistryFolderDataAssetDefaultConnectionMetadataAggregator {
 		return v.Aggregator
@@ -7692,7 +7692,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataOutput) CreatedByName() 
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
@@ -7702,12 +7702,12 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataOutput) InfoFields() pul
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -7761,7 +7761,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) Elem() Regist
 	}).(RegistryFolderDataAssetDefaultConnectionMetadataOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) Aggregator() RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionMetadata) *RegistryFolderDataAssetDefaultConnectionMetadataAggregator {
 		if v == nil {
@@ -7801,7 +7801,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) CreatedByName
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionMetadata) *string {
 		if v == nil {
@@ -7821,7 +7821,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) InfoFields() 
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionMetadata) *bool {
 		if v == nil {
@@ -7831,7 +7831,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) IsFavorite() 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionMetadata) []string {
 		if v == nil {
@@ -7892,13 +7892,13 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataPtrOutput) UpdatedByName
 }
 
 type RegistryFolderDataAssetDefaultConnectionMetadataAggregator struct {
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type *string `pulumi:"type"`
@@ -7916,13 +7916,13 @@ type RegistryFolderDataAssetDefaultConnectionMetadataAggregatorInput interface {
 }
 
 type RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs struct {
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -8005,22 +8005,22 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) ToRegi
 	}).(RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -8054,7 +8054,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Ele
 	}).(RegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionMetadataAggregator) *string {
 		if v == nil {
@@ -8064,7 +8064,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Des
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionMetadataAggregator) *string {
 		if v == nil {
@@ -8074,7 +8074,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Ide
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionMetadataAggregator) *string {
 		if v == nil {
@@ -8084,7 +8084,7 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Key
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionMetadataAggregator) *string {
 		if v == nil {
@@ -8107,29 +8107,29 @@ func (o RegistryFolderDataAssetDefaultConnectionMetadataAggregatorPtrOutput) Typ
 type RegistryFolderDataAssetDefaultConnectionPrimarySchema struct {
 	// (Updatable) The default connection key.
 	DefaultConnection *string `pulumi:"defaultConnection"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey *string `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// (Updatable) Specifies whether the schema has containers.
 	IsHasContainers *bool `pulumi:"isHasContainers"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata `pulumi:"metadata"`
 	// (Updatable) The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion *int `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef `pulumi:"parentRef"`
 	// (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName *string `pulumi:"resourceName"`
@@ -8149,29 +8149,29 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchemaInput interface {
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs struct {
 	// (Updatable) The default connection key.
 	DefaultConnection pulumi.StringPtrInput `pulumi:"defaultConnection"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey pulumi.StringPtrInput `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// (Updatable) Specifies whether the schema has containers.
 	IsHasContainers pulumi.BoolPtrInput `pulumi:"isHasContainers"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrInput `pulumi:"metadata"`
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtrInput `pulumi:"parentRef"`
 	// (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
@@ -8259,17 +8259,17 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) DefaultConn
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string { return v.DefaultConnection }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The external key for the object.
+// (Updatable) The external key of the object.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) ExternalKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -8279,12 +8279,12 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) IsHasContai
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) *bool { return v.IsHasContainers }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Metadata() RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata {
 		return v.Metadata
@@ -8301,7 +8301,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) ModelVersio
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -8316,7 +8316,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) ObjectVersi
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) ParentRef() RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchema) *RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef {
 		return v.ParentRef
@@ -8362,7 +8362,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) DefaultC
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -8372,7 +8372,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) Descript
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The external key for the object.
+// (Updatable) The external key of the object.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) ExternalKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -8382,7 +8382,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) External
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -8402,7 +8402,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) IsHasCon
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -8412,7 +8412,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) Key() pu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) Metadata() RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchema) *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata {
 		if v == nil {
@@ -8442,7 +8442,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) ModelVer
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchema) *string {
 		if v == nil {
@@ -8472,7 +8472,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) ObjectVe
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) ParentRef() RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchema) *RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef {
 		if v == nil {
@@ -8493,7 +8493,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaPtrOutput) Resource
 }
 
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -8501,13 +8501,13 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -8533,7 +8533,7 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataInput interfac
 }
 
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrInput `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
@@ -8541,13 +8541,13 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs struct {
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -8638,7 +8638,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) ToR
 	}).(RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Aggregator() RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
 		return v.Aggregator
@@ -8660,7 +8660,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Cre
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
@@ -8672,12 +8672,12 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Inf
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -8731,7 +8731,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) 
 	}).(RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) Aggregator() RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
 		if v == nil {
@@ -8771,7 +8771,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) 
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) *string {
 		if v == nil {
@@ -8791,7 +8791,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) 
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) *bool {
 		if v == nil {
@@ -8801,7 +8801,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) []string {
 		if v == nil {
@@ -8862,13 +8862,13 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataPtrOutput) 
 }
 
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator struct {
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type *string `pulumi:"type"`
@@ -8886,13 +8886,13 @@ type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInpu
 }
 
 type RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs struct {
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -8975,26 +8975,26 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorO
 	}).(RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		return v.Description
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		return v.Identifier
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -9028,7 +9028,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorP
 	}).(RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		if v == nil {
@@ -9038,7 +9038,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		if v == nil {
@@ -9048,7 +9048,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		if v == nil {
@@ -9058,7 +9058,7 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) *string {
 		if v == nil {
@@ -9218,15 +9218,15 @@ func (o RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefPtrOutput)
 type RegistryFolderDataAssetDefaultConnectionRegistryMetadata struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId *string `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName *string `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -9234,7 +9234,7 @@ type RegistryFolderDataAssetDefaultConnectionRegistryMetadata struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId *string `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName *string `pulumi:"updatedByUserName"`
@@ -9254,15 +9254,15 @@ type RegistryFolderDataAssetDefaultConnectionRegistryMetadataInput interface {
 type RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId pulumi.StringPtrInput `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName pulumi.StringPtrInput `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -9270,7 +9270,7 @@ type RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringPtrInput `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringPtrInput `pulumi:"updatedByUserName"`
@@ -9358,7 +9358,7 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) Aggregat
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string { return v.CreatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -9368,17 +9368,17 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) CreatedB
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string { return v.CreatedByUserName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -9398,7 +9398,7 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) TimeUpda
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string { return v.UpdatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -9442,7 +9442,7 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) Aggre
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string {
 		if v == nil {
@@ -9462,7 +9462,7 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) Creat
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *bool {
 		if v == nil {
@@ -9472,7 +9472,7 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) IsFav
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string {
 		if v == nil {
@@ -9482,7 +9482,7 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) Key()
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionRegistryMetadata) []string {
 		if v == nil {
@@ -9522,7 +9522,7 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) TimeU
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetDefaultConnectionRegistryMetadata) *string {
 		if v == nil {
@@ -9543,7 +9543,7 @@ func (o RegistryFolderDataAssetDefaultConnectionRegistryMetadataPtrOutput) Updat
 }
 
 type RegistryFolderDataAssetMetadata struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator *RegistryFolderDataAssetMetadataAggregator `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
@@ -9551,13 +9551,13 @@ type RegistryFolderDataAssetMetadata struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -9583,7 +9583,7 @@ type RegistryFolderDataAssetMetadataInput interface {
 }
 
 type RegistryFolderDataAssetMetadataArgs struct {
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator RegistryFolderDataAssetMetadataAggregatorPtrInput `pulumi:"aggregator"`
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
@@ -9591,13 +9591,13 @@ type RegistryFolderDataAssetMetadataArgs struct {
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// (Updatable) The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// (Updatable) The full path to identify the object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -9688,7 +9688,7 @@ func (o RegistryFolderDataAssetMetadataOutput) ToRegistryFolderDataAssetMetadata
 	}).(RegistryFolderDataAssetMetadataPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryFolderDataAssetMetadataOutput) Aggregator() RegistryFolderDataAssetMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadata) *RegistryFolderDataAssetMetadataAggregator {
 		return v.Aggregator
@@ -9710,7 +9710,7 @@ func (o RegistryFolderDataAssetMetadataOutput) CreatedByName() pulumi.StringPtrO
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryFolderDataAssetMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
@@ -9720,12 +9720,12 @@ func (o RegistryFolderDataAssetMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -9779,7 +9779,7 @@ func (o RegistryFolderDataAssetMetadataPtrOutput) Elem() RegistryFolderDataAsset
 	}).(RegistryFolderDataAssetMetadataOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o RegistryFolderDataAssetMetadataPtrOutput) Aggregator() RegistryFolderDataAssetMetadataAggregatorPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetMetadata) *RegistryFolderDataAssetMetadataAggregator {
 		if v == nil {
@@ -9819,7 +9819,7 @@ func (o RegistryFolderDataAssetMetadataPtrOutput) CreatedByName() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// (Updatable) The full path to identify the object.
 func (o RegistryFolderDataAssetMetadataPtrOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetMetadata) *string {
 		if v == nil {
@@ -9839,7 +9839,7 @@ func (o RegistryFolderDataAssetMetadataPtrOutput) InfoFields() pulumi.MapOutput 
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetMetadata) *bool {
 		if v == nil {
@@ -9849,7 +9849,7 @@ func (o RegistryFolderDataAssetMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOut
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetMetadata) []string {
 		if v == nil {
@@ -9910,13 +9910,13 @@ func (o RegistryFolderDataAssetMetadataPtrOutput) UpdatedByName() pulumi.StringP
 }
 
 type RegistryFolderDataAssetMetadataAggregator struct {
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type *string `pulumi:"type"`
@@ -9934,13 +9934,13 @@ type RegistryFolderDataAssetMetadataAggregatorInput interface {
 }
 
 type RegistryFolderDataAssetMetadataAggregatorArgs struct {
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Specific DataAsset Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -10023,22 +10023,22 @@ func (o RegistryFolderDataAssetMetadataAggregatorOutput) ToRegistryFolderDataAss
 	}).(RegistryFolderDataAssetMetadataAggregatorPtrOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -10072,7 +10072,7 @@ func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Elem() RegistryFolde
 	}).(RegistryFolderDataAssetMetadataAggregatorOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetMetadataAggregator) *string {
 		if v == nil {
@@ -10082,7 +10082,7 @@ func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Description() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetMetadataAggregator) *string {
 		if v == nil {
@@ -10092,7 +10092,7 @@ func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Identifier() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetMetadataAggregator) *string {
 		if v == nil {
@@ -10102,7 +10102,7 @@ func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Key() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetMetadataAggregator) *string {
 		if v == nil {
@@ -10123,23 +10123,23 @@ func (o RegistryFolderDataAssetMetadataAggregatorPtrOutput) Type() pulumi.String
 }
 
 type RegistryFolderDataAssetNativeTypeSystem struct {
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion *int `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryFolderDataAssetNativeTypeSystemParentRef `pulumi:"parentRef"`
 	// (Updatable) The type system to map from.
 	TypeMappingFrom map[string]interface{} `pulumi:"typeMappingFrom"`
@@ -10161,23 +10161,23 @@ type RegistryFolderDataAssetNativeTypeSystemInput interface {
 }
 
 type RegistryFolderDataAssetNativeTypeSystemArgs struct {
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryFolderDataAssetNativeTypeSystemParentRefPtrInput `pulumi:"parentRef"`
 	// (Updatable) The type system to map from.
 	TypeMappingFrom pulumi.MapInput `pulumi:"typeMappingFrom"`
@@ -10264,17 +10264,17 @@ func (o RegistryFolderDataAssetNativeTypeSystemOutput) ToRegistryFolderDataAsset
 	}).(RegistryFolderDataAssetNativeTypeSystemPtrOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetNativeTypeSystemOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetNativeTypeSystemOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystem) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetNativeTypeSystemOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -10289,7 +10289,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemOutput) ModelVersion() pulumi.Str
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystem) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetNativeTypeSystemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -10304,7 +10304,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemOutput) ObjectVersion() pulumi.In
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystem) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryFolderDataAssetNativeTypeSystemOutput) ParentRef() RegistryFolderDataAssetNativeTypeSystemParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystem) *RegistryFolderDataAssetNativeTypeSystemParentRef {
 		return v.ParentRef
@@ -10352,7 +10352,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) Elem() RegistryFolderD
 	}).(RegistryFolderDataAssetNativeTypeSystemOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystem) *string {
 		if v == nil {
@@ -10362,7 +10362,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) Description() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystem) *string {
 		if v == nil {
@@ -10372,7 +10372,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) Identifier() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystem) *string {
 		if v == nil {
@@ -10402,7 +10402,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) ModelVersion() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystem) *string {
 		if v == nil {
@@ -10432,7 +10432,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) ObjectVersion() pulumi
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryFolderDataAssetNativeTypeSystemPtrOutput) ParentRef() RegistryFolderDataAssetNativeTypeSystemParentRefPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystem) *RegistryFolderDataAssetNativeTypeSystemParentRef {
 		if v == nil {
@@ -10612,21 +10612,21 @@ func (o RegistryFolderDataAssetNativeTypeSystemParentRefPtrOutput) Parent() pulu
 type RegistryFolderDataAssetNativeTypeSystemType struct {
 	// (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinition *RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition `pulumi:"configDefinition"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
 	// (Updatable) The data type.
 	DtType *string `pulumi:"dtType"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryFolderDataAssetNativeTypeSystemTypeParentRef `pulumi:"parentRef"`
 	// (Updatable) The data type system name.
 	TypeSystemName *string `pulumi:"typeSystemName"`
@@ -10646,21 +10646,21 @@ type RegistryFolderDataAssetNativeTypeSystemTypeInput interface {
 type RegistryFolderDataAssetNativeTypeSystemTypeArgs struct {
 	// (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinition RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrInput `pulumi:"configDefinition"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The data type.
 	DtType pulumi.StringPtrInput `pulumi:"dtType"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryFolderDataAssetNativeTypeSystemTypeParentRefPtrInput `pulumi:"parentRef"`
 	// (Updatable) The data type system name.
 	TypeSystemName pulumi.StringPtrInput `pulumi:"typeSystemName"`
@@ -10724,7 +10724,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeOutput) ConfigDefinition() Re
 	}).(RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemType) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -10734,7 +10734,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeOutput) DtType() pulumi.Strin
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemType) *string { return v.DtType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemType) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -10749,7 +10749,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeOutput) ModelVersion() pulumi
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemType) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemType) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -10759,7 +10759,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeOutput) ObjectStatus() pulumi
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemType) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeOutput) ParentRef() RegistryFolderDataAssetNativeTypeSystemTypeParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemType) *RegistryFolderDataAssetNativeTypeSystemTypeParentRef {
 		return v.ParentRef
@@ -10794,19 +10794,19 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeArrayOutput) Index(i pulumi.I
 type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition struct {
 	// (Updatable) The parameter configuration details.
 	ConfigParameterDefinitions map[string]interface{} `pulumi:"configParameterDefinitions"`
-	// (Updatable) Specifies whether the configuration is contained or not.
+	// (Updatable) Specifies whether the configuration is contained.
 	IsContained *bool `pulumi:"isContained"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef `pulumi:"parentRef"`
 }
 
@@ -10824,19 +10824,19 @@ type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionInput interface 
 type RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs struct {
 	// (Updatable) The parameter configuration details.
 	ConfigParameterDefinitions pulumi.MapInput `pulumi:"configParameterDefinitions"`
-	// (Updatable) Specifies whether the configuration is contained or not.
+	// (Updatable) Specifies whether the configuration is contained.
 	IsContained pulumi.BoolPtrInput `pulumi:"isContained"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrInput `pulumi:"parentRef"`
 }
 
@@ -10924,12 +10924,12 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Confi
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether the configuration is contained or not.
+// (Updatable) Specifies whether the configuration is contained.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) IsContained() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *bool { return v.IsContained }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -10944,7 +10944,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Model
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -10954,7 +10954,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Objec
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ParentRef() RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
 		return v.ParentRef
@@ -10995,7 +10995,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) Co
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether the configuration is contained or not.
+// (Updatable) Specifies whether the configuration is contained.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) IsContained() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *bool {
 		if v == nil {
@@ -11005,7 +11005,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) Is
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *string {
 		if v == nil {
@@ -11035,7 +11035,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) Mo
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *string {
 		if v == nil {
@@ -11055,7 +11055,7 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) Ob
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionPtrOutput) ParentRef() RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) *RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
 		if v == nil {
@@ -11342,15 +11342,15 @@ func (o RegistryFolderDataAssetNativeTypeSystemTypeParentRefPtrOutput) Parent() 
 type RegistryFolderDataAssetRegistryMetadata struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId *string `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName *string `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
@@ -11358,7 +11358,7 @@ type RegistryFolderDataAssetRegistryMetadata struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId *string `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName *string `pulumi:"updatedByUserName"`
@@ -11378,15 +11378,15 @@ type RegistryFolderDataAssetRegistryMetadataInput interface {
 type RegistryFolderDataAssetRegistryMetadataArgs struct {
 	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
-	// (Updatable) The id of the user who created the object.
+	// (Updatable) The ID of the user who created the object.
 	CreatedByUserId pulumi.StringPtrInput `pulumi:"createdByUserId"`
 	// (Updatable) The name of the user who created the object.
 	CreatedByUserName pulumi.StringPtrInput `pulumi:"createdByUserName"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// (Updatable) Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
@@ -11394,7 +11394,7 @@ type RegistryFolderDataAssetRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// (Updatable) The date and time that the object was updated.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// (Updatable) The id of the user who updated the object.
+	// (Updatable) The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringPtrInput `pulumi:"updatedByUserId"`
 	// (Updatable) The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringPtrInput `pulumi:"updatedByUserName"`
@@ -11482,7 +11482,7 @@ func (o RegistryFolderDataAssetRegistryMetadataOutput) AggregatorKey() pulumi.St
 	return o.ApplyT(func(v RegistryFolderDataAssetRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryFolderDataAssetRegistryMetadataOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetRegistryMetadata) *string { return v.CreatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -11492,17 +11492,17 @@ func (o RegistryFolderDataAssetRegistryMetadataOutput) CreatedByUserName() pulum
 	return o.ApplyT(func(v RegistryFolderDataAssetRegistryMetadata) *string { return v.CreatedByUserName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -11522,7 +11522,7 @@ func (o RegistryFolderDataAssetRegistryMetadataOutput) TimeUpdated() pulumi.Stri
 	return o.ApplyT(func(v RegistryFolderDataAssetRegistryMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryFolderDataAssetRegistryMetadataOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RegistryFolderDataAssetRegistryMetadata) *string { return v.UpdatedByUserId }).(pulumi.StringPtrOutput)
 }
@@ -11566,7 +11566,7 @@ func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) AggregatorKey() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who created the object.
+// (Updatable) The ID of the user who created the object.
 func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) CreatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetRegistryMetadata) *string {
 		if v == nil {
@@ -11586,7 +11586,7 @@ func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) CreatedByUserName() pu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// (Updatable) Specifies whether the object is a favorite.
 func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetRegistryMetadata) *bool {
 		if v == nil {
@@ -11596,7 +11596,7 @@ func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) IsFavorite() pulumi.Bo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetRegistryMetadata) *string {
 		if v == nil {
@@ -11606,7 +11606,7 @@ func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) Key() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetRegistryMetadata) []string {
 		if v == nil {
@@ -11646,7 +11646,7 @@ func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) TimeUpdated() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The id of the user who updated the object.
+// (Updatable) The ID of the user who updated the object.
 func (o RegistryFolderDataAssetRegistryMetadataPtrOutput) UpdatedByUserId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RegistryFolderDataAssetRegistryMetadata) *string {
 		if v == nil {
@@ -12015,21 +12015,21 @@ type GetRegistriesRegistrySummaryCollectionItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Registry description
 	Description string `pulumi:"description"`
-	// Data Connectivity Management Registry display name, registries can be renamed
+	// Data Connectivity Management registry display name; registries can be renamed.
 	DisplayName string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage string `pulumi:"stateMessage"`
-	// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Name of the user who updated the DCMS Registry.
+	// Name of the user who updated the DCMS registry.
 	UpdatedBy string `pulumi:"updatedBy"`
 }
 
@@ -12051,21 +12051,21 @@ type GetRegistriesRegistrySummaryCollectionItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Registry description
 	Description pulumi.StringInput `pulumi:"description"`
-	// Data Connectivity Management Registry display name, registries can be renamed
+	// Data Connectivity Management registry display name; registries can be renamed.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier that is immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Lifecycle state of the resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
-	// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Name of the user who updated the DCMS Registry.
+	// Name of the user who updated the DCMS registry.
 	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
 }
 
@@ -12135,17 +12135,17 @@ func (o GetRegistriesRegistrySummaryCollectionItemOutput) Description() pulumi.S
 	return o.ApplyT(func(v GetRegistriesRegistrySummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Data Connectivity Management Registry display name, registries can be renamed
+// Data Connectivity Management registry display name; registries can be renamed.
 func (o GetRegistriesRegistrySummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistriesRegistrySummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 func (o GetRegistriesRegistrySummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetRegistriesRegistrySummaryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier that is immutable on creation.
 func (o GetRegistriesRegistrySummaryCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistriesRegistrySummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -12160,17 +12160,17 @@ func (o GetRegistriesRegistrySummaryCollectionItemOutput) StateMessage() pulumi.
 	return o.ApplyT(func(v GetRegistriesRegistrySummaryCollectionItem) string { return v.StateMessage }).(pulumi.StringOutput)
 }
 
-// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 func (o GetRegistriesRegistrySummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistriesRegistrySummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 func (o GetRegistriesRegistrySummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistriesRegistrySummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Name of the user who updated the DCMS Registry.
+// Name of the user who updated the DCMS registry.
 func (o GetRegistriesRegistrySummaryCollectionItemOutput) UpdatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistriesRegistrySummaryCollectionItem) string { return v.UpdatedBy }).(pulumi.StringOutput)
 }
@@ -12196,7 +12196,7 @@ func (o GetRegistriesRegistrySummaryCollectionItemArrayOutput) Index(i pulumi.In
 }
 
 type GetRegistryConnectionConnectionProperty struct {
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The value for the connection name property.
 	Value string `pulumi:"value"`
@@ -12214,7 +12214,7 @@ type GetRegistryConnectionConnectionPropertyInput interface {
 }
 
 type GetRegistryConnectionConnectionPropertyArgs struct {
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The value for the connection name property.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -12271,7 +12271,7 @@ func (o GetRegistryConnectionConnectionPropertyOutput) ToGetRegistryConnectionCo
 	return o
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryConnectionConnectionPropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionConnectionProperty) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -12304,19 +12304,19 @@ func (o GetRegistryConnectionConnectionPropertyArrayOutput) Index(i pulumi.IntIn
 type GetRegistryConnectionMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators []GetRegistryConnectionMetadataAggregator `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -12344,19 +12344,19 @@ type GetRegistryConnectionMetadataInput interface {
 type GetRegistryConnectionMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators GetRegistryConnectionMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -12426,7 +12426,7 @@ func (o GetRegistryConnectionMetadataOutput) AggregatorKey() pulumi.StringOutput
 	return o.ApplyT(func(v GetRegistryConnectionMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryConnectionMetadataOutput) Aggregators() GetRegistryConnectionMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionMetadata) []GetRegistryConnectionMetadataAggregator { return v.Aggregators }).(GetRegistryConnectionMetadataAggregatorArrayOutput)
 }
@@ -12441,7 +12441,7 @@ func (o GetRegistryConnectionMetadataOutput) CreatedByName() pulumi.StringOutput
 	return o.ApplyT(func(v GetRegistryConnectionMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryConnectionMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -12451,12 +12451,12 @@ func (o GetRegistryConnectionMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v GetRegistryConnectionMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryConnectionMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryConnectionMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryConnectionMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -12513,7 +12513,7 @@ type GetRegistryConnectionMetadataAggregator struct {
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// Specific Connection Type
 	Type string `pulumi:"type"`
@@ -12537,7 +12537,7 @@ type GetRegistryConnectionMetadataAggregatorArgs struct {
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specific Connection Type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -12609,7 +12609,7 @@ func (o GetRegistryConnectionMetadataAggregatorOutput) Key() pulumi.StringOutput
 	return o.ApplyT(func(v GetRegistryConnectionMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryConnectionMetadataAggregatorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -12644,7 +12644,7 @@ type GetRegistryConnectionPrimarySchema struct {
 	DefaultConnection string `pulumi:"defaultConnection"`
 	// The description of the aggregator.
 	Description string `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
 	// The identifier of the aggregator.
 	Identifier string `pulumi:"identifier"`
@@ -12652,19 +12652,19 @@ type GetRegistryConnectionPrimarySchema struct {
 	IsHasContainers bool `pulumi:"isHasContainers"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas []GetRegistryConnectionPrimarySchemaMetadata `pulumi:"metadatas"`
-	// The object's type.
+	// The object type.
 	ModelType string `pulumi:"modelType"`
-	// The object's model version.
+	// The model version of the object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryConnectionPrimarySchemaParentRef `pulumi:"parentReves"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName string `pulumi:"resourceName"`
@@ -12686,7 +12686,7 @@ type GetRegistryConnectionPrimarySchemaArgs struct {
 	DefaultConnection pulumi.StringInput `pulumi:"defaultConnection"`
 	// The description of the aggregator.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
 	// The identifier of the aggregator.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
@@ -12694,19 +12694,19 @@ type GetRegistryConnectionPrimarySchemaArgs struct {
 	IsHasContainers pulumi.BoolInput `pulumi:"isHasContainers"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas GetRegistryConnectionPrimarySchemaMetadataArrayInput `pulumi:"metadatas"`
-	// The object's type.
+	// The object type.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
-	// The object's model version.
+	// The model version of the object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryConnectionPrimarySchemaParentRefArrayInput `pulumi:"parentReves"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
@@ -12773,7 +12773,7 @@ func (o GetRegistryConnectionPrimarySchemaOutput) Description() pulumi.StringOut
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryConnectionPrimarySchemaOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) string { return v.ExternalKey }).(pulumi.StringOutput)
 }
@@ -12793,24 +12793,24 @@ func (o GetRegistryConnectionPrimarySchemaOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryConnectionPrimarySchemaOutput) Metadatas() GetRegistryConnectionPrimarySchemaMetadataArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) []GetRegistryConnectionPrimarySchemaMetadata {
 		return v.Metadatas
 	}).(GetRegistryConnectionPrimarySchemaMetadataArrayOutput)
 }
 
-// The object's type.
+// The object type.
 func (o GetRegistryConnectionPrimarySchemaOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) string { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// The object's model version.
+// The model version of the object.
 func (o GetRegistryConnectionPrimarySchemaOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryConnectionPrimarySchemaOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -12825,7 +12825,7 @@ func (o GetRegistryConnectionPrimarySchemaOutput) ObjectVersion() pulumi.IntOutp
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryConnectionPrimarySchemaOutput) ParentReves() GetRegistryConnectionPrimarySchemaParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchema) []GetRegistryConnectionPrimarySchemaParentRef {
 		return v.ParentReves
@@ -12860,19 +12860,19 @@ func (o GetRegistryConnectionPrimarySchemaArrayOutput) Index(i pulumi.IntInput) 
 type GetRegistryConnectionPrimarySchemaMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators []GetRegistryConnectionPrimarySchemaMetadataAggregator `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -12900,19 +12900,19 @@ type GetRegistryConnectionPrimarySchemaMetadataInput interface {
 type GetRegistryConnectionPrimarySchemaMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators GetRegistryConnectionPrimarySchemaMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -12982,7 +12982,7 @@ func (o GetRegistryConnectionPrimarySchemaMetadataOutput) AggregatorKey() pulumi
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryConnectionPrimarySchemaMetadataOutput) Aggregators() GetRegistryConnectionPrimarySchemaMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadata) []GetRegistryConnectionPrimarySchemaMetadataAggregator {
 		return v.Aggregators
@@ -12999,7 +12999,7 @@ func (o GetRegistryConnectionPrimarySchemaMetadataOutput) CreatedByName() pulumi
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryConnectionPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -13009,12 +13009,12 @@ func (o GetRegistryConnectionPrimarySchemaMetadataOutput) InfoFields() pulumi.Ma
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryConnectionPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryConnectionPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -13071,7 +13071,7 @@ type GetRegistryConnectionPrimarySchemaMetadataAggregator struct {
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// Specific Connection Type
 	Type string `pulumi:"type"`
@@ -13095,7 +13095,7 @@ type GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs struct {
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specific Connection Type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -13167,7 +13167,7 @@ func (o GetRegistryConnectionPrimarySchemaMetadataAggregatorOutput) Key() pulumi
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryConnectionPrimarySchemaMetadataAggregatorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionPrimarySchemaMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -13297,15 +13297,15 @@ func (o GetRegistryConnectionPrimarySchemaParentRefArrayOutput) Index(i pulumi.I
 type GetRegistryConnectionRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -13313,7 +13313,7 @@ type GetRegistryConnectionRegistryMetadata struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -13333,15 +13333,15 @@ type GetRegistryConnectionRegistryMetadataInput interface {
 type GetRegistryConnectionRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -13349,7 +13349,7 @@ type GetRegistryConnectionRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -13411,7 +13411,7 @@ func (o GetRegistryConnectionRegistryMetadataOutput) AggregatorKey() pulumi.Stri
 	return o.ApplyT(func(v GetRegistryConnectionRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryConnectionRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionRegistryMetadata) string { return v.CreatedByUserId }).(pulumi.StringOutput)
 }
@@ -13421,7 +13421,7 @@ func (o GetRegistryConnectionRegistryMetadataOutput) CreatedByUserName() pulumi.
 	return o.ApplyT(func(v GetRegistryConnectionRegistryMetadata) string { return v.CreatedByUserName }).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryConnectionRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryConnectionRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
@@ -13431,7 +13431,7 @@ func (o GetRegistryConnectionRegistryMetadataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryConnectionRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -13451,7 +13451,7 @@ func (o GetRegistryConnectionRegistryMetadataOutput) TimeUpdated() pulumi.String
 	return o.ApplyT(func(v GetRegistryConnectionRegistryMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryConnectionRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionRegistryMetadata) string { return v.UpdatedByUserId }).(pulumi.StringOutput)
 }
@@ -13578,21 +13578,21 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionArrayOutput) Index(i pu
 }
 
 type GetRegistryConnectionsConnectionSummaryCollectionItem struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties []GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty `pulumi:"connectionProperties"`
 	// The description of the aggregator.
 	Description string `pulumi:"description"`
 	// The identifier of the aggregator.
 	Identifier string `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault bool `pulumi:"isDefault"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryConnectionsConnectionSummaryCollectionItemMetadata `pulumi:"metadata"`
-	// The object's type.
+	// The object type.
 	ModelType string `pulumi:"modelType"`
-	// The object's model version.
+	// The model version of the object.
 	ModelVersion string `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
 	Name string `pulumi:"name"`
@@ -13602,9 +13602,9 @@ type GetRegistryConnectionsConnectionSummaryCollectionItem struct {
 	ObjectVersion int `pulumi:"objectVersion"`
 	// The schema object.
 	PrimarySchema GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema `pulumi:"primarySchema"`
-	// All the properties for the connection in a key-value map format.
+	// All the properties of the connection in a key-value map format.
 	Properties map[string]interface{} `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 	// Information about the object and its parent.
 	RegistryMetadata GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
@@ -13624,21 +13624,21 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemInput interface {
 }
 
 type GetRegistryConnectionsConnectionSummaryCollectionItemArgs struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArrayInput `pulumi:"connectionProperties"`
 	// The description of the aggregator.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The identifier of the aggregator.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryConnectionsConnectionSummaryCollectionItemMetadataInput `pulumi:"metadata"`
-	// The object's type.
+	// The object type.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
-	// The object's model version.
+	// The model version of the object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -13648,9 +13648,9 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemArgs struct {
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
 	// The schema object.
 	PrimarySchema GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaInput `pulumi:"primarySchema"`
-	// All the properties for the connection in a key-value map format.
+	// All the properties of the connection in a key-value map format.
 	Properties pulumi.MapInput `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 	// Information about the object and its parent.
 	RegistryMetadata GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataInput `pulumi:"registryMetadata"`
@@ -13709,7 +13709,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) ToGetRegist
 	return o
 }
 
-// The properties for the connection.
+// The properties of the connection.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) ConnectionProperties() GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) []GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty {
 		return v.ConnectionProperties
@@ -13726,7 +13726,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) Identifier(
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// The default property for the connection.
+// The default property of the connection.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) IsDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
@@ -13736,19 +13736,19 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) Key() pulum
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) Metadata() GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) GetRegistryConnectionsConnectionSummaryCollectionItemMetadata {
 		return v.Metadata
 	}).(GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput)
 }
 
-// The object's type.
+// The object type.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// The object's model version.
+// The model version of the object.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
@@ -13775,14 +13775,14 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) PrimarySche
 	}).(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput)
 }
 
-// All the properties for the connection in a key-value map format.
+// All the properties of the connection in a key-value map format.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) Properties() pulumi.MapOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) map[string]interface{} {
 		return v.Properties
 	}).(pulumi.MapOutput)
 }
 
-// The registry Ocid.
+// The registry OCID.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemOutput) RegistryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItem) string { return v.RegistryId }).(pulumi.StringOutput)
 }
@@ -13926,7 +13926,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyA
 }
 
 type GetRegistryConnectionsConnectionSummaryCollectionItemMetadata struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregator `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -13934,13 +13934,13 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemMetadata struct {
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -13966,7 +13966,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemMetadataInput interfac
 }
 
 type GetRegistryConnectionsConnectionSummaryCollectionItemMetadataArgs struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorInput `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
@@ -13974,13 +13974,13 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemMetadataArgs struct {
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -14020,7 +14020,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput) ToG
 	return o
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput) Aggregator() GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemMetadata) GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregator {
 		return v.Aggregator
@@ -14042,7 +14042,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput) Cre
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -14054,12 +14054,12 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput) Inf
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -14186,7 +14186,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema struct {
 	DefaultConnection string `pulumi:"defaultConnection"`
 	// The description of the aggregator.
 	Description string `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
 	// The identifier of the aggregator.
 	Identifier string `pulumi:"identifier"`
@@ -14194,11 +14194,11 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema struct {
 	IsHasContainers bool `pulumi:"isHasContainers"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata `pulumi:"metadata"`
-	// The object's type.
+	// The object type.
 	ModelType string `pulumi:"modelType"`
-	// The object's model version.
+	// The model version of the object.
 	ModelVersion string `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
 	Name string `pulumi:"name"`
@@ -14206,7 +14206,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema struct {
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef `pulumi:"parentRef"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName string `pulumi:"resourceName"`
@@ -14228,7 +14228,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaArgs stru
 	DefaultConnection pulumi.StringInput `pulumi:"defaultConnection"`
 	// The description of the aggregator.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
 	// The identifier of the aggregator.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
@@ -14236,11 +14236,11 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaArgs stru
 	IsHasContainers pulumi.BoolInput `pulumi:"isHasContainers"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataInput `pulumi:"metadata"`
-	// The object's type.
+	// The object type.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
-	// The object's model version.
+	// The model version of the object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -14248,7 +14248,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaArgs stru
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefInput `pulumi:"parentRef"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
@@ -14294,7 +14294,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput
 	}).(pulumi.StringOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema) string {
 		return v.ExternalKey
@@ -14318,19 +14318,19 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput) Metadata() GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema) GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata {
 		return v.Metadata
 	}).(GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataOutput)
 }
 
-// The object's type.
+// The object type.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema) string { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// The object's model version.
+// The model version of the object.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema) string {
 		return v.ModelVersion
@@ -14352,7 +14352,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput) ParentRef() GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema) GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef {
 		return v.ParentRef
@@ -14367,7 +14367,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaOutput
 }
 
 type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -14375,13 +14375,13 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata 
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -14407,7 +14407,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataI
 }
 
 type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataArgs struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorInput `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
@@ -14415,13 +14415,13 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataA
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -14461,7 +14461,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetada
 	return o
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataOutput) Aggregator() GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata) GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator {
 		return v.Aggregator
@@ -14489,7 +14489,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetada
 	}).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata) string {
 		return v.IdentifierPath
@@ -14503,14 +14503,14 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetada
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata) bool {
 		return v.IsFavorite
 	}).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata) []string {
 		return v.Labels
@@ -14707,15 +14707,15 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParent
 type GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -14723,7 +14723,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata struc
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -14743,15 +14743,15 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataInput 
 type GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -14759,7 +14759,7 @@ type GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataArgs s
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -14798,7 +14798,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOut
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata) string {
 		return v.CreatedByUserId
@@ -14812,7 +14812,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOut
 	}).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata) bool {
 		return v.IsFavorite
@@ -14824,7 +14824,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOut
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata) []string {
 		return v.Labels
@@ -14852,7 +14852,7 @@ func (o GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOut
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadata) string {
 		return v.UpdatedByUserId
@@ -14976,23 +14976,23 @@ func (o GetRegistryConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetReg
 }
 
 type GetRegistryDataAssetDefaultConnection struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties []GetRegistryDataAssetDefaultConnectionConnectionProperty `pulumi:"connectionProperties"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault bool `pulumi:"isDefault"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas []GetRegistryDataAssetDefaultConnectionMetadata `pulumi:"metadatas"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
@@ -15020,23 +15020,23 @@ type GetRegistryDataAssetDefaultConnectionInput interface {
 }
 
 type GetRegistryDataAssetDefaultConnectionArgs struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties GetRegistryDataAssetDefaultConnectionConnectionPropertyArrayInput `pulumi:"connectionProperties"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas GetRegistryDataAssetDefaultConnectionMetadataArrayInput `pulumi:"metadatas"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
@@ -15103,24 +15103,24 @@ func (o GetRegistryDataAssetDefaultConnectionOutput) ToGetRegistryDataAssetDefau
 	return o
 }
 
-// The properties for the connection.
+// The properties of the connection.
 func (o GetRegistryDataAssetDefaultConnectionOutput) ConnectionProperties() GetRegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) []GetRegistryDataAssetDefaultConnectionConnectionProperty {
 		return v.ConnectionProperties
 	}).(GetRegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput)
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetDefaultConnectionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetDefaultConnectionOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// The default property for the connection.
+// The default property of the connection.
 func (o GetRegistryDataAssetDefaultConnectionOutput) IsDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
@@ -15130,14 +15130,14 @@ func (o GetRegistryDataAssetDefaultConnectionOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryDataAssetDefaultConnectionOutput) Metadatas() GetRegistryDataAssetDefaultConnectionMetadataArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) []GetRegistryDataAssetDefaultConnectionMetadata {
 		return v.Metadatas
 	}).(GetRegistryDataAssetDefaultConnectionMetadataArrayOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetDefaultConnectionOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -15147,7 +15147,7 @@ func (o GetRegistryDataAssetDefaultConnectionOutput) ModelVersion() pulumi.Strin
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetDefaultConnectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnection) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -15207,7 +15207,7 @@ func (o GetRegistryDataAssetDefaultConnectionArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetRegistryDataAssetDefaultConnectionConnectionProperty struct {
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The value for the connection name property.
 	Value string `pulumi:"value"`
@@ -15225,7 +15225,7 @@ type GetRegistryDataAssetDefaultConnectionConnectionPropertyInput interface {
 }
 
 type GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs struct {
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The value for the connection name property.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -15282,7 +15282,7 @@ func (o GetRegistryDataAssetDefaultConnectionConnectionPropertyOutput) ToGetRegi
 	return o
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetDefaultConnectionConnectionPropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionConnectionProperty) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -15315,19 +15315,19 @@ func (o GetRegistryDataAssetDefaultConnectionConnectionPropertyArrayOutput) Inde
 type GetRegistryDataAssetDefaultConnectionMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators []GetRegistryDataAssetDefaultConnectionMetadataAggregator `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -15355,19 +15355,19 @@ type GetRegistryDataAssetDefaultConnectionMetadataInput interface {
 type GetRegistryDataAssetDefaultConnectionMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators GetRegistryDataAssetDefaultConnectionMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -15437,7 +15437,7 @@ func (o GetRegistryDataAssetDefaultConnectionMetadataOutput) AggregatorKey() pul
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryDataAssetDefaultConnectionMetadataOutput) Aggregators() GetRegistryDataAssetDefaultConnectionMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadata) []GetRegistryDataAssetDefaultConnectionMetadataAggregator {
 		return v.Aggregators
@@ -15454,7 +15454,7 @@ func (o GetRegistryDataAssetDefaultConnectionMetadataOutput) CreatedByName() pul
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryDataAssetDefaultConnectionMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -15464,12 +15464,12 @@ func (o GetRegistryDataAssetDefaultConnectionMetadataOutput) InfoFields() pulumi
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetDefaultConnectionMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetDefaultConnectionMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -15520,13 +15520,13 @@ func (o GetRegistryDataAssetDefaultConnectionMetadataArrayOutput) Index(i pulumi
 }
 
 type GetRegistryDataAssetDefaultConnectionMetadataAggregator struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// Specific DataAsset Type
 	Type string `pulumi:"type"`
@@ -15544,13 +15544,13 @@ type GetRegistryDataAssetDefaultConnectionMetadataAggregatorInput interface {
 }
 
 type GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specific DataAsset Type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -15607,12 +15607,12 @@ func (o GetRegistryDataAssetDefaultConnectionMetadataAggregatorOutput) ToGetRegi
 	return o
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetDefaultConnectionMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetDefaultConnectionMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -15622,7 +15622,7 @@ func (o GetRegistryDataAssetDefaultConnectionMetadataAggregatorOutput) Key() pul
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetDefaultConnectionMetadataAggregatorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -15655,29 +15655,29 @@ func (o GetRegistryDataAssetDefaultConnectionMetadataAggregatorArrayOutput) Inde
 type GetRegistryDataAssetDefaultConnectionPrimarySchema struct {
 	// The default connection key.
 	DefaultConnection string `pulumi:"defaultConnection"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// Specifies whether the schema has containers.
 	IsHasContainers bool `pulumi:"isHasContainers"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas []GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata `pulumi:"metadatas"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRef `pulumi:"parentReves"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName string `pulumi:"resourceName"`
@@ -15697,29 +15697,29 @@ type GetRegistryDataAssetDefaultConnectionPrimarySchemaInput interface {
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaArgs struct {
 	// The default connection key.
 	DefaultConnection pulumi.StringInput `pulumi:"defaultConnection"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// Specifies whether the schema has containers.
 	IsHasContainers pulumi.BoolInput `pulumi:"isHasContainers"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArrayInput `pulumi:"metadatas"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArrayInput `pulumi:"parentReves"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
@@ -15781,17 +15781,17 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) DefaultConnect
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) string { return v.DefaultConnection }).(pulumi.StringOutput)
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) string { return v.ExternalKey }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -15806,14 +15806,14 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) Key() pulumi.S
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) Metadatas() GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) []GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata {
 		return v.Metadatas
 	}).(GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArrayOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -15823,7 +15823,7 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) ModelVersion()
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -15838,7 +15838,7 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) ObjectVersion(
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaOutput) ParentReves() GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchema) []GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRef {
 		return v.ParentReves
@@ -15873,19 +15873,19 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaArrayOutput) Index(i p
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators []GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -15913,19 +15913,19 @@ type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataInput interface {
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -15995,7 +15995,7 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Aggreg
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Aggregators() GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata) []GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
 		return v.Aggregators
@@ -16012,7 +16012,7 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Create
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -16024,12 +16024,12 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) InfoFi
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -16080,13 +16080,13 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArrayOutput) I
 }
 
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// Specific DataAsset Type
 	Type string `pulumi:"type"`
@@ -16104,13 +16104,13 @@ type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput i
 }
 
 type GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specific DataAsset Type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -16167,14 +16167,14 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutp
 	return o
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Identifier
@@ -16186,7 +16186,7 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutp
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -16316,15 +16316,15 @@ func (o GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArrayOutput) 
 type GetRegistryDataAssetDefaultConnectionRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -16332,7 +16332,7 @@ type GetRegistryDataAssetDefaultConnectionRegistryMetadata struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -16352,15 +16352,15 @@ type GetRegistryDataAssetDefaultConnectionRegistryMetadataInput interface {
 type GetRegistryDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -16368,7 +16368,7 @@ type GetRegistryDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -16430,7 +16430,7 @@ func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput) AggregatorK
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionRegistryMetadata) string { return v.CreatedByUserId }).(pulumi.StringOutput)
 }
@@ -16440,7 +16440,7 @@ func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput) CreatedByUs
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionRegistryMetadata) string { return v.CreatedByUserName }).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
@@ -16450,7 +16450,7 @@ func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput) Key() pulum
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -16470,7 +16470,7 @@ func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput) TimeUpdated
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionRegistryMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetDefaultConnectionRegistryMetadata) string { return v.UpdatedByUserId }).(pulumi.StringOutput)
 }
@@ -16503,19 +16503,19 @@ func (o GetRegistryDataAssetDefaultConnectionRegistryMetadataArrayOutput) Index(
 type GetRegistryDataAssetMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators []GetRegistryDataAssetMetadataAggregator `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -16543,19 +16543,19 @@ type GetRegistryDataAssetMetadataInput interface {
 type GetRegistryDataAssetMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators GetRegistryDataAssetMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -16625,7 +16625,7 @@ func (o GetRegistryDataAssetMetadataOutput) AggregatorKey() pulumi.StringOutput 
 	return o.ApplyT(func(v GetRegistryDataAssetMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryDataAssetMetadataOutput) Aggregators() GetRegistryDataAssetMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetMetadata) []GetRegistryDataAssetMetadataAggregator { return v.Aggregators }).(GetRegistryDataAssetMetadataAggregatorArrayOutput)
 }
@@ -16640,7 +16640,7 @@ func (o GetRegistryDataAssetMetadataOutput) CreatedByName() pulumi.StringOutput 
 	return o.ApplyT(func(v GetRegistryDataAssetMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryDataAssetMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -16650,12 +16650,12 @@ func (o GetRegistryDataAssetMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -16706,13 +16706,13 @@ func (o GetRegistryDataAssetMetadataArrayOutput) Index(i pulumi.IntInput) GetReg
 }
 
 type GetRegistryDataAssetMetadataAggregator struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// Specific DataAsset Type
 	Type string `pulumi:"type"`
@@ -16730,13 +16730,13 @@ type GetRegistryDataAssetMetadataAggregatorInput interface {
 }
 
 type GetRegistryDataAssetMetadataAggregatorArgs struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specific DataAsset Type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -16793,12 +16793,12 @@ func (o GetRegistryDataAssetMetadataAggregatorOutput) ToGetRegistryDataAssetMeta
 	return o
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -16808,7 +16808,7 @@ func (o GetRegistryDataAssetMetadataAggregatorOutput) Key() pulumi.StringOutput 
 	return o.ApplyT(func(v GetRegistryDataAssetMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetMetadataAggregatorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -16839,23 +16839,23 @@ func (o GetRegistryDataAssetMetadataAggregatorArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetRegistryDataAssetNativeTypeSystem struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryDataAssetNativeTypeSystemParentRef `pulumi:"parentReves"`
 	// The type system to map from.
 	TypeMappingFrom map[string]interface{} `pulumi:"typeMappingFrom"`
@@ -16877,23 +16877,23 @@ type GetRegistryDataAssetNativeTypeSystemInput interface {
 }
 
 type GetRegistryDataAssetNativeTypeSystemArgs struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryDataAssetNativeTypeSystemParentRefArrayInput `pulumi:"parentReves"`
 	// The type system to map from.
 	TypeMappingFrom pulumi.MapInput `pulumi:"typeMappingFrom"`
@@ -16954,12 +16954,12 @@ func (o GetRegistryDataAssetNativeTypeSystemOutput) ToGetRegistryDataAssetNative
 	return o
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetNativeTypeSystemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetNativeTypeSystemOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystem) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -16969,7 +16969,7 @@ func (o GetRegistryDataAssetNativeTypeSystemOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystem) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetNativeTypeSystemOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystem) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -16979,7 +16979,7 @@ func (o GetRegistryDataAssetNativeTypeSystemOutput) ModelVersion() pulumi.String
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystem) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetNativeTypeSystemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -16994,7 +16994,7 @@ func (o GetRegistryDataAssetNativeTypeSystemOutput) ObjectVersion() pulumi.IntOu
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystem) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryDataAssetNativeTypeSystemOutput) ParentReves() GetRegistryDataAssetNativeTypeSystemParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystem) []GetRegistryDataAssetNativeTypeSystemParentRef {
 		return v.ParentReves
@@ -17138,21 +17138,21 @@ func (o GetRegistryDataAssetNativeTypeSystemParentRefArrayOutput) Index(i pulumi
 type GetRegistryDataAssetNativeTypeSystemType struct {
 	// The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinitions []GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition `pulumi:"configDefinitions"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
 	// The data type.
 	DtType string `pulumi:"dtType"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryDataAssetNativeTypeSystemTypeParentRef `pulumi:"parentReves"`
 	// The data type system name.
 	TypeSystemName string `pulumi:"typeSystemName"`
@@ -17172,21 +17172,21 @@ type GetRegistryDataAssetNativeTypeSystemTypeInput interface {
 type GetRegistryDataAssetNativeTypeSystemTypeArgs struct {
 	// The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinitions GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArrayInput `pulumi:"configDefinitions"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The data type.
 	DtType pulumi.StringInput `pulumi:"dtType"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryDataAssetNativeTypeSystemTypeParentRefArrayInput `pulumi:"parentReves"`
 	// The data type system name.
 	TypeSystemName pulumi.StringInput `pulumi:"typeSystemName"`
@@ -17250,7 +17250,7 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeOutput) ConfigDefinitions() GetR
 	}).(GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArrayOutput)
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetNativeTypeSystemTypeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemType) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -17265,7 +17265,7 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeOutput) Key() pulumi.StringOutpu
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemType) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetNativeTypeSystemTypeOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemType) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -17275,7 +17275,7 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeOutput) ModelVersion() pulumi.St
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemType) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetNativeTypeSystemTypeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemType) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -17285,7 +17285,7 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeOutput) ObjectStatus() pulumi.In
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemType) int { return v.ObjectStatus }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryDataAssetNativeTypeSystemTypeOutput) ParentReves() GetRegistryDataAssetNativeTypeSystemTypeParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemType) []GetRegistryDataAssetNativeTypeSystemTypeParentRef {
 		return v.ParentReves
@@ -17320,19 +17320,19 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeArrayOutput) Index(i pulumi.IntI
 type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition struct {
 	// The parameter configuration details.
 	ConfigParameterDefinitions map[string]interface{} `pulumi:"configParameterDefinitions"`
-	// Specifies whether the configuration is contained or not.
+	// Specifies whether the configuration is contained.
 	IsContained bool `pulumi:"isContained"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef `pulumi:"parentReves"`
 }
 
@@ -17350,19 +17350,19 @@ type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionInput interface {
 type GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs struct {
 	// The parameter configuration details.
 	ConfigParameterDefinitions pulumi.MapInput `pulumi:"configParameterDefinitions"`
-	// Specifies whether the configuration is contained or not.
+	// Specifies whether the configuration is contained.
 	IsContained pulumi.BoolInput `pulumi:"isContained"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayInput `pulumi:"parentReves"`
 }
 
@@ -17424,7 +17424,7 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ConfigPa
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether the configuration is contained or not.
+// Specifies whether the configuration is contained.
 func (o GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) IsContained() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition) bool { return v.IsContained }).(pulumi.BoolOutput)
 }
@@ -17434,7 +17434,7 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Key() pu
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -17444,7 +17444,7 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ModelVer
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -17454,7 +17454,7 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ObjectSt
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition) int { return v.ObjectStatus }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ParentReves() GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition) []GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
 		return v.ParentReves
@@ -17678,15 +17678,15 @@ func (o GetRegistryDataAssetNativeTypeSystemTypeParentRefArrayOutput) Index(i pu
 type GetRegistryDataAssetRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -17694,7 +17694,7 @@ type GetRegistryDataAssetRegistryMetadata struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -17714,15 +17714,15 @@ type GetRegistryDataAssetRegistryMetadataInput interface {
 type GetRegistryDataAssetRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -17730,7 +17730,7 @@ type GetRegistryDataAssetRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -17792,7 +17792,7 @@ func (o GetRegistryDataAssetRegistryMetadataOutput) AggregatorKey() pulumi.Strin
 	return o.ApplyT(func(v GetRegistryDataAssetRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryDataAssetRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetRegistryMetadata) string { return v.CreatedByUserId }).(pulumi.StringOutput)
 }
@@ -17802,7 +17802,7 @@ func (o GetRegistryDataAssetRegistryMetadataOutput) CreatedByUserName() pulumi.S
 	return o.ApplyT(func(v GetRegistryDataAssetRegistryMetadata) string { return v.CreatedByUserName }).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
@@ -17812,7 +17812,7 @@ func (o GetRegistryDataAssetRegistryMetadataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -17832,7 +17832,7 @@ func (o GetRegistryDataAssetRegistryMetadataOutput) TimeUpdated() pulumi.StringO
 	return o.ApplyT(func(v GetRegistryDataAssetRegistryMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryDataAssetRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetRegistryMetadata) string { return v.UpdatedByUserId }).(pulumi.StringOutput)
 }
@@ -17963,19 +17963,19 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItem struct {
 	AssetProperties map[string]interface{} `pulumi:"assetProperties"`
 	// The default connection key.
 	DefaultConnection GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection `pulumi:"defaultConnection"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
 	// The list of endpoints with which this data asset is associated.
 	EndPoints []string `pulumi:"endPoints"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata `pulumi:"metadata"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
@@ -17989,7 +17989,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItem struct {
 	ObjectVersion int `pulumi:"objectVersion"`
 	// All the properties for the data asset in a key-value map format.
 	Properties map[string]interface{} `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 	// Information about the object and its parent.
 	RegistryMetadata GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
@@ -18013,19 +18013,19 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs struct {
 	AssetProperties pulumi.MapInput `pulumi:"assetProperties"`
 	// The default connection key.
 	DefaultConnection GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionInput `pulumi:"defaultConnection"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The list of endpoints with which this data asset is associated.
 	EndPoints pulumi.StringArrayInput `pulumi:"endPoints"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataInput `pulumi:"metadata"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
@@ -18039,7 +18039,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemArgs struct {
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
 	// All the properties for the data asset in a key-value map format.
 	Properties pulumi.MapInput `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 	// Information about the object and its parent.
 	RegistryMetadata GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataInput `pulumi:"registryMetadata"`
@@ -18112,7 +18112,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) DefaultConnec
 	}).(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutput)
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -18122,12 +18122,12 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) EndPoints() p
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) []string { return v.EndPoints }).(pulumi.StringArrayOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) string { return v.ExternalKey }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -18137,14 +18137,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) Key() pulumi.
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) Metadata() GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata {
 		return v.Metadata
 	}).(GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -18183,7 +18183,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) Properties() 
 	}).(pulumi.MapOutput)
 }
 
-// The registry Ocid.
+// The registry OCID.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemOutput) RegistryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItem) string { return v.RegistryId }).(pulumi.StringOutput)
 }
@@ -18221,19 +18221,19 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemArrayOutput) Index(i 
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties []GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionProperty `pulumi:"connectionProperties"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault bool `pulumi:"isDefault"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata `pulumi:"metadata"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
@@ -18265,19 +18265,19 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionInput i
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionArgs struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArrayInput `pulumi:"connectionProperties"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataInput `pulumi:"metadata"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
@@ -18323,28 +18323,28 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutp
 	return o
 }
 
-// The properties for the connection.
+// The properties of the connection.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutput) ConnectionProperties() GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection) []GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionProperty {
 		return v.ConnectionProperties
 	}).(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArrayOutput)
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection) string {
 		return v.Identifier
 	}).(pulumi.StringOutput)
 }
 
-// The default property for the connection.
+// The default property of the connection.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutput) IsDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
@@ -18354,14 +18354,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutp
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutput) Metadata() GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection) GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata {
 		return v.Metadata
 	}).(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection) string {
 		return v.ModelType
@@ -18531,7 +18531,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConn
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregator `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -18539,13 +18539,13 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadat
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -18571,7 +18571,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadat
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataArgs struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorInput `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
@@ -18579,13 +18579,13 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadat
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -18625,7 +18625,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMeta
 	return o
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataOutput) Aggregator() GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata) GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregator {
 		return v.Aggregator
@@ -18653,7 +18653,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMeta
 	}).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata) string {
 		return v.IdentifierPath
@@ -18667,14 +18667,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMeta
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata) bool {
 		return v.IsFavorite
 	}).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata) []string {
 		return v.Labels
@@ -18717,9 +18717,9 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMeta
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregator struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
@@ -18741,9 +18741,9 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadat
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorArgs struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
@@ -18779,14 +18779,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMeta
 	return o
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregator) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregator) string {
 		return v.Identifier
@@ -18817,19 +18817,19 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMeta
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchema struct {
 	// The default connection key.
 	DefaultConnection string `pulumi:"defaultConnection"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// Specifies whether the schema has containers.
 	IsHasContainers bool `pulumi:"isHasContainers"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata `pulumi:"metadata"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
@@ -18839,7 +18839,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRef `pulumi:"parentRef"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName string `pulumi:"resourceName"`
@@ -18859,19 +18859,19 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaArgs struct {
 	// The default connection key.
 	DefaultConnection pulumi.StringInput `pulumi:"defaultConnection"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// Specifies whether the schema has containers.
 	IsHasContainers pulumi.BoolInput `pulumi:"isHasContainers"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataInput `pulumi:"metadata"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
@@ -18881,7 +18881,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefInput `pulumi:"parentRef"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
@@ -18920,21 +18920,21 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 	}).(pulumi.StringOutput)
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchema) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchema) string {
 		return v.ExternalKey
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchema) string {
 		return v.Identifier
@@ -18955,14 +18955,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 	}).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaOutput) Metadata() GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchema) GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata {
 		return v.Metadata
 	}).(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchema) string {
 		return v.ModelType
@@ -18997,7 +18997,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 	}).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaOutput) ParentRef() GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchema) GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRef {
 		return v.ParentRef
@@ -19012,7 +19012,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -19020,13 +19020,13 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -19052,7 +19052,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataArgs struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorInput `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
@@ -19060,13 +19060,13 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -19106,7 +19106,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 	return o
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataOutput) Aggregator() GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata) GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator {
 		return v.Aggregator
@@ -19134,7 +19134,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 	}).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata) string {
 		return v.IdentifierPath
@@ -19148,14 +19148,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata) bool {
 		return v.IsFavorite
 	}).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata) []string {
 		return v.Labels
@@ -19198,9 +19198,9 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
@@ -19222,9 +19222,9 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimary
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorArgs struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
@@ -19260,14 +19260,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 	return o
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Identifier
@@ -19352,15 +19352,15 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrim
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -19368,7 +19368,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistr
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -19388,15 +19388,15 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistr
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -19404,7 +19404,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistr
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -19443,7 +19443,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegi
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata) string {
 		return v.CreatedByUserId
@@ -19457,7 +19457,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegi
 	}).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata) bool {
 		return v.IsFavorite
@@ -19471,7 +19471,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegi
 	}).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata) []string {
 		return v.Labels
@@ -19499,7 +19499,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegi
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata) string {
 		return v.UpdatedByUserId
@@ -19514,7 +19514,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegi
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregator `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -19522,13 +19522,13 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata struct {
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -19554,7 +19554,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataInput interface 
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataArgs struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorInput `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
@@ -19562,13 +19562,13 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataArgs struct {
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -19608,7 +19608,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput) ToGet
 	return o
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput) Aggregator() GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata) GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregator {
 		return v.Aggregator
@@ -19630,7 +19630,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput) Creat
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -19642,12 +19642,12 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput) InfoF
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -19678,9 +19678,9 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataOutput) Updat
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregator struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
@@ -19702,9 +19702,9 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorInput 
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorArgs struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
@@ -19740,14 +19740,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorOut
 	return o
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregator) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregator) string {
 		return v.Identifier
@@ -19770,13 +19770,13 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorOut
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
@@ -19786,7 +19786,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem struct 
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef `pulumi:"parentRef"`
 	// The type system to map from.
 	TypeMappingFrom map[string]interface{} `pulumi:"typeMappingFrom"`
@@ -19808,13 +19808,13 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemInput in
 }
 
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemArgs struct {
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
@@ -19824,7 +19824,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemArgs str
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefInput `pulumi:"parentRef"`
 	// The type system to map from.
 	TypeMappingFrom pulumi.MapInput `pulumi:"typeMappingFrom"`
@@ -19860,14 +19860,14 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemOutpu
 	return o
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem) string {
 		return v.Identifier
@@ -19879,7 +19879,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemOutpu
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -19908,7 +19908,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemOutpu
 	}).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemOutput) ParentRef() GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem) GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef {
 		return v.ParentRef
@@ -19993,13 +19993,13 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParen
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType struct {
 	// The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinition GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition `pulumi:"configDefinition"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
 	// The data type.
 	DtType string `pulumi:"dtType"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
@@ -20007,7 +20007,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType str
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef `pulumi:"parentRef"`
 	// The data type system name.
 	TypeSystemName string `pulumi:"typeSystemName"`
@@ -20027,13 +20027,13 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeInpu
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArgs struct {
 	// The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinition GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionInput `pulumi:"configDefinition"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The data type.
 	DtType pulumi.StringInput `pulumi:"dtType"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
@@ -20041,7 +20041,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArgs
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefInput `pulumi:"parentRef"`
 	// The data type system name.
 	TypeSystemName pulumi.StringInput `pulumi:"typeSystemName"`
@@ -20105,7 +20105,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeO
 	}).(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionOutput)
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType) string {
 		return v.Description
@@ -20124,7 +20124,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeO
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType) string {
 		return v.ModelType
@@ -20150,7 +20150,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeO
 	}).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeOutput) ParentRef() GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType) GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef {
 		return v.ParentRef
@@ -20187,11 +20187,11 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeA
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition struct {
 	// The parameter configuration details.
 	ConfigParameterDefinitions map[string]interface{} `pulumi:"configParameterDefinitions"`
-	// Specifies whether the configuration is contained or not.
+	// Specifies whether the configuration is contained.
 	IsContained bool `pulumi:"isContained"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
@@ -20199,7 +20199,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConf
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRef `pulumi:"parentRef"`
 }
 
@@ -20217,11 +20217,11 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConf
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionArgs struct {
 	// The parameter configuration details.
 	ConfigParameterDefinitions pulumi.MapInput `pulumi:"configParameterDefinitions"`
-	// Specifies whether the configuration is contained or not.
+	// Specifies whether the configuration is contained.
 	IsContained pulumi.BoolInput `pulumi:"isContained"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
@@ -20229,7 +20229,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConf
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefInput `pulumi:"parentRef"`
 }
 
@@ -20266,7 +20266,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeC
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether the configuration is contained or not.
+// Specifies whether the configuration is contained.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionOutput) IsContained() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition) bool {
 		return v.IsContained
@@ -20280,7 +20280,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeC
 	}).(pulumi.StringOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition) string {
 		return v.ModelType
@@ -20308,7 +20308,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeC
 	}).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionOutput) ParentRef() GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition) GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRef {
 		return v.ParentRef
@@ -20426,15 +20426,15 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeP
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -20442,7 +20442,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata struct 
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -20462,15 +20462,15 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataInput in
 type GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// The identifying key for the object.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -20478,7 +20478,7 @@ type GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataArgs str
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -20517,7 +20517,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutpu
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata) string {
 		return v.CreatedByUserId
@@ -20531,7 +20531,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutpu
 	}).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
@@ -20541,7 +20541,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutpu
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -20567,7 +20567,7 @@ func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutpu
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadata) string {
 		return v.UpdatedByUserId
@@ -20695,21 +20695,21 @@ type GetRegistryFolderDataAsset struct {
 	AssetProperties map[string]interface{} `pulumi:"assetProperties"`
 	// The default connection key.
 	DefaultConnections []GetRegistryFolderDataAssetDefaultConnection `pulumi:"defaultConnections"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas []GetRegistryFolderDataAssetMetadata `pulumi:"metadatas"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The type system maps from and to a type.
 	NativeTypeSystems []GetRegistryFolderDataAssetNativeTypeSystem `pulumi:"nativeTypeSystems"`
@@ -20741,21 +20741,21 @@ type GetRegistryFolderDataAssetArgs struct {
 	AssetProperties pulumi.MapInput `pulumi:"assetProperties"`
 	// The default connection key.
 	DefaultConnections GetRegistryFolderDataAssetDefaultConnectionArrayInput `pulumi:"defaultConnections"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas GetRegistryFolderDataAssetMetadataArrayInput `pulumi:"metadatas"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The type system maps from and to a type.
 	NativeTypeSystems GetRegistryFolderDataAssetNativeTypeSystemArrayInput `pulumi:"nativeTypeSystems"`
@@ -20834,27 +20834,27 @@ func (o GetRegistryFolderDataAssetOutput) DefaultConnections() GetRegistryFolder
 	}).(GetRegistryFolderDataAssetDefaultConnectionArrayOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFolderDataAssetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAsset) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryFolderDataAssetOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAsset) string { return v.ExternalKey }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFolderDataAssetOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAsset) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAsset) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryFolderDataAssetOutput) Metadatas() GetRegistryFolderDataAssetMetadataArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAsset) []GetRegistryFolderDataAssetMetadata { return v.Metadatas }).(GetRegistryFolderDataAssetMetadataArrayOutput)
 }
@@ -20869,7 +20869,7 @@ func (o GetRegistryFolderDataAssetOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAsset) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAsset) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -20929,23 +20929,23 @@ func (o GetRegistryFolderDataAssetArrayOutput) Index(i pulumi.IntInput) GetRegis
 }
 
 type GetRegistryFolderDataAssetDefaultConnection struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties []GetRegistryFolderDataAssetDefaultConnectionConnectionProperty `pulumi:"connectionProperties"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault bool `pulumi:"isDefault"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas []GetRegistryFolderDataAssetDefaultConnectionMetadata `pulumi:"metadatas"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
@@ -20973,23 +20973,23 @@ type GetRegistryFolderDataAssetDefaultConnectionInput interface {
 }
 
 type GetRegistryFolderDataAssetDefaultConnectionArgs struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayInput `pulumi:"connectionProperties"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas GetRegistryFolderDataAssetDefaultConnectionMetadataArrayInput `pulumi:"metadatas"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
@@ -21056,34 +21056,34 @@ func (o GetRegistryFolderDataAssetDefaultConnectionOutput) ToGetRegistryFolderDa
 	return o
 }
 
-// The properties for the connection.
+// The properties of the connection.
 func (o GetRegistryFolderDataAssetDefaultConnectionOutput) ConnectionProperties() GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnection) []GetRegistryFolderDataAssetDefaultConnectionConnectionProperty {
 		return v.ConnectionProperties
 	}).(GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFolderDataAssetDefaultConnectionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnection) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFolderDataAssetDefaultConnectionOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnection) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// The default property for the connection.
+// The default property of the connection.
 func (o GetRegistryFolderDataAssetDefaultConnectionOutput) IsDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnection) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetDefaultConnectionOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnection) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryFolderDataAssetDefaultConnectionOutput) Metadatas() GetRegistryFolderDataAssetDefaultConnectionMetadataArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnection) []GetRegistryFolderDataAssetDefaultConnectionMetadata {
 		return v.Metadatas
@@ -21100,7 +21100,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionOutput) ModelVersion() pulumi
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnection) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetDefaultConnectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnection) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -21160,7 +21160,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionArrayOutput) Index(i pulumi.I
 }
 
 type GetRegistryFolderDataAssetDefaultConnectionConnectionProperty struct {
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The value for the connection name property.
 	Value string `pulumi:"value"`
@@ -21178,7 +21178,7 @@ type GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyInput interfac
 }
 
 type GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs struct {
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The value for the connection name property.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -21235,7 +21235,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyOutput) ToG
 	return o
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionConnectionProperty) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -21268,19 +21268,19 @@ func (o GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArrayOutput
 type GetRegistryFolderDataAssetDefaultConnectionMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators []GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -21308,19 +21308,19 @@ type GetRegistryFolderDataAssetDefaultConnectionMetadataInput interface {
 type GetRegistryFolderDataAssetDefaultConnectionMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -21390,7 +21390,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionMetadataOutput) AggregatorKey
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryFolderDataAssetDefaultConnectionMetadataOutput) Aggregators() GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadata) []GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator {
 		return v.Aggregators
@@ -21407,7 +21407,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionMetadataOutput) CreatedByName
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryFolderDataAssetDefaultConnectionMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -21419,12 +21419,12 @@ func (o GetRegistryFolderDataAssetDefaultConnectionMetadataOutput) InfoFields() 
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFolderDataAssetDefaultConnectionMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFolderDataAssetDefaultConnectionMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -21475,13 +21475,13 @@ func (o GetRegistryFolderDataAssetDefaultConnectionMetadataArrayOutput) Index(i 
 }
 
 type GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// Specific DataAsset Type
 	Type string `pulumi:"type"`
@@ -21499,13 +21499,13 @@ type GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorInput interfac
 }
 
 type GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specific DataAsset Type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -21562,22 +21562,22 @@ func (o GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) ToG
 	return o
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -21610,29 +21610,29 @@ func (o GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArrayOutput
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchema struct {
 	// The default connection key.
 	DefaultConnection string `pulumi:"defaultConnection"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// Specifies whether the schema has containers.
 	IsHasContainers bool `pulumi:"isHasContainers"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas []GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata `pulumi:"metadatas"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef `pulumi:"parentReves"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName string `pulumi:"resourceName"`
@@ -21652,29 +21652,29 @@ type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaInput interface {
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs struct {
 	// The default connection key.
 	DefaultConnection pulumi.StringInput `pulumi:"defaultConnection"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// Specifies whether the schema has containers.
 	IsHasContainers pulumi.BoolInput `pulumi:"isHasContainers"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArrayInput `pulumi:"metadatas"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArrayInput `pulumi:"parentReves"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
@@ -21736,17 +21736,17 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) DefaultC
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.DefaultConnection }).(pulumi.StringOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.ExternalKey }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -21756,12 +21756,12 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) IsHasCon
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) bool { return v.IsHasContainers }).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Metadatas() GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) []GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata {
 		return v.Metadatas
@@ -21778,7 +21778,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) ModelVer
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -21793,7 +21793,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) ObjectVe
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaOutput) ParentReves() GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchema) []GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef {
 		return v.ParentReves
@@ -21828,19 +21828,19 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArrayOutput) Ind
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators []GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -21868,19 +21868,19 @@ type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataInput inter
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -21952,7 +21952,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) 
 	}).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Aggregators() GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) []GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
 		return v.Aggregators
@@ -21971,7 +21971,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) 
 	}).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) string {
 		return v.IdentifierPath
@@ -21985,12 +21985,12 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) 
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -22043,13 +22043,13 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArrayOut
 }
 
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// Specific DataAsset Type
 	Type string `pulumi:"type"`
@@ -22067,13 +22067,13 @@ type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorI
 }
 
 type GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specific DataAsset Type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -22130,28 +22130,28 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregat
 	return o
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Identifier
 	}).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Key
 	}).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Name
@@ -22285,15 +22285,15 @@ func (o GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArrayOu
 type GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -22301,7 +22301,7 @@ type GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -22321,15 +22321,15 @@ type GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataInput interface 
 type GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -22337,7 +22337,7 @@ type GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -22399,7 +22399,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) Aggre
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata) string { return v.CreatedByUserId }).(pulumi.StringOutput)
 }
@@ -22409,17 +22409,17 @@ func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) Creat
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata) string { return v.CreatedByUserName }).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -22439,7 +22439,7 @@ func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) TimeU
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetDefaultConnectionRegistryMetadata) string { return v.UpdatedByUserId }).(pulumi.StringOutput)
 }
@@ -22472,19 +22472,19 @@ func (o GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataArrayOutput) 
 type GetRegistryFolderDataAssetMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators []GetRegistryFolderDataAssetMetadataAggregator `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -22512,19 +22512,19 @@ type GetRegistryFolderDataAssetMetadataInput interface {
 type GetRegistryFolderDataAssetMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregators GetRegistryFolderDataAssetMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// The user that created the object.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -22594,7 +22594,7 @@ func (o GetRegistryFolderDataAssetMetadataOutput) AggregatorKey() pulumi.StringO
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryFolderDataAssetMetadataOutput) Aggregators() GetRegistryFolderDataAssetMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadata) []GetRegistryFolderDataAssetMetadataAggregator {
 		return v.Aggregators
@@ -22611,7 +22611,7 @@ func (o GetRegistryFolderDataAssetMetadataOutput) CreatedByName() pulumi.StringO
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryFolderDataAssetMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -22621,12 +22621,12 @@ func (o GetRegistryFolderDataAssetMetadataOutput) InfoFields() pulumi.MapOutput 
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFolderDataAssetMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFolderDataAssetMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -22677,13 +22677,13 @@ func (o GetRegistryFolderDataAssetMetadataArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetRegistryFolderDataAssetMetadataAggregator struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// Specific DataAsset Type
 	Type string `pulumi:"type"`
@@ -22701,13 +22701,13 @@ type GetRegistryFolderDataAssetMetadataAggregatorInput interface {
 }
 
 type GetRegistryFolderDataAssetMetadataAggregatorArgs struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Specific DataAsset Type
 	Type pulumi.StringInput `pulumi:"type"`
@@ -22764,22 +22764,22 @@ func (o GetRegistryFolderDataAssetMetadataAggregatorOutput) ToGetRegistryFolderD
 	return o
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFolderDataAssetMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFolderDataAssetMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetMetadataAggregatorOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetMetadataAggregatorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -22810,23 +22810,23 @@ func (o GetRegistryFolderDataAssetMetadataAggregatorArrayOutput) Index(i pulumi.
 }
 
 type GetRegistryFolderDataAssetNativeTypeSystem struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryFolderDataAssetNativeTypeSystemParentRef `pulumi:"parentReves"`
 	// The type system to map from.
 	TypeMappingFrom map[string]interface{} `pulumi:"typeMappingFrom"`
@@ -22848,23 +22848,23 @@ type GetRegistryFolderDataAssetNativeTypeSystemInput interface {
 }
 
 type GetRegistryFolderDataAssetNativeTypeSystemArgs struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryFolderDataAssetNativeTypeSystemParentRefArrayInput `pulumi:"parentReves"`
 	// The type system to map from.
 	TypeMappingFrom pulumi.MapInput `pulumi:"typeMappingFrom"`
@@ -22925,17 +22925,17 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemOutput) ToGetRegistryFolderDat
 	return o
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFolderDataAssetNativeTypeSystemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFolderDataAssetNativeTypeSystemOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystem) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetNativeTypeSystemOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystem) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -22950,7 +22950,7 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemOutput) ModelVersion() pulumi.
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystem) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetNativeTypeSystemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystem) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -22965,7 +22965,7 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemOutput) ObjectVersion() pulumi
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystem) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFolderDataAssetNativeTypeSystemOutput) ParentReves() GetRegistryFolderDataAssetNativeTypeSystemParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystem) []GetRegistryFolderDataAssetNativeTypeSystemParentRef {
 		return v.ParentReves
@@ -23109,21 +23109,21 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemParentRefArrayOutput) Index(i 
 type GetRegistryFolderDataAssetNativeTypeSystemType struct {
 	// The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinitions []GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition `pulumi:"configDefinitions"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
 	// The data type.
 	DtType string `pulumi:"dtType"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryFolderDataAssetNativeTypeSystemTypeParentRef `pulumi:"parentReves"`
 	// The data type system name.
 	TypeSystemName string `pulumi:"typeSystemName"`
@@ -23143,21 +23143,21 @@ type GetRegistryFolderDataAssetNativeTypeSystemTypeInput interface {
 type GetRegistryFolderDataAssetNativeTypeSystemTypeArgs struct {
 	// The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinitions GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArrayInput `pulumi:"configDefinitions"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The data type.
 	DtType pulumi.StringInput `pulumi:"dtType"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArrayInput `pulumi:"parentReves"`
 	// The data type system name.
 	TypeSystemName pulumi.StringInput `pulumi:"typeSystemName"`
@@ -23221,7 +23221,7 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeOutput) ConfigDefinitions(
 	}).(GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArrayOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFolderDataAssetNativeTypeSystemTypeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemType) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -23231,7 +23231,7 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeOutput) DtType() pulumi.St
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemType) string { return v.DtType }).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetNativeTypeSystemTypeOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemType) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -23246,7 +23246,7 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeOutput) ModelVersion() pul
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemType) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetNativeTypeSystemTypeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemType) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -23256,7 +23256,7 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeOutput) ObjectStatus() pul
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemType) int { return v.ObjectStatus }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFolderDataAssetNativeTypeSystemTypeOutput) ParentReves() GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemType) []GetRegistryFolderDataAssetNativeTypeSystemTypeParentRef {
 		return v.ParentReves
@@ -23291,19 +23291,19 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeArrayOutput) Index(i pulum
 type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition struct {
 	// The parameter configuration details.
 	ConfigParameterDefinitions map[string]interface{} `pulumi:"configParameterDefinitions"`
-	// Specifies whether the configuration is contained or not.
+	// Specifies whether the configuration is contained.
 	IsContained bool `pulumi:"isContained"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef `pulumi:"parentReves"`
 }
 
@@ -23321,19 +23321,19 @@ type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionInput interfa
 type GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs struct {
 	// The parameter configuration details.
 	ConfigParameterDefinitions pulumi.MapInput `pulumi:"configParameterDefinitions"`
-	// Specifies whether the configuration is contained or not.
+	// Specifies whether the configuration is contained.
 	IsContained pulumi.BoolInput `pulumi:"isContained"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayInput `pulumi:"parentReves"`
 }
 
@@ -23395,12 +23395,12 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Co
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether the configuration is contained or not.
+// Specifies whether the configuration is contained.
 func (o GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) IsContained() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) bool { return v.IsContained }).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -23415,7 +23415,7 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Mo
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -23425,7 +23425,7 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Ob
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) int { return v.ObjectStatus }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ParentReves() GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition) []GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
 		return v.ParentReves
@@ -23651,15 +23651,15 @@ func (o GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArrayOutput) Inde
 type GetRegistryFolderDataAssetRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -23667,7 +23667,7 @@ type GetRegistryFolderDataAssetRegistryMetadata struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -23687,15 +23687,15 @@ type GetRegistryFolderDataAssetRegistryMetadataInput interface {
 type GetRegistryFolderDataAssetRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -23703,7 +23703,7 @@ type GetRegistryFolderDataAssetRegistryMetadataArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -23765,7 +23765,7 @@ func (o GetRegistryFolderDataAssetRegistryMetadataOutput) AggregatorKey() pulumi
 	return o.ApplyT(func(v GetRegistryFolderDataAssetRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryFolderDataAssetRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetRegistryMetadata) string { return v.CreatedByUserId }).(pulumi.StringOutput)
 }
@@ -23775,17 +23775,17 @@ func (o GetRegistryFolderDataAssetRegistryMetadataOutput) CreatedByUserName() pu
 	return o.ApplyT(func(v GetRegistryFolderDataAssetRegistryMetadata) string { return v.CreatedByUserName }).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFolderDataAssetRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFolderDataAssetRegistryMetadataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFolderDataAssetRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -23805,7 +23805,7 @@ func (o GetRegistryFolderDataAssetRegistryMetadataOutput) TimeUpdated() pulumi.S
 	return o.ApplyT(func(v GetRegistryFolderDataAssetRegistryMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryFolderDataAssetRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFolderDataAssetRegistryMetadata) string { return v.UpdatedByUserId }).(pulumi.StringOutput)
 }
@@ -24138,13 +24138,13 @@ func (o GetRegistryFoldersFolderSummaryCollectionArrayOutput) Index(i pulumi.Int
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItem struct {
-	// List of data assets which belongs to this folder
+	// The list of data assets that belong to the folder.
 	DataAssets []GetRegistryFoldersFolderSummaryCollectionItemDataAsset `pulumi:"dataAssets"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
@@ -24156,9 +24156,9 @@ type GetRegistryFoldersFolderSummaryCollectionItem struct {
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemParentRef `pulumi:"parentRef"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 }
 
@@ -24174,13 +24174,13 @@ type GetRegistryFoldersFolderSummaryCollectionItemInput interface {
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemArgs struct {
-	// List of data assets which belongs to this folder
+	// The list of data assets that belong to the folder.
 	DataAssets GetRegistryFoldersFolderSummaryCollectionItemDataAssetArrayInput `pulumi:"dataAssets"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
@@ -24192,9 +24192,9 @@ type GetRegistryFoldersFolderSummaryCollectionItemArgs struct {
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemParentRefInput `pulumi:"parentRef"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 }
 
@@ -24249,24 +24249,24 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemOutput) ToGetRegistryFolder
 	return o
 }
 
-// List of data assets which belongs to this folder
+// The list of data assets that belong to the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemOutput) DataAssets() GetRegistryFoldersFolderSummaryCollectionItemDataAssetArrayOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItem) []GetRegistryFoldersFolderSummaryCollectionItemDataAsset {
 		return v.DataAssets
 	}).(GetRegistryFoldersFolderSummaryCollectionItemDataAssetArrayOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFoldersFolderSummaryCollectionItemOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItem) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -24296,14 +24296,14 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemOutput) ObjectVersion() pul
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItem) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemOutput) ParentRef() GetRegistryFoldersFolderSummaryCollectionItemParentRefOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItem) GetRegistryFoldersFolderSummaryCollectionItemParentRef {
 		return v.ParentRef
 	}).(GetRegistryFoldersFolderSummaryCollectionItemParentRefOutput)
 }
 
-// The registry Ocid.
+// The registry OCID.
 func (o GetRegistryFoldersFolderSummaryCollectionItemOutput) RegistryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItem) string { return v.RegistryId }).(pulumi.StringOutput)
 }
@@ -24333,15 +24333,15 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAsset struct {
 	AssetProperties map[string]interface{} `pulumi:"assetProperties"`
 	// The default connection key.
 	DefaultConnection GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection `pulumi:"defaultConnection"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata `pulumi:"metadata"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
@@ -24379,15 +24379,15 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs struct {
 	AssetProperties pulumi.MapInput `pulumi:"assetProperties"`
 	// The default connection key.
 	DefaultConnection GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionInput `pulumi:"defaultConnection"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataInput `pulumi:"metadata"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
@@ -24474,27 +24474,27 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetOutput) DefaultCon
 	}).(GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAsset) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAsset) string { return v.ExternalKey }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAsset) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAsset) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetOutput) Metadata() GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAsset) GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata {
 		return v.Metadata
@@ -24573,17 +24573,17 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetArrayOutput) Index
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties []GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionProperty `pulumi:"connectionProperties"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault bool `pulumi:"isDefault"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata `pulumi:"metadata"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
@@ -24617,17 +24617,17 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionInpu
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionArgs struct {
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArrayInput `pulumi:"connectionProperties"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataInput `pulumi:"metadata"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
@@ -24675,40 +24675,40 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionO
 	return o
 }
 
-// The properties for the connection.
+// The properties of the connection.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionOutput) ConnectionProperties() GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection) []GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionProperty {
 		return v.ConnectionProperties
 	}).(GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArrayOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection) string {
 		return v.Identifier
 	}).(pulumi.StringOutput)
 }
 
-// The default property for the connection.
+// The default property of the connection.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionOutput) IsDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection) bool {
 		return v.IsDefault
 	}).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionOutput) Metadata() GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection) GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata {
 		return v.Metadata
@@ -24885,7 +24885,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionC
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregator `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -24893,13 +24893,13 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMeta
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -24925,7 +24925,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMeta
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataArgs struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorInput `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
@@ -24933,13 +24933,13 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMeta
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -24979,7 +24979,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionM
 	return o
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataOutput) Aggregator() GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata) GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregator {
 		return v.Aggregator
@@ -25007,7 +25007,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionM
 	}).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata) string {
 		return v.IdentifierPath
@@ -25021,14 +25021,14 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionM
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata) bool {
 		return v.IsFavorite
 	}).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata) []string {
 		return v.Labels
@@ -25071,11 +25071,11 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionM
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregator struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// Used to filter by the name of the object.
 	Name string `pulumi:"name"`
@@ -25095,11 +25095,11 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMeta
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorArgs struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -25133,21 +25133,21 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionM
 	return o
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregator) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregator) string {
 		return v.Identifier
 	}).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregator) string {
 		return v.Key
@@ -25171,17 +25171,17 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionM
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchema struct {
 	// The default connection key.
 	DefaultConnection string `pulumi:"defaultConnection"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// Specifies whether the schema has containers.
 	IsHasContainers bool `pulumi:"isHasContainers"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata `pulumi:"metadata"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
@@ -25193,7 +25193,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRef `pulumi:"parentRef"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName string `pulumi:"resourceName"`
@@ -25213,17 +25213,17 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaArgs struct {
 	// The default connection key.
 	DefaultConnection pulumi.StringInput `pulumi:"defaultConnection"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// Specifies whether the schema has containers.
 	IsHasContainers pulumi.BoolInput `pulumi:"isHasContainers"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataInput `pulumi:"metadata"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
@@ -25235,7 +25235,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefInput `pulumi:"parentRef"`
 	// A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
 	ResourceName pulumi.StringInput `pulumi:"resourceName"`
@@ -25274,21 +25274,21 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 	}).(pulumi.StringOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchema) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchema) string {
 		return v.ExternalKey
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchema) string {
 		return v.Identifier
@@ -25302,14 +25302,14 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 	}).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchema) string {
 		return v.Key
 	}).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaOutput) Metadata() GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchema) GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata {
 		return v.Metadata
@@ -25351,7 +25351,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 	}).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaOutput) ParentRef() GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchema) GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRef {
 		return v.ParentRef
@@ -25366,7 +25366,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregator `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -25374,13 +25374,13 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -25406,7 +25406,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataArgs struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorInput `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
@@ -25414,13 +25414,13 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -25460,7 +25460,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 	return o
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Aggregator() GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata) GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
 		return v.Aggregator
@@ -25488,7 +25488,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 	}).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata) string {
 		return v.IdentifierPath
@@ -25502,14 +25502,14 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata) bool {
 		return v.IsFavorite
 	}).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata) []string {
 		return v.Labels
@@ -25552,11 +25552,11 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregator struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// Used to filter by the name of the object.
 	Name string `pulumi:"name"`
@@ -25576,11 +25576,11 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrim
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -25614,21 +25614,21 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 	return o
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Identifier
 	}).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregator) string {
 		return v.Key
@@ -25706,15 +25706,15 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionP
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -25722,7 +25722,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegi
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -25742,15 +25742,15 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegi
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -25758,7 +25758,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegi
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -25797,7 +25797,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionR
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadata) string {
 		return v.CreatedByUserId
@@ -25811,21 +25811,21 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionR
 	}).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadata) bool {
 		return v.IsFavorite
 	}).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadata) string {
 		return v.Key
 	}).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadata) []string {
 		return v.Labels
@@ -25853,7 +25853,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionR
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadata) string {
 		return v.UpdatedByUserId
@@ -25868,7 +25868,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionR
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
@@ -25876,13 +25876,13 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata struct {
 	CreatedBy string `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName string `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -25908,7 +25908,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataInput interfa
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataArgs struct {
-	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name, and description.
 	Aggregator GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorInput `pulumi:"aggregator"`
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
@@ -25916,13 +25916,13 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataArgs struct {
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// The user that created the object.
 	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
-	// The full path to identify this object.
+	// The full path to identify the object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -25962,7 +25962,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput) To
 	return o
 }
 
-// A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name, and description.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput) Aggregator() GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata) GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator {
 		return v.Aggregator
@@ -25984,7 +25984,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput) Cr
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
 }
 
-// The full path to identify this object.
+// The full path to identify the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput) IdentifierPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
 }
@@ -25996,12 +25996,12 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput) In
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
@@ -26032,11 +26032,11 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataOutput) Up
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// Used to filter by the name of the object.
 	Name string `pulumi:"name"`
@@ -26056,11 +26056,11 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorInp
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorArgs struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -26094,21 +26094,21 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator
 	return o
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator) string {
 		return v.Identifier
 	}).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -26124,11 +26124,11 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystem struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
@@ -26140,7 +26140,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystem stru
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRef `pulumi:"parentRef"`
 	// The type system to map from.
 	TypeMappingFrom map[string]interface{} `pulumi:"typeMappingFrom"`
@@ -26162,11 +26162,11 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemInput
 }
 
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemArgs struct {
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
@@ -26178,7 +26178,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemArgs 
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefInput `pulumi:"parentRef"`
 	// The type system to map from.
 	TypeMappingFrom pulumi.MapInput `pulumi:"typeMappingFrom"`
@@ -26214,21 +26214,21 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemOu
 	return o
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystem) string {
 		return v.Description
 	}).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystem) string {
 		return v.Identifier
 	}).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystem) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -26266,7 +26266,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemOu
 	}).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemOutput) ParentRef() GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystem) GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRef {
 		return v.ParentRef
@@ -26351,11 +26351,11 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemPa
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType struct {
 	// The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinition GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition `pulumi:"configDefinition"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
 	// The data type.
 	DtType string `pulumi:"dtType"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
@@ -26365,7 +26365,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType 
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef `pulumi:"parentRef"`
 	// The data type system name.
 	TypeSystemName string `pulumi:"typeSystemName"`
@@ -26385,11 +26385,11 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeI
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArgs struct {
 	// The configuration details of a configurable object. This contains one or more config param definitions.
 	ConfigDefinition GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionInput `pulumi:"configDefinition"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The data type.
 	DtType pulumi.StringInput `pulumi:"dtType"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
@@ -26399,7 +26399,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeA
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefInput `pulumi:"parentRef"`
 	// The data type system name.
 	TypeSystemName pulumi.StringInput `pulumi:"typeSystemName"`
@@ -26463,7 +26463,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTy
 	}).(GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType) string {
 		return v.Description
@@ -26477,7 +26477,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTy
 	}).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType) string {
 		return v.Key
@@ -26512,7 +26512,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTy
 	}).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeOutput) ParentRef() GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType) GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef {
 		return v.ParentRef
@@ -26549,9 +26549,9 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTy
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition struct {
 	// The parameter configuration details.
 	ConfigParameterDefinitions map[string]interface{} `pulumi:"configParameterDefinitions"`
-	// Specifies whether the configuration is contained or not.
+	// Specifies whether the configuration is contained.
 	IsContained bool `pulumi:"isContained"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
@@ -26561,7 +26561,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeC
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef `pulumi:"parentRef"`
 }
 
@@ -26579,9 +26579,9 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeC
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionArgs struct {
 	// The parameter configuration details.
 	ConfigParameterDefinitions pulumi.MapInput `pulumi:"configParameterDefinitions"`
-	// Specifies whether the configuration is contained or not.
+	// Specifies whether the configuration is contained.
 	IsContained pulumi.BoolInput `pulumi:"isContained"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
 	// The type of the folder.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
@@ -26591,7 +26591,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeC
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentRef GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefInput `pulumi:"parentRef"`
 }
 
@@ -26628,14 +26628,14 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTy
 	}).(pulumi.MapOutput)
 }
 
-// Specifies whether the configuration is contained or not.
+// Specifies whether the configuration is contained.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionOutput) IsContained() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition) bool {
 		return v.IsContained
 	}).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition) string {
 		return v.Key
@@ -26670,7 +26670,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTy
 	}).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionOutput) ParentRef() GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition) GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef {
 		return v.ParentRef
@@ -26788,15 +26788,15 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTy
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadata struct {
 	// The owning object's key for this object.
 	AggregatorKey string `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId string `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName string `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite bool `pulumi:"isFavorite"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion int `pulumi:"registryVersion"`
@@ -26804,7 +26804,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadata stru
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId string `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName string `pulumi:"updatedByUserName"`
@@ -26824,15 +26824,15 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataInput
 type GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataArgs struct {
 	// The owning object's key for this object.
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
-	// The id of the user who created the object.
+	// The ID of the user who created the object.
 	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
 	// The name of the user who created the object.
 	CreatedByUserName pulumi.StringInput `pulumi:"createdByUserName"`
-	// Specifies whether this object is a favorite or not.
+	// Specifies whether the object is a favorite.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version.
 	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
@@ -26840,7 +26840,7 @@ type GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataArgs 
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The id of the user who updated the object.
+	// The ID of the user who updated the object.
 	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
 	// The name of the user who updated the object.
 	UpdatedByUserName pulumi.StringInput `pulumi:"updatedByUserName"`
@@ -26879,7 +26879,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOu
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who created the object.
+// The ID of the user who created the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOutput) CreatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadata) string {
 		return v.CreatedByUserId
@@ -26893,19 +26893,19 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOu
 	}).(pulumi.StringOutput)
 }
 
-// Specifies whether this object is a favorite or not.
+// Specifies whether the object is a favorite.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadata) bool {
 		return v.IsFavorite
 	}).(pulumi.BoolOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadata) []string {
 		return v.Labels
@@ -26933,7 +26933,7 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOu
 	}).(pulumi.StringOutput)
 }
 
-// The id of the user who updated the object.
+// The ID of the user who updated the object.
 func (o GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadata) string {
 		return v.UpdatedByUserId
@@ -27000,19 +27000,19 @@ func (o GetRegistryFoldersFolderSummaryCollectionItemParentRefOutput) Parent() p
 }
 
 type GetRegistryTypeDataAssetAttribute struct {
-	// Attribute type details
+	// The attribute type details.
 	AttributeType string `pulumi:"attributeType"`
-	// True if Attribute is encoded.
+	// True if attribute is encoded.
 	IsBase64encoded bool `pulumi:"isBase64encoded"`
-	// True if Attribute is generated.
+	// True if attribute is generated.
 	IsGenerated bool `pulumi:"isGenerated"`
-	// True if Attribute is mandatory.
+	// True if attribute is mandatory.
 	IsMandatory bool `pulumi:"isMandatory"`
-	// True if Attribute is sensitive.
+	// True if attribute is sensitive.
 	IsSensitive bool `pulumi:"isSensitive"`
-	// The name of of the Attribute.
+	// The name of of the attribute.
 	Name string `pulumi:"name"`
-	// List of valid key list
+	// The list of valid keys.
 	ValidKeyLists []string `pulumi:"validKeyLists"`
 }
 
@@ -27028,19 +27028,19 @@ type GetRegistryTypeDataAssetAttributeInput interface {
 }
 
 type GetRegistryTypeDataAssetAttributeArgs struct {
-	// Attribute type details
+	// The attribute type details.
 	AttributeType pulumi.StringInput `pulumi:"attributeType"`
-	// True if Attribute is encoded.
+	// True if attribute is encoded.
 	IsBase64encoded pulumi.BoolInput `pulumi:"isBase64encoded"`
-	// True if Attribute is generated.
+	// True if attribute is generated.
 	IsGenerated pulumi.BoolInput `pulumi:"isGenerated"`
-	// True if Attribute is mandatory.
+	// True if attribute is mandatory.
 	IsMandatory pulumi.BoolInput `pulumi:"isMandatory"`
-	// True if Attribute is sensitive.
+	// True if attribute is sensitive.
 	IsSensitive pulumi.BoolInput `pulumi:"isSensitive"`
-	// The name of of the Attribute.
+	// The name of of the attribute.
 	Name pulumi.StringInput `pulumi:"name"`
-	// List of valid key list
+	// The list of valid keys.
 	ValidKeyLists pulumi.StringArrayInput `pulumi:"validKeyLists"`
 }
 
@@ -27095,37 +27095,37 @@ func (o GetRegistryTypeDataAssetAttributeOutput) ToGetRegistryTypeDataAssetAttri
 	return o
 }
 
-// Attribute type details
+// The attribute type details.
 func (o GetRegistryTypeDataAssetAttributeOutput) AttributeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryTypeDataAssetAttribute) string { return v.AttributeType }).(pulumi.StringOutput)
 }
 
-// True if Attribute is encoded.
+// True if attribute is encoded.
 func (o GetRegistryTypeDataAssetAttributeOutput) IsBase64encoded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryTypeDataAssetAttribute) bool { return v.IsBase64encoded }).(pulumi.BoolOutput)
 }
 
-// True if Attribute is generated.
+// True if attribute is generated.
 func (o GetRegistryTypeDataAssetAttributeOutput) IsGenerated() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryTypeDataAssetAttribute) bool { return v.IsGenerated }).(pulumi.BoolOutput)
 }
 
-// True if Attribute is mandatory.
+// True if attribute is mandatory.
 func (o GetRegistryTypeDataAssetAttributeOutput) IsMandatory() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryTypeDataAssetAttribute) bool { return v.IsMandatory }).(pulumi.BoolOutput)
 }
 
-// True if Attribute is sensitive.
+// True if attribute is sensitive.
 func (o GetRegistryTypeDataAssetAttributeOutput) IsSensitive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryTypeDataAssetAttribute) bool { return v.IsSensitive }).(pulumi.BoolOutput)
 }
 
-// The name of of the Attribute.
+// The name of of the attribute.
 func (o GetRegistryTypeDataAssetAttributeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryTypeDataAssetAttribute) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// List of valid key list
+// The list of valid keys.
 func (o GetRegistryTypeDataAssetAttributeOutput) ValidKeyLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryTypeDataAssetAttribute) []string { return v.ValidKeyLists }).(pulumi.StringArrayOutput)
 }
@@ -27356,9 +27356,9 @@ func (o GetRegistryTypesTypesSummaryCollectionArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetRegistryTypesTypesSummaryCollectionItem struct {
-	// Map of connectionType as key and List of attributes as value
+	// Mapping the connectionType as the key to the list of attributes as the value.
 	ConnectionAttributes map[string]interface{} `pulumi:"connectionAttributes"`
-	// list of attributes for the dataAsset
+	// The list of attributes of the data asset.
 	DataAssetAttributes []GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute `pulumi:"dataAssetAttributes"`
 	Description         *string                                                        `pulumi:"description"`
 	Key                 string                                                         `pulumi:"key"`
@@ -27378,9 +27378,9 @@ type GetRegistryTypesTypesSummaryCollectionItemInput interface {
 }
 
 type GetRegistryTypesTypesSummaryCollectionItemArgs struct {
-	// Map of connectionType as key and List of attributes as value
+	// Mapping the connectionType as the key to the list of attributes as the value.
 	ConnectionAttributes pulumi.MapInput `pulumi:"connectionAttributes"`
-	// list of attributes for the dataAsset
+	// The list of attributes of the data asset.
 	DataAssetAttributes GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArrayInput `pulumi:"dataAssetAttributes"`
 	Description         pulumi.StringPtrInput                                                  `pulumi:"description"`
 	Key                 pulumi.StringInput                                                     `pulumi:"key"`
@@ -27439,14 +27439,14 @@ func (o GetRegistryTypesTypesSummaryCollectionItemOutput) ToGetRegistryTypesType
 	return o
 }
 
-// Map of connectionType as key and List of attributes as value
+// Mapping the connectionType as the key to the list of attributes as the value.
 func (o GetRegistryTypesTypesSummaryCollectionItemOutput) ConnectionAttributes() pulumi.MapOutput {
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItem) map[string]interface{} {
 		return v.ConnectionAttributes
 	}).(pulumi.MapOutput)
 }
 
-// list of attributes for the dataAsset
+// The list of attributes of the data asset.
 func (o GetRegistryTypesTypesSummaryCollectionItemOutput) DataAssetAttributes() GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArrayOutput {
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItem) []GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute {
 		return v.DataAssetAttributes
@@ -27487,19 +27487,19 @@ func (o GetRegistryTypesTypesSummaryCollectionItemArrayOutput) Index(i pulumi.In
 }
 
 type GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute struct {
-	// Attribute type details
+	// The attribute type details.
 	AttributeType string `pulumi:"attributeType"`
-	// True if Attribute is encoded.
+	// True if attribute is encoded.
 	IsBase64encoded bool `pulumi:"isBase64encoded"`
-	// True if Attribute is generated.
+	// True if attribute is generated.
 	IsGenerated bool `pulumi:"isGenerated"`
-	// True if Attribute is mandatory.
+	// True if attribute is mandatory.
 	IsMandatory bool `pulumi:"isMandatory"`
-	// True if Attribute is sensitive.
+	// True if attribute is sensitive.
 	IsSensitive bool `pulumi:"isSensitive"`
 	// Used to filter by the name of the object.
 	Name string `pulumi:"name"`
-	// List of valid key list
+	// The list of valid keys.
 	ValidKeyLists []string `pulumi:"validKeyLists"`
 }
 
@@ -27515,19 +27515,19 @@ type GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeInput interface
 }
 
 type GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs struct {
-	// Attribute type details
+	// The attribute type details.
 	AttributeType pulumi.StringInput `pulumi:"attributeType"`
-	// True if Attribute is encoded.
+	// True if attribute is encoded.
 	IsBase64encoded pulumi.BoolInput `pulumi:"isBase64encoded"`
-	// True if Attribute is generated.
+	// True if attribute is generated.
 	IsGenerated pulumi.BoolInput `pulumi:"isGenerated"`
-	// True if Attribute is mandatory.
+	// True if attribute is mandatory.
 	IsMandatory pulumi.BoolInput `pulumi:"isMandatory"`
-	// True if Attribute is sensitive.
+	// True if attribute is sensitive.
 	IsSensitive pulumi.BoolInput `pulumi:"isSensitive"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringInput `pulumi:"name"`
-	// List of valid key list
+	// The list of valid keys.
 	ValidKeyLists pulumi.StringArrayInput `pulumi:"validKeyLists"`
 }
 
@@ -27582,27 +27582,27 @@ func (o GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput) ToGe
 	return o
 }
 
-// Attribute type details
+// The attribute type details.
 func (o GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput) AttributeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute) string { return v.AttributeType }).(pulumi.StringOutput)
 }
 
-// True if Attribute is encoded.
+// True if attribute is encoded.
 func (o GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput) IsBase64encoded() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute) bool { return v.IsBase64encoded }).(pulumi.BoolOutput)
 }
 
-// True if Attribute is generated.
+// True if attribute is generated.
 func (o GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput) IsGenerated() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute) bool { return v.IsGenerated }).(pulumi.BoolOutput)
 }
 
-// True if Attribute is mandatory.
+// True if attribute is mandatory.
 func (o GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput) IsMandatory() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute) bool { return v.IsMandatory }).(pulumi.BoolOutput)
 }
 
-// True if Attribute is sensitive.
+// True if attribute is sensitive.
 func (o GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput) IsSensitive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute) bool { return v.IsSensitive }).(pulumi.BoolOutput)
 }
@@ -27612,7 +27612,7 @@ func (o GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput) Name
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// List of valid key list
+// The list of valid keys.
 func (o GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeOutput) ValidKeyLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute) []string { return v.ValidKeyLists }).(pulumi.StringArrayOutput)
 }

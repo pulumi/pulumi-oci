@@ -39,8 +39,8 @@ import (
 //	}
 //
 // ```
-func GetMysqlConfiguration(ctx *pulumi.Context, args *GetMysqlConfigurationArgs, opts ...pulumi.InvokeOption) (*GetMysqlConfigurationResult, error) {
-	var rv GetMysqlConfigurationResult
+func LookupMysqlConfiguration(ctx *pulumi.Context, args *LookupMysqlConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupMysqlConfigurationResult, error) {
+	var rv LookupMysqlConfigurationResult
 	err := ctx.Invoke("oci:Mysql/getMysqlConfiguration:getMysqlConfiguration", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -49,13 +49,13 @@ func GetMysqlConfiguration(ctx *pulumi.Context, args *GetMysqlConfigurationArgs,
 }
 
 // A collection of arguments for invoking getMysqlConfiguration.
-type GetMysqlConfigurationArgs struct {
+type LookupMysqlConfigurationArgs struct {
 	// The OCID of the Configuration.
 	ConfigurationId string `pulumi:"configurationId"`
 }
 
 // A collection of values returned by getMysqlConfiguration.
-type GetMysqlConfigurationResult struct {
+type LookupMysqlConfigurationResult struct {
 	// OCID of the Compartment the Configuration exists in.
 	CompartmentId   string `pulumi:"compartmentId"`
 	ConfigurationId string `pulumi:"configurationId"`
@@ -67,8 +67,10 @@ type GetMysqlConfigurationResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The provider-assigned unique ID for this managed resource.
+	// The OCID of the Configuration.
 	Id string `pulumi:"id"`
+	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	InitVariables []GetMysqlConfigurationInitVariable `pulumi:"initVariables"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
 	ParentConfigurationId string `pulumi:"parentConfigurationId"`
 	// The name of the associated Shape.
@@ -81,117 +83,122 @@ type GetMysqlConfigurationResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The Configuration type, DEFAULT or CUSTOM.
 	Type string `pulumi:"type"`
-	// User controllable service variables.
+	// User-defined service variables.
 	Variables []GetMysqlConfigurationVariable `pulumi:"variables"`
 }
 
-func GetMysqlConfigurationOutput(ctx *pulumi.Context, args GetMysqlConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetMysqlConfigurationResultOutput {
+func LookupMysqlConfigurationOutput(ctx *pulumi.Context, args LookupMysqlConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupMysqlConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetMysqlConfigurationResult, error) {
-			args := v.(GetMysqlConfigurationArgs)
-			r, err := GetMysqlConfiguration(ctx, &args, opts...)
-			var s GetMysqlConfigurationResult
+		ApplyT(func(v interface{}) (LookupMysqlConfigurationResult, error) {
+			args := v.(LookupMysqlConfigurationArgs)
+			r, err := LookupMysqlConfiguration(ctx, &args, opts...)
+			var s LookupMysqlConfigurationResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetMysqlConfigurationResultOutput)
+		}).(LookupMysqlConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getMysqlConfiguration.
-type GetMysqlConfigurationOutputArgs struct {
+type LookupMysqlConfigurationOutputArgs struct {
 	// The OCID of the Configuration.
 	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
 }
 
-func (GetMysqlConfigurationOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlConfigurationArgs)(nil)).Elem()
+func (LookupMysqlConfigurationOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupMysqlConfigurationArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getMysqlConfiguration.
-type GetMysqlConfigurationResultOutput struct{ *pulumi.OutputState }
+type LookupMysqlConfigurationResultOutput struct{ *pulumi.OutputState }
 
-func (GetMysqlConfigurationResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlConfigurationResult)(nil)).Elem()
+func (LookupMysqlConfigurationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupMysqlConfigurationResult)(nil)).Elem()
 }
 
-func (o GetMysqlConfigurationResultOutput) ToGetMysqlConfigurationResultOutput() GetMysqlConfigurationResultOutput {
+func (o LookupMysqlConfigurationResultOutput) ToLookupMysqlConfigurationResultOutput() LookupMysqlConfigurationResultOutput {
 	return o
 }
 
-func (o GetMysqlConfigurationResultOutput) ToGetMysqlConfigurationResultOutputWithContext(ctx context.Context) GetMysqlConfigurationResultOutput {
+func (o LookupMysqlConfigurationResultOutput) ToLookupMysqlConfigurationResultOutputWithContext(ctx context.Context) LookupMysqlConfigurationResultOutput {
 	return o
 }
 
 // OCID of the Compartment the Configuration exists in.
-func (o GetMysqlConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o GetMysqlConfigurationResultOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) ConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.ConfigurationId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlConfigurationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMysqlConfigurationResultOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // User-provided data about the Configuration.
-func (o GetMysqlConfigurationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // The display name of the Configuration.
-func (o GetMysqlConfigurationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlConfigurationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMysqlConfigurationResultOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetMysqlConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+// The OCID of the Configuration.
+func (o LookupMysqlConfigurationResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+func (o LookupMysqlConfigurationResultOutput) InitVariables() GetMysqlConfigurationInitVariableArrayOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) []GetMysqlConfigurationInitVariable { return v.InitVariables }).(GetMysqlConfigurationInitVariableArrayOutput)
 }
 
 // The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
-func (o GetMysqlConfigurationResultOutput) ParentConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.ParentConfigurationId }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) ParentConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.ParentConfigurationId }).(pulumi.StringOutput)
 }
 
 // The name of the associated Shape.
-func (o GetMysqlConfigurationResultOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.ShapeName }).(pulumi.StringOutput)
 }
 
 // The current state of the Configuration.
-func (o GetMysqlConfigurationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetMysqlConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetMysqlConfigurationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 // The Configuration type, DEFAULT or CUSTOM.
-func (o GetMysqlConfigurationResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// User controllable service variables.
-func (o GetMysqlConfigurationResultOutput) Variables() GetMysqlConfigurationVariableArrayOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationResult) []GetMysqlConfigurationVariable { return v.Variables }).(GetMysqlConfigurationVariableArrayOutput)
+// User-defined service variables.
+func (o LookupMysqlConfigurationResultOutput) Variables() GetMysqlConfigurationVariableArrayOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) []GetMysqlConfigurationVariable { return v.Variables }).(GetMysqlConfigurationVariableArrayOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetMysqlConfigurationResultOutput{})
+	pulumi.RegisterOutputType(LookupMysqlConfigurationResultOutput{})
 }

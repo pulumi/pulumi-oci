@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
 //
-// Retrieves a list of all folders.
+// Retrieves a list of all the folders.
 //
 // ## Example Usage
 //
@@ -61,7 +61,7 @@ type GetRegistryFoldersArgs struct {
 	Filters []GetRegistryFoldersFilter `pulumi:"filters"`
 	// Used to filter by the name of the object.
 	Name *string `pulumi:"name"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 	// Type of the object to filter the results with.
 	Type *string `pulumi:"type"`
@@ -76,7 +76,7 @@ type GetRegistryFoldersResult struct {
 	FolderSummaryCollections []GetRegistryFoldersFolderSummaryCollection `pulumi:"folderSummaryCollections"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name       *string `pulumi:"name"`
 	RegistryId string  `pulumi:"registryId"`
 	// Specific DataAsset Type
@@ -105,7 +105,7 @@ type GetRegistryFoldersOutputArgs struct {
 	Filters GetRegistryFoldersFilterArrayInput `pulumi:"filters"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 	// Type of the object to filter the results with.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -154,7 +154,7 @@ func (o GetRegistryFoldersResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryFoldersResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryFoldersResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRegistryFoldersResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

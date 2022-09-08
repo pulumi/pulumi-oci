@@ -81,6 +81,7 @@ type Trigger struct {
 	Actions TriggerActionArrayOutput `pulumi:"actions"`
 	// The OCID of the compartment that contains the trigger.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	ConnectionId  pulumi.StringOutput `pulumi:"connectionId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional description about the trigger.
@@ -151,6 +152,7 @@ type triggerState struct {
 	Actions []TriggerAction `pulumi:"actions"`
 	// The OCID of the compartment that contains the trigger.
 	CompartmentId *string `pulumi:"compartmentId"`
+	ConnectionId  *string `pulumi:"connectionId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Optional description about the trigger.
@@ -184,6 +186,7 @@ type TriggerState struct {
 	Actions TriggerActionArrayInput
 	// The OCID of the compartment that contains the trigger.
 	CompartmentId pulumi.StringPtrInput
+	ConnectionId  pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Optional description about the trigger.
@@ -218,7 +221,8 @@ func (TriggerState) ElementType() reflect.Type {
 
 type triggerArgs struct {
 	// (Updatable) The list of actions that are to be performed for this trigger.
-	Actions []TriggerAction `pulumi:"actions"`
+	Actions      []TriggerAction `pulumi:"actions"`
+	ConnectionId *string         `pulumi:"connectionId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Optional description about the trigger.
@@ -238,7 +242,8 @@ type triggerArgs struct {
 // The set of arguments for constructing a Trigger resource.
 type TriggerArgs struct {
 	// (Updatable) The list of actions that are to be performed for this trigger.
-	Actions TriggerActionArrayInput
+	Actions      TriggerActionArrayInput
+	ConnectionId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Optional description about the trigger.
@@ -350,6 +355,10 @@ func (o TriggerOutput) Actions() TriggerActionArrayOutput {
 // The OCID of the compartment that contains the trigger.
 func (o TriggerOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o TriggerOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`

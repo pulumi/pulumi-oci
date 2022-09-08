@@ -79,6 +79,8 @@ type DbSystem struct {
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
 	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions DbSystemDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntOutput `pulumi:"dataStoragePercentage"`
 	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
@@ -246,6 +248,8 @@ type dbSystemState struct {
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
 	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions *DbSystemDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
 	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
@@ -364,6 +368,8 @@ type DbSystemState struct {
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
 	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount pulumi.IntPtrInput
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions DbSystemDataCollectionOptionsPtrInput
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntPtrInput
 	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
@@ -486,6 +492,8 @@ type dbSystemArgs struct {
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
 	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions *DbSystemDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
 	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
@@ -571,6 +579,8 @@ type DbSystemArgs struct {
 	// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
 	// * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 	CpuCoreCount pulumi.IntPtrInput
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions DbSystemDataCollectionOptionsPtrInput
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntPtrInput
 	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
@@ -757,6 +767,11 @@ func (o DbSystemOutput) CompartmentId() pulumi.StringOutput {
 // * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
 func (o DbSystemOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+func (o DbSystemOutput) DataCollectionOptions() DbSystemDataCollectionOptionsOutput {
+	return o.ApplyT(func(v *DbSystem) DbSystemDataCollectionOptionsOutput { return v.DataCollectionOptions }).(DbSystemDataCollectionOptionsOutput)
 }
 
 // The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.

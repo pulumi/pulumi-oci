@@ -49,10 +49,12 @@ import (
 //				},
 //				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
 //				NetworkEndpointDetails: &analytics.AnalyticsInstanceNetworkEndpointDetailsArgs{
-//					NetworkEndpointType: pulumi.Any(_var.Analytics_instance_network_endpoint_details_network_endpoint_type),
-//					SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					VcnId:               pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//					WhitelistedIps:      pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_ips),
+//					NetworkEndpointType:     pulumi.Any(_var.Analytics_instance_network_endpoint_details_network_endpoint_type),
+//					NetworkSecurityGroupIds: pulumi.Any(_var.Analytics_instance_network_endpoint_details_network_security_group_ids),
+//					SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					VcnId:                   pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//					WhitelistedIps:          pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_ips),
+//					WhitelistedServices:     pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_services),
 //					WhitelistedVcns: analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray{
 //						&analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs{
 //							Id:             pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_vcns_id),

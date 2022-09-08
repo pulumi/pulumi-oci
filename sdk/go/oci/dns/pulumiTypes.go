@@ -2125,7 +2125,7 @@ type GetResolverEndpointsResolverEndpoint struct {
 	// The OCID of the target resolver.
 	ResolverId string `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when listing private name resolver endpoints.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
 	// The state of a resource.
@@ -2169,7 +2169,7 @@ type GetResolverEndpointsResolverEndpointArgs struct {
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringInput `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when listing private name resolver endpoints.
-	Scope pulumi.StringInput `pulumi:"scope"`
+	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringInput `pulumi:"self"`
 	// The state of a resource.
@@ -2279,8 +2279,8 @@ func (o GetResolverEndpointsResolverEndpointOutput) ResolverId() pulumi.StringOu
 }
 
 // Value must be `PRIVATE` when listing private name resolver endpoints.
-func (o GetResolverEndpointsResolverEndpointOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.Scope }).(pulumi.StringOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.

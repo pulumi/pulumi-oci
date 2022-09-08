@@ -56,8 +56,10 @@ type LookupVolumeArgs struct {
 
 // A collection of values returned by getVolume.
 type LookupVolumeResult struct {
-	// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this volume is effectively tuned to.
 	AutoTunedVpusPerGb string `pulumi:"autoTunedVpusPerGb"`
+	// The list of autotune policies enabled for this volume.
+	AutotunePolicies []GetVolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
@@ -76,6 +78,7 @@ type LookupVolumeResult struct {
 	// The OCID of the block volume replica.
 	Id string `pulumi:"id"`
 	// Specifies whether the auto-tune performance is enabled for this boot volume.
+	// > > > > > > > theirs
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated bool `pulumi:"isHydrated"`
@@ -140,9 +143,14 @@ func (o LookupVolumeResultOutput) ToLookupVolumeResultOutputWithContext(ctx cont
 	return o
 }
 
-// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+// The number of Volume Performance Units per GB that this volume is effectively tuned to.
 func (o LookupVolumeResultOutput) AutoTunedVpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeResult) string { return v.AutoTunedVpusPerGb }).(pulumi.StringOutput)
+}
+
+// The list of autotune policies enabled for this volume.
+func (o LookupVolumeResultOutput) AutotunePolicies() GetVolumeAutotunePolicyArrayOutput {
+	return o.ApplyT(func(v LookupVolumeResult) []GetVolumeAutotunePolicy { return v.AutotunePolicies }).(GetVolumeAutotunePolicyArrayOutput)
 }
 
 // The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
@@ -190,6 +198,7 @@ func (o LookupVolumeResultOutput) Id() pulumi.StringOutput {
 }
 
 // Specifies whether the auto-tune performance is enabled for this boot volume.
+// > > > > > > > theirs
 func (o LookupVolumeResultOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVolumeResult) bool { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
 }

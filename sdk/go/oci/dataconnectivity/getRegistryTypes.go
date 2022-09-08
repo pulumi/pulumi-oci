@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
 //
-// # This endpoint retrieves list of all the supported connector types
+// This endpoint retrieves a list of all the supported connector types.
 //
 // ## Example Usage
 //
@@ -55,7 +55,7 @@ type GetRegistryTypesArgs struct {
 	Filters []GetRegistryTypesFilter `pulumi:"filters"`
 	// Used to filter by the name of the object.
 	Name *string `pulumi:"name"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 	// Type of the object to filter the results with.
 	Type *string `pulumi:"type"`
@@ -66,7 +66,7 @@ type GetRegistryTypesResult struct {
 	Filters []GetRegistryTypesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The name of of the Attribute.
+	// The name of of the attribute.
 	Name       *string `pulumi:"name"`
 	RegistryId string  `pulumi:"registryId"`
 	Type       *string `pulumi:"type"`
@@ -92,7 +92,7 @@ type GetRegistryTypesOutputArgs struct {
 	Filters GetRegistryTypesFilterArrayInput `pulumi:"filters"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 	// Type of the object to filter the results with.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -126,7 +126,7 @@ func (o GetRegistryTypesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryTypesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The name of of the Attribute.
+// The name of of the attribute.
 func (o GetRegistryTypesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRegistryTypesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Registry Folder resource in Oracle Cloud Infrastructure Data Connectivity service.
 //
-// Creates a folder under a specefied registry.
+// Creates a folder under a specified registry.
 //
 // ## Import
 //
@@ -27,27 +27,27 @@ import (
 type RegistryFolder struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) List of data assets which belongs to this folder
+	// (Updatable) The list of data assets that belong to the folder.
 	DataAssets RegistryFolderDataAssetArrayOutput `pulumi:"dataAssets"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntOutput `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntOutput `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryFolderParentRefOutput `pulumi:"parentRef"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringOutput `pulumi:"registryId"`
 }
 
@@ -86,52 +86,52 @@ func GetRegistryFolder(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering RegistryFolder resources.
 type registryFolderState struct {
-	// (Updatable) List of data assets which belongs to this folder
+	// (Updatable) The list of data assets that belong to the folder.
 	DataAssets []RegistryFolderDataAsset `pulumi:"dataAssets"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion *int `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryFolderParentRef `pulumi:"parentRef"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId *string `pulumi:"registryId"`
 }
 
 type RegistryFolderState struct {
-	// (Updatable) List of data assets which belongs to this folder
+	// (Updatable) The list of data assets that belong to the folder.
 	DataAssets RegistryFolderDataAssetArrayInput
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringPtrInput
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntPtrInput
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryFolderParentRefPtrInput
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringPtrInput
 }
 
@@ -140,53 +140,53 @@ func (RegistryFolderState) ElementType() reflect.Type {
 }
 
 type registryFolderArgs struct {
-	// (Updatable) List of data assets which belongs to this folder
+	// (Updatable) The list of data assets that belong to the folder.
 	DataAssets []RegistryFolderDataAsset `pulumi:"dataAssets"`
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description *string `pulumi:"description"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) The type of the folder.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion *int `pulumi:"objectVersion"`
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef *RegistryFolderParentRef `pulumi:"parentRef"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 }
 
 // The set of arguments for constructing a RegistryFolder resource.
 type RegistryFolderArgs struct {
-	// (Updatable) List of data assets which belongs to this folder
+	// (Updatable) The list of data assets that belong to the folder.
 	DataAssets RegistryFolderDataAssetArrayInput
-	// (Updatable) User-defined description for the folder.
+	// (Updatable) User-defined description of the folder.
 	Description pulumi.StringPtrInput
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput
-	// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key pulumi.StringPtrInput
 	// (Updatable) The type of the folder.
 	ModelType pulumi.StringPtrInput
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput
 	// (Updatable) The version of the object that is used to track changes in the object instance.
 	ObjectVersion pulumi.IntPtrInput
-	// (Updatable) A reference to the object's parent.
+	// (Updatable) A reference to the parent object.
 	ParentRef RegistryFolderParentRefPtrInput
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput
 }
 
@@ -277,22 +277,22 @@ func (o RegistryFolderOutput) ToRegistryFolderOutputWithContext(ctx context.Cont
 	return o
 }
 
-// (Updatable) List of data assets which belongs to this folder
+// (Updatable) The list of data assets that belong to the folder.
 func (o RegistryFolderOutput) DataAssets() RegistryFolderDataAssetArrayOutput {
 	return o.ApplyT(func(v *RegistryFolder) RegistryFolderDataAssetArrayOutput { return v.DataAssets }).(RegistryFolderDataAssetArrayOutput)
 }
 
-// (Updatable) User-defined description for the folder.
+// (Updatable) User-defined description of the folder.
 func (o RegistryFolderOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryFolder) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryFolderOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryFolder) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o RegistryFolderOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryFolder) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
@@ -307,7 +307,7 @@ func (o RegistryFolderOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryFolder) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryFolderOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryFolder) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -322,12 +322,12 @@ func (o RegistryFolderOutput) ObjectVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *RegistryFolder) pulumi.IntOutput { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// (Updatable) A reference to the object's parent.
+// (Updatable) A reference to the parent object.
 func (o RegistryFolderOutput) ParentRef() RegistryFolderParentRefOutput {
 	return o.ApplyT(func(v *RegistryFolder) RegistryFolderParentRefOutput { return v.ParentRef }).(RegistryFolderParentRefOutput)
 }
 
-// The registry Ocid.
+// The registry OCID.
 func (o RegistryFolderOutput) RegistryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryFolder) pulumi.StringOutput { return v.RegistryId }).(pulumi.StringOutput)
 }

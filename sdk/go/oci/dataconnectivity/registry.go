@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
 //
-// Creates a new Data Connectivity Management Registry ready for performing data Connectivity Management.
+// Creates a new Data Connectivity Management registry ready to perform data connectivity management.
 //
 // ## Example Usage
 //
@@ -67,19 +67,19 @@ type Registry struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Data Connectivity Management Registry description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+	// (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+	// Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
 	State pulumi.StringOutput `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
-	// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Name of the user who updated the DCMS Registry.
+	// Name of the user who updated the DCMS registry.
 	UpdatedBy pulumi.StringOutput `pulumi:"updatedBy"`
 }
 
@@ -121,19 +121,19 @@ type registryState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Data Connectivity Management Registry description
 	Description *string `pulumi:"description"`
-	// (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+	// (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+	// Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
 	State *string `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage *string `pulumi:"stateMessage"`
-	// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Name of the user who updated the DCMS Registry.
+	// Name of the user who updated the DCMS registry.
 	UpdatedBy *string `pulumi:"updatedBy"`
 }
 
@@ -144,19 +144,19 @@ type RegistryState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Data Connectivity Management Registry description
 	Description pulumi.StringPtrInput
-	// (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+	// (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+	// Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
 	State pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringPtrInput
-	// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
-	// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
-	// Name of the user who updated the DCMS Registry.
+	// Name of the user who updated the DCMS registry.
 	UpdatedBy pulumi.StringPtrInput
 }
 
@@ -171,9 +171,9 @@ type registryArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Data Connectivity Management Registry description
 	Description *string `pulumi:"description"`
-	// (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+	// (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 }
 
@@ -185,9 +185,9 @@ type RegistryArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Data Connectivity Management Registry description
 	Description pulumi.StringPtrInput
-	// (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+	// (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
 	DisplayName pulumi.StringInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 }
 
@@ -293,17 +293,17 @@ func (o RegistryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+// (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
 func (o RegistryOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 func (o RegistryOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Registry) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+// Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
 func (o RegistryOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -313,17 +313,17 @@ func (o RegistryOutput) StateMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.StateMessage }).(pulumi.StringOutput)
 }
 
-// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 func (o RegistryOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 func (o RegistryOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Name of the user who updated the DCMS Registry.
+// Name of the user who updated the DCMS registry.
 func (o RegistryOutput) UpdatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *Registry) pulumi.StringOutput { return v.UpdatedBy }).(pulumi.StringOutput)
 }

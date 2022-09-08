@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
 //
-// Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+// Lists the Cloud Advisor resource actions that are supported.
 //
 // ## Example Usage
 //
@@ -31,8 +31,11 @@ import (
 //			_, err := Optimizer.GetResourceActions(ctx, &optimizer.GetResourceActionsArgs{
 //				CompartmentId:          _var.Compartment_id,
 //				CompartmentIdInSubtree: _var.Resource_action_compartment_id_in_subtree,
-//				RecommendationId:       oci_optimizer_recommendation.Test_recommendation.Id,
+//				ChildTenancyIds:        _var.Resource_action_child_tenancy_ids,
+//				IncludeOrganization:    pulumi.BoolRef(_var.Resource_action_include_organization),
 //				Name:                   pulumi.StringRef(_var.Resource_action_name),
+//				RecommendationId:       pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Id),
+//				RecommendationName:     pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
 //				ResourceType:           pulumi.StringRef(_var.Resource_action_resource_type),
 //				State:                  pulumi.StringRef(_var.Resource_action_state),
 //				Status:                 pulumi.StringRef(_var.Resource_action_status),
@@ -56,15 +59,21 @@ func GetResourceActions(ctx *pulumi.Context, args *GetResourceActionsArgs, opts 
 
 // A collection of arguments for invoking getResourceActions.
 type GetResourceActionsArgs struct {
+	// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+	ChildTenancyIds []string `pulumi:"childTenancyIds"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
 	CompartmentIdInSubtree bool                       `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetResourceActionsFilter `pulumi:"filters"`
+	// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+	IncludeOrganization *bool `pulumi:"includeOrganization"`
 	// Optional. A filter that returns results that match the name specified.
 	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
-	RecommendationId string `pulumi:"recommendationId"`
+	RecommendationId *string `pulumi:"recommendationId"`
+	// Optional. A filter that returns results that match the recommendation name specified.
+	RecommendationName *string `pulumi:"recommendationName"`
 	// Optional. A filter that returns results that match the resource type specified.
 	ResourceType *string `pulumi:"resourceType"`
 	// A filter that returns results that match the lifecycle state specified.
@@ -75,16 +84,19 @@ type GetResourceActionsArgs struct {
 
 // A collection of values returned by getResourceActions.
 type GetResourceActionsResult struct {
+	ChildTenancyIds []string `pulumi:"childTenancyIds"`
 	// The OCID of the compartment.
 	CompartmentId          string                     `pulumi:"compartmentId"`
 	CompartmentIdInSubtree bool                       `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetResourceActionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                  string `pulumi:"id"`
+	IncludeOrganization *bool  `pulumi:"includeOrganization"`
 	// The name assigned to the resource.
 	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
-	RecommendationId string `pulumi:"recommendationId"`
+	RecommendationId   *string `pulumi:"recommendationId"`
+	RecommendationName *string `pulumi:"recommendationName"`
 	// The list of resource_action_collection.
 	ResourceActionCollections []GetResourceActionsResourceActionCollection `pulumi:"resourceActionCollections"`
 	// The kind of resource.
@@ -110,15 +122,21 @@ func GetResourceActionsOutput(ctx *pulumi.Context, args GetResourceActionsOutput
 
 // A collection of arguments for invoking getResourceActions.
 type GetResourceActionsOutputArgs struct {
+	// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+	ChildTenancyIds pulumi.StringArrayInput `pulumi:"childTenancyIds"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
 	CompartmentIdInSubtree pulumi.BoolInput                   `pulumi:"compartmentIdInSubtree"`
 	Filters                GetResourceActionsFilterArrayInput `pulumi:"filters"`
+	// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+	IncludeOrganization pulumi.BoolPtrInput `pulumi:"includeOrganization"`
 	// Optional. A filter that returns results that match the name specified.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
-	RecommendationId pulumi.StringInput `pulumi:"recommendationId"`
+	RecommendationId pulumi.StringPtrInput `pulumi:"recommendationId"`
+	// Optional. A filter that returns results that match the recommendation name specified.
+	RecommendationName pulumi.StringPtrInput `pulumi:"recommendationName"`
 	// Optional. A filter that returns results that match the resource type specified.
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// A filter that returns results that match the lifecycle state specified.
@@ -146,6 +164,10 @@ func (o GetResourceActionsResultOutput) ToGetResourceActionsResultOutputWithCont
 	return o
 }
 
+func (o GetResourceActionsResultOutput) ChildTenancyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceActionsResult) []string { return v.ChildTenancyIds }).(pulumi.StringArrayOutput)
+}
+
 // The OCID of the compartment.
 func (o GetResourceActionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResourceActionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -164,14 +186,22 @@ func (o GetResourceActionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResourceActionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetResourceActionsResultOutput) IncludeOrganization() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResult) *bool { return v.IncludeOrganization }).(pulumi.BoolPtrOutput)
+}
+
 // The name assigned to the resource.
 func (o GetResourceActionsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetResourceActionsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the recommendation.
-func (o GetResourceActionsResultOutput) RecommendationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceActionsResult) string { return v.RecommendationId }).(pulumi.StringOutput)
+func (o GetResourceActionsResultOutput) RecommendationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResult) *string { return v.RecommendationId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetResourceActionsResultOutput) RecommendationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResult) *string { return v.RecommendationName }).(pulumi.StringPtrOutput)
 }
 
 // The list of resource_action_collection.

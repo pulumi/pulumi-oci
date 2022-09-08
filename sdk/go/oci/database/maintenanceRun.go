@@ -75,13 +75,13 @@ type MaintenanceRun struct {
 	PeerMaintenanceRunId pulumi.StringOutput `pulumi:"peerMaintenanceRunId"`
 	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
 	State pulumi.StringOutput `pulumi:"state"`
-	// The target software version for the database server patching operation.
+	// (Updatable) The target database server system software version for the patching operation.
 	TargetDbServerVersion pulumi.StringOutput `pulumi:"targetDbServerVersion"`
 	// The ID of the target resource on which the maintenance run occurs.
 	TargetResourceId pulumi.StringOutput `pulumi:"targetResourceId"`
 	// The type of the target resource on which the maintenance run occurs.
 	TargetResourceType pulumi.StringOutput `pulumi:"targetResourceType"`
-	// The target Cell version that is to be patched to.
+	// (Updatable) The target storage cell system software version for the patching operation.
 	TargetStorageServerVersion pulumi.StringOutput `pulumi:"targetStorageServerVersion"`
 	// The date and time the maintenance run was completed.
 	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
@@ -171,13 +171,13 @@ type maintenanceRunState struct {
 	PeerMaintenanceRunId *string `pulumi:"peerMaintenanceRunId"`
 	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
 	State *string `pulumi:"state"`
-	// The target software version for the database server patching operation.
+	// (Updatable) The target database server system software version for the patching operation.
 	TargetDbServerVersion *string `pulumi:"targetDbServerVersion"`
 	// The ID of the target resource on which the maintenance run occurs.
 	TargetResourceId *string `pulumi:"targetResourceId"`
 	// The type of the target resource on which the maintenance run occurs.
 	TargetResourceType *string `pulumi:"targetResourceType"`
-	// The target Cell version that is to be patched to.
+	// (Updatable) The target storage cell system software version for the patching operation.
 	TargetStorageServerVersion *string `pulumi:"targetStorageServerVersion"`
 	// The date and time the maintenance run was completed.
 	TimeEnded *string `pulumi:"timeEnded"`
@@ -236,13 +236,13 @@ type MaintenanceRunState struct {
 	PeerMaintenanceRunId pulumi.StringPtrInput
 	// The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
 	State pulumi.StringPtrInput
-	// The target software version for the database server patching operation.
+	// (Updatable) The target database server system software version for the patching operation.
 	TargetDbServerVersion pulumi.StringPtrInput
 	// The ID of the target resource on which the maintenance run occurs.
 	TargetResourceId pulumi.StringPtrInput
 	// The type of the target resource on which the maintenance run occurs.
 	TargetResourceType pulumi.StringPtrInput
-	// The target Cell version that is to be patched to.
+	// (Updatable) The target storage cell system software version for the patching operation.
 	TargetStorageServerVersion pulumi.StringPtrInput
 	// The date and time the maintenance run was completed.
 	TimeEnded pulumi.StringPtrInput
@@ -275,6 +275,10 @@ type maintenanceRunArgs struct {
 	PatchId *string `pulumi:"patchId"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 	PatchingMode *string `pulumi:"patchingMode"`
+	// (Updatable) The target database server system software version for the patching operation.
+	TargetDbServerVersion *string `pulumi:"targetDbServerVersion"`
+	// (Updatable) The target storage cell system software version for the patching operation.
+	TargetStorageServerVersion *string `pulumi:"targetStorageServerVersion"`
 	// (Updatable) The scheduled date and time of the maintenance run to update.
 	TimeScheduled *string `pulumi:"timeScheduled"`
 }
@@ -299,6 +303,10 @@ type MaintenanceRunArgs struct {
 	PatchId pulumi.StringPtrInput
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 	PatchingMode pulumi.StringPtrInput
+	// (Updatable) The target database server system software version for the patching operation.
+	TargetDbServerVersion pulumi.StringPtrInput
+	// (Updatable) The target storage cell system software version for the patching operation.
+	TargetStorageServerVersion pulumi.StringPtrInput
 	// (Updatable) The scheduled date and time of the maintenance run to update.
 	TimeScheduled pulumi.StringPtrInput
 }
@@ -512,7 +520,7 @@ func (o MaintenanceRunOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// The target software version for the database server patching operation.
+// (Updatable) The target database server system software version for the patching operation.
 func (o MaintenanceRunOutput) TargetDbServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetDbServerVersion }).(pulumi.StringOutput)
 }
@@ -527,7 +535,7 @@ func (o MaintenanceRunOutput) TargetResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetResourceType }).(pulumi.StringOutput)
 }
 
-// The target Cell version that is to be patched to.
+// (Updatable) The target storage cell system software version for the patching operation.
 func (o MaintenanceRunOutput) TargetStorageServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetStorageServerVersion }).(pulumi.StringOutput)
 }

@@ -182,6 +182,8 @@ type Sddc struct {
 	TimeHcxLicenseStatusUpdated pulumi.StringOutput `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// The vSphere licenses to be used when upgrade SDDC.
+	UpgradeLicenses SddcUpgradeLicenseArrayOutput `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn pulumi.StringOutput `pulumi:"vcenterFqdn"`
 	// The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
@@ -196,6 +198,10 @@ type Sddc struct {
 	VmwareSoftwareVersion pulumi.StringOutput `pulumi:"vmwareSoftwareVersion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
 	VsanVlanId pulumi.StringOutput `pulumi:"vsanVlanId"`
+	// The link of guidance to upgrade vSphere.
+	VsphereUpgradeGuide pulumi.StringOutput `pulumi:"vsphereUpgradeGuide"`
+	// The links of binary objects needed for upgrade vSphere.
+	VsphereUpgradeObjects SddcVsphereUpgradeObjectArrayOutput `pulumi:"vsphereUpgradeObjects"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringOutput `pulumi:"vsphereVlanId"`
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
@@ -360,6 +366,8 @@ type sddcState struct {
 	TimeHcxLicenseStatusUpdated *string `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The vSphere licenses to be used when upgrade SDDC.
+	UpgradeLicenses []SddcUpgradeLicense `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn *string `pulumi:"vcenterFqdn"`
 	// The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
@@ -374,6 +382,10 @@ type sddcState struct {
 	VmwareSoftwareVersion *string `pulumi:"vmwareSoftwareVersion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
 	VsanVlanId *string `pulumi:"vsanVlanId"`
+	// The link of guidance to upgrade vSphere.
+	VsphereUpgradeGuide *string `pulumi:"vsphereUpgradeGuide"`
+	// The links of binary objects needed for upgrade vSphere.
+	VsphereUpgradeObjects []SddcVsphereUpgradeObject `pulumi:"vsphereUpgradeObjects"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId *string `pulumi:"vsphereVlanId"`
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
@@ -471,6 +483,8 @@ type SddcState struct {
 	TimeHcxLicenseStatusUpdated pulumi.StringPtrInput
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
+	// The vSphere licenses to be used when upgrade SDDC.
+	UpgradeLicenses SddcUpgradeLicenseArrayInput
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn pulumi.StringPtrInput
 	// The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
@@ -485,6 +499,10 @@ type SddcState struct {
 	VmwareSoftwareVersion pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
 	VsanVlanId pulumi.StringPtrInput
+	// The link of guidance to upgrade vSphere.
+	VsphereUpgradeGuide pulumi.StringPtrInput
+	// The links of binary objects needed for upgrade vSphere.
+	VsphereUpgradeObjects SddcVsphereUpgradeObjectArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringPtrInput
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
@@ -938,6 +956,11 @@ func (o SddcOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// The vSphere licenses to be used when upgrade SDDC.
+func (o SddcOutput) UpgradeLicenses() SddcUpgradeLicenseArrayOutput {
+	return o.ApplyT(func(v *Sddc) SddcUpgradeLicenseArrayOutput { return v.UpgradeLicenses }).(SddcUpgradeLicenseArrayOutput)
+}
+
 // The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 func (o SddcOutput) VcenterFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.VcenterFqdn }).(pulumi.StringOutput)
@@ -971,6 +994,16 @@ func (o SddcOutput) VmwareSoftwareVersion() pulumi.StringOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment.
 func (o SddcOutput) VsanVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.VsanVlanId }).(pulumi.StringOutput)
+}
+
+// The link of guidance to upgrade vSphere.
+func (o SddcOutput) VsphereUpgradeGuide() pulumi.StringOutput {
+	return o.ApplyT(func(v *Sddc) pulumi.StringOutput { return v.VsphereUpgradeGuide }).(pulumi.StringOutput)
+}
+
+// The links of binary objects needed for upgrade vSphere.
+func (o SddcOutput) VsphereUpgradeObjects() SddcVsphereUpgradeObjectArrayOutput {
+	return o.ApplyT(func(v *Sddc) SddcVsphereUpgradeObjectArrayOutput { return v.VsphereUpgradeObjects }).(SddcVsphereUpgradeObjectArrayOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.

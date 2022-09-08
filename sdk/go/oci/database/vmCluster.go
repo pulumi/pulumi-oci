@@ -39,6 +39,8 @@ import (
 //				VmClusterNetworkId:      pulumi.Any(oci_database_vm_cluster_network.Test_vm_cluster_network.Id),
 //				DataCollectionOptions: &database.VmClusterDataCollectionOptionsArgs{
 //					IsDiagnosticsEventsEnabled: pulumi.Any(_var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled),
+//					IsHealthMonitoringEnabled:  pulumi.Any(_var.Vm_cluster_data_collection_options_is_health_monitoring_enabled),
+//					IsIncidentLogsEnabled:      pulumi.Any(_var.Vm_cluster_data_collection_options_is_incident_logs_enabled),
 //				},
 //				DataStorageSizeInTbs:   pulumi.Any(_var.Vm_cluster_data_storage_size_in_tbs),
 //				DbNodeStorageSizeInGbs: pulumi.Any(_var.Vm_cluster_db_node_storage_size_in_gbs),
@@ -79,9 +81,10 @@ type VmCluster struct {
 	CpuCoreCount  pulumi.IntOutput    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
-	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
-	DataStorageSizeInGb   pulumi.Float64Output                 `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) The data disk group size to be allocated in GBs.
+	DataStorageSizeInGb pulumi.Float64Output `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
 	// (Updatable) The local node storage to be allocated in GBs.
@@ -183,9 +186,10 @@ type vmClusterState struct {
 	CpuCoreCount  *int    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled *int `pulumi:"cpusEnabled"`
-	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *VmClusterDataCollectionOptions `pulumi:"dataCollectionOptions"`
-	DataStorageSizeInGb   *float64                        `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) The data disk group size to be allocated in GBs.
+	DataStorageSizeInGb *float64 `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
 	// (Updatable) The local node storage to be allocated in GBs.
@@ -238,9 +242,10 @@ type VmClusterState struct {
 	CpuCoreCount  pulumi.IntPtrInput
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntPtrInput
-	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterDataCollectionOptionsPtrInput
-	DataStorageSizeInGb   pulumi.Float64PtrInput
+	// (Updatable) The data disk group size to be allocated in GBs.
+	DataStorageSizeInGb pulumi.Float64PtrInput
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
 	// (Updatable) The local node storage to be allocated in GBs.
@@ -295,9 +300,10 @@ type vmClusterArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
-	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *VmClusterDataCollectionOptions `pulumi:"dataCollectionOptions"`
-	DataStorageSizeInGb   *float64                        `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) The data disk group size to be allocated in GBs.
+	DataStorageSizeInGb *float64 `pulumi:"dataStorageSizeInGb"`
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
 	// (Updatable) The local node storage to be allocated in GBs.
@@ -336,9 +342,10 @@ type VmClusterArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	CpuCoreCount  pulumi.IntInput
-	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterDataCollectionOptionsPtrInput
-	DataStorageSizeInGb   pulumi.Float64PtrInput
+	// (Updatable) The data disk group size to be allocated in GBs.
+	DataStorageSizeInGb pulumi.Float64PtrInput
 	// (Updatable) The data disk group size to be allocated in TBs.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
 	// (Updatable) The local node storage to be allocated in GBs.
@@ -473,11 +480,12 @@ func (o VmClusterOutput) CpusEnabled() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.CpusEnabled }).(pulumi.IntOutput)
 }
 
-// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster.
+// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 func (o VmClusterOutput) DataCollectionOptions() VmClusterDataCollectionOptionsOutput {
 	return o.ApplyT(func(v *VmCluster) VmClusterDataCollectionOptionsOutput { return v.DataCollectionOptions }).(VmClusterDataCollectionOptionsOutput)
 }
 
+// (Updatable) The data disk group size to be allocated in GBs.
 func (o VmClusterOutput) DataStorageSizeInGb() pulumi.Float64Output {
 	return o.ApplyT(func(v *VmCluster) pulumi.Float64Output { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
 }

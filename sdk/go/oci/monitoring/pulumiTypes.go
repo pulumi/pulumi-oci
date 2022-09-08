@@ -795,6 +795,8 @@ type GetAlarmsAlarm struct {
 	Id string `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
 	IsEnabled bool `pulumi:"isEnabled"`
+	// When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+	IsNotificationsPerMetricDimensionEnabled bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for notification messages sent from this alarm. The formats are:
 	MessageFormat string `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -853,6 +855,8 @@ type GetAlarmsAlarmArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+	IsNotificationsPerMetricDimensionEnabled pulumi.BoolInput `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for notification messages sent from this alarm. The formats are:
 	MessageFormat pulumi.StringInput `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -972,6 +976,11 @@ func (o GetAlarmsAlarmOutput) Id() pulumi.StringOutput {
 // Whether the alarm is enabled.  Example: `true`
 func (o GetAlarmsAlarmOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAlarmsAlarm) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+func (o GetAlarmsAlarmOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) bool { return v.IsNotificationsPerMetricDimensionEnabled }).(pulumi.BoolOutput)
 }
 
 // The format to use for notification messages sent from this alarm. The formats are:

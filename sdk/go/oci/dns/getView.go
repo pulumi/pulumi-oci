@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetView(ctx, &dns.GetViewArgs{
-//				ViewId: oci_dns_view.Test_view.Id,
-//				Scope:  "PRIVATE",
+//				ViewId: pulumi.StringRef(oci_dns_view.Test_view.Id),
+//				Scope:  pulumi.StringRef("PRIVATE"),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,9 +54,9 @@ func LookupView(ctx *pulumi.Context, args *LookupViewArgs, opts ...pulumi.Invoke
 // A collection of arguments for invoking getView.
 type LookupViewArgs struct {
 	// Value must be `PRIVATE` when listing views for private zones.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The OCID of the target view.
-	ViewId string `pulumi:"viewId"`
+	ViewId *string `pulumi:"viewId"`
 }
 
 // A collection of values returned by getView.
@@ -72,8 +72,8 @@ type LookupViewResult struct {
 	// The OCID of the view.
 	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected bool   `pulumi:"isProtected"`
-	Scope       string `pulumi:"scope"`
+	IsProtected bool    `pulumi:"isProtected"`
+	Scope       *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
 	// The current state of the resource.
@@ -81,8 +81,8 @@ type LookupViewResult struct {
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
-	ViewId      string `pulumi:"viewId"`
+	TimeUpdated string  `pulumi:"timeUpdated"`
+	ViewId      *string `pulumi:"viewId"`
 }
 
 func LookupViewOutput(ctx *pulumi.Context, args LookupViewOutputArgs, opts ...pulumi.InvokeOption) LookupViewResultOutput {
@@ -101,9 +101,9 @@ func LookupViewOutput(ctx *pulumi.Context, args LookupViewOutputArgs, opts ...pu
 // A collection of arguments for invoking getView.
 type LookupViewOutputArgs struct {
 	// Value must be `PRIVATE` when listing views for private zones.
-	Scope pulumi.StringInput `pulumi:"scope"`
+	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The OCID of the target view.
-	ViewId pulumi.StringInput `pulumi:"viewId"`
+	ViewId pulumi.StringPtrInput `pulumi:"viewId"`
 }
 
 func (LookupViewOutputArgs) ElementType() reflect.Type {
@@ -155,8 +155,8 @@ func (o LookupViewResultOutput) IsProtected() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupViewResult) bool { return v.IsProtected }).(pulumi.BoolOutput)
 }
 
-func (o LookupViewResultOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.Scope }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.
@@ -179,8 +179,8 @@ func (o LookupViewResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupViewResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-func (o LookupViewResultOutput) ViewId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.ViewId }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) ViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.ViewId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

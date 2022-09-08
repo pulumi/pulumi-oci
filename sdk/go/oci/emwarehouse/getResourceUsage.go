@@ -65,6 +65,8 @@ type GetResourceUsageResult struct {
 	Id string `pulumi:"id"`
 	// operations Insights Warehouse Identifier
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
+	// schema name
+	SchemaName string `pulumi:"schemaName"`
 	// EmInstance Target count
 	TargetsCount int `pulumi:"targetsCount"`
 }
@@ -129,6 +131,11 @@ func (o GetResourceUsageResultOutput) Id() pulumi.StringOutput {
 // operations Insights Warehouse Identifier
 func (o GetResourceUsageResultOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResourceUsageResult) string { return v.OperationsInsightsWarehouseId }).(pulumi.StringOutput)
+}
+
+// schema name
+func (o GetResourceUsageResultOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceUsageResult) string { return v.SchemaName }).(pulumi.StringOutput)
 }
 
 // EmInstance Target count

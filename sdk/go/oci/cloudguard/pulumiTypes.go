@@ -10,6 +10,842 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type CloudGuardDataSourceDataSourceDetails struct {
+	// (Updatable) The additional entities count used for data source query.
+	AdditionalEntitiesCount *int `pulumi:"additionalEntitiesCount"`
+	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
+	// (Updatable) Interval in minutes that query is run periodically.
+	IntervalInMinutes *int `pulumi:"intervalInMinutes"`
+	// (Updatable) Additional details specific to the data source type (Sighting/Insight).
+	LoggingQueryDetails *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails `pulumi:"loggingQueryDetails"`
+	// (Updatable) Logging query type for data source (Sighting/Insight)
+	LoggingQueryType *string `pulumi:"loggingQueryType"`
+	// (Updatable) Operator used in Data Soruce
+	Operator *string `pulumi:"operator"`
+	// (Updatable) The continuous query expression that is run periodically.
+	Query *string `pulumi:"query"`
+	// (Updatable) Time when the query can start, if not specified it can start immediately.
+	QueryStartTime *CloudGuardDataSourceDataSourceDetailsQueryStartTime `pulumi:"queryStartTime"`
+	// (Updatable) Logging Query regions
+	Regions []string `pulumi:"regions"`
+	// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+	Threshold *int `pulumi:"threshold"`
+}
+
+// CloudGuardDataSourceDataSourceDetailsInput is an input type that accepts CloudGuardDataSourceDataSourceDetailsArgs and CloudGuardDataSourceDataSourceDetailsOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetailsInput` via:
+//
+//	CloudGuardDataSourceDataSourceDetailsArgs{...}
+type CloudGuardDataSourceDataSourceDetailsInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceDataSourceDetailsOutput() CloudGuardDataSourceDataSourceDetailsOutput
+	ToCloudGuardDataSourceDataSourceDetailsOutputWithContext(context.Context) CloudGuardDataSourceDataSourceDetailsOutput
+}
+
+type CloudGuardDataSourceDataSourceDetailsArgs struct {
+	// (Updatable) The additional entities count used for data source query.
+	AdditionalEntitiesCount pulumi.IntPtrInput `pulumi:"additionalEntitiesCount"`
+	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	DataSourceFeedProvider pulumi.StringInput `pulumi:"dataSourceFeedProvider"`
+	// (Updatable) Interval in minutes that query is run periodically.
+	IntervalInMinutes pulumi.IntPtrInput `pulumi:"intervalInMinutes"`
+	// (Updatable) Additional details specific to the data source type (Sighting/Insight).
+	LoggingQueryDetails CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrInput `pulumi:"loggingQueryDetails"`
+	// (Updatable) Logging query type for data source (Sighting/Insight)
+	LoggingQueryType pulumi.StringPtrInput `pulumi:"loggingQueryType"`
+	// (Updatable) Operator used in Data Soruce
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+	// (Updatable) The continuous query expression that is run periodically.
+	Query pulumi.StringPtrInput `pulumi:"query"`
+	// (Updatable) Time when the query can start, if not specified it can start immediately.
+	QueryStartTime CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrInput `pulumi:"queryStartTime"`
+	// (Updatable) Logging Query regions
+	Regions pulumi.StringArrayInput `pulumi:"regions"`
+	// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+	Threshold pulumi.IntPtrInput `pulumi:"threshold"`
+}
+
+func (CloudGuardDataSourceDataSourceDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceDataSourceDetails)(nil)).Elem()
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsOutput() CloudGuardDataSourceDataSourceDetailsOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsOutput)
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsOutput).ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(ctx)
+}
+
+// CloudGuardDataSourceDataSourceDetailsPtrInput is an input type that accepts CloudGuardDataSourceDataSourceDetailsArgs, CloudGuardDataSourceDataSourceDetailsPtr and CloudGuardDataSourceDataSourceDetailsPtrOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetailsPtrInput` via:
+//
+//	        CloudGuardDataSourceDataSourceDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudGuardDataSourceDataSourceDetailsPtrInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceDataSourceDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsPtrOutput
+	ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(context.Context) CloudGuardDataSourceDataSourceDetailsPtrOutput
+}
+
+type cloudGuardDataSourceDataSourceDetailsPtrType CloudGuardDataSourceDataSourceDetailsArgs
+
+func CloudGuardDataSourceDataSourceDetailsPtr(v *CloudGuardDataSourceDataSourceDetailsArgs) CloudGuardDataSourceDataSourceDetailsPtrInput {
+	return (*cloudGuardDataSourceDataSourceDetailsPtrType)(v)
+}
+
+func (*cloudGuardDataSourceDataSourceDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudGuardDataSourceDataSourceDetails)(nil)).Elem()
+}
+
+func (i *cloudGuardDataSourceDataSourceDetailsPtrType) ToCloudGuardDataSourceDataSourceDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudGuardDataSourceDataSourceDetailsPtrType) ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsPtrOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetailsOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceDataSourceDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceDataSourceDetails)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsOutput) ToCloudGuardDataSourceDataSourceDetailsOutput() CloudGuardDataSourceDataSourceDetailsOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsOutput) ToCloudGuardDataSourceDataSourceDetailsOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsOutput) ToCloudGuardDataSourceDataSourceDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return o.ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsOutput) ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetails {
+		return &v
+	}).(CloudGuardDataSourceDataSourceDetailsPtrOutput)
+}
+
+// (Updatable) The additional entities count used for data source query.
+func (o CloudGuardDataSourceDataSourceDetailsOutput) AdditionalEntitiesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *int { return v.AdditionalEntitiesCount }).(pulumi.IntPtrOutput)
+}
+
+// Possible type of dataSourceFeed Provider(LoggingQuery)
+func (o CloudGuardDataSourceDataSourceDetailsOutput) DataSourceFeedProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) string { return v.DataSourceFeedProvider }).(pulumi.StringOutput)
+}
+
+// (Updatable) Interval in minutes that query is run periodically.
+func (o CloudGuardDataSourceDataSourceDetailsOutput) IntervalInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *int { return v.IntervalInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Additional details specific to the data source type (Sighting/Insight).
+func (o CloudGuardDataSourceDataSourceDetailsOutput) LoggingQueryDetails() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
+		return v.LoggingQueryDetails
+	}).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput)
+}
+
+// (Updatable) Logging query type for data source (Sighting/Insight)
+func (o CloudGuardDataSourceDataSourceDetailsOutput) LoggingQueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *string { return v.LoggingQueryType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Operator used in Data Soruce
+func (o CloudGuardDataSourceDataSourceDetailsOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The continuous query expression that is run periodically.
+func (o CloudGuardDataSourceDataSourceDetailsOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *string { return v.Query }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Time when the query can start, if not specified it can start immediately.
+func (o CloudGuardDataSourceDataSourceDetailsOutput) QueryStartTime() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetailsQueryStartTime {
+		return v.QueryStartTime
+	}).(CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput)
+}
+
+// (Updatable) Logging Query regions
+func (o CloudGuardDataSourceDataSourceDetailsOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) []string { return v.Regions }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+func (o CloudGuardDataSourceDataSourceDetailsOutput) Threshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *int { return v.Threshold }).(pulumi.IntPtrOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceDataSourceDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudGuardDataSourceDataSourceDetails)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) ToCloudGuardDataSourceDataSourceDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) ToCloudGuardDataSourceDataSourceDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Elem() CloudGuardDataSourceDataSourceDetailsOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) CloudGuardDataSourceDataSourceDetails {
+		if v != nil {
+			return *v
+		}
+		var ret CloudGuardDataSourceDataSourceDetails
+		return ret
+	}).(CloudGuardDataSourceDataSourceDetailsOutput)
+}
+
+// (Updatable) The additional entities count used for data source query.
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) AdditionalEntitiesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalEntitiesCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Possible type of dataSourceFeed Provider(LoggingQuery)
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) DataSourceFeedProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DataSourceFeedProvider
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Interval in minutes that query is run periodically.
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) IntervalInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.IntervalInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Additional details specific to the data source type (Sighting/Insight).
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) LoggingQueryDetails() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
+		if v == nil {
+			return nil
+		}
+		return v.LoggingQueryDetails
+	}).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput)
+}
+
+// (Updatable) Logging query type for data source (Sighting/Insight)
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) LoggingQueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LoggingQueryType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Operator used in Data Soruce
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Operator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The continuous query expression that is run periodically.
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Query
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Time when the query can start, if not specified it can start immediately.
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) QueryStartTime() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetailsQueryStartTime {
+		if v == nil {
+			return nil
+		}
+		return v.QueryStartTime
+	}).(CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput)
+}
+
+// (Updatable) Logging Query regions
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Regions
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Threshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Threshold
+	}).(pulumi.IntPtrOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails struct {
+	// (Updatable) The key entities count used for data source query
+	KeyEntitiesCount *int `pulumi:"keyEntitiesCount"`
+	// (Updatable) Logging query type for data source (Sighting/Insight)
+	LoggingQueryType string `pulumi:"loggingQueryType"`
+}
+
+// CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsInput is an input type that accepts CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs and CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsInput` via:
+//
+//	CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs{...}
+type CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput
+	ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutputWithContext(context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput
+}
+
+type CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs struct {
+	// (Updatable) The key entities count used for data source query
+	KeyEntitiesCount pulumi.IntPtrInput `pulumi:"keyEntitiesCount"`
+	// (Updatable) Logging query type for data source (Sighting/Insight)
+	LoggingQueryType pulumi.StringInput `pulumi:"loggingQueryType"`
+}
+
+func (CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails)(nil)).Elem()
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput)
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput).ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(ctx)
+}
+
+// CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrInput is an input type that accepts CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs, CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtr and CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrInput` via:
+//
+//	        CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput
+	ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput
+}
+
+type cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrType CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs
+
+func CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtr(v *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrInput {
+	return (*cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrType)(v)
+}
+
+func (*cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails)(nil)).Elem()
+}
+
+func (i *cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrType) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrType) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return o.ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails) *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
+		return &v
+	}).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput)
+}
+
+// (Updatable) The key entities count used for data source query
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) KeyEntitiesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails) *int { return v.KeyEntitiesCount }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Logging query type for data source (Sighting/Insight)
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput) LoggingQueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails) string { return v.LoggingQueryType }).(pulumi.StringOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) ToCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) Elem() CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails) CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
+		if v != nil {
+			return *v
+		}
+		var ret CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails
+		return ret
+	}).(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput)
+}
+
+// (Updatable) The key entities count used for data source query
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) KeyEntitiesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.KeyEntitiesCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Logging query type for data source (Sighting/Insight)
+func (o CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput) LoggingQueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LoggingQueryType
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetailsQueryStartTime struct {
+	// (Updatable) Time when the query can start, if not specified it can start immediately.
+	QueryStartTime *string `pulumi:"queryStartTime"`
+	// (Updatable) policy used for deciding the query start time
+	StartPolicyType string `pulumi:"startPolicyType"`
+}
+
+// CloudGuardDataSourceDataSourceDetailsQueryStartTimeInput is an input type that accepts CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs and CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetailsQueryStartTimeInput` via:
+//
+//	CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs{...}
+type CloudGuardDataSourceDataSourceDetailsQueryStartTimeInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput
+	ToCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutputWithContext(context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput
+}
+
+type CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs struct {
+	// (Updatable) Time when the query can start, if not specified it can start immediately.
+	QueryStartTime pulumi.StringPtrInput `pulumi:"queryStartTime"`
+	// (Updatable) policy used for deciding the query start time
+	StartPolicyType pulumi.StringInput `pulumi:"startPolicyType"`
+}
+
+func (CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsQueryStartTime)(nil)).Elem()
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput)
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput).ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(ctx)
+}
+
+// CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrInput is an input type that accepts CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs, CloudGuardDataSourceDataSourceDetailsQueryStartTimePtr and CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrInput` via:
+//
+//	        CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs{...}
+//
+//	or:
+//
+//	        nil
+type CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput
+	ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput
+}
+
+type cloudGuardDataSourceDataSourceDetailsQueryStartTimePtrType CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs
+
+func CloudGuardDataSourceDataSourceDetailsQueryStartTimePtr(v *CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs) CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrInput {
+	return (*cloudGuardDataSourceDataSourceDetailsQueryStartTimePtrType)(v)
+}
+
+func (*cloudGuardDataSourceDataSourceDetailsQueryStartTimePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudGuardDataSourceDataSourceDetailsQueryStartTime)(nil)).Elem()
+}
+
+func (i *cloudGuardDataSourceDataSourceDetailsQueryStartTimePtrType) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(context.Background())
+}
+
+func (i *cloudGuardDataSourceDataSourceDetailsQueryStartTimePtrType) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsQueryStartTime)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return o.ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(context.Background())
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CloudGuardDataSourceDataSourceDetailsQueryStartTime) *CloudGuardDataSourceDataSourceDetailsQueryStartTime {
+		return &v
+	}).(CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput)
+}
+
+// (Updatable) Time when the query can start, if not specified it can start immediately.
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) QueryStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetailsQueryStartTime) *string { return v.QueryStartTime }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) policy used for deciding the query start time
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput) StartPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetailsQueryStartTime) string { return v.StartPolicyType }).(pulumi.StringOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CloudGuardDataSourceDataSourceDetailsQueryStartTime)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) ToCloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) Elem() CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetailsQueryStartTime) CloudGuardDataSourceDataSourceDetailsQueryStartTime {
+		if v != nil {
+			return *v
+		}
+		var ret CloudGuardDataSourceDataSourceDetailsQueryStartTime
+		return ret
+	}).(CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput)
+}
+
+// (Updatable) Time when the query can start, if not specified it can start immediately.
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) QueryStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetailsQueryStartTime) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) policy used for deciding the query start time
+func (o CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput) StartPolicyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetailsQueryStartTime) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StartPolicyType
+	}).(pulumi.StringPtrOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetectorMappingInfo struct {
+	// Id of the attached detectorRecipeId to the Data Source.
+	DetectorRecipeId *string `pulumi:"detectorRecipeId"`
+	// Id of the attached detectorRuleId to the Data Source.
+	DetectorRuleId *string `pulumi:"detectorRuleId"`
+}
+
+// CloudGuardDataSourceDataSourceDetectorMappingInfoInput is an input type that accepts CloudGuardDataSourceDataSourceDetectorMappingInfoArgs and CloudGuardDataSourceDataSourceDetectorMappingInfoOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetectorMappingInfoInput` via:
+//
+//	CloudGuardDataSourceDataSourceDetectorMappingInfoArgs{...}
+type CloudGuardDataSourceDataSourceDetectorMappingInfoInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutput() CloudGuardDataSourceDataSourceDetectorMappingInfoOutput
+	ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutputWithContext(context.Context) CloudGuardDataSourceDataSourceDetectorMappingInfoOutput
+}
+
+type CloudGuardDataSourceDataSourceDetectorMappingInfoArgs struct {
+	// Id of the attached detectorRecipeId to the Data Source.
+	DetectorRecipeId pulumi.StringPtrInput `pulumi:"detectorRecipeId"`
+	// Id of the attached detectorRuleId to the Data Source.
+	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
+}
+
+func (CloudGuardDataSourceDataSourceDetectorMappingInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (i CloudGuardDataSourceDataSourceDetectorMappingInfoArgs) ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutput() CloudGuardDataSourceDataSourceDetectorMappingInfoOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceDataSourceDetectorMappingInfoArgs) ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetectorMappingInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetectorMappingInfoOutput)
+}
+
+// CloudGuardDataSourceDataSourceDetectorMappingInfoArrayInput is an input type that accepts CloudGuardDataSourceDataSourceDetectorMappingInfoArray and CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceDataSourceDetectorMappingInfoArrayInput` via:
+//
+//	CloudGuardDataSourceDataSourceDetectorMappingInfoArray{ CloudGuardDataSourceDataSourceDetectorMappingInfoArgs{...} }
+type CloudGuardDataSourceDataSourceDetectorMappingInfoArrayInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput() CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput
+	ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(context.Context) CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput
+}
+
+type CloudGuardDataSourceDataSourceDetectorMappingInfoArray []CloudGuardDataSourceDataSourceDetectorMappingInfoInput
+
+func (CloudGuardDataSourceDataSourceDetectorMappingInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudGuardDataSourceDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (i CloudGuardDataSourceDataSourceDetectorMappingInfoArray) ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput() CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput {
+	return i.ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceDataSourceDetectorMappingInfoArray) ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetectorMappingInfoOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutput() CloudGuardDataSourceDataSourceDetectorMappingInfoOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) ToCloudGuardDataSourceDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetectorMappingInfoOutput {
+	return o
+}
+
+// Id of the attached detectorRecipeId to the Data Source.
+func (o CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) DetectorRecipeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetectorMappingInfo) *string { return v.DetectorRecipeId }).(pulumi.StringPtrOutput)
+}
+
+// Id of the attached detectorRuleId to the Data Source.
+func (o CloudGuardDataSourceDataSourceDetectorMappingInfoOutput) DetectorRuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetectorMappingInfo) *string { return v.DetectorRuleId }).(pulumi.StringPtrOutput)
+}
+
+type CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudGuardDataSourceDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput() CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) ToCloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) Index(i pulumi.IntInput) CloudGuardDataSourceDataSourceDetectorMappingInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudGuardDataSourceDataSourceDetectorMappingInfo {
+		return vs[0].([]CloudGuardDataSourceDataSourceDetectorMappingInfo)[vs[1].(int)]
+	}).(CloudGuardDataSourceDataSourceDetectorMappingInfoOutput)
+}
+
+type CloudGuardDataSourceRegionStatusDetail struct {
+	// Data Source replication region.
+	Region *string `pulumi:"region"`
+	// Status of data Source
+	Status *string `pulumi:"status"`
+}
+
+// CloudGuardDataSourceRegionStatusDetailInput is an input type that accepts CloudGuardDataSourceRegionStatusDetailArgs and CloudGuardDataSourceRegionStatusDetailOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceRegionStatusDetailInput` via:
+//
+//	CloudGuardDataSourceRegionStatusDetailArgs{...}
+type CloudGuardDataSourceRegionStatusDetailInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceRegionStatusDetailOutput() CloudGuardDataSourceRegionStatusDetailOutput
+	ToCloudGuardDataSourceRegionStatusDetailOutputWithContext(context.Context) CloudGuardDataSourceRegionStatusDetailOutput
+}
+
+type CloudGuardDataSourceRegionStatusDetailArgs struct {
+	// Data Source replication region.
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// Status of data Source
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (CloudGuardDataSourceRegionStatusDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceRegionStatusDetail)(nil)).Elem()
+}
+
+func (i CloudGuardDataSourceRegionStatusDetailArgs) ToCloudGuardDataSourceRegionStatusDetailOutput() CloudGuardDataSourceRegionStatusDetailOutput {
+	return i.ToCloudGuardDataSourceRegionStatusDetailOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceRegionStatusDetailArgs) ToCloudGuardDataSourceRegionStatusDetailOutputWithContext(ctx context.Context) CloudGuardDataSourceRegionStatusDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceRegionStatusDetailOutput)
+}
+
+// CloudGuardDataSourceRegionStatusDetailArrayInput is an input type that accepts CloudGuardDataSourceRegionStatusDetailArray and CloudGuardDataSourceRegionStatusDetailArrayOutput values.
+// You can construct a concrete instance of `CloudGuardDataSourceRegionStatusDetailArrayInput` via:
+//
+//	CloudGuardDataSourceRegionStatusDetailArray{ CloudGuardDataSourceRegionStatusDetailArgs{...} }
+type CloudGuardDataSourceRegionStatusDetailArrayInput interface {
+	pulumi.Input
+
+	ToCloudGuardDataSourceRegionStatusDetailArrayOutput() CloudGuardDataSourceRegionStatusDetailArrayOutput
+	ToCloudGuardDataSourceRegionStatusDetailArrayOutputWithContext(context.Context) CloudGuardDataSourceRegionStatusDetailArrayOutput
+}
+
+type CloudGuardDataSourceRegionStatusDetailArray []CloudGuardDataSourceRegionStatusDetailInput
+
+func (CloudGuardDataSourceRegionStatusDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudGuardDataSourceRegionStatusDetail)(nil)).Elem()
+}
+
+func (i CloudGuardDataSourceRegionStatusDetailArray) ToCloudGuardDataSourceRegionStatusDetailArrayOutput() CloudGuardDataSourceRegionStatusDetailArrayOutput {
+	return i.ToCloudGuardDataSourceRegionStatusDetailArrayOutputWithContext(context.Background())
+}
+
+func (i CloudGuardDataSourceRegionStatusDetailArray) ToCloudGuardDataSourceRegionStatusDetailArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceRegionStatusDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceRegionStatusDetailArrayOutput)
+}
+
+type CloudGuardDataSourceRegionStatusDetailOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceRegionStatusDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CloudGuardDataSourceRegionStatusDetail)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceRegionStatusDetailOutput) ToCloudGuardDataSourceRegionStatusDetailOutput() CloudGuardDataSourceRegionStatusDetailOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceRegionStatusDetailOutput) ToCloudGuardDataSourceRegionStatusDetailOutputWithContext(ctx context.Context) CloudGuardDataSourceRegionStatusDetailOutput {
+	return o
+}
+
+// Data Source replication region.
+func (o CloudGuardDataSourceRegionStatusDetailOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceRegionStatusDetail) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// Status of data Source
+func (o CloudGuardDataSourceRegionStatusDetailOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CloudGuardDataSourceRegionStatusDetail) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type CloudGuardDataSourceRegionStatusDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (CloudGuardDataSourceRegionStatusDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CloudGuardDataSourceRegionStatusDetail)(nil)).Elem()
+}
+
+func (o CloudGuardDataSourceRegionStatusDetailArrayOutput) ToCloudGuardDataSourceRegionStatusDetailArrayOutput() CloudGuardDataSourceRegionStatusDetailArrayOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceRegionStatusDetailArrayOutput) ToCloudGuardDataSourceRegionStatusDetailArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceRegionStatusDetailArrayOutput {
+	return o
+}
+
+func (o CloudGuardDataSourceRegionStatusDetailArrayOutput) Index(i pulumi.IntInput) CloudGuardDataSourceRegionStatusDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CloudGuardDataSourceRegionStatusDetail {
+		return vs[0].([]CloudGuardDataSourceRegionStatusDetail)[vs[1].(int)]
+	}).(CloudGuardDataSourceRegionStatusDetailOutput)
+}
+
 type DataMaskRuleTargetSelected struct {
 	// (Updatable) Target selection.
 	Kind string `pulumi:"kind"`
@@ -169,7 +1005,9 @@ func (o DataMaskRuleTargetSelectedPtrOutput) Values() pulumi.StringArrayOutput {
 type DetectorRecipeDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []DetectorRecipeDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// (Updatable) Detector recipe description.
+	// (Updatable) The id of the attached DataSource.
+	DataSourceId *string `pulumi:"dataSourceId"`
+	// (Updatable) Description for DetectorRecipeDetectorRule.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details DetectorRecipeDetectorRuleDetails `pulumi:"details"`
@@ -179,11 +1017,13 @@ type DetectorRecipeDetectorRule struct {
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Data Source entities mapping for a Detector Rule
+	EntitiesMappings []DetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
 	ManagedListTypes []string `pulumi:"managedListTypes"`
-	// Recommendation for DetectorRecipeDetectorRule
+	// (Updatable) Recommendation for DetectorRecipeDetectorRule
 	Recommendation *string `pulumi:"recommendation"`
 	// resource type of the configuration to which the rule is applied
 	ResourceType *string `pulumi:"resourceType"`
@@ -211,7 +1051,9 @@ type DetectorRecipeDetectorRuleInput interface {
 type DetectorRecipeDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules DetectorRecipeDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// (Updatable) Detector recipe description.
+	// (Updatable) The id of the attached DataSource.
+	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
+	// (Updatable) Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details DetectorRecipeDetectorRuleDetailsInput `pulumi:"details"`
@@ -221,11 +1063,13 @@ type DetectorRecipeDetectorRuleArgs struct {
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Data Source entities mapping for a Detector Rule
+	EntitiesMappings DetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
 	ManagedListTypes pulumi.StringArrayInput `pulumi:"managedListTypes"`
-	// Recommendation for DetectorRecipeDetectorRule
+	// (Updatable) Recommendation for DetectorRecipeDetectorRule
 	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
@@ -297,7 +1141,12 @@ func (o DetectorRecipeDetectorRuleOutput) CandidateResponderRules() DetectorReci
 	}).(DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// (Updatable) Detector recipe description.
+// (Updatable) The id of the attached DataSource.
+func (o DetectorRecipeDetectorRuleOutput) DataSourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.DataSourceId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Description for DetectorRecipeDetectorRule.
 func (o DetectorRecipeDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -322,6 +1171,13 @@ func (o DetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Data Source entities mapping for a Detector Rule
+func (o DetectorRecipeDetectorRuleOutput) EntitiesMappings() DetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRule) []DetectorRecipeDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(DetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o DetectorRecipeDetectorRuleOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
@@ -332,7 +1188,7 @@ func (o DetectorRecipeDetectorRuleOutput) ManagedListTypes() pulumi.StringArrayO
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) []string { return v.ManagedListTypes }).(pulumi.StringArrayOutput)
 }
 
-// Recommendation for DetectorRecipeDetectorRule
+// (Updatable) Recommendation for DetectorRecipeDetectorRule
 func (o DetectorRecipeDetectorRuleOutput) Recommendation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.Recommendation }).(pulumi.StringPtrOutput)
 }
@@ -502,12 +1358,20 @@ type DetectorRecipeDetectorRuleDetails struct {
 	Condition *string `pulumi:"condition"`
 	// (Updatable) Configuration details
 	Configurations []DetectorRecipeDetectorRuleDetailsConfiguration `pulumi:"configurations"`
+	// (Updatable) The id of the attached DataSource.
+	DataSourceId *string `pulumi:"dataSourceId"`
+	// (Updatable) Description for DetectorRecipeDetectorRule.
+	Description *string `pulumi:"description"`
+	// (Updatable) Data Source entities mapping for a Detector Rule
+	EntitiesMappings []DetectorRecipeDetectorRuleDetailsEntitiesMapping `pulumi:"entitiesMappings"`
 	// configuration allowed or not
 	IsConfigurationAllowed *bool `pulumi:"isConfigurationAllowed"`
 	// (Updatable) Enables the control
 	IsEnabled bool `pulumi:"isEnabled"`
 	// (Updatable) user defined labels for a detector rule
 	Labels []string `pulumi:"labels"`
+	// (Updatable) Recommendation for DetectorRecipeDetectorRule
+	Recommendation *string `pulumi:"recommendation"`
 	// (Updatable) The Risk Level
 	RiskLevel string `pulumi:"riskLevel"`
 }
@@ -528,12 +1392,20 @@ type DetectorRecipeDetectorRuleDetailsArgs struct {
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// (Updatable) Configuration details
 	Configurations DetectorRecipeDetectorRuleDetailsConfigurationArrayInput `pulumi:"configurations"`
+	// (Updatable) The id of the attached DataSource.
+	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
+	// (Updatable) Description for DetectorRecipeDetectorRule.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Data Source entities mapping for a Detector Rule
+	EntitiesMappings DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// configuration allowed or not
 	IsConfigurationAllowed pulumi.BoolPtrInput `pulumi:"isConfigurationAllowed"`
 	// (Updatable) Enables the control
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// (Updatable) user defined labels for a detector rule
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// (Updatable) Recommendation for DetectorRecipeDetectorRule
+	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// (Updatable) The Risk Level
 	RiskLevel pulumi.StringInput `pulumi:"riskLevel"`
 }
@@ -576,6 +1448,23 @@ func (o DetectorRecipeDetectorRuleDetailsOutput) Configurations() DetectorRecipe
 	}).(DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput)
 }
 
+// (Updatable) The id of the attached DataSource.
+func (o DetectorRecipeDetectorRuleDetailsOutput) DataSourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetails) *string { return v.DataSourceId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Description for DetectorRecipeDetectorRule.
+func (o DetectorRecipeDetectorRuleDetailsOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetails) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Data Source entities mapping for a Detector Rule
+func (o DetectorRecipeDetectorRuleDetailsOutput) EntitiesMappings() DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetails) []DetectorRecipeDetectorRuleDetailsEntitiesMapping {
+		return v.EntitiesMappings
+	}).(DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput)
+}
+
 // configuration allowed or not
 func (o DetectorRecipeDetectorRuleDetailsOutput) IsConfigurationAllowed() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetails) *bool { return v.IsConfigurationAllowed }).(pulumi.BoolPtrOutput)
@@ -589,6 +1478,11 @@ func (o DetectorRecipeDetectorRuleDetailsOutput) IsEnabled() pulumi.BoolOutput {
 // (Updatable) user defined labels for a detector rule
 func (o DetectorRecipeDetectorRuleDetailsOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetails) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Recommendation for DetectorRecipeDetectorRule
+func (o DetectorRecipeDetectorRuleDetailsOutput) Recommendation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetails) *string { return v.Recommendation }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Risk Level
@@ -846,10 +1740,242 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) Index(i 
 	}).(DetectorRecipeDetectorRuleDetailsConfigurationValueOutput)
 }
 
+type DetectorRecipeDetectorRuleDetailsEntitiesMapping struct {
+	// (Updatable) Detector recipe display name.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Possible type of entity
+	EntityType *string `pulumi:"entityType"`
+	// (Updatable) The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// DetectorRecipeDetectorRuleDetailsEntitiesMappingInput is an input type that accepts DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs and DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsEntitiesMappingInput` via:
+//
+//	DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs{...}
+type DetectorRecipeDetectorRuleDetailsEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutput() DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput
+	ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutputWithContext(context.Context) DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput
+}
+
+type DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs struct {
+	// (Updatable) Detector recipe display name.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Possible type of entity
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
+	// (Updatable) The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsEntitiesMapping)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutput() DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput {
+	return i.ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput)
+}
+
+// DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayInput is an input type that accepts DetectorRecipeDetectorRuleDetailsEntitiesMappingArray and DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayInput` via:
+//
+//	DetectorRecipeDetectorRuleDetailsEntitiesMappingArray{ DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs{...} }
+type DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput() DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput
+	ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutputWithContext(context.Context) DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput
+}
+
+type DetectorRecipeDetectorRuleDetailsEntitiesMappingArray []DetectorRecipeDetectorRuleDetailsEntitiesMappingInput
+
+func (DetectorRecipeDetectorRuleDetailsEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleDetailsEntitiesMapping)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleDetailsEntitiesMappingArray) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput() DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput {
+	return i.ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleDetailsEntitiesMappingArray) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput)
+}
+
+type DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsEntitiesMapping)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutput() DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput {
+	return o
+}
+
+// (Updatable) Detector recipe display name.
+func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Possible type of entity
+func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsEntitiesMapping) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The entity value mapped to a data source query
+func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsEntitiesMapping) string { return v.QueryField }).(pulumi.StringOutput)
+}
+
+type DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleDetailsEntitiesMapping)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput() DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) ToDetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeDetectorRuleDetailsEntitiesMapping {
+		return vs[0].([]DetectorRecipeDetectorRuleDetailsEntitiesMapping)[vs[1].(int)]
+	}).(DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput)
+}
+
+type DetectorRecipeDetectorRuleEntitiesMapping struct {
+	// (Updatable) Detector recipe display name.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Possible type of entity
+	EntityType *string `pulumi:"entityType"`
+	// (Updatable) The entity value mapped to a data source query
+	QueryField *string `pulumi:"queryField"`
+}
+
+// DetectorRecipeDetectorRuleEntitiesMappingInput is an input type that accepts DetectorRecipeDetectorRuleEntitiesMappingArgs and DetectorRecipeDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleEntitiesMappingInput` via:
+//
+//	DetectorRecipeDetectorRuleEntitiesMappingArgs{...}
+type DetectorRecipeDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleEntitiesMappingOutput() DetectorRecipeDetectorRuleEntitiesMappingOutput
+	ToDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Context) DetectorRecipeDetectorRuleEntitiesMappingOutput
+}
+
+type DetectorRecipeDetectorRuleEntitiesMappingArgs struct {
+	// (Updatable) Detector recipe display name.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Possible type of entity
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
+	// (Updatable) The entity value mapped to a data source query
+	QueryField pulumi.StringPtrInput `pulumi:"queryField"`
+}
+
+func (DetectorRecipeDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleEntitiesMappingArgs) ToDetectorRecipeDetectorRuleEntitiesMappingOutput() DetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return i.ToDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleEntitiesMappingArgs) ToDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
+// DetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts DetectorRecipeDetectorRuleEntitiesMappingArray and DetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	DetectorRecipeDetectorRuleEntitiesMappingArray{ DetectorRecipeDetectorRuleEntitiesMappingArgs{...} }
+type DetectorRecipeDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() DetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+	ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) DetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+}
+
+type DetectorRecipeDetectorRuleEntitiesMappingArray []DetectorRecipeDetectorRuleEntitiesMappingInput
+
+func (DetectorRecipeDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleEntitiesMappingArray) ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() DetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleEntitiesMappingArray) ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type DetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) ToDetectorRecipeDetectorRuleEntitiesMappingOutput() DetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) ToDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// (Updatable) Detector recipe display name.
+func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Possible type of entity
+func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleEntitiesMapping) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The entity value mapped to a data source query
+func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleEntitiesMapping) *string { return v.QueryField }).(pulumi.StringPtrOutput)
+}
+
+type DetectorRecipeDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() DetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeDetectorRuleEntitiesMapping {
+		return vs[0].([]DetectorRecipeDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(DetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
 type DetectorRecipeEffectiveDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []DetectorRecipeEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// (Updatable) Detector recipe description.
+	// (Updatable) The id of the attached DataSource.
+	DataSourceId *string `pulumi:"dataSourceId"`
+	// (Updatable) Description for DetectorRecipeDetectorRule.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details []DetectorRecipeEffectiveDetectorRuleDetail `pulumi:"details"`
@@ -859,11 +1985,13 @@ type DetectorRecipeEffectiveDetectorRule struct {
 	DetectorRuleId *string `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Data Source entities mapping for a Detector Rule
+	EntitiesMappings []DetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
 	ManagedListTypes []string `pulumi:"managedListTypes"`
-	// Recommendation for DetectorRecipeDetectorRule
+	// (Updatable) Recommendation for DetectorRecipeDetectorRule
 	Recommendation *string `pulumi:"recommendation"`
 	// resource type of the configuration to which the rule is applied
 	ResourceType *string `pulumi:"resourceType"`
@@ -891,7 +2019,9 @@ type DetectorRecipeEffectiveDetectorRuleInput interface {
 type DetectorRecipeEffectiveDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// (Updatable) Detector recipe description.
+	// (Updatable) The id of the attached DataSource.
+	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
+	// (Updatable) Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details DetectorRecipeEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
@@ -901,11 +2031,13 @@ type DetectorRecipeEffectiveDetectorRuleArgs struct {
 	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Data Source entities mapping for a Detector Rule
+	EntitiesMappings DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
 	ManagedListTypes pulumi.StringArrayInput `pulumi:"managedListTypes"`
-	// Recommendation for DetectorRecipeDetectorRule
+	// (Updatable) Recommendation for DetectorRecipeDetectorRule
 	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
@@ -977,7 +2109,12 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) CandidateResponderRules() Det
 	}).(DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// (Updatable) Detector recipe description.
+// (Updatable) The id of the attached DataSource.
+func (o DetectorRecipeEffectiveDetectorRuleOutput) DataSourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.DataSourceId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Description for DetectorRecipeDetectorRule.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -1004,6 +2141,13 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringPt
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Data Source entities mapping for a Detector Rule
+func (o DetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings() DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) []DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
@@ -1014,7 +2158,7 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) ManagedListTypes() pulumi.Str
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) []string { return v.ManagedListTypes }).(pulumi.StringArrayOutput)
 }
 
-// Recommendation for DetectorRecipeDetectorRule
+// (Updatable) Recommendation for DetectorRecipeDetectorRule
 func (o DetectorRecipeEffectiveDetectorRuleOutput) Recommendation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.Recommendation }).(pulumi.StringPtrOutput)
 }
@@ -1571,6 +2715,121 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
 		return vs[0].([]DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue)[vs[1].(int)]
 	}).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleEntitiesMapping struct {
+	// (Updatable) Detector recipe display name.
+	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Possible type of entity
+	EntityType *string `pulumi:"entityType"`
+	// (Updatable) The entity value mapped to a data source query
+	QueryField *string `pulumi:"queryField"`
+}
+
+// DetectorRecipeEffectiveDetectorRuleEntitiesMappingInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs and DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleEntitiesMappingInput` via:
+//
+//	DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...}
+type DetectorRecipeEffectiveDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+	ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Context) DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+}
+
+type DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs struct {
+	// (Updatable) Detector recipe display name.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// (Updatable) Possible type of entity
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
+	// (Updatable) The entity value mapped to a data source query
+	QueryField pulumi.StringPtrInput `pulumi:"queryField"`
+}
+
+func (DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return i.ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+// DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{ DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...} }
+type DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+	ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+}
+
+type DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray []DetectorRecipeEffectiveDetectorRuleEntitiesMappingInput
+
+func (DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// (Updatable) Detector recipe display name.
+func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Possible type of entity
+func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The entity value mapped to a data source query
+func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.QueryField }).(pulumi.StringPtrOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return vs[0].([]DetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
 type ResponderRecipeEffectiveResponderRule struct {
@@ -2409,7 +3668,7 @@ type TargetTargetDetail struct {
 	SecurityZoneDisplayName *string `pulumi:"securityZoneDisplayName"`
 	// The OCID of the security zone to associate this compartment with.
 	SecurityZoneId *string `pulumi:"securityZoneId"`
-	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	// possible type of targets(COMPARTMENT/FACLOUD)
 	TargetResourceType *string `pulumi:"targetResourceType"`
 	// The list of security zone recipes to associate this compartment with.
 	TargetSecurityZoneRecipes []TargetTargetDetailTargetSecurityZoneRecipe `pulumi:"targetSecurityZoneRecipes"`
@@ -2431,7 +3690,7 @@ type TargetTargetDetailArgs struct {
 	SecurityZoneDisplayName pulumi.StringPtrInput `pulumi:"securityZoneDisplayName"`
 	// The OCID of the security zone to associate this compartment with.
 	SecurityZoneId pulumi.StringPtrInput `pulumi:"securityZoneId"`
-	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	// possible type of targets(COMPARTMENT/FACLOUD)
 	TargetResourceType pulumi.StringPtrInput `pulumi:"targetResourceType"`
 	// The list of security zone recipes to associate this compartment with.
 	TargetSecurityZoneRecipes TargetTargetDetailTargetSecurityZoneRecipeArrayInput `pulumi:"targetSecurityZoneRecipes"`
@@ -2498,7 +3757,7 @@ func (o TargetTargetDetailOutput) SecurityZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetail) *string { return v.SecurityZoneId }).(pulumi.StringPtrOutput)
 }
 
-// possible type of targets(compartment/HCMCloud/ERPCloud)
+// possible type of targets(COMPARTMENT/FACLOUD)
 func (o TargetTargetDetailOutput) TargetResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetail) *string { return v.TargetResourceType }).(pulumi.StringPtrOutput)
 }
@@ -2934,6 +4193,8 @@ func (o TargetTargetDetectorRecipeArrayOutput) Index(i pulumi.IntInput) TargetTa
 }
 
 type TargetTargetDetectorRecipeDetectorRule struct {
+	// The id of the attached DataSource.
+	DataSourceId *string `pulumi:"dataSourceId"`
 	// The target description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
@@ -2944,6 +4205,8 @@ type TargetTargetDetectorRecipeDetectorRule struct {
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []TargetTargetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -2974,6 +4237,8 @@ type TargetTargetDetectorRecipeDetectorRuleInput interface {
 }
 
 type TargetTargetDetectorRecipeDetectorRuleArgs struct {
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
 	// The target description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
@@ -2984,6 +4249,8 @@ type TargetTargetDetectorRecipeDetectorRuleArgs struct {
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -3053,6 +4320,11 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) ToTargetTargetDetectorReci
 	return o
 }
 
+// The id of the attached DataSource.
+func (o TargetTargetDetectorRecipeDetectorRuleOutput) DataSourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.DataSourceId }).(pulumi.StringPtrOutput)
+}
+
 // The target description.
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
@@ -3078,6 +4350,13 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.St
 // (Updatable) DetectorTemplate identifier.
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o TargetTargetDetectorRecipeDetectorRuleOutput) EntitiesMappings() TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) []TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -3599,7 +4878,124 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutp
 	}).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput)
 }
 
+type TargetTargetDetectorRecipeDetectorRuleEntitiesMapping struct {
+	// (Updatable) DetectorTemplate identifier.
+	DisplayName *string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType *string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField *string `pulumi:"queryField"`
+}
+
+// TargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs and TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput` via:
+//
+//	TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{...}
+type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput
+	ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Context) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput
+}
+
+type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs struct {
+	// (Updatable) DetectorTemplate identifier.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringPtrInput `pulumi:"queryField"`
+}
+
+func (TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return i.ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
+// TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray and TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray{ TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{...} }
+type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+	ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+}
+
+type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray []TargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput
+
+func (TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// (Updatable) DetectorTemplate identifier.
+func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Possible type of entity
+func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleEntitiesMapping) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+// The entity value mapped to a data source query
+func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleEntitiesMapping) *string { return v.QueryField }).(pulumi.StringPtrOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
+		return vs[0].([]TargetTargetDetectorRecipeDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
 type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
+	// The id of the attached DataSource.
+	DataSourceId *string `pulumi:"dataSourceId"`
 	// The target description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
@@ -3610,6 +5006,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	DetectorRuleId *string `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
 	DisplayName *string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -3640,6 +5038,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleInput interface {
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
 	// The target description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of ResponderRule.
@@ -3650,6 +5050,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -3719,6 +5121,11 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToTargetTargetDet
 	return o
 }
 
+// The id of the attached DataSource.
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DataSourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.DataSourceId }).(pulumi.StringPtrOutput)
+}
+
 // The target description.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
@@ -3744,6 +5151,13 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() 
 // (Updatable) DetectorTemplate identifier.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings() TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) []TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -4316,6 +5730,121 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueA
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
 		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue)[vs[1].(int)]
 	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping struct {
+	// (Updatable) DetectorTemplate identifier.
+	DisplayName *string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType *string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField *string `pulumi:"queryField"`
+}
+
+// TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput` via:
+//
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...}
+type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs struct {
+	// (Updatable) DetectorTemplate identifier.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringPtrInput `pulumi:"queryField"`
+}
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+// TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...} }
+type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray []TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// (Updatable) DetectorTemplate identifier.
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Possible type of entity
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+// The entity value mapped to a data source query
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.QueryField }).(pulumi.StringPtrOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
 type TargetTargetResponderRecipe struct {
@@ -5977,9 +7506,2408 @@ func (o GetDataMaskRulesFilterArrayOutput) Index(i pulumi.IntInput) GetDataMaskR
 	}).(GetDataMaskRulesFilterOutput)
 }
 
+type GetDataSourceDataSourceDetail struct {
+	// The additional entities count used for data source query.
+	AdditionalEntitiesCount int `pulumi:"additionalEntitiesCount"`
+	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
+	// Interval in minutes that query is run periodically.
+	IntervalInMinutes int `pulumi:"intervalInMinutes"`
+	// Additional details specific to the data source type (Sighting/Insight).
+	LoggingQueryDetails []GetDataSourceDataSourceDetailLoggingQueryDetail `pulumi:"loggingQueryDetails"`
+	// Logging query type for data source (Sighting/Insight)
+	LoggingQueryType string `pulumi:"loggingQueryType"`
+	// Operator used in Data Soruce
+	Operator string `pulumi:"operator"`
+	// The continuous query expression that is run periodically.
+	Query string `pulumi:"query"`
+	// Time when the query can start, if not specified it can start immediately.
+	QueryStartTimes []GetDataSourceDataSourceDetailQueryStartTime `pulumi:"queryStartTimes"`
+	// Logging Query regions
+	Regions []string `pulumi:"regions"`
+	// The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+	Threshold int `pulumi:"threshold"`
+}
+
+// GetDataSourceDataSourceDetailInput is an input type that accepts GetDataSourceDataSourceDetailArgs and GetDataSourceDataSourceDetailOutput values.
+// You can construct a concrete instance of `GetDataSourceDataSourceDetailInput` via:
+//
+//	GetDataSourceDataSourceDetailArgs{...}
+type GetDataSourceDataSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetDataSourceDataSourceDetailOutput() GetDataSourceDataSourceDetailOutput
+	ToGetDataSourceDataSourceDetailOutputWithContext(context.Context) GetDataSourceDataSourceDetailOutput
+}
+
+type GetDataSourceDataSourceDetailArgs struct {
+	// The additional entities count used for data source query.
+	AdditionalEntitiesCount pulumi.IntInput `pulumi:"additionalEntitiesCount"`
+	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	DataSourceFeedProvider pulumi.StringInput `pulumi:"dataSourceFeedProvider"`
+	// Interval in minutes that query is run periodically.
+	IntervalInMinutes pulumi.IntInput `pulumi:"intervalInMinutes"`
+	// Additional details specific to the data source type (Sighting/Insight).
+	LoggingQueryDetails GetDataSourceDataSourceDetailLoggingQueryDetailArrayInput `pulumi:"loggingQueryDetails"`
+	// Logging query type for data source (Sighting/Insight)
+	LoggingQueryType pulumi.StringInput `pulumi:"loggingQueryType"`
+	// Operator used in Data Soruce
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// The continuous query expression that is run periodically.
+	Query pulumi.StringInput `pulumi:"query"`
+	// Time when the query can start, if not specified it can start immediately.
+	QueryStartTimes GetDataSourceDataSourceDetailQueryStartTimeArrayInput `pulumi:"queryStartTimes"`
+	// Logging Query regions
+	Regions pulumi.StringArrayInput `pulumi:"regions"`
+	// The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+	Threshold pulumi.IntInput `pulumi:"threshold"`
+}
+
+func (GetDataSourceDataSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceDataSourceDetail)(nil)).Elem()
+}
+
+func (i GetDataSourceDataSourceDetailArgs) ToGetDataSourceDataSourceDetailOutput() GetDataSourceDataSourceDetailOutput {
+	return i.ToGetDataSourceDataSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceDataSourceDetailArgs) ToGetDataSourceDataSourceDetailOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailOutput)
+}
+
+// GetDataSourceDataSourceDetailArrayInput is an input type that accepts GetDataSourceDataSourceDetailArray and GetDataSourceDataSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceDataSourceDetailArrayInput` via:
+//
+//	GetDataSourceDataSourceDetailArray{ GetDataSourceDataSourceDetailArgs{...} }
+type GetDataSourceDataSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceDataSourceDetailArrayOutput() GetDataSourceDataSourceDetailArrayOutput
+	ToGetDataSourceDataSourceDetailArrayOutputWithContext(context.Context) GetDataSourceDataSourceDetailArrayOutput
+}
+
+type GetDataSourceDataSourceDetailArray []GetDataSourceDataSourceDetailInput
+
+func (GetDataSourceDataSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceDataSourceDetail)(nil)).Elem()
+}
+
+func (i GetDataSourceDataSourceDetailArray) ToGetDataSourceDataSourceDetailArrayOutput() GetDataSourceDataSourceDetailArrayOutput {
+	return i.ToGetDataSourceDataSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceDataSourceDetailArray) ToGetDataSourceDataSourceDetailArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailArrayOutput)
+}
+
+type GetDataSourceDataSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceDataSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceDataSourceDetail)(nil)).Elem()
+}
+
+func (o GetDataSourceDataSourceDetailOutput) ToGetDataSourceDataSourceDetailOutput() GetDataSourceDataSourceDetailOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailOutput) ToGetDataSourceDataSourceDetailOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailOutput {
+	return o
+}
+
+// The additional entities count used for data source query.
+func (o GetDataSourceDataSourceDetailOutput) AdditionalEntitiesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) int { return v.AdditionalEntitiesCount }).(pulumi.IntOutput)
+}
+
+// Possible type of dataSourceFeed Provider(LoggingQuery)
+func (o GetDataSourceDataSourceDetailOutput) DataSourceFeedProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) string { return v.DataSourceFeedProvider }).(pulumi.StringOutput)
+}
+
+// Interval in minutes that query is run periodically.
+func (o GetDataSourceDataSourceDetailOutput) IntervalInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) int { return v.IntervalInMinutes }).(pulumi.IntOutput)
+}
+
+// Additional details specific to the data source type (Sighting/Insight).
+func (o GetDataSourceDataSourceDetailOutput) LoggingQueryDetails() GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) []GetDataSourceDataSourceDetailLoggingQueryDetail {
+		return v.LoggingQueryDetails
+	}).(GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput)
+}
+
+// Logging query type for data source (Sighting/Insight)
+func (o GetDataSourceDataSourceDetailOutput) LoggingQueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) string { return v.LoggingQueryType }).(pulumi.StringOutput)
+}
+
+// Operator used in Data Soruce
+func (o GetDataSourceDataSourceDetailOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// The continuous query expression that is run periodically.
+func (o GetDataSourceDataSourceDetailOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// Time when the query can start, if not specified it can start immediately.
+func (o GetDataSourceDataSourceDetailOutput) QueryStartTimes() GetDataSourceDataSourceDetailQueryStartTimeArrayOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) []GetDataSourceDataSourceDetailQueryStartTime {
+		return v.QueryStartTimes
+	}).(GetDataSourceDataSourceDetailQueryStartTimeArrayOutput)
+}
+
+// Logging Query regions
+func (o GetDataSourceDataSourceDetailOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) []string { return v.Regions }).(pulumi.StringArrayOutput)
+}
+
+// The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+func (o GetDataSourceDataSourceDetailOutput) Threshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetail) int { return v.Threshold }).(pulumi.IntOutput)
+}
+
+type GetDataSourceDataSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceDataSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceDataSourceDetail)(nil)).Elem()
+}
+
+func (o GetDataSourceDataSourceDetailArrayOutput) ToGetDataSourceDataSourceDetailArrayOutput() GetDataSourceDataSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailArrayOutput) ToGetDataSourceDataSourceDetailArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourceDataSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceDataSourceDetail {
+		return vs[0].([]GetDataSourceDataSourceDetail)[vs[1].(int)]
+	}).(GetDataSourceDataSourceDetailOutput)
+}
+
+type GetDataSourceDataSourceDetailLoggingQueryDetail struct {
+	// The key entities count used for data source query
+	KeyEntitiesCount int `pulumi:"keyEntitiesCount"`
+	// Logging query type for data source (Sighting/Insight)
+	LoggingQueryType string `pulumi:"loggingQueryType"`
+}
+
+// GetDataSourceDataSourceDetailLoggingQueryDetailInput is an input type that accepts GetDataSourceDataSourceDetailLoggingQueryDetailArgs and GetDataSourceDataSourceDetailLoggingQueryDetailOutput values.
+// You can construct a concrete instance of `GetDataSourceDataSourceDetailLoggingQueryDetailInput` via:
+//
+//	GetDataSourceDataSourceDetailLoggingQueryDetailArgs{...}
+type GetDataSourceDataSourceDetailLoggingQueryDetailInput interface {
+	pulumi.Input
+
+	ToGetDataSourceDataSourceDetailLoggingQueryDetailOutput() GetDataSourceDataSourceDetailLoggingQueryDetailOutput
+	ToGetDataSourceDataSourceDetailLoggingQueryDetailOutputWithContext(context.Context) GetDataSourceDataSourceDetailLoggingQueryDetailOutput
+}
+
+type GetDataSourceDataSourceDetailLoggingQueryDetailArgs struct {
+	// The key entities count used for data source query
+	KeyEntitiesCount pulumi.IntInput `pulumi:"keyEntitiesCount"`
+	// Logging query type for data source (Sighting/Insight)
+	LoggingQueryType pulumi.StringInput `pulumi:"loggingQueryType"`
+}
+
+func (GetDataSourceDataSourceDetailLoggingQueryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceDataSourceDetailLoggingQueryDetail)(nil)).Elem()
+}
+
+func (i GetDataSourceDataSourceDetailLoggingQueryDetailArgs) ToGetDataSourceDataSourceDetailLoggingQueryDetailOutput() GetDataSourceDataSourceDetailLoggingQueryDetailOutput {
+	return i.ToGetDataSourceDataSourceDetailLoggingQueryDetailOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceDataSourceDetailLoggingQueryDetailArgs) ToGetDataSourceDataSourceDetailLoggingQueryDetailOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailLoggingQueryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailLoggingQueryDetailOutput)
+}
+
+// GetDataSourceDataSourceDetailLoggingQueryDetailArrayInput is an input type that accepts GetDataSourceDataSourceDetailLoggingQueryDetailArray and GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceDataSourceDetailLoggingQueryDetailArrayInput` via:
+//
+//	GetDataSourceDataSourceDetailLoggingQueryDetailArray{ GetDataSourceDataSourceDetailLoggingQueryDetailArgs{...} }
+type GetDataSourceDataSourceDetailLoggingQueryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput() GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput
+	ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutputWithContext(context.Context) GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput
+}
+
+type GetDataSourceDataSourceDetailLoggingQueryDetailArray []GetDataSourceDataSourceDetailLoggingQueryDetailInput
+
+func (GetDataSourceDataSourceDetailLoggingQueryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceDataSourceDetailLoggingQueryDetail)(nil)).Elem()
+}
+
+func (i GetDataSourceDataSourceDetailLoggingQueryDetailArray) ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput() GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput {
+	return i.ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceDataSourceDetailLoggingQueryDetailArray) ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput)
+}
+
+type GetDataSourceDataSourceDetailLoggingQueryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceDataSourceDetailLoggingQueryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceDataSourceDetailLoggingQueryDetail)(nil)).Elem()
+}
+
+func (o GetDataSourceDataSourceDetailLoggingQueryDetailOutput) ToGetDataSourceDataSourceDetailLoggingQueryDetailOutput() GetDataSourceDataSourceDetailLoggingQueryDetailOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailLoggingQueryDetailOutput) ToGetDataSourceDataSourceDetailLoggingQueryDetailOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailLoggingQueryDetailOutput {
+	return o
+}
+
+// The key entities count used for data source query
+func (o GetDataSourceDataSourceDetailLoggingQueryDetailOutput) KeyEntitiesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetailLoggingQueryDetail) int { return v.KeyEntitiesCount }).(pulumi.IntOutput)
+}
+
+// Logging query type for data source (Sighting/Insight)
+func (o GetDataSourceDataSourceDetailLoggingQueryDetailOutput) LoggingQueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetailLoggingQueryDetail) string { return v.LoggingQueryType }).(pulumi.StringOutput)
+}
+
+type GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceDataSourceDetailLoggingQueryDetail)(nil)).Elem()
+}
+
+func (o GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput) ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput() GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput) ToGetDataSourceDataSourceDetailLoggingQueryDetailArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourceDataSourceDetailLoggingQueryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceDataSourceDetailLoggingQueryDetail {
+		return vs[0].([]GetDataSourceDataSourceDetailLoggingQueryDetail)[vs[1].(int)]
+	}).(GetDataSourceDataSourceDetailLoggingQueryDetailOutput)
+}
+
+type GetDataSourceDataSourceDetailQueryStartTime struct {
+	// Time when the query can start, if not specified it can start immediately.
+	QueryStartTime string `pulumi:"queryStartTime"`
+	// policy used for deciding the query start time
+	StartPolicyType string `pulumi:"startPolicyType"`
+}
+
+// GetDataSourceDataSourceDetailQueryStartTimeInput is an input type that accepts GetDataSourceDataSourceDetailQueryStartTimeArgs and GetDataSourceDataSourceDetailQueryStartTimeOutput values.
+// You can construct a concrete instance of `GetDataSourceDataSourceDetailQueryStartTimeInput` via:
+//
+//	GetDataSourceDataSourceDetailQueryStartTimeArgs{...}
+type GetDataSourceDataSourceDetailQueryStartTimeInput interface {
+	pulumi.Input
+
+	ToGetDataSourceDataSourceDetailQueryStartTimeOutput() GetDataSourceDataSourceDetailQueryStartTimeOutput
+	ToGetDataSourceDataSourceDetailQueryStartTimeOutputWithContext(context.Context) GetDataSourceDataSourceDetailQueryStartTimeOutput
+}
+
+type GetDataSourceDataSourceDetailQueryStartTimeArgs struct {
+	// Time when the query can start, if not specified it can start immediately.
+	QueryStartTime pulumi.StringInput `pulumi:"queryStartTime"`
+	// policy used for deciding the query start time
+	StartPolicyType pulumi.StringInput `pulumi:"startPolicyType"`
+}
+
+func (GetDataSourceDataSourceDetailQueryStartTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceDataSourceDetailQueryStartTime)(nil)).Elem()
+}
+
+func (i GetDataSourceDataSourceDetailQueryStartTimeArgs) ToGetDataSourceDataSourceDetailQueryStartTimeOutput() GetDataSourceDataSourceDetailQueryStartTimeOutput {
+	return i.ToGetDataSourceDataSourceDetailQueryStartTimeOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceDataSourceDetailQueryStartTimeArgs) ToGetDataSourceDataSourceDetailQueryStartTimeOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailQueryStartTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailQueryStartTimeOutput)
+}
+
+// GetDataSourceDataSourceDetailQueryStartTimeArrayInput is an input type that accepts GetDataSourceDataSourceDetailQueryStartTimeArray and GetDataSourceDataSourceDetailQueryStartTimeArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceDataSourceDetailQueryStartTimeArrayInput` via:
+//
+//	GetDataSourceDataSourceDetailQueryStartTimeArray{ GetDataSourceDataSourceDetailQueryStartTimeArgs{...} }
+type GetDataSourceDataSourceDetailQueryStartTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutput() GetDataSourceDataSourceDetailQueryStartTimeArrayOutput
+	ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutputWithContext(context.Context) GetDataSourceDataSourceDetailQueryStartTimeArrayOutput
+}
+
+type GetDataSourceDataSourceDetailQueryStartTimeArray []GetDataSourceDataSourceDetailQueryStartTimeInput
+
+func (GetDataSourceDataSourceDetailQueryStartTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceDataSourceDetailQueryStartTime)(nil)).Elem()
+}
+
+func (i GetDataSourceDataSourceDetailQueryStartTimeArray) ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutput() GetDataSourceDataSourceDetailQueryStartTimeArrayOutput {
+	return i.ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceDataSourceDetailQueryStartTimeArray) ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailQueryStartTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetailQueryStartTimeArrayOutput)
+}
+
+type GetDataSourceDataSourceDetailQueryStartTimeOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceDataSourceDetailQueryStartTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceDataSourceDetailQueryStartTime)(nil)).Elem()
+}
+
+func (o GetDataSourceDataSourceDetailQueryStartTimeOutput) ToGetDataSourceDataSourceDetailQueryStartTimeOutput() GetDataSourceDataSourceDetailQueryStartTimeOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailQueryStartTimeOutput) ToGetDataSourceDataSourceDetailQueryStartTimeOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailQueryStartTimeOutput {
+	return o
+}
+
+// Time when the query can start, if not specified it can start immediately.
+func (o GetDataSourceDataSourceDetailQueryStartTimeOutput) QueryStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetailQueryStartTime) string { return v.QueryStartTime }).(pulumi.StringOutput)
+}
+
+// policy used for deciding the query start time
+func (o GetDataSourceDataSourceDetailQueryStartTimeOutput) StartPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetailQueryStartTime) string { return v.StartPolicyType }).(pulumi.StringOutput)
+}
+
+type GetDataSourceDataSourceDetailQueryStartTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceDataSourceDetailQueryStartTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceDataSourceDetailQueryStartTime)(nil)).Elem()
+}
+
+func (o GetDataSourceDataSourceDetailQueryStartTimeArrayOutput) ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutput() GetDataSourceDataSourceDetailQueryStartTimeArrayOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailQueryStartTimeArrayOutput) ToGetDataSourceDataSourceDetailQueryStartTimeArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetailQueryStartTimeArrayOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetailQueryStartTimeArrayOutput) Index(i pulumi.IntInput) GetDataSourceDataSourceDetailQueryStartTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceDataSourceDetailQueryStartTime {
+		return vs[0].([]GetDataSourceDataSourceDetailQueryStartTime)[vs[1].(int)]
+	}).(GetDataSourceDataSourceDetailQueryStartTimeOutput)
+}
+
+type GetDataSourceDataSourceDetectorMappingInfo struct {
+	// Id of the attached detectorRecipeId to the Data Source.
+	DetectorRecipeId string `pulumi:"detectorRecipeId"`
+	// Id of the attached detectorRuleId to the Data Source.
+	DetectorRuleId string `pulumi:"detectorRuleId"`
+}
+
+// GetDataSourceDataSourceDetectorMappingInfoInput is an input type that accepts GetDataSourceDataSourceDetectorMappingInfoArgs and GetDataSourceDataSourceDetectorMappingInfoOutput values.
+// You can construct a concrete instance of `GetDataSourceDataSourceDetectorMappingInfoInput` via:
+//
+//	GetDataSourceDataSourceDetectorMappingInfoArgs{...}
+type GetDataSourceDataSourceDetectorMappingInfoInput interface {
+	pulumi.Input
+
+	ToGetDataSourceDataSourceDetectorMappingInfoOutput() GetDataSourceDataSourceDetectorMappingInfoOutput
+	ToGetDataSourceDataSourceDetectorMappingInfoOutputWithContext(context.Context) GetDataSourceDataSourceDetectorMappingInfoOutput
+}
+
+type GetDataSourceDataSourceDetectorMappingInfoArgs struct {
+	// Id of the attached detectorRecipeId to the Data Source.
+	DetectorRecipeId pulumi.StringInput `pulumi:"detectorRecipeId"`
+	// Id of the attached detectorRuleId to the Data Source.
+	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
+}
+
+func (GetDataSourceDataSourceDetectorMappingInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (i GetDataSourceDataSourceDetectorMappingInfoArgs) ToGetDataSourceDataSourceDetectorMappingInfoOutput() GetDataSourceDataSourceDetectorMappingInfoOutput {
+	return i.ToGetDataSourceDataSourceDetectorMappingInfoOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceDataSourceDetectorMappingInfoArgs) ToGetDataSourceDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetectorMappingInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetectorMappingInfoOutput)
+}
+
+// GetDataSourceDataSourceDetectorMappingInfoArrayInput is an input type that accepts GetDataSourceDataSourceDetectorMappingInfoArray and GetDataSourceDataSourceDetectorMappingInfoArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceDataSourceDetectorMappingInfoArrayInput` via:
+//
+//	GetDataSourceDataSourceDetectorMappingInfoArray{ GetDataSourceDataSourceDetectorMappingInfoArgs{...} }
+type GetDataSourceDataSourceDetectorMappingInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceDataSourceDetectorMappingInfoArrayOutput() GetDataSourceDataSourceDetectorMappingInfoArrayOutput
+	ToGetDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(context.Context) GetDataSourceDataSourceDetectorMappingInfoArrayOutput
+}
+
+type GetDataSourceDataSourceDetectorMappingInfoArray []GetDataSourceDataSourceDetectorMappingInfoInput
+
+func (GetDataSourceDataSourceDetectorMappingInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (i GetDataSourceDataSourceDetectorMappingInfoArray) ToGetDataSourceDataSourceDetectorMappingInfoArrayOutput() GetDataSourceDataSourceDetectorMappingInfoArrayOutput {
+	return i.ToGetDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceDataSourceDetectorMappingInfoArray) ToGetDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetectorMappingInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceDataSourceDetectorMappingInfoArrayOutput)
+}
+
+type GetDataSourceDataSourceDetectorMappingInfoOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceDataSourceDetectorMappingInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (o GetDataSourceDataSourceDetectorMappingInfoOutput) ToGetDataSourceDataSourceDetectorMappingInfoOutput() GetDataSourceDataSourceDetectorMappingInfoOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetectorMappingInfoOutput) ToGetDataSourceDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetectorMappingInfoOutput {
+	return o
+}
+
+// Id of the attached detectorRecipeId to the Data Source.
+func (o GetDataSourceDataSourceDetectorMappingInfoOutput) DetectorRecipeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetectorMappingInfo) string { return v.DetectorRecipeId }).(pulumi.StringOutput)
+}
+
+// Id of the attached detectorRuleId to the Data Source.
+func (o GetDataSourceDataSourceDetectorMappingInfoOutput) DetectorRuleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceDataSourceDetectorMappingInfo) string { return v.DetectorRuleId }).(pulumi.StringOutput)
+}
+
+type GetDataSourceDataSourceDetectorMappingInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceDataSourceDetectorMappingInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (o GetDataSourceDataSourceDetectorMappingInfoArrayOutput) ToGetDataSourceDataSourceDetectorMappingInfoArrayOutput() GetDataSourceDataSourceDetectorMappingInfoArrayOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetectorMappingInfoArrayOutput) ToGetDataSourceDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) GetDataSourceDataSourceDetectorMappingInfoArrayOutput {
+	return o
+}
+
+func (o GetDataSourceDataSourceDetectorMappingInfoArrayOutput) Index(i pulumi.IntInput) GetDataSourceDataSourceDetectorMappingInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceDataSourceDetectorMappingInfo {
+		return vs[0].([]GetDataSourceDataSourceDetectorMappingInfo)[vs[1].(int)]
+	}).(GetDataSourceDataSourceDetectorMappingInfoOutput)
+}
+
+type GetDataSourceEventItem struct {
+	// Data source event comments
+	Comments string `pulumi:"comments"`
+	// DataSource OCID
+	DataSourceId string `pulumi:"dataSourceId"`
+	// Data source event date time
+	EventDate string `pulumi:"eventDate"`
+	// Event info of a data source.
+	EventInfos []GetDataSourceEventItemEventInfo `pulumi:"eventInfos"`
+	// A filter to return only resource their region matches the given region.
+	Region string `pulumi:"region"`
+	// Current data source event info status
+	Status string `pulumi:"status"`
+	// Data source event created time
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetDataSourceEventItemInput is an input type that accepts GetDataSourceEventItemArgs and GetDataSourceEventItemOutput values.
+// You can construct a concrete instance of `GetDataSourceEventItemInput` via:
+//
+//	GetDataSourceEventItemArgs{...}
+type GetDataSourceEventItemInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventItemOutput() GetDataSourceEventItemOutput
+	ToGetDataSourceEventItemOutputWithContext(context.Context) GetDataSourceEventItemOutput
+}
+
+type GetDataSourceEventItemArgs struct {
+	// Data source event comments
+	Comments pulumi.StringInput `pulumi:"comments"`
+	// DataSource OCID
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
+	// Data source event date time
+	EventDate pulumi.StringInput `pulumi:"eventDate"`
+	// Event info of a data source.
+	EventInfos GetDataSourceEventItemEventInfoArrayInput `pulumi:"eventInfos"`
+	// A filter to return only resource their region matches the given region.
+	Region pulumi.StringInput `pulumi:"region"`
+	// Current data source event info status
+	Status pulumi.StringInput `pulumi:"status"`
+	// Data source event created time
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetDataSourceEventItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventItem)(nil)).Elem()
+}
+
+func (i GetDataSourceEventItemArgs) ToGetDataSourceEventItemOutput() GetDataSourceEventItemOutput {
+	return i.ToGetDataSourceEventItemOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventItemArgs) ToGetDataSourceEventItemOutputWithContext(ctx context.Context) GetDataSourceEventItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventItemOutput)
+}
+
+// GetDataSourceEventItemArrayInput is an input type that accepts GetDataSourceEventItemArray and GetDataSourceEventItemArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceEventItemArrayInput` via:
+//
+//	GetDataSourceEventItemArray{ GetDataSourceEventItemArgs{...} }
+type GetDataSourceEventItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventItemArrayOutput() GetDataSourceEventItemArrayOutput
+	ToGetDataSourceEventItemArrayOutputWithContext(context.Context) GetDataSourceEventItemArrayOutput
+}
+
+type GetDataSourceEventItemArray []GetDataSourceEventItemInput
+
+func (GetDataSourceEventItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventItem)(nil)).Elem()
+}
+
+func (i GetDataSourceEventItemArray) ToGetDataSourceEventItemArrayOutput() GetDataSourceEventItemArrayOutput {
+	return i.ToGetDataSourceEventItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventItemArray) ToGetDataSourceEventItemArrayOutputWithContext(ctx context.Context) GetDataSourceEventItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventItemArrayOutput)
+}
+
+type GetDataSourceEventItemOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventItem)(nil)).Elem()
+}
+
+func (o GetDataSourceEventItemOutput) ToGetDataSourceEventItemOutput() GetDataSourceEventItemOutput {
+	return o
+}
+
+func (o GetDataSourceEventItemOutput) ToGetDataSourceEventItemOutputWithContext(ctx context.Context) GetDataSourceEventItemOutput {
+	return o
+}
+
+// Data source event comments
+func (o GetDataSourceEventItemOutput) Comments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItem) string { return v.Comments }).(pulumi.StringOutput)
+}
+
+// DataSource OCID
+func (o GetDataSourceEventItemOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItem) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
+// Data source event date time
+func (o GetDataSourceEventItemOutput) EventDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItem) string { return v.EventDate }).(pulumi.StringOutput)
+}
+
+// Event info of a data source.
+func (o GetDataSourceEventItemOutput) EventInfos() GetDataSourceEventItemEventInfoArrayOutput {
+	return o.ApplyT(func(v GetDataSourceEventItem) []GetDataSourceEventItemEventInfo { return v.EventInfos }).(GetDataSourceEventItemEventInfoArrayOutput)
+}
+
+// A filter to return only resource their region matches the given region.
+func (o GetDataSourceEventItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Current data source event info status
+func (o GetDataSourceEventItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Data source event created time
+func (o GetDataSourceEventItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetDataSourceEventItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventItem)(nil)).Elem()
+}
+
+func (o GetDataSourceEventItemArrayOutput) ToGetDataSourceEventItemArrayOutput() GetDataSourceEventItemArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventItemArrayOutput) ToGetDataSourceEventItemArrayOutputWithContext(ctx context.Context) GetDataSourceEventItemArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventItemArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceEventItem {
+		return vs[0].([]GetDataSourceEventItem)[vs[1].(int)]
+	}).(GetDataSourceEventItemOutput)
+}
+
+type GetDataSourceEventItemEventInfo struct {
+	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
+	LogResult              string `pulumi:"logResult"`
+	ObservedValue          string `pulumi:"observedValue"`
+	Operator               string `pulumi:"operator"`
+	TriggerValue           string `pulumi:"triggerValue"`
+}
+
+// GetDataSourceEventItemEventInfoInput is an input type that accepts GetDataSourceEventItemEventInfoArgs and GetDataSourceEventItemEventInfoOutput values.
+// You can construct a concrete instance of `GetDataSourceEventItemEventInfoInput` via:
+//
+//	GetDataSourceEventItemEventInfoArgs{...}
+type GetDataSourceEventItemEventInfoInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventItemEventInfoOutput() GetDataSourceEventItemEventInfoOutput
+	ToGetDataSourceEventItemEventInfoOutputWithContext(context.Context) GetDataSourceEventItemEventInfoOutput
+}
+
+type GetDataSourceEventItemEventInfoArgs struct {
+	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	DataSourceFeedProvider pulumi.StringInput `pulumi:"dataSourceFeedProvider"`
+	LogResult              pulumi.StringInput `pulumi:"logResult"`
+	ObservedValue          pulumi.StringInput `pulumi:"observedValue"`
+	Operator               pulumi.StringInput `pulumi:"operator"`
+	TriggerValue           pulumi.StringInput `pulumi:"triggerValue"`
+}
+
+func (GetDataSourceEventItemEventInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventItemEventInfo)(nil)).Elem()
+}
+
+func (i GetDataSourceEventItemEventInfoArgs) ToGetDataSourceEventItemEventInfoOutput() GetDataSourceEventItemEventInfoOutput {
+	return i.ToGetDataSourceEventItemEventInfoOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventItemEventInfoArgs) ToGetDataSourceEventItemEventInfoOutputWithContext(ctx context.Context) GetDataSourceEventItemEventInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventItemEventInfoOutput)
+}
+
+// GetDataSourceEventItemEventInfoArrayInput is an input type that accepts GetDataSourceEventItemEventInfoArray and GetDataSourceEventItemEventInfoArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceEventItemEventInfoArrayInput` via:
+//
+//	GetDataSourceEventItemEventInfoArray{ GetDataSourceEventItemEventInfoArgs{...} }
+type GetDataSourceEventItemEventInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventItemEventInfoArrayOutput() GetDataSourceEventItemEventInfoArrayOutput
+	ToGetDataSourceEventItemEventInfoArrayOutputWithContext(context.Context) GetDataSourceEventItemEventInfoArrayOutput
+}
+
+type GetDataSourceEventItemEventInfoArray []GetDataSourceEventItemEventInfoInput
+
+func (GetDataSourceEventItemEventInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventItemEventInfo)(nil)).Elem()
+}
+
+func (i GetDataSourceEventItemEventInfoArray) ToGetDataSourceEventItemEventInfoArrayOutput() GetDataSourceEventItemEventInfoArrayOutput {
+	return i.ToGetDataSourceEventItemEventInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventItemEventInfoArray) ToGetDataSourceEventItemEventInfoArrayOutputWithContext(ctx context.Context) GetDataSourceEventItemEventInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventItemEventInfoArrayOutput)
+}
+
+type GetDataSourceEventItemEventInfoOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventItemEventInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventItemEventInfo)(nil)).Elem()
+}
+
+func (o GetDataSourceEventItemEventInfoOutput) ToGetDataSourceEventItemEventInfoOutput() GetDataSourceEventItemEventInfoOutput {
+	return o
+}
+
+func (o GetDataSourceEventItemEventInfoOutput) ToGetDataSourceEventItemEventInfoOutputWithContext(ctx context.Context) GetDataSourceEventItemEventInfoOutput {
+	return o
+}
+
+// Possible type of dataSourceFeed Provider(LoggingQuery)
+func (o GetDataSourceEventItemEventInfoOutput) DataSourceFeedProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItemEventInfo) string { return v.DataSourceFeedProvider }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventItemEventInfoOutput) LogResult() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItemEventInfo) string { return v.LogResult }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventItemEventInfoOutput) ObservedValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItemEventInfo) string { return v.ObservedValue }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventItemEventInfoOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItemEventInfo) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventItemEventInfoOutput) TriggerValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventItemEventInfo) string { return v.TriggerValue }).(pulumi.StringOutput)
+}
+
+type GetDataSourceEventItemEventInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventItemEventInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventItemEventInfo)(nil)).Elem()
+}
+
+func (o GetDataSourceEventItemEventInfoArrayOutput) ToGetDataSourceEventItemEventInfoArrayOutput() GetDataSourceEventItemEventInfoArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventItemEventInfoArrayOutput) ToGetDataSourceEventItemEventInfoArrayOutputWithContext(ctx context.Context) GetDataSourceEventItemEventInfoArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventItemEventInfoArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventItemEventInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceEventItemEventInfo {
+		return vs[0].([]GetDataSourceEventItemEventInfo)[vs[1].(int)]
+	}).(GetDataSourceEventItemEventInfoOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollection struct {
+	// List of event related to a DataSource
+	Items []GetDataSourceEventsDataSourceEventCollectionItem `pulumi:"items"`
+}
+
+// GetDataSourceEventsDataSourceEventCollectionInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionArgs and GetDataSourceEventsDataSourceEventCollectionOutput values.
+// You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionInput` via:
+//
+//	GetDataSourceEventsDataSourceEventCollectionArgs{...}
+type GetDataSourceEventsDataSourceEventCollectionInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventsDataSourceEventCollectionOutput() GetDataSourceEventsDataSourceEventCollectionOutput
+	ToGetDataSourceEventsDataSourceEventCollectionOutputWithContext(context.Context) GetDataSourceEventsDataSourceEventCollectionOutput
+}
+
+type GetDataSourceEventsDataSourceEventCollectionArgs struct {
+	// List of event related to a DataSource
+	Items GetDataSourceEventsDataSourceEventCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDataSourceEventsDataSourceEventCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollection)(nil)).Elem()
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionArgs) ToGetDataSourceEventsDataSourceEventCollectionOutput() GetDataSourceEventsDataSourceEventCollectionOutput {
+	return i.ToGetDataSourceEventsDataSourceEventCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionArgs) ToGetDataSourceEventsDataSourceEventCollectionOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionOutput)
+}
+
+// GetDataSourceEventsDataSourceEventCollectionArrayInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionArray and GetDataSourceEventsDataSourceEventCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionArrayInput` via:
+//
+//	GetDataSourceEventsDataSourceEventCollectionArray{ GetDataSourceEventsDataSourceEventCollectionArgs{...} }
+type GetDataSourceEventsDataSourceEventCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventsDataSourceEventCollectionArrayOutput() GetDataSourceEventsDataSourceEventCollectionArrayOutput
+	ToGetDataSourceEventsDataSourceEventCollectionArrayOutputWithContext(context.Context) GetDataSourceEventsDataSourceEventCollectionArrayOutput
+}
+
+type GetDataSourceEventsDataSourceEventCollectionArray []GetDataSourceEventsDataSourceEventCollectionInput
+
+func (GetDataSourceEventsDataSourceEventCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventsDataSourceEventCollection)(nil)).Elem()
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionArray) ToGetDataSourceEventsDataSourceEventCollectionArrayOutput() GetDataSourceEventsDataSourceEventCollectionArrayOutput {
+	return i.ToGetDataSourceEventsDataSourceEventCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionArray) ToGetDataSourceEventsDataSourceEventCollectionArrayOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionArrayOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventsDataSourceEventCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollection)(nil)).Elem()
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionOutput) ToGetDataSourceEventsDataSourceEventCollectionOutput() GetDataSourceEventsDataSourceEventCollectionOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionOutput) ToGetDataSourceEventsDataSourceEventCollectionOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionOutput {
+	return o
+}
+
+// List of event related to a DataSource
+func (o GetDataSourceEventsDataSourceEventCollectionOutput) Items() GetDataSourceEventsDataSourceEventCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollection) []GetDataSourceEventsDataSourceEventCollectionItem {
+		return v.Items
+	}).(GetDataSourceEventsDataSourceEventCollectionItemArrayOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventsDataSourceEventCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventsDataSourceEventCollection)(nil)).Elem()
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionArrayOutput) ToGetDataSourceEventsDataSourceEventCollectionArrayOutput() GetDataSourceEventsDataSourceEventCollectionArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionArrayOutput) ToGetDataSourceEventsDataSourceEventCollectionArrayOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventsDataSourceEventCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceEventsDataSourceEventCollection {
+		return vs[0].([]GetDataSourceEventsDataSourceEventCollection)[vs[1].(int)]
+	}).(GetDataSourceEventsDataSourceEventCollectionOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItem struct {
+	// Data source event comments
+	Comments string `pulumi:"comments"`
+	// DataSource OCID
+	DataSourceId string `pulumi:"dataSourceId"`
+	// Data source event date time
+	EventDate string `pulumi:"eventDate"`
+	// Event info of a data source.
+	EventInfos []GetDataSourceEventsDataSourceEventCollectionItemEventInfo `pulumi:"eventInfos"`
+	// A filter to return only resource their region matches the given region.
+	Region string `pulumi:"region"`
+	// Current data source event info status
+	Status string `pulumi:"status"`
+	// Data source event created time
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetDataSourceEventsDataSourceEventCollectionItemInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionItemArgs and GetDataSourceEventsDataSourceEventCollectionItemOutput values.
+// You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionItemInput` via:
+//
+//	GetDataSourceEventsDataSourceEventCollectionItemArgs{...}
+type GetDataSourceEventsDataSourceEventCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventsDataSourceEventCollectionItemOutput() GetDataSourceEventsDataSourceEventCollectionItemOutput
+	ToGetDataSourceEventsDataSourceEventCollectionItemOutputWithContext(context.Context) GetDataSourceEventsDataSourceEventCollectionItemOutput
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemArgs struct {
+	// Data source event comments
+	Comments pulumi.StringInput `pulumi:"comments"`
+	// DataSource OCID
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
+	// Data source event date time
+	EventDate pulumi.StringInput `pulumi:"eventDate"`
+	// Event info of a data source.
+	EventInfos GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayInput `pulumi:"eventInfos"`
+	// A filter to return only resource their region matches the given region.
+	Region pulumi.StringInput `pulumi:"region"`
+	// Current data source event info status
+	Status pulumi.StringInput `pulumi:"status"`
+	// Data source event created time
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetDataSourceEventsDataSourceEventCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionItem)(nil)).Elem()
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionItemArgs) ToGetDataSourceEventsDataSourceEventCollectionItemOutput() GetDataSourceEventsDataSourceEventCollectionItemOutput {
+	return i.ToGetDataSourceEventsDataSourceEventCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionItemArgs) ToGetDataSourceEventsDataSourceEventCollectionItemOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionItemOutput)
+}
+
+// GetDataSourceEventsDataSourceEventCollectionItemArrayInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionItemArray and GetDataSourceEventsDataSourceEventCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionItemArrayInput` via:
+//
+//	GetDataSourceEventsDataSourceEventCollectionItemArray{ GetDataSourceEventsDataSourceEventCollectionItemArgs{...} }
+type GetDataSourceEventsDataSourceEventCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventsDataSourceEventCollectionItemArrayOutput() GetDataSourceEventsDataSourceEventCollectionItemArrayOutput
+	ToGetDataSourceEventsDataSourceEventCollectionItemArrayOutputWithContext(context.Context) GetDataSourceEventsDataSourceEventCollectionItemArrayOutput
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemArray []GetDataSourceEventsDataSourceEventCollectionItemInput
+
+func (GetDataSourceEventsDataSourceEventCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventsDataSourceEventCollectionItem)(nil)).Elem()
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionItemArray) ToGetDataSourceEventsDataSourceEventCollectionItemArrayOutput() GetDataSourceEventsDataSourceEventCollectionItemArrayOutput {
+	return i.ToGetDataSourceEventsDataSourceEventCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionItemArray) ToGetDataSourceEventsDataSourceEventCollectionItemArrayOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionItemArrayOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventsDataSourceEventCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionItem)(nil)).Elem()
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) ToGetDataSourceEventsDataSourceEventCollectionItemOutput() GetDataSourceEventsDataSourceEventCollectionItemOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) ToGetDataSourceEventsDataSourceEventCollectionItemOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemOutput {
+	return o
+}
+
+// Data source event comments
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) Comments() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItem) string { return v.Comments }).(pulumi.StringOutput)
+}
+
+// DataSource OCID
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItem) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
+// Data source event date time
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) EventDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItem) string { return v.EventDate }).(pulumi.StringOutput)
+}
+
+// Event info of a data source.
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) EventInfos() GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItem) []GetDataSourceEventsDataSourceEventCollectionItemEventInfo {
+		return v.EventInfos
+	}).(GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput)
+}
+
+// A filter to return only resource their region matches the given region.
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Current data source event info status
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Data source event created time
+func (o GetDataSourceEventsDataSourceEventCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventsDataSourceEventCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventsDataSourceEventCollectionItem)(nil)).Elem()
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemArrayOutput) ToGetDataSourceEventsDataSourceEventCollectionItemArrayOutput() GetDataSourceEventsDataSourceEventCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemArrayOutput) ToGetDataSourceEventsDataSourceEventCollectionItemArrayOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventsDataSourceEventCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceEventsDataSourceEventCollectionItem {
+		return vs[0].([]GetDataSourceEventsDataSourceEventCollectionItem)[vs[1].(int)]
+	}).(GetDataSourceEventsDataSourceEventCollectionItemOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemEventInfo struct {
+	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
+	LogResult              string `pulumi:"logResult"`
+	ObservedValue          string `pulumi:"observedValue"`
+	Operator               string `pulumi:"operator"`
+	TriggerValue           string `pulumi:"triggerValue"`
+}
+
+// GetDataSourceEventsDataSourceEventCollectionItemEventInfoInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs and GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput values.
+// You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionItemEventInfoInput` via:
+//
+//	GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs{...}
+type GetDataSourceEventsDataSourceEventCollectionItemEventInfoInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput() GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput
+	ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutputWithContext(context.Context) GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs struct {
+	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	DataSourceFeedProvider pulumi.StringInput `pulumi:"dataSourceFeedProvider"`
+	LogResult              pulumi.StringInput `pulumi:"logResult"`
+	ObservedValue          pulumi.StringInput `pulumi:"observedValue"`
+	Operator               pulumi.StringInput `pulumi:"operator"`
+	TriggerValue           pulumi.StringInput `pulumi:"triggerValue"`
+}
+
+func (GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionItemEventInfo)(nil)).Elem()
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput() GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput {
+	return i.ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput)
+}
+
+// GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayInput is an input type that accepts GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray and GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayInput` via:
+//
+//	GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray{ GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs{...} }
+type GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput() GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput
+	ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutputWithContext(context.Context) GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray []GetDataSourceEventsDataSourceEventCollectionItemEventInfoInput
+
+func (GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventsDataSourceEventCollectionItemEventInfo)(nil)).Elem()
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput() GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput {
+	return i.ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionItemEventInfo)(nil)).Elem()
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput() GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput {
+	return o
+}
+
+// Possible type of dataSourceFeed Provider(LoggingQuery)
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) DataSourceFeedProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItemEventInfo) string {
+		return v.DataSourceFeedProvider
+	}).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) LogResult() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItemEventInfo) string { return v.LogResult }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) ObservedValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItemEventInfo) string { return v.ObservedValue }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItemEventInfo) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput) TriggerValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsDataSourceEventCollectionItemEventInfo) string { return v.TriggerValue }).(pulumi.StringOutput)
+}
+
+type GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventsDataSourceEventCollectionItemEventInfo)(nil)).Elem()
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput() GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput) ToGetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutputWithContext(ctx context.Context) GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceEventsDataSourceEventCollectionItemEventInfo {
+		return vs[0].([]GetDataSourceEventsDataSourceEventCollectionItemEventInfo)[vs[1].(int)]
+	}).(GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput)
+}
+
+type GetDataSourceEventsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDataSourceEventsFilterInput is an input type that accepts GetDataSourceEventsFilterArgs and GetDataSourceEventsFilterOutput values.
+// You can construct a concrete instance of `GetDataSourceEventsFilterInput` via:
+//
+//	GetDataSourceEventsFilterArgs{...}
+type GetDataSourceEventsFilterInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventsFilterOutput() GetDataSourceEventsFilterOutput
+	ToGetDataSourceEventsFilterOutputWithContext(context.Context) GetDataSourceEventsFilterOutput
+}
+
+type GetDataSourceEventsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDataSourceEventsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventsFilter)(nil)).Elem()
+}
+
+func (i GetDataSourceEventsFilterArgs) ToGetDataSourceEventsFilterOutput() GetDataSourceEventsFilterOutput {
+	return i.ToGetDataSourceEventsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventsFilterArgs) ToGetDataSourceEventsFilterOutputWithContext(ctx context.Context) GetDataSourceEventsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsFilterOutput)
+}
+
+// GetDataSourceEventsFilterArrayInput is an input type that accepts GetDataSourceEventsFilterArray and GetDataSourceEventsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceEventsFilterArrayInput` via:
+//
+//	GetDataSourceEventsFilterArray{ GetDataSourceEventsFilterArgs{...} }
+type GetDataSourceEventsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceEventsFilterArrayOutput() GetDataSourceEventsFilterArrayOutput
+	ToGetDataSourceEventsFilterArrayOutputWithContext(context.Context) GetDataSourceEventsFilterArrayOutput
+}
+
+type GetDataSourceEventsFilterArray []GetDataSourceEventsFilterInput
+
+func (GetDataSourceEventsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventsFilter)(nil)).Elem()
+}
+
+func (i GetDataSourceEventsFilterArray) ToGetDataSourceEventsFilterArrayOutput() GetDataSourceEventsFilterArrayOutput {
+	return i.ToGetDataSourceEventsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceEventsFilterArray) ToGetDataSourceEventsFilterArrayOutputWithContext(ctx context.Context) GetDataSourceEventsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceEventsFilterArrayOutput)
+}
+
+type GetDataSourceEventsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceEventsFilter)(nil)).Elem()
+}
+
+func (o GetDataSourceEventsFilterOutput) ToGetDataSourceEventsFilterOutput() GetDataSourceEventsFilterOutput {
+	return o
+}
+
+func (o GetDataSourceEventsFilterOutput) ToGetDataSourceEventsFilterOutputWithContext(ctx context.Context) GetDataSourceEventsFilterOutput {
+	return o
+}
+
+func (o GetDataSourceEventsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceEventsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourceEventsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDataSourceEventsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDataSourceEventsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataSourceEventsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDataSourceEventsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceEventsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceEventsFilter)(nil)).Elem()
+}
+
+func (o GetDataSourceEventsFilterArrayOutput) ToGetDataSourceEventsFilterArrayOutput() GetDataSourceEventsFilterArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventsFilterArrayOutput) ToGetDataSourceEventsFilterArrayOutputWithContext(ctx context.Context) GetDataSourceEventsFilterArrayOutput {
+	return o
+}
+
+func (o GetDataSourceEventsFilterArrayOutput) Index(i pulumi.IntInput) GetDataSourceEventsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceEventsFilter {
+		return vs[0].([]GetDataSourceEventsFilter)[vs[1].(int)]
+	}).(GetDataSourceEventsFilterOutput)
+}
+
+type GetDataSourceRegionStatusDetail struct {
+	// Data Source replication region.
+	Region string `pulumi:"region"`
+	// Status of data Source
+	Status string `pulumi:"status"`
+}
+
+// GetDataSourceRegionStatusDetailInput is an input type that accepts GetDataSourceRegionStatusDetailArgs and GetDataSourceRegionStatusDetailOutput values.
+// You can construct a concrete instance of `GetDataSourceRegionStatusDetailInput` via:
+//
+//	GetDataSourceRegionStatusDetailArgs{...}
+type GetDataSourceRegionStatusDetailInput interface {
+	pulumi.Input
+
+	ToGetDataSourceRegionStatusDetailOutput() GetDataSourceRegionStatusDetailOutput
+	ToGetDataSourceRegionStatusDetailOutputWithContext(context.Context) GetDataSourceRegionStatusDetailOutput
+}
+
+type GetDataSourceRegionStatusDetailArgs struct {
+	// Data Source replication region.
+	Region pulumi.StringInput `pulumi:"region"`
+	// Status of data Source
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetDataSourceRegionStatusDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceRegionStatusDetail)(nil)).Elem()
+}
+
+func (i GetDataSourceRegionStatusDetailArgs) ToGetDataSourceRegionStatusDetailOutput() GetDataSourceRegionStatusDetailOutput {
+	return i.ToGetDataSourceRegionStatusDetailOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceRegionStatusDetailArgs) ToGetDataSourceRegionStatusDetailOutputWithContext(ctx context.Context) GetDataSourceRegionStatusDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceRegionStatusDetailOutput)
+}
+
+// GetDataSourceRegionStatusDetailArrayInput is an input type that accepts GetDataSourceRegionStatusDetailArray and GetDataSourceRegionStatusDetailArrayOutput values.
+// You can construct a concrete instance of `GetDataSourceRegionStatusDetailArrayInput` via:
+//
+//	GetDataSourceRegionStatusDetailArray{ GetDataSourceRegionStatusDetailArgs{...} }
+type GetDataSourceRegionStatusDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourceRegionStatusDetailArrayOutput() GetDataSourceRegionStatusDetailArrayOutput
+	ToGetDataSourceRegionStatusDetailArrayOutputWithContext(context.Context) GetDataSourceRegionStatusDetailArrayOutput
+}
+
+type GetDataSourceRegionStatusDetailArray []GetDataSourceRegionStatusDetailInput
+
+func (GetDataSourceRegionStatusDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceRegionStatusDetail)(nil)).Elem()
+}
+
+func (i GetDataSourceRegionStatusDetailArray) ToGetDataSourceRegionStatusDetailArrayOutput() GetDataSourceRegionStatusDetailArrayOutput {
+	return i.ToGetDataSourceRegionStatusDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourceRegionStatusDetailArray) ToGetDataSourceRegionStatusDetailArrayOutputWithContext(ctx context.Context) GetDataSourceRegionStatusDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourceRegionStatusDetailArrayOutput)
+}
+
+type GetDataSourceRegionStatusDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceRegionStatusDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourceRegionStatusDetail)(nil)).Elem()
+}
+
+func (o GetDataSourceRegionStatusDetailOutput) ToGetDataSourceRegionStatusDetailOutput() GetDataSourceRegionStatusDetailOutput {
+	return o
+}
+
+func (o GetDataSourceRegionStatusDetailOutput) ToGetDataSourceRegionStatusDetailOutputWithContext(ctx context.Context) GetDataSourceRegionStatusDetailOutput {
+	return o
+}
+
+// Data Source replication region.
+func (o GetDataSourceRegionStatusDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceRegionStatusDetail) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Status of data Source
+func (o GetDataSourceRegionStatusDetailOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourceRegionStatusDetail) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetDataSourceRegionStatusDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourceRegionStatusDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourceRegionStatusDetail)(nil)).Elem()
+}
+
+func (o GetDataSourceRegionStatusDetailArrayOutput) ToGetDataSourceRegionStatusDetailArrayOutput() GetDataSourceRegionStatusDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourceRegionStatusDetailArrayOutput) ToGetDataSourceRegionStatusDetailArrayOutputWithContext(ctx context.Context) GetDataSourceRegionStatusDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourceRegionStatusDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourceRegionStatusDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourceRegionStatusDetail {
+		return vs[0].([]GetDataSourceRegionStatusDetail)[vs[1].(int)]
+	}).(GetDataSourceRegionStatusDetailOutput)
+}
+
+type GetDataSourcesDataSourceCollection struct {
+	Items []GetDataSourcesDataSourceCollectionItem `pulumi:"items"`
+}
+
+// GetDataSourcesDataSourceCollectionInput is an input type that accepts GetDataSourcesDataSourceCollectionArgs and GetDataSourcesDataSourceCollectionOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionInput` via:
+//
+//	GetDataSourcesDataSourceCollectionArgs{...}
+type GetDataSourcesDataSourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionOutput() GetDataSourcesDataSourceCollectionOutput
+	ToGetDataSourcesDataSourceCollectionOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionOutput
+}
+
+type GetDataSourcesDataSourceCollectionArgs struct {
+	Items GetDataSourcesDataSourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDataSourcesDataSourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollection)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionArgs) ToGetDataSourcesDataSourceCollectionOutput() GetDataSourcesDataSourceCollectionOutput {
+	return i.ToGetDataSourcesDataSourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionArgs) ToGetDataSourcesDataSourceCollectionOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionOutput)
+}
+
+// GetDataSourcesDataSourceCollectionArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionArray and GetDataSourcesDataSourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionArrayInput` via:
+//
+//	GetDataSourcesDataSourceCollectionArray{ GetDataSourcesDataSourceCollectionArgs{...} }
+type GetDataSourcesDataSourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionArrayOutput() GetDataSourcesDataSourceCollectionArrayOutput
+	ToGetDataSourcesDataSourceCollectionArrayOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionArrayOutput
+}
+
+type GetDataSourcesDataSourceCollectionArray []GetDataSourcesDataSourceCollectionInput
+
+func (GetDataSourcesDataSourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollection)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionArray) ToGetDataSourcesDataSourceCollectionArrayOutput() GetDataSourcesDataSourceCollectionArrayOutput {
+	return i.ToGetDataSourcesDataSourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionArray) ToGetDataSourcesDataSourceCollectionArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionArrayOutput)
+}
+
+type GetDataSourcesDataSourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollection)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionOutput) ToGetDataSourcesDataSourceCollectionOutput() GetDataSourcesDataSourceCollectionOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionOutput) ToGetDataSourcesDataSourceCollectionOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionOutput) Items() GetDataSourcesDataSourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollection) []GetDataSourcesDataSourceCollectionItem { return v.Items }).(GetDataSourcesDataSourceCollectionItemArrayOutput)
+}
+
+type GetDataSourcesDataSourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollection)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionArrayOutput) ToGetDataSourcesDataSourceCollectionArrayOutput() GetDataSourcesDataSourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionArrayOutput) ToGetDataSourcesDataSourceCollectionArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollection {
+		return vs[0].([]GetDataSourcesDataSourceCollection)[vs[1].(int)]
+	}).(GetDataSourcesDataSourceCollectionOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Details specific to the data source type.
+	DataSourceDetails []GetDataSourcesDataSourceCollectionItemDataSourceDetail `pulumi:"dataSourceDetails"`
+	// Information about the detector recipe and rule attached
+	DataSourceDetectorMappingInfos []GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo `pulumi:"dataSourceDetectorMappingInfos"`
+	// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Ocid for Data source
+	Id string `pulumi:"id"`
+	// Information about the region and status of query replication
+	RegionStatusDetails []GetDataSourcesDataSourceCollectionItemRegionStatusDetail `pulumi:"regionStatusDetails"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State string `pulumi:"state"`
+	// Status of data Source
+	Status string `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the Data source was created. Format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Data source was updated. Format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDataSourcesDataSourceCollectionItemInput is an input type that accepts GetDataSourcesDataSourceCollectionItemArgs and GetDataSourcesDataSourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemArgs{...}
+type GetDataSourcesDataSourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemOutput() GetDataSourcesDataSourceCollectionItemOutput
+	ToGetDataSourcesDataSourceCollectionItemOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Details specific to the data source type.
+	DataSourceDetails GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayInput `pulumi:"dataSourceDetails"`
+	// Information about the detector recipe and rule attached
+	DataSourceDetectorMappingInfos GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayInput `pulumi:"dataSourceDetectorMappingInfos"`
+	// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+	DataSourceFeedProvider pulumi.StringInput `pulumi:"dataSourceFeedProvider"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Ocid for Data source
+	Id pulumi.StringInput `pulumi:"id"`
+	// Information about the region and status of query replication
+	RegionStatusDetails GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayInput `pulumi:"regionStatusDetails"`
+	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	State pulumi.StringInput `pulumi:"state"`
+	// Status of data Source
+	Status pulumi.StringInput `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time the Data source was created. Format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Data source was updated. Format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDataSourcesDataSourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemArgs) ToGetDataSourcesDataSourceCollectionItemOutput() GetDataSourcesDataSourceCollectionItemOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemArgs) ToGetDataSourcesDataSourceCollectionItemOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemOutput)
+}
+
+// GetDataSourcesDataSourceCollectionItemArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemArray and GetDataSourcesDataSourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemArrayInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemArray{ GetDataSourcesDataSourceCollectionItemArgs{...} }
+type GetDataSourcesDataSourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemArrayOutput() GetDataSourcesDataSourceCollectionItemArrayOutput
+	ToGetDataSourcesDataSourceCollectionItemArrayOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemArrayOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemArray []GetDataSourcesDataSourceCollectionItemInput
+
+func (GetDataSourcesDataSourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemArray) ToGetDataSourcesDataSourceCollectionItemArrayOutput() GetDataSourcesDataSourceCollectionItemArrayOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemArray) ToGetDataSourcesDataSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemArrayOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemOutput) ToGetDataSourcesDataSourceCollectionItemOutput() GetDataSourcesDataSourceCollectionItemOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemOutput) ToGetDataSourcesDataSourceCollectionItemOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetDataSourcesDataSourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Details specific to the data source type.
+func (o GetDataSourcesDataSourceCollectionItemOutput) DataSourceDetails() GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) []GetDataSourcesDataSourceCollectionItemDataSourceDetail {
+		return v.DataSourceDetails
+	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput)
+}
+
+// Information about the detector recipe and rule attached
+func (o GetDataSourcesDataSourceCollectionItemOutput) DataSourceDetectorMappingInfos() GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) []GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo {
+		return v.DataSourceDetectorMappingInfos
+	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput)
+}
+
+// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+func (o GetDataSourcesDataSourceCollectionItemOutput) DataSourceFeedProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) string { return v.DataSourceFeedProvider }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetDataSourcesDataSourceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetDataSourcesDataSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetDataSourcesDataSourceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Ocid for Data source
+func (o GetDataSourcesDataSourceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Information about the region and status of query replication
+func (o GetDataSourcesDataSourceCollectionItemOutput) RegionStatusDetails() GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) []GetDataSourcesDataSourceCollectionItemRegionStatusDetail {
+		return v.RegionStatusDetails
+	}).(GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput)
+}
+
+// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+func (o GetDataSourcesDataSourceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Status of data Source
+func (o GetDataSourcesDataSourceCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDataSourcesDataSourceCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The date and time the Data source was created. Format defined by RFC3339.
+func (o GetDataSourcesDataSourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Data source was updated. Format defined by RFC3339.
+func (o GetDataSourcesDataSourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemArrayOutput) ToGetDataSourcesDataSourceCollectionItemArrayOutput() GetDataSourcesDataSourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemArrayOutput) ToGetDataSourcesDataSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollectionItem {
+		return vs[0].([]GetDataSourcesDataSourceCollectionItem)[vs[1].(int)]
+	}).(GetDataSourcesDataSourceCollectionItemOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetail struct {
+	// The additional entities count used for data source query.
+	AdditionalEntitiesCount int `pulumi:"additionalEntitiesCount"`
+	// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
+	// Interval in minutes that query is run periodically.
+	IntervalInMinutes int `pulumi:"intervalInMinutes"`
+	// Additional details specific to the data source type (Sighting/Insight).
+	LoggingQueryDetails []GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail `pulumi:"loggingQueryDetails"`
+	// A filter to return only resources their query type matches the given LoggingQueryType.
+	LoggingQueryType string `pulumi:"loggingQueryType"`
+	// Operator used in Data Soruce
+	Operator string `pulumi:"operator"`
+	// The continuous query expression that is run periodically.
+	Query string `pulumi:"query"`
+	// Time when the query can start, if not specified it can start immediately.
+	QueryStartTimes []GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime `pulumi:"queryStartTimes"`
+	// Logging Query regions
+	Regions []string `pulumi:"regions"`
+	// The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+	Threshold int `pulumi:"threshold"`
+}
+
+// GetDataSourcesDataSourceCollectionItemDataSourceDetailInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs and GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs{...}
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs struct {
+	// The additional entities count used for data source query.
+	AdditionalEntitiesCount pulumi.IntInput `pulumi:"additionalEntitiesCount"`
+	// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+	DataSourceFeedProvider pulumi.StringInput `pulumi:"dataSourceFeedProvider"`
+	// Interval in minutes that query is run periodically.
+	IntervalInMinutes pulumi.IntInput `pulumi:"intervalInMinutes"`
+	// Additional details specific to the data source type (Sighting/Insight).
+	LoggingQueryDetails GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayInput `pulumi:"loggingQueryDetails"`
+	// A filter to return only resources their query type matches the given LoggingQueryType.
+	LoggingQueryType pulumi.StringInput `pulumi:"loggingQueryType"`
+	// Operator used in Data Soruce
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// The continuous query expression that is run periodically.
+	Query pulumi.StringInput `pulumi:"query"`
+	// Time when the query can start, if not specified it can start immediately.
+	QueryStartTimes GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayInput `pulumi:"queryStartTimes"`
+	// Logging Query regions
+	Regions pulumi.StringArrayInput `pulumi:"regions"`
+	// The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+	Threshold pulumi.IntInput `pulumi:"threshold"`
+}
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetail)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput)
+}
+
+// GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailArray and GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemDataSourceDetailArray{ GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs{...} }
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailArray []GetDataSourcesDataSourceCollectionItemDataSourceDetailInput
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemDataSourceDetail)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailArray) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailArray) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetail)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput {
+	return o
+}
+
+// The additional entities count used for data source query.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) AdditionalEntitiesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) int { return v.AdditionalEntitiesCount }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) DataSourceFeedProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) string { return v.DataSourceFeedProvider }).(pulumi.StringOutput)
+}
+
+// Interval in minutes that query is run periodically.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) IntervalInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) int { return v.IntervalInMinutes }).(pulumi.IntOutput)
+}
+
+// Additional details specific to the data source type (Sighting/Insight).
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) LoggingQueryDetails() GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) []GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail {
+		return v.LoggingQueryDetails
+	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput)
+}
+
+// A filter to return only resources their query type matches the given LoggingQueryType.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) LoggingQueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) string { return v.LoggingQueryType }).(pulumi.StringOutput)
+}
+
+// Operator used in Data Soruce
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// The continuous query expression that is run periodically.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// Time when the query can start, if not specified it can start immediately.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) QueryStartTimes() GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) []GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime {
+		return v.QueryStartTimes
+	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput)
+}
+
+// Logging Query regions
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) []string { return v.Regions }).(pulumi.StringArrayOutput)
+}
+
+// The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput) Threshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetail) int { return v.Threshold }).(pulumi.IntOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemDataSourceDetail)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollectionItemDataSourceDetail {
+		return vs[0].([]GetDataSourcesDataSourceCollectionItemDataSourceDetail)[vs[1].(int)]
+	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail struct {
+	// The key entities count used for data source query
+	KeyEntitiesCount int `pulumi:"keyEntitiesCount"`
+	// A filter to return only resources their query type matches the given LoggingQueryType.
+	LoggingQueryType string `pulumi:"loggingQueryType"`
+}
+
+// GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs and GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs{...}
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs struct {
+	// The key entities count used for data source query
+	KeyEntitiesCount pulumi.IntInput `pulumi:"keyEntitiesCount"`
+	// A filter to return only resources their query type matches the given LoggingQueryType.
+	LoggingQueryType pulumi.StringInput `pulumi:"loggingQueryType"`
+}
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput)
+}
+
+// GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray and GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray{ GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs{...} }
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray []GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailInput
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput {
+	return o
+}
+
+// The key entities count used for data source query
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput) KeyEntitiesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail) int {
+		return v.KeyEntitiesCount
+	}).(pulumi.IntOutput)
+}
+
+// A filter to return only resources their query type matches the given LoggingQueryType.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput) LoggingQueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail) string {
+		return v.LoggingQueryType
+	}).(pulumi.StringOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail {
+		return vs[0].([]GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail)[vs[1].(int)]
+	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime struct {
+	// Time when the query can start, if not specified it can start immediately.
+	QueryStartTime string `pulumi:"queryStartTime"`
+	// policy used for deciding the query start time
+	StartPolicyType string `pulumi:"startPolicyType"`
+}
+
+// GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs and GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs{...}
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs struct {
+	// Time when the query can start, if not specified it can start immediately.
+	QueryStartTime pulumi.StringInput `pulumi:"queryStartTime"`
+	// policy used for deciding the query start time
+	StartPolicyType pulumi.StringInput `pulumi:"startPolicyType"`
+}
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput)
+}
+
+// GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray and GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray{ GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs{...} }
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray []GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeInput
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput {
+	return o
+}
+
+// Time when the query can start, if not specified it can start immediately.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput) QueryStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime) string {
+		return v.QueryStartTime
+	}).(pulumi.StringOutput)
+}
+
+// policy used for deciding the query start time
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput) StartPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime) string {
+		return v.StartPolicyType
+	}).(pulumi.StringOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime {
+		return vs[0].([]GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime)[vs[1].(int)]
+	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo struct {
+	// Id of the attached detectorRecipeId to the Data Source.
+	DetectorRecipeId string `pulumi:"detectorRecipeId"`
+	// Id of the attached detectorRuleId to the Data Source.
+	DetectorRuleId string `pulumi:"detectorRuleId"`
+}
+
+// GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs and GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs{...}
+type GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs struct {
+	// Id of the attached detectorRecipeId to the Data Source.
+	DetectorRecipeId pulumi.StringInput `pulumi:"detectorRecipeId"`
+	// Id of the attached detectorRuleId to the Data Source.
+	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
+}
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput)
+}
+
+// GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray and GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray{ GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs{...} }
+type GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput
+	ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray []GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoInput
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput {
+	return o
+}
+
+// Id of the attached detectorRecipeId to the Data Source.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput) DetectorRecipeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo) string {
+		return v.DetectorRecipeId
+	}).(pulumi.StringOutput)
+}
+
+// Id of the attached detectorRuleId to the Data Source.
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput) DetectorRuleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo) string {
+		return v.DetectorRuleId
+	}).(pulumi.StringOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput() GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput) ToGetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo {
+		return vs[0].([]GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo)[vs[1].(int)]
+	}).(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemRegionStatusDetail struct {
+	// Data Source replication region.
+	Region string `pulumi:"region"`
+	// Status of data Source
+	Status string `pulumi:"status"`
+}
+
+// GetDataSourcesDataSourceCollectionItemRegionStatusDetailInput is an input type that accepts GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs and GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemRegionStatusDetailInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs{...}
+type GetDataSourcesDataSourceCollectionItemRegionStatusDetailInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput() GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput
+	ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs struct {
+	// Data Source replication region.
+	Region pulumi.StringInput `pulumi:"region"`
+	// Status of data Source
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemRegionStatusDetail)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput() GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput)
+}
+
+// GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayInput is an input type that accepts GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray and GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput values.
+// You can construct a concrete instance of `GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayInput` via:
+//
+//	GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray{ GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs{...} }
+type GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput() GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput
+	ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutputWithContext(context.Context) GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput
+}
+
+type GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray []GetDataSourcesDataSourceCollectionItemRegionStatusDetailInput
+
+func (GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemRegionStatusDetail)(nil)).Elem()
+}
+
+func (i GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput() GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput {
+	return i.ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemRegionStatusDetail)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput() GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput {
+	return o
+}
+
+// Data Source replication region.
+func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemRegionStatusDetail) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Status of data Source
+func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesDataSourceCollectionItemRegionStatusDetail) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesDataSourceCollectionItemRegionStatusDetail)(nil)).Elem()
+}
+
+func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput() GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput) ToGetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutputWithContext(ctx context.Context) GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput) Index(i pulumi.IntInput) GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesDataSourceCollectionItemRegionStatusDetail {
+		return vs[0].([]GetDataSourcesDataSourceCollectionItemRegionStatusDetail)[vs[1].(int)]
+	}).(GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput)
+}
+
+type GetDataSourcesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDataSourcesFilterInput is an input type that accepts GetDataSourcesFilterArgs and GetDataSourcesFilterOutput values.
+// You can construct a concrete instance of `GetDataSourcesFilterInput` via:
+//
+//	GetDataSourcesFilterArgs{...}
+type GetDataSourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesFilterOutput() GetDataSourcesFilterOutput
+	ToGetDataSourcesFilterOutputWithContext(context.Context) GetDataSourcesFilterOutput
+}
+
+type GetDataSourcesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDataSourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesFilter)(nil)).Elem()
+}
+
+func (i GetDataSourcesFilterArgs) ToGetDataSourcesFilterOutput() GetDataSourcesFilterOutput {
+	return i.ToGetDataSourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesFilterArgs) ToGetDataSourcesFilterOutputWithContext(ctx context.Context) GetDataSourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesFilterOutput)
+}
+
+// GetDataSourcesFilterArrayInput is an input type that accepts GetDataSourcesFilterArray and GetDataSourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDataSourcesFilterArrayInput` via:
+//
+//	GetDataSourcesFilterArray{ GetDataSourcesFilterArgs{...} }
+type GetDataSourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDataSourcesFilterArrayOutput() GetDataSourcesFilterArrayOutput
+	ToGetDataSourcesFilterArrayOutputWithContext(context.Context) GetDataSourcesFilterArrayOutput
+}
+
+type GetDataSourcesFilterArray []GetDataSourcesFilterInput
+
+func (GetDataSourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesFilter)(nil)).Elem()
+}
+
+func (i GetDataSourcesFilterArray) ToGetDataSourcesFilterArrayOutput() GetDataSourcesFilterArrayOutput {
+	return i.ToGetDataSourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataSourcesFilterArray) ToGetDataSourcesFilterArrayOutputWithContext(ctx context.Context) GetDataSourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataSourcesFilterArrayOutput)
+}
+
+type GetDataSourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataSourcesFilter)(nil)).Elem()
+}
+
+func (o GetDataSourcesFilterOutput) ToGetDataSourcesFilterOutput() GetDataSourcesFilterOutput {
+	return o
+}
+
+func (o GetDataSourcesFilterOutput) ToGetDataSourcesFilterOutputWithContext(ctx context.Context) GetDataSourcesFilterOutput {
+	return o
+}
+
+func (o GetDataSourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataSourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDataSourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDataSourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDataSourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataSourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDataSourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataSourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataSourcesFilter)(nil)).Elem()
+}
+
+func (o GetDataSourcesFilterArrayOutput) ToGetDataSourcesFilterArrayOutput() GetDataSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesFilterArrayOutput) ToGetDataSourcesFilterArrayOutputWithContext(ctx context.Context) GetDataSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetDataSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetDataSourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataSourcesFilter {
+		return vs[0].([]GetDataSourcesFilter)[vs[1].(int)]
+	}).(GetDataSourcesFilterOutput)
+}
+
 type GetDetectorRecipeDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []GetDetectorRecipeDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
 	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// Details of a Detector Rule
@@ -5988,8 +9916,10 @@ type GetDetectorRecipeDetectorRule struct {
 	Detector string `pulumi:"detector"`
 	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -6022,6 +9952,8 @@ type GetDetectorRecipeDetectorRuleInput interface {
 type GetDetectorRecipeDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of a Detector Rule
@@ -6030,8 +9962,10 @@ type GetDetectorRecipeDetectorRuleArgs struct {
 	Detector pulumi.StringInput `pulumi:"detector"`
 	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -6108,6 +10042,11 @@ func (o GetDetectorRecipeDetectorRuleOutput) CandidateResponderRules() GetDetect
 	}).(GetDetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
+// The id of the attached DataSource.
+func (o GetDetectorRecipeDetectorRuleOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
 // Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipeDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.Description }).(pulumi.StringOutput)
@@ -6128,9 +10067,16 @@ func (o GetDetectorRecipeDetectorRuleOutput) DetectorRuleId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
 
-// Display name for DetectorRecipeDetectorRule.
+// The display name of entity
 func (o GetDetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetDetectorRecipeDetectorRuleOutput) EntitiesMappings() GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) []GetDetectorRecipeDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -6194,7 +10140,7 @@ func (o GetDetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInput) GetDe
 }
 
 type GetDetectorRecipeDetectorRuleCandidateResponderRule struct {
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName string `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id string `pulumi:"id"`
@@ -6214,7 +10160,7 @@ type GetDetectorRecipeDetectorRuleCandidateResponderRuleInput interface {
 }
 
 type GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs struct {
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id pulumi.StringInput `pulumi:"id"`
@@ -6273,7 +10219,7 @@ func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput) ToGetDetector
 	return o
 }
 
-// Display name for DetectorRecipeDetectorRule.
+// The display name of entity
 func (o GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleCandidateResponderRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -6313,12 +10259,20 @@ type GetDetectorRecipeDetectorRuleDetail struct {
 	Condition string `pulumi:"condition"`
 	// Configuration details
 	Configurations []GetDetectorRecipeDetectorRuleDetailConfiguration `pulumi:"configurations"`
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
+	// Description for DetectorRecipeDetectorRule.
+	Description string `pulumi:"description"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetDetectorRecipeDetectorRuleDetailEntitiesMapping `pulumi:"entitiesMappings"`
 	// configuration allowed or not
 	IsConfigurationAllowed bool `pulumi:"isConfigurationAllowed"`
 	// Enables the control
 	IsEnabled bool `pulumi:"isEnabled"`
 	// user defined labels for a detector rule
 	Labels []string `pulumi:"labels"`
+	// Recommendation for DetectorRecipeDetectorRule
+	Recommendation string `pulumi:"recommendation"`
 	// The Risk Level
 	RiskLevel string `pulumi:"riskLevel"`
 }
@@ -6339,12 +10293,20 @@ type GetDetectorRecipeDetectorRuleDetailArgs struct {
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// Configuration details
 	Configurations GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
+	// Description for DetectorRecipeDetectorRule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// configuration allowed or not
 	IsConfigurationAllowed pulumi.BoolInput `pulumi:"isConfigurationAllowed"`
 	// Enables the control
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// user defined labels for a detector rule
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// Recommendation for DetectorRecipeDetectorRule
+	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// The Risk Level
 	RiskLevel pulumi.StringInput `pulumi:"riskLevel"`
 }
@@ -6412,6 +10374,23 @@ func (o GetDetectorRecipeDetectorRuleDetailOutput) Configurations() GetDetectorR
 	}).(GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput)
 }
 
+// The id of the attached DataSource.
+func (o GetDetectorRecipeDetectorRuleDetailOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetail) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
+// Description for DetectorRecipeDetectorRule.
+func (o GetDetectorRecipeDetectorRuleDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetDetectorRecipeDetectorRuleDetailOutput) EntitiesMappings() GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetail) []GetDetectorRecipeDetectorRuleDetailEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput)
+}
+
 // configuration allowed or not
 func (o GetDetectorRecipeDetectorRuleDetailOutput) IsConfigurationAllowed() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetail) bool { return v.IsConfigurationAllowed }).(pulumi.BoolOutput)
@@ -6425,6 +10404,11 @@ func (o GetDetectorRecipeDetectorRuleDetailOutput) IsEnabled() pulumi.BoolOutput
 // user defined labels for a detector rule
 func (o GetDetectorRecipeDetectorRuleDetailOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetail) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// Recommendation for DetectorRecipeDetectorRule
+func (o GetDetectorRecipeDetectorRuleDetailOutput) Recommendation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetail) string { return v.Recommendation }).(pulumi.StringOutput)
 }
 
 // The Risk Level
@@ -6702,9 +10686,241 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput) Index(
 	}).(GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput)
 }
 
+type GetDetectorRecipeDetectorRuleDetailEntitiesMapping struct {
+	// The display name of entity
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetDetectorRecipeDetectorRuleDetailEntitiesMappingInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs and GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailEntitiesMappingInput` via:
+//
+//	GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs{...}
+type GetDetectorRecipeDetectorRuleDetailEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput() GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput
+	ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput
+}
+
+type GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs struct {
+	// The display name of entity
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput() GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput {
+	return i.ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput)
+}
+
+// GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray and GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayInput` via:
+//
+//	GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray{ GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs{...} }
+type GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput() GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput
+	ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput
+}
+
+type GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray []GetDetectorRecipeDetectorRuleDetailEntitiesMappingInput
+
+func (GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleDetailEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput() GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput {
+	return i.ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput)
+}
+
+type GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput() GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput {
+	return o
+}
+
+// The display name of entity
+func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailEntitiesMapping) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailEntitiesMapping) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailEntitiesMapping) string { return v.QueryField }).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleDetailEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput() GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput) ToGetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeDetectorRuleDetailEntitiesMapping {
+		return vs[0].([]GetDetectorRecipeDetectorRuleDetailEntitiesMapping)[vs[1].(int)]
+	}).(GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput)
+}
+
+type GetDetectorRecipeDetectorRuleEntitiesMapping struct {
+	// The display name of entity
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetDetectorRecipeDetectorRuleEntitiesMappingInput is an input type that accepts GetDetectorRecipeDetectorRuleEntitiesMappingArgs and GetDetectorRecipeDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleEntitiesMappingInput` via:
+//
+//	GetDetectorRecipeDetectorRuleEntitiesMappingArgs{...}
+type GetDetectorRecipeDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetDetectorRecipeDetectorRuleEntitiesMappingOutput
+	ToGetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleEntitiesMappingOutput
+}
+
+type GetDetectorRecipeDetectorRuleEntitiesMappingArgs struct {
+	// The display name of entity
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetDetectorRecipeDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return i.ToGetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
+// GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleEntitiesMappingArray and GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	GetDetectorRecipeDetectorRuleEntitiesMappingArray{ GetDetectorRecipeDetectorRuleEntitiesMappingArgs{...} }
+type GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+	ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+}
+
+type GetDetectorRecipeDetectorRuleEntitiesMappingArray []GetDetectorRecipeDetectorRuleEntitiesMappingInput
+
+func (GetDetectorRecipeDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleEntitiesMappingArray) ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleEntitiesMappingArray) ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type GetDetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// The display name of entity
+func (o GetDetectorRecipeDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleEntitiesMapping) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetDetectorRecipeDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleEntitiesMapping) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetDetectorRecipeDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleEntitiesMapping) string { return v.QueryField }).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeDetectorRuleEntitiesMapping {
+		return vs[0].([]GetDetectorRecipeDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(GetDetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
 type GetDetectorRecipeEffectiveDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
 	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// Details of a Detector Rule
@@ -6713,8 +10929,10 @@ type GetDetectorRecipeEffectiveDetectorRule struct {
 	Detector string `pulumi:"detector"`
 	// The unique identifier of the detector rule.
 	DetectorRuleId string `pulumi:"detectorRuleId"`
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -6747,6 +10965,8 @@ type GetDetectorRecipeEffectiveDetectorRuleInput interface {
 type GetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of a Detector Rule
@@ -6755,8 +10975,10 @@ type GetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	Detector pulumi.StringInput `pulumi:"detector"`
 	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -6833,6 +11055,11 @@ func (o GetDetectorRecipeEffectiveDetectorRuleOutput) CandidateResponderRules() 
 	}).(GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
+// The id of the attached DataSource.
+func (o GetDetectorRecipeEffectiveDetectorRuleOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
 // Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.Description }).(pulumi.StringOutput)
@@ -6855,9 +11082,16 @@ func (o GetDetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.St
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.DetectorRuleId }).(pulumi.StringOutput)
 }
 
-// Display name for DetectorRecipeDetectorRule.
+// The display name of entity
 func (o GetDetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetDetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings() GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) []GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -6921,7 +11155,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule struct {
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName string `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id string `pulumi:"id"`
@@ -6941,7 +11175,7 @@ type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput interface
 }
 
 type GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs struct {
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Ocid for detector recipe
 	Id pulumi.StringInput `pulumi:"id"`
@@ -7000,7 +11234,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) ToGe
 	return o
 }
 
-// Display name for DetectorRecipeDetectorRule.
+// The display name of entity
 func (o GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -7431,6 +11665,121 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutpu
 	}).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
 }
 
+type GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping struct {
+	// The display name of entity
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs and GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput` via:
+//
+//	GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...}
+type GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+	ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Context) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs struct {
+	// The display name of entity
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return i.ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+// GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{ GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...} }
+type GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+	ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray []GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput
+
+func (GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// The display name of entity
+func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string { return v.QueryField }).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return vs[0].([]GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
 type GetDetectorRecipesDetectorRecipeCollection struct {
 	Items []GetDetectorRecipesDetectorRecipeCollectionItem `pulumi:"items"`
 }
@@ -7554,6 +11903,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItem struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The recipe attached to targets
+	TargetIds []string `pulumi:"targetIds"`
 	// The date and time the detector recipe was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the detector recipe was updated. Format defined by RFC3339.
@@ -7598,6 +11949,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The recipe attached to targets
+	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
 	// The date and time the detector recipe was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the detector recipe was updated. Format defined by RFC3339.
@@ -7724,6 +12077,11 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemOutput) SystemTags() pulum
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
+// The recipe attached to targets
+func (o GetDetectorRecipesDetectorRecipeCollectionItemOutput) TargetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItem) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
+}
+
 // The date and time the detector recipe was created. Format defined by RFC3339.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -7757,6 +12115,8 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemArrayOutput) Index(i pulum
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
 	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// Details of a Detector Rule
@@ -7767,6 +12127,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule struct {
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -7799,6 +12161,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleInput interface {
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of a Detector Rule
@@ -7809,6 +12173,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs struct {
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -7885,6 +12251,11 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) Candid
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
+// The id of the attached DataSource.
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
 // Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) string { return v.Description }).(pulumi.StringOutput)
@@ -7910,6 +12281,13 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) Detect
 // A filter to return only resources that match the entire display name given.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) EntitiesMappings() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -8098,12 +12476,20 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail struct {
 	Condition string `pulumi:"condition"`
 	// Configuration details
 	Configurations []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration `pulumi:"configurations"`
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
+	// Description for DetectorRecipeDetectorRule.
+	Description string `pulumi:"description"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping `pulumi:"entitiesMappings"`
 	// configuration allowed or not
 	IsConfigurationAllowed bool `pulumi:"isConfigurationAllowed"`
 	// Enables the control
 	IsEnabled bool `pulumi:"isEnabled"`
 	// user defined labels for a detector rule
 	Labels []string `pulumi:"labels"`
+	// Recommendation for DetectorRecipeDetectorRule
+	Recommendation string `pulumi:"recommendation"`
 	// The Risk Level
 	RiskLevel string `pulumi:"riskLevel"`
 }
@@ -8124,12 +12510,20 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArgs struct
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// Configuration details
 	Configurations GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
+	// Description for DetectorRecipeDetectorRule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// configuration allowed or not
 	IsConfigurationAllowed pulumi.BoolInput `pulumi:"isConfigurationAllowed"`
 	// Enables the control
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// user defined labels for a detector rule
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// Recommendation for DetectorRecipeDetectorRule
+	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// The Risk Level
 	RiskLevel pulumi.StringInput `pulumi:"riskLevel"`
 }
@@ -8197,6 +12591,23 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) 
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutput)
 }
 
+// The id of the attached DataSource.
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
+// Description for DetectorRecipeDetectorRule.
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) EntitiesMappings() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail) []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput)
+}
+
 // configuration allowed or not
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) IsConfigurationAllowed() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail) bool {
@@ -8212,6 +12623,13 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) 
 // user defined labels for a detector rule
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// Recommendation for DetectorRecipeDetectorRule
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailOutput) Recommendation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail) string {
+		return v.Recommendation
+	}).(pulumi.StringOutput)
 }
 
 // The Risk Level
@@ -8503,9 +12921,253 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput)
 }
 
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping) string {
+		return v.EntityType
+	}).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping) string {
+		return v.QueryField
+	}).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping) string {
+		return v.EntityType
+	}).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping) string {
+		return v.QueryField
+	}).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput)
+}
+
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
 	// Description for DetectorRecipeDetectorRule.
 	Description string `pulumi:"description"`
 	// Details of a Detector Rule
@@ -8516,6 +13178,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule struct 
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -8548,6 +13212,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleInput in
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// Description for DetectorRecipeDetectorRule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of a Detector Rule
@@ -8558,6 +13224,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs str
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -8634,6 +13302,13 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutpu
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
+// The id of the attached DataSource.
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) string {
+		return v.DataSourceId
+	}).(pulumi.StringOutput)
+}
+
 // Description for DetectorRecipeDetectorRule.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) string {
@@ -8665,6 +13340,13 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutpu
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) string {
 		return v.DisplayName
 	}).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) EntitiesMappings() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -9278,6 +13960,127 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue {
 		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue)[vs[1].(int)]
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping) string {
+		return v.EntityType
+	}).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping) string {
+		return v.QueryField
+	}).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
 type GetDetectorRecipesFilter struct {
@@ -9928,6 +14731,8 @@ func (o GetGuardTargetTargetDetectorRecipeArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetGuardTargetTargetDetectorRecipeDetectorRule struct {
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
 	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
@@ -9938,6 +14743,8 @@ type GetGuardTargetTargetDetectorRecipeDetectorRule struct {
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -9968,6 +14775,8 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleInput interface {
 }
 
 type GetGuardTargetTargetDetectorRecipeDetectorRuleArgs struct {
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
@@ -9978,6 +14787,8 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleArgs struct {
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -10047,6 +14858,11 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) ToGetGuardTargetTa
 	return o
 }
 
+// The id of the attached DataSource.
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
 // ResponderRule description.
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.Description }).(pulumi.StringOutput)
@@ -10072,6 +14888,13 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) DetectorRuleId() p
 // ResponderRule display name.
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) EntitiesMappings() GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) []GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -10642,7 +15465,124 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueAr
 	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput)
 }
 
+type GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping struct {
+	// ResponderRule display name.
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{...}
+type GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs struct {
+	// ResponderRule display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
+// GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray and GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{...} }
+type GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray []GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// ResponderRule display name.
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping) string { return v.QueryField }).(pulumi.StringOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
+		return vs[0].([]GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule struct {
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
 	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
@@ -10653,6 +15593,8 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// ResponderRule display name.
 	DisplayName string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -10683,6 +15625,8 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleInput interface {
 }
 
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
@@ -10693,6 +15637,8 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// ResponderRule display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -10762,6 +15708,11 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ToGetGuar
 	return o
 }
 
+// The id of the attached DataSource.
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.DataSourceId }).(pulumi.StringOutput)
+}
+
 // ResponderRule description.
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.Description }).(pulumi.StringOutput)
@@ -10787,6 +15738,13 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DetectorR
 // ResponderRule display name.
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -11369,6 +16327,127 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue)[vs[1].(int)]
 	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping struct {
+	// ResponderRule display name.
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...}
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs struct {
+	// ResponderRule display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+// GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...} }
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// ResponderRule display name.
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string {
+		return v.EntityType
+	}).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string {
+		return v.QueryField
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
 type GetGuardTargetTargetResponderRecipe struct {
@@ -13451,6 +18530,8 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeArrayOutput) Inde
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule struct {
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
 	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
@@ -13461,6 +18542,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule struct 
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -13491,6 +18574,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleInput in
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs struct {
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
@@ -13501,6 +18586,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs str
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -13570,6 +18657,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutpu
 	return o
 }
 
+// The id of the attached DataSource.
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) string {
+		return v.DataSourceId
+	}).(pulumi.StringOutput)
+}
+
 // ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) string {
@@ -13601,6 +18695,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutpu
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) string {
 		return v.DisplayName
 	}).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) EntitiesMappings() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -14205,7 +19306,130 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput)
 }
 
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping) string {
+		return v.EntityType
+	}).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping) string {
+		return v.QueryField
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
+}
+
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule struct {
+	// The id of the attached DataSource.
+	DataSourceId string `pulumi:"dataSourceId"`
 	// ResponderRule description.
 	Description string `pulumi:"description"`
 	// Details of ResponderRule.
@@ -14216,6 +19440,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 	DetectorRuleId string `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -14246,6 +19472,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
+	// The id of the attached DataSource.
+	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// ResponderRule description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details of ResponderRule.
@@ -14256,6 +19484,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 	DetectorRuleId pulumi.StringInput `pulumi:"detectorRuleId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Data Source entities mapping for a Detector Rule
+	EntitiesMappings GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
@@ -14325,6 +19555,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return o
 }
 
+// The id of the attached DataSource.
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) DataSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) string {
+		return v.DataSourceId
+	}).(pulumi.StringOutput)
+}
+
 // ResponderRule description.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) string {
@@ -14358,6 +19595,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) string {
 		return v.DisplayName
 	}).(pulumi.StringOutput)
+}
+
+// Data Source entities mapping for a Detector Rule
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return v.EntitiesMappings
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -14962,6 +20206,127 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue)[vs[1].(int)]
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType string `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField string `pulumi:"queryField"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Possible type of entity
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The entity value mapped to a data source query
+	QueryField pulumi.StringInput `pulumi:"queryField"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Possible type of entity
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string {
+		return v.EntityType
+	}).(pulumi.StringOutput)
+}
+
+// The entity value mapped to a data source query
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping) string {
+		return v.QueryField
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
 }
 
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipe struct {
@@ -16520,6 +21885,727 @@ func (o GetManagedListsManagedListCollectionItemArrayOutput) Index(i pulumi.IntI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedListsManagedListCollectionItem {
 		return vs[0].([]GetManagedListsManagedListCollectionItem)[vs[1].(int)]
 	}).(GetManagedListsManagedListCollectionItemOutput)
+}
+
+type GetProblemEntitiesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetProblemEntitiesFilterInput is an input type that accepts GetProblemEntitiesFilterArgs and GetProblemEntitiesFilterOutput values.
+// You can construct a concrete instance of `GetProblemEntitiesFilterInput` via:
+//
+//	GetProblemEntitiesFilterArgs{...}
+type GetProblemEntitiesFilterInput interface {
+	pulumi.Input
+
+	ToGetProblemEntitiesFilterOutput() GetProblemEntitiesFilterOutput
+	ToGetProblemEntitiesFilterOutputWithContext(context.Context) GetProblemEntitiesFilterOutput
+}
+
+type GetProblemEntitiesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetProblemEntitiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntitiesFilter)(nil)).Elem()
+}
+
+func (i GetProblemEntitiesFilterArgs) ToGetProblemEntitiesFilterOutput() GetProblemEntitiesFilterOutput {
+	return i.ToGetProblemEntitiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntitiesFilterArgs) ToGetProblemEntitiesFilterOutputWithContext(ctx context.Context) GetProblemEntitiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesFilterOutput)
+}
+
+// GetProblemEntitiesFilterArrayInput is an input type that accepts GetProblemEntitiesFilterArray and GetProblemEntitiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetProblemEntitiesFilterArrayInput` via:
+//
+//	GetProblemEntitiesFilterArray{ GetProblemEntitiesFilterArgs{...} }
+type GetProblemEntitiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetProblemEntitiesFilterArrayOutput() GetProblemEntitiesFilterArrayOutput
+	ToGetProblemEntitiesFilterArrayOutputWithContext(context.Context) GetProblemEntitiesFilterArrayOutput
+}
+
+type GetProblemEntitiesFilterArray []GetProblemEntitiesFilterInput
+
+func (GetProblemEntitiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntitiesFilter)(nil)).Elem()
+}
+
+func (i GetProblemEntitiesFilterArray) ToGetProblemEntitiesFilterArrayOutput() GetProblemEntitiesFilterArrayOutput {
+	return i.ToGetProblemEntitiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntitiesFilterArray) ToGetProblemEntitiesFilterArrayOutputWithContext(ctx context.Context) GetProblemEntitiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesFilterArrayOutput)
+}
+
+type GetProblemEntitiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntitiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntitiesFilter)(nil)).Elem()
+}
+
+func (o GetProblemEntitiesFilterOutput) ToGetProblemEntitiesFilterOutput() GetProblemEntitiesFilterOutput {
+	return o
+}
+
+func (o GetProblemEntitiesFilterOutput) ToGetProblemEntitiesFilterOutputWithContext(ctx context.Context) GetProblemEntitiesFilterOutput {
+	return o
+}
+
+func (o GetProblemEntitiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntitiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetProblemEntitiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProblemEntitiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetProblemEntitiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProblemEntitiesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetProblemEntitiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntitiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntitiesFilter)(nil)).Elem()
+}
+
+func (o GetProblemEntitiesFilterArrayOutput) ToGetProblemEntitiesFilterArrayOutput() GetProblemEntitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetProblemEntitiesFilterArrayOutput) ToGetProblemEntitiesFilterArrayOutputWithContext(ctx context.Context) GetProblemEntitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetProblemEntitiesFilterArrayOutput) Index(i pulumi.IntInput) GetProblemEntitiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProblemEntitiesFilter {
+		return vs[0].([]GetProblemEntitiesFilter)[vs[1].(int)]
+	}).(GetProblemEntitiesFilterOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollection struct {
+	// List of problem entities summaries related to a data source.
+	Items []GetProblemEntitiesProblemEntityCollectionItem `pulumi:"items"`
+}
+
+// GetProblemEntitiesProblemEntityCollectionInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionArgs and GetProblemEntitiesProblemEntityCollectionOutput values.
+// You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionInput` via:
+//
+//	GetProblemEntitiesProblemEntityCollectionArgs{...}
+type GetProblemEntitiesProblemEntityCollectionInput interface {
+	pulumi.Input
+
+	ToGetProblemEntitiesProblemEntityCollectionOutput() GetProblemEntitiesProblemEntityCollectionOutput
+	ToGetProblemEntitiesProblemEntityCollectionOutputWithContext(context.Context) GetProblemEntitiesProblemEntityCollectionOutput
+}
+
+type GetProblemEntitiesProblemEntityCollectionArgs struct {
+	// List of problem entities summaries related to a data source.
+	Items GetProblemEntitiesProblemEntityCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetProblemEntitiesProblemEntityCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntitiesProblemEntityCollection)(nil)).Elem()
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionArgs) ToGetProblemEntitiesProblemEntityCollectionOutput() GetProblemEntitiesProblemEntityCollectionOutput {
+	return i.ToGetProblemEntitiesProblemEntityCollectionOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionArgs) ToGetProblemEntitiesProblemEntityCollectionOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionOutput)
+}
+
+// GetProblemEntitiesProblemEntityCollectionArrayInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionArray and GetProblemEntitiesProblemEntityCollectionArrayOutput values.
+// You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionArrayInput` via:
+//
+//	GetProblemEntitiesProblemEntityCollectionArray{ GetProblemEntitiesProblemEntityCollectionArgs{...} }
+type GetProblemEntitiesProblemEntityCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProblemEntitiesProblemEntityCollectionArrayOutput() GetProblemEntitiesProblemEntityCollectionArrayOutput
+	ToGetProblemEntitiesProblemEntityCollectionArrayOutputWithContext(context.Context) GetProblemEntitiesProblemEntityCollectionArrayOutput
+}
+
+type GetProblemEntitiesProblemEntityCollectionArray []GetProblemEntitiesProblemEntityCollectionInput
+
+func (GetProblemEntitiesProblemEntityCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntitiesProblemEntityCollection)(nil)).Elem()
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionArray) ToGetProblemEntitiesProblemEntityCollectionArrayOutput() GetProblemEntitiesProblemEntityCollectionArrayOutput {
+	return i.ToGetProblemEntitiesProblemEntityCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionArray) ToGetProblemEntitiesProblemEntityCollectionArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionArrayOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntitiesProblemEntityCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntitiesProblemEntityCollection)(nil)).Elem()
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionOutput) ToGetProblemEntitiesProblemEntityCollectionOutput() GetProblemEntitiesProblemEntityCollectionOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionOutput) ToGetProblemEntitiesProblemEntityCollectionOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionOutput {
+	return o
+}
+
+// List of problem entities summaries related to a data source.
+func (o GetProblemEntitiesProblemEntityCollectionOutput) Items() GetProblemEntitiesProblemEntityCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollection) []GetProblemEntitiesProblemEntityCollectionItem {
+		return v.Items
+	}).(GetProblemEntitiesProblemEntityCollectionItemArrayOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntitiesProblemEntityCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntitiesProblemEntityCollection)(nil)).Elem()
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionArrayOutput) ToGetProblemEntitiesProblemEntityCollectionArrayOutput() GetProblemEntitiesProblemEntityCollectionArrayOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionArrayOutput) ToGetProblemEntitiesProblemEntityCollectionArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionArrayOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionArrayOutput) Index(i pulumi.IntInput) GetProblemEntitiesProblemEntityCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProblemEntitiesProblemEntityCollection {
+		return vs[0].([]GetProblemEntitiesProblemEntityCollection)[vs[1].(int)]
+	}).(GetProblemEntitiesProblemEntityCollectionOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollectionItem struct {
+	// List of event related to a DataSource
+	EntityDetails []GetProblemEntitiesProblemEntityCollectionItemEntityDetail `pulumi:"entityDetails"`
+	// OCId of the problem.
+	ProblemId string `pulumi:"problemId"`
+	// Data source problem entities region
+	Regions []string `pulumi:"regions"`
+	// Log result query url for a data source query
+	ResultUrl string `pulumi:"resultUrl"`
+	// Data source problem entities first detected time
+	TimeFirstDetected string `pulumi:"timeFirstDetected"`
+	// Data source problem entities last detected time
+	TimeLastDetected string `pulumi:"timeLastDetected"`
+}
+
+// GetProblemEntitiesProblemEntityCollectionItemInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionItemArgs and GetProblemEntitiesProblemEntityCollectionItemOutput values.
+// You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionItemInput` via:
+//
+//	GetProblemEntitiesProblemEntityCollectionItemArgs{...}
+type GetProblemEntitiesProblemEntityCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetProblemEntitiesProblemEntityCollectionItemOutput() GetProblemEntitiesProblemEntityCollectionItemOutput
+	ToGetProblemEntitiesProblemEntityCollectionItemOutputWithContext(context.Context) GetProblemEntitiesProblemEntityCollectionItemOutput
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemArgs struct {
+	// List of event related to a DataSource
+	EntityDetails GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayInput `pulumi:"entityDetails"`
+	// OCId of the problem.
+	ProblemId pulumi.StringInput `pulumi:"problemId"`
+	// Data source problem entities region
+	Regions pulumi.StringArrayInput `pulumi:"regions"`
+	// Log result query url for a data source query
+	ResultUrl pulumi.StringInput `pulumi:"resultUrl"`
+	// Data source problem entities first detected time
+	TimeFirstDetected pulumi.StringInput `pulumi:"timeFirstDetected"`
+	// Data source problem entities last detected time
+	TimeLastDetected pulumi.StringInput `pulumi:"timeLastDetected"`
+}
+
+func (GetProblemEntitiesProblemEntityCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionItem)(nil)).Elem()
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionItemArgs) ToGetProblemEntitiesProblemEntityCollectionItemOutput() GetProblemEntitiesProblemEntityCollectionItemOutput {
+	return i.ToGetProblemEntitiesProblemEntityCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionItemArgs) ToGetProblemEntitiesProblemEntityCollectionItemOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionItemOutput)
+}
+
+// GetProblemEntitiesProblemEntityCollectionItemArrayInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionItemArray and GetProblemEntitiesProblemEntityCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionItemArrayInput` via:
+//
+//	GetProblemEntitiesProblemEntityCollectionItemArray{ GetProblemEntitiesProblemEntityCollectionItemArgs{...} }
+type GetProblemEntitiesProblemEntityCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetProblemEntitiesProblemEntityCollectionItemArrayOutput() GetProblemEntitiesProblemEntityCollectionItemArrayOutput
+	ToGetProblemEntitiesProblemEntityCollectionItemArrayOutputWithContext(context.Context) GetProblemEntitiesProblemEntityCollectionItemArrayOutput
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemArray []GetProblemEntitiesProblemEntityCollectionItemInput
+
+func (GetProblemEntitiesProblemEntityCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntitiesProblemEntityCollectionItem)(nil)).Elem()
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionItemArray) ToGetProblemEntitiesProblemEntityCollectionItemArrayOutput() GetProblemEntitiesProblemEntityCollectionItemArrayOutput {
+	return i.ToGetProblemEntitiesProblemEntityCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionItemArray) ToGetProblemEntitiesProblemEntityCollectionItemArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionItemArrayOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntitiesProblemEntityCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionItem)(nil)).Elem()
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemOutput) ToGetProblemEntitiesProblemEntityCollectionItemOutput() GetProblemEntitiesProblemEntityCollectionItemOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemOutput) ToGetProblemEntitiesProblemEntityCollectionItemOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemOutput {
+	return o
+}
+
+// List of event related to a DataSource
+func (o GetProblemEntitiesProblemEntityCollectionItemOutput) EntityDetails() GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItem) []GetProblemEntitiesProblemEntityCollectionItemEntityDetail {
+		return v.EntityDetails
+	}).(GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput)
+}
+
+// OCId of the problem.
+func (o GetProblemEntitiesProblemEntityCollectionItemOutput) ProblemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItem) string { return v.ProblemId }).(pulumi.StringOutput)
+}
+
+// Data source problem entities region
+func (o GetProblemEntitiesProblemEntityCollectionItemOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItem) []string { return v.Regions }).(pulumi.StringArrayOutput)
+}
+
+// Log result query url for a data source query
+func (o GetProblemEntitiesProblemEntityCollectionItemOutput) ResultUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItem) string { return v.ResultUrl }).(pulumi.StringOutput)
+}
+
+// Data source problem entities first detected time
+func (o GetProblemEntitiesProblemEntityCollectionItemOutput) TimeFirstDetected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItem) string { return v.TimeFirstDetected }).(pulumi.StringOutput)
+}
+
+// Data source problem entities last detected time
+func (o GetProblemEntitiesProblemEntityCollectionItemOutput) TimeLastDetected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItem) string { return v.TimeLastDetected }).(pulumi.StringOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntitiesProblemEntityCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntitiesProblemEntityCollectionItem)(nil)).Elem()
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemArrayOutput) ToGetProblemEntitiesProblemEntityCollectionItemArrayOutput() GetProblemEntitiesProblemEntityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemArrayOutput) ToGetProblemEntitiesProblemEntityCollectionItemArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProblemEntitiesProblemEntityCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProblemEntitiesProblemEntityCollectionItem {
+		return vs[0].([]GetProblemEntitiesProblemEntityCollectionItem)[vs[1].(int)]
+	}).(GetProblemEntitiesProblemEntityCollectionItemOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemEntityDetail struct {
+	// The display name of entity
+	DisplayName string `pulumi:"displayName"`
+	// Type of entity
+	Type string `pulumi:"type"`
+	// The entity value
+	Value string `pulumi:"value"`
+}
+
+// GetProblemEntitiesProblemEntityCollectionItemEntityDetailInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs and GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput values.
+// You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionItemEntityDetailInput` via:
+//
+//	GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs{...}
+type GetProblemEntitiesProblemEntityCollectionItemEntityDetailInput interface {
+	pulumi.Input
+
+	ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput() GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput
+	ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutputWithContext(context.Context) GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs struct {
+	// The display name of entity
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Type of entity
+	Type pulumi.StringInput `pulumi:"type"`
+	// The entity value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionItemEntityDetail)(nil)).Elem()
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput() GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput {
+	return i.ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput)
+}
+
+// GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayInput is an input type that accepts GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray and GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput values.
+// You can construct a concrete instance of `GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayInput` via:
+//
+//	GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray{ GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs{...} }
+type GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput() GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput
+	ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutputWithContext(context.Context) GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray []GetProblemEntitiesProblemEntityCollectionItemEntityDetailInput
+
+func (GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntitiesProblemEntityCollectionItemEntityDetail)(nil)).Elem()
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput() GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput {
+	return i.ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionItemEntityDetail)(nil)).Elem()
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput() GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput {
+	return o
+}
+
+// The display name of entity
+func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItemEntityDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Type of entity
+func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItemEntityDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The entity value
+func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntitiesProblemEntityCollectionItemEntityDetail) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntitiesProblemEntityCollectionItemEntityDetail)(nil)).Elem()
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput() GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput) ToGetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutputWithContext(ctx context.Context) GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput {
+	return o
+}
+
+func (o GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput) Index(i pulumi.IntInput) GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProblemEntitiesProblemEntityCollectionItemEntityDetail {
+		return vs[0].([]GetProblemEntitiesProblemEntityCollectionItemEntityDetail)[vs[1].(int)]
+	}).(GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput)
+}
+
+type GetProblemEntityItem struct {
+	// List of event related to a DataSource
+	EntityDetails []GetProblemEntityItemEntityDetail `pulumi:"entityDetails"`
+	// OCId of the problem.
+	ProblemId string `pulumi:"problemId"`
+	// Data source problem entities region
+	Regions []string `pulumi:"regions"`
+	// Log result query url for a data source query
+	ResultUrl string `pulumi:"resultUrl"`
+	// Data source problem entities first detected time
+	TimeFirstDetected string `pulumi:"timeFirstDetected"`
+	// Data source problem entities last detected time
+	TimeLastDetected string `pulumi:"timeLastDetected"`
+}
+
+// GetProblemEntityItemInput is an input type that accepts GetProblemEntityItemArgs and GetProblemEntityItemOutput values.
+// You can construct a concrete instance of `GetProblemEntityItemInput` via:
+//
+//	GetProblemEntityItemArgs{...}
+type GetProblemEntityItemInput interface {
+	pulumi.Input
+
+	ToGetProblemEntityItemOutput() GetProblemEntityItemOutput
+	ToGetProblemEntityItemOutputWithContext(context.Context) GetProblemEntityItemOutput
+}
+
+type GetProblemEntityItemArgs struct {
+	// List of event related to a DataSource
+	EntityDetails GetProblemEntityItemEntityDetailArrayInput `pulumi:"entityDetails"`
+	// OCId of the problem.
+	ProblemId pulumi.StringInput `pulumi:"problemId"`
+	// Data source problem entities region
+	Regions pulumi.StringArrayInput `pulumi:"regions"`
+	// Log result query url for a data source query
+	ResultUrl pulumi.StringInput `pulumi:"resultUrl"`
+	// Data source problem entities first detected time
+	TimeFirstDetected pulumi.StringInput `pulumi:"timeFirstDetected"`
+	// Data source problem entities last detected time
+	TimeLastDetected pulumi.StringInput `pulumi:"timeLastDetected"`
+}
+
+func (GetProblemEntityItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntityItem)(nil)).Elem()
+}
+
+func (i GetProblemEntityItemArgs) ToGetProblemEntityItemOutput() GetProblemEntityItemOutput {
+	return i.ToGetProblemEntityItemOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntityItemArgs) ToGetProblemEntityItemOutputWithContext(ctx context.Context) GetProblemEntityItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntityItemOutput)
+}
+
+// GetProblemEntityItemArrayInput is an input type that accepts GetProblemEntityItemArray and GetProblemEntityItemArrayOutput values.
+// You can construct a concrete instance of `GetProblemEntityItemArrayInput` via:
+//
+//	GetProblemEntityItemArray{ GetProblemEntityItemArgs{...} }
+type GetProblemEntityItemArrayInput interface {
+	pulumi.Input
+
+	ToGetProblemEntityItemArrayOutput() GetProblemEntityItemArrayOutput
+	ToGetProblemEntityItemArrayOutputWithContext(context.Context) GetProblemEntityItemArrayOutput
+}
+
+type GetProblemEntityItemArray []GetProblemEntityItemInput
+
+func (GetProblemEntityItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntityItem)(nil)).Elem()
+}
+
+func (i GetProblemEntityItemArray) ToGetProblemEntityItemArrayOutput() GetProblemEntityItemArrayOutput {
+	return i.ToGetProblemEntityItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntityItemArray) ToGetProblemEntityItemArrayOutputWithContext(ctx context.Context) GetProblemEntityItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntityItemArrayOutput)
+}
+
+type GetProblemEntityItemOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntityItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntityItem)(nil)).Elem()
+}
+
+func (o GetProblemEntityItemOutput) ToGetProblemEntityItemOutput() GetProblemEntityItemOutput {
+	return o
+}
+
+func (o GetProblemEntityItemOutput) ToGetProblemEntityItemOutputWithContext(ctx context.Context) GetProblemEntityItemOutput {
+	return o
+}
+
+// List of event related to a DataSource
+func (o GetProblemEntityItemOutput) EntityDetails() GetProblemEntityItemEntityDetailArrayOutput {
+	return o.ApplyT(func(v GetProblemEntityItem) []GetProblemEntityItemEntityDetail { return v.EntityDetails }).(GetProblemEntityItemEntityDetailArrayOutput)
+}
+
+// OCId of the problem.
+func (o GetProblemEntityItemOutput) ProblemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntityItem) string { return v.ProblemId }).(pulumi.StringOutput)
+}
+
+// Data source problem entities region
+func (o GetProblemEntityItemOutput) Regions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProblemEntityItem) []string { return v.Regions }).(pulumi.StringArrayOutput)
+}
+
+// Log result query url for a data source query
+func (o GetProblemEntityItemOutput) ResultUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntityItem) string { return v.ResultUrl }).(pulumi.StringOutput)
+}
+
+// Data source problem entities first detected time
+func (o GetProblemEntityItemOutput) TimeFirstDetected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntityItem) string { return v.TimeFirstDetected }).(pulumi.StringOutput)
+}
+
+// Data source problem entities last detected time
+func (o GetProblemEntityItemOutput) TimeLastDetected() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntityItem) string { return v.TimeLastDetected }).(pulumi.StringOutput)
+}
+
+type GetProblemEntityItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntityItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntityItem)(nil)).Elem()
+}
+
+func (o GetProblemEntityItemArrayOutput) ToGetProblemEntityItemArrayOutput() GetProblemEntityItemArrayOutput {
+	return o
+}
+
+func (o GetProblemEntityItemArrayOutput) ToGetProblemEntityItemArrayOutputWithContext(ctx context.Context) GetProblemEntityItemArrayOutput {
+	return o
+}
+
+func (o GetProblemEntityItemArrayOutput) Index(i pulumi.IntInput) GetProblemEntityItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProblemEntityItem {
+		return vs[0].([]GetProblemEntityItem)[vs[1].(int)]
+	}).(GetProblemEntityItemOutput)
+}
+
+type GetProblemEntityItemEntityDetail struct {
+	// The display name of entity
+	DisplayName string `pulumi:"displayName"`
+	// Type of entity
+	Type string `pulumi:"type"`
+	// The entity value
+	Value string `pulumi:"value"`
+}
+
+// GetProblemEntityItemEntityDetailInput is an input type that accepts GetProblemEntityItemEntityDetailArgs and GetProblemEntityItemEntityDetailOutput values.
+// You can construct a concrete instance of `GetProblemEntityItemEntityDetailInput` via:
+//
+//	GetProblemEntityItemEntityDetailArgs{...}
+type GetProblemEntityItemEntityDetailInput interface {
+	pulumi.Input
+
+	ToGetProblemEntityItemEntityDetailOutput() GetProblemEntityItemEntityDetailOutput
+	ToGetProblemEntityItemEntityDetailOutputWithContext(context.Context) GetProblemEntityItemEntityDetailOutput
+}
+
+type GetProblemEntityItemEntityDetailArgs struct {
+	// The display name of entity
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Type of entity
+	Type pulumi.StringInput `pulumi:"type"`
+	// The entity value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetProblemEntityItemEntityDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntityItemEntityDetail)(nil)).Elem()
+}
+
+func (i GetProblemEntityItemEntityDetailArgs) ToGetProblemEntityItemEntityDetailOutput() GetProblemEntityItemEntityDetailOutput {
+	return i.ToGetProblemEntityItemEntityDetailOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntityItemEntityDetailArgs) ToGetProblemEntityItemEntityDetailOutputWithContext(ctx context.Context) GetProblemEntityItemEntityDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntityItemEntityDetailOutput)
+}
+
+// GetProblemEntityItemEntityDetailArrayInput is an input type that accepts GetProblemEntityItemEntityDetailArray and GetProblemEntityItemEntityDetailArrayOutput values.
+// You can construct a concrete instance of `GetProblemEntityItemEntityDetailArrayInput` via:
+//
+//	GetProblemEntityItemEntityDetailArray{ GetProblemEntityItemEntityDetailArgs{...} }
+type GetProblemEntityItemEntityDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetProblemEntityItemEntityDetailArrayOutput() GetProblemEntityItemEntityDetailArrayOutput
+	ToGetProblemEntityItemEntityDetailArrayOutputWithContext(context.Context) GetProblemEntityItemEntityDetailArrayOutput
+}
+
+type GetProblemEntityItemEntityDetailArray []GetProblemEntityItemEntityDetailInput
+
+func (GetProblemEntityItemEntityDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntityItemEntityDetail)(nil)).Elem()
+}
+
+func (i GetProblemEntityItemEntityDetailArray) ToGetProblemEntityItemEntityDetailArrayOutput() GetProblemEntityItemEntityDetailArrayOutput {
+	return i.ToGetProblemEntityItemEntityDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetProblemEntityItemEntityDetailArray) ToGetProblemEntityItemEntityDetailArrayOutputWithContext(ctx context.Context) GetProblemEntityItemEntityDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProblemEntityItemEntityDetailArrayOutput)
+}
+
+type GetProblemEntityItemEntityDetailOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntityItemEntityDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProblemEntityItemEntityDetail)(nil)).Elem()
+}
+
+func (o GetProblemEntityItemEntityDetailOutput) ToGetProblemEntityItemEntityDetailOutput() GetProblemEntityItemEntityDetailOutput {
+	return o
+}
+
+func (o GetProblemEntityItemEntityDetailOutput) ToGetProblemEntityItemEntityDetailOutputWithContext(ctx context.Context) GetProblemEntityItemEntityDetailOutput {
+	return o
+}
+
+// The display name of entity
+func (o GetProblemEntityItemEntityDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntityItemEntityDetail) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Type of entity
+func (o GetProblemEntityItemEntityDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntityItemEntityDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The entity value
+func (o GetProblemEntityItemEntityDetailOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProblemEntityItemEntityDetail) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetProblemEntityItemEntityDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProblemEntityItemEntityDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProblemEntityItemEntityDetail)(nil)).Elem()
+}
+
+func (o GetProblemEntityItemEntityDetailArrayOutput) ToGetProblemEntityItemEntityDetailArrayOutput() GetProblemEntityItemEntityDetailArrayOutput {
+	return o
+}
+
+func (o GetProblemEntityItemEntityDetailArrayOutput) ToGetProblemEntityItemEntityDetailArrayOutputWithContext(ctx context.Context) GetProblemEntityItemEntityDetailArrayOutput {
+	return o
+}
+
+func (o GetProblemEntityItemEntityDetailArrayOutput) Index(i pulumi.IntInput) GetProblemEntityItemEntityDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProblemEntityItemEntityDetail {
+		return vs[0].([]GetProblemEntityItemEntityDetail)[vs[1].(int)]
+	}).(GetProblemEntityItemEntityDetailOutput)
 }
 
 type GetResponderRecipeEffectiveResponderRule struct {
@@ -19997,6 +26083,16 @@ func (o GetSecurityZonesSecurityZoneCollectionItemArrayOutput) Index(i pulumi.In
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsInput)(nil)).Elem(), CloudGuardDataSourceDataSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsPtrInput)(nil)).Elem(), CloudGuardDataSourceDataSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsInput)(nil)).Elem(), CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrInput)(nil)).Elem(), CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsQueryStartTimeInput)(nil)).Elem(), CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrInput)(nil)).Elem(), CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceDataSourceDetectorMappingInfoInput)(nil)).Elem(), CloudGuardDataSourceDataSourceDetectorMappingInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceDataSourceDetectorMappingInfoArrayInput)(nil)).Elem(), CloudGuardDataSourceDataSourceDetectorMappingInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceRegionStatusDetailInput)(nil)).Elem(), CloudGuardDataSourceRegionStatusDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CloudGuardDataSourceRegionStatusDetailArrayInput)(nil)).Elem(), CloudGuardDataSourceRegionStatusDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataMaskRuleTargetSelectedInput)(nil)).Elem(), DataMaskRuleTargetSelectedArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataMaskRuleTargetSelectedPtrInput)(nil)).Elem(), DataMaskRuleTargetSelectedArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleInput)(nil)).Elem(), DetectorRecipeDetectorRuleArgs{})
@@ -20008,6 +26104,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationValueInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsEntitiesMappingInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), DetectorRecipeDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{})
@@ -20018,6 +26118,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), ResponderRecipeEffectiveResponderRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeEffectiveResponderRuleArrayInput)(nil)).Elem(), ResponderRecipeEffectiveResponderRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeEffectiveResponderRuleDetailInput)(nil)).Elem(), ResponderRecipeEffectiveResponderRuleDetailArgs{})
@@ -20044,6 +26146,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{})
@@ -20054,6 +26158,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetResponderRecipeInput)(nil)).Elem(), TargetTargetResponderRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetResponderRecipeArrayInput)(nil)).Elem(), TargetTargetResponderRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), TargetTargetResponderRecipeEffectiveResponderRuleArgs{})
@@ -20077,6 +26183,44 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayInput)(nil)).Elem(), GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataMaskRulesFilterInput)(nil)).Elem(), GetDataMaskRulesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataMaskRulesFilterArrayInput)(nil)).Elem(), GetDataMaskRulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceDataSourceDetailInput)(nil)).Elem(), GetDataSourceDataSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceDataSourceDetailArrayInput)(nil)).Elem(), GetDataSourceDataSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceDataSourceDetailLoggingQueryDetailInput)(nil)).Elem(), GetDataSourceDataSourceDetailLoggingQueryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceDataSourceDetailLoggingQueryDetailArrayInput)(nil)).Elem(), GetDataSourceDataSourceDetailLoggingQueryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceDataSourceDetailQueryStartTimeInput)(nil)).Elem(), GetDataSourceDataSourceDetailQueryStartTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceDataSourceDetailQueryStartTimeArrayInput)(nil)).Elem(), GetDataSourceDataSourceDetailQueryStartTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceDataSourceDetectorMappingInfoInput)(nil)).Elem(), GetDataSourceDataSourceDetectorMappingInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceDataSourceDetectorMappingInfoArrayInput)(nil)).Elem(), GetDataSourceDataSourceDetectorMappingInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventItemInput)(nil)).Elem(), GetDataSourceEventItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventItemArrayInput)(nil)).Elem(), GetDataSourceEventItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventItemEventInfoInput)(nil)).Elem(), GetDataSourceEventItemEventInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventItemEventInfoArrayInput)(nil)).Elem(), GetDataSourceEventItemEventInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionInput)(nil)).Elem(), GetDataSourceEventsDataSourceEventCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionArrayInput)(nil)).Elem(), GetDataSourceEventsDataSourceEventCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionItemInput)(nil)).Elem(), GetDataSourceEventsDataSourceEventCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionItemArrayInput)(nil)).Elem(), GetDataSourceEventsDataSourceEventCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionItemEventInfoInput)(nil)).Elem(), GetDataSourceEventsDataSourceEventCollectionItemEventInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayInput)(nil)).Elem(), GetDataSourceEventsDataSourceEventCollectionItemEventInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventsFilterInput)(nil)).Elem(), GetDataSourceEventsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceEventsFilterArrayInput)(nil)).Elem(), GetDataSourceEventsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceRegionStatusDetailInput)(nil)).Elem(), GetDataSourceRegionStatusDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourceRegionStatusDetailArrayInput)(nil)).Elem(), GetDataSourceRegionStatusDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionArrayInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemArrayInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemDataSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemDataSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemRegionStatusDetailInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemRegionStatusDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayInput)(nil)).Elem(), GetDataSourcesDataSourceCollectionItemRegionStatusDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesFilterInput)(nil)).Elem(), GetDataSourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataSourcesFilterArrayInput)(nil)).Elem(), GetDataSourcesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleCandidateResponderRuleInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleCandidateResponderRuleArgs{})
@@ -20087,6 +26231,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{})
@@ -20097,6 +26245,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemArgs{})
@@ -20111,6 +26261,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArgs{})
@@ -20121,6 +26275,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesFilterInput)(nil)).Elem(), GetDetectorRecipesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesFilterArrayInput)(nil)).Elem(), GetDetectorRecipesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetailInput)(nil)).Elem(), GetGuardTargetTargetDetailArgs{})
@@ -20139,6 +26295,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{})
@@ -20149,6 +26307,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetResponderRecipeInput)(nil)).Elem(), GetGuardTargetTargetResponderRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetResponderRecipeArrayInput)(nil)).Elem(), GetGuardTargetTargetResponderRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs{})
@@ -20185,6 +26345,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{})
@@ -20195,6 +26357,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetResponderRecipeInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetResponderRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs{})
@@ -20215,6 +26379,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedListsManagedListCollectionArrayInput)(nil)).Elem(), GetManagedListsManagedListCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedListsManagedListCollectionItemInput)(nil)).Elem(), GetManagedListsManagedListCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedListsManagedListCollectionItemArrayInput)(nil)).Elem(), GetManagedListsManagedListCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntitiesFilterInput)(nil)).Elem(), GetProblemEntitiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntitiesFilterArrayInput)(nil)).Elem(), GetProblemEntitiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionInput)(nil)).Elem(), GetProblemEntitiesProblemEntityCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionArrayInput)(nil)).Elem(), GetProblemEntitiesProblemEntityCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionItemInput)(nil)).Elem(), GetProblemEntitiesProblemEntityCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionItemArrayInput)(nil)).Elem(), GetProblemEntitiesProblemEntityCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionItemEntityDetailInput)(nil)).Elem(), GetProblemEntitiesProblemEntityCollectionItemEntityDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayInput)(nil)).Elem(), GetProblemEntitiesProblemEntityCollectionItemEntityDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntityItemInput)(nil)).Elem(), GetProblemEntityItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntityItemArrayInput)(nil)).Elem(), GetProblemEntityItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntityItemEntityDetailInput)(nil)).Elem(), GetProblemEntityItemEntityDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProblemEntityItemEntityDetailArrayInput)(nil)).Elem(), GetProblemEntityItemEntityDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), GetResponderRecipeEffectiveResponderRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResponderRecipeEffectiveResponderRuleArrayInput)(nil)).Elem(), GetResponderRecipeEffectiveResponderRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResponderRecipeEffectiveResponderRuleDetailInput)(nil)).Elem(), GetResponderRecipeEffectiveResponderRuleDetailArgs{})
@@ -20263,6 +26439,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionArrayInput)(nil)).Elem(), GetSecurityZonesSecurityZoneCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionItemInput)(nil)).Elem(), GetSecurityZonesSecurityZoneCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityZonesSecurityZoneCollectionItemArrayInput)(nil)).Elem(), GetSecurityZonesSecurityZoneCollectionItemArray{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceDataSourceDetailsOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceDataSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsPtrOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceDataSourceDetectorMappingInfoOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceRegionStatusDetailOutput{})
+	pulumi.RegisterOutputType(CloudGuardDataSourceRegionStatusDetailArrayOutput{})
 	pulumi.RegisterOutputType(DataMaskRuleTargetSelectedOutput{})
 	pulumi.RegisterOutputType(DataMaskRuleTargetSelectedPtrOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleOutput{})
@@ -20274,6 +26460,10 @@ func init() {
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationValueOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput{})
@@ -20284,6 +26474,8 @@ func init() {
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(ResponderRecipeEffectiveResponderRuleOutput{})
 	pulumi.RegisterOutputType(ResponderRecipeEffectiveResponderRuleArrayOutput{})
 	pulumi.RegisterOutputType(ResponderRecipeEffectiveResponderRuleDetailOutput{})
@@ -20310,6 +26502,8 @@ func init() {
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput{})
@@ -20320,6 +26514,8 @@ func init() {
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetResponderRecipeOutput{})
 	pulumi.RegisterOutputType(TargetTargetResponderRecipeArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetResponderRecipeEffectiveResponderRuleOutput{})
@@ -20343,6 +26539,44 @@ func init() {
 	pulumi.RegisterOutputType(GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedArrayOutput{})
 	pulumi.RegisterOutputType(GetDataMaskRulesFilterOutput{})
 	pulumi.RegisterOutputType(GetDataMaskRulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceDataSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetDataSourceDataSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceDataSourceDetailLoggingQueryDetailOutput{})
+	pulumi.RegisterOutputType(GetDataSourceDataSourceDetailLoggingQueryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceDataSourceDetailQueryStartTimeOutput{})
+	pulumi.RegisterOutputType(GetDataSourceDataSourceDetailQueryStartTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceDataSourceDetectorMappingInfoOutput{})
+	pulumi.RegisterOutputType(GetDataSourceDataSourceDetectorMappingInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventItemOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventItemEventInfoOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventItemEventInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventsDataSourceEventCollectionOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventsDataSourceEventCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventsDataSourceEventCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventsDataSourceEventCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventsDataSourceEventCollectionItemEventInfoOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventsDataSourceEventCollectionItemEventInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventsFilterOutput{})
+	pulumi.RegisterOutputType(GetDataSourceEventsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourceRegionStatusDetailOutput{})
+	pulumi.RegisterOutputType(GetDataSourceRegionStatusDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemDataSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemDataSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemRegionStatusDetailOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesDataSourceCollectionItemRegionStatusDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetDataSourcesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleCandidateResponderRuleOutput{})
@@ -20353,6 +26587,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput{})
@@ -20363,6 +26601,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemOutput{})
@@ -20377,6 +26617,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput{})
@@ -20387,6 +26631,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesFilterOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetailOutput{})
@@ -20405,6 +26651,8 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput{})
@@ -20415,6 +26663,8 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetResponderRecipeOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetResponderRecipeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput{})
@@ -20451,6 +26701,8 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput{})
@@ -20461,6 +26713,8 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput{})
@@ -20481,6 +26735,18 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedListsManagedListCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedListsManagedListCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagedListsManagedListCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProblemEntitiesFilterOutput{})
+	pulumi.RegisterOutputType(GetProblemEntitiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetProblemEntitiesProblemEntityCollectionOutput{})
+	pulumi.RegisterOutputType(GetProblemEntitiesProblemEntityCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProblemEntitiesProblemEntityCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetProblemEntitiesProblemEntityCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProblemEntitiesProblemEntityCollectionItemEntityDetailOutput{})
+	pulumi.RegisterOutputType(GetProblemEntitiesProblemEntityCollectionItemEntityDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetProblemEntityItemOutput{})
+	pulumi.RegisterOutputType(GetProblemEntityItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProblemEntityItemEntityDetailOutput{})
+	pulumi.RegisterOutputType(GetProblemEntityItemEntityDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetResponderRecipeEffectiveResponderRuleOutput{})
 	pulumi.RegisterOutputType(GetResponderRecipeEffectiveResponderRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetResponderRecipeEffectiveResponderRuleDetailOutput{})

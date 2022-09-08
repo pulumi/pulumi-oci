@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
 //
-// Provides the email IDs of users that can redeem rewards for the given subscription ID.
+// Provides the list of user summary that can redeem rewards for the given subscription ID.
 //
 // ## Example Usage
 //
@@ -60,7 +60,7 @@ type LookupSubscriptionRedeemableUserArgs struct {
 // A collection of values returned by getSubscriptionRedeemableUser.
 type LookupSubscriptionRedeemableUserResult struct {
 	Id string `pulumi:"id"`
-	// The list of user email IDs that can redeem rewards.
+	// The list of user summary that can redeem rewards.
 	Items          []GetSubscriptionRedeemableUserItem `pulumi:"items"`
 	SubscriptionId string                              `pulumi:"subscriptionId"`
 	TenancyId      string                              `pulumi:"tenancyId"`
@@ -111,7 +111,7 @@ func (o LookupSubscriptionRedeemableUserResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubscriptionRedeemableUserResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The list of user email IDs that can redeem rewards.
+// The list of user summary that can redeem rewards.
 func (o LookupSubscriptionRedeemableUserResultOutput) Items() GetSubscriptionRedeemableUserItemArrayOutput {
 	return o.ApplyT(func(v LookupSubscriptionRedeemableUserResult) []GetSubscriptionRedeemableUserItem { return v.Items }).(GetSubscriptionRedeemableUserItemArrayOutput)
 }

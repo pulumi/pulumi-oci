@@ -14,7 +14,7 @@ import (
 // This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
 //
 // Creates a new zone in the specified compartment. Additionally, for Private DNS,
-// the `scope` and `viewId` query parameters are required when creating private zones.
+// the `viewId` field is required when creating private zones.
 //
 // ## Example Usage
 //
@@ -56,23 +56,13 @@ import (
 //
 // ## Import
 //
-// For legacy Zones that were created without using `scope`, these Zones can be imported using the `id`, e.g.
+// Zones can be imported using their OCID, e.g.
 //
 // ```sh
 //
 //	$ pulumi import oci:Dns/zone:Zone test_zone "id"
 //
 // ```
-//
-//	For Zones created using `scope` and `view_id`, these Zones can be imported using the `id`, e.g.
-//
-// ```sh
-//
-//	$ pulumi import oci:Dns/zone:Zone test_zone "zoneNameOrId/{zoneNameOrId}/scope/{scope}/viewId/{viewId}"
-//
-// ```
-//
-//	skip adding `{view_id}` at the end if Zone was created without `view_id`.
 type Zone struct {
 	pulumi.CustomResourceState
 
@@ -92,7 +82,7 @@ type Zone struct {
 	Nameservers ZoneNameserverArrayOutput `pulumi:"nameservers"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	// This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
-	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	Scope pulumi.StringOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
 	// The current serial of the zone. As seen in the zone's SOA record.
@@ -380,8 +370,8 @@ func (o ZoneOutput) Nameservers() ZoneNameserverArrayOutput {
 
 // Specifies to operate only on resources that have a matching DNS scope.
 // This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
-func (o ZoneOutput) Scope() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *Zone) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+func (o ZoneOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
 
 // The canonical absolute URL of the resource.

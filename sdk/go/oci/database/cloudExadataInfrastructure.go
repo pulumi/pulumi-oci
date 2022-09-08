@@ -54,6 +54,7 @@ import (
 //					},
 //					HoursOfDays:                  pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_hours_of_day),
 //					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled),
+//					IsMonthlyPatchingEnabled:     pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled),
 //					LeadTimeInWeeks:              pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks),
 //					Months: database.CloudExadataInfrastructureMaintenanceWindowMonthArray{
 //						&database.CloudExadataInfrastructureMaintenanceWindowMonthArgs{

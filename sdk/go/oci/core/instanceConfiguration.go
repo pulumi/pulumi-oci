@@ -53,6 +53,12 @@ import (
 //								UseChap:                        pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_attach_details_use_chap),
 //							},
 //							CreateDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs{
+//								AutotunePolicies: core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArray{
+//									&core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs{
+//										AutotuneType: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type),
+//										MaxVpusPerGb: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb),
+//									},
+//								},
 //								AvailabilityDomain: pulumi.Any(_var.Instance_configuration_instance_details_block_volumes_create_details_availability_domain),
 //								BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
 //								CompartmentId:      pulumi.Any(_var.Compartment_id),

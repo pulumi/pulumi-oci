@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &HeatWaveCluster{}
 	case "oci:Mysql/mysqlBackup:MysqlBackup":
 		r = &MysqlBackup{}
+	case "oci:Mysql/mysqlConfiguration:MysqlConfiguration":
+		r = &MysqlConfiguration{}
 	case "oci:Mysql/mysqlDbSystem:MysqlDbSystem":
 		r = &MysqlDbSystem{}
 	default:
@@ -62,6 +64,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Mysql/mysqlBackup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Mysql/mysqlConfiguration",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

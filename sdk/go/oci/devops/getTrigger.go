@@ -60,6 +60,7 @@ type LookupTriggerResult struct {
 	Actions []GetTriggerAction `pulumi:"actions"`
 	// The OCID of the compartment that contains the trigger.
 	CompartmentId string `pulumi:"compartmentId"`
+	ConnectionId  string `pulumi:"connectionId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description about the trigger.
@@ -137,6 +138,10 @@ func (o LookupTriggerResultOutput) Actions() GetTriggerActionArrayOutput {
 // The OCID of the compartment that contains the trigger.
 func (o LookupTriggerResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTriggerResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o LookupTriggerResultOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTriggerResult) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`

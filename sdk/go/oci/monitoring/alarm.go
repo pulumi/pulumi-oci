@@ -52,12 +52,13 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				MessageFormat:                pulumi.Any(_var.Alarm_message_format),
-//				MetricCompartmentIdInSubtree: pulumi.Any(_var.Alarm_metric_compartment_id_in_subtree),
-//				PendingDuration:              pulumi.Any(_var.Alarm_pending_duration),
-//				RepeatNotificationDuration:   pulumi.Any(_var.Alarm_repeat_notification_duration),
-//				Resolution:                   pulumi.Any(_var.Alarm_resolution),
-//				ResourceGroup:                pulumi.Any(_var.Alarm_resource_group),
+//				IsNotificationsPerMetricDimensionEnabled: pulumi.Any(_var.Alarm_is_notifications_per_metric_dimension_enabled),
+//				MessageFormat:                            pulumi.Any(_var.Alarm_message_format),
+//				MetricCompartmentIdInSubtree:             pulumi.Any(_var.Alarm_metric_compartment_id_in_subtree),
+//				PendingDuration:                          pulumi.Any(_var.Alarm_pending_duration),
+//				RepeatNotificationDuration:               pulumi.Any(_var.Alarm_repeat_notification_duration),
+//				Resolution:                               pulumi.Any(_var.Alarm_resolution),
+//				ResourceGroup:                            pulumi.Any(_var.Alarm_resource_group),
 //				Suppression: &monitoring.AlarmSuppressionArgs{
 //					TimeSuppressFrom:  pulumi.Any(_var.Alarm_suppression_time_suppress_from),
 //					TimeSuppressUntil: pulumi.Any(_var.Alarm_suppression_time_suppress_until),
@@ -99,6 +100,8 @@ type Alarm struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether the alarm is enabled.  Example: `true`
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+	IsNotificationsPerMetricDimensionEnabled pulumi.BoolOutput `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
 	MessageFormat pulumi.StringOutput `pulumi:"messageFormat"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -196,6 +199,8 @@ type alarmState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Whether the alarm is enabled.  Example: `true`
 	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+	IsNotificationsPerMetricDimensionEnabled *bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
 	MessageFormat *string `pulumi:"messageFormat"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -241,6 +246,8 @@ type AlarmState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Whether the alarm is enabled.  Example: `true`
 	IsEnabled pulumi.BoolPtrInput
+	// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+	IsNotificationsPerMetricDimensionEnabled pulumi.BoolPtrInput
 	// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
 	MessageFormat pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -290,6 +297,8 @@ type alarmArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Whether the alarm is enabled.  Example: `true`
 	IsEnabled bool `pulumi:"isEnabled"`
+	// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+	IsNotificationsPerMetricDimensionEnabled *bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
 	MessageFormat *string `pulumi:"messageFormat"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -330,6 +339,8 @@ type AlarmArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Whether the alarm is enabled.  Example: `true`
 	IsEnabled pulumi.BoolInput
+	// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+	IsNotificationsPerMetricDimensionEnabled pulumi.BoolPtrInput
 	// (Updatable) The format to use for notification messages sent from this alarm. The formats are:
 	MessageFormat pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -474,6 +485,11 @@ func (o AlarmOutput) FreeformTags() pulumi.MapOutput {
 // (Updatable) Whether the alarm is enabled.  Example: `true`
 func (o AlarmOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Alarm) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+func (o AlarmOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Alarm) pulumi.BoolOutput { return v.IsNotificationsPerMetricDimensionEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) The format to use for notification messages sent from this alarm. The formats are:

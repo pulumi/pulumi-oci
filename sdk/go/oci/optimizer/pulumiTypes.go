@@ -1163,6 +1163,8 @@ func (o GetCategoriesCategoryCollectionArrayOutput) Index(i pulumi.IntInput) Get
 type GetCategoriesCategoryCollectionItem struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The name associated with the compartment.
+	CompartmentName string `pulumi:"compartmentName"`
 	// Text describing the category.
 	Description string `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the category.
@@ -1199,6 +1201,8 @@ type GetCategoriesCategoryCollectionItemInput interface {
 type GetCategoriesCategoryCollectionItemArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name associated with the compartment.
+	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
 	// Text describing the category.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the category.
@@ -1275,6 +1279,11 @@ func (o GetCategoriesCategoryCollectionItemOutput) ToGetCategoriesCategoryCollec
 // The OCID of the compartment.
 func (o GetCategoriesCategoryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name associated with the compartment.
+func (o GetCategoriesCategoryCollectionItemOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) string { return v.CompartmentName }).(pulumi.StringOutput)
 }
 
 // Text describing the category.

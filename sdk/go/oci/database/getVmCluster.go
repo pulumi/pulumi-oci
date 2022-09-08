@@ -61,9 +61,10 @@ type LookupVmClusterResult struct {
 	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled int `pulumi:"cpusEnabled"`
-	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions []GetVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
-	DataStorageSizeInGb   float64                            `pulumi:"dataStorageSizeInGb"`
+	// Size of the DATA disk group in GBs.
+	DataStorageSizeInGb float64 `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -165,11 +166,12 @@ func (o LookupVmClusterResultOutput) CpusEnabled() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) int { return v.CpusEnabled }).(pulumi.IntOutput)
 }
 
-// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 func (o LookupVmClusterResultOutput) DataCollectionOptions() GetVmClusterDataCollectionOptionArrayOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) []GetVmClusterDataCollectionOption { return v.DataCollectionOptions }).(GetVmClusterDataCollectionOptionArrayOutput)
 }
 
+// Size of the DATA disk group in GBs.
 func (o LookupVmClusterResultOutput) DataStorageSizeInGb() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupVmClusterResult) float64 { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
 }

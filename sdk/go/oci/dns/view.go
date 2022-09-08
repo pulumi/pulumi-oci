@@ -13,7 +13,7 @@ import (
 
 // This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
 //
-// Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
+// Creates a new view in the specified compartment.
 //
 // ## Example Usage
 //
@@ -47,19 +47,11 @@ import (
 //
 // ## Import
 //
-// For legacy Views that were created without using `scope`, these Views can be imported using the `id`, e.g.
+// Views can be imported using their OCID, e.g.
 //
 // ```sh
 //
 //	$ pulumi import oci:Dns/view:View test_view "id"
-//
-// ```
-//
-//	For Views created using `scope`, these Views can be imported using the `id`, e.g.
-//
-// ```sh
-//
-//	$ pulumi import oci:Dns/view:View test_view "viewId/{viewId}/scope/{scope}"
 //
 // ```
 type View struct {
@@ -75,8 +67,8 @@ type View struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
-	// Value must be `PRIVATE` when creating a view for private zones.
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	// If specified, must be `PRIVATE` when creating a view for private zones.
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
 	// The current state of the resource.
@@ -96,9 +88,6 @@ func NewView(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Scope == nil {
-		return nil, errors.New("invalid value for required argument 'Scope'")
 	}
 	var resource View
 	err := ctx.RegisterResource("oci:Dns/view:View", name, args, &resource, opts...)
@@ -132,7 +121,7 @@ type viewState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected *bool `pulumi:"isProtected"`
-	// Value must be `PRIVATE` when creating a view for private zones.
+	// If specified, must be `PRIVATE` when creating a view for private zones.
 	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self *string `pulumi:"self"`
@@ -155,7 +144,7 @@ type ViewState struct {
 	FreeformTags pulumi.MapInput
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolPtrInput
-	// Value must be `PRIVATE` when creating a view for private zones.
+	// If specified, must be `PRIVATE` when creating a view for private zones.
 	Scope pulumi.StringPtrInput
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringPtrInput
@@ -180,8 +169,8 @@ type viewArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Value must be `PRIVATE` when creating a view for private zones.
-	Scope string `pulumi:"scope"`
+	// If specified, must be `PRIVATE` when creating a view for private zones.
+	Scope *string `pulumi:"scope"`
 }
 
 // The set of arguments for constructing a View resource.
@@ -194,8 +183,8 @@ type ViewArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.MapInput
-	// Value must be `PRIVATE` when creating a view for private zones.
-	Scope pulumi.StringInput
+	// If specified, must be `PRIVATE` when creating a view for private zones.
+	Scope pulumi.StringPtrInput
 }
 
 func (ViewArgs) ElementType() reflect.Type {
@@ -310,9 +299,9 @@ func (o ViewOutput) IsProtected() pulumi.BoolOutput {
 	return o.ApplyT(func(v *View) pulumi.BoolOutput { return v.IsProtected }).(pulumi.BoolOutput)
 }
 
-// Value must be `PRIVATE` when creating a view for private zones.
-func (o ViewOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *View) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+// If specified, must be `PRIVATE` when creating a view for private zones.
+func (o ViewOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *View) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.

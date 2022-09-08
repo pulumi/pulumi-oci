@@ -59,6 +59,8 @@ type GetCategoryResult struct {
 	CategoryId string `pulumi:"categoryId"`
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The name associated with the compartment.
+	CompartmentName string `pulumi:"compartmentName"`
 	// Text describing the category.
 	Description string `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the category.
@@ -126,6 +128,11 @@ func (o GetCategoryResultOutput) CategoryId() pulumi.StringOutput {
 // The OCID of the tenancy. The tenancy is the root compartment.
 func (o GetCategoryResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCategoryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name associated with the compartment.
+func (o GetCategoryResultOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCategoryResult) string { return v.CompartmentName }).(pulumi.StringOutput)
 }
 
 // Text describing the category.

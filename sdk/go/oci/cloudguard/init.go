@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration":
 		r = &CloudGuardConfiguration{}
+	case "oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource":
+		r = &CloudGuardDataSource{}
 	case "oci:CloudGuard/dataMaskRule:DataMaskRule":
 		r = &DataMaskRule{}
 	case "oci:CloudGuard/detectorRecipe:DetectorRecipe":
@@ -53,6 +55,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"CloudGuard/cloudGuardConfiguration",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CloudGuard/cloudGuardDataSource",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

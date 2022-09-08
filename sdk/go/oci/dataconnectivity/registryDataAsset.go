@@ -246,23 +246,23 @@ type RegistryDataAsset struct {
 	AssetProperties pulumi.MapOutput `pulumi:"assetProperties"`
 	// (Updatable) The default connection key.
 	DefaultConnection RegistryDataAssetDefaultConnectionOutput `pulumi:"defaultConnection"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The list of endpoints with which this data asset is associated.
 	EndPoints pulumi.StringArrayOutput `pulumi:"endPoints"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey pulumi.StringOutput `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringOutput `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryDataAssetMetadataOutput `pulumi:"metadata"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The type system maps from and to a type.
 	NativeTypeSystem RegistryDataAssetNativeTypeSystemOutput `pulumi:"nativeTypeSystem"`
@@ -272,7 +272,7 @@ type RegistryDataAsset struct {
 	ObjectVersion pulumi.IntOutput `pulumi:"objectVersion"`
 	// (Updatable) All the properties for the data asset in a key-value map format.
 	Properties pulumi.MapOutput `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringOutput `pulumi:"registryId"`
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata RegistryDataAssetRegistryMetadataOutput `pulumi:"registryMetadata"`
@@ -328,23 +328,23 @@ type registryDataAssetState struct {
 	AssetProperties map[string]interface{} `pulumi:"assetProperties"`
 	// (Updatable) The default connection key.
 	DefaultConnection *RegistryDataAssetDefaultConnection `pulumi:"defaultConnection"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
 	// (Updatable) The list of endpoints with which this data asset is associated.
 	EndPoints []string `pulumi:"endPoints"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey *string `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryDataAssetMetadata `pulumi:"metadata"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The type system maps from and to a type.
 	NativeTypeSystem *RegistryDataAssetNativeTypeSystem `pulumi:"nativeTypeSystem"`
@@ -354,7 +354,7 @@ type registryDataAssetState struct {
 	ObjectVersion *int `pulumi:"objectVersion"`
 	// (Updatable) All the properties for the data asset in a key-value map format.
 	Properties map[string]interface{} `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId *string `pulumi:"registryId"`
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata *RegistryDataAssetRegistryMetadata `pulumi:"registryMetadata"`
@@ -367,23 +367,23 @@ type RegistryDataAssetState struct {
 	AssetProperties pulumi.MapInput
 	// (Updatable) The default connection key.
 	DefaultConnection RegistryDataAssetDefaultConnectionPtrInput
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput
 	// (Updatable) The list of endpoints with which this data asset is associated.
 	EndPoints pulumi.StringArrayInput
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey pulumi.StringPtrInput
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryDataAssetMetadataPtrInput
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType pulumi.StringPtrInput
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput
 	// (Updatable) The type system maps from and to a type.
 	NativeTypeSystem RegistryDataAssetNativeTypeSystemPtrInput
@@ -393,7 +393,7 @@ type RegistryDataAssetState struct {
 	ObjectVersion pulumi.IntPtrInput
 	// (Updatable) All the properties for the data asset in a key-value map format.
 	Properties pulumi.MapInput
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringPtrInput
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata RegistryDataAssetRegistryMetadataPtrInput
@@ -410,23 +410,23 @@ type registryDataAssetArgs struct {
 	AssetProperties map[string]interface{} `pulumi:"assetProperties"`
 	// (Updatable) The default connection key.
 	DefaultConnection *RegistryDataAssetDefaultConnection `pulumi:"defaultConnection"`
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description *string `pulumi:"description"`
 	// (Updatable) The list of endpoints with which this data asset is associated.
 	EndPoints []string `pulumi:"endPoints"`
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey *string `pulumi:"externalKey"`
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryDataAssetMetadata `pulumi:"metadata"`
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The type system maps from and to a type.
 	NativeTypeSystem *RegistryDataAssetNativeTypeSystem `pulumi:"nativeTypeSystem"`
@@ -436,7 +436,7 @@ type registryDataAssetArgs struct {
 	ObjectVersion *int `pulumi:"objectVersion"`
 	// (Updatable) All the properties for the data asset in a key-value map format.
 	Properties map[string]interface{} `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata *RegistryDataAssetRegistryMetadata `pulumi:"registryMetadata"`
@@ -450,23 +450,23 @@ type RegistryDataAssetArgs struct {
 	AssetProperties pulumi.MapInput
 	// (Updatable) The default connection key.
 	DefaultConnection RegistryDataAssetDefaultConnectionPtrInput
-	// (Updatable) A user defined description for the object.
+	// (Updatable) A user-defined description for the object.
 	Description pulumi.StringPtrInput
 	// (Updatable) The list of endpoints with which this data asset is associated.
 	EndPoints pulumi.StringArrayInput
-	// (Updatable) The external key for the object.
+	// (Updatable) The external key of the object.
 	ExternalKey pulumi.StringPtrInput
-	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryDataAssetMetadataPtrInput
-	// (Updatable) The property which disciminates the subtypes.
+	// (Updatable) The property which differentiates the subtypes.
 	ModelType pulumi.StringInput
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput
 	// (Updatable) The type system maps from and to a type.
 	NativeTypeSystem RegistryDataAssetNativeTypeSystemPtrInput
@@ -476,7 +476,7 @@ type RegistryDataAssetArgs struct {
 	ObjectVersion pulumi.IntPtrInput
 	// (Updatable) All the properties for the data asset in a key-value map format.
 	Properties pulumi.MapInput
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata RegistryDataAssetRegistryMetadataPtrInput
@@ -581,7 +581,7 @@ func (o RegistryDataAssetOutput) DefaultConnection() RegistryDataAssetDefaultCon
 	return o.ApplyT(func(v *RegistryDataAsset) RegistryDataAssetDefaultConnectionOutput { return v.DefaultConnection }).(RegistryDataAssetDefaultConnectionOutput)
 }
 
-// (Updatable) A user defined description for the object.
+// (Updatable) A user-defined description for the object.
 func (o RegistryDataAssetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -591,12 +591,12 @@ func (o RegistryDataAssetOutput) EndPoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringArrayOutput { return v.EndPoints }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The external key for the object.
+// (Updatable) The external key of the object.
 func (o RegistryDataAssetOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringOutput { return v.ExternalKey }).(pulumi.StringOutput)
 }
 
-// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o RegistryDataAssetOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -606,12 +606,12 @@ func (o RegistryDataAssetOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryDataAssetOutput) Metadata() RegistryDataAssetMetadataOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) RegistryDataAssetMetadataOutput { return v.Metadata }).(RegistryDataAssetMetadataOutput)
 }
 
-// (Updatable) The property which disciminates the subtypes.
+// (Updatable) The property which differentiates the subtypes.
 func (o RegistryDataAssetOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -621,7 +621,7 @@ func (o RegistryDataAssetOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryDataAssetOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -646,7 +646,7 @@ func (o RegistryDataAssetOutput) Properties() pulumi.MapOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.MapOutput { return v.Properties }).(pulumi.MapOutput)
 }
 
-// The registry Ocid.
+// The registry OCID.
 func (o RegistryDataAssetOutput) RegistryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryDataAsset) pulumi.StringOutput { return v.RegistryId }).(pulumi.StringOutput)
 }

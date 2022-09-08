@@ -13,26 +13,18 @@ import (
 
 // This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
 //
-// Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
+// Updates the specified resolver with your new information.
 //
 // Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
 // Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
 //
 // ## Import
 //
-// For legacy Resolvers that were created without using `scope`, these Resolvers can be imported using the `id`, e.g.
+// Resolvers can be imported using their OCID, e.g.
 //
 // ```sh
 //
 //	$ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
-//
-// ```
-//
-//	For Resolvers created using `scope`, these Resolvers can be imported using the `id`, e.g.
-//
-// ```sh
-//
-//	$ pulumi import oci:Dns/resolver:Resolver test_resolver "resolverId/{resolverId}/scope/{scope}"
 //
 // ```
 type Resolver struct {
@@ -60,8 +52,8 @@ type Resolver struct {
 	ResolverId pulumi.StringOutput `pulumi:"resolverId"`
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayOutput `pulumi:"rules"`
-	// Value must be `PRIVATE` when creating private name resolvers.
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	// If specified, must be `PRIVATE` when creating private name resolvers.
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
 	// The current state of the resource.
@@ -81,9 +73,6 @@ func NewResolver(ctx *pulumi.Context,
 
 	if args.ResolverId == nil {
 		return nil, errors.New("invalid value for required argument 'ResolverId'")
-	}
-	if args.Scope == nil {
-		return nil, errors.New("invalid value for required argument 'Scope'")
 	}
 	var resource Resolver
 	err := ctx.RegisterResource("oci:Dns/resolver:Resolver", name, args, &resource, opts...)
@@ -129,7 +118,7 @@ type resolverState struct {
 	ResolverId *string `pulumi:"resolverId"`
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules []ResolverRule `pulumi:"rules"`
-	// Value must be `PRIVATE` when creating private name resolvers.
+	// If specified, must be `PRIVATE` when creating private name resolvers.
 	Scope *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self *string `pulumi:"self"`
@@ -164,7 +153,7 @@ type ResolverState struct {
 	ResolverId pulumi.StringPtrInput
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayInput
-	// Value must be `PRIVATE` when creating private name resolvers.
+	// If specified, must be `PRIVATE` when creating private name resolvers.
 	Scope pulumi.StringPtrInput
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringPtrInput
@@ -195,8 +184,8 @@ type resolverArgs struct {
 	ResolverId string `pulumi:"resolverId"`
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules []ResolverRule `pulumi:"rules"`
-	// Value must be `PRIVATE` when creating private name resolvers.
-	Scope string `pulumi:"scope"`
+	// If specified, must be `PRIVATE` when creating private name resolvers.
+	Scope *string `pulumi:"scope"`
 }
 
 // The set of arguments for constructing a Resolver resource.
@@ -215,8 +204,8 @@ type ResolverArgs struct {
 	ResolverId pulumi.StringInput
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
 	Rules ResolverRuleArrayInput
-	// Value must be `PRIVATE` when creating private name resolvers.
-	Scope pulumi.StringInput
+	// If specified, must be `PRIVATE` when creating private name resolvers.
+	Scope pulumi.StringPtrInput
 }
 
 func (ResolverArgs) ElementType() reflect.Type {
@@ -361,9 +350,9 @@ func (o ResolverOutput) Rules() ResolverRuleArrayOutput {
 	return o.ApplyT(func(v *Resolver) ResolverRuleArrayOutput { return v.Rules }).(ResolverRuleArrayOutput)
 }
 
-// Value must be `PRIVATE` when creating private name resolvers.
-func (o ResolverOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+// If specified, must be `PRIVATE` when creating private name resolvers.
+func (o ResolverOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.

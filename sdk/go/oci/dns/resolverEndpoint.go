@@ -88,7 +88,7 @@ type ResolverEndpoint struct {
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringOutput `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when creating private name resolver endpoints.
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringOutput `pulumi:"self"`
 	// The current state of the resource.
@@ -116,9 +116,6 @@ func NewResolverEndpoint(ctx *pulumi.Context,
 	}
 	if args.ResolverId == nil {
 		return nil, errors.New("invalid value for required argument 'ResolverId'")
-	}
-	if args.Scope == nil {
-		return nil, errors.New("invalid value for required argument 'Scope'")
 	}
 	if args.SubnetId == nil {
 		return nil, errors.New("invalid value for required argument 'SubnetId'")
@@ -232,7 +229,7 @@ type resolverEndpointArgs struct {
 	// The OCID of the target resolver.
 	ResolverId string `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when creating private name resolver endpoints.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -256,7 +253,7 @@ type ResolverEndpointArgs struct {
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringInput
 	// Value must be `PRIVATE` when creating private name resolver endpoints.
-	Scope pulumi.StringInput
+	Scope pulumi.StringPtrInput
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 	SubnetId pulumi.StringInput
 }
@@ -394,8 +391,8 @@ func (o ResolverEndpointOutput) ResolverId() pulumi.StringOutput {
 }
 
 // Value must be `PRIVATE` when creating private name resolver endpoints.
-func (o ResolverEndpointOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+func (o ResolverEndpointOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResolverEndpoint) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.

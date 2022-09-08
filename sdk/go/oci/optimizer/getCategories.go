@@ -31,6 +31,8 @@ import (
 //			_, err := Optimizer.GetCategories(ctx, &optimizer.GetCategoriesArgs{
 //				CompartmentId:          _var.Compartment_id,
 //				CompartmentIdInSubtree: _var.Category_compartment_id_in_subtree,
+//				ChildTenancyIds:        _var.Category_child_tenancy_ids,
+//				IncludeOrganization:    pulumi.BoolRef(_var.Category_include_organization),
 //				Name:                   pulumi.StringRef(_var.Category_name),
 //				State:                  pulumi.StringRef(_var.Category_state),
 //			}, nil)
@@ -53,11 +55,15 @@ func GetCategories(ctx *pulumi.Context, args *GetCategoriesArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getCategories.
 type GetCategoriesArgs struct {
+	// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+	ChildTenancyIds []string `pulumi:"childTenancyIds"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
 	CompartmentIdInSubtree bool                  `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetCategoriesFilter `pulumi:"filters"`
+	// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+	IncludeOrganization *bool `pulumi:"includeOrganization"`
 	// Optional. A filter that returns results that match the name specified.
 	Name *string `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
@@ -68,12 +74,14 @@ type GetCategoriesArgs struct {
 type GetCategoriesResult struct {
 	// The list of category_collection.
 	CategoryCollections []GetCategoriesCategoryCollection `pulumi:"categoryCollections"`
+	ChildTenancyIds     []string                          `pulumi:"childTenancyIds"`
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId          string                `pulumi:"compartmentId"`
 	CompartmentIdInSubtree bool                  `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetCategoriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                  string `pulumi:"id"`
+	IncludeOrganization *bool  `pulumi:"includeOrganization"`
 	// The name assigned to the category.
 	Name *string `pulumi:"name"`
 	// The category's current state.
@@ -95,11 +103,15 @@ func GetCategoriesOutput(ctx *pulumi.Context, args GetCategoriesOutputArgs, opts
 
 // A collection of arguments for invoking getCategories.
 type GetCategoriesOutputArgs struct {
+	// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+	ChildTenancyIds pulumi.StringArrayInput `pulumi:"childTenancyIds"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
 	CompartmentIdInSubtree pulumi.BoolInput              `pulumi:"compartmentIdInSubtree"`
 	Filters                GetCategoriesFilterArrayInput `pulumi:"filters"`
+	// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+	IncludeOrganization pulumi.BoolPtrInput `pulumi:"includeOrganization"`
 	// Optional. A filter that returns results that match the name specified.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
@@ -130,6 +142,10 @@ func (o GetCategoriesResultOutput) CategoryCollections() GetCategoriesCategoryCo
 	return o.ApplyT(func(v GetCategoriesResult) []GetCategoriesCategoryCollection { return v.CategoryCollections }).(GetCategoriesCategoryCollectionArrayOutput)
 }
 
+func (o GetCategoriesResultOutput) ChildTenancyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCategoriesResult) []string { return v.ChildTenancyIds }).(pulumi.StringArrayOutput)
+}
+
 // The OCID of the tenancy. The tenancy is the root compartment.
 func (o GetCategoriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCategoriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -146,6 +162,10 @@ func (o GetCategoriesResultOutput) Filters() GetCategoriesFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetCategoriesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCategoriesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetCategoriesResultOutput) IncludeOrganization() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCategoriesResult) *bool { return v.IncludeOrganization }).(pulumi.BoolPtrOutput)
 }
 
 // The name assigned to the category.

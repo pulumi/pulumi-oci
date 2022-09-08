@@ -125,6 +125,218 @@ func (o SddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) SddcHcxOnPremL
 	}).(SddcHcxOnPremLicenseOutput)
 }
 
+type SddcUpgradeLicense struct {
+	// vSphere license key value.
+	LicenseKey *string `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType *string `pulumi:"licenseType"`
+}
+
+// SddcUpgradeLicenseInput is an input type that accepts SddcUpgradeLicenseArgs and SddcUpgradeLicenseOutput values.
+// You can construct a concrete instance of `SddcUpgradeLicenseInput` via:
+//
+//	SddcUpgradeLicenseArgs{...}
+type SddcUpgradeLicenseInput interface {
+	pulumi.Input
+
+	ToSddcUpgradeLicenseOutput() SddcUpgradeLicenseOutput
+	ToSddcUpgradeLicenseOutputWithContext(context.Context) SddcUpgradeLicenseOutput
+}
+
+type SddcUpgradeLicenseArgs struct {
+	// vSphere license key value.
+	LicenseKey pulumi.StringPtrInput `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
+}
+
+func (SddcUpgradeLicenseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcUpgradeLicense)(nil)).Elem()
+}
+
+func (i SddcUpgradeLicenseArgs) ToSddcUpgradeLicenseOutput() SddcUpgradeLicenseOutput {
+	return i.ToSddcUpgradeLicenseOutputWithContext(context.Background())
+}
+
+func (i SddcUpgradeLicenseArgs) ToSddcUpgradeLicenseOutputWithContext(ctx context.Context) SddcUpgradeLicenseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcUpgradeLicenseOutput)
+}
+
+// SddcUpgradeLicenseArrayInput is an input type that accepts SddcUpgradeLicenseArray and SddcUpgradeLicenseArrayOutput values.
+// You can construct a concrete instance of `SddcUpgradeLicenseArrayInput` via:
+//
+//	SddcUpgradeLicenseArray{ SddcUpgradeLicenseArgs{...} }
+type SddcUpgradeLicenseArrayInput interface {
+	pulumi.Input
+
+	ToSddcUpgradeLicenseArrayOutput() SddcUpgradeLicenseArrayOutput
+	ToSddcUpgradeLicenseArrayOutputWithContext(context.Context) SddcUpgradeLicenseArrayOutput
+}
+
+type SddcUpgradeLicenseArray []SddcUpgradeLicenseInput
+
+func (SddcUpgradeLicenseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcUpgradeLicense)(nil)).Elem()
+}
+
+func (i SddcUpgradeLicenseArray) ToSddcUpgradeLicenseArrayOutput() SddcUpgradeLicenseArrayOutput {
+	return i.ToSddcUpgradeLicenseArrayOutputWithContext(context.Background())
+}
+
+func (i SddcUpgradeLicenseArray) ToSddcUpgradeLicenseArrayOutputWithContext(ctx context.Context) SddcUpgradeLicenseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcUpgradeLicenseArrayOutput)
+}
+
+type SddcUpgradeLicenseOutput struct{ *pulumi.OutputState }
+
+func (SddcUpgradeLicenseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcUpgradeLicense)(nil)).Elem()
+}
+
+func (o SddcUpgradeLicenseOutput) ToSddcUpgradeLicenseOutput() SddcUpgradeLicenseOutput {
+	return o
+}
+
+func (o SddcUpgradeLicenseOutput) ToSddcUpgradeLicenseOutputWithContext(ctx context.Context) SddcUpgradeLicenseOutput {
+	return o
+}
+
+// vSphere license key value.
+func (o SddcUpgradeLicenseOutput) LicenseKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcUpgradeLicense) *string { return v.LicenseKey }).(pulumi.StringPtrOutput)
+}
+
+// vSphere license type.
+func (o SddcUpgradeLicenseOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcUpgradeLicense) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
+}
+
+type SddcUpgradeLicenseArrayOutput struct{ *pulumi.OutputState }
+
+func (SddcUpgradeLicenseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcUpgradeLicense)(nil)).Elem()
+}
+
+func (o SddcUpgradeLicenseArrayOutput) ToSddcUpgradeLicenseArrayOutput() SddcUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o SddcUpgradeLicenseArrayOutput) ToSddcUpgradeLicenseArrayOutputWithContext(ctx context.Context) SddcUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o SddcUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) SddcUpgradeLicenseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcUpgradeLicense {
+		return vs[0].([]SddcUpgradeLicense)[vs[1].(int)]
+	}).(SddcUpgradeLicenseOutput)
+}
+
+type SddcVsphereUpgradeObject struct {
+	// Binary object download link.
+	DownloadLink *string `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription *string `pulumi:"linkDescription"`
+}
+
+// SddcVsphereUpgradeObjectInput is an input type that accepts SddcVsphereUpgradeObjectArgs and SddcVsphereUpgradeObjectOutput values.
+// You can construct a concrete instance of `SddcVsphereUpgradeObjectInput` via:
+//
+//	SddcVsphereUpgradeObjectArgs{...}
+type SddcVsphereUpgradeObjectInput interface {
+	pulumi.Input
+
+	ToSddcVsphereUpgradeObjectOutput() SddcVsphereUpgradeObjectOutput
+	ToSddcVsphereUpgradeObjectOutputWithContext(context.Context) SddcVsphereUpgradeObjectOutput
+}
+
+type SddcVsphereUpgradeObjectArgs struct {
+	// Binary object download link.
+	DownloadLink pulumi.StringPtrInput `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription pulumi.StringPtrInput `pulumi:"linkDescription"`
+}
+
+func (SddcVsphereUpgradeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i SddcVsphereUpgradeObjectArgs) ToSddcVsphereUpgradeObjectOutput() SddcVsphereUpgradeObjectOutput {
+	return i.ToSddcVsphereUpgradeObjectOutputWithContext(context.Background())
+}
+
+func (i SddcVsphereUpgradeObjectArgs) ToSddcVsphereUpgradeObjectOutputWithContext(ctx context.Context) SddcVsphereUpgradeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcVsphereUpgradeObjectOutput)
+}
+
+// SddcVsphereUpgradeObjectArrayInput is an input type that accepts SddcVsphereUpgradeObjectArray and SddcVsphereUpgradeObjectArrayOutput values.
+// You can construct a concrete instance of `SddcVsphereUpgradeObjectArrayInput` via:
+//
+//	SddcVsphereUpgradeObjectArray{ SddcVsphereUpgradeObjectArgs{...} }
+type SddcVsphereUpgradeObjectArrayInput interface {
+	pulumi.Input
+
+	ToSddcVsphereUpgradeObjectArrayOutput() SddcVsphereUpgradeObjectArrayOutput
+	ToSddcVsphereUpgradeObjectArrayOutputWithContext(context.Context) SddcVsphereUpgradeObjectArrayOutput
+}
+
+type SddcVsphereUpgradeObjectArray []SddcVsphereUpgradeObjectInput
+
+func (SddcVsphereUpgradeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i SddcVsphereUpgradeObjectArray) ToSddcVsphereUpgradeObjectArrayOutput() SddcVsphereUpgradeObjectArrayOutput {
+	return i.ToSddcVsphereUpgradeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i SddcVsphereUpgradeObjectArray) ToSddcVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) SddcVsphereUpgradeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcVsphereUpgradeObjectArrayOutput)
+}
+
+type SddcVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
+
+func (SddcVsphereUpgradeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o SddcVsphereUpgradeObjectOutput) ToSddcVsphereUpgradeObjectOutput() SddcVsphereUpgradeObjectOutput {
+	return o
+}
+
+func (o SddcVsphereUpgradeObjectOutput) ToSddcVsphereUpgradeObjectOutputWithContext(ctx context.Context) SddcVsphereUpgradeObjectOutput {
+	return o
+}
+
+// Binary object download link.
+func (o SddcVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcVsphereUpgradeObject) *string { return v.DownloadLink }).(pulumi.StringPtrOutput)
+}
+
+// Binary object description.
+func (o SddcVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcVsphereUpgradeObject) *string { return v.LinkDescription }).(pulumi.StringPtrOutput)
+}
+
+type SddcVsphereUpgradeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (SddcVsphereUpgradeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o SddcVsphereUpgradeObjectArrayOutput) ToSddcVsphereUpgradeObjectArrayOutput() SddcVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o SddcVsphereUpgradeObjectArrayOutput) ToSddcVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) SddcVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o SddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) SddcVsphereUpgradeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcVsphereUpgradeObject {
+		return vs[0].([]SddcVsphereUpgradeObject)[vs[1].(int)]
+	}).(SddcVsphereUpgradeObjectOutput)
+}
+
 type GetExsiHostsEsxiHostCollection struct {
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate string `pulumi:"billingContractEndDate"`
@@ -156,6 +368,8 @@ type GetExsiHostsEsxiHostCollection struct {
 	Id string `pulumi:"id"`
 	// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	NextSku string `pulumi:"nextSku"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+	NonUpgradedEsxiHostId string `pulumi:"nonUpgradedEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 	ReplacementEsxiHostId string `pulumi:"replacementEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -166,6 +380,10 @@ type GetExsiHostsEsxiHostCollection struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+	UpgradedReplacementEsxiHostId string `pulumi:"upgradedReplacementEsxiHostId"`
+	// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 }
 
 // GetExsiHostsEsxiHostCollectionInput is an input type that accepts GetExsiHostsEsxiHostCollectionArgs and GetExsiHostsEsxiHostCollectionOutput values.
@@ -210,6 +428,8 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	NextSku pulumi.StringInput `pulumi:"nextSku"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+	NonUpgradedEsxiHostId pulumi.StringInput `pulumi:"nonUpgradedEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 	ReplacementEsxiHostId pulumi.StringInput `pulumi:"replacementEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -220,6 +440,10 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+	UpgradedReplacementEsxiHostId pulumi.StringInput `pulumi:"upgradedReplacementEsxiHostId"`
+	// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
 }
 
 func (GetExsiHostsEsxiHostCollectionArgs) ElementType() reflect.Type {
@@ -348,6 +572,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) NextSku() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.NextSku }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+func (o GetExsiHostsEsxiHostCollectionOutput) NonUpgradedEsxiHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.NonUpgradedEsxiHostId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 func (o GetExsiHostsEsxiHostCollectionOutput) ReplacementEsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ReplacementEsxiHostId }).(pulumi.StringOutput)
@@ -371,6 +600,16 @@ func (o GetExsiHostsEsxiHostCollectionOutput) TimeCreated() pulumi.StringOutput 
 // The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetExsiHostsEsxiHostCollectionOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+func (o GetExsiHostsEsxiHostCollectionOutput) UpgradedReplacementEsxiHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringOutput)
+}
+
+// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+func (o GetExsiHostsEsxiHostCollectionOutput) VmwareSoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
 }
 
 type GetExsiHostsEsxiHostCollectionArrayOutput struct{ *pulumi.OutputState }
@@ -614,6 +853,218 @@ func (o GetSddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcHcxO
 	}).(GetSddcHcxOnPremLicenseOutput)
 }
 
+type GetSddcUpgradeLicense struct {
+	// vSphere license key value.
+	LicenseKey string `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType string `pulumi:"licenseType"`
+}
+
+// GetSddcUpgradeLicenseInput is an input type that accepts GetSddcUpgradeLicenseArgs and GetSddcUpgradeLicenseOutput values.
+// You can construct a concrete instance of `GetSddcUpgradeLicenseInput` via:
+//
+//	GetSddcUpgradeLicenseArgs{...}
+type GetSddcUpgradeLicenseInput interface {
+	pulumi.Input
+
+	ToGetSddcUpgradeLicenseOutput() GetSddcUpgradeLicenseOutput
+	ToGetSddcUpgradeLicenseOutputWithContext(context.Context) GetSddcUpgradeLicenseOutput
+}
+
+type GetSddcUpgradeLicenseArgs struct {
+	// vSphere license key value.
+	LicenseKey pulumi.StringInput `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+}
+
+func (GetSddcUpgradeLicenseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcUpgradeLicense)(nil)).Elem()
+}
+
+func (i GetSddcUpgradeLicenseArgs) ToGetSddcUpgradeLicenseOutput() GetSddcUpgradeLicenseOutput {
+	return i.ToGetSddcUpgradeLicenseOutputWithContext(context.Background())
+}
+
+func (i GetSddcUpgradeLicenseArgs) ToGetSddcUpgradeLicenseOutputWithContext(ctx context.Context) GetSddcUpgradeLicenseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcUpgradeLicenseOutput)
+}
+
+// GetSddcUpgradeLicenseArrayInput is an input type that accepts GetSddcUpgradeLicenseArray and GetSddcUpgradeLicenseArrayOutput values.
+// You can construct a concrete instance of `GetSddcUpgradeLicenseArrayInput` via:
+//
+//	GetSddcUpgradeLicenseArray{ GetSddcUpgradeLicenseArgs{...} }
+type GetSddcUpgradeLicenseArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcUpgradeLicenseArrayOutput() GetSddcUpgradeLicenseArrayOutput
+	ToGetSddcUpgradeLicenseArrayOutputWithContext(context.Context) GetSddcUpgradeLicenseArrayOutput
+}
+
+type GetSddcUpgradeLicenseArray []GetSddcUpgradeLicenseInput
+
+func (GetSddcUpgradeLicenseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcUpgradeLicense)(nil)).Elem()
+}
+
+func (i GetSddcUpgradeLicenseArray) ToGetSddcUpgradeLicenseArrayOutput() GetSddcUpgradeLicenseArrayOutput {
+	return i.ToGetSddcUpgradeLicenseArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcUpgradeLicenseArray) ToGetSddcUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetSddcUpgradeLicenseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcUpgradeLicenseArrayOutput)
+}
+
+type GetSddcUpgradeLicenseOutput struct{ *pulumi.OutputState }
+
+func (GetSddcUpgradeLicenseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcUpgradeLicense)(nil)).Elem()
+}
+
+func (o GetSddcUpgradeLicenseOutput) ToGetSddcUpgradeLicenseOutput() GetSddcUpgradeLicenseOutput {
+	return o
+}
+
+func (o GetSddcUpgradeLicenseOutput) ToGetSddcUpgradeLicenseOutputWithContext(ctx context.Context) GetSddcUpgradeLicenseOutput {
+	return o
+}
+
+// vSphere license key value.
+func (o GetSddcUpgradeLicenseOutput) LicenseKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcUpgradeLicense) string { return v.LicenseKey }).(pulumi.StringOutput)
+}
+
+// vSphere license type.
+func (o GetSddcUpgradeLicenseOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcUpgradeLicense) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+type GetSddcUpgradeLicenseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcUpgradeLicenseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcUpgradeLicense)(nil)).Elem()
+}
+
+func (o GetSddcUpgradeLicenseArrayOutput) ToGetSddcUpgradeLicenseArrayOutput() GetSddcUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o GetSddcUpgradeLicenseArrayOutput) ToGetSddcUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetSddcUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o GetSddcUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcUpgradeLicenseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcUpgradeLicense {
+		return vs[0].([]GetSddcUpgradeLicense)[vs[1].(int)]
+	}).(GetSddcUpgradeLicenseOutput)
+}
+
+type GetSddcVsphereUpgradeObject struct {
+	// Binary object download link.
+	DownloadLink string `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription string `pulumi:"linkDescription"`
+}
+
+// GetSddcVsphereUpgradeObjectInput is an input type that accepts GetSddcVsphereUpgradeObjectArgs and GetSddcVsphereUpgradeObjectOutput values.
+// You can construct a concrete instance of `GetSddcVsphereUpgradeObjectInput` via:
+//
+//	GetSddcVsphereUpgradeObjectArgs{...}
+type GetSddcVsphereUpgradeObjectInput interface {
+	pulumi.Input
+
+	ToGetSddcVsphereUpgradeObjectOutput() GetSddcVsphereUpgradeObjectOutput
+	ToGetSddcVsphereUpgradeObjectOutputWithContext(context.Context) GetSddcVsphereUpgradeObjectOutput
+}
+
+type GetSddcVsphereUpgradeObjectArgs struct {
+	// Binary object download link.
+	DownloadLink pulumi.StringInput `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription pulumi.StringInput `pulumi:"linkDescription"`
+}
+
+func (GetSddcVsphereUpgradeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i GetSddcVsphereUpgradeObjectArgs) ToGetSddcVsphereUpgradeObjectOutput() GetSddcVsphereUpgradeObjectOutput {
+	return i.ToGetSddcVsphereUpgradeObjectOutputWithContext(context.Background())
+}
+
+func (i GetSddcVsphereUpgradeObjectArgs) ToGetSddcVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetSddcVsphereUpgradeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcVsphereUpgradeObjectOutput)
+}
+
+// GetSddcVsphereUpgradeObjectArrayInput is an input type that accepts GetSddcVsphereUpgradeObjectArray and GetSddcVsphereUpgradeObjectArrayOutput values.
+// You can construct a concrete instance of `GetSddcVsphereUpgradeObjectArrayInput` via:
+//
+//	GetSddcVsphereUpgradeObjectArray{ GetSddcVsphereUpgradeObjectArgs{...} }
+type GetSddcVsphereUpgradeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcVsphereUpgradeObjectArrayOutput() GetSddcVsphereUpgradeObjectArrayOutput
+	ToGetSddcVsphereUpgradeObjectArrayOutputWithContext(context.Context) GetSddcVsphereUpgradeObjectArrayOutput
+}
+
+type GetSddcVsphereUpgradeObjectArray []GetSddcVsphereUpgradeObjectInput
+
+func (GetSddcVsphereUpgradeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i GetSddcVsphereUpgradeObjectArray) ToGetSddcVsphereUpgradeObjectArrayOutput() GetSddcVsphereUpgradeObjectArrayOutput {
+	return i.ToGetSddcVsphereUpgradeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcVsphereUpgradeObjectArray) ToGetSddcVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetSddcVsphereUpgradeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcVsphereUpgradeObjectArrayOutput)
+}
+
+type GetSddcVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetSddcVsphereUpgradeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o GetSddcVsphereUpgradeObjectOutput) ToGetSddcVsphereUpgradeObjectOutput() GetSddcVsphereUpgradeObjectOutput {
+	return o
+}
+
+func (o GetSddcVsphereUpgradeObjectOutput) ToGetSddcVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetSddcVsphereUpgradeObjectOutput {
+	return o
+}
+
+// Binary object download link.
+func (o GetSddcVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcVsphereUpgradeObject) string { return v.DownloadLink }).(pulumi.StringOutput)
+}
+
+// Binary object description.
+func (o GetSddcVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcVsphereUpgradeObject) string { return v.LinkDescription }).(pulumi.StringOutput)
+}
+
+type GetSddcVsphereUpgradeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcVsphereUpgradeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o GetSddcVsphereUpgradeObjectArrayOutput) ToGetSddcVsphereUpgradeObjectArrayOutput() GetSddcVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o GetSddcVsphereUpgradeObjectArrayOutput) ToGetSddcVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetSddcVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o GetSddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) GetSddcVsphereUpgradeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcVsphereUpgradeObject {
+		return vs[0].([]GetSddcVsphereUpgradeObject)[vs[1].(int)]
+	}).(GetSddcVsphereUpgradeObjectOutput)
+}
+
 type GetSddcsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -810,6 +1261,8 @@ type GetSddcsSddcCollection struct {
 	TimeHcxLicenseStatusUpdated string `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The vSphere licenses to be used when upgrade SDDC.
+	UpgradeLicenses []GetSddcsSddcCollectionUpgradeLicense `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn string `pulumi:"vcenterFqdn"`
 	// The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
@@ -824,6 +1277,10 @@ type GetSddcsSddcCollection struct {
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 	VsanVlanId string `pulumi:"vsanVlanId"`
+	// The link of guidance to upgrade vSphere.
+	VsphereUpgradeGuide string `pulumi:"vsphereUpgradeGuide"`
+	// The links of binary objects needed for upgrade vSphere.
+	VsphereUpgradeObjects []GetSddcsSddcCollectionVsphereUpgradeObject `pulumi:"vsphereUpgradeObjects"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 	VsphereVlanId string `pulumi:"vsphereVlanId"`
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
@@ -931,6 +1388,8 @@ type GetSddcsSddcCollectionArgs struct {
 	TimeHcxLicenseStatusUpdated pulumi.StringInput `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The vSphere licenses to be used when upgrade SDDC.
+	UpgradeLicenses GetSddcsSddcCollectionUpgradeLicenseArrayInput `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn pulumi.StringInput `pulumi:"vcenterFqdn"`
 	// The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
@@ -945,6 +1404,10 @@ type GetSddcsSddcCollectionArgs struct {
 	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
+	// The link of guidance to upgrade vSphere.
+	VsphereUpgradeGuide pulumi.StringInput `pulumi:"vsphereUpgradeGuide"`
+	// The links of binary objects needed for upgrade vSphere.
+	VsphereUpgradeObjects GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput `pulumi:"vsphereUpgradeObjects"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
 	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
@@ -1229,6 +1692,11 @@ func (o GetSddcsSddcCollectionOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// The vSphere licenses to be used when upgrade SDDC.
+func (o GetSddcsSddcCollectionOutput) UpgradeLicenses() GetSddcsSddcCollectionUpgradeLicenseArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionUpgradeLicense { return v.UpgradeLicenses }).(GetSddcsSddcCollectionUpgradeLicenseArrayOutput)
+}
+
 // The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 func (o GetSddcsSddcCollectionOutput) VcenterFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterFqdn }).(pulumi.StringOutput)
@@ -1262,6 +1730,18 @@ func (o GetSddcsSddcCollectionOutput) VmwareSoftwareVersion() pulumi.StringOutpu
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 func (o GetSddcsSddcCollectionOutput) VsanVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsanVlanId }).(pulumi.StringOutput)
+}
+
+// The link of guidance to upgrade vSphere.
+func (o GetSddcsSddcCollectionOutput) VsphereUpgradeGuide() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsphereUpgradeGuide }).(pulumi.StringOutput)
+}
+
+// The links of binary objects needed for upgrade vSphere.
+func (o GetSddcsSddcCollectionOutput) VsphereUpgradeObjects() GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionVsphereUpgradeObject {
+		return v.VsphereUpgradeObjects
+	}).(GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
@@ -1407,6 +1887,218 @@ func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionHcxOnPremLicense {
 		return vs[0].([]GetSddcsSddcCollectionHcxOnPremLicense)[vs[1].(int)]
 	}).(GetSddcsSddcCollectionHcxOnPremLicenseOutput)
+}
+
+type GetSddcsSddcCollectionUpgradeLicense struct {
+	// vSphere license key value.
+	LicenseKey string `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType string `pulumi:"licenseType"`
+}
+
+// GetSddcsSddcCollectionUpgradeLicenseInput is an input type that accepts GetSddcsSddcCollectionUpgradeLicenseArgs and GetSddcsSddcCollectionUpgradeLicenseOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionUpgradeLicenseInput` via:
+//
+//	GetSddcsSddcCollectionUpgradeLicenseArgs{...}
+type GetSddcsSddcCollectionUpgradeLicenseInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionUpgradeLicenseOutput() GetSddcsSddcCollectionUpgradeLicenseOutput
+	ToGetSddcsSddcCollectionUpgradeLicenseOutputWithContext(context.Context) GetSddcsSddcCollectionUpgradeLicenseOutput
+}
+
+type GetSddcsSddcCollectionUpgradeLicenseArgs struct {
+	// vSphere license key value.
+	LicenseKey pulumi.StringInput `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+}
+
+func (GetSddcsSddcCollectionUpgradeLicenseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicense)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionUpgradeLicenseArgs) ToGetSddcsSddcCollectionUpgradeLicenseOutput() GetSddcsSddcCollectionUpgradeLicenseOutput {
+	return i.ToGetSddcsSddcCollectionUpgradeLicenseOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionUpgradeLicenseArgs) ToGetSddcsSddcCollectionUpgradeLicenseOutputWithContext(ctx context.Context) GetSddcsSddcCollectionUpgradeLicenseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionUpgradeLicenseOutput)
+}
+
+// GetSddcsSddcCollectionUpgradeLicenseArrayInput is an input type that accepts GetSddcsSddcCollectionUpgradeLicenseArray and GetSddcsSddcCollectionUpgradeLicenseArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionUpgradeLicenseArrayInput` via:
+//
+//	GetSddcsSddcCollectionUpgradeLicenseArray{ GetSddcsSddcCollectionUpgradeLicenseArgs{...} }
+type GetSddcsSddcCollectionUpgradeLicenseArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionUpgradeLicenseArrayOutput() GetSddcsSddcCollectionUpgradeLicenseArrayOutput
+	ToGetSddcsSddcCollectionUpgradeLicenseArrayOutputWithContext(context.Context) GetSddcsSddcCollectionUpgradeLicenseArrayOutput
+}
+
+type GetSddcsSddcCollectionUpgradeLicenseArray []GetSddcsSddcCollectionUpgradeLicenseInput
+
+func (GetSddcsSddcCollectionUpgradeLicenseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionUpgradeLicense)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionUpgradeLicenseArray) ToGetSddcsSddcCollectionUpgradeLicenseArrayOutput() GetSddcsSddcCollectionUpgradeLicenseArrayOutput {
+	return i.ToGetSddcsSddcCollectionUpgradeLicenseArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionUpgradeLicenseArray) ToGetSddcsSddcCollectionUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionUpgradeLicenseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionUpgradeLicenseArrayOutput)
+}
+
+type GetSddcsSddcCollectionUpgradeLicenseOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionUpgradeLicenseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicense)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionUpgradeLicenseOutput) ToGetSddcsSddcCollectionUpgradeLicenseOutput() GetSddcsSddcCollectionUpgradeLicenseOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionUpgradeLicenseOutput) ToGetSddcsSddcCollectionUpgradeLicenseOutputWithContext(ctx context.Context) GetSddcsSddcCollectionUpgradeLicenseOutput {
+	return o
+}
+
+// vSphere license key value.
+func (o GetSddcsSddcCollectionUpgradeLicenseOutput) LicenseKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionUpgradeLicense) string { return v.LicenseKey }).(pulumi.StringOutput)
+}
+
+// vSphere license type.
+func (o GetSddcsSddcCollectionUpgradeLicenseOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionUpgradeLicense) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+type GetSddcsSddcCollectionUpgradeLicenseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionUpgradeLicenseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionUpgradeLicense)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) ToGetSddcsSddcCollectionUpgradeLicenseArrayOutput() GetSddcsSddcCollectionUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) ToGetSddcsSddcCollectionUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionUpgradeLicenseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionUpgradeLicense {
+		return vs[0].([]GetSddcsSddcCollectionUpgradeLicense)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionUpgradeLicenseOutput)
+}
+
+type GetSddcsSddcCollectionVsphereUpgradeObject struct {
+	// Binary object download link.
+	DownloadLink string `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription string `pulumi:"linkDescription"`
+}
+
+// GetSddcsSddcCollectionVsphereUpgradeObjectInput is an input type that accepts GetSddcsSddcCollectionVsphereUpgradeObjectArgs and GetSddcsSddcCollectionVsphereUpgradeObjectOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionVsphereUpgradeObjectInput` via:
+//
+//	GetSddcsSddcCollectionVsphereUpgradeObjectArgs{...}
+type GetSddcsSddcCollectionVsphereUpgradeObjectInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionVsphereUpgradeObjectOutput() GetSddcsSddcCollectionVsphereUpgradeObjectOutput
+	ToGetSddcsSddcCollectionVsphereUpgradeObjectOutputWithContext(context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectOutput
+}
+
+type GetSddcsSddcCollectionVsphereUpgradeObjectArgs struct {
+	// Binary object download link.
+	DownloadLink pulumi.StringInput `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription pulumi.StringInput `pulumi:"linkDescription"`
+}
+
+func (GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ToGetSddcsSddcCollectionVsphereUpgradeObjectOutput() GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
+	return i.ToGetSddcsSddcCollectionVsphereUpgradeObjectOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ToGetSddcsSddcCollectionVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionVsphereUpgradeObjectOutput)
+}
+
+// GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput is an input type that accepts GetSddcsSddcCollectionVsphereUpgradeObjectArray and GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput` via:
+//
+//	GetSddcsSddcCollectionVsphereUpgradeObjectArray{ GetSddcsSddcCollectionVsphereUpgradeObjectArgs{...} }
+type GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput() GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput
+	ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutputWithContext(context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput
+}
+
+type GetSddcsSddcCollectionVsphereUpgradeObjectArray []GetSddcsSddcCollectionVsphereUpgradeObjectInput
+
+func (GetSddcsSddcCollectionVsphereUpgradeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionVsphereUpgradeObjectArray) ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput() GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
+	return i.ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionVsphereUpgradeObjectArray) ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput)
+}
+
+type GetSddcsSddcCollectionVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ToGetSddcsSddcCollectionVsphereUpgradeObjectOutput() GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ToGetSddcsSddcCollectionVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
+	return o
+}
+
+// Binary object download link.
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionVsphereUpgradeObject) string { return v.DownloadLink }).(pulumi.StringOutput)
+}
+
+// Binary object description.
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionVsphereUpgradeObject) string { return v.LinkDescription }).(pulumi.StringOutput)
+}
+
+type GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput() GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionVsphereUpgradeObject {
+		return vs[0].([]GetSddcsSddcCollectionVsphereUpgradeObject)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionVsphereUpgradeObjectOutput)
 }
 
 type GetSupportedHostShapesFilter struct {
@@ -2108,18 +2800,30 @@ func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) Index(i pulumi.IntInp
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcHcxOnPremLicenseInput)(nil)).Elem(), SddcHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcHcxOnPremLicenseArrayInput)(nil)).Elem(), SddcHcxOnPremLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcUpgradeLicenseInput)(nil)).Elem(), SddcUpgradeLicenseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcUpgradeLicenseArrayInput)(nil)).Elem(), SddcUpgradeLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcVsphereUpgradeObjectInput)(nil)).Elem(), SddcVsphereUpgradeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcVsphereUpgradeObjectArrayInput)(nil)).Elem(), SddcVsphereUpgradeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionArrayInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterInput)(nil)).Elem(), GetExsiHostsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterArrayInput)(nil)).Elem(), GetExsiHostsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcHcxOnPremLicenseInput)(nil)).Elem(), GetSddcHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcHcxOnPremLicenseArrayInput)(nil)).Elem(), GetSddcHcxOnPremLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcUpgradeLicenseInput)(nil)).Elem(), GetSddcUpgradeLicenseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcUpgradeLicenseArrayInput)(nil)).Elem(), GetSddcUpgradeLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcVsphereUpgradeObjectInput)(nil)).Elem(), GetSddcVsphereUpgradeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcVsphereUpgradeObjectArrayInput)(nil)).Elem(), GetSddcVsphereUpgradeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsFilterInput)(nil)).Elem(), GetSddcsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsFilterArrayInput)(nil)).Elem(), GetSddcsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInput)(nil)).Elem(), GetSddcsSddcCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionArrayInput)(nil)).Elem(), GetSddcsSddcCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionHcxOnPremLicenseInput)(nil)).Elem(), GetSddcsSddcCollectionHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionHcxOnPremLicenseArrayInput)(nil)).Elem(), GetSddcsSddcCollectionHcxOnPremLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicenseInput)(nil)).Elem(), GetSddcsSddcCollectionUpgradeLicenseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicenseArrayInput)(nil)).Elem(), GetSddcsSddcCollectionUpgradeLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionVsphereUpgradeObjectInput)(nil)).Elem(), GetSddcsSddcCollectionVsphereUpgradeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput)(nil)).Elem(), GetSddcsSddcCollectionVsphereUpgradeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedHostShapesFilterInput)(nil)).Elem(), GetSupportedHostShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedHostShapesFilterArrayInput)(nil)).Elem(), GetSupportedHostShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedHostShapesItemInput)(nil)).Elem(), GetSupportedHostShapesItemArgs{})
@@ -2134,18 +2838,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemArrayInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemArray{})
 	pulumi.RegisterOutputType(SddcHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(SddcHcxOnPremLicenseArrayOutput{})
+	pulumi.RegisterOutputType(SddcUpgradeLicenseOutput{})
+	pulumi.RegisterOutputType(SddcUpgradeLicenseArrayOutput{})
+	pulumi.RegisterOutputType(SddcVsphereUpgradeObjectOutput{})
+	pulumi.RegisterOutputType(SddcVsphereUpgradeObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcHcxOnPremLicenseArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcUpgradeLicenseOutput{})
+	pulumi.RegisterOutputType(GetSddcUpgradeLicenseArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcVsphereUpgradeObjectOutput{})
+	pulumi.RegisterOutputType(GetSddcVsphereUpgradeObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsFilterOutput{})
 	pulumi.RegisterOutputType(GetSddcsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionUpgradeLicenseOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionUpgradeLicenseArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionVsphereUpgradeObjectOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetSupportedHostShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetSupportedHostShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSupportedHostShapesItemOutput{})

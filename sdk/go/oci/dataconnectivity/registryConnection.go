@@ -141,23 +141,23 @@ import (
 type RegistryConnection struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties RegistryConnectionConnectionPropertyArrayOutput `pulumi:"connectionProperties"`
 	// (Updatable) The description of the aggregator.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The identifier of the aggregator.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault pulumi.BoolOutput `pulumi:"isDefault"`
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringOutput `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryConnectionMetadataOutput `pulumi:"metadata"`
-	// (Updatable) The object's type.
+	// (Updatable) The object type.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
-	// (Updatable) The object's model version.
+	// (Updatable) The model version of the object.
 	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntOutput `pulumi:"objectStatus"`
@@ -165,9 +165,9 @@ type RegistryConnection struct {
 	ObjectVersion pulumi.IntOutput `pulumi:"objectVersion"`
 	// (Updatable) The schema object.
 	PrimarySchema RegistryConnectionPrimarySchemaOutput `pulumi:"primarySchema"`
-	// (Updatable) All the properties for the connection in a key-value map format.
+	// (Updatable) All the properties of the connection in a key-value map format.
 	Properties pulumi.MapOutput `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringOutput `pulumi:"registryId"`
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata RegistryConnectionRegistryMetadataOutput `pulumi:"registryMetadata"`
@@ -216,23 +216,23 @@ func GetRegistryConnection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering RegistryConnection resources.
 type registryConnectionState struct {
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties []RegistryConnectionConnectionProperty `pulumi:"connectionProperties"`
 	// (Updatable) The description of the aggregator.
 	Description *string `pulumi:"description"`
 	// (Updatable) The identifier of the aggregator.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault *bool `pulumi:"isDefault"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryConnectionMetadata `pulumi:"metadata"`
-	// (Updatable) The object's type.
+	// (Updatable) The object type.
 	ModelType *string `pulumi:"modelType"`
-	// (Updatable) The object's model version.
+	// (Updatable) The model version of the object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
@@ -240,9 +240,9 @@ type registryConnectionState struct {
 	ObjectVersion *int `pulumi:"objectVersion"`
 	// (Updatable) The schema object.
 	PrimarySchema *RegistryConnectionPrimarySchema `pulumi:"primarySchema"`
-	// (Updatable) All the properties for the connection in a key-value map format.
+	// (Updatable) All the properties of the connection in a key-value map format.
 	Properties map[string]interface{} `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId *string `pulumi:"registryId"`
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata *RegistryConnectionRegistryMetadata `pulumi:"registryMetadata"`
@@ -251,23 +251,23 @@ type registryConnectionState struct {
 }
 
 type RegistryConnectionState struct {
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties RegistryConnectionConnectionPropertyArrayInput
 	// (Updatable) The description of the aggregator.
 	Description pulumi.StringPtrInput
 	// (Updatable) The identifier of the aggregator.
 	Identifier pulumi.StringPtrInput
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault pulumi.BoolPtrInput
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryConnectionMetadataPtrInput
-	// (Updatable) The object's type.
+	// (Updatable) The object type.
 	ModelType pulumi.StringPtrInput
-	// (Updatable) The object's model version.
+	// (Updatable) The model version of the object.
 	ModelVersion pulumi.StringPtrInput
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput
@@ -275,9 +275,9 @@ type RegistryConnectionState struct {
 	ObjectVersion pulumi.IntPtrInput
 	// (Updatable) The schema object.
 	PrimarySchema RegistryConnectionPrimarySchemaPtrInput
-	// (Updatable) All the properties for the connection in a key-value map format.
+	// (Updatable) All the properties of the connection in a key-value map format.
 	Properties pulumi.MapInput
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringPtrInput
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata RegistryConnectionRegistryMetadataPtrInput
@@ -290,23 +290,23 @@ func (RegistryConnectionState) ElementType() reflect.Type {
 }
 
 type registryConnectionArgs struct {
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties []RegistryConnectionConnectionProperty `pulumi:"connectionProperties"`
 	// (Updatable) The description of the aggregator.
 	Description *string `pulumi:"description"`
 	// (Updatable) The identifier of the aggregator.
 	Identifier string `pulumi:"identifier"`
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault *bool `pulumi:"isDefault"`
 	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata *RegistryConnectionMetadata `pulumi:"metadata"`
-	// (Updatable) The object's type.
+	// (Updatable) The object type.
 	ModelType *string `pulumi:"modelType"`
-	// (Updatable) The object's model version.
+	// (Updatable) The model version of the object.
 	ModelVersion *string `pulumi:"modelVersion"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
@@ -314,9 +314,9 @@ type registryConnectionArgs struct {
 	ObjectVersion *int `pulumi:"objectVersion"`
 	// (Updatable) The schema object.
 	PrimarySchema *RegistryConnectionPrimarySchema `pulumi:"primarySchema"`
-	// (Updatable) All the properties for the connection in a key-value map format.
+	// (Updatable) All the properties of the connection in a key-value map format.
 	Properties map[string]interface{} `pulumi:"properties"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata *RegistryConnectionRegistryMetadata `pulumi:"registryMetadata"`
@@ -326,23 +326,23 @@ type registryConnectionArgs struct {
 
 // The set of arguments for constructing a RegistryConnection resource.
 type RegistryConnectionArgs struct {
-	// (Updatable) The properties for the connection.
+	// (Updatable) The properties of the connection.
 	ConnectionProperties RegistryConnectionConnectionPropertyArrayInput
 	// (Updatable) The description of the aggregator.
 	Description pulumi.StringPtrInput
 	// (Updatable) The identifier of the aggregator.
 	Identifier pulumi.StringInput
-	// (Updatable) The default property for the connection.
+	// (Updatable) The default property of the connection.
 	IsDefault pulumi.BoolPtrInput
 	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadata RegistryConnectionMetadataPtrInput
-	// (Updatable) The object's type.
+	// (Updatable) The object type.
 	ModelType pulumi.StringPtrInput
-	// (Updatable) The object's model version.
+	// (Updatable) The model version of the object.
 	ModelVersion pulumi.StringPtrInput
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput
@@ -350,9 +350,9 @@ type RegistryConnectionArgs struct {
 	ObjectVersion pulumi.IntPtrInput
 	// (Updatable) The schema object.
 	PrimarySchema RegistryConnectionPrimarySchemaPtrInput
-	// (Updatable) All the properties for the connection in a key-value map format.
+	// (Updatable) All the properties of the connection in a key-value map format.
 	Properties pulumi.MapInput
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput
 	// (Updatable) Information about the object and its parent.
 	RegistryMetadata RegistryConnectionRegistryMetadataPtrInput
@@ -447,7 +447,7 @@ func (o RegistryConnectionOutput) ToRegistryConnectionOutputWithContext(ctx cont
 	return o
 }
 
-// (Updatable) The properties for the connection.
+// (Updatable) The properties of the connection.
 func (o RegistryConnectionOutput) ConnectionProperties() RegistryConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v *RegistryConnection) RegistryConnectionConnectionPropertyArrayOutput {
 		return v.ConnectionProperties
@@ -464,7 +464,7 @@ func (o RegistryConnectionOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryConnection) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// (Updatable) The default property for the connection.
+// (Updatable) The default property of the connection.
 func (o RegistryConnectionOutput) IsDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v *RegistryConnection) pulumi.BoolOutput { return v.IsDefault }).(pulumi.BoolOutput)
 }
@@ -474,22 +474,22 @@ func (o RegistryConnectionOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryConnection) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o RegistryConnectionOutput) Metadata() RegistryConnectionMetadataOutput {
 	return o.ApplyT(func(v *RegistryConnection) RegistryConnectionMetadataOutput { return v.Metadata }).(RegistryConnectionMetadataOutput)
 }
 
-// (Updatable) The object's type.
+// (Updatable) The object type.
 func (o RegistryConnectionOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryConnection) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The object's model version.
+// (Updatable) The model version of the object.
 func (o RegistryConnectionOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryConnection) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o RegistryConnectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryConnection) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -509,12 +509,12 @@ func (o RegistryConnectionOutput) PrimarySchema() RegistryConnectionPrimarySchem
 	return o.ApplyT(func(v *RegistryConnection) RegistryConnectionPrimarySchemaOutput { return v.PrimarySchema }).(RegistryConnectionPrimarySchemaOutput)
 }
 
-// (Updatable) All the properties for the connection in a key-value map format.
+// (Updatable) All the properties of the connection in a key-value map format.
 func (o RegistryConnectionOutput) Properties() pulumi.MapOutput {
 	return o.ApplyT(func(v *RegistryConnection) pulumi.MapOutput { return v.Properties }).(pulumi.MapOutput)
 }
 
-// The registry Ocid.
+// The registry OCID.
 func (o RegistryConnectionOutput) RegistryId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RegistryConnection) pulumi.StringOutput { return v.RegistryId }).(pulumi.StringOutput)
 }

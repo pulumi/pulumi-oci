@@ -169,12 +169,16 @@ func (o AnalyticsInstanceCapacityPtrOutput) CapacityValue() pulumi.IntPtrOutput 
 type AnalyticsInstanceNetworkEndpointDetails struct {
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for an Analytics instance.
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// The subnet OCID for the private endpoint.
 	SubnetId *string `pulumi:"subnetId"`
 	// The VCN OCID for the private endpoint.
 	VcnId *string `pulumi:"vcnId"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
+	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	WhitelistedServices []string `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns []AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn `pulumi:"whitelistedVcns"`
 }
@@ -193,12 +197,16 @@ type AnalyticsInstanceNetworkEndpointDetailsInput interface {
 type AnalyticsInstanceNetworkEndpointDetailsArgs struct {
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for an Analytics instance.
+	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// The subnet OCID for the private endpoint.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The VCN OCID for the private endpoint.
 	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
+	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	WhitelistedServices pulumi.StringArrayInput `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayInput `pulumi:"whitelistedVcns"`
 }
@@ -285,6 +293,11 @@ func (o AnalyticsInstanceNetworkEndpointDetailsOutput) NetworkEndpointType() pul
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
 
+// Network Security Group OCIDs for an Analytics instance.
+func (o AnalyticsInstanceNetworkEndpointDetailsOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
 // The subnet OCID for the private endpoint.
 func (o AnalyticsInstanceNetworkEndpointDetailsOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
@@ -295,9 +308,14 @@ func (o AnalyticsInstanceNetworkEndpointDetailsOutput) VcnId() pulumi.StringPtrO
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
-// Source IP addresses or IP address ranges igress rules.
+// Source IP addresses or IP address ranges in ingress rules.
 func (o AnalyticsInstanceNetworkEndpointDetailsOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
+}
+
+// Oracle Cloud Services that are allowed to access this Analytics instance.
+func (o AnalyticsInstanceNetworkEndpointDetailsOutput) WhitelistedServices() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) []string { return v.WhitelistedServices }).(pulumi.StringArrayOutput)
 }
 
 // Virtual Cloud Networks allowed to access this network endpoint.
@@ -341,6 +359,16 @@ func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) NetworkEndpointType() 
 	}).(pulumi.StringPtrOutput)
 }
 
+// Network Security Group OCIDs for an Analytics instance.
+func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AnalyticsInstanceNetworkEndpointDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkSecurityGroupIds
+	}).(pulumi.StringArrayOutput)
+}
+
 // The subnet OCID for the private endpoint.
 func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceNetworkEndpointDetails) *string {
@@ -361,13 +389,23 @@ func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) VcnId() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// Source IP addresses or IP address ranges igress rules.
+// Source IP addresses or IP address ranges in ingress rules.
 func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceNetworkEndpointDetails) []string {
 		if v == nil {
 			return nil
 		}
 		return v.WhitelistedIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// Oracle Cloud Services that are allowed to access this Analytics instance.
+func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) WhitelistedServices() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AnalyticsInstanceNetworkEndpointDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.WhitelistedServices
 	}).(pulumi.StringArrayOutput)
 }
 
@@ -384,7 +422,7 @@ func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) WhitelistedVcns() Anal
 type AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn struct {
 	// The Virtual Cloud Network OCID.
 	Id *string `pulumi:"id"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -402,7 +440,7 @@ type AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnInput interface {
 type AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs struct {
 	// The Virtual Cloud Network OCID.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
 }
 
@@ -462,7 +500,7 @@ func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput) Id() pulumi
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// Source IP addresses or IP address ranges igress rules.
+// Source IP addresses or IP address ranges in ingress rules.
 func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }
@@ -488,7 +526,7 @@ func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput) Index(
 }
 
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone struct {
-	// (Updatable) Description of private source dns zone.
+	// (Updatable) Description of private source scan host zone.
 	Description *string `pulumi:"description"`
 	// (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone string `pulumi:"dnsZone"`
@@ -506,7 +544,7 @@ type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput interface {
 }
 
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs struct {
-	// (Updatable) Description of private source dns zone.
+	// (Updatable) Description of private source scan host zone.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone pulumi.StringInput `pulumi:"dnsZone"`
@@ -563,7 +601,7 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToAnaly
 	return o
 }
 
-// (Updatable) Description of private source dns zone.
+// (Updatable) Description of private source scan host zone.
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -591,6 +629,121 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput) In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
 		return vs[0].([]AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone)[vs[1].(int)]
 	}).(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput)
+}
+
+type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost struct {
+	// (Updatable) Description of private source scan host zone.
+	Description *string `pulumi:"description"`
+	// (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+	ScanHostname string `pulumi:"scanHostname"`
+	// (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+	ScanPort int `pulumi:"scanPort"`
+}
+
+// AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput is an input type that accepts AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs and AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput values.
+// You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput` via:
+//
+//	AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{...}
+type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput interface {
+	pulumi.Input
+
+	ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput() AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput
+	ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput
+}
+
+type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs struct {
+	// (Updatable) Description of private source scan host zone.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+	ScanHostname pulumi.StringInput `pulumi:"scanHostname"`
+	// (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+	ScanPort pulumi.IntInput `pulumi:"scanPort"`
+}
+
+func (AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)(nil)).Elem()
+}
+
+func (i AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput() AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return i.ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(context.Background())
+}
+
+func (i AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput)
+}
+
+// AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput is an input type that accepts AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray and AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput values.
+// You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput` via:
+//
+//	AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray{ AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{...} }
+type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput interface {
+	pulumi.Input
+
+	ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput() AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput
+	ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput
+}
+
+type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray []AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput
+
+func (AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)(nil)).Elem()
+}
+
+func (i AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput() AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return i.ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(context.Background())
+}
+
+func (i AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput)
+}
+
+type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput struct{ *pulumi.OutputState }
+
+func (AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)(nil)).Elem()
+}
+
+func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput() AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return o
+}
+
+func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return o
+}
+
+// (Updatable) Description of private source scan host zone.
+func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) string { return v.ScanHostname }).(pulumi.StringOutput)
+}
+
+// (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanPort() pulumi.IntOutput {
+	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) int { return v.ScanPort }).(pulumi.IntOutput)
+}
+
+type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput struct{ *pulumi.OutputState }
+
+func (AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)(nil)).Elem()
+}
+
+func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput() AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return o
+}
+
+func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return o
+}
+
+func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) Index(i pulumi.IntInput) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
+		return vs[0].([]AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)[vs[1].(int)]
+	}).(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput)
 }
 
 type GetAnalyticsInstanceCapacity struct {
@@ -702,12 +855,16 @@ func (o GetAnalyticsInstanceCapacityArrayOutput) Index(i pulumi.IntInput) GetAna
 type GetAnalyticsInstanceNetworkEndpointDetail struct {
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for an Analytics instance.
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// OCID of the customer subnet connected to private access channel.
 	SubnetId string `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
 	VcnId string `pulumi:"vcnId"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
+	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	WhitelistedServices []string `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns []GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn `pulumi:"whitelistedVcns"`
 }
@@ -726,12 +883,16 @@ type GetAnalyticsInstanceNetworkEndpointDetailInput interface {
 type GetAnalyticsInstanceNetworkEndpointDetailArgs struct {
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for an Analytics instance.
+	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// OCID of the customer subnet connected to private access channel.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
+	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	WhitelistedServices pulumi.StringArrayInput `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput `pulumi:"whitelistedVcns"`
 }
@@ -792,6 +953,11 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) NetworkEndpointType() p
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
 
+// Network Security Group OCIDs for an Analytics instance.
+func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
 // OCID of the customer subnet connected to private access channel.
 func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -802,9 +968,14 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) VcnId() pulumi.StringOu
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.VcnId }).(pulumi.StringOutput)
 }
 
-// Source IP addresses or IP address ranges igress rules.
+// Source IP addresses or IP address ranges in ingress rules.
 func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
+}
+
+// Oracle Cloud Services that are allowed to access this Analytics instance.
+func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) WhitelistedServices() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) []string { return v.WhitelistedServices }).(pulumi.StringArrayOutput)
 }
 
 // Virtual Cloud Networks allowed to access this network endpoint.
@@ -837,7 +1008,7 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.Int
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn struct {
 	// The Virtual Cloud Network OCID.
 	Id string `pulumi:"id"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -855,7 +1026,7 @@ type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput interface {
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs struct {
 	// The Virtual Cloud Network OCID.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
 }
 
@@ -915,7 +1086,7 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) Id() pulu
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Source IP addresses or IP address ranges igress rules.
+// Source IP addresses or IP address ranges in ingress rules.
 func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }
@@ -941,7 +1112,7 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) Inde
 }
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone struct {
-	// Description of private source dns zone.
+	// Description of private source scan host zone.
 	Description string `pulumi:"description"`
 	// Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone string `pulumi:"dnsZone"`
@@ -959,7 +1130,7 @@ type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput interface
 }
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs struct {
-	// Description of private source dns zone.
+	// Description of private source scan host zone.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone pulumi.StringInput `pulumi:"dnsZone"`
@@ -1016,7 +1187,7 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToGe
 	return o
 }
 
-// Description of private source dns zone.
+// Description of private source scan host zone.
 func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -1044,6 +1215,121 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
 		return vs[0].([]GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone)[vs[1].(int)]
 	}).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput)
+}
+
+type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost struct {
+	// Description of private source scan host zone.
+	Description string `pulumi:"description"`
+	// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+	ScanHostname string `pulumi:"scanHostname"`
+	// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+	ScanPort int `pulumi:"scanPort"`
+}
+
+// GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput is an input type that accepts GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs and GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput` via:
+//
+//	GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{...}
+type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput() GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput
+	ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(context.Context) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput
+}
+
+type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs struct {
+	// Description of private source scan host zone.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+	ScanHostname pulumi.StringInput `pulumi:"scanHostname"`
+	// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+	ScanPort pulumi.IntInput `pulumi:"scanPort"`
+}
+
+func (GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput() GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return i.ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(ctx context.Context) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput)
+}
+
+// GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput is an input type that accepts GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray and GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput` via:
+//
+//	GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray{ GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{...} }
+type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput() GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput
+	ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(context.Context) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput
+}
+
+type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray []GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput
+
+func (GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput() GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return i.ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(ctx context.Context) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput)
+}
+
+type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput() GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return o
+}
+
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(ctx context.Context) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return o
+}
+
+// Description of private source scan host zone.
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) string { return v.ScanHostname }).(pulumi.StringOutput)
+}
+
+// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) int { return v.ScanPort }).(pulumi.IntOutput)
+}
+
+type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput() GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(ctx context.Context) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
+		return vs[0].([]GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)[vs[1].(int)]
+	}).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput)
 }
 
 type GetAnalyticsInstancesAnalyticsInstance struct {
@@ -1397,12 +1683,16 @@ func (o GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput) Index(i pulum
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail struct {
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for an Analytics instance.
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// OCID of the customer subnet connected to private access channel.
 	SubnetId string `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
 	VcnId string `pulumi:"vcnId"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
+	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	WhitelistedServices []string `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns []GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn `pulumi:"whitelistedVcns"`
 }
@@ -1421,12 +1711,16 @@ type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailInput interface 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs struct {
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// Network Security Group OCIDs for an Analytics instance.
+	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// OCID of the customer subnet connected to private access channel.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
+	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	WhitelistedServices pulumi.StringArrayInput `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput `pulumi:"whitelistedVcns"`
 }
@@ -1489,6 +1783,13 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) Netwo
 	}).(pulumi.StringOutput)
 }
 
+// Network Security Group OCIDs for an Analytics instance.
+func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) []string {
+		return v.NetworkSecurityGroupIds
+	}).(pulumi.StringArrayOutput)
+}
+
 // OCID of the customer subnet connected to private access channel.
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -1499,9 +1800,16 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) VcnId
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) string { return v.VcnId }).(pulumi.StringOutput)
 }
 
-// Source IP addresses or IP address ranges igress rules.
+// Source IP addresses or IP address ranges in ingress rules.
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
+}
+
+// Oracle Cloud Services that are allowed to access this Analytics instance.
+func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) WhitelistedServices() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) []string {
+		return v.WhitelistedServices
+	}).(pulumi.StringArrayOutput)
 }
 
 // Virtual Cloud Networks allowed to access this network endpoint.
@@ -1534,7 +1842,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput) 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn struct {
 	// The Virtual Cloud Network OCID.
 	Id string `pulumi:"id"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -1552,7 +1860,7 @@ type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnIn
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs struct {
 	// The Virtual Cloud Network OCID.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Source IP addresses or IP address ranges igress rules.
+	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
 }
 
@@ -1612,7 +1920,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVc
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Source IP addresses or IP address ranges igress rules.
+// Source IP addresses or IP address ranges in ingress rules.
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) []string {
 		return v.WhitelistedIps
@@ -1757,6 +2065,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayInput)(nil)).Elem(), AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput)(nil)).Elem(), AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput)(nil)).Elem(), AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput)(nil)).Elem(), AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput)(nil)).Elem(), AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceCapacityInput)(nil)).Elem(), GetAnalyticsInstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceCapacityArrayInput)(nil)).Elem(), GetAnalyticsInstanceCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceNetworkEndpointDetailInput)(nil)).Elem(), GetAnalyticsInstanceNetworkEndpointDetailArgs{})
@@ -1765,6 +2075,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput)(nil)).Elem(), GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput)(nil)).Elem(), GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput)(nil)).Elem(), GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput)(nil)).Elem(), GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput)(nil)).Elem(), GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceArrayInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceCapacityInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceCapacityArgs{})
@@ -1783,6 +2095,8 @@ func init() {
 	pulumi.RegisterOutputType(AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput{})
 	pulumi.RegisterOutputType(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput{})
 	pulumi.RegisterOutputType(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput{})
+	pulumi.RegisterOutputType(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput{})
+	pulumi.RegisterOutputType(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstanceCapacityOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstanceCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstanceNetworkEndpointDetailOutput{})
@@ -1791,6 +2105,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceCapacityOutput{})

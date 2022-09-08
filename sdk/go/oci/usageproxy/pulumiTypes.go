@@ -13,6 +13,10 @@ import (
 type SubscriptionRedeemableUserItem struct {
 	// The email ID for a user that can redeem rewards.
 	EmailId string `pulumi:"emailId"`
+	// The first name of the user that can redeem rewards.
+	FirstName *string `pulumi:"firstName"`
+	// The last name of the user that can redeem rewards.
+	LastName *string `pulumi:"lastName"`
 }
 
 // SubscriptionRedeemableUserItemInput is an input type that accepts SubscriptionRedeemableUserItemArgs and SubscriptionRedeemableUserItemOutput values.
@@ -29,6 +33,10 @@ type SubscriptionRedeemableUserItemInput interface {
 type SubscriptionRedeemableUserItemArgs struct {
 	// The email ID for a user that can redeem rewards.
 	EmailId pulumi.StringInput `pulumi:"emailId"`
+	// The first name of the user that can redeem rewards.
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
+	// The last name of the user that can redeem rewards.
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 }
 
 func (SubscriptionRedeemableUserItemArgs) ElementType() reflect.Type {
@@ -85,6 +93,16 @@ func (o SubscriptionRedeemableUserItemOutput) ToSubscriptionRedeemableUserItemOu
 // The email ID for a user that can redeem rewards.
 func (o SubscriptionRedeemableUserItemOutput) EmailId() pulumi.StringOutput {
 	return o.ApplyT(func(v SubscriptionRedeemableUserItem) string { return v.EmailId }).(pulumi.StringOutput)
+}
+
+// The first name of the user that can redeem rewards.
+func (o SubscriptionRedeemableUserItemOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SubscriptionRedeemableUserItem) *string { return v.FirstName }).(pulumi.StringPtrOutput)
+}
+
+// The last name of the user that can redeem rewards.
+func (o SubscriptionRedeemableUserItemOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SubscriptionRedeemableUserItem) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 type SubscriptionRedeemableUserItemArrayOutput struct{ *pulumi.OutputState }
@@ -678,8 +696,12 @@ func (o GetSubscriptionProductsProductCollectionItemItemArrayOutput) Index(i pul
 }
 
 type GetSubscriptionRedeemableUserItem struct {
-	// The email ID of a user that can redeem rewards.
+	// The email ID of the user that can redeem rewards.
 	EmailId string `pulumi:"emailId"`
+	// The first name of the user that can redeem rewards.
+	FirstName string `pulumi:"firstName"`
+	// The last name of the user that can redeem rewards.
+	LastName string `pulumi:"lastName"`
 }
 
 // GetSubscriptionRedeemableUserItemInput is an input type that accepts GetSubscriptionRedeemableUserItemArgs and GetSubscriptionRedeemableUserItemOutput values.
@@ -694,8 +716,12 @@ type GetSubscriptionRedeemableUserItemInput interface {
 }
 
 type GetSubscriptionRedeemableUserItemArgs struct {
-	// The email ID of a user that can redeem rewards.
+	// The email ID of the user that can redeem rewards.
 	EmailId pulumi.StringInput `pulumi:"emailId"`
+	// The first name of the user that can redeem rewards.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// The last name of the user that can redeem rewards.
+	LastName pulumi.StringInput `pulumi:"lastName"`
 }
 
 func (GetSubscriptionRedeemableUserItemArgs) ElementType() reflect.Type {
@@ -749,9 +775,19 @@ func (o GetSubscriptionRedeemableUserItemOutput) ToGetSubscriptionRedeemableUser
 	return o
 }
 
-// The email ID of a user that can redeem rewards.
+// The email ID of the user that can redeem rewards.
 func (o GetSubscriptionRedeemableUserItemOutput) EmailId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) string { return v.EmailId }).(pulumi.StringOutput)
+}
+
+// The first name of the user that can redeem rewards.
+func (o GetSubscriptionRedeemableUserItemOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// The last name of the user that can redeem rewards.
+func (o GetSubscriptionRedeemableUserItemOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) string { return v.LastName }).(pulumi.StringOutput)
 }
 
 type GetSubscriptionRedeemableUserItemArrayOutput struct{ *pulumi.OutputState }
@@ -881,7 +917,7 @@ func (o GetSubscriptionRedeemableUsersFilterArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollection struct {
-	// The list of user email IDs that can redeem rewards.
+	// The list of user summary that can redeem rewards.
 	Items []GetSubscriptionRedeemableUsersRedeemableUserCollectionItem `pulumi:"items"`
 }
 
@@ -897,7 +933,7 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionInput interface {
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs struct {
-	// The list of user email IDs that can redeem rewards.
+	// The list of user summary that can redeem rewards.
 	Items GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -952,7 +988,7 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput) ToGetSubsc
 	return o
 }
 
-// The list of user email IDs that can redeem rewards.
+// The list of user summary that can redeem rewards.
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput) Items() GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollection) []GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
 		return v.Items
@@ -980,7 +1016,7 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayOutput) Index
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItem struct {
-	// The list of user email IDs that can redeem rewards.
+	// The list of user summary that can redeem rewards.
 	Items []GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem `pulumi:"items"`
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId string `pulumi:"subscriptionId"`
@@ -1001,7 +1037,7 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemInput interface {
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs struct {
-	// The list of user email IDs that can redeem rewards.
+	// The list of user summary that can redeem rewards.
 	Items GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayInput `pulumi:"items"`
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
@@ -1061,7 +1097,7 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) ToGetS
 	return o
 }
 
-// The list of user email IDs that can redeem rewards.
+// The list of user summary that can redeem rewards.
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) Items() GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput {
 	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItem) []GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem {
 		return v.Items
@@ -1103,8 +1139,12 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput) I
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem struct {
-	// The email ID of a user that can redeem rewards.
+	// The email ID of the user that can redeem rewards.
 	EmailId string `pulumi:"emailId"`
+	// The first name of the user that can redeem rewards.
+	FirstName string `pulumi:"firstName"`
+	// The last name of the user that can redeem rewards.
+	LastName string `pulumi:"lastName"`
 }
 
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput values.
@@ -1119,8 +1159,12 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemInput interfa
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs struct {
-	// The email ID of a user that can redeem rewards.
+	// The email ID of the user that can redeem rewards.
 	EmailId pulumi.StringInput `pulumi:"emailId"`
+	// The first name of the user that can redeem rewards.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// The last name of the user that can redeem rewards.
+	LastName pulumi.StringInput `pulumi:"lastName"`
 }
 
 func (GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs) ElementType() reflect.Type {
@@ -1174,9 +1218,19 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) To
 	return o
 }
 
-// The email ID of a user that can redeem rewards.
+// The email ID of the user that can redeem rewards.
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) EmailId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem) string { return v.EmailId }).(pulumi.StringOutput)
+}
+
+// The first name of the user that can redeem rewards.
+func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// The last name of the user that can redeem rewards.
+func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem) string { return v.LastName }).(pulumi.StringOutput)
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -1197,6 +1251,666 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem {
 		return vs[0].([]GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem)[vs[1].(int)]
 	}).(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput)
+}
+
+type GetSubscriptionRedemptionItem struct {
+	// It provides the redeemed rewards in base/subscription currency.
+	BaseRewards float64 `pulumi:"baseRewards"`
+	// It provides the fxRate between invoice currency and subscription currency.
+	FxRate float64 `pulumi:"fxRate"`
+	// The currency associated with invoice.
+	InvoiceCurrency string `pulumi:"invoiceCurrency"`
+	// It provides the invoice number against the redemption.
+	InvoiceNumber string `pulumi:"invoiceNumber"`
+	// It provides the invoice total amount of given redemption.
+	InvoiceTotalAmount float64 `pulumi:"invoiceTotalAmount"`
+	// It provides the redeemed rewards in invoice currency.
+	RedeemedRewards float64 `pulumi:"redeemedRewards"`
+	// The redemption code used in the Billing Center during the reward redemption process.
+	RedemptionCode string `pulumi:"redemptionCode"`
+	// It provides the redemption email id.
+	RedemptionEmail string `pulumi:"redemptionEmail"`
+	// It provides the invoice date.
+	TimeInvoiced string `pulumi:"timeInvoiced"`
+	// It provides redeem date.
+	TimeRedeemed string `pulumi:"timeRedeemed"`
+}
+
+// GetSubscriptionRedemptionItemInput is an input type that accepts GetSubscriptionRedemptionItemArgs and GetSubscriptionRedemptionItemOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionItemInput` via:
+//
+//	GetSubscriptionRedemptionItemArgs{...}
+type GetSubscriptionRedemptionItemInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionItemOutput() GetSubscriptionRedemptionItemOutput
+	ToGetSubscriptionRedemptionItemOutputWithContext(context.Context) GetSubscriptionRedemptionItemOutput
+}
+
+type GetSubscriptionRedemptionItemArgs struct {
+	// It provides the redeemed rewards in base/subscription currency.
+	BaseRewards pulumi.Float64Input `pulumi:"baseRewards"`
+	// It provides the fxRate between invoice currency and subscription currency.
+	FxRate pulumi.Float64Input `pulumi:"fxRate"`
+	// The currency associated with invoice.
+	InvoiceCurrency pulumi.StringInput `pulumi:"invoiceCurrency"`
+	// It provides the invoice number against the redemption.
+	InvoiceNumber pulumi.StringInput `pulumi:"invoiceNumber"`
+	// It provides the invoice total amount of given redemption.
+	InvoiceTotalAmount pulumi.Float64Input `pulumi:"invoiceTotalAmount"`
+	// It provides the redeemed rewards in invoice currency.
+	RedeemedRewards pulumi.Float64Input `pulumi:"redeemedRewards"`
+	// The redemption code used in the Billing Center during the reward redemption process.
+	RedemptionCode pulumi.StringInput `pulumi:"redemptionCode"`
+	// It provides the redemption email id.
+	RedemptionEmail pulumi.StringInput `pulumi:"redemptionEmail"`
+	// It provides the invoice date.
+	TimeInvoiced pulumi.StringInput `pulumi:"timeInvoiced"`
+	// It provides redeem date.
+	TimeRedeemed pulumi.StringInput `pulumi:"timeRedeemed"`
+}
+
+func (GetSubscriptionRedemptionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionItem)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionItemArgs) ToGetSubscriptionRedemptionItemOutput() GetSubscriptionRedemptionItemOutput {
+	return i.ToGetSubscriptionRedemptionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionItemArgs) ToGetSubscriptionRedemptionItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionItemOutput)
+}
+
+// GetSubscriptionRedemptionItemArrayInput is an input type that accepts GetSubscriptionRedemptionItemArray and GetSubscriptionRedemptionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionItemArrayInput` via:
+//
+//	GetSubscriptionRedemptionItemArray{ GetSubscriptionRedemptionItemArgs{...} }
+type GetSubscriptionRedemptionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionItemArrayOutput() GetSubscriptionRedemptionItemArrayOutput
+	ToGetSubscriptionRedemptionItemArrayOutputWithContext(context.Context) GetSubscriptionRedemptionItemArrayOutput
+}
+
+type GetSubscriptionRedemptionItemArray []GetSubscriptionRedemptionItemInput
+
+func (GetSubscriptionRedemptionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionItem)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionItemArray) ToGetSubscriptionRedemptionItemArrayOutput() GetSubscriptionRedemptionItemArrayOutput {
+	return i.ToGetSubscriptionRedemptionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionItemArray) ToGetSubscriptionRedemptionItemArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionItemArrayOutput)
+}
+
+type GetSubscriptionRedemptionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionItem)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionItemOutput) ToGetSubscriptionRedemptionItemOutput() GetSubscriptionRedemptionItemOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionItemOutput) ToGetSubscriptionRedemptionItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionItemOutput {
+	return o
+}
+
+// It provides the redeemed rewards in base/subscription currency.
+func (o GetSubscriptionRedemptionItemOutput) BaseRewards() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) float64 { return v.BaseRewards }).(pulumi.Float64Output)
+}
+
+// It provides the fxRate between invoice currency and subscription currency.
+func (o GetSubscriptionRedemptionItemOutput) FxRate() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) float64 { return v.FxRate }).(pulumi.Float64Output)
+}
+
+// The currency associated with invoice.
+func (o GetSubscriptionRedemptionItemOutput) InvoiceCurrency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.InvoiceCurrency }).(pulumi.StringOutput)
+}
+
+// It provides the invoice number against the redemption.
+func (o GetSubscriptionRedemptionItemOutput) InvoiceNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.InvoiceNumber }).(pulumi.StringOutput)
+}
+
+// It provides the invoice total amount of given redemption.
+func (o GetSubscriptionRedemptionItemOutput) InvoiceTotalAmount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) float64 { return v.InvoiceTotalAmount }).(pulumi.Float64Output)
+}
+
+// It provides the redeemed rewards in invoice currency.
+func (o GetSubscriptionRedemptionItemOutput) RedeemedRewards() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) float64 { return v.RedeemedRewards }).(pulumi.Float64Output)
+}
+
+// The redemption code used in the Billing Center during the reward redemption process.
+func (o GetSubscriptionRedemptionItemOutput) RedemptionCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.RedemptionCode }).(pulumi.StringOutput)
+}
+
+// It provides the redemption email id.
+func (o GetSubscriptionRedemptionItemOutput) RedemptionEmail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.RedemptionEmail }).(pulumi.StringOutput)
+}
+
+// It provides the invoice date.
+func (o GetSubscriptionRedemptionItemOutput) TimeInvoiced() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.TimeInvoiced }).(pulumi.StringOutput)
+}
+
+// It provides redeem date.
+func (o GetSubscriptionRedemptionItemOutput) TimeRedeemed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.TimeRedeemed }).(pulumi.StringOutput)
+}
+
+type GetSubscriptionRedemptionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionItem)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionItemArrayOutput) ToGetSubscriptionRedemptionItemArrayOutput() GetSubscriptionRedemptionItemArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionItemArrayOutput) ToGetSubscriptionRedemptionItemArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionItemArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedemptionItem {
+		return vs[0].([]GetSubscriptionRedemptionItem)[vs[1].(int)]
+	}).(GetSubscriptionRedemptionItemOutput)
+}
+
+type GetSubscriptionRedemptionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSubscriptionRedemptionsFilterInput is an input type that accepts GetSubscriptionRedemptionsFilterArgs and GetSubscriptionRedemptionsFilterOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionsFilterInput` via:
+//
+//	GetSubscriptionRedemptionsFilterArgs{...}
+type GetSubscriptionRedemptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionsFilterOutput() GetSubscriptionRedemptionsFilterOutput
+	ToGetSubscriptionRedemptionsFilterOutputWithContext(context.Context) GetSubscriptionRedemptionsFilterOutput
+}
+
+type GetSubscriptionRedemptionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSubscriptionRedemptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionsFilter)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionsFilterArgs) ToGetSubscriptionRedemptionsFilterOutput() GetSubscriptionRedemptionsFilterOutput {
+	return i.ToGetSubscriptionRedemptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionsFilterArgs) ToGetSubscriptionRedemptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsFilterOutput)
+}
+
+// GetSubscriptionRedemptionsFilterArrayInput is an input type that accepts GetSubscriptionRedemptionsFilterArray and GetSubscriptionRedemptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionsFilterArrayInput` via:
+//
+//	GetSubscriptionRedemptionsFilterArray{ GetSubscriptionRedemptionsFilterArgs{...} }
+type GetSubscriptionRedemptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionsFilterArrayOutput() GetSubscriptionRedemptionsFilterArrayOutput
+	ToGetSubscriptionRedemptionsFilterArrayOutputWithContext(context.Context) GetSubscriptionRedemptionsFilterArrayOutput
+}
+
+type GetSubscriptionRedemptionsFilterArray []GetSubscriptionRedemptionsFilterInput
+
+func (GetSubscriptionRedemptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionsFilter)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionsFilterArray) ToGetSubscriptionRedemptionsFilterArrayOutput() GetSubscriptionRedemptionsFilterArrayOutput {
+	return i.ToGetSubscriptionRedemptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionsFilterArray) ToGetSubscriptionRedemptionsFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsFilterArrayOutput)
+}
+
+type GetSubscriptionRedemptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionsFilter)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionsFilterOutput) ToGetSubscriptionRedemptionsFilterOutput() GetSubscriptionRedemptionsFilterOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsFilterOutput) ToGetSubscriptionRedemptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsFilterOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSubscriptionRedemptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSubscriptionRedemptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSubscriptionRedemptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionsFilter)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionsFilterArrayOutput) ToGetSubscriptionRedemptionsFilterArrayOutput() GetSubscriptionRedemptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsFilterArrayOutput) ToGetSubscriptionRedemptionsFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedemptionsFilter {
+		return vs[0].([]GetSubscriptionRedemptionsFilter)[vs[1].(int)]
+	}).(GetSubscriptionRedemptionsFilterOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollection struct {
+	// The list of redemption summary.
+	Items []GetSubscriptionRedemptionsRedemptionCollectionItem `pulumi:"items"`
+}
+
+// GetSubscriptionRedemptionsRedemptionCollectionInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionArgs and GetSubscriptionRedemptionsRedemptionCollectionOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionsRedemptionCollectionInput` via:
+//
+//	GetSubscriptionRedemptionsRedemptionCollectionArgs{...}
+type GetSubscriptionRedemptionsRedemptionCollectionInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionsRedemptionCollectionOutput() GetSubscriptionRedemptionsRedemptionCollectionOutput
+	ToGetSubscriptionRedemptionsRedemptionCollectionOutputWithContext(context.Context) GetSubscriptionRedemptionsRedemptionCollectionOutput
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionArgs struct {
+	// The list of redemption summary.
+	Items GetSubscriptionRedemptionsRedemptionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubscriptionRedemptionsRedemptionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollection)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionArgs) ToGetSubscriptionRedemptionsRedemptionCollectionOutput() GetSubscriptionRedemptionsRedemptionCollectionOutput {
+	return i.ToGetSubscriptionRedemptionsRedemptionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionArgs) ToGetSubscriptionRedemptionsRedemptionCollectionOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionOutput)
+}
+
+// GetSubscriptionRedemptionsRedemptionCollectionArrayInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionArray and GetSubscriptionRedemptionsRedemptionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionsRedemptionCollectionArrayInput` via:
+//
+//	GetSubscriptionRedemptionsRedemptionCollectionArray{ GetSubscriptionRedemptionsRedemptionCollectionArgs{...} }
+type GetSubscriptionRedemptionsRedemptionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionArrayOutput
+	ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutputWithContext(context.Context) GetSubscriptionRedemptionsRedemptionCollectionArrayOutput
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionArray []GetSubscriptionRedemptionsRedemptionCollectionInput
+
+func (GetSubscriptionRedemptionsRedemptionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionsRedemptionCollection)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionArray) ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionArrayOutput {
+	return i.ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionArray) ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionArrayOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionsRedemptionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollection)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionOutput) ToGetSubscriptionRedemptionsRedemptionCollectionOutput() GetSubscriptionRedemptionsRedemptionCollectionOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionOutput) ToGetSubscriptionRedemptionsRedemptionCollectionOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionOutput {
+	return o
+}
+
+// The list of redemption summary.
+func (o GetSubscriptionRedemptionsRedemptionCollectionOutput) Items() GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollection) []GetSubscriptionRedemptionsRedemptionCollectionItem {
+		return v.Items
+	}).(GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionsRedemptionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionsRedemptionCollection)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionArrayOutput) ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionArrayOutput) ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionsRedemptionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedemptionsRedemptionCollection {
+		return vs[0].([]GetSubscriptionRedemptionsRedemptionCollection)[vs[1].(int)]
+	}).(GetSubscriptionRedemptionsRedemptionCollectionOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItem struct {
+	// The list of redemption summary.
+	Items []GetSubscriptionRedemptionsRedemptionCollectionItemItem `pulumi:"items"`
+}
+
+// GetSubscriptionRedemptionsRedemptionCollectionItemInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionItemArgs and GetSubscriptionRedemptionsRedemptionCollectionItemOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionsRedemptionCollectionItemInput` via:
+//
+//	GetSubscriptionRedemptionsRedemptionCollectionItemArgs{...}
+type GetSubscriptionRedemptionsRedemptionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionsRedemptionCollectionItemOutput() GetSubscriptionRedemptionsRedemptionCollectionItemOutput
+	ToGetSubscriptionRedemptionsRedemptionCollectionItemOutputWithContext(context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemOutput
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemArgs struct {
+	// The list of redemption summary.
+	Items GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayInput `pulumi:"items"`
+}
+
+func (GetSubscriptionRedemptionsRedemptionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionItemArgs) ToGetSubscriptionRedemptionsRedemptionCollectionItemOutput() GetSubscriptionRedemptionsRedemptionCollectionItemOutput {
+	return i.ToGetSubscriptionRedemptionsRedemptionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionItemArgs) ToGetSubscriptionRedemptionsRedemptionCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionItemOutput)
+}
+
+// GetSubscriptionRedemptionsRedemptionCollectionItemArrayInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionItemArray and GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionsRedemptionCollectionItemArrayInput` via:
+//
+//	GetSubscriptionRedemptionsRedemptionCollectionItemArray{ GetSubscriptionRedemptionsRedemptionCollectionItemArgs{...} }
+type GetSubscriptionRedemptionsRedemptionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput
+	ToGetSubscriptionRedemptionsRedemptionCollectionItemArrayOutputWithContext(context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemArray []GetSubscriptionRedemptionsRedemptionCollectionItemInput
+
+func (GetSubscriptionRedemptionsRedemptionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionsRedemptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionItemArray) ToGetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput {
+	return i.ToGetSubscriptionRedemptionsRedemptionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionItemArray) ToGetSubscriptionRedemptionsRedemptionCollectionItemArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionsRedemptionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemOutput() GetSubscriptionRedemptionsRedemptionCollectionItemOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemOutput {
+	return o
+}
+
+// The list of redemption summary.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemOutput) Items() GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItem) []GetSubscriptionRedemptionsRedemptionCollectionItemItem {
+		return v.Items
+	}).(GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionsRedemptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionsRedemptionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedemptionsRedemptionCollectionItem {
+		return vs[0].([]GetSubscriptionRedemptionsRedemptionCollectionItem)[vs[1].(int)]
+	}).(GetSubscriptionRedemptionsRedemptionCollectionItemOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemItem struct {
+	// It provides the redeemed rewards in base/subscription currency.
+	BaseRewards float64 `pulumi:"baseRewards"`
+	// It provides the fxRate between invoice currency and subscription currency.
+	FxRate float64 `pulumi:"fxRate"`
+	// The currency associated with invoice.
+	InvoiceCurrency string `pulumi:"invoiceCurrency"`
+	// It provides the invoice number against the redemption.
+	InvoiceNumber string `pulumi:"invoiceNumber"`
+	// It provides the invoice total amount of given redemption.
+	InvoiceTotalAmount float64 `pulumi:"invoiceTotalAmount"`
+	// It provides the redeemed rewards in invoice currency.
+	RedeemedRewards float64 `pulumi:"redeemedRewards"`
+	// The redemption code used in the Billing Center during the reward redemption process.
+	RedemptionCode string `pulumi:"redemptionCode"`
+	// It provides the redemption email id.
+	RedemptionEmail string `pulumi:"redemptionEmail"`
+	// It provides the invoice date.
+	TimeInvoiced string `pulumi:"timeInvoiced"`
+	// It provides redeem date.
+	TimeRedeemed string `pulumi:"timeRedeemed"`
+}
+
+// GetSubscriptionRedemptionsRedemptionCollectionItemItemInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs and GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionsRedemptionCollectionItemItemInput` via:
+//
+//	GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs{...}
+type GetSubscriptionRedemptionsRedemptionCollectionItemItemInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutput() GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput
+	ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutputWithContext(context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs struct {
+	// It provides the redeemed rewards in base/subscription currency.
+	BaseRewards pulumi.Float64Input `pulumi:"baseRewards"`
+	// It provides the fxRate between invoice currency and subscription currency.
+	FxRate pulumi.Float64Input `pulumi:"fxRate"`
+	// The currency associated with invoice.
+	InvoiceCurrency pulumi.StringInput `pulumi:"invoiceCurrency"`
+	// It provides the invoice number against the redemption.
+	InvoiceNumber pulumi.StringInput `pulumi:"invoiceNumber"`
+	// It provides the invoice total amount of given redemption.
+	InvoiceTotalAmount pulumi.Float64Input `pulumi:"invoiceTotalAmount"`
+	// It provides the redeemed rewards in invoice currency.
+	RedeemedRewards pulumi.Float64Input `pulumi:"redeemedRewards"`
+	// The redemption code used in the Billing Center during the reward redemption process.
+	RedemptionCode pulumi.StringInput `pulumi:"redemptionCode"`
+	// It provides the redemption email id.
+	RedemptionEmail pulumi.StringInput `pulumi:"redemptionEmail"`
+	// It provides the invoice date.
+	TimeInvoiced pulumi.StringInput `pulumi:"timeInvoiced"`
+	// It provides redeem date.
+	TimeRedeemed pulumi.StringInput `pulumi:"timeRedeemed"`
+}
+
+func (GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionItemItem)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutput() GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput {
+	return i.ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput)
+}
+
+// GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionItemItemArray and GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput values.
+// You can construct a concrete instance of `GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayInput` via:
+//
+//	GetSubscriptionRedemptionsRedemptionCollectionItemItemArray{ GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs{...} }
+type GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput
+	ToGetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutputWithContext(context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemItemArray []GetSubscriptionRedemptionsRedemptionCollectionItemItemInput
+
+func (GetSubscriptionRedemptionsRedemptionCollectionItemItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionsRedemptionCollectionItemItem)(nil)).Elem()
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArray) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput {
+	return i.ToGetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArray) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionItemItem)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutput() GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput {
+	return o
+}
+
+// It provides the redeemed rewards in base/subscription currency.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) BaseRewards() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) float64 { return v.BaseRewards }).(pulumi.Float64Output)
+}
+
+// It provides the fxRate between invoice currency and subscription currency.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) FxRate() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) float64 { return v.FxRate }).(pulumi.Float64Output)
+}
+
+// The currency associated with invoice.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceCurrency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.InvoiceCurrency }).(pulumi.StringOutput)
+}
+
+// It provides the invoice number against the redemption.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.InvoiceNumber }).(pulumi.StringOutput)
+}
+
+// It provides the invoice total amount of given redemption.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceTotalAmount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) float64 { return v.InvoiceTotalAmount }).(pulumi.Float64Output)
+}
+
+// It provides the redeemed rewards in invoice currency.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedeemedRewards() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) float64 { return v.RedeemedRewards }).(pulumi.Float64Output)
+}
+
+// The redemption code used in the Billing Center during the reward redemption process.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedemptionCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.RedemptionCode }).(pulumi.StringOutput)
+}
+
+// It provides the redemption email id.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedemptionEmail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.RedemptionEmail }).(pulumi.StringOutput)
+}
+
+// It provides the invoice date.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) TimeInvoiced() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.TimeInvoiced }).(pulumi.StringOutput)
+}
+
+// It provides redeem date.
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) TimeRedeemed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.TimeRedeemed }).(pulumi.StringOutput)
+}
+
+type GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubscriptionRedemptionsRedemptionCollectionItemItem)(nil)).Elem()
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput() GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput {
+	return o
+}
+
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedemptionsRedemptionCollectionItemItem {
+		return vs[0].([]GetSubscriptionRedemptionsRedemptionCollectionItemItem)[vs[1].(int)]
+	}).(GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput)
 }
 
 type GetSubscriptionRewardItem struct {
@@ -1398,7 +2112,7 @@ func (o GetSubscriptionRewardItemArrayOutput) Index(i pulumi.IntInput) GetSubscr
 type GetSubscriptionRewardSummary struct {
 	// The currency unit for the reward amount.
 	Currency string `pulumi:"currency"`
-	// The redemption code used in the billing center during the reward redemption process
+	// The redemption code used in the Billing Center during the reward redemption process.
 	RedemptionCode string `pulumi:"redemptionCode"`
 	// The current Rewards percentage in decimal format.
 	RewardsRate float64 `pulumi:"rewardsRate"`
@@ -1424,7 +2138,7 @@ type GetSubscriptionRewardSummaryInput interface {
 type GetSubscriptionRewardSummaryArgs struct {
 	// The currency unit for the reward amount.
 	Currency pulumi.StringInput `pulumi:"currency"`
-	// The redemption code used in the billing center during the reward redemption process
+	// The redemption code used in the Billing Center during the reward redemption process.
 	RedemptionCode pulumi.StringInput `pulumi:"redemptionCode"`
 	// The current Rewards percentage in decimal format.
 	RewardsRate pulumi.Float64Input `pulumi:"rewardsRate"`
@@ -1492,7 +2206,7 @@ func (o GetSubscriptionRewardSummaryOutput) Currency() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionRewardSummary) string { return v.Currency }).(pulumi.StringOutput)
 }
 
-// The redemption code used in the billing center during the reward redemption process
+// The redemption code used in the Billing Center during the reward redemption process.
 func (o GetSubscriptionRewardSummaryOutput) RedemptionCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionRewardSummary) string { return v.RedemptionCode }).(pulumi.StringOutput)
 }
@@ -2051,7 +2765,7 @@ func (o GetSubscriptionRewardsRewardCollectionItemItemArrayOutput) Index(i pulum
 type GetSubscriptionRewardsRewardCollectionItemSummary struct {
 	// The currency unit for the reward amount.
 	Currency string `pulumi:"currency"`
-	// The redemption code used in the billing center during the reward redemption process
+	// The redemption code used in the Billing Center during the reward redemption process.
 	RedemptionCode string `pulumi:"redemptionCode"`
 	// The current Rewards percentage in decimal format.
 	RewardsRate float64 `pulumi:"rewardsRate"`
@@ -2077,7 +2791,7 @@ type GetSubscriptionRewardsRewardCollectionItemSummaryInput interface {
 type GetSubscriptionRewardsRewardCollectionItemSummaryArgs struct {
 	// The currency unit for the reward amount.
 	Currency pulumi.StringInput `pulumi:"currency"`
-	// The redemption code used in the billing center during the reward redemption process
+	// The redemption code used in the Billing Center during the reward redemption process.
 	RedemptionCode pulumi.StringInput `pulumi:"redemptionCode"`
 	// The current Rewards percentage in decimal format.
 	RewardsRate pulumi.Float64Input `pulumi:"rewardsRate"`
@@ -2145,7 +2859,7 @@ func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) Currency() pulu
 	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) string { return v.Currency }).(pulumi.StringOutput)
 }
 
-// The redemption code used in the billing center during the reward redemption process
+// The redemption code used in the Billing Center during the reward redemption process.
 func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) RedemptionCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) string { return v.RedemptionCode }).(pulumi.StringOutput)
 }
@@ -2213,6 +2927,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayInput)(nil)).Elem(), GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemInput)(nil)).Elem(), GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayInput)(nil)).Elem(), GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionItemInput)(nil)).Elem(), GetSubscriptionRedemptionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionItemArrayInput)(nil)).Elem(), GetSubscriptionRedemptionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionsFilterInput)(nil)).Elem(), GetSubscriptionRedemptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionsFilterArrayInput)(nil)).Elem(), GetSubscriptionRedemptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionInput)(nil)).Elem(), GetSubscriptionRedemptionsRedemptionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionArrayInput)(nil)).Elem(), GetSubscriptionRedemptionsRedemptionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionItemInput)(nil)).Elem(), GetSubscriptionRedemptionsRedemptionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionItemArrayInput)(nil)).Elem(), GetSubscriptionRedemptionsRedemptionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionItemItemInput)(nil)).Elem(), GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayInput)(nil)).Elem(), GetSubscriptionRedemptionsRedemptionCollectionItemItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRewardItemInput)(nil)).Elem(), GetSubscriptionRewardItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRewardItemArrayInput)(nil)).Elem(), GetSubscriptionRewardItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubscriptionRewardSummaryInput)(nil)).Elem(), GetSubscriptionRewardSummaryArgs{})
@@ -2249,6 +2973,16 @@ func init() {
 	pulumi.RegisterOutputType(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionItemOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionsRedemptionCollectionOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionsRedemptionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionsRedemptionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput{})
+	pulumi.RegisterOutputType(GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionRewardItemOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionRewardItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSubscriptionRewardSummaryOutput{})

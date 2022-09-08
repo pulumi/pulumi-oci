@@ -52,6 +52,12 @@ import (
 //					Id:   pulumi.Any(_var.Boot_volume_source_details_id),
 //					Type: pulumi.Any(_var.Boot_volume_source_details_type),
 //				},
+//				AutotunePolicies: core.BootVolumeAutotunePolicyArray{
+//					&core.BootVolumeAutotunePolicyArgs{
+//						AutotuneType: pulumi.Any(_var.Boot_volume_autotune_policies_autotune_type),
+//						MaxVpusPerGb: pulumi.Any(_var.Boot_volume_autotune_policies_max_vpus_per_gb),
+//					},
+//				},
 //				AvailabilityDomain: pulumi.Any(_var.Boot_volume_availability_domain),
 //				BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
 //				BootVolumeReplicas: core.BootVolumeBootVolumeReplicaArray{
@@ -94,8 +100,10 @@ import (
 type BootVolume struct {
 	pulumi.CustomResourceState
 
-	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
 	AutoTunedVpusPerGb pulumi.StringOutput `pulumi:"autoTunedVpusPerGb"`
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies BootVolumeAutotunePolicyArrayOutput `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
@@ -115,7 +123,7 @@ type BootVolume struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The image OCID used to create the boot volume.
 	ImageId pulumi.StringOutput `pulumi:"imageId"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolOutput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
 	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
@@ -176,8 +184,10 @@ func GetBootVolume(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BootVolume resources.
 type bootVolumeState struct {
-	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
 	AutoTunedVpusPerGb *string `pulumi:"autoTunedVpusPerGb"`
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies []BootVolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
@@ -197,7 +207,7 @@ type bootVolumeState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The image OCID used to create the boot volume.
 	ImageId *string `pulumi:"imageId"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
 	IsHydrated *bool `pulumi:"isHydrated"`
@@ -221,8 +231,10 @@ type bootVolumeState struct {
 }
 
 type BootVolumeState struct {
-	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
 	AutoTunedVpusPerGb pulumi.StringPtrInput
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies BootVolumeAutotunePolicyArrayInput
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
@@ -242,7 +254,7 @@ type BootVolumeState struct {
 	FreeformTags pulumi.MapInput
 	// The image OCID used to create the boot volume.
 	ImageId pulumi.StringPtrInput
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolPtrInput
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
 	IsHydrated pulumi.BoolPtrInput
@@ -270,6 +282,8 @@ func (BootVolumeState) ElementType() reflect.Type {
 }
 
 type bootVolumeArgs struct {
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies []BootVolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
@@ -287,7 +301,7 @@ type bootVolumeArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
@@ -300,6 +314,8 @@ type bootVolumeArgs struct {
 
 // The set of arguments for constructing a BootVolume resource.
 type BootVolumeArgs struct {
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies BootVolumeAutotunePolicyArrayInput
 	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
@@ -317,7 +333,7 @@ type BootVolumeArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolPtrInput
 	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
 	KmsKeyId pulumi.StringPtrInput
@@ -415,9 +431,14 @@ func (o BootVolumeOutput) ToBootVolumeOutputWithContext(ctx context.Context) Boo
 	return o
 }
 
-// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
 func (o BootVolumeOutput) AutoTunedVpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.AutoTunedVpusPerGb }).(pulumi.StringOutput)
+}
+
+// (Updatable) The list of autotune policies to be enabled for this volume.
+func (o BootVolumeOutput) AutotunePolicies() BootVolumeAutotunePolicyArrayOutput {
+	return o.ApplyT(func(v *BootVolume) BootVolumeAutotunePolicyArrayOutput { return v.AutotunePolicies }).(BootVolumeAutotunePolicyArrayOutput)
 }
 
 // (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -466,7 +487,7 @@ func (o BootVolumeOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 func (o BootVolumeOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.BoolOutput { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
 }
